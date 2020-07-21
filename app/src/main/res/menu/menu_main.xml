@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".dico.activity.MainActivity">
+    <item
+        android:id="@+id/connexion"
+        android:checkable="false"
+        android:visible="true"
+        android:title="Connexion"/>
+    <item
+        android:id="@+id/menu_profil"
+        android:checkable="false"
+        android:title="Profil" />
+    <item
+        android:id="@+id/settings"
+        android:checkable="false"
+        android:title="Paramètres" />
+</menu>

@@ -1,0 +1,261 @@
+{
+  "words": [
+    {
+      "title": "Accès direct (Direct Access)",
+      "description": "Méthode de stockage de l‘information basée sur un système d‘adresses qui permet de repérer l‘emplacement des enregistrements sur le support physique de telle façon qu‘ils puissent être rapidement récupérés. Il en va ainsi des disques et de la mémoire centrale - vive et morte."
+    },
+    {
+      "title": "Accès séquentiel (Sequential Access Storage)",
+      "description": "Méthode de stockage de l‘information dans laquelle les enregistrements sont stockés séquentiellement les uns derrière les autres. Pour accéder à un enregistrement particulier, on doit lire tous les enregistrements qui le précèdent. Seul type d‘accès possible sur une bande magnétique."
+    },
+    {
+      "title": "Adaptation au matériel Voir Plug and Play (PnP)",
+      "description": "Administrateur de bases de données (Database Administrator) Personne qui détermine la structure d‘une base de données et qui gère son utilisation."
+    },
+    {
+      "title": "Adresse (Address)",
+      "description": "Coordonnées d‘un élément constitutif d‘un support d‘information (piste, secteur sur disque, case mémoire, etc.)."
+    },
+    {
+      "title": "Adresse de cellule (Cell Address)",
+      "description": "Position d‘une cellule dans un chiffrier exprimée par le rang et la colonne sur lesquels elle se trouve."
+    },
+    {
+      "title": "Adresse électronique ou adresse de courriel (E-Mail Address)",
+      "description": "Information attachée à un message permettant de retrouver son destinataire; elle se compose du nom du destinataire et du nom Internet de son serveur de courrier électronique. Par exemple moi.meme@monentre-prise.com."
+    },
+    {
+      "title": "Adresse Internet ou adresse IP (Internet Address)",
+      "description": "Information associée à un noeud du réseau Internet pour l‘identifier de façon univoque."
+    },
+    {
+      "title": "ADSL (Asymmetric Digital Subs-criber Line)",
+      "description": "Voir Modem ADSL."
+    },
+    {
+      "title": "AFO",
+      "description": "Voir Analyse fonctionnelle et organique."
+    },
+    {
+      "title": "AGP (Accelerated Graphic Port)",
+      "description": "Technologie visant à accélérer le transfert d‘information du bloc système vers le moniteur pour les applications à haute teneur graphique. La norme AGP régit le bus AGP, les cartes vidéo AGP et les ports AGP. Voir Bus AGP, Carte vidéo AGP et Port AGP."
+    },
+    {
+      "title": "Algorithme (Algorithm)",
+      "description": "Ensemble des règles opératoireséces-saires à l‘accomplissement d‘une tâche."
+    },
+    {
+      "title": "Amorce",
+      "description": "Voir Procédures d‘amorce."
+    },
+    {
+      "title": "Analyse des besoins",
+      "description": "Première étape du cycle de vie d‘un système qui comprend la défi ni-tion du problème, la suggestion de solutions et la rédaction d‘un bref rapport."
+    },
+    {
+      "title": "Analyse fonctionnelle (Systems Analysis)",
+      "description": "Deuxième étape du cycle de vie d‘un système durant laquelle le système actuel est étudié et les nouvelles exigences sont établies avec précision."
+    },
+    {
+      "title": "Analyse fonctionnelle et organique (AFO) (Systems Analysis and Design)",
+      "description": "Méthode de résolution de problème en six étapes utilisée pour examiner à fond un système d‘information en vue de l‘améliorer."
+    },
+    {
+      "title": "Analyse organique (Systems Design)",
+      "description": "Troisième étape du cycle de vie d‘un système qui consiste en la conception de systèmes de rechange, la sélection du meilleur système et la rédaction d‘un rapport d‘analyse organique."
+    },
+    {
+      "title": "Analyse progressive (Top-Down Program Design ou Top-Down Analysis)",
+      "description": "Procédé de programmation dans lequel on fractionne le problème à résoudre en plusieurs sous-problèmes, et ainsi de suite."
+    },
+    {
+      "title": "Analyste fonctionnel (System Analyst)",
+      "description": "Professionnel de l‘informatique qui étudie et améliore des systèmes informatiques en appliquant la méthode de résolution de problème connue sous le nom d‘analyse fonctionnelle et organique."
+    },
+    {
+      "title": "Annulation",
+      "description": "Voir Commande d‘annulation."
+    },
+    {
+      "title": "Antémémoire (Cache Memory)",
+      "description": "Voir Mémoire cache."
+    },
+    {
+      "title": "Appareil photo numérique (Digital Camera)",
+      "description": "Appareil photographique au fonctionnement standard, mais qui enregistre l‘image en mode binaire (matrice de points) dans des puces de mémoire vive ou sur un microdisque."
+    },
+    {
+      "title": "Applet (Applet)",
+      "description": "Mini-application écrite en langage java et qui, insérée dans un document Web, s‘exécute directement sur l‘ordinateur de l‘internaute, peu importe le système d‘exploitation utilisé."
+    },
+    {
+      "title": "Approche directe (Direct Approach)",
+      "description": "Méthode d‘implantation d‘un système dans laquelle on abandonne d‘un coup l‘ancien système au profi t du nouveau."
+    },
+    {
+      "title": "Approche graduelle (Phased Approach)",
+      "description": "Méthode d‘implantation d‘un système dans laquelle on procède à une implantation progressive selon un échéancier."
+    },
+    {
+      "title": "Approche parallèle (Parallel Approach)",
+      "description": "Méthode d‘implantation d‘un système dans laquelle on fait fonctionner le nouveau système en parallèle avec l‘ancien jusqu‘à ce que le nouveau ait été éprouvé."
+    },
+    {
+      "title": "Approche pilote (Pilot Approach)",
+      "description": "Méthode d‘implantation d‘un système dans laquelle on éprouve d‘abord le nouveau système dans un secteur de l‘organisation avant d‘étendre son implantation à toute l‘entreprise."
+    },
+    {
+      "title": "Architecture fermée (Closed Architecture)",
+      "description": "Ordinateur conçu de façon qu‘il est diffi cile de lui adjoindre de nouveaux dispositifs."
+    },
+    {
+      "title": "Architecture ouverte (Open Architecture)",
+      "description": "Ordinateur muni de fentes d‘extension que l‘on peut utiliser pour ajouter de la mémoire centrale ou d‘autres accessoires."
+    },
+    {
+      "title": "ARPANET (Advanced Research Project Agency Network)",
+      "description": "Réseau maillé créé et utilisé par les agences gouvernementales et militaires américaines pour favoriser les échanges d‘informations et de discussions entre les chercheurs. Ancêtre d‘Internet."
+    },
+    {
+      "title": "Ateliers de génie logiciel (AGL) (Computer-Assisted Software Engineering)",
+      "description": "Outils de programmation qui fournissent assistance et automatisation lors de la conception, du codage et de la mise à l‘essai d‘un programme."
+    },
+    {
+      "title": "Autoroute électronique ou info-route (Information Superhighway)",
+      "description": "Ensemble des communications informatiques entre les grands réseaux d‘ordinateurs."
+    },
+    {
+      "title": "Bactérie",
+      "description": "Voir Ver."
+    },
+    {
+      "title": "Bague d‘autorisation d‘écriture (Write-Enable Ring)",
+      "description": "Bague qui doit être placée sur le moyeu d‘une bande magnétique pour permettre l‘écriture."
+    },
+    {
+      "title": "Bande large (Broadband)",
+      "description": "Largeur de bande la plus élevée - son débit est supérieur à 1,5 Mbps et peut atteindre 30 Gbps - qui comprend les voies de transmission de micro-ondes, des infrarouges, les câbles coaxiaux et les fi bres optiques."
+    },
+    {
+      "title": "Bande magnétique (Magnetic Tape)",
+      "description": "Support physique de l‘information de type séquentiel servant de mémoire auxiliaire."
+    },
+    {
+      "title": "Bande moyenne (Mid-Band)",
+      "description": "Largeur de bande des lignes téléphoniques dédiées et numériques dont le débit varie de 64Kbps à 1,5 Mbps."
+    },
+    {
+      "title": "Bande vocale (Voice Band)",
+      "description": "Largeur de bande propre aux lignes téléphoniques standard. Utilisée par les transmissions par modem, elle s‘étend jusqu‘à 64 Kbps."
+    },
+    {
+      "title": "Bandothèque (Tape Library)",
+      "description": "Bibliothèque de bandes magnétiques."
+    },
+    {
+      "title": "Banques de données GPS (Global Positioning System)",
+      "description": "Banque de données permettant de localiser un objet ou un individu grâce à la technologie GPS - basée sur des émetteurs qui envoient un signal électromagnétique distinctif capté par satellite et transmis à un ordinateur capable de déterminer la position géodésique de l‘émetteur."
+    },
+    {
+      "title": "Barre d‘outils Voir",
+      "description": "Barre de boutons."
+    },
+    {
+      "title": "Barre de boutons (Toolbar)",
+      "description": "Barre composée de plusieurs icônes (voir ce terme) disposées en ligne ou en bloc et représentant les commandes disponibles."
+    },
+    {
+      "title": "Barre de défi lement (Scroll Bar)",
+      "description": "Barre qui permet à l‘utilisateur de diriger le déplacement horizontal ou vertical d‘un document affi ché à l‘écran dont la taille est supérieure à celle de sa fenêtre."
+    },
+    {
+      "title": "Base de données (Database)",
+      "description": "Ensemble structuré et intégré de données, emmagasiné sur disque selon un format prédéfi ni et accessible à un ensemble d‘utilisateurs grâce à un langage de requêtes."
+    },
+    {
+      "title": "Base de données en réseau (Network Database)",
+      "description": "Base de données dont les noeuds sont organisés hiérarchiquement mais où chaque noeud fi ls peut posséder plus d‘un noeud père."
+    },
+    {
+      "title": "Base de données hiérarchique (Hierarchical Database)",
+      "description": "Base de données dans laquelle les champs ou les enregistrements sont structurés en noeuds semblables à la hiérarchie des directeurs d‘une société commerciale."
+    },
+    {
+      "title": "Base de données relationnelle (Relational Database)",
+      "description": "Organisation de base de données la plus souple dans laquelle les éléments de données sont rangés dans des tables (fichiers) entre lesquelles il est possible d‘établir des relations (liens)."
+    },
+    {
+      "title": "Base de données répartie (Distributed Database)",
+      "description": "Base de données accessible par divers réseaux de façon que les portions de la base de données soient placées à différents endroits."
+    },
+    {
+      "title": "BASIC (Beginner‘s All-Purpose Symbolic Instruction Code)",
+      "description": "Langage de programmation procédural interactif utilisé fréquemment avec les ordinateurs personnels et facile à assimiler."
+    },
+    {
+      "title": "Bavardage électronique (Chat Groups)",
+      "description": "Activité dans laquelle un groupe d‘internautes échangent des messages en direct par l‘entremise d‘un serveur IRC."
+    },
+    {
+      "title": "Bavardoir (Chatroom)",
+      "description": "Lieu de rencontre où des gens peuvent échanger des points de vue par écrit."
+    },
+    {
+      "title": "Biométrie (Biometrics)",
+      "description": "Science qui mesure les caractéristiques du corps humain. Certains systèmes de sécurité se servent d‘appareils biométriques qui peuvent reconnaître les empreintes digitales, les signatures ou la voix d‘une personne."
+    },
+    {
+      "title": "BIOS (Basic Input Output System)",
+      "description": "Programmes de soutien stockés en mémoire morte qui prennent en charge l‘ordinateur au moment du démarrage. Voir Procédures d‘amorce et Procédures de diagnostic."
+    },
+    {
+      "title": "Bit (contraction de l‘anglais Binary Digit) ",
+      "description": " (Bit) Un des chiffres du système de numération de base 2, représenté par 0 ou 1. Unité binaire d‘information."
+    },
+    {
+      "title": "Bit de parité (Parity Bit)",
+      "description": "Bits additionnels et redondants permettant de vérifi er l‘exactitude des données transmises ou enregistrées."
+    },
+    {
+      "title": "Bloc (Block)",
+      "description": "Enregistrements, caractères ou chiffres qui sont groupés et traités comme une unité."
+    },
+    {
+      "title": "Bloc système (System Unit)",
+      "description": "Ensemble des éléments essentiels au fonctionnement d‘un micro-ordinateur regroupant la carte maîtresse, le micro-processeur, la mémoire centrale, le bus, l‘horloge interne, les ports d‘accès et les cartes d‘extension."
+    },
+    {
+      "title": "Bloc-notes numérique (Notebook)",
+      "description": "Petit portable, qui pèse entre 2 kg et 4 kg, pouvant facilement être inséré dans un porte-documents."
+    },
+    {
+      "title": "Bogue (Bug)",
+      "description": "Défaut de conception ou de réalisation d‘un système ou d‘un programme se manifestant par des anomalies de fonctionnement."
+    },
+    {
+      "title": "Boîtier système (System Cabinet)",
+      "description": "Boîtier dans lequel se trouvent le bloc système et les lecteurs de disque."
+    },
+    {
+      "title": "Boucle infi nie (Closed Loop)",
+      "description": "En programmation, énoncé itératif dont la condition d‘arrêt n‘est jamais satisfaite et qui provoque l‘exécution illimitée des instructions de cette structure."
+    },
+    {
+      "title": "bpi",
+      "description": "(abréviation de l‘anglais bit per inch) Bit par pouce."
+    },
+    {
+      "title": "bps",
+      "description": "(abréviation de l‘anglais bit per second) Bit par seconde. Unité de mesure de transmission des données."
+    },
+    {
+      "title": "Bras d‘accès (Access Arm)",
+      "description": "Dispositif porteur des têtes de lecture/ écriture d‘un lecteur de disque qui se déplace audessus de la surface du disque ou de la disquette entre le centre et la périphérie de façon à placer la ou les têtes de lecture/écriture sur les pistes choisies."
+    },
+    {
+      "title": "Bus (Bus Line)",
+      "description": "Circuits qui fournissent une voie de communication entre deux unités ou plus, par exemple, entre l‘UCT, la mémoire et les contrôleurs, parmi lesquels on distingue les bus AGP, PCI et ISA."
+    }
+  ]
+}
+
