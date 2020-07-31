@@ -3,17 +3,17 @@
 java:S1128">Remove this unused import 'com.flys.generictools.tools.Utils'.(Ôî™‘úÿÿÿÿ8–¦¤­¸.
 
 java:S1186`"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ÿ¦ÓÁ8ÿˆı¬¸.
+W
+java:S2209:"5Change this instance-reference to a static reference.(Ùœ³çúÿÿÿÿ8ÿˆı¬¸.
+O
+java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8Æƒ„°¸.
+N
+java:S1602M",Remove useless curly braces around statement(•ªÅïùÿÿÿÿ8ÿˆı¬¸.
 £
 java:S1186e"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(²‘Şàüÿÿÿÿ8ÿˆı¬¸.
+
+java:S1186V"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ëä–8ÿˆı¬¸.
 x
 java:S14501"[Remove the "dictionnaire" field and declare it as a local variable in the relevant methods.(™ÛÿÓ8û…°¸.
 
 java:S1186["€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¸ø®é8ÿˆı¬¸.
-
-java:S1186V"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ëä–8ÿˆı¬¸.
-N
-java:S1602M",Remove useless curly braces around statement(•ªÅïùÿÿÿÿ8ÿˆı¬¸.
-O
-java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8Æƒ„°¸.
-W
-java:S2209:"5Change this instance-reference to a static reference.(Ùœ³çúÿÿÿÿ8ÿˆı¬¸.

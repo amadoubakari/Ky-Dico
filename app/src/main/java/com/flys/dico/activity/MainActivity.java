@@ -239,7 +239,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                                 notificationDialog.show(getSupportFragmentManager(), "material_notification_alert_dialog");
                             }
                             if (task.isCanceled()) {
-                                Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), "Déconnexion annulée");
+                                Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), "Déconnexion annulée");
                             }
                         });
             }
@@ -335,18 +335,18 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                 if (response == null) {
                     // User pressed back button
                     Log.e(getClass().getSimpleName(), "onActivityResult: sign_in_cancelled");
-                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), "Connexion annulée");
+                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500),  "Connexion annulée");
                     return;
                 }
 
                 if (response.getError().getErrorCode() == ErrorCodes.NO_NETWORK) {
                     Log.e(getClass().getSimpleName(), "onActivityResult: no_internet_connection");
-                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), "Oops! Erreur connexion internet");
+                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content),  getColor(R.color.blue_500), "Oops! Erreur connexion internet");
                     return;
                 }
                 if (response.getError().getErrorCode() == ErrorCodes.UNKNOWN_ERROR) {
                     Log.e(getClass().getSimpleName(), "onActivityResult: unknown_error");
-                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), "Oops! Veuillez réessayer..");
+                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content),  getColor(R.color.blue_500), "Oops! Veuillez réessayer..");
                     return;
                 }
             }
@@ -392,7 +392,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     @Override
     public void updateNotificationNumber(int number) {
         BadgeDrawable badgeDrawable = bottomNavigationView.getOrCreateBadge(R.id.bottom_menu_me);
-        badgeDrawable.setBackgroundColor(getColor(R.color.red_700));
+        badgeDrawable.setBackgroundColor(getColor(R.color.blue_500));
         badgeDrawable.setNumber(number);
         badgeDrawable.setMaxCharacterCount(2);
     }
@@ -436,7 +436,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                                     new android.app.AlertDialog.Builder(this).setTitle("Ooops !").setMessage("Vérifiez votre connexion internet et réessayer plus tard.").setNeutralButton("Fermer", null).show();
                                 });
                     } else {
-                        Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), "Oops! Erreur connexion internet");
+                        Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content),  getColor(R.color.blue_500), "Oops! Erreur connexion internet");
                     }
                     break;
                 //Connected with facebook account
@@ -458,7 +458,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                                     new android.app.AlertDialog.Builder(this).setTitle("Ooops !").setMessage("Vérifiez votre connexion internet et réessayer plus tard.").setNeutralButton("Fermer", null).show();
                                 });
                     } else {
-                        Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), "Oops! Erreur connexion internet");
+                        Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500),  "Oops! Erreur connexion internet");
                     }
                     break;
                 //connected with phone number

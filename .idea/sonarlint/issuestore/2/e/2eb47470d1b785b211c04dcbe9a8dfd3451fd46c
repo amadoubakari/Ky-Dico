@@ -1,39 +1,37 @@
 
-Y	java:S110J"=This class has 10 parents which is greater than 5 authorized.(—Áà8ªé™Œ¸.
+o
+java:S1192m"MDefine a constant instead of duplicating this literal "notification" 4 times.(ÙÊé¦üÿÿÿÿ8ÙšÙÿ·.
+Y	java:S110I"=This class has 10 parents which is greater than 5 authorized.(—Áà8¯Ãİ±¹.
+]
+java:S1117ù":Rename "dialog" which hides the field declared at line 90.(å”ù¤ıÿÿÿÿ8›øšŒ¸.
 `
 java:S1128">Remove this unused import 'android.content.res.Configuration'.(ßºÊƒûÿÿÿÿ8úş†Š¸.
-Y
-java:S1874Ü";Remove this use of "updateConfiguration"; it is deprecated.(ûÀóµ8›øšŒ¸.
-V
-java:S1117"8Rename "user" which hides the field declared at line 93.(Ç­‚û8›øšŒ¸.
-Y
-java:S2387Y"7"session" is the name of a field in "AbstractActivity".(ÔÂòáÿÿÿÿÿ8ªé™Œ¸.
-`
-java:S1126ì"BReplace this if-then-else statement by a single method invocation.(¸óÖ8›øšŒ¸.
-]
-java:S1117ú":Rename "dialog" which hides the field declared at line 91.(å”ù¤ıÿÿÿÿ8›øšŒ¸.
-O
-java:S1602³",Remove useless curly braces around statement(ËÕ£Õúÿÿÿÿ8›øšŒ¸.
-h
-java:S1192®"JDefine a constant instead of duplicating this literal "glearning" 4 times.(¯—à³8ÙšÙÿ·.
-9
-java:S3626ß"Remove this redundant jump.(ûÁİ…8›øšŒ¸.
-N
-java:S1481Õ"+Remove this unused "locale" local variable.(à·Ç“øÿÿÿÿ8›øšŒ¸.
-j	java:S116_"NRename this field "TAG" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËƒòÄ8ÙšÙÿ·.
-†
-java:S1192ğ"cDefine a constant instead of duplicating this literal "material_notification_alert_dialog" 3 times.(“ëâÕøÿÿÿÿ8›øšŒ¸.
-o
-java:S1192n"MDefine a constant instead of duplicating this literal "notification" 4 times.(ÙÊé¦üÿÿÿÿ8ÙšÙÿ·.
 J
-java:S1068]"(Remove this unused "user" private field.(’Ø¾ıÿÿÿÿ8ªé™Œ¸.
-k
-java:S1192y"ODefine a constant instead of duplicating this literal "Dao Exception!" 5 times.(ÍŒO8ÙšÙÿ·.
-]
-java:S1117Ô":Rename "dialog" which hides the field declared at line 91.(€öäøÿÿÿÿ8›øšŒ¸.
+java:S1068\"(Remove this unused "user" private field.(’Ø¾ıÿÿÿÿ8¯Ãİ±¹.
 O
-java:S1602É",Remove useless curly braces around statement(ËÕ£Õúÿÿÿÿ8›øšŒ¸.
-~
-java:S1192Ù"`Define a constant instead of duplicating this literal "Oops! Erreur connexion internet" 3 times.(óñ®8›øšŒ¸.
-q
-java:S1128)"ORemove this unused import 'com.flys.dico.fragments.behavior.AlphabetFragment_'.(ôº•ùÿÿÿÿ8›øšŒ¸.
+java:S1602²",Remove useless curly braces around statement(ËÕ£Õúÿÿÿÿ8›øšŒ¸.
+h
+java:S1192­"JDefine a constant instead of duplicating this literal "glearning" 4 times.(¯—à³8ÙšÙÿ·.
+N
+java:S1481Ô"+Remove this unused "locale" local variable.(à·Ç“øÿÿÿÿ8›øšŒ¸.
+V
+java:S1117"8Rename "user" which hides the field declared at line 92.(Ç­‚û8›øšŒ¸.
+`
+java:S1126ë"BReplace this if-then-else statement by a single method invocation.(¸óÖ8›øšŒ¸.
+k
+java:S1192x"ODefine a constant instead of duplicating this literal "Dao Exception!" 5 times.(ÍŒO8ÙšÙÿ·.
+Y
+java:S2387X"7"session" is the name of a field in "AbstractActivity".(ÔÂòáÿÿÿÿÿ8¯Ãİ±¹.
+O
+java:S1602È",Remove useless curly braces around statement(ËÕ£Õúÿÿÿÿ8›øšŒ¸.
+†
+java:S1192ï"cDefine a constant instead of duplicating this literal "material_notification_alert_dialog" 3 times.(“ëâÕøÿÿÿÿ8›øšŒ¸.
+j	java:S116^"NRename this field "TAG" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËƒòÄ8ÙšÙÿ·.
+ƒ
+java:S1192Ø"`Define a constant instead of duplicating this literal "Oops! Erreur connexion internet" 3 times.(îû¯Éıÿÿÿÿ8›øšŒ¸.
+X
+java:S1117Ó":Rename "dialog" which hides the field declared at line 90.(Û›¦à8›øšŒ¸.
+Y
+java:S1874Û";Remove this use of "updateConfiguration"; it is deprecated.(ûÀóµ8›øšŒ¸.
+9
+java:S3626Ş"Remove this redundant jump.(ûÁİ…8›øšŒ¸.

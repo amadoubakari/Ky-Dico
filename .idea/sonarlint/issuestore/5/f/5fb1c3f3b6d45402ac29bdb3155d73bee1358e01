@@ -1,20 +1,20 @@
 
-Q	java:S110'"<This class has 9 parents which is greater than 5 authorized.(è—ò
+f
+java:S1874"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(³ßùŒşÿÿÿÿ
 n	java:S128…"LEnd this switch case with an unconditional break, return or throw statement.(Â™¹Ïøÿÿÿÿ8‘ËÕ…¹.
 
 java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(™Î«şÿÿÿÿ
-8	java:S131¹""Add a default case to this switch.(¿›İ”
-
-java:S1186Ú"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(½Ä³ïşÿÿÿÿ
-
-java:S1186ü"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ø´´øÿÿÿÿ
-
-java:S14507"dRemove the "mSectionsPagerAdapter" field and declare it as a local variable in the relevant methods.(İÅışÿÿÿÿ
 m
 java:S3776y"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(¨Œşÿÿÿÿ
 ˜
 java:S1186ß"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¦›Í
 i
 java:S1301¹"KReplace this "switch" statement by "if" statements to increase readability.(¿›İ”8”›Û…¹.
-f
-java:S1874"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(³ßùŒşÿÿÿÿ
+Q	java:S110'"<This class has 9 parents which is greater than 5 authorized.(è—ò
+8	java:S131¹""Add a default case to this switch.(¿›İ”
+
+java:S14507"dRemove the "mSectionsPagerAdapter" field and declare it as a local variable in the relevant methods.(İÅışÿÿÿÿ
+
+java:S1186Ú"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(½Ä³ïşÿÿÿÿ
+
+java:S1186ü"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ø´´øÿÿÿÿ

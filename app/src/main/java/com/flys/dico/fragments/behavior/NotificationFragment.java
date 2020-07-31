@@ -109,7 +109,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
         //mise des informations dans la session
         session.setNotifications(notifications);
         //Are notifications disabled on the device
-        notificationAdapter = new NotificationAdapter(activity, notifications, this);
+        notificationAdapter = new NotificationAdapter(activity, notifications, new DialogStyle(activity.getColor(R.color.blue_500),1,"fonts/OpenSans-Regular.ttf"), this);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         recyclerView.setAdapter(notificationAdapter);
     }
@@ -281,7 +281,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
                         notificationDao.delete(notifications.get(position));
                         notifications.remove(position);
                         notificationAdapter.notifyDataSetChanged();
-                        com.flys.dico.architecture.core.Utils.showErrorMessage(activity, activity.findViewById(R.id.main_content), "Supprimée !");
+                        com.flys.dico.architecture.core.Utils.showErrorMessage(activity, activity.findViewById(R.id.main_content),  activity.getColor(R.color.blue_500), "Supprimée !");
                     } catch (DaoException e) {
                         Log.e(getClass().getSimpleName(), "Deleting notification from database Processing Exception", e);
                     }

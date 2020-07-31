@@ -48,14 +48,15 @@
     </style>
 
     <style name="TitleTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
-        <item name="android:textColor">@color/grey_600</item>
-        <item name="android:fontFamily">@font/open_sans_light</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+        <item name="android:textSize">18sp</item>
     </style>
 
     <style name="textMedium" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
         <item name="android:textSize">30dp</item>
-        <item name="android:textColor">@color/grey_800</item>
-        <item name="android:fontFamily">@font/open_sans_light</item>
+        <item name="android:textColor">@color/grey_900</item>
+        <item name="android:fontFamily">@font/open_sans</item>
     </style>
 
     <style name="textMedium26" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
@@ -80,19 +81,20 @@
     </style>
 
     <style name="BodyTextStyle" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
-        <item name="android:textColor">@color/grey_700</item>
-        <item name="android:fontFamily">@font/open_sans_light</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/grey_900</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
         <item name="android:textColor">@color/black</item>
-        <item name="android:fontFamily">@font/open_sans_light</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
 
     <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
-        <item name="android:textColor">@color/red_700</item>
-        <item name="android:fontFamily">@font/open_sans_light</item>
+        <item name="android:textColor">@color/blue_500</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+
     </style>
 
     <style name="AlertDialogTheme.Center" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">

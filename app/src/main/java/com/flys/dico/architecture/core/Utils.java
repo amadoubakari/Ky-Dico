@@ -101,6 +101,23 @@ public class Utils {
     }
 
     /**
+     *
+     * @param context
+     * @param parent
+     * @param textColor
+     * @param msg
+     */
+    public static void showErrorMessage(Context context, View parent, int textColor, String msg) {
+        Snackbar.make(parent, msg, Snackbar.LENGTH_LONG)
+                .setAction("CLOSE", v -> {
+
+                })
+                .setActionTextColor(textColor)
+                .setBackgroundTint(context.getColor(R.color.grey_900))
+                .setTextColor(context.getColor(R.color.white))
+                .show();
+    }
+    /**
      * Suppression d'un fichier existant
      *
      * @param fileName

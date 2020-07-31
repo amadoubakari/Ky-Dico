@@ -37,3 +37,7 @@ n
 >app/src/main/java/com/flys/dico/dao/entities/Dictionnaire.java,1\3\13398100bd30ca5dc03bed25419e2f2dab7a6aa2
 w
 Gapp/src/main/java/com/flys/dico/architecture/core/AbstractFragment.java,7\0\70bd3bb07ebb9ebeeaadb08797a56fe005485a15
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+l
+<app/src/main/java/com/flys/dico/architecture/core/Utils.java,6\3\631f1942010e56c5389666a3a959bf7bce6fe1da
