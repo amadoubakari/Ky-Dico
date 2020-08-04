@@ -259,9 +259,9 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
                     case HOME_FRAGMENT:
                     case ABOUT_FRAGMENT:
                     case NOTIFICATION_FRAGMENT:
-                        mViewPager.setAllowedSwipeDirection(SwipeDirection.all);
+                        mViewPager.setAllowedSwipeDirection(SwipeDirection.none);
                     default:
-                        mViewPager.setAllowedSwipeDirection(SwipeDirection.all);
+                        mViewPager.setAllowedSwipeDirection(SwipeDirection.none);
                         break;
 
                 }
@@ -277,7 +277,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         navigationView = findViewById(R.id.navigation);
 
         //Nous appliquons le même style aux éléments de menu
-        Utils.applyFontStyleToMenu(this, navigationView.getMenu(), "fonts/OpenSans-Light.ttf");
+        Utils.applyFontStyleToMenu(this, navigationView.getMenu(), "fonts/open_sans_regular.ttf");
 
         navigationView.setNavigationItemSelectedListener(
                 menuItem -> {
@@ -396,7 +396,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     //Récupération du texte issu de la boite de dialogue
     @Override
     public void receivedDate(String data) {
-        Utils.shareText(this, "Dubun GUIZIGA", data + "  https://play.google.com/store/apps/details?id=com.flys.glearning", "Recommandation de l'application.");
+        Utils.shareText(this, getString(R.string.app_name), data + "  https://play.google.com/store/apps/details?id=com.flys.glearning", "Recommandation de l'application.");
     }
 
     private void showEditDialog() {

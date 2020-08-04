@@ -42,7 +42,7 @@
     },
     {
       "title": "Algorithme (Algorithm)",
-      "description": "Ensemble des règles opératoireséces-saires à l‘accomplissement d‘une tâche."
+      "description": "Ensemble des règles opératoires nécessaires à l‘accomplissement d‘une tâche."
     },
     {
       "title": "Amorce",
@@ -50,7 +50,7 @@
     },
     {
       "title": "Analyse des besoins",
-      "description": "Première étape du cycle de vie d‘un système qui comprend la défi ni-tion du problème, la suggestion de solutions et la rédaction d‘un bref rapport."
+      "description": "Première étape du cycle de vie d‘un système qui comprend la définition du problème, la suggestion de solutions et la rédaction d‘un bref rapport."
     },
     {
       "title": "Analyse fonctionnelle (Systems Analysis)",
@@ -90,7 +90,7 @@
     },
     {
       "title": "Approche directe (Direct Approach)",
-      "description": "Méthode d‘implantation d‘un système dans laquelle on abandonne d‘un coup l‘ancien système au profi t du nouveau."
+      "description": "Méthode d‘implantation d‘un système dans laquelle on abandonne d‘un coup l‘ancien système au profit du nouveau."
     },
     {
       "title": "Approche graduelle (Phased Approach)",
@@ -106,7 +106,7 @@
     },
     {
       "title": "Architecture fermée (Closed Architecture)",
-      "description": "Ordinateur conçu de façon qu‘il est diffi cile de lui adjoindre de nouveaux dispositifs."
+      "description": "Ordinateur conçu de façon qu‘il est difficile de lui adjoindre de nouveaux dispositifs."
     },
     {
       "title": "Architecture ouverte (Open Architecture)",
@@ -134,7 +134,7 @@
     },
     {
       "title": "Bande large (Broadband)",
-      "description": "Largeur de bande la plus élevée - son débit est supérieur à 1,5 Mbps et peut atteindre 30 Gbps - qui comprend les voies de transmission de micro-ondes, des infrarouges, les câbles coaxiaux et les fi bres optiques."
+      "description": "Largeur de bande la plus élevée - son débit est supérieur à 1,5 Mbps et peut atteindre 30 Gbps - qui comprend les voies de transmission de micro-ondes, des infrarouges, les câbles coaxiaux et les fibres optiques."
     },
     {
       "title": "Bande magnétique (Magnetic Tape)",
@@ -165,8 +165,8 @@
       "description": "Barre composée de plusieurs icônes (voir ce terme) disposées en ligne ou en bloc et représentant les commandes disponibles."
     },
     {
-      "title": "Barre de défi lement (Scroll Bar)",
-      "description": "Barre qui permet à l‘utilisateur de diriger le déplacement horizontal ou vertical d‘un document affi ché à l‘écran dont la taille est supérieure à celle de sa fenêtre."
+      "title": "Barre de défilement (Scroll Bar)",
+      "description": "Barre qui permet à l‘utilisateur de diriger le déplacement horizontal ou vertical d‘un document affiché à l‘écran dont la taille est supérieure à celle de sa fenêtre."
     },
     {
       "title": "Base de données (Database)",
@@ -174,7 +174,7 @@
     },
     {
       "title": "Base de données en réseau (Network Database)",
-      "description": "Base de données dont les noeuds sont organisés hiérarchiquement mais où chaque noeud fi ls peut posséder plus d‘un noeud père."
+      "description": "Base de données dont les noeuds sont organisés hiérarchiquement mais où chaque noeud fils peut posséder plus d‘un noeud père."
     },
     {
       "title": "Base de données hiérarchique (Hierarchical Database)",
@@ -214,7 +214,7 @@
     },
     {
       "title": "Bit de parité (Parity Bit)",
-      "description": "Bits additionnels et redondants permettant de vérifi er l‘exactitude des données transmises ou enregistrées."
+      "description": "Bits additionnels et redondants permettant de vérifier l‘exactitude des données transmises ou enregistrées."
     },
     {
       "title": "Bloc (Block)",
@@ -250,11 +250,439 @@
     },
     {
       "title": "Bras d‘accès (Access Arm)",
-      "description": "Dispositif porteur des têtes de lecture/ écriture d‘un lecteur de disque qui se déplace audessus de la surface du disque ou de la disquette entre le centre et la périphérie de façon à placer la ou les têtes de lecture/écriture sur les pistes choisies."
+      "description": "Dispositif porteur des têtes de lecture/écriture d‘un lecteur de disque qui se déplace audessus de la surface du disque ou de la disquette entre le centre et la périphérie de façon à placer la ou les têtes de lecture/écriture sur les pistes choisies."
     },
     {
       "title": "Bus (Bus Line)",
       "description": "Circuits qui fournissent une voie de communication entre deux unités ou plus, par exemple, entre l‘UCT, la mémoire et les contrôleurs, parmi lesquels on distingue les bus AGP, PCI et ISA."
+    },
+    {
+      "title": "Bus AGP (AGP Bus Line)",
+      "description": " Bus d‘une largeur de 32 bits et dont la capacité de transfert peut atteindre 2 Go par seconde; utilisé pour acheminer directement les informations du bus système(processeur ou mémoire) à la carte vidéo. On peut y brancher un ou deux ports AGP. Voir AGP"
+    },
+    {
+      "title": "Bus ISA (ISA Bus Line)",
+      "description": " Bus de 16 bits construit selon la norme ISA. Son débit très lent (5 Mo par seconde) la restreint aux périphériques lents comme les cartes modem ou les cartes son. Voir ISA."
+    },
+    {
+      "title": "Bus PCI (PCI Bus Line)",
+      "description": "Bus rapide de 32 bits supportant des transferts de 130 Mo par seconde. Voir PCI."
+    },
+    {
+      "title": "C",
+      "description": " Langage de programmation de haut niveau adapté à l‘écriture de logiciels système et autres applications complexes. Très répandu et aisément portable. "
+    },
+    {
+      "title": "C++",
+      "description": " Version avancée du langage C incorporant les techniques de programmation orientée objet."
+    },
+    {
+      "title": "Ca*Net II",
+      "description": " Composante canadienne du réseau Internet, en voie d‘être remplacée par le réseau Ca*Net 3."
+    },
+    {
+      "title": "Câble coaxial (Coaxial Cable)",
+      "description": "Câble de transmission à haute fréquence"
+    },
+    {
+      "title": "Câble de fibre optique (Fiber-Optic Cable)",
+      "description": "Câble de transmission résistant aux interférences électroniques, fait de filaments de verre et utilisant des impulsions lumineuses. "
+    },
+    {
+      "title": "Canal (logiciel) (Channel)",
+      "description": "Désigne un choix de sujet lors d‘une séance de bavardage dans Internet."
+    },
+    {
+      "title": "Canal (matériel) (Channel)",
+      "description": "Équivalent du bus dans un ordinateur de grande taille."
+    },
+    {
+      "title": "CAO",
+      "description": "Voir Conception assistée par ordinateur."
+    },
+    {
+      "title": "Caractère (Character)",
+      "description": " Lettre, chiffre ou symbole graphique spécial, représenté par un «octet »."
+    },
+    {
+      "title": "Carte d‘extension (Expansion Board)",
+      "description": "Carte de dispositifs optionnels habituellement ajoutée à l‘intérieur du bloc système."
+    },
+    {
+      "title": "Carte de communication ou carte réseau (Communication Board)",
+      "description": "Carte d‘extension qui sert à brancher un ordinateur à un ou plusieurs ordinateurs pour former un réseau."
+    },
+    {
+      "title": "Carte de mémoire (Memory Card)",
+      "description": "Support d‘information qui contient des puces de mémoire Flash, surtout utilisé dans les appareils multimédias (appareils photo numériques, baladeur ou téléphone cellulaire)."
+    },
+    {
+      "title": "Carte enfi chable (Plug-in Board)",
+      "description": "Voir Carte d‘extension."
+    },
+    {
+      "title": "Carte graphique ou carte vidéo (Video Board)",
+      "description": "Carte d‘extension servant de contrôleur d‘écran."
+    },
+    {
+      "title": "Carte maîtresse, carte système ou carte mère (System Board, MotherBoard)",
+      "description": "Carte de circuits imprimés sur laquelle se trouvent l‘UCT et la mémoire centrale des micro-ordinateurs."
+    },
+    {
+      "title": "Carte PC ou carte PCMCIA (PC Card)",
+      "description": " Carte d‘extension de taille réduite (format carte de crédit) servant de contrôleur sur les micro-ordinateurs portables. Il en existe différents types-carte réseau, carte modem, etc"
+    },
+    {
+      "title": "Carte PC/TV (PCITV Card)",
+      "description": "Carte d‘extension qui, en reliant l‘ordinateur au téléviseur, permet d‘affi cher à l‘écran une émission de télévision et d‘afficher sur le téléviseur l‘image multimédia du moniteur"
+    },
+    {
+      "title": "Carte son ou carte multimédia (Sound Board)",
+      "description": "Carte d‘extension servant de contrôleur pour les lecteurs de CD, les haut-parleurs ou les microphones."
+    },
+    {
+      "title": "Carte vidéo AGP (AGP Video-Card)",
+      "description": " Carte vidéo, intégrée ou enfichée à la carte maîtresse, qui supporte la norme AGP et permet un affi chage très rapide d‘images animées à haute résolution."
+    },
+    {
+      "title": "Cartouche (Tape Cartridge)",
+      "description": " Petite cassette qui contient une bande magnétique de grande capacité servant à l‘archivage ainsi qu‘à la copie de sauvegarde des données."
+    },
+    {
+      "title": "Casseur (Cracker)",
+      "description": "Pirate informatique qui accède sans autorisation à un système informatique dans un but malicieux. Voir Fouineur. "
+    },
+    {
+      "title": "CD-R (Recordable) (CD-R)",
+      "description": " Type de disque optique vierge enregistrable une fois seulement."
+    },
+    {
+      "title": "Cédéram ou CD-RW (CD-RAM)",
+      "description": "Disque optique effaçable et réutilisable."
+    },
+    {
+      "title": "Cédérom (CD-ROM)",
+      "description": "Disque compact à mémoire morte. Forme de disque optique de grande capacité sur lequel l‘information, étant gravée une fois pour toutes, peut être lue mais non modifiée."
+    },
+    {
+      "title": "Cellule (Cell)",
+      "description": "Intersection d‘un rang et d‘une colonne dans un chiffrier électronique."
+    },
+    {
+      "title": "CFAO",
+      "description": "Voir Conception et fabrica-tion assistées par ordinateur."
+    },
+    {
+      "title": "Champ (Field)",
+      "description": "Élément constitutif d‘un enregistrement d‘une base de données, formé de un ou de plusieurs caractères représentant une information."
+    },
+    {
+      "title": "Chargeur de disques ou disque amovible à plusieurs plateaux (Disk Pack, Hard-Disk Pack)",
+      "description": " Disque rigide de haute capacité, à plusieurs plateaux et sur lesquels l‘enregistrement se fait à l‘aide de plusieurs têtes de lecture/écriture (une par surface)."
+    },
+    {
+      "title": "Chiffrier électronique",
+      "description": "Voir Tableur"
+    },
+    {
+      "title": "Clavier (Keyboard)",
+      "description": " Périphérique d‘entrée ressemblant à un clavier de machine à écrire, mais qui est muni de touches additionnelles (touches de fonc-tion, de déplacement, etc.)"
+    },
+    {
+      "title": "Clé d‘accès (Access Key)",
+      "description": "Champ particulier d‘un fi chier, comme un nom ou une adresse, qui permet de trouver un enregistrement."
+    },
+    {
+      "title": "Clé primaire (Record Key)",
+      "description": "Champ d‘un fichier, comme un numéro d‘employé, qui permet d‘identifi er chaque enregistrement de façon univoque."
+    },
+    {
+      "title": "Client (Client)",
+      "description": "Nœud qui utilise le réseau pour traiter des données et utiliser les ressources des autres nœuds (serveurs). "
+    },
+    {
+      "title": "Client/serveur",
+      "description": "Voir Système client/serveur."
+    },
+    {
+      "title": "COBOL (Common Business-Oriented Language)",
+      "description": "Langage de programmation pour la gestion créé par l‘amiral Grace Hopper de la marine américaine."
+    },
+    {
+      "title": "Codage (Coding)",
+      "description": "Troisième étape du processus de programmation, lors de laquelle s‘effectue la transposition des instructions de l‘algorithme en des énoncés d‘un langage de programmation."
+    },
+    {
+      "title": "Code à barres (Bar Code)",
+      "description": "Type de code dans lequel les caractères alphanumériques sont représentés par des barres verticales."
+    },
+    {
+      "title": "Code ASCII (American Standard Code for Information Inter-change)",
+      "description": "Code binaire standard utilisé pour l‘échange d‘informations entre systèmes de traitement de données et d‘information. Il est aussi utilisé pour la représentation de ndonnées sur la plupart des micro-ordinateurs."
+    },
+    {
+      "title": "Code d‘usager (Login Name)",
+      "description": " Donnée publique identifi ant un usager d‘un ordinateur ou d‘un réseau d‘ordinateurs. "
+    },
+    {
+      "title": "Code EBCDIC (Extended Binary Coded Decimal Interchange Code)",
+      "description": "Code binaire standard de représentation des données utilisé sur les mini-ordinateurs et sur les ordinateurs centraux."
+    },
+    {
+      "title": "Code universel des produits (CUP)",
+      "description": "Code à barres standard identifiant les fabricants de biens et leurs produits."
+    },
+    {
+      "title": "Commande AIDE ou écran d‘aide (Help Command ou Help Screen)",
+      "description": "Explications sur le fonctionnement de diverses tâches présentées à l‘écran. "
+    },
+    {
+      "title": "Commande d‘annulation (Undo)",
+      "description": "Élément de programmation d‘un logiciel qui permet à l‘utilisateur de corriger une erreur en ramenant son document à l‘état précédant la ou les dernières commandes."
+    },
+    {
+      "title": "Compatibilité (Compatibility)",
+      "description": "Qualité d‘un système qui peut exécuter les programmes conçus pour un autre système."
+    },
+    {
+      "title": "Compilateur (Compiler)",
+      "description": "Programme permettant de convertir la version source d‘un programme (celle rédigée par le programmeur en langage de haut niveau) en une version objet (code machine exécu-table) équivalente. "
+    },
+    {
+      "title": "Compression et décompression des données (Data Compression and Decompression)",
+      "description": " Méthode pour améliorer les performances d‘un ordinateur en réduisant l‘espace requis pour stocker un programme ou des données. Lors de la compression, les données d‘entrée sont scrutées afi n de trouver des façons de réduire la quantité de stockage requise, tout en laissant suffi samment d‘informations de façon à pouvoir reconstruire les données originelles au moment de la décompression."
+    },
+    {
+      "title": "Compteur ordinal ou registre d‘adresse (Instruction Counter, Program Counter)",
+      "description": "Registre de l‘UCC qui garantit la continuité de l‘exécution du programme en indiquant l‘adresse en mémoire centrale de la prochaine instruction du programme en voie d‘exécution."
+    },
+    {
+      "title": "Conception assistée par ordinateur (CAO) (ComputerAided Design (CAD))",
+      "description": "Utilisation de logiciels de traitement d‘images lors de l‘élaboration du design et de l‘analyse d‘un produit à manufacturer."
+    },
+    {
+      "title": "Conception d‘un programme (Program Design)",
+      "description": " Deuxième étape de la programmation, lors de laquelle on crée l‘algorithme nécessaire à produire la séquence des instructions qui y correspond en se servant des techniques de programmation structurée comme l‘analyse progressive, les structures logiques ou le pseudo-code."
+    },
+    {
+      "title": "Conception et fabrication assis-tées par ordinateur(CFAO) (Computer Aided-Design and Manufacturing (CAD ICAM)) ",
+      "description": "Fusion de deux technologies où le logiciel de FAO utilise directement le résultat du logiciel de CAO pour produire ses directives de contrôle. Domaine d‘intérêt de l‘intelligence artificielle. "
+    },
+    {
+      "title": "Connectivité (Connectivity)",
+      "description": "Possibilités de connexions électroniques entre les ordinateurs, les sources d‘information et les utilisateurs."
+    },
+    {
+      "title": "Convivialité (Usability)",
+      "description": "Qualité d‘un système qui est facile à apprendre et à utiliser. "
+    },
+    {
+      "title": "Cookies",
+      "description": "Voir Fichier témoin."
+    },
+    {
+      "title": "Copie de sécurité (Backup)",
+      "description": "Duplicata d‘un disque ou d‘une disquette (données ou programmes)."
+    },
+    {
+      "title": "Correcteur orthographique (Spelling-Checker Program)",
+      "description": "Dictionnaire orthographique électronique utilisé avec un programme de traitement de texte pour vérifi er l‘orthographe d‘un texte."
+    },
+    {
+      "title": "Courrier électronique ou courriel (Electronic Mail ou E-Mail) ",
+      "description": "Échange de courrier par l‘intermédiaire d‘ordinateurs connectés à un réseau."
+    },
+    {
+      "title": "Coupe-feu",
+      "description": "Voir Pare-feu."
+    },
+    {
+      "title": "CUP",
+      "description": "Voir Code universel des produits."
+    },
+    {
+      "title": "Curseur (Cursor)",
+      "description": " Repère lumineux affi ché sur un écran et qui indique l‘endroit où une donnée sera entrée ou modifiée."
+    },
+    {
+      "title": "Cyberespace (Cyberspace)",
+      "description": "Ensemble des lieux virtuels (ordinateurs et réseaux d‘ordi-nateurs) auxquels l‘internaute peut accéder sur l‘autoroute électronique."
+    },
+    {
+      "title": "Cycle de traitement (Machine Cycle)",
+      "description": "Séquence d‘opérations nécessaires pour exécuter une instruction en langage machine."
+    },
+    {
+      "title": "Cycle de vie d‘un système (System Life Cycle)",
+      "description": "Cycle décomposé en six étapes correspondant aux phases de l‘analyse fonctionnelle et organique."
+    },
+    {
+      "title": "Débogage (Debugging)",
+      "description": "Recherche des bogues dans un programme en vue de le mettre au point."
+    },
+    {
+      "title": "Défilement (Scrolling)",
+      "description": "Caractéristique qui permet à un texte de défiler vers le haut ou vers le bas sur l‘écran."
+    },
+    {
+      "title": "Délit informatique (Computer Crime)",
+      "description": " Action illégale où l‘auteur du crime utilise des connaissances particulières sur la technologie informatique."
+    },
+    {
+      "title": "Delphi",
+      "description": "Version moderne du langage de programmation Pascal."
+    },
+    {
+      "title": "Démodulation (Demodulation)",
+      "description": "Procédé utilisé par un modem permettant de convertir un signal analogique (modulé) en un signal numérique"
+    },
+    {
+      "title": "Dérouleur de bande magnétique (Magnetic Tape Drive ou Magnetic Tape Unit)",
+      "description": "Périphérique utilisé pour enregistrer et récupérer de l‘information sur une bande magnétique. "
+    },
+    {
+      "title": "Diagramme de Gantt (Gantt Chart)",
+      "description": "Représentation graphique qui utilise des barres et des lignes pour indiquer l‘échéancier d‘une série de tâches."
+    },
+    {
+      "title": "Dictionnaire de synonymes (Thesaurus Program)",
+      "description": "Programme utilisé entre autres avec un traitement de texte et permettant de trouver les synonymes ou les antonymes de certains mots."
+    },
+    {
+      "title": "Dictionnaire des données (Data Dictionary)",
+      "description": "Description de la structure des données d‘une base de données."
+    },
+    {
+      "title": "Disque dur (Hard Disk ou Hard Disk Drive)",
+      "description": " Unité de disque rigide scellée contenant un ou plusieurs disques de métal tournant à haute vitesse et incluant les mécanismes de lecture/écriture."
+    },
+    {
+      "title": "Disque optique (Optical Disk)",
+      "description": "Support physique de l‘information de type CD ou DVD pouvant contenir plus de 4,7 giga-octets de données, et sur lequel l‘écriture et la lecture se font grâce à des rayons laser."
+    },
+    {
+      "title": "Disque rigide amovible (Removable Hard Disk)",
+      "description": "Disque rigide fonctionnant selon le même principe qu‘une disquette, mais comportant une capacité de stockage une centaine de fois plus grande."
+    },
+    {
+      "title": "Disquette (Diskette)",
+      "description": "Support magnétique d‘informations fait d‘un morceau circulaire et plat de plastique souple qui tourne à l‘intérieur d‘une jaquette de protection. "
+    },
+    {
+      "title": "Document de base (Source Document)",
+      "description": "Version originelle d‘un document avant qu‘un quelconque traitement lui soit appliqué."
+    },
+    {
+      "title": "Document HTML (HTML Document)",
+      "description": "Document contenant une foule de codes spécifi ant les caractéristiques d‘affi chage et des liens hypertextes vers d‘autres documents."
+    },
+    {
+      "title": "Documentation du programme (Program Documentation)",
+      "description": "Cinquième étape du processus de programmation consistant à rédiger une description du programme et de son utilisation. (La documentation devrait être rédigée tout au long du processu nde programmation.)"
+    },
+    {
+      "title": "Donnée (Data)",
+      "description": "Information brute entrée dans un système informatique pour être traitée."
+    },
+    {
+      "title": "Dorsales (Backbone)",
+      "description": "Nom donné aux lignes de communication à très haut débit qui relient les principaux nœuds géographiques d‘Internet."
+    },
+    {
+      "title": "Dossier ou répertoire (Folder)",
+      "description": " Emplacement d‘un disque ou d‘une disquette qui regroupe sous un nom commun un ou plusieurs fi chiers et, éventuellement, d‘autres dossiers."
+    },
+    {
+      "title": "Durée d‘exécution (Execution Time)",
+      "description": "Délai nécessaire à la recherche des données, à l‘exécution d‘une instruction et au rangement des résultats en mémoire centrale."
+    },
+    {
+      "title": "DVD (Digital Versatile Disk)",
+      "description": "Disque optique de format compact de très grande capacité utilisable sur les appareils informatiques comme sur les appareils audiovisuels."
+    },
+    {
+      "title": "Écran (Screen)",
+      "description": "Voir Moniteur."
+    },
+    {
+      "title": "Écran tactile (Touch Screen)",
+      "description": "Surface d‘un moniteur qui permet l‘entrée de commandes par la simple pression du doigt."
+    },
+    {
+      "title": "Écrasement des têtes de lecture/écriture (Head Crash)",
+      "description": "Désastre qui peut survenir sur un disque rigide lorsque la surface de la tête de lecture/ écriture entre en contact avec la surface du disque magnétique. Un tel incident cause la perte d‘une partie ou de la totalité des données se trouvant sur le disque."
+    },
+    {
+      "title": "Éditeur de pages Web (Web Authoring Program)",
+      "description": "Logiciel d‘application qui permet de créer et de modifier des pages Web en incluant les directives HTML."
+    },
+    {
+      "title": "Édition électronique",
+      "description": "Voir Publication assistée par ordinateur"
+    },
+    {
+      "title": "Encryptage (Encryption)",
+      "description": "Procédé qui modifie le texte d‘un message de façon que seul le destinataire peut le décrypter."
+    },
+    {
+      "title": "Enregistrement (Record)",
+      "description": "Ensemble de champs logiquement reliés."
+    },
+    {
+      "title": "Enregistreur de cartouche (Digital Audiotape Drive)",
+      "description": "Appareil qui permet de faire des copies de sécurité sur des rubans magnétiques (cassettes ou cartouches) de 5 cm ou 7 cm (2 po ou 3 po) pouvant stocker plus de 4 giga-octets."
+    },
+    {
+      "title": "Entrée directe (Direct Entry)",
+      "description": "Méthode d‘entrée mécanique des données, plus fiable et plus rapide que l‘utilisation d‘un clavier."
+    },
+    {
+      "title": "Entrée manuelle (Keyboard Entry)",
+      "description": "Entrée des données à l‘aide d‘un clavier."
+    },
+    {
+      "title": "Entretien d‘un système (Systems Maintenance)",
+      "description": "Sixième étape du cycle de vie d‘un système qui consiste en son évaluation continue."
+    },
+    {
+      "title": "Entretien du programme (Program Maintenance)",
+      "description": " Dernière étape du processus de programmation qui permet de s‘assurer que le programme demeure efficace et remplit ses objectifs"
+    },
+    {
+      "title": "Environnement virtuel",
+      "description": "Voir Réalité virtuelle."
+    },
+    {
+      "title": "Ergonomie (Ergonomics)",
+      "description": "Étude des conditions de travail et des relations entre l‘homme et la machine."
+    },
+    {
+      "title": "Erreur de logique (Logic Error)",
+      "description": "Erreur dans un programme qui produit des résultats aberrants"
+    },
+    {
+      "title": "Erreur de syntaxe (Syntax Error)",
+      "description": " Erreur détectée lors de la compilation ou de l‘interprétation d‘un programme et résultant de la violation des règles syntaxiques du langage de programmation utilisé."
+    },
+    {
+      "title": "Éthique (Ethics)",
+      "description": "Normes de conduite morale."
+    },
+    {
+      "title": "Extranet (Extranet)",
+      "description": "Réseau privé basé sur la technologie d‘Internet permettant de relier des entreprises ayant des activités communes ou complémentaires."
+    },
+    {
+      "title": "Fabrication assistée par ordinateur (FAO) (ComputerAided Manufacturing)",
+      "description": "Ensemble des techniques qui permettent l‘automatisation des différentes phases de fabrication d‘un objet manufacturé, y compris les robots et les machinesoutils."
+    },
+    {
+      "title": "Fax-modem (Fax-modem)",
+      "description": "Carte d‘extension ou boîtier externe qui permet à l‘utilisateur de recevoir et d‘envoyer des télécopies au moyen de son ordinateur et d‘une ligne de communication."
+    },
+    {
+      "title": "",
+      "description": ""
     }
   ]
 }

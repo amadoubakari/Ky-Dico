@@ -109,7 +109,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
         //mise des informations dans la session
         session.setNotifications(notifications);
         //Are notifications disabled on the device
-        notificationAdapter = new NotificationAdapter(activity, notifications, new DialogStyle(activity.getColor(R.color.blue_500),1,"fonts/OpenSans-Regular.ttf"), this);
+        notificationAdapter = new NotificationAdapter(activity, notifications, new DialogStyle(activity.getColor(R.color.blue_500),"fonts/open_sans_regular.ttf"), this);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         recyclerView.setAdapter(notificationAdapter);
     }
@@ -238,7 +238,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
     @Override
     public void onButtonClickListener(int position) {
         //Toast.makeText(activity, "position : "+notifications.get(position).getTitle(), Toast.LENGTH_LONG).show();
-        configDialogFragment = NotificationDetailsDialogFragment.newInstance(activity, notifications.get(position), new DialogStyle(activity.getColor(R.color.black)));
+        configDialogFragment = NotificationDetailsDialogFragment.newInstance(activity, notifications.get(position), new DialogStyle(activity.getColor(R.color.black),"fonts/open_sans_regular.ttf"));
         configDialogFragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.AppTheme);
         configDialogFragment.show(getActivity().getSupportFragmentManager(), "fragment_edit_name"+position);
     }
@@ -274,7 +274,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
         popup.setOnMenuItemClickListener(menuItem -> {
             switch (menuItem.getItemId()) {
                 case R.id.popmenu_share:
-                    Utils.shareText(context, "Dubun Guiziga", HtmlCompat.fromHtml(notifications.get(position).getContent().concat("</br>").concat("https://play.google.com/store/apps/details?id=com.flys.glearning"), HtmlCompat.FROM_HTML_MODE_LEGACY).toString(), "ƁIMUTOHO MIPAL");
+                    Utils.shareText(context, getString(R.string.app_name), HtmlCompat.fromHtml(notifications.get(position).getContent().concat("</br>").concat("https://play.google.com/store/apps/details?id=com.flys.glearning"), HtmlCompat.FROM_HTML_MODE_LEGACY).toString(), "ƁIMUTOHO MIPAL");
                     break;
                 case R.id.popmenu_delete:
                     try {

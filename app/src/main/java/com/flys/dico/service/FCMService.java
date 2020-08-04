@@ -12,8 +12,6 @@ import android.os.Bundle;
 import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
-import androidx.work.OneTimeWorkRequest;
-import androidx.work.WorkManager;
 
 import com.flys.dico.R;
 import com.flys.dico.activity.MainActivity_;
@@ -102,11 +100,11 @@ public class FCMService extends FirebaseMessagingService {
      * Schedule async work using WorkManager.
      */
     private void scheduleJob() {
-        // [START dispatch_job]
+       /* // [START dispatch_job]
         OneTimeWorkRequest work = new OneTimeWorkRequest.Builder(MyWorker.class)
                 .build();
         WorkManager.getInstance(DApplicationContext.getContext()).beginWith(work).enqueue();
-        // [END dispatch_job]
+        // [END dispatch_job]*/
     }
 
     /**
