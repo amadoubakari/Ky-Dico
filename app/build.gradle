@@ -23,15 +23,24 @@ apply plugin: 'com.google.firebase.crashlytics'
 apply plugin: "org.sonarqube"
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion '28.0.3'
+    signingConfigs {
+        release {
+            storeFile file('C:\\Users\\AMADOU\\Documents\\Google Exported Key\\Dictionnaire Informatique Keys\\dictionnaire-informatique-key.jks')
+            storePassword 'Mambolion'
+            keyAlias 'dictionnaire-informatique-alias'
+            keyPassword 'mambolion'
+        }
+    }
+    compileSdkVersion 29
+    buildToolsVersion '29.0.0'
 
     defaultConfig {
         minSdkVersion 24
         applicationId "com.flys.dico"
-        targetSdkVersion 28
-        versionCode 1
-        versionName "0.0.1"
+        targetSdkVersion 29
+        versionCode 5
+        versionName "1.0.0"
+        signingConfig signingConfigs.release
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [
@@ -125,7 +134,7 @@ dependencies {
     // Find the latest Twitter SDK releases here: https://goo.gl/E5wZvQ
     // https://mvnrepository.com/artifact/com.twitter.sdk.android/twitter-core
     implementation group: 'com.twitter.sdk.android', name: 'twitter-core', version: '3.3.0'
-    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.android.support:cardview-v7:29.0.0'
     api group: 'com.j256.ormlite', name: 'ormlite-android', version: '5.1'
 
     implementation 'com.google.firebase:firebase-messaging-directboot:20.2.4'

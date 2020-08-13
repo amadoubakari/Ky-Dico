@@ -33,6 +33,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import rx.Observable;
+import rx.Scheduler;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
 
 @EFragment(R.layout.fragment_home_layout)
 @OptionsMenu(R.menu.menu_home)
@@ -47,6 +53,10 @@ public class HomeFragment extends AbstractFragment {
     protected SearchView searchView;
     //Dictionnary data
     private Dictionnaire dictionnaire;
+    //Asynchronic job
+    private Observable observable;
+    //Json mapper to object
+    ObjectMapper mapper;
 
     @Override
     public CoreState saveFragment() {
@@ -61,14 +71,23 @@ public class HomeFragment extends AbstractFragment {
     @Override
     protected void initFragment(CoreState previousState) {
         ((AppCompatActivity) mainActivity).getSupportActionBar().show();
-        ObjectMapper mapper = new ObjectMapper();
-        words = new ArrayList<>();
+        mapper = new ObjectMapper();
+        //words = new ArrayList<>();
         try {
-            dictionnaire = mapper.readValue(activity.getAssets().open("dictionnaire.json"), Dictionnaire.class);
-            words.addAll(dictionnaire.getWords());
+            //Recuperation à partir du la session
+            words = session.getWords();
+            //if session is empty
+            if (words == null || words.isEmpty()) {
+                //Read data from json file
+                words = mapper.readValue(activity.getAssets().open("dictionnaire.json"), Dictionnaire.class).getWords();
+                session.setWords(words);
+            }
+            //words.addAll(dictionnaire.getWords());
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //
+
 
     }
 
@@ -126,10 +145,10 @@ public class HomeFragment extends AbstractFragment {
             @Override
             public boolean onQueryTextChange(String newText) {
                 //whether we have one caracter at least
-                if (searchView.getQuery().length() > 0) {
+                if (searchView.getQuery().length() > 2) {
                     wordAdapter.setFilter(filter(words, newText));
                 } else {
-                    wordAdapter.setFilter(filter(words, ""));
+                    wordAdapter.setFilter(words);
                 }
                 return true;
             }
@@ -163,5 +182,26 @@ public class HomeFragment extends AbstractFragment {
         return words.stream().filter(notification -> notification.getTitle().toLowerCase().contains(query.toLowerCase()) ||
                 notification.getDescription().toLowerCase().contains(query.toLowerCase())).collect(Collectors.toList());
 
+    }
+
+    private Observable<Void> loadData() {
+        return Observable.create(new Observable.OnSubscribe<Void>() {
+            @Override
+            public void call(Subscriber<? super Void> subscriber) {
+                try {
+                    //Recuperation à partir du la session
+                    words = session.getWords();
+                    //if session is empty
+                    if (words == null || words.isEmpty()) {
+                        //Read data from json file
+                        words = mapper.readValue(activity.getAssets().open("dictionnaire.json"), Dictionnaire.class).getWords();
+                        session.setWords(words);
+                    }
+                    //words.addAll(dictionnaire.getWords());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 }

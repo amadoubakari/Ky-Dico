@@ -2,6 +2,7 @@ package com.flys.dico.architecture.custom;
 
 import com.flys.dico.architecture.core.AbstractSession;
 import com.flys.dico.dao.entities.User;
+import com.flys.dico.fragments.adapters.Word;
 import com.flys.notification.domain.Notification;
 
 import java.util.ArrayList;
@@ -18,6 +19,8 @@ public class Session extends AbstractSession {
     private static List<Notification> notifications = new ArrayList<>();
     //check if the application is subscribe to receive notification from channel
     private boolean subscribed;
+    //Dictionnary data save in the session
+    private List<Word> words;
 
     public User getUser() {
         return user;
@@ -49,5 +52,13 @@ public class Session extends AbstractSession {
 
     public void setSubscribed(boolean subscribed) {
         this.subscribed = subscribed;
+    }
+
+    public List<Word> getWords() {
+        return words;
+    }
+
+    public void setWords(List<Word> words) {
+        this.words = words;
     }
 }

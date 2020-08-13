@@ -1,5 +1,5 @@
 {
-  "databaseName": "glearning.db",
+  "databaseName": "dico.db",
   "databaseVersion": 2,
   "entities": [
     "com.flys.notification.domain.Notification",
