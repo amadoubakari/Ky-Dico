@@ -27,6 +27,15 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.Holder> {
     private Context context;
     private WordOnclickListener onclickListener;
 
+    public WordAdapter(Context context) {
+        this.context = context;
+    }
+
+    public WordAdapter(List<Word> words, Context context) {
+        this.words = words;
+        this.context = context;
+    }
+
     public WordAdapter(Context context, List<Word> words, WordOnclickListener onclickListener) {
         this.words = words;
         this.context = context;
@@ -51,7 +60,7 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.Holder> {
 
     @Override
     public int getItemCount() {
-        return words.size();
+        return words!=null?  words.size():0;
     }
 
     class Holder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -69,7 +78,7 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.Holder> {
 
         @Override
         public void onClick(View v) {
-            wordOnclickListener.onWordClickListener(v, getAdapterPosition());
+            //wordOnclickListener.onWordClickListener(v, getAdapterPosition());
         }
     }
 
@@ -87,7 +96,21 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.Holder> {
         notifyDataSetChanged();
     }
 
+    public void reload(){
+        notifyDataSetChanged();
+    }
+
     public void refreshAdapter() {
+        notifyDataSetChanged();
+    }
+
+    public void addWords(List<Word> words1) {
+        this.words.addAll(words1) ;
+        notifyDataSetChanged();
+    }
+
+    public void removeAllWords() {
+        words.clear();
         notifyDataSetChanged();
     }
 }

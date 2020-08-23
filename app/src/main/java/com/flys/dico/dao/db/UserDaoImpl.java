@@ -12,8 +12,6 @@ import com.j256.ormlite.dao.Dao;
 import org.androidannotations.annotations.EBean;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 @EBean(scope = EBean.Scope.Singleton)
 public class UserDaoImpl extends GenericDaoImpl<User, Long> implements UserDao {

@@ -1,6 +1,19 @@
 package com.flys.dico.dao.service;
 
 import android.util.Log;
+import android.view.View;
+
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.flys.dico.architecture.custom.DApplicationContext;
+import com.flys.dico.dao.db.NotificationDao;
+import com.flys.dico.dao.db.NotificationDaoImpl;
+import com.flys.dico.dao.entities.Dictionnaire;
+import com.flys.dico.fragments.adapters.Word;
+import com.flys.dico.fragments.adapters.WordAdapter;
+import com.flys.generictools.dao.daoException.DaoException;
+import com.flys.notification.domain.Notification;
 
 import org.androidannotations.annotations.AfterInject;
 import org.androidannotations.annotations.Bean;
@@ -11,10 +24,14 @@ import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import rx.Observable;
+import rx.Subscriber;
 
 @EBean(scope = EBean.Scope.Singleton)
 public class Dao extends AbstractDao implements IDao {
@@ -29,6 +46,11 @@ public class Dao extends AbstractDao implements IDao {
     private RestTemplate restTemplate;
     // factory du RestTemplate
     private SimpleClientHttpRequestFactory factory;
+    // mappeur jSON
+    protected ObjectMapper jsonMapper;
+    //
+    @Bean(NotificationDaoImpl.class)
+    protected NotificationDao notificationDao;
 
     @AfterInject
     public void afterInject() {
@@ -41,6 +63,8 @@ public class Dao extends AbstractDao implements IDao {
         restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
         // on fixe le restTemplate du client web
         webClient.setRestTemplate(restTemplate);
+        // jsonMapper
+        jsonMapper = new ObjectMapper();
     }
 
     @Override
@@ -89,12 +113,68 @@ public class Dao extends AbstractDao implements IDao {
         return getResponse(() -> webClient.downloadFacebookImage(url, type));
     }
 
-    // méthodes privées -------------------------------------------------
-    private void log(String message) {
-        if (isDebugEnabled) {
-            Log.d(className, message);
+    @Override
+    public Observable<List<Word>> loadDictionnaryDataFromAssets() {
+        //Load dictionary data from assets dictory
+        return Observable.create(subscriber -> {
+            if (!subscriber.isUnsubscribed()) {
+                try {
+                    List<Word> words = jsonMapper.readValue(DApplicationContext.getContext().getAssets().open("dictionnaire.json"), Dictionnaire.class).getWords();
+                    //and observable that are going to emit data
+                    emitData(subscriber, words, 50);
+                } catch (IOException e) {
+                    subscriber.onError(e);
+                }
+            }
+        });
+    }
+
+    /**
+     * It emit data from define limit element on words
+     *
+     * @param subscriber
+     * @param words
+     * @param limit
+     */
+    private void emitData(Subscriber<? super List<Word>> subscriber, List<Word> words, long limit) {
+        //Is empty we don't have treatment to do
+        if (words.isEmpty()) {
+            //If there not element in our list we notify that task is finish
+            subscriber.onCompleted();
+        } else {
+            //Emission of limit element
+            subscriber.onNext(words.stream().limit(limit).collect(Collectors.toList()));
+            //skip limit element
+            emitData(subscriber, words.stream().skip(limit).collect(Collectors.toList()), limit);
         }
     }
 
-    // todo : implémentation IDao
+    @Override
+    public Observable<Void> reloadData(List<Word> words, WordAdapter adapter, RecyclerView recyclerView) {
+        return Observable.create(subscriber -> {
+            adapter.addWords(words);
+            recyclerView.setVisibility(View.VISIBLE);
+        });
+    }
+
+    @Override
+    public Observable<List<Notification>> loadNotificationsFromDatabase() {
+        return Observable.create(subscriber -> {
+            try {
+                List<Notification> notifications = notificationDao.getAll();
+                if (notifications != null) {
+                    subscriber.onNext(notifications.stream()
+                            .distinct()
+                            .sorted(Comparator.comparing(Notification::getDate).reversed())
+                            .collect(Collectors.toList()));
+                } else {
+                    subscriber.onNext(new ArrayList<>());
+                }
+                subscriber.onCompleted();
+            } catch (DaoException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
 }
