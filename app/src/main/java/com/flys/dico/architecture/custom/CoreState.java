@@ -9,7 +9,6 @@ import com.flys.dico.fragments.state.HomeFragmentState;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY)
-// todo : ajouter ici les sous-classes de [CoreState]
 @JsonSubTypes({
         @JsonSubTypes.Type(value = HomeFragmentState.class),
         @JsonSubTypes.Type(value = AlphabetFragmentState.class)}

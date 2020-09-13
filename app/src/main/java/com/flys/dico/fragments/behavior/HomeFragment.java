@@ -1,26 +1,20 @@
 package com.flys.dico.fragments.behavior;
 
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.flys.dico.R;
 import com.flys.dico.architecture.core.AbstractFragment;
+import com.flys.dico.architecture.core.Utils;
 import com.flys.dico.architecture.custom.CoreState;
-import com.flys.dico.dao.entities.Dictionnaire;
 import com.flys.dico.fragments.adapters.Word;
 import com.flys.dico.fragments.adapters.WordAdapter;
-import com.flys.generictools.tools.Utils;
+import com.flys.dico.utils.RxSearchObservable;
 
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.OptionsItem;
@@ -28,15 +22,14 @@ import org.androidannotations.annotations.OptionsMenu;
 import org.androidannotations.annotations.OptionsMenuItem;
 import org.androidannotations.annotations.ViewById;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import rx.Observable;
-import rx.Scheduler;
-import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 
@@ -49,14 +42,9 @@ public class HomeFragment extends AbstractFragment {
     @OptionsMenuItem(R.id.search)
     protected MenuItem menuItem;
     private WordAdapter wordAdapter;
-    private List<Word> words;
-    protected SearchView searchView;
-    //Dictionnary data
-    private Dictionnaire dictionnaire;
-    //Asynchronic job
-    private Observable observable;
-    //Json mapper to object
-    ObjectMapper mapper;
+    private static List<Word> words;
+    private static SearchView searchView;
+    private final String TAG = "HomeFragment";
 
     @Override
     public CoreState saveFragment() {
@@ -71,44 +59,25 @@ public class HomeFragment extends AbstractFragment {
     @Override
     protected void initFragment(CoreState previousState) {
         ((AppCompatActivity) mainActivity).getSupportActionBar().show();
-        mapper = new ObjectMapper();
-        //words = new ArrayList<>();
-        try {
-            //Recuperation à partir du la session
-            words = session.getWords();
-            //if session is empty
-            if (words == null || words.isEmpty()) {
-                //Read data from json file
-                words = mapper.readValue(activity.getAssets().open("dictionnaire.json"), Dictionnaire.class).getWords();
-                session.setWords(words);
-            }
-            //words.addAll(dictionnaire.getWords());
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (previousState == null) {
+            reloadData();
         }
-        //
-
-
     }
 
     @Override
     protected void initView(CoreState previousState) {
-        wordAdapter = new WordAdapter(activity, words, (v, position) -> {
-            Toast.makeText(activity, "Clicked " + position, Toast.LENGTH_SHORT).show();
-        });
-        recyclerView.setLayoutManager(new LinearLayoutManager(activity));
-        recyclerView.setAdapter(wordAdapter);
 
     }
 
     @Override
     protected void updateOnSubmit(CoreState previousState) {
-
+        if (recyclerView.getAdapter() == null) {
+            reloadData();
+        }
     }
 
     @Override
     protected void updateOnRestore(CoreState previousState) {
-
     }
 
     @Override
@@ -126,62 +95,64 @@ public class HomeFragment extends AbstractFragment {
         return false;
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
     @OptionsItem(R.id.search)
     protected void doSearch() {
-        // on récupère le client choisi
         searchView = (SearchView) menuItem.getActionView();
-        changeSearchTextColor(searchView);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        Utils.changeSearchTextColor(activity, searchView);
+        initSearchFeatureNew(words);
+    }
 
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                if (!searchView.isIconified()) {
-                    searchView.setIconified(true);
-                }
-                menuItem.collapseActionView();
-                return false;
-            }
+    /**
+     * @param wordss
+     */
+    private void initSearchFeatureNew(final List<Word> wordss) {
+        RxSearchObservable.fromSearchView(searchView)
+                .debounce(1500, TimeUnit.MILLISECONDS)
+                .distinctUntilChanged()
+                .switchMap((Func1<String, Observable<List<Word>>>) s -> filterWithObservable(wordss, s))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(wordssss -> {
+                    wordAdapter = new WordAdapter(activity, wordssss, (v, position) -> {
+                    });
+                    recyclerView.setLayoutManager(new LinearLayoutManager(activity));
+                    recyclerView.setAdapter(wordAdapter);
+                    recyclerView.setVisibility(View.VISIBLE);
+                });
+    }
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                //whether we have one caracter at least
-                if (searchView.getQuery().length() > 2) {
-                    wordAdapter.setFilter(filter(words, newText));
-                } else {
-                    wordAdapter.setFilter(words);
-                }
-                return true;
-            }
+    /**
+     * @param wordList base list of search
+     * @param query    typed text to search to the dictionary
+     * @return already searched word list
+     */
+    private Observable<List<Word>> filterWithObservable(List<Word> wordList, String query) {
+        return Observable.create(subscriber -> {
+            subscriber.onNext(wordList.stream().filter(notification -> notification.getTitle().toLowerCase().contains(query.toLowerCase()) ||
+                    notification.getDescription().toLowerCase().contains(query.toLowerCase())).collect(Collectors.toList()));
+            subscriber.onCompleted();
         });
     }
 
     /**
-     * @param view
+     * Reload data from the dictionary json file
      */
-    private void changeSearchTextColor(View view) {
-        if (view != null) {
-            if (view instanceof TextView) {
-                ((TextView) view).setTextColor(ContextCompat.getColor(activity, R.color.black));
-                ((TextView) view).setTextSize(14);
-                view.setBackgroundColor(ContextCompat.getColor(activity, R.color.white));
-            } else if (view instanceof ViewGroup) {
-                ViewGroup viewGroup = (ViewGroup) view;
-                for (int i = 0; i < viewGroup.getChildCount(); i++) {
-                    changeSearchTextColor(viewGroup.getChildAt(i));
-                }
-            }
-        }
-    }
-
-    /**
-     * @param words
-     * @param query
-     * @return
-     */
-    private List<Word> filter(List<Word> words, String query) {
-        return words.stream().filter(notification -> notification.getTitle().toLowerCase().contains(query.toLowerCase()) ||
-                notification.getDescription().toLowerCase().contains(query.toLowerCase())).collect(Collectors.toList());
-
+    private void reloadData() {
+        words = new ArrayList<>();
+        wordAdapter = new WordAdapter(words, activity);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(wordAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(activity));
+        beginRunningTasks(1);
+        executeInBackground(mainActivity.loadDictionnaryDataFromAssets().delay(50, TimeUnit.MILLISECONDS), wordList -> {
+            wordAdapter.addWords(wordList);
+            recyclerView.setVisibility(View.VISIBLE);
+        });
     }
 
     private Observable<Void> loadData() {

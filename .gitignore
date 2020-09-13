@@ -139,3 +139,6 @@ fabric.properties
 
 #custom files
 app/google-services.json
+app/release/*
+app/release/app-release.aab
+java_pid36908.hprof

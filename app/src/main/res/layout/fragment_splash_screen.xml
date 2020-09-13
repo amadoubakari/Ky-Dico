@@ -45,7 +45,7 @@
         android:layout_marginBottom="278dp"
         android:fontFamily="@font/open_sans_light"
         android:gravity="center"
-        android:text="Version 1.0.0"
+        android:text="@string/app_version_msg"
         android:textColor="@color/blue_500"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"

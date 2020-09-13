@@ -22,7 +22,7 @@ import org.androidannotations.annotations.ViewById;
 @EFragment(R.layout.fragment_settings_layout)
 @OptionsMenu(R.menu.menu_home)
 public class SettingsFragment extends AbstractFragment implements MaterialNotificationDialog.NotificationButtonOnclickListeneer {
-    private static final int SCAD_SETTINGS_NOTIFICATION_REQUEST_CODE = 32;
+    private static final int KYOSSI_SETTINGS_NOTIFICATION_REQUEST_CODE = 32;
     @ViewById(R.id.notification_switch)
     protected Switch enableNotification;
     //
@@ -32,11 +32,11 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
     public void settings() {
         String msg="";
         if (enableNotification.isChecked()) {
-            msg="Activer les notifications pour recevoir des nouveautés !";
+            msg=getString(R.string.enable_notifications_to_received_news);
         } else {
-            msg="Si vous désactivez les notifications, vous risquerez ne plus recevoir des nouveautés !";
+            msg=getString(R.string.disable_notifications_to_dont_received_news);
         }
-        notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), msg, "OUI", "NON", activity.getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_Light_Dialog_Alert), this);
+        notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), msg, getString(R.string.button_yes_msg), getString(R.string.button_no_msg), activity.getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_Light_Dialog_Alert), this);
         notificationDialog.show(getActivity().getSupportFragmentManager(), "settings_notification_dialog_tag");
     }
 
@@ -87,7 +87,7 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == SCAD_SETTINGS_NOTIFICATION_REQUEST_CODE) {
+        if (requestCode == KYOSSI_SETTINGS_NOTIFICATION_REQUEST_CODE) {
             //Checked
             if (NotificationManagerCompat.from(activity).areNotificationsEnabled()) {
                 enableNotification.setChecked(true);
@@ -101,7 +101,7 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
     public void okButtonAction(DialogInterface dialogInterface, int i) {
         Intent settingsIntent = new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
                 .putExtra(Settings.EXTRA_APP_PACKAGE, getActivity().getPackageName());
-        startActivityForResult(settingsIntent, SCAD_SETTINGS_NOTIFICATION_REQUEST_CODE);
+        startActivityForResult(settingsIntent, KYOSSI_SETTINGS_NOTIFICATION_REQUEST_CODE);
     }
 
     @Override
