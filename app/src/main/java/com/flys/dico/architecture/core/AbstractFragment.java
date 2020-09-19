@@ -2,29 +2,27 @@ package com.flys.dico.architecture.core;
 
 import android.app.Activity;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import androidx.fragment.app.Fragment;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.flys.dico.architecture.custom.CoreState;
 import com.flys.dico.architecture.custom.IMainActivity;
 import com.flys.dico.architecture.custom.Session;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.ArrayList;
+import java.util.List;
 
 import rx.Observable;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public abstract class AbstractFragment extends Fragment {
 
@@ -236,7 +234,9 @@ public abstract class AbstractFragment extends Fragment {
             // id du menu
             int id = state.getMenuItemId();
             // initialisation état
-            menuOptionsStates[i] = new MenuItemState(id, menu.findItem(id).isVisible());
+            if(menu.findItem(id)!=null){
+                menuOptionsStates[i] = new MenuItemState(id, menu.findItem(id).isVisible());
+            }
         }
         // résultat
         return menuOptionsStates;
@@ -253,7 +253,10 @@ public abstract class AbstractFragment extends Fragment {
     protected void setMenuOptionsStates(MenuItemState[] menuItemStates) {
         // on met à jour certaines options du menu
         for (MenuItemState menuItemState : menuItemStates) {
-            menu.findItem(menuItemState.getMenuItemId()).setVisible(menuItemState.isVisible());
+            if(menuItemState!=null){
+                menu.findItem(menuItemState.getMenuItemId()).setVisible(menuItemState.isVisible());
+            }
+
         }
     }
 
@@ -387,7 +390,7 @@ public abstract class AbstractFragment extends Fragment {
         }
     }
 
-    @Override
+   /* @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         // parent
         super.setUserVisibleHint(isVisibleToUser);
@@ -400,6 +403,20 @@ public abstract class AbstractFragment extends Fragment {
         }
         // mémoire
         this.isVisibleToUser = isVisibleToUser;
+    }*/
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // sauvegarde ?
+        if (this.isVisibleToUser) {
+            // le fragment va être caché - on le sauvegarde
+            if (!saveFragmentDone) {
+                saveState();
+            }
+        }
+        // mémoire
+        this.isVisibleToUser = true;
     }
 
     private void saveState() {

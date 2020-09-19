@@ -5,6 +5,10 @@ import android.content.ContextWrapper;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 import com.flys.dico.R;
 import com.google.android.material.snackbar.Snackbar;
@@ -133,4 +137,25 @@ public class Utils {
         File file = new File(directory, fileName);
         return file.exists();
     }
+
+    /**
+     *
+     * @param context
+     * @param view
+     */
+    public static void changeSearchTextColor(Context context, View view) {
+        if (view != null) {
+            if (view instanceof TextView) {
+                ((TextView) view).setTextColor(ContextCompat.getColor(context, R.color.black));
+                ((TextView) view).setTextSize(14);
+                view.setBackgroundColor(ContextCompat.getColor(context, R.color.white));
+            } else if (view instanceof ViewGroup) {
+                ViewGroup viewGroup = (ViewGroup) view;
+                for (int i = 0; i < viewGroup.getChildCount(); i++) {
+                    changeSearchTextColor(context, viewGroup.getChildAt(i));
+                }
+            }
+        }
+    }
+
 }

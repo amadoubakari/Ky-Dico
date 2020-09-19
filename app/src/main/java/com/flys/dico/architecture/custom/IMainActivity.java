@@ -23,7 +23,7 @@ public interface IMainActivity extends IDao {
     // constantes de l'application (à modifier) -------------------------------------
 
     // mode debug
-    boolean IS_DEBUG_ENABLED = true;
+    boolean IS_DEBUG_ENABLED = false;
 
     // délai maximal d'attente de la réponse du serveur
     int TIMEOUT = 10000;
@@ -37,14 +37,14 @@ public interface IMainActivity extends IDao {
     // adjacence des fragments
     int OFF_SCREEN_PAGE_LIMIT = 1;
 
-    // barre d'onglets
+    //barre d'onglets
     boolean ARE_TABS_NEEDED = false;
 
-    // image d'attente
-    boolean IS_WAITING_ICON_NEEDED = false;
+    //image d'attente
+    boolean IS_WAITING_ICON_NEEDED = true;
 
-    // nombre de fragments de l'application
-    int FRAGMENTS_COUNT = 52;
+    //nombre de fragments de l'application
+    int FRAGMENTS_COUNT = 6;
     //Fragment number
     int SPLASHSCREEN_FRAGMENT = 0;
     int HOME_FRAGMENT = 1;
@@ -53,12 +53,9 @@ public interface IMainActivity extends IDao {
     int AUTH_FRAGMENT = 4;
     int SETTINGS_FRAGMENT = 5;
 
-    // todo ajoutez ici vos constantes et autres méthodes
+    //todo ajoutez ici vos constantes et autres méthodes
     //hide or show navigation bottom view
     void hideNavigationView(boolean hide);
-
-    //swif fragment from this one
-    boolean swiffFragment();
 
     //Select the default bottomviem item
     void activateMainButtonMenu(int itemId);

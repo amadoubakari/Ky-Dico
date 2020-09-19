@@ -2,17 +2,20 @@ package com.flys.dico.fragments.behavior;
 
 import android.os.Handler;
 
-import org.androidannotations.annotations.EFragment;
-import org.androidannotations.annotations.OptionsMenu;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.flys.dico.R;
 import com.flys.dico.architecture.core.AbstractFragment;
 import com.flys.dico.architecture.core.ISession;
 import com.flys.dico.architecture.custom.CoreState;
 
+import org.androidannotations.annotations.EFragment;
+import org.androidannotations.annotations.OptionsMenu;
+
 @EFragment(R.layout.fragment_splash_screen)
 @OptionsMenu(R.menu.menu_vide)
 public class SplashScreenFragment extends AbstractFragment {
+
     @Override
     public CoreState saveFragment() {
         return new CoreState();
@@ -25,15 +28,16 @@ public class SplashScreenFragment extends AbstractFragment {
 
     @Override
     protected void initFragment(CoreState previousState) {
-       // ((AppCompatActivity) mainActivity).getSupportActionBar().hide();
+        ((AppCompatActivity) mainActivity).getSupportActionBar().hide();
     }
 
     @Override
     protected void initView(CoreState previousState) {
+        //Necessary time in milisecond to launch the application
+        int WAITING_TIME = 1500;
         new Handler().postDelayed(() -> {
-            mainActivity.activateMainButtonMenu(R.id.bottom_menu_home);
-            mainActivity.navigateToView(1, ISession.Action.SUBMIT);
-        }, 1000);
+            mainActivity.navigateToView(mainActivity.HOME_FRAGMENT, ISession.Action.NONE);
+        }, WAITING_TIME);
     }
 
     @Override
@@ -55,8 +59,6 @@ public class SplashScreenFragment extends AbstractFragment {
     protected void notifyEndOfTasks(boolean runningTasksHaveBeenCanceled) {
 
     }
-
-    //Nous cachons le bottom navigation view
 
     @Override
     protected boolean hideNavigationBottomView() {

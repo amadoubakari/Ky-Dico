@@ -25,6 +25,7 @@ import com.flys.dico.architecture.custom.IMainActivity;
 import com.flys.dico.architecture.custom.Session;
 import com.flys.dico.dao.service.IDao;
 import com.flys.dico.service.SwipeDirection;
+import com.flys.dico.utils.Constants;
 import com.flys.tools.dialog.AbstractDialogActivity;
 import com.flys.tools.dialog.AbstractDialogFragmentInterface;
 import com.flys.tools.utils.DepthPageTransformer;
@@ -56,7 +57,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     // nom de la classe
     protected String className;
     // mappeur jSON
-    private ObjectMapper jsonMapper;
+    protected ObjectMapper jsonMapper;
     //la fenetre de navigation
     protected DrawerLayout drawerLayout;
     //Action sur l'icone du menu principal
@@ -227,8 +228,6 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         }
         // instanciation du gestionnaire de fragments
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-        // le conteneur de fragments est associé au gestionnaire de fragments
-        // ç-à-d que le fragment n° i du conteneur de fragments est le fragment n° i délivré par le gestionnaire de fragments
         mViewPager = findViewById(R.id.container);
         mViewPager.setPageTransformer(true, new DepthPageTransformer());
 
@@ -277,7 +276,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         navigationView = findViewById(R.id.navigation);
 
         //Nous appliquons le même style aux éléments de menu
-        Utils.applyFontStyleToMenu(this, navigationView.getMenu(), "fonts/open_sans_regular.ttf");
+        Utils.applyFontStyleToMenu(this, navigationView.getMenu(), Constants.FONTS_OPEN_SANS_REGULAR_TTF);
 
         navigationView.setNavigationItemSelectedListener(
                 menuItem -> {
@@ -287,9 +286,6 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
                     switch (menuItem.getItemId()) {
                         case R.id.menu_settings:
                             navigateToView(SETTINGS_FRAGMENT, ISession.Action.SUBMIT);
-                            break;
-                        case R.id.menu_home:
-                            navigateToView(HOME_FRAGMENT, ISession.Action.SUBMIT);
                             break;
                         case R.id.menu_recommander:
                             showEditDialog();
@@ -461,10 +457,4 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     protected abstract int getFirstView();
 
     protected abstract void disconnect();
-
-
-    @Override
-    public boolean swiffFragment() {
-        return true;
-    }
 }

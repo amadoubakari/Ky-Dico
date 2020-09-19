@@ -72,17 +72,15 @@ public class AboutFragment extends AbstractFragment {
     protected boolean hideNavigationBottomView() {
         return false;
     }
-
-    //------------------------------- Action sur la vue  --------------------------
     @Click(R.id.site)
     void openSite() {
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.kyossi.com"));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.kyossi_website_url)));
         startActivity(browserIntent);
     }
 
     @Click(R.id.source)
     void openSources() {
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/amadoubakari/G-Learning.git"));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.source_repository_git_url)));
         startActivity(browserIntent);
     }
 }

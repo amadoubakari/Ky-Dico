@@ -6,28 +6,23 @@
         android:checkableBehavior="all">
 
         <item
-            android:id="@+id/menu_home"
-            android:icon="@drawable/ic_home_24px"
-            app:itemTextAppearance="@style/menu_font_style"
-            android:title="Home" />
-        <item
             android:id="@+id/menu_recommander"
             android:icon="@drawable/ic_people_outline_24px"
-            app:itemTextAppearance="@style/menu_font_style"
-            android:title="Recommander" />
+            android:title="@string/menu_recommander_msg"
+            app:itemTextAppearance="@style/menu_font_style" />
         <item
             android:id="@+id/subheader"
-            android:visible="false"
-            android:title="Sous Menu">
+            android:title="Sous Menu"
+            android:visible="false">
             <menu>
                 <item
                     android:id="@+id/nav_all_email"
                     android:icon="@drawable/baseline_account_circle_white_48dp"
-                    android:title="Sous menu item"/>
+                    android:title="Sous menu item" />
                 <item
                     android:id="@+id/nav_all_email2"
                     android:icon="@drawable/baseline_account_circle_white_48dp"
-                    android:title="Sous menu item"/>
+                    android:title="Sous menu item" />
             </menu>
         </item>
     </group>
@@ -38,8 +33,8 @@
         <item
             android:id="@+id/menu_settings"
             android:icon="@drawable/ic_settings_24px"
-            app:itemTextAppearance="@style/menu_font_style"
-            android:title="@string/navigation_menu_settings" />
+            android:title="@string/navigation_menu_settings"
+            app:itemTextAppearance="@style/menu_font_style" />
         <!--<item
             android:id="@+id/connexion"
             android:icon="@drawable/ic_login_black_24px"
@@ -54,8 +49,8 @@
         <item
             android:id="@+id/about"
             android:icon="@drawable/ic_help_outline_black_24dp"
-            app:itemTextAppearance="@style/menu_font_style"
-            android:title="About"
-            android:visible="true" />
+            android:title="@string/menu_about_msg"
+            android:visible="true"
+            app:itemTextAppearance="@style/menu_font_style" />
     </group>
 </menu>

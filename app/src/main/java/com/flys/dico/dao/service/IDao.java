@@ -1,5 +1,13 @@
 package com.flys.dico.dao.service;
 
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.flys.dico.fragments.adapters.Word;
+import com.flys.dico.fragments.adapters.WordAdapter;
+import com.flys.notification.domain.Notification;
+
+import java.util.List;
+
 import rx.Observable;
 
 public interface IDao {
@@ -20,8 +28,15 @@ public interface IDao {
 
     // délai d'attente en millisecondes du client avant requête
     void setDelay(int delay);
-
+    //Download user avatar from google
     Observable<byte[]> downloadUrl(String url);
-
+    //Downaload user avatar image from facebook
     Observable<byte[]> downloadFacebookImage(String url,String type);
+    //Load dictionary data from assets
+    Observable<List<Word>> loadDictionnaryDataFromAssets();
+    //Reload data
+    Observable<Void> reloadData(List<Word> words, WordAdapter adapter, RecyclerView recyclerView);
+
+    //Load notifications from the data base
+    Observable <List<Notification>> loadNotificationsFromDatabase();
 }
