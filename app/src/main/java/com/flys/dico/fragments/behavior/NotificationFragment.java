@@ -97,7 +97,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
         ((AppCompatActivity) mainActivity).getSupportActionBar().show();
         mainActivity.activateMainButtonMenu(R.id.bottom_menu_me);
         storage = FirebaseStorage.getInstance();
-        init();
+        //init();
     }
 
     @Override
@@ -115,7 +115,6 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
             MaterialNotificationDialog dialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), "Veuillez activer les notifications\npour recevoir des nouveaux apprentissages", "OK", "NON", getActivity().getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_Light_Dialog_Alert), this);
             dialog.show(getActivity().getSupportFragmentManager(), "material_notification_alert_dialog");
         }
-        updateNotificationsImages();
 
     }
 
@@ -239,7 +238,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
     /**
      * Update images to the recyclerview from the external storage
      */
-    private void updateNotificationsImages() {
+    private void updateNotificationsImages(List<Notification> notifications) {
         notifications.stream()
                 .filter(notification -> !Utils.fileExist(Constants.DIR_NAME, notification.getImageName(), activity))
                 .distinct()
@@ -271,7 +270,9 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
                 mainLayout.setBackgroundColor(activity.getColor(R.color.grey_200));
                 notificationsEmptyMsg.setVisibility(View.VISIBLE);
             } else {
+                notificationsEmptyMsg.setVisibility(View.GONE);
                 notificationAdapter.addAll(notifications1);
+                updateNotificationsImages(notifications1);
             }
         });
     }
