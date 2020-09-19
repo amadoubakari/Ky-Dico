@@ -1,10 +1,6 @@
 {
   "words": [
     {
-      "title": "",
-      "description": ""
-    },
-    {
       "title": "Accès direct (Direct Access)",
       "description": "Méthode de stockage de l‘information basée sur un système d‘adresses qui permet de repérer l‘emplacement des enregistrements sur le support physique de telle façon qu‘ils puissent être rapidement récupérés. Il en va ainsi des disques et de la mémoire centrale - vive et morte."
     },

@@ -109,9 +109,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
         mainActivity.clearNotification();
         mainActivity.activateMainButtonMenu(R.id.bottom_menu_me);
 
-        if (recyclerView.getAdapter() == null) {
-            init();
-        }
+        init();
 
         if (!NotificationManagerCompat.from(DApplicationContext.getContext()).areNotificationsEnabled()) {
             MaterialNotificationDialog dialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), "Veuillez activer les notifications\npour recevoir des nouveaux apprentissages", "OK", "NON", getActivity().getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_Light_Dialog_Alert), this);
@@ -268,11 +266,11 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
         recyclerView.setAdapter(notificationAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         beginRunningTasks(1);
-        executeInBackground(mainActivity.loadNotificationsFromDatabase().delay(50, TimeUnit.MILLISECONDS), notifications1 -> {
-            if (notifications1.isEmpty()){
+        executeInBackground(mainActivity.loadNotificationsFromDatabase().delay(100, TimeUnit.MILLISECONDS), notifications1 -> {
+            if (notifications1.isEmpty()) {
                 mainLayout.setBackgroundColor(activity.getColor(R.color.grey_200));
                 notificationsEmptyMsg.setVisibility(View.VISIBLE);
-            }else {
+            } else {
                 notificationAdapter.addAll(notifications1);
             }
         });

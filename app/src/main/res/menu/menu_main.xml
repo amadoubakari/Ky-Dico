@@ -6,13 +6,13 @@
         android:id="@+id/connexion"
         android:checkable="false"
         android:visible="true"
-        android:title="Connexion"/>
+        android:title="@string/menu_connexion_msg"/>
     <item
         android:id="@+id/menu_profil"
         android:checkable="false"
-        android:title="Profil" />
+        android:title="@string/menu_profil_msg" />
     <item
         android:id="@+id/settings"
         android:checkable="false"
-        android:title="Paramètres" />
+        android:title="@string/menu_settings_msg" />
 </menu>

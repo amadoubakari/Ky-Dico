@@ -311,7 +311,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
                     navigateToView(HOME_FRAGMENT, ISession.Action.SUBMIT);
                     break;
                 case R.id.bottom_menu_me:
-                    navigateToView(NOTIFICATION_FRAGMENT, ISession.Action.SUBMIT);
+                    navigateToView(NOTIFICATION_FRAGMENT, ISession.Action.NONE);
                     break;
             }
             return true;

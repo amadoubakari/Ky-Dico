@@ -24,4 +24,7 @@
     <string name="button_no_msg">NO</string>
     <string name="app_version_msg">Version 1.0.0</string>
     <string name="menu_about_msg">About</string>
+    <string name="menu_connexion_msg">Login</string>
+    <string name="menu_profil_msg">Profile</string>
+    <string name="menu_settings_msg">Settings</string>
 </resources>

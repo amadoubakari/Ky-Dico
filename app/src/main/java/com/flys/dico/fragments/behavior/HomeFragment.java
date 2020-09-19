@@ -66,7 +66,6 @@ public class HomeFragment extends AbstractFragment {
 
     @Override
     protected void initView(CoreState previousState) {
-
     }
 
     @Override
@@ -122,7 +121,6 @@ public class HomeFragment extends AbstractFragment {
                     });
                     recyclerView.setLayoutManager(new LinearLayoutManager(activity));
                     recyclerView.setAdapter(wordAdapter);
-                    recyclerView.setVisibility(View.VISIBLE);
                 });
     }
 
@@ -143,36 +141,15 @@ public class HomeFragment extends AbstractFragment {
      * Reload data from the dictionary json file
      */
     private void reloadData() {
+        recyclerView.setVisibility(View.VISIBLE);
         words = new ArrayList<>();
         wordAdapter = new WordAdapter(words, activity);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(wordAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         beginRunningTasks(1);
-        executeInBackground(mainActivity.loadDictionnaryDataFromAssets().delay(50, TimeUnit.MILLISECONDS), wordList -> {
+        executeInBackground(mainActivity.loadDictionnaryDataFromAssets().delay(1000, TimeUnit.MILLISECONDS), wordList -> {
             wordAdapter.addWords(wordList);
-            recyclerView.setVisibility(View.VISIBLE);
-        });
-    }
-
-    private Observable<Void> loadData() {
-        return Observable.create(new Observable.OnSubscribe<Void>() {
-            @Override
-            public void call(Subscriber<? super Void> subscriber) {
-                try {
-                    //Recuperation à partir du la session
-                    words = session.getWords();
-                    //if session is empty
-                    if (words == null || words.isEmpty()) {
-                        //Read data from json file
-                        words = mapper.readValue(activity.getAssets().open("dictionnaire.json"), Dictionnaire.class).getWords();
-                        session.setWords(words);
-                    }
-                    //words.addAll(dictionnaire.getWords());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
         });
     }
 }

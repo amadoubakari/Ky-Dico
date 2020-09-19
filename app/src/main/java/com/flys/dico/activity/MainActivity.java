@@ -45,6 +45,7 @@ import com.flys.dico.fragments.behavior.HomeFragment_;
 import com.flys.dico.fragments.behavior.NotificationFragment_;
 import com.flys.dico.fragments.behavior.SettingsFragment_;
 import com.flys.dico.fragments.behavior.SplashScreenFragment_;
+import com.flys.dico.utils.Constants;
 import com.flys.generictools.dao.daoException.DaoException;
 import com.flys.notification.domain.Notification;
 import com.flys.tools.dialog.MaterialNotificationDialog;
@@ -109,28 +110,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         getSupportActionBar().hide();
         bottomNavigationView.setVisibility(View.GONE);
         //If we have fcm pushed notification in course
-        Bundle bundle = getIntent().getExtras();
-        if (bundle != null && bundle.containsKey("notification")) {
-            Notification notification = (Notification) bundle.getSerializable("notification");
-            Log.e(getClass().getSimpleName(), " notification from " + notification);
-            if (notification != null) {
-                try {
-                    notification.setDate(new Date());
-                    notificationDao.save(notification);
-                    getSupportActionBar().show();
-                    updateNotificationNumber(1);
-                    activateMainButtonMenu(R.id.bottom_menu_me);
-                } catch (DaoException e) {
-                    Log.e(getClass().getSimpleName(), "Dao Exception!", e);
-                }
-
-            } else {
-                Log.e(getClass().getSimpleName(), "onCreateActivity(): notification null");
-            }
-
-        } else {
-            Log.e(getClass().getSimpleName(), "onCreateActivity(): bundle null");
-        }
+        handleNotifications(getIntent());
         //Subscription on firebase to receive notifications
         if (!session.isSubscribed()) {
             FirebaseMessaging.getInstance().subscribeToTopic("dico")
@@ -141,7 +121,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                         }
                     });
         }
-        setLocale(this);
     }
 
     @Override
@@ -157,9 +136,17 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         //Handle pushed notification if exist
+        handleNotifications(intent);
+    }
+
+    /**
+     *
+     * @param intent
+     */
+    private void handleNotifications(Intent intent) {
         Bundle bundle = intent.getExtras();
-        if (bundle != null && bundle.containsKey("notification")) {
-            Notification notification = (Notification) bundle.getSerializable("notification");
+        if (bundle != null && bundle.containsKey(Constants.NOTIFICATION)) {
+            Notification notification = (Notification) bundle.getSerializable(Constants.NOTIFICATION);
             if (notification != null) {
                 try {
                     notification.setDate(new Date());
@@ -167,6 +154,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                     getSupportActionBar().show();
                     updateNotificationNumber(1);
                     activateMainButtonMenu(R.id.bottom_menu_me);
+                    navigateToView(NOTIFICATION_FRAGMENT, ISession.Action.SUBMIT);
                 } catch (DaoException e) {
                     Log.e(getClass().getSimpleName(), "Dao Exception!", e);
                 }
@@ -614,16 +602,5 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
             mail.setText("Email");
             profile.setImageDrawable(getDrawable(R.drawable.baseline_account_circle_white_48dp));
         }
-    }
-
-    public static void setLocale(Activity context) {
-        Locale locale;
-        Resources res = context.getResources();
-        // Change locale settings in the app.
-        DisplayMetrics dm = res.getDisplayMetrics();
-        android.content.res.Configuration conf = res.getConfiguration();
-        conf.setLocale(new Locale("fr_FR".toLowerCase())); // API 17+ only.
-        // Use conf.locale = new Locale(...) if targeting lower versions
-        res.updateConfiguration(conf, dm);
     }
 }
