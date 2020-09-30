@@ -1,16 +1,12 @@
 package com.flys.dico.activity;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
@@ -24,12 +20,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.facebook.AccessToken;
 import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
 import com.facebook.HttpMethod;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.type.ReferenceType;
 import com.firebase.ui.auth.AuthMethodPickerLayout;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ErrorCodes;
@@ -72,14 +66,10 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.OptionsItem;
 import org.androidannotations.annotations.OptionsMenu;
 import org.androidannotations.annotations.OptionsMenuItem;
-import org.json.JSONObject;
 
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import rx.Observable;
@@ -131,7 +121,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         handleNotifications(getIntent());
         //Subscription on firebase to receive notifications
         if (!session.isSubscribed()) {
-            FirebaseMessaging.getInstance().subscribeToTopic("dico")
+            FirebaseMessaging.getInstance().subscribeToTopic(getString(R.string.firebase_channel_id))
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
                             session.setSubscribed(true);
@@ -268,8 +258,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     public void onBackPressed() {
         drawerLayout.closeDrawers();
         if (mViewPager.getCurrentItem() == HOME_FRAGMENT) {
-            // If the user is currently looking at the first step, allow the system to handle the
-            // Back button. This calls finish() on this activity and pops the back stack.
             this.dialog = new MaterialNotificationDialog(this, new NotificationData(getString(R.string.app_name), getString(R.string.activity_main_do_you_want_to_leave_app), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_no_msg), getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_DayNight_Dialog_Alert), this);
             this.dialog.show(getSupportFragmentManager(), "material_notification_alert_dialog");
         } else {
@@ -656,6 +644,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
 
 
     void downloadProfileImage(User user, UserInfo profile) {
+        beginWaiting();
         Bundle params = new Bundle();
         params.putString("fields", "id, name, birthday,hometown,email,gender,cover,picture.width(640).height(640)");
         new GraphRequest(AccessToken.getCurrentAccessToken(), "me", params, HttpMethod.GET,
@@ -677,6 +666,8 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                                         FileUtils.saveToInternalStorage(bytes, "glearning", user.getNom() + ".png", this);
                                         //Update profile
                                         updateUserConnectedProfile(user);
+                                        //Cancel waiting
+                                        cancelWaiting();
                                         showDialogImage(bytes, user);
                                     }, error -> {
                                         // on affiche les messages de la pile d'exceptions du Throwable th

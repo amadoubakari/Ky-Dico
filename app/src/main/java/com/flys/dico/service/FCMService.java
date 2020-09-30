@@ -140,7 +140,7 @@ public class FCMService extends FirebaseMessagingService {
         PendingIntent pendingIntent = PendingIntent.getActivity(DApplicationContext.getContext(), 0 /* Request code */, intent,
                 PendingIntent.FLAG_CANCEL_CURRENT);
 
-        String channelId = getString(R.string.default_notification_channel_id);
+        String channelId = getString(R.string.firebase_channel_id);
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this, channelId)
