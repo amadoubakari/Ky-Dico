@@ -4,9 +4,9 @@
     <item
         android:id="@+id/popmenu_share"
         android:icon="@drawable/ic_baseline_share_24"
-        android:title="Partager" />
+        android:title="@string/share_msg" />
     <item
         android:id="@+id/popmenu_delete"
         android:icon="@drawable/ic_baseline_delete_24"
-        android:title="Supprimer" />
+        android:title="@string/delete_menu_msg" />
 </menu>

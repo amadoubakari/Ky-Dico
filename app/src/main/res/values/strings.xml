@@ -2,7 +2,6 @@
 <resources>
 
     <!-- nom de l'application -->
-    <string name="app_name">Dictionnaire Informatique</string>
     <string name="default_notification_channel_id" translatable="false">dico</string>
     <string name="msg_token_fmt" translatable="false">InstanceID Token: %s</string>
     <!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). -->
@@ -29,4 +28,33 @@
     <string name="menu_connexion_msg">Connexion</string>
     <string name="menu_profil_msg">Profil</string>
     <string name="menu_settings_msg">Paramètres</string>
+    <string name="delete_msg">Supprimée !</string>
+    <string name="share_msg">Partager</string>
+    <string name="delete_menu_msg">Supprimer</string>
+    <string name="fragment_login_connect_to_continue_msg">Connectez-vous pour continuer avec</string>
+    <string name="fragment_login_welcome_msg">Bienvenue !</string>
+    <string name="fragment_login_connect_with_phone">Numéro téléphone</string>
+    <string name="fragment_login_connect_with_mail">Adresse email</string>
+    <string name="fragment_login_connect_with_google">Compte Google</string>
+    <string name="fragment_login_connect_with_facebook">Compte Facebook</string>
+    <string name="activity_main_connection_canceld">Connexion annulée</string>
+    <string name="activity_main_network_issue">Oops! Erreur connexion internet</string>
+    <string name="activity_main_try_again_mdg">Oops! Veuillez réessayer..</string>
+    <string name="activity_main_disconnect_canceled">Déconnexion annulée</string>
+    <string name="activity_main_do_you_want_to_leave_app">Voudriez-vous quitter l\'application?</string>
+    <string name="activity_main_button_yes_msg">OUI</string>
+    <string name="activity_main_do_you_want_to_disconnect">Voudriez-vous vous déconnecter de l\'application?</string>
+    <string name="activity_main_button_no_msg">NON</string>
+    <string name="activity_main_button_cancel">Annuler</string>
+    <string name="activity_main_see_you_soon">, vous revoir bientôt !</string>
+    <string name="activity_main_button_close">Fermer</string>
+    <string name="activity_main_check_your_connection_and_try_again">Vérifiez votre connexion internet et réessayer plus tard.</string>
+    <string name="oops_connection_issue_msg">Oops! Erreur connexion internet</string>
+    <string name="activity_main_username">Username</string>
+    <string name="activity_main_email_address">Email</string>
+    <string name="activity_main_thanks_msg"> Merci </string>
+    <string name="dictionary_data_source">dictionnaire.json</string>
+    <string name="app_name_release">Dictionnaire Informatique</string>
+    <string name="app_name_debug">Dictionnaire Informatique (Debug)</string>
+    <string name="dialog_contact_welcome_msg">Bienvenue</string>
 </resources>

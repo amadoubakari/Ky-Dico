@@ -36,7 +36,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="Bienvenue"
+                    android:text="@string/dialog_contact_welcome_msg"
                     android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                     android:textColor="@android:color/white"

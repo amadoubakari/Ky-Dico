@@ -214,14 +214,14 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
         popup.setOnMenuItemClickListener(menuItem -> {
             switch (menuItem.getItemId()) {
                 case R.id.popmenu_share:
-                    com.flys.tools.utils.Utils.shareText(context, getString(R.string.app_name), HtmlCompat.fromHtml(notifications.get(position).getContent().concat("</br>").concat("https://play.google.com/store/apps/details?id=com.flys.glearning"), HtmlCompat.FROM_HTML_MODE_LEGACY).toString(), "ƁIMUTOHO MIPAL");
+                    com.flys.tools.utils.Utils.shareText(context, getString(R.string.app_name), HtmlCompat.fromHtml(notifications.get(position).getContent().concat("</br>").concat("https://play.google.com/store/apps/details?id=com.flys.glearning"), HtmlCompat.FROM_HTML_MODE_LEGACY).toString(), getString(R.string.app_name));
                     break;
                 case R.id.popmenu_delete:
                     try {
                         notificationDao.delete(notifications.get(position));
                         notifications.remove(position);
                         notificationAdapter.notifyDataSetChanged();
-                        com.flys.dico.architecture.core.Utils.showErrorMessage(activity, activity.findViewById(R.id.main_content), activity.getColor(R.color.blue_500), "Supprimée !");
+                        com.flys.dico.architecture.core.Utils.showErrorMessage(activity, activity.findViewById(R.id.main_content), activity.getColor(R.color.blue_500), getString(R.string.delete_msg));
                     } catch (DaoException e) {
                         Log.e(getClass().getSimpleName(), "Deleting notification from database Processing Exception", e);
                     }

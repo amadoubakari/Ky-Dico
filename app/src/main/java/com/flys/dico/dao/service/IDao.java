@@ -28,15 +28,26 @@ public interface IDao {
 
     // délai d'attente en millisecondes du client avant requête
     void setDelay(int delay);
+
     //Download user avatar from google
     Observable<byte[]> downloadUrl(String url);
-    //Downaload user avatar image from facebook
-    Observable<byte[]> downloadFacebookImage(String url,String type);
+
+    //Download user avatar image from facebook
+    Observable<byte[]> downloadFacebookImage(String url, String type);
+
     //Load dictionary data from assets
     Observable<List<Word>> loadDictionnaryDataFromAssets();
+
     //Reload data
     Observable<Void> reloadData(List<Word> words, WordAdapter adapter, RecyclerView recyclerView);
 
     //Load notifications from the data base
-    Observable <List<Notification>> loadNotificationsFromDatabase();
+    Observable<List<Notification>> loadNotificationsFromDatabase();
+
+    //Download user avatar image from facebook
+    Observable<byte[]> downloadFacebookImage(String url);
+
+    Observable<byte[]> downloadFacebookProfileImage(final String baseUrl, final String params);
+
+    Observable<byte[]> downloadFacebookProfileImage(final String baseUrl);
 }

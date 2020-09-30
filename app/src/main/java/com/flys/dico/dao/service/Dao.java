@@ -6,6 +6,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.flys.dico.R;
 import com.flys.dico.architecture.custom.DApplicationContext;
 import com.flys.dico.dao.db.NotificationDao;
 import com.flys.dico.dao.db.NotificationDaoImpl;
@@ -119,7 +120,7 @@ public class Dao extends AbstractDao implements IDao {
         return Observable.create(subscriber -> {
             if (!subscriber.isUnsubscribed()) {
                 try {
-                    List<Word> words = jsonMapper.readValue(DApplicationContext.getContext().getAssets().open("dictionnaire.json"), Dictionnaire.class).getWords();
+                    List<Word> words = jsonMapper.readValue(DApplicationContext.getContext().getAssets().open(DApplicationContext.getContext().getString(R.string.dictionary_data_source)), Dictionnaire.class).getWords();
                     //and observable that are going to emit data
                     emitData(subscriber, words, 50);
                 } catch (IOException e) {
@@ -175,6 +176,21 @@ public class Dao extends AbstractDao implements IDao {
                 e.printStackTrace();
             }
         });
+    }
+
+    @Override
+    public Observable<byte[]> downloadFacebookImage(String url) {
+        return getResponse(() -> webClient.downloadFacebookImage(url));
+    }
+
+    @Override
+    public Observable<byte[]> downloadFacebookProfileImage(final String baseUrl, final String params) {
+        return  getResponse(() -> webClient.downloadFacebookProfileImage(baseUrl,params));
+    }
+
+    @Override
+    public Observable<byte[]> downloadFacebookProfileImage(String baseUrl) {
+        return getResponse(() -> webClient.downloadFacebookProfileImage(baseUrl));
     }
 
 }
