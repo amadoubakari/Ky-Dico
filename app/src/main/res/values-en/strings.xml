@@ -43,13 +43,14 @@
     <string name="oops_connection_issue_msg">Oops! Network issue</string>
     <string name="activity_main_username">Username</string>
     <string name="activity_main_email_address">Email Address</string>
-    <string name="activity_main_thanks_msg">Thanks </string>
+    <string name="activity_main_thanks_msg">"Thanks "</string>
     <string name="app_name_release">Computer Science Dictionary</string>
     <string name="app_name_debug">Computer Science Dictionary (Debug)</string>
     <string name="dialog_contact_welcome_msg">Welcome</string>
     <string name="firebase_channel_id">dico-en</string>
-    <string name="dictionary_data_source">dictionnaire.json</string>
+    <string name="dictionary_data_source">dictionnaire-en.json</string>
     <string name="app_google_play_store_url">https://play.google.com/store/apps/details?id=com.flys.dico&amp;hl=en</string>
     <string name="activity_abstract_recommend_app">Recommend the application</string>
     <string name="activity_abstract_recommendation_msg">Recommendation</string>
+    <string name="fragment_about_dictionary_header">IT Dictionary.</string>
 </resources>

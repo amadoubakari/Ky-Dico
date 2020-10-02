@@ -26,7 +26,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dictionnaire I."
+            android:text="@string/fragment_about_dictionary_header"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/black"
             app:fontFamily="@font/open_sans" />

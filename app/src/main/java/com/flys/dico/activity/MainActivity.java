@@ -49,6 +49,7 @@ import com.flys.dico.fragments.behavior.HomeFragment_;
 import com.flys.dico.fragments.behavior.NotificationFragment_;
 import com.flys.dico.fragments.behavior.SettingsFragment_;
 import com.flys.dico.fragments.behavior.SplashScreenFragment_;
+import com.flys.dico.utils.CheckNetwork;
 import com.flys.dico.utils.Constants;
 import com.flys.generictools.dao.daoException.DaoException;
 import com.flys.notification.domain.Notification;
@@ -105,6 +106,8 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     private MaterialNotificationDialog dialog;
 
     private ObjectMapper objectMapper;
+    // Register Callback - Call this in your app start!
+    private CheckNetwork network;
 
     // méthodes classe parent -----------------------
     @Override
@@ -132,6 +135,9 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
 
         //Initializations
         objectMapper = new ObjectMapper();
+        //Check network
+        network = new CheckNetwork(getApplicationContext());
+        network.registerNetworkCallback();
     }
 
     @Override
@@ -453,7 +459,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                 //Connected with facebook account
                 case "facebook.com":
                     //Connection using facebook
-                    facebookConnect(user, profile);
+                    facebookConnect(user);
                     break;
                 //connected with phone number
                 case "phone":
@@ -472,7 +478,10 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         }
         //Mise à jour de la base de données
         try {
-            userDao.save(user);
+            Log.e(getClass().getSimpleName(), "Mainactivity user before save : " + user);
+            if (user != null) {
+                userDao.save(user);
+            }
         } catch (DaoException e) {
             Log.e(getClass().getSimpleName(), "Dao Exception!", e);
         }
@@ -500,11 +509,10 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
 
     /**
      * @param user
-     * @param profile
      */
-    private void facebookConnect(User user, UserInfo profile) {
-        if (Utils.isConnectedToNetwork(this)) {
-            downloadProfileImage(user, profile);
+    private void facebookConnect(User user) {
+        if (Constants.isNetworkConnected) {
+            downloadProfileImage(user);
         } else {
             Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.oops_connection_issue_msg));
         }
@@ -520,7 +528,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         user.setNom(firebaseUser.getDisplayName());
         user.setEmail(profile.getEmail());
         user.setImageUrl(profile.getPhotoUrl().toString().replace("s96-c", "s400-c"));
-        if (Utils.isConnectedToNetwork(this)) {
+        if (Constants.isNetworkConnected) {
             //Launch the loader
             beginWaiting();
             downloadUrl(user.getImageUrl())
@@ -643,7 +651,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     }
 
 
-    void downloadProfileImage(User user, UserInfo profile) {
+    void downloadProfileImage(User user) {
         beginWaiting();
         Bundle params = new Bundle();
         params.putString("fields", "id, name, birthday,hometown,email,gender,cover,picture.width(640).height(640)");
@@ -664,6 +672,8 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                                     .observeOn(AndroidSchedulers.mainThread())
                                     .subscribe(bytes -> {
                                         FileUtils.saveToInternalStorage(bytes, "glearning", user.getNom() + ".png", this);
+                                        //Updating connected user
+                                        userDao.update(user);
                                         //Update profile
                                         updateUserConnectedProfile(user);
                                         //Cancel waiting

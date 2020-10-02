@@ -1,120 +1,120 @@
 {
   "words": [
     {
-      "title": "Accès direct (Direct Access)",
-      "description": "Méthode de stockage de l‘information basée sur un système d‘adresses qui permet de repérer l‘emplacement des enregistrements sur le support physique de telle façon qu‘ils puissent être rapidement récupérés. Il en va ainsi des disques et de la mémoire centrale - vive et morte."
+      "title": "Address(1)",
+      "description": "n. 1. A number specifying a location in memory where data is stored. See also absolute address, address space, physical address, virtual address. 2. A name or token specifying a particular computer or site on the Internet or other network. 3. A code used to specify an e-mail destination."
     },
     {
-      "title": "Accès séquentiel (Sequential Access Storage)",
-      "description": "Méthode de stockage de l‘information dans laquelle les enregistrements sont stockés séquentiellement les uns derrière les autres. Pour accéder à un enregistrement particulier, on doit lire tous les enregistrements qui le précèdent. Seul type d‘accès possible sur une bande magnétique."
+      "title": "Address (2)",
+      "description": "vb. To reference a particular storage location"
     },
     {
-      "title": "Adaptation au matériel Voir Plug and Play (PnP)",
-      "description": "Administrateur de bases de données (Database Administrator) Personne qui détermine la structure d‘une base de données et qui gère son utilisation."
+      "title": "Addressable cursor",
+      "description": "n. A cursor programmed so that it can be moved to any location on the screen, by means of the keyboard or a mouse."
     },
     {
-      "title": "Adresse (Address)",
-      "description": "Coordonnées d‘un élément constitutif d‘un support d‘information (piste, secteur sur disque, case mémoire, etc.)."
+      "title": "Address book",
+      "description": "n. 1. In an e-mail program, a reference section listing e-mail addresses and individuals’ names. 2. As a Web page, an informal e-mail or URL phone book."
     },
     {
-      "title": "Adresse de cellule (Cell Address)",
-      "description": "Position d‘une cellule dans un chiffrier exprimée par le rang et la colonne sur lesquels elle se trouve."
+      "title": "Address bus",
+      "description": "n. A bus consisting of 20 to 64 separate hardware lines that is used to carry the signals specifying memory locations for data. See also bus."
     },
     {
-      "title": "Adresse électronique ou adresse de courriel (E-Mail Address)",
-      "description": "Information attachée à un message permettant de retrouver son destinataire; elle se compose du nom du destinataire et du nom Internet de son serveur de courrier électronique. Par exemple moi.meme@monentre-prise.com."
+      "title": "Address classes",
+      "description": "n. Predefined groupings of Internet addresses with each class defining networks of a certain size. The range of numbers that can be assigned for the first octet in the IP address is based on the address class. Class A networks (values 1 to 126) are the largest, with more than 16 million hosts per network. Class B networks (128 to 191) have up to 65,534 hosts per network, and Class C networks (192 to 223) can have up to 254 hosts per network."
     },
     {
-      "title": "Adresse Internet ou adresse IP (Internet Address)",
-      "description": "Information associée à un noeud du réseau Internet pour l‘identifier de façon univoque."
+      "title": "Address decoder ",
+      "description": "n. An electronic device that converts a numeric address to the electrical signals needed to select a specific memory location on one or more RAM chips."
     },
     {
-      "title": "ADSL (Asymmetric Digital Subs-criber Line)",
-      "description": "Voir Modem ADSL."
+      "title": "Addressing",
+      "description": "n. The process of assigning or referring to an address. In programming, the address is typically a value specifying a memory location. See also address."
     },
     {
-      "title": "AFO",
-      "description": "Voir Analyse fonctionnelle et organique."
+      "title": "Address mapping table",
+      "description": "n. A table used by routers or DNS (Domain Name System) servers to obtain the corresponding IP (Internet Protocol) address of a text name of a computer resource, such as the name of a host computer on the Internet. Acronym: AMT.See also DNS server, IP address, router"
     },
     {
-      "title": "AGP (Accelerated Graphic Port)",
-      "description": "Technologie visant à accélérer le transfert d‘information du bloc système vers le moniteur pour les applications à haute teneur graphique. La norme AGP régit le bus AGP, les cartes vidéo AGP et les ports AGP. Voir Bus AGP, Carte vidéo AGP et Port AGP."
+      "title": "Address mark",
+      "description": "n. See index mark."
     },
     {
-      "title": "Algorithme (Algorithm)",
-      "description": "Ensemble des règles opératoires nécessaires à l‘accomplissement d‘une tâche."
+      "title": "Address mask",
+      "description": "n. A number that, when compared by the computer with a network address number, will block out all but the necessary information. For example, in a network that uses XXX.XXX.XXX.YYY and where all computers within the network use the same first address numbers, the mask will block out XXX.XXX.XXX and use only the significant numbers in the address, YYY. See also address (definition 2)"
     },
     {
-      "title": "Amorce",
-      "description": "Voir Procédures d‘amorce."
+      "title": "Address mode",
+      "description": "n. The method used to indicate an address in memory. See also absolute address, indexed address, paged address, relative address."
     },
     {
-      "title": "Analyse des besoins",
-      "description": "Première étape du cycle de vie d‘un système qui comprend la définition du problème, la suggestion de solutions et la rédaction d‘un bref rapport."
+      "title": "Address modification",
+      "description": "n. The process of updating an address of a location in memory during computation."
     },
     {
-      "title": "Analyse fonctionnelle (Systems Analysis)",
-      "description": "Deuxième étape du cycle de vie d‘un système durant laquelle le système actuel est étudié et les nouvelles exigences sont établies avec précision."
+      "title": "Address munging",
+      "description": "n. The practice of modifying an e-mail address in posts to newsgroups or other Internet forums to foil computer programs that gather e-mail addresses. The host name in an e-mail address is altered to create a fictitious address in such a way that a human can still easily determine the correct address. For example, a person with an e-mail address of Jane@myispoffersusersfreeemail.com could modify, or “mung,” her address to read Jane@remove-this-to-reply-myispoffersusersfreeemail.com. Address munging is generally used to prevent delivery of unsolicited junk e-mail or spam. Also called: munging. See also address1 (definition 2), host name, mung, spam."
     },
     {
-      "title": "Analyse fonctionnelle et organique (AFO) (Systems Analysis and Design)",
-      "description": "Méthode de résolution de problème en six étapes utilisée pour examiner à fond un système d‘information en vue de l‘améliorer."
+      "title": "Address register",
+      "description": "n. A register (a high-speed memory circuit) that holds an address where specific data can be found for the transfer of information. See also register."
     },
     {
-      "title": "Analyse organique (Systems Design)",
-      "description": "Troisième étape du cycle de vie d‘un système qui consiste en la conception de systèmes de rechange, la sélection du meilleur système et la rédaction d‘un rapport d‘analyse organique."
+      "title": "Address resolution",
+      "description": "n. The identification of a computer’s IP (Internet Protocol) address by finding the corresponding match in an address mapping table. See also address mapping table."
     },
     {
-      "title": "Analyse progressive (Top-Down Program Design ou Top-Down Analysis)",
-      "description": "Procédé de programmation dans lequel on fractionne le problème à résoudre en plusieurs sous-problèmes, et ainsi de suite."
+      "title": "Address Resolution Protocol",
+      "description": "n. See ARP."
     },
     {
-      "title": "Analyste fonctionnel (System Analyst)",
-      "description": "Professionnel de l‘informatique qui étudie et améliore des systèmes informatiques en appliquant la méthode de résolution de problème connue sous le nom d‘analyse fonctionnelle et organique."
+      "title": "Address space",
+      "description": "n. The total range of memory locations addressable by a computer"
     },
     {
-      "title": "Annulation",
-      "description": "Voir Commande d‘annulation."
+      "title": "Address translation",
+      "description": "n. The process of converting one kind of address to another, such as a virtual address to a physical address."
     },
     {
-      "title": "Antémémoire (Cache Memory)",
-      "description": "Voir Mémoire cache."
+      "title": "Ad-hoc network",
+      "description": "n. A temporary network formed by communicating stations or computers in a wireless LAN. See also wireless LAN."
     },
     {
-      "title": "Appareil photo numérique (Digital Camera)",
-      "description": "Appareil photographique au fonctionnement standard, mais qui enregistre l‘image en mode binaire (matrice de points) dans des puces de mémoire vive ou sur un microdisque."
+      "title": "ADJ",
+      "description": "n. Short for adjacent. A Boolean qualifier to indicate cases where two instances are adjacent to each other. In the case of a search string, “Microsoft ADJ Word” would return only instances where “Microsoft” and “Word” are adjacent in the string."
     },
     {
-      "title": "Applet (Applet)",
-      "description": "Mini-application écrite en langage java et qui, insérée dans un document Web, s‘exécute directement sur l‘ordinateur de l‘internaute, peu importe le système d‘exploitation utilisé."
+      "title": "Administrative alerts",
+      "description": "n. Alerts that relate to server and resource use. They notify users about problems in areas such as security and access, user sessions, server shutdown due to power loss (when an uninterruptible power supply is available), directory replication, and printing. When a computer generates an administrative alert, a message is sent to a predefined list of users and computers. See also Alerter service."
     },
     {
-      "title": "Approche directe (Direct Approach)",
-      "description": "Méthode d‘implantation d‘un système dans laquelle on abandonne d‘un coup l‘ancien système au profit du nouveau."
+      "title": "ADN",
+      "description": "n. See Advanced Digital Network."
     },
     {
-      "title": "Approche graduelle (Phased Approach)",
-      "description": "Méthode d‘implantation d‘un système dans laquelle on procède à une implantation progressive selon un échéancier."
+      "title": "ADO",
+      "description": "n. See Active data object. "
     },
     {
-      "title": "Approche parallèle (Parallel Approach)",
-      "description": "Méthode d‘implantation d‘un système dans laquelle on fait fonctionner le nouveau système en parallèle avec l‘ancien jusqu‘à ce que le nouveau ait été éprouvé."
+      "title": "Adobe Type Manager",
+      "description": "n. Software from Adobe Systems, Inc., that manages PostScript fonts on a system. Acronym: ATM.See also PostScript"
     },
     {
-      "title": "Approche pilote (Pilot Approach)",
-      "description": "Méthode d‘implantation d‘un système dans laquelle on éprouve d‘abord le nouveau système dans un secteur de l‘organisation avant d‘étendre son implantation à toute l‘entreprise."
+      "title": "ADO.NET",
+      "description": "n. The suite of data access technologies included in the .NET Framework class libraries that provide access to relational data and XML. ADO.NET consists of classes that make up the DataSet (such as tables, rows, columns, relations, and so on), .NET Framework data providers, and custom type definitions (such as SqlTypes for SQL Server)."
     },
     {
-      "title": "Architecture fermée (Closed Architecture)",
-      "description": "Ordinateur conçu de façon qu‘il est difficile de lui adjoindre de nouveaux dispositifs."
+      "title": "ADP",
+      "description": "n. See data processing."
     },
     {
-      "title": "Architecture ouverte (Open Architecture)",
-      "description": "Ordinateur muni de fentes d‘extension que l‘on peut utiliser pour ajouter de la mémoire centrale ou d‘autres accessoires."
+      "title": "ADPCM",
+      "description": "n. See adaptive delta pulse code modulation."
     },
     {
-      "title": "ARPANET (Advanced Research Project Agency Network)",
-      "description": "Réseau maillé créé et utilisé par les agences gouvernementales et militaires américaines pour favoriser les échanges d‘informations et de discussions entre les chercheurs. Ancêtre d‘Internet."
+      "title": "ADSL",
+      "description": "n. Acronym for asymmetric digital subscriber line. Technology and equipment allowing high-speed digital communication, including video signals, across an ordinary twisted-pair copper phone line, with speeds up to 8 Mbps (megabits per second) downstream (to the customer) and up to 640 Kbps (kilobits per second) upstream. ADSL access to the Internet is offered by some regional telephone companies, offering users faster connection times than those available through connections made over standard phone lines. Also called: asymmetric digital subscriber loop. Compare SDSL."
     },
     {
       "title": "Ateliers de génie logiciel (AGL) (Computer-Assisted Software Engineering)",

@@ -2,8 +2,6 @@ package com.flys.dico.architecture.core;
 
 import android.content.Context;
 import android.content.ContextWrapper;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -12,6 +10,7 @@ import androidx.core.content.ContextCompat;
 
 import com.flys.dico.R;
 import com.google.android.material.snackbar.Snackbar;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -58,54 +57,6 @@ public class Utils {
     }
 
     /**
-     * Test the connection
-     *
-     * @param context
-     * @return
-     */
-    public static boolean isConnectedToNetwork(Context context) {
-        ConnectivityManager cm =
-                (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-
-        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-        boolean isConnected = activeNetwork != null &&
-                activeNetwork.isConnectedOrConnecting();
-        return isConnected;
-    }
-
-    /**
-     * Test if connected network is data mobile or wifi
-     * if true mobile data.
-     *
-     * @param context
-     * @return
-     */
-    public static boolean isMobileDataNetwork(Context context) {
-        ConnectivityManager cm =
-                (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        boolean isMetered = cm.isActiveNetworkMetered();
-        return isMetered;
-    }
-
-
-    /**
-     * @param context
-     * @param view
-     * @param msg
-     */
-    public static void showErrorMessage(Context context, View view, String msg) {
-        Snackbar.make(view, msg, Snackbar.LENGTH_LONG)
-                .setAction("CLOSE", v -> {
-
-                })
-                .setActionTextColor(context.getColor(R.color.red_A700))
-                .setBackgroundTint(context.getColor(R.color.grey_900))
-                .setTextColor(context.getColor(R.color.white))
-                .show();
-    }
-
-    /**
-     *
      * @param context
      * @param parent
      * @param textColor
@@ -121,6 +72,7 @@ public class Utils {
                 .setTextColor(context.getColor(R.color.white))
                 .show();
     }
+
     /**
      * Suppression d'un fichier existant
      *
@@ -131,7 +83,7 @@ public class Utils {
         ContextWrapper cw = new ContextWrapper(context);
         File directory = cw.getDir(dirName, Context.MODE_PRIVATE);
         // Create imageDir
-        if(!directory.exists()){
+        if (!directory.exists()) {
             directory.mkdirs();
         }
         File file = new File(directory, fileName);
@@ -139,7 +91,6 @@ public class Utils {
     }
 
     /**
-     *
      * @param context
      * @param view
      */

@@ -4,14 +4,12 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.flys.dico.architecture.core.MenuItemState;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.flys.dico.fragments.state.AlphabetFragmentState;
 import com.flys.dico.fragments.state.HomeFragmentState;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY)
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = HomeFragmentState.class),
-        @JsonSubTypes.Type(value = AlphabetFragmentState.class)}
+        @JsonSubTypes.Type(value = HomeFragmentState.class)}
 )
 public class CoreState {
     // fragment visité ou non
@@ -20,7 +18,6 @@ public class CoreState {
     protected MenuItemState[] menuOptionsState;
 
     // getters et setters
-
     public boolean getHasBeenVisited() {
         return hasBeenVisited;
     }

@@ -49,7 +49,7 @@
     <string name="oops_connection_issue_msg">Oops! Erreur connexion internet</string>
     <string name="activity_main_username">Username</string>
     <string name="activity_main_email_address">Email</string>
-    <string name="activity_main_thanks_msg"> Merci </string>
+    <string name="activity_main_thanks_msg">" Merci "</string>
     <string name="dictionary_data_source">dictionnaire.json</string>
     <string name="app_name_release">Dictionnaire Informatique</string>
     <string name="app_name_debug">Dictionnaire Informatique (Debug)</string>
@@ -58,4 +58,5 @@
     <string name="app_google_play_store_url">https://play.google.com/store/apps/details?id=com.flys.glearning</string>
     <string name="activity_abstract_recommend_app">Recommandation de l\'application.</string>
     <string name="activity_abstract_recommendation_msg">Recommandation</string>
+    <string name="fragment_about_dictionary_header">Dictionnaire I.</string>
 </resources>
