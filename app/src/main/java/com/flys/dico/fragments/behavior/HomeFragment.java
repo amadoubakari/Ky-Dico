@@ -148,7 +148,7 @@ public class HomeFragment extends AbstractFragment {
         recyclerView.setAdapter(wordAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         beginRunningTasks(1);
-        executeInBackground(mainActivity.loadDictionnaryDataFromAssets().delay(1000, TimeUnit.MILLISECONDS), wordList -> {
+        executeInBackground(mainActivity.loadDictionnaryDataFromAssets(activity).delay(1000, TimeUnit.MILLISECONDS), wordList -> {
             wordAdapter.addWords(wordList);
         });
     }

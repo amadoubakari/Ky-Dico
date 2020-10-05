@@ -2,6 +2,7 @@ package com.flys.dico.activity;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
@@ -124,13 +125,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         handleNotifications(getIntent());
         //Subscription on firebase to receive notifications
         if (!session.isSubscribed()) {
-            FirebaseMessaging.getInstance().subscribeToTopic(getString(R.string.firebase_channel_id))
-                    .addOnCompleteListener(task -> {
-                        if (task.isSuccessful()) {
-                            session.setSubscribed(true);
-                            Log.e(TAG, "subscription to the channel for notification is successfully");
-                        }
-                    });
+            firebaseSubscription();
         }
 
         //Initializations
@@ -139,6 +134,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         network = new CheckNetwork(getApplicationContext());
         network.registerNetworkCallback();
     }
+
 
     @Override
     protected void onResumeActivity() {
@@ -154,35 +150,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         super.onNewIntent(intent);
         //Handle pushed notification if exist
         handleNotifications(intent);
-    }
-
-    /**
-     * @param intent
-     */
-    private void handleNotifications(Intent intent) {
-        Bundle bundle = intent.getExtras();
-        if (bundle != null && bundle.containsKey(Constants.NOTIFICATION)) {
-            Notification notification = (Notification) bundle.getSerializable(Constants.NOTIFICATION);
-            if (notification != null) {
-                try {
-                    notification.setDate(new Date());
-                    notificationDao.save(notification);
-                    getSupportActionBar().show();
-                    updateNotificationNumber(1);
-                    activateMainButtonMenu(R.id.bottom_menu_me);
-                    navigateToView(NOTIFICATION_FRAGMENT, ISession.Action.SUBMIT);
-                } catch (DaoException e) {
-                    Log.e(getClass().getSimpleName(), "Dao Exception!", e);
-                }
-
-            } else {
-                Log.e(getClass().getSimpleName(), " onNewIntent(): notification null ");
-            }
-
-        } else {
-            Log.e(getClass().getSimpleName(), " onNewIntent(): bundle null ");
-        }
-        this.setIntent(intent);
     }
 
     @Override
@@ -371,9 +338,9 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     }
 
     @Override
-    public Observable<List<Word>> loadDictionnaryDataFromAssets() {
+    public Observable<List<Word>> loadDictionnaryDataFromAssets(Context context) {
         //Load dictionary data from assets dictory
-        return dao.loadDictionnaryDataFromAssets();
+        return dao.loadDictionnaryDataFromAssets(context);
     }
 
     @Override
@@ -440,117 +407,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         badgeDrawable.setVisible(false);
     }
 
-    /**
-     * Return user informations switch provider type
-     *
-     * @param firebaseUser
-     * @return
-     */
-    public void getProviderData(FirebaseUser firebaseUser) {
-        User user = new User();
-        for (UserInfo profile : firebaseUser.getProviderData()) {
-            //switch provider
-            switch (profile.getProviderId()) {
-                //Connected with google account
-                case "google.com":
-                    //Connection using google
-                    googleConnect(firebaseUser, user, profile);
-                    break;
-                //Connected with facebook account
-                case "facebook.com":
-                    //Connection using facebook
-                    facebookConnect(user);
-                    break;
-                //connected with phone number
-                case "phone":
-                    //Connection using phone number
-                    phoneNumberConnect(user, profile);
-                    break;
-                //connected with an email address
-                case "password":
-                    //Connection using email address
-                    mailConnect(user, profile);
-                    break;
-                default:
-                    break;
-            }
-
-        }
-        //Mise à jour de la base de données
-        try {
-            Log.e(getClass().getSimpleName(), "Mainactivity user before save : " + user);
-            if (user != null) {
-                userDao.save(user);
-            }
-        } catch (DaoException e) {
-            Log.e(getClass().getSimpleName(), "Dao Exception!", e);
-        }
-    }
-
-    /**
-     * @param user
-     * @param profile
-     */
-    private void mailConnect(User user, UserInfo profile) {
-        user.setType(User.Type.MAIL);
-        user.setEmail(profile.getEmail());
-        showDialogImage(null, user);
-    }
-
-    /**
-     * @param user
-     * @param profile
-     */
-    private void phoneNumberConnect(User user, UserInfo profile) {
-        user.setType(User.Type.PHONE);
-        user.setPhone(profile.getPhoneNumber());
-        showDialogImage(null, user);
-    }
-
-    /**
-     * @param user
-     */
-    private void facebookConnect(User user) {
-        if (Constants.isNetworkConnected) {
-            downloadProfileImage(user);
-        } else {
-            Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.oops_connection_issue_msg));
-        }
-    }
-
-    /**
-     * @param firebaseUser
-     * @param user
-     * @param profile
-     */
-    private void googleConnect(FirebaseUser firebaseUser, User user, UserInfo profile) {
-        user.setType(User.Type.GOOGLE);
-        user.setNom(firebaseUser.getDisplayName());
-        user.setEmail(profile.getEmail());
-        user.setImageUrl(profile.getPhotoUrl().toString().replace("s96-c", "s400-c"));
-        if (Constants.isNetworkConnected) {
-            //Launch the loader
-            beginWaiting();
-            downloadUrl(user.getImageUrl())
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(bytes -> {
-                        //Save the user avator in internal storage
-                        FileUtils.saveToInternalStorage(bytes, "glearning", user.getNom() + ".png", this);
-                        //Update profile
-                        updateUserConnectedProfile(user);
-                        //cancel the loading
-                        cancelWaiting();
-                        //Show user dialog with user resume
-                        showDialogImage(bytes, user);
-                    }, error -> {
-                        //on affiche les messages de la pile d'exceptions du Throwable th
-                        new AlertDialog.Builder(this).setTitle("Ooops !").setMessage(R.string.activity_main_check_your_connection_and_try_again).setNeutralButton(R.string.activity_main_button_close, null).show();
-                    });
-        } else {
-            Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.activity_main_network_issue));
-        }
-    }
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
@@ -562,43 +418,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         return super.onPrepareOptionsMenu(menu);
     }
 
-    /**
-     * @param bytes
-     * @param user
-     */
-    private void showDialogImage(byte[] bytes, User user) {
-        if (user != null) {
-            final Dialog dialog = new Dialog(this);
-            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // before
-            dialog.setContentView(R.layout.dialog_contact_image);
-            TextView name = dialog.findViewById(R.id.name);
-            TextView email = dialog.findViewById(R.id.email_or_number);
-            ImageView smallImage = dialog.findViewById(R.id.small_image);
-            ImageView image = dialog.findViewById(R.id.large_image);
-            switch (user.getType()) {
-                case GOOGLE:
-                case MAIL:
-                case FACEBOOK:
-                    email.setText(user.getEmail());
-                    name.setText(user.getNom());
-                    break;
-                case PHONE:
-                    email.setText(user.getPhone());
-                    name.setText(user.getNom());
-                    break;
-            }
-            if (bytes != null) {
-                smallImage.setImageBitmap(BitmapFactory.decodeByteArray(bytes, 0, bytes.length));
-                image.setImageBitmap(BitmapFactory.decodeByteArray(bytes, 0, bytes.length));
-            }
-            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-            dialog.setCancelable(true);
-            (dialog.findViewById(R.id.bt_close)).setOnClickListener(v -> dialog.dismiss());
-            dialog.show();
-        }
-
-    }
-
     @Override
     public void okButtonAction(DialogInterface dialogInterface, int i) {
         super.onBackPressed();
@@ -607,88 +426,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     @Override
     public void noButtonAction(DialogInterface dialogInterface, int i) {
         this.dialog.dismiss();
-    }
-
-    /**
-     * Update the user profile
-     *
-     * @param user
-     */
-    void updateUserConnectedProfile(User user) {
-        View headerNavView = navigationView.getHeaderView(0);
-        CircleImageView profile = headerNavView.findViewById(R.id.profile_image);
-        TextView title = headerNavView.findViewById(R.id.profile_user_name);
-        TextView mail = headerNavView.findViewById(R.id.profile_user_email_address);
-        MenuItem disconnect = navigationView.getMenu().findItem(R.id.menu_deconnexion);
-        //Si l'utilisateur est connecte?
-        if (user != null) {
-            disconnect.setVisible(true);
-            switch (user.getType()) {
-                case GOOGLE:
-                case FACEBOOK:
-                    title.setText(user.getNom());
-                    mail.setText(user.getEmail());
-                    profile.setImageDrawable(user.getImageUrl() != null ? FileUtils.loadImageFromStorage("glearning", user.getNom() + ".png", DApplicationContext.getContext()) : getDrawable(R.drawable.baseline_account_circle_white_48dp));
-                    break;
-                case MAIL:
-                    title.setText(user.getNom());
-                    mail.setText(user.getEmail());
-                    profile.setImageDrawable(getDrawable(R.drawable.baseline_account_circle_white_48dp));
-                    break;
-                case PHONE:
-                    title.setText(user.getNom());
-                    mail.setText(user.getPhone());
-                    profile.setImageDrawable(getDrawable(R.drawable.baseline_account_circle_white_48dp));
-                    break;
-            }
-
-        } else {
-            disconnect.setVisible(false);
-            title.setText(R.string.activity_main_username);
-            mail.setText(R.string.activity_main_email_address);
-            profile.setImageDrawable(getDrawable(R.drawable.baseline_account_circle_white_48dp));
-        }
-    }
-
-
-    void downloadProfileImage(User user) {
-        beginWaiting();
-        Bundle params = new Bundle();
-        params.putString("fields", "id, name, birthday,hometown,email,gender,cover,picture.width(640).height(640)");
-        new GraphRequest(AccessToken.getCurrentAccessToken(), "me", params, HttpMethod.GET,
-                response -> {
-                    if (response != null) {
-                        try {
-                            FacebookProfile facebookProfile = objectMapper.readValue(response.getJSONObject().toString(), new TypeReference<FacebookProfile>() {
-                            });
-                            Log.e(TAG, "facebook url " + facebookProfile.getPicture().getData().getUrl());
-                            user.setType(User.Type.FACEBOOK);
-                            user.setNom(facebookProfile.getName());
-                            user.setImageUrl(facebookProfile.getPicture().getData().getUrl());
-                            user.setEmail(facebookProfile.getEmail());
-                            FacebookUrl facebookUrl = facebookProfileImageUrlSplit(facebookProfile.getPicture().getData().getUrl(), "?");
-                            downloadFacebookProfileImage(facebookUrl.getBaseUrl())
-                                    .subscribeOn(Schedulers.io())
-                                    .observeOn(AndroidSchedulers.mainThread())
-                                    .subscribe(bytes -> {
-                                        FileUtils.saveToInternalStorage(bytes, "glearning", user.getNom() + ".png", this);
-                                        //Updating connected user
-                                        userDao.update(user);
-                                        //Update profile
-                                        updateUserConnectedProfile(user);
-                                        //Cancel waiting
-                                        cancelWaiting();
-                                        showDialogImage(bytes, user);
-                                    }, error -> {
-                                        // on affiche les messages de la pile d'exceptions du Throwable th
-                                        new AlertDialog.Builder(this).setTitle("Ooops !").setMessage(getString(R.string.activity_main_check_your_connection_and_try_again)).setNeutralButton(getString(R.string.activity_main_button_close), null).show();
-                                    });
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }).executeAsync();
     }
 
     @JsonIgnoreProperties(ignoreUnknown = true)
@@ -844,5 +581,283 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         public void setParams(String params) {
             this.params = params;
         }
+    }
+
+    /**
+     * @param intent
+     */
+    private void handleNotifications(Intent intent) {
+        Bundle bundle = intent.getExtras();
+        if (bundle != null && bundle.containsKey(Constants.NOTIFICATION)) {
+            Notification notification = (Notification) bundle.getSerializable(Constants.NOTIFICATION);
+            if (notification != null) {
+                try {
+                    notification.setDate(new Date());
+                    notificationDao.save(notification);
+                    getSupportActionBar().show();
+                    updateNotificationNumber(1);
+                    activateMainButtonMenu(R.id.bottom_menu_me);
+                    navigateToView(NOTIFICATION_FRAGMENT, ISession.Action.SUBMIT);
+                } catch (DaoException e) {
+                    Log.e(getClass().getSimpleName(), "Dao Exception!", e);
+                }
+
+            } else {
+                Log.e(getClass().getSimpleName(), " onNewIntent(): notification null ");
+            }
+
+        } else {
+            Log.e(getClass().getSimpleName(), " onNewIntent(): bundle null ");
+        }
+        this.setIntent(intent);
+    }
+
+
+    /**
+     * Update the user profile
+     *
+     * @param user
+     */
+    void updateUserConnectedProfile(User user) {
+        View headerNavView = navigationView.getHeaderView(0);
+        CircleImageView profile = headerNavView.findViewById(R.id.profile_image);
+        TextView title = headerNavView.findViewById(R.id.profile_user_name);
+        TextView mail = headerNavView.findViewById(R.id.profile_user_email_address);
+        MenuItem disconnect = navigationView.getMenu().findItem(R.id.menu_deconnexion);
+        //Si l'utilisateur est connecte?
+        if (user != null) {
+            disconnect.setVisible(true);
+            switch (user.getType()) {
+                case GOOGLE:
+                case FACEBOOK:
+                    title.setText(user.getNom());
+                    mail.setText(user.getEmail());
+                    profile.setImageDrawable(user.getImageUrl() != null ? FileUtils.loadImageFromStorage("glearning", user.getNom() + ".png", DApplicationContext.getContext()) : getDrawable(R.drawable.baseline_account_circle_white_48dp));
+                    break;
+                case MAIL:
+                    title.setText(user.getNom());
+                    mail.setText(user.getEmail());
+                    profile.setImageDrawable(getDrawable(R.drawable.baseline_account_circle_white_48dp));
+                    break;
+                case PHONE:
+                    title.setText(user.getNom());
+                    mail.setText(user.getPhone());
+                    profile.setImageDrawable(getDrawable(R.drawable.baseline_account_circle_white_48dp));
+                    break;
+            }
+
+        } else {
+            disconnect.setVisible(false);
+            title.setText(R.string.activity_main_username);
+            mail.setText(R.string.activity_main_email_address);
+            profile.setImageDrawable(getDrawable(R.drawable.baseline_account_circle_white_48dp));
+        }
+    }
+
+
+    /**
+     *
+     * @param user
+     */
+    void downloadProfileImage(User user) {
+        beginWaiting();
+        Bundle params = new Bundle();
+        params.putString("fields", "id, name, birthday,hometown,email,gender,cover,picture.width(640).height(640)");
+        new GraphRequest(AccessToken.getCurrentAccessToken(), "me", params, HttpMethod.GET,
+                response -> {
+                    if (response != null) {
+                        try {
+                            FacebookProfile facebookProfile = objectMapper.readValue(response.getJSONObject().toString(), new TypeReference<FacebookProfile>() {
+                            });
+                            Log.e(TAG, "facebook url " + facebookProfile.getPicture().getData().getUrl());
+                            user.setType(User.Type.FACEBOOK);
+                            user.setNom(facebookProfile.getName());
+                            user.setImageUrl(facebookProfile.getPicture().getData().getUrl());
+                            user.setEmail(facebookProfile.getEmail());
+                            FacebookUrl facebookUrl = facebookProfileImageUrlSplit(facebookProfile.getPicture().getData().getUrl(), "?");
+                            downloadFacebookProfileImage(facebookUrl.getBaseUrl())
+                                    .subscribeOn(Schedulers.io())
+                                    .observeOn(AndroidSchedulers.mainThread())
+                                    .subscribe(bytes -> {
+                                        FileUtils.saveToInternalStorage(bytes, "glearning", user.getNom() + ".png", this);
+                                        //Updating connected user
+                                        userDao.update(user);
+                                        //Update profile
+                                        updateUserConnectedProfile(user);
+                                        //Cancel waiting
+                                        cancelWaiting();
+                                        showDialogImage(bytes, user);
+                                    }, error -> {
+                                        // on affiche les messages de la pile d'exceptions du Throwable th
+                                        new AlertDialog.Builder(this).setTitle("Ooops !").setMessage(getString(R.string.activity_main_check_your_connection_and_try_again)).setNeutralButton(getString(R.string.activity_main_button_close), null).show();
+                                    });
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).executeAsync();
+    }
+
+    /**
+     * @param bytes
+     * @param user
+     */
+    private void showDialogImage(byte[] bytes, User user) {
+        if (user != null) {
+            final Dialog dialog = new Dialog(this);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // before
+            dialog.setContentView(R.layout.dialog_contact_image);
+            TextView name = dialog.findViewById(R.id.name);
+            TextView email = dialog.findViewById(R.id.email_or_number);
+            ImageView smallImage = dialog.findViewById(R.id.small_image);
+            ImageView image = dialog.findViewById(R.id.large_image);
+            switch (user.getType()) {
+                case GOOGLE:
+                case MAIL:
+                case FACEBOOK:
+                    email.setText(user.getEmail());
+                    name.setText(user.getNom());
+                    break;
+                case PHONE:
+                    email.setText(user.getPhone());
+                    name.setText(user.getNom());
+                    break;
+            }
+            if (bytes != null) {
+                smallImage.setImageBitmap(BitmapFactory.decodeByteArray(bytes, 0, bytes.length));
+                image.setImageBitmap(BitmapFactory.decodeByteArray(bytes, 0, bytes.length));
+            }
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+            dialog.setCancelable(true);
+            (dialog.findViewById(R.id.bt_close)).setOnClickListener(v -> dialog.dismiss());
+            dialog.show();
+        }
+
+    }
+
+    /**
+     * Return user informations switch provider type
+     *
+     * @param firebaseUser
+     * @return
+     */
+    public void getProviderData(FirebaseUser firebaseUser) {
+        User user = new User();
+        for (UserInfo profile : firebaseUser.getProviderData()) {
+            //switch provider
+            switch (profile.getProviderId()) {
+                //Connected with google account
+                case "google.com":
+                    //Connection using google
+                    googleConnect(firebaseUser, user, profile);
+                    break;
+                //Connected with facebook account
+                case "facebook.com":
+                    //Connection using facebook
+                    facebookConnect(user);
+                    break;
+                //connected with phone number
+                case "phone":
+                    //Connection using phone number
+                    phoneNumberConnect(user, profile);
+                    break;
+                //connected with an email address
+                case "password":
+                    //Connection using email address
+                    mailConnect(user, profile);
+                    break;
+                default:
+                    break;
+            }
+
+        }
+        //Mise à jour de la base de données
+        try {
+            Log.e(getClass().getSimpleName(), "Mainactivity user before save : " + user);
+            if (user != null) {
+                userDao.save(user);
+            }
+        } catch (DaoException e) {
+            Log.e(getClass().getSimpleName(), "Dao Exception!", e);
+        }
+    }
+
+    /**
+     * @param user
+     * @param profile
+     */
+    private void mailConnect(User user, UserInfo profile) {
+        user.setType(User.Type.MAIL);
+        user.setEmail(profile.getEmail());
+        showDialogImage(null, user);
+    }
+
+    /**
+     * @param user
+     * @param profile
+     */
+    private void phoneNumberConnect(User user, UserInfo profile) {
+        user.setType(User.Type.PHONE);
+        user.setPhone(profile.getPhoneNumber());
+        showDialogImage(null, user);
+    }
+
+    /**
+     * @param user
+     */
+    private void facebookConnect(User user) {
+        if (Constants.isNetworkConnected) {
+            downloadProfileImage(user);
+        } else {
+            Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.oops_connection_issue_msg));
+        }
+    }
+
+    /**
+     * @param firebaseUser
+     * @param user
+     * @param profile
+     */
+    private void googleConnect(FirebaseUser firebaseUser, User user, UserInfo profile) {
+        user.setType(User.Type.GOOGLE);
+        user.setNom(firebaseUser.getDisplayName());
+        user.setEmail(profile.getEmail());
+        user.setImageUrl(profile.getPhotoUrl().toString().replace("s96-c", "s400-c"));
+        if (Constants.isNetworkConnected) {
+            //Launch the loader
+            beginWaiting();
+            downloadUrl(user.getImageUrl())
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(bytes -> {
+                        //Save the user avator in internal storage
+                        FileUtils.saveToInternalStorage(bytes, "glearning", user.getNom() + ".png", this);
+                        //Update profile
+                        updateUserConnectedProfile(user);
+                        //cancel the loading
+                        cancelWaiting();
+                        //Show user dialog with user resume
+                        showDialogImage(bytes, user);
+                    }, error -> {
+                        //on affiche les messages de la pile d'exceptions du Throwable th
+                        new AlertDialog.Builder(this).setTitle("Ooops !").setMessage(R.string.activity_main_check_your_connection_and_try_again).setNeutralButton(R.string.activity_main_button_close, null).show();
+                    });
+        } else {
+            Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.activity_main_network_issue));
+        }
+    }
+
+    /**
+     * Subscribe to firebase channel
+     */
+    private void firebaseSubscription() {
+        FirebaseMessaging.getInstance().subscribeToTopic(getString(R.string.firebase_channel_id))
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        session.setSubscribed(true);
+                        Log.e(TAG, "subscription to the channel for notification is successfully");
+                    }
+                });
     }
 }

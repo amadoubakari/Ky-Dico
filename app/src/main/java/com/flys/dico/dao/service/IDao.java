@@ -1,5 +1,7 @@
 package com.flys.dico.dao.service;
 
+import android.content.Context;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.flys.dico.fragments.adapters.Word;
@@ -36,7 +38,7 @@ public interface IDao {
     Observable<byte[]> downloadFacebookImage(String url, String type);
 
     //Load dictionary data from assets
-    Observable<List<Word>> loadDictionnaryDataFromAssets();
+    Observable<List<Word>> loadDictionnaryDataFromAssets(Context context);
 
     //Reload data
     Observable<Void> reloadData(List<Word> words, WordAdapter adapter, RecyclerView recyclerView);

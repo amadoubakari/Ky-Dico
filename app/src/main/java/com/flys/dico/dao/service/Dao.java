@@ -1,5 +1,6 @@
 package com.flys.dico.dao.service;
 
+import android.content.Context;
 import android.util.Log;
 import android.view.View;
 
@@ -115,12 +116,12 @@ public class Dao extends AbstractDao implements IDao {
     }
 
     @Override
-    public Observable<List<Word>> loadDictionnaryDataFromAssets() {
+    public Observable<List<Word>> loadDictionnaryDataFromAssets(Context context) {
         //Load dictionary data from assets dictory
         return Observable.create(subscriber -> {
             if (!subscriber.isUnsubscribed()) {
                 try {
-                    List<Word> words = jsonMapper.readValue(DApplicationContext.getContext().getAssets().open(DApplicationContext.getContext().getString(R.string.dictionary_data_source)), Dictionnaire.class).getWords();
+                    List<Word> words = jsonMapper.readValue(context.getAssets().open(context.getString(R.string.dictionary_data_source)), Dictionnaire.class).getWords();
                     //and observable that are going to emit data
                     emitData(subscriber, words, 50);
                 } catch (IOException e) {

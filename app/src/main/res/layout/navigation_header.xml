@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/open_sans_light"
         android:paddingTop="5dp"
-        android:text="Username"
+        android:text="@string/activity_main_username"
         android:textColor="@android:color/white"
         android:textSize="14dp"
         android:textStyle="bold" />
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/open_sans_light"
             android:paddingTop="5dp"
-            android:text="email"
+            android:text="@string/activity_main_email_address"
             android:textColor="@android:color/white"
             android:textSize="14sp"
             android:textStyle="bold" />
