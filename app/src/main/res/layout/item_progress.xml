@@ -2,15 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:background="@color/white"
-    android:paddingLeft="15dp"
-    android:paddingRight="@dimen/layout_padding_10dp"
-    android:layout_marginTop="50dp">
+    android:gravity="center"
+    android:minHeight="?attr/actionBarSize"
+    android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone" />
+        android:layout_margin="@dimen/spacing_middle"
+        android:indeterminate="true" />
+
 </LinearLayout>

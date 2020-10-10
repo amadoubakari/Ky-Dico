@@ -73,5 +73,6 @@ public interface IMainActivity extends IDao {
 
     void recreateActivity();
 
+    void hideBottomNavigation(int visibility);
 
 }

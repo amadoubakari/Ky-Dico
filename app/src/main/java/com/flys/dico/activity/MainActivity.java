@@ -338,9 +338,9 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     }
 
     @Override
-    public Observable<List<Word>> loadDictionnaryDataFromAssets(Context context) {
+    public Observable<List<Word>> loadDictionaryDataFromAssets(Context context) {
         //Load dictionary data from assets dictory
-        return dao.loadDictionnaryDataFromAssets(context);
+        return dao.loadDictionaryDataFromAssets(context);
     }
 
     @Override
@@ -366,6 +366,16 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     @Override
     public Observable<byte[]> downloadFacebookProfileImage(String baseUrl) {
         return dao.downloadFacebookProfileImage(baseUrl);
+    }
+
+    @Override
+    public Observable<List<Word>> loadSequenceWords(Context context, int index, int size) {
+        return dao.loadSequenceWords(context, index,size);
+    }
+
+    @Override
+    public Observable<List<Word>> loadWords(Context context, String query) {
+        return dao.loadWords(context,query);
     }
 
     @Override
@@ -406,7 +416,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         BadgeDrawable badgeDrawable = bottomNavigationView.getOrCreateBadge(R.id.bottom_menu_me);
         badgeDrawable.setVisible(false);
     }
-
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
@@ -659,7 +668,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
      *
      * @param user
      */
-    void downloadProfileImage(User user) {
+    void downloadFacebookUserProfileImage(User user) {
         beginWaiting();
         Bundle params = new Bundle();
         params.putString("fields", "id, name, birthday,hometown,email,gender,cover,picture.width(640).height(640)");
@@ -772,7 +781,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
             }
 
         }
-        //Mise à jour de la base de données
         try {
             Log.e(getClass().getSimpleName(), "Mainactivity user before save : " + user);
             if (user != null) {
@@ -808,7 +816,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
      */
     private void facebookConnect(User user) {
         if (Constants.isNetworkConnected) {
-            downloadProfileImage(user);
+            downloadFacebookUserProfileImage(user);
         } else {
             Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.oops_connection_issue_msg));
         }

@@ -1,5 +1,7 @@
 package com.flys.dico.fragments.behavior;
 
+import android.os.Handler;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -37,14 +39,19 @@ import rx.schedulers.Schedulers;
 @OptionsMenu(R.menu.menu_home)
 public class HomeFragment extends AbstractFragment {
 
+    private final String TAG = "HomeFragment";
+
+    private static WordAdapter wordAdapter;
+    private static List<Word> words;
+    private static SearchView searchView;
+
     @ViewById(R.id.recyclerview)
     protected RecyclerView recyclerView;
     @OptionsMenuItem(R.id.search)
     protected MenuItem menuItem;
-    private WordAdapter wordAdapter;
-    private static List<Word> words;
-    private static SearchView searchView;
-    private final String TAG = "HomeFragment";
+    private int itemsPerDisplay = 6;
+    private static final int size = 10;
+    private static int index = 0;
 
     @Override
     public CoreState saveFragment() {
@@ -58,6 +65,7 @@ public class HomeFragment extends AbstractFragment {
 
     @Override
     protected void initFragment(CoreState previousState) {
+        Log.e(TAG, "initFragment");
         ((AppCompatActivity) mainActivity).getSupportActionBar().show();
         if (previousState == null) {
             reloadData();
@@ -66,21 +74,23 @@ public class HomeFragment extends AbstractFragment {
 
     @Override
     protected void initView(CoreState previousState) {
+        Log.e(TAG, "initView");
     }
 
     @Override
     protected void updateOnSubmit(CoreState previousState) {
-        if (recyclerView.getAdapter() == null) {
-            reloadData();
-        }
+        Log.e(TAG, "updateOnSubmit");
+        reloadData();
     }
 
     @Override
     protected void updateOnRestore(CoreState previousState) {
+        Log.e(TAG, "updateOnRestore");
     }
 
     @Override
     protected void notifyEndOfUpdates() {
+        Log.e(TAG, "notifyEndOfUpdates");
 
     }
 
@@ -103,24 +113,27 @@ public class HomeFragment extends AbstractFragment {
     protected void doSearch() {
         searchView = (SearchView) menuItem.getActionView();
         Utils.changeSearchTextColor(activity, searchView);
-        initSearchFeatureNew(words);
+        initSearchFeatureNew();
     }
 
     /**
-     * @param wordss
+     *
      */
-    private void initSearchFeatureNew(final List<Word> wordss) {
+    private void initSearchFeatureNew() {
+        beginRunningTasks(1);
         RxSearchObservable.fromSearchView(searchView)
                 .debounce(1500, TimeUnit.MILLISECONDS)
                 .distinctUntilChanged()
-                .switchMap((Func1<String, Observable<List<Word>>>) s -> filterWithObservable(wordss, s))
+                .switchMap((Func1<String, Observable<List<Word>>>) query -> mainActivity.loadWords(activity, query))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(wordssss -> {
-                    wordAdapter = new WordAdapter(activity, wordssss, (v, position) -> {
+                .subscribe(wordList -> {
+                    wordAdapter = new WordAdapter(activity, wordList, (v, position) -> {
                     });
                     recyclerView.setLayoutManager(new LinearLayoutManager(activity));
                     recyclerView.setAdapter(wordAdapter);
+                    //cancel the loading
+                    cancelWaitingTasks();
                 });
     }
 
@@ -141,15 +154,34 @@ public class HomeFragment extends AbstractFragment {
      * Reload data from the dictionary json file
      */
     private void reloadData() {
-        recyclerView.setVisibility(View.VISIBLE);
+        index = 0;
         words = new ArrayList<>();
-        wordAdapter = new WordAdapter(words, activity);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(wordAdapter);
+        wordAdapter = new WordAdapter(activity, words, itemsPerDisplay);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
+        recyclerView.setHasFixedSize(true);
         beginRunningTasks(1);
-        executeInBackground(mainActivity.loadDictionnaryDataFromAssets(activity).delay(1000, TimeUnit.MILLISECONDS), wordList -> {
+        executeInBackground(mainActivity.loadSequenceWords(activity, index, size).delay(1000, TimeUnit.MILLISECONDS), wordList -> {
+            recyclerView.setVisibility(View.VISIBLE);
+            recyclerView.setAdapter(wordAdapter);
             wordAdapter.addWords(wordList);
+            applyLoadMoreOnScrollListener(wordAdapter);
+        });
+
+    }
+
+    public void applyLoadMoreOnScrollListener(WordAdapter wordAdapter) {
+        wordAdapter.setOnLoadMoreListener(currentPage -> {
+            loadNextData(wordAdapter);
         });
     }
+
+    private void loadNextData(WordAdapter wordAdapter) {
+        wordAdapter.setLoading();
+        index = index + size;
+        executeInBackground(mainActivity.loadSequenceWords(activity, index, size).delay(500, TimeUnit.MILLISECONDS), wordList -> {
+            wordAdapter.insertData(wordList);
+        });
+    }
+
+
 }

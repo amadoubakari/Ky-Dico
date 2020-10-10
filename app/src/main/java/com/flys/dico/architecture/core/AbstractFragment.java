@@ -390,20 +390,6 @@ public abstract class AbstractFragment extends Fragment {
         }
     }
 
-   /* @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        // parent
-        super.setUserVisibleHint(isVisibleToUser);
-        // sauvegarde ?
-        if (this.isVisibleToUser && !isVisibleToUser) {
-            // le fragment va être caché - on le sauvegarde
-            if (!saveFragmentDone) {
-                saveState();
-            }
-        }
-        // mémoire
-        this.isVisibleToUser = isVisibleToUser;
-    }*/
 
     @Override
     public void onResume() {

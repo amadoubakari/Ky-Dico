@@ -38,7 +38,7 @@ public interface IDao {
     Observable<byte[]> downloadFacebookImage(String url, String type);
 
     //Load dictionary data from assets
-    Observable<List<Word>> loadDictionnaryDataFromAssets(Context context);
+    Observable<List<Word>> loadDictionaryDataFromAssets(Context context);
 
     //Reload data
     Observable<Void> reloadData(List<Word> words, WordAdapter adapter, RecyclerView recyclerView);
@@ -52,4 +52,8 @@ public interface IDao {
     Observable<byte[]> downloadFacebookProfileImage(final String baseUrl, final String params);
 
     Observable<byte[]> downloadFacebookProfileImage(final String baseUrl);
+
+    Observable<List<Word>> loadSequenceWords(Context context, int index, int size);
+
+    Observable<List<Word>> loadWords(Context context, final String query);
 }

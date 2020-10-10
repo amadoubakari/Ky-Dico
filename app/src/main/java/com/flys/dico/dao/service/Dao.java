@@ -92,12 +92,12 @@ public class Dao extends AbstractDao implements IDao {
     }
 
     @Override
-    public void setBasicAuthentification(boolean isBasicAuthentificationNeeded) {
+    public void setBasicAuthentification(boolean isBasicAuthenticationNeeded) {
         if (isDebugEnabled) {
-            Log.d(className, String.format("setBasicAuthentification thread=%s, isBasicAuthentificationNeeded=%s", Thread.currentThread().getName(), isBasicAuthentificationNeeded));
+            Log.d(className, String.format("setBasicAuthentication thread=%s, isBasicAuthenticationNeeded=%s", Thread.currentThread().getName(), isBasicAuthenticationNeeded));
         }
         // intercepteur d'authentification ?
-        if (isBasicAuthentificationNeeded) {
+        if (isBasicAuthenticationNeeded) {
             // on ajoute l'intercepteur d'authentification
             List<ClientHttpRequestInterceptor> interceptors = new ArrayList<ClientHttpRequestInterceptor>();
             interceptors.add(authInterceptor);
@@ -116,8 +116,8 @@ public class Dao extends AbstractDao implements IDao {
     }
 
     @Override
-    public Observable<List<Word>> loadDictionnaryDataFromAssets(Context context) {
-        //Load dictionary data from assets dictory
+    public Observable<List<Word>> loadDictionaryDataFromAssets(Context context) {
+        //Load dictionary data from assets dictionary
         return Observable.create(subscriber -> {
             if (!subscriber.isUnsubscribed()) {
                 try {
@@ -131,25 +131,6 @@ public class Dao extends AbstractDao implements IDao {
         });
     }
 
-    /**
-     * It emit data from define limit element on words
-     *
-     * @param subscriber
-     * @param words
-     * @param limit
-     */
-    private void emitData(Subscriber<? super List<Word>> subscriber, List<Word> words, long limit) {
-        //Is empty we don't have treatment to do
-        if (words.isEmpty()) {
-            //If there not element in our list we notify that task is finish
-            subscriber.onCompleted();
-        } else {
-            //Emission of limit element
-            subscriber.onNext(words.stream().limit(limit).collect(Collectors.toList()));
-            //skip limit element
-            emitData(subscriber, words.stream().skip(limit).collect(Collectors.toList()), limit);
-        }
-    }
 
     @Override
     public Observable<Void> reloadData(List<Word> words, WordAdapter adapter, RecyclerView recyclerView) {
@@ -186,12 +167,67 @@ public class Dao extends AbstractDao implements IDao {
 
     @Override
     public Observable<byte[]> downloadFacebookProfileImage(final String baseUrl, final String params) {
-        return  getResponse(() -> webClient.downloadFacebookProfileImage(baseUrl,params));
+        return getResponse(() -> webClient.downloadFacebookProfileImage(baseUrl, params));
     }
 
     @Override
     public Observable<byte[]> downloadFacebookProfileImage(String baseUrl) {
         return getResponse(() -> webClient.downloadFacebookProfileImage(baseUrl));
+    }
+
+    @Override
+    public Observable<List<Word>> loadSequenceWords(Context context, int index, int size) {
+        return Observable.create(subscriber -> {
+            try {
+                List<Word> words = jsonMapper.readValue(context.getAssets().open(context.getString(R.string.dictionary_data_source)), Dictionnaire.class).getWords();
+                subscriber.onNext(words.stream()
+                        .skip(index)
+                        .limit(size)
+                        .collect(Collectors.toList()));
+                subscriber.onCompleted();
+            } catch (IOException e) {
+                e.printStackTrace();
+                subscriber.onError(e);
+            }
+        });
+    }
+
+    @Override
+    public Observable<List<Word>> loadWords(Context context, final String query) {
+        return Observable.create(subscriber -> {
+            try {
+                List<Word> words = jsonMapper.readValue(context.getAssets().open(context.getString(R.string.dictionary_data_source)), Dictionnaire.class).getWords();
+                subscriber.onNext(
+                        words.parallelStream()
+                                .filter(word -> word.getTitle().toLowerCase().contains(query.toLowerCase()) ||
+                                        word.getDescription().toLowerCase().contains(query.toLowerCase()))
+                                .collect(Collectors.toList()));
+                subscriber.onCompleted();
+            } catch (IOException e) {
+                e.printStackTrace();
+                subscriber.onError(e);
+            }
+        });
+    }
+
+    /**
+     * It emit data from define limit element on words
+     *
+     * @param subscriber
+     * @param words
+     * @param limit
+     */
+    private void emitData(Subscriber<? super List<Word>> subscriber, List<Word> words, long limit) {
+        //Is empty we don't have treatment to do
+        if (words.isEmpty()) {
+            //If there not element in our list we notify that task is finish
+            subscriber.onCompleted();
+        } else {
+            //Emission of limit element
+            subscriber.onNext(words.stream().limit(limit).collect(Collectors.toList()));
+            //skip limit element
+            emitData(subscriber, words.stream().skip(limit).collect(Collectors.toList()), limit);
+        }
     }
 
 }

@@ -511,4 +511,10 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         finish();
         System.exit(2);
     }
+
+    @Override
+    public void hideBottomNavigation(int visibility) {
+        bottomNavigationView.setVisibility(visibility);
+    }
+
 }
