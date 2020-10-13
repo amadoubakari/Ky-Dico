@@ -1,6 +1,5 @@
 package com.flys.dico.fragments.behavior;
 
-import android.os.Handler;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,6 +26,7 @@ import org.androidannotations.annotations.ViewById;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
 import rx.Observable;
@@ -44,14 +44,16 @@ public class HomeFragment extends AbstractFragment {
     private static WordAdapter wordAdapter;
     private static List<Word> words;
     private static SearchView searchView;
+    private static final int size = 10;
+    private static int index = 0;
+    private static boolean wasInPause = false;
+
+    private int itemsPerDisplay = 6;
 
     @ViewById(R.id.recyclerview)
     protected RecyclerView recyclerView;
     @OptionsMenuItem(R.id.search)
     protected MenuItem menuItem;
-    private int itemsPerDisplay = 6;
-    private static final int size = 10;
-    private static int index = 0;
 
     @Override
     public CoreState saveFragment() {
@@ -105,8 +107,11 @@ public class HomeFragment extends AbstractFragment {
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
+    public void onFragmentResume() {
+        super.onFragmentResume();
+        if (wasInPause) {
+            reloadData();
+        }
     }
 
     @OptionsItem(R.id.search)
@@ -116,18 +121,40 @@ public class HomeFragment extends AbstractFragment {
         initSearchFeatureNew();
     }
 
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        wasInPause = true;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        wasInPause = false;
+
+    }
+
     /**
      *
      */
     private void initSearchFeatureNew() {
+        AtomicReference<String> queryWords = new AtomicReference<>();
         beginRunningTasks(1);
         RxSearchObservable.fromSearchView(searchView)
                 .debounce(1500, TimeUnit.MILLISECONDS)
                 .distinctUntilChanged()
-                .switchMap((Func1<String, Observable<List<Word>>>) query -> mainActivity.loadWords(activity, query))
+                .switchMap((Func1<String, Observable<List<Word>>>) query ->{
+                    queryWords.set(query);
+                    return  mainActivity.loadWords(activity, query);
+                })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(wordList -> {
+                    if(wordList.isEmpty()){
+                        //Inform me
+                        Log.e(TAG, "query"+queryWords.get());
+                    }
                     wordAdapter = new WordAdapter(activity, wordList, (v, position) -> {
                     });
                     recyclerView.setLayoutManager(new LinearLayoutManager(activity));
@@ -182,6 +209,4 @@ public class HomeFragment extends AbstractFragment {
             wordAdapter.insertData(wordList);
         });
     }
-
-
 }

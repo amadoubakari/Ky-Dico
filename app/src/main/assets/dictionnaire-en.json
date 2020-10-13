@@ -299,7 +299,7 @@
     {
       "title": "Algorithmic Language ",
       "description": "n. See ALGOL."
-    }, 
+    },
     {
       "title": "alias ",
       "description": "n. 1. An alternative label for some object, such as a file or data collection. 2. A name used to direct e-mail messages to a person or group of people on a network. 3. A false signal that results from the digitization of an analog audio sample."
@@ -1649,8 +1649,1844 @@
       "description": "n. A function in Microsoft Word for Windows that automatically corrects errors and makes other substitutions as soon as a user types text. For example, AutoCorrect can be set up to fix misspellings, such as teh for the, or to change “straight” (\" \") quotation marks to “smart” (“ ”) quotation marks. The user can select which AutoCorrect features to enable. See also smart quotes."
     },
     {
-      "title": "",
-      "description": ""
+      "title": "autodial",
+      "description": "n. A feature enabling a modem to open a telephone line and initiate a call by transmitting a stored telephone number as a series of pulses or tones."
+    },
+    {
+      "title": "AUTOEXEC.BAT",
+      "description": "n. A special-purpose batch file (set of commands) that is automatically carried out by the MSDOS operating system when the computer is started or restarted. Created by the user or (in later versions of MSDOS) by the operating system at system installation, the file contains basic startup commands that help configure the system to installed devices and to the user’s preferences."
+    },
+    {
+      "title": "AutoIP",
+      "description": "n. Short for automatic Internet Protocol addressing. A technique used by a device to obtain a valid IP address without a DHCP server or other IP-configuration authority. With AutoIP, a device randomly chooses an IP address from a set of reserved addresses and queries the local network to determine whether another client already is using that address. The device repeats the steps of picking and verifying until an unused address is found. AutoIP, based on an Internet Engineering Task Force (IETF) Internet Draft, is used in Universal Plug and Play (UPnP) networking. See also UPnP networking."
+    },
+    {
+      "title": "autokey",
+      "description": "n. See typematic."
+    },
+    {
+      "title": "autoload",
+      "description": "vb. To make some type of resource available without it having to be specifically requested. A program, for example, might autoload fonts or files as they are needed. Similarly, a CD-ROM drive might autoload audio discs or automatically start a setup program on a software CD-ROM. See also AutoPlay."
+    },
+    {
+      "title": "autoloader",
+      "description": "n. A device that automatically prepares a diskette, CD, or other storage medium for use."
+    },
+    {
+      "title": "automagic",
+      "description": "adj. Slang for a process performed in some unexplained (but not inexplicable) way by a computer. An automagic process might either be too complicated to explain (such as a complex spreadsheet calculation), or it might be a complex process made to appear simple to the user (such as clicking on a heading to arrange the items in a list in alphabetical or chronological order). Compare black box."
+    },
+    {
+      "title": "automata theory",
+      "description": "n. 1. The study of computing processes and their capabilities and limitations; that is, how systems receive and process input and produce output. See also cellular automata. 2. The study of the relationship between behavioral theories and the operation of automated devices."
+    },
+    {
+      "title": "automated home",
+      "description": "n. See smart home."
+    },
+    {
+      "title": "automated office",
+      "description": "n. A broad term used to refer to an office where work is carried out with the aid of computers, telecommunications facilities, and other electronic devices."
+    },
+    {
+      "title": "automated teller machine",
+      "description": "n. See ATM (definition 2)."
+    },
+    {
+      "title": "automatic answering",
+      "description": "n. See answer mode."
+    },
+    {
+      "title": "automatic data processing",
+      "description": "n. See data processing."
+    },
+    {
+      "title": "automatic dialing",
+      "description": "n. See auto dial."
+    },
+    {
+      "title": "automatic error correction",
+      "description": "n. A process that, upon detection of an internal processing or data transmission error, invokes a routine designed to correct the error or retry the operation."
+    },
+    {
+      "title": "automatic IP addressing",
+      "description": "n. See AutoIP."
+    },
+    {
+      "title": "automatic patching",
+      "description": "n. A process in which vulnerabilities caused by a destructive computer virus infection are tracked down and corrected by a do-gooder virus or other anti-virus program. Automatic patching may be initiated by the user, or may be done by a virus entering a back door left by a malicious virus, without the consent of the user. See also anti-worm, do-gooder virus."
+    },
+    {
+      "title": "Automatic Private IP Addressing",
+      "description": "n. A feature of Windows XP TCP/IP that automatically configures a unique IP address from the range 169.254.0.1 through 169.254.255.254 and a subnet mask of 255.255.0.0 when the TCP/IP protocol is configured for dynamic addressing and Dynamic Host Configuration Protocol (DHCP) is not available. Acronym: APIPA.See also DHCP server, Dynamic Host Configuration Protocol (DHCP), IP address, Transmission Control Protocol/Internet Protocol (TCP/IP)."
+    },
+    {
+      "title": "Automatic Sequence Controlled Calculator",
+      "description": "n. See Mark I."
+    },
+    {
+      "title": "automatic speech recognition",
+      "description": "n. See ASR (definition 2)."
+    },
+    {
+      "title": "automatic system reconfiguration",
+      "description": "n. Automation of configuration by the system to accommodate some change in either the software or the hardware. Acronym: ASR."
+    },
+    {
+      "title": "Automation",
+      "description": "n. 1. The implementation of a mechanical or electronic system or tool to automatically complete a task, thereby reducing or eliminating human intervention. 2. Formerly known as OLE Automation, a Microsoft-designed technology that enables an application to expose objects and their properties for use by other applications. This allows a word processor to display and manipulate a spreadsheet program, for instance. The application that exposes an object for use is called the server; the application that manipulates the object is called the client. Automation can be either local or remote (on a computer elsewhere on a network). It is intended primarily for use by high-level languages such as Microsoft Visual Basic and Microsoft Visual C++. See also ActiveX control, OLE."
+    },
+    {
+      "title": "automonitor",
+      "description": "n. A process or system feature capable of assessing the status of its own internal environment."
+    },
+    {
+      "title": "autonomous agent",
+      "description": "n. A software or robotic entity that is capable of independent action in open, unpredictable environments. Often referred to as an intelligent agent, or simply agent, autonomous agents complete some kind of automatic process that can communicate with other agents or perform different kinds of directed tasks. Autonomous agents are currently being applied in areas as diverse as computer games, interactive cinema, information retrieval and filtering, user interface design, electronic commerce, auto piloting of vehicles and spacecraft, and industrial process control. Also called: intelligent agent. See also agent (definition 2)."
+    },
+    {
+      "title": "autonomous-system number",
+      "description": "n. See autonomous system."
+    },
+    {
+      "title": "autonomous system",
+      "description": "n. A group of routers or networks controlled by a single administrative authority using a common Interior Gateway Protocol (IGP) for routing packets. Each autonomous system is assigned a globally unique number called an autonomous-system number (ASN). Acronym: AS. Also called: routing domain. See also IGP."
+    },
+    {
+      "title": "Auto PC",
+      "description": "n. An information and entertainment system for use in automobiles. Developed by Microsoft and powered by Microsoft Windows CE (a Windows-compatible operating system designed for embedded applications), Auto PC implements speech-recognition technology to enable individuals to rely on hands-free, spoken commands for tasks such as accessing a contact database (names, addresses, numbers), calling up e-mail or traffic reports, controlling an audio system, or obtaining destination directions. The Auto PC fits into the dashboard, in the space normally occupied by a radio. See also voice recognition, Windows."
+    },
+    {
+      "title": "AutoPlay",
+      "description": "n. A feature in Windows 9x and later that allows it to automatically operate a CD-ROM. When a CD is inserted into a CD-ROM drive, Windows looks for a file called AUTORUN.INF on the CD. If the file is found, Windows will open it and carry out its instructions, which are usually to set up an application from the CD-ROM on the computer’s hard disk or to start the application once it has been installed. If an audio CD is inserted into the drive, Windows will automatically launch the CD Player application and play it."
+    },
+    {
+      "title": "autopolling",
+      "description": "n. The process of periodically determining the status of each device in a set so that the active program can process the events generated by each device, such as whether a mouse button was pressed or whether new data is available at a serial port. This can be contrasted with event-driven processing, in which the operating system alerts a program or routine to the occurrence of an event by means of an interrupt or message rather than having to check each device in turn. Also called: polling. Compare event-driven processing, interrupt-driven processing."
+    },
+    {
+      "title": "autorepeat",
+      "description": "n. See typematic."
+    },
+    {
+      "title": "autoresponder",
+      "description": "n. E-mail utility that replies automatically to an incoming e-mail. Typically, an autoresponder sends a standard, pre-written message confirming the receipt of the original e-mail."
+    },
+    {
+      "title": "autorestart",
+      "description": "n. A process or system feature that can automatically restart the system after the occurrence of certain type of errors or a power system failure."
+    },
+    {
+      "title": "AUTORUN.INF",
+      "description": "n. A file that when present on removable media, such as CD-ROMs, triggers the AutoPlay feature in Windows 9x and Windows NT. The file, located in the root directory of the inserted medium, contains information on what action the operating system is to take on the CD-ROM—generally, an instruction to run an installation program."
+    },
+    {
+      "title": "autosave",
+      "description": "n. A program feature that automatically saves an open file to a disk or other medium at defined intervals or after a certain number of keystrokes to ensure that changes to a document are periodically saved."
+    },
+    {
+      "title": "autosizing",
+      "description": "n. The ability of a monitor to accept signals at one resolution and display the image at a different resolution. A monitor capable of autosizing maintains the aspect ratio of an image but enlarges or reduces the image to fit in the space available. See also monitor, resolution (definition 1)."
+    },
+    {
+      "title": "autostart routine",
+      "description": "n. A process by which a system or device is automatically prepared for operation with the occurrence of powering up, or turning the system on, or some other predetermined event. See also AUTOEXEC.BAT, autorestart, boot (2), power up."
+    },
+    {
+      "title": "autostereogram",
+      "description": "n. A computer-generated image, popularized in books and posters, that looks like an abstract design, but which emerges as a three-dimensional picture when the user looks beyond the image, without trying to focus on the hidden picture itself. Autostereograms in which the overlying design consists of a repetitive pattern are known as Single Image Stereograms (SIS). Those in which the design looks like a random pattern of colored dots are called Single Image Random Dot Stereograms, or SIRDS. Also called: stereogram."
+    },
+    {
+      "title": "autotrace",
+      "description": "n. A drawing program feature that draws lines along the edges of a bitmapped image to convert the image to an object-oriented one. See also bitmapped graphics, object-oriented graphics."
+    },
+    {
+      "title": "AUX",
+      "description": "n. The logical device name reserved by MS-DOS for an auxiliary device, or peripheral. AUX usually refers to a system’s first serial port, also known as COM1."
+    },
+    {
+      "title": "A/UX",
+      "description": "n. A version of the multiuser, multitasking UNIX operating system provided by Apple Computer for various Macintosh computers and based on the AT&T System V, release 2.2 of UNIX with some enhancements. A/UX incorporates a number of Apple features, including support for the Macintosh Toolbox, so that applications can provide users with the graphics-based interface characteristic of that computer. See also System V."
+    },
+    {
+      "title": "auxiliary device",
+      "description": "n. See peripheral."
+    },
+    {
+      "title": "auxiliary equipment",
+      "description": "n. See peripheral."
+    },
+    {
+      "title": "auxiliary storage",
+      "description": "n. Any storage medium, such as disk or tape, not directly accessed by a computer’s microprocessor, as is random access memory (RAM). In current usage, such media are typically referred to as storage or permanent storage, and the RAM chips that the microprocessor uses directly for temporary storage are referred to as memory."
+    },
+    {
+      "title": "availability",
+      "description": "n. 1. In processing, the accessibility of a computer system or resource, such as a printer, in terms of usage or of the percentage of the total amount of time the device is needed. 2. A measure of the fault tolerance of a computer and its programs. A highly available computer runs 24 hours a day, 7 days a week. See also fault tolerance."
+    },
+    {
+      "title": "available time",
+      "description": "n. See uptime."
+    },
+    {
+      "title": "avalanche ad",
+      "description": "n. One of several larger formats for online ads developed to replace traditional banner ads on the Internet. Avalanche ads are generally 120 x 800 pixels in size. See also skyscraper ad."
+    },
+    {
+      "title": "avatar",
+      "description": "n. In virtual-reality environments such as certain types of Internet chat rooms, a graphical representation of a user. An avatar typically is a generic picture or animation of a human of either gender, a photograph or caricature of the user, a picture or animation of an animal, or an object chosen by the user to depict his or her virtual-reality “identity.” See superuser."
+    },
+    {
+      "title": ".avi",
+      "description": "n. The file extension that identifies an audiovisual interleaved data file in the Microsoft RIFF format."
+    },
+    {
+      "title": "AVI",
+      "description": "n. Acronym for Audio Video Interleaved. A Windows multimedia file format for sound and moving pictures that uses the Microsoft RIFF (Resource Interchange File Format) specification."
+    },
+    {
+      "title": "awk",
+      "description": "n. A UNIX-based language designed for file processing applications, awk is a part of the POSIX Command Language and Utilities standard. It is considered a subset of PERL."
+    },
+    {
+      "title": "AWT",
+      "description": "n. See Abstract Window Toolkit."
+    },
+    {
+      "title": "axis",
+      "description": "n. In a chart or other two-dimensional system using coordinates, the horizontal line (x-axis) or vertical line (yaxis) that serves as a reference for plotting points. In a three-dimensional coordinate system, a third line (z-axis) is used to represent depth. See the illustration. See also Cartesian coordinates."
+    },
+    {
+      "title": "b (1)",
+      "description": "adj. Short for binary."
+    },
+    {
+      "title": "b (2)",
+      "description": "n. 1. Short for bit. 2. Short for baud."
+    },
+    {
+      "title": "B",
+      "description": "n. Short for byte."
+    },
+    {
+      "title": "B: or b:",
+      "description": "n. 1. Identifier for a second floppy disk drive on MS-DOS and other operating systems. 2. Identifier for a single disk drive when used as the secondary drive."
+    },
+    {
+      "title": "B1FF",
+      "description": "n. Slang for a new online user who is prone to making mistakes in e-mail, newsgroup articles, or chats that show his or her inexperience. Examples of typical mistakes made by B1FFs include sentences ending with multiple exclamation points (!!!!) and messages typed in ALL CAPS. Although it’s spelled B-1(one)-F-F, the term is pronounced “bif.”"
+    },
+    {
+      "title": "B2B",
+      "description": "n. Short for business-to-business. The electronic exchange of products and services between businesses without the direct involvement of consumers. B2B’s effects on business include streamlining purchasing, accounting, and other administrative functions; lowering transaction costs; and simplifying the sale of excess inventory. Related businesses have collaborated on the creation of Internet-based supply-chain networks."
+    },
+    {
+      "title": "B2C",
+      "description": "n. Short for business-to-consumer. The direct electronic exchange of products and services between businesses and consumers. B2C’s effects on business include improving the efficiency in delivering goods and services to consumers."
+    },
+    {
+      "title": "backbone",
+      "description": "n. 1. A network of communication transmission that carries major traffic between smaller networks. The backbones of the Internet, including communications carriers such as Sprint and MCI, can span thousands of miles using microwave relays and dedicated lines. 2. The smaller networks (compared with the entire Internet) that perform the bulk of the packet switching of Internet communication. Today these smaller networks still consist of the networks that were originally developed to make up the Internet—the computer networks of the educational and research institutions of the United States—especially NSFnet, the computer network of the National Science Foundation in Oak Ridge, Tennessee. See also NSFnet, packet switching. 3. The wires that carry major communications traffic within a network. In a local area network, a backbone may be a bus. Also called: collapsed backbone."
+    },
+    {
+      "title": "backbone cabal",
+      "description": "n. On the Internet, a term for the group of network administrators responsible for naming the hierarchy of Usenet newsgroups and devising the procedures for creating new newsgroups. The backbone cabal no longer exists."
+    },
+    {
+      "title": "back door",
+      "description": "n. A means of gaining access to a program or system by bypassing its security controls. Programmers often build back doors into systems under development so that they can fix bugs. If the back door becomes known to anyone other than the programmer, or if it is not removed before the software is released, it becomes a security risk. Also called: trapdoor."
+    },
+    {
+      "title": "back end",
+      "description": "n. 1. In a client/server application, the part of the program that runs on the server. See also client/server architecture. Compare front end. 2. In networking, a server computer or the processing that takes place on it. 3. The part of a compiler that transforms source code (human-readable program statements) into object code (machine-readable code). See also compiler (definition 2), object code, source code."
+    },
+    {
+      "title": "back-end processor",
+      "description": "n. 1. A slave processor that performs a specialized task such as providing rapid access to a database, freeing the main processor for other work. Such a task is considered “back-end” because it is subordinate to the computer’s main function. 2. A processor that manipulates data sent to it from another processor; for example, a high-speed graphics processor dedicated to painting images on a video display operates in response to commands passed “back” to it by the main processor. Compare coprocessor."
+    },
+    {
+      "title": "background (1)",
+      "description": "adj. In the context of processes or tasks that are part of an operating system or program, operating without interaction with the user while the user is working on another task. Background processes or tasks are assigned a lower priority in the microprocessor’s allotment of time than foreground tasks and generally remain invisible to the user unless the user requests an update or brings the task to the foreground. Generally, only multitasking operating systems are able to support background processing. However, some operating systems that do not support multitasking may be able to perform one or more types of background tasks. For example, in the Apple Macintosh operating system running with multitasking turned off, the Background Printing option can be used to print documents while the user is doing other work. See also multitasking. Compare foreground (1)."
+    },
+    {
+      "title": "background (2)",
+      "description": "n.1. The color against which characters and graphics are displayed, such as a white background for black characters. Compare foreground2 (definition 1). 2. The colors, textures, patterns, and pictures that comprise the surface of the desktop, upon which icons, buttons, menu bars, and toolbars are situated. See also wallpaper. 3. The colors, textures, patterns, and pictures that comprise the surface of a Web page, upon which text, icons, graphics, buttons, and other items are situated. See also wallpaper. 4. The condition of an open but currently inactive window in a windowing environment. See also inactive window. Compare foreground2 (definition 2)."
+    },
+    {
+      "title": "background noise",
+      "description": "n. The noise inherent in a line or circuit, independent of the presence of a signal. See also noise."
+    },
+    {
+      "title": "background printing",
+      "description": "n. The process of sending a document to a printer at the same time that the computer is performing one or more other tasks."
+    },
+    {
+      "title": "background processing",
+      "description": "n. The execution of certain operations by the operating system or a program during momentary lulls in the primary (foreground) task. An example of a background process is a word processor program printing a document during the time that occurs between the user’s keystrokes. See also background (1)."
+    },
+    {
+      "title": "background program",
+      "description": "n. A program that can run or is running in the background. See also background (1)."
+    },
+    {
+      "title": "background task",
+      "description": "n. See background (1)."
+    },
+    {
+      "title": "back-lit or backlit",
+      "description": "adj. Having a source of light, such as a lamp or LED behind a (usually translucent) viewing surface, in order to illuminate the surface."
+    },
+    {
+      "title": "back-lit display or backlit display",
+      "description": "n. Something illuminated from behind, rather than by a light source above or to the front."
+    },
+    {
+      "title": "BackOffice",
+      "description": "n. A suite of software developed by Microsoft that provides certain network services. Designed to work with Windows NT and Windows 2000, BackOffice includes such services as e-mail (Exchange), intranet capabilities (Site Server), network management (Systems Management Server), and high-end database development (SQL Server), among others."
+    },
+    {
+      "title": "Back Orifice",
+      "description": "n. A hostile application tool used by hackers to gain control of a remote computer. Back Orifice consists of client and server applications. The client application is used to control a computer running the server application. A target computer is taken over after an executable file, typically delivered by an e-mail attachment or a removable disk, is opened. Back Orifice then copies itself to the Windows System directory and transfers control to the machine running the client application. Back Orifice first appeared in the summer of 1998 and was quickly contained through updated security software. Its name is a play on words for the Microsoft BackOffice suite of servers."
+    },
+    {
+      "title": "back panel",
+      "description": "n. The panel at the rear of a computer cabinet through which most of the connections to outside power sources and peripherals are made. See the illustration."
+    },
+    {
+      "title": "backplane",
+      "description": "n. A circuit board or framework that supports other circuit boards, devices, and the interconnections among devices, and provides power and data signals to supported devices."
+    },
+    {
+      "title": "backslash",
+      "description": "n. See \\."
+    },
+    {
+      "title": "Backspace key",
+      "description": "n. 1. A key that, on IBM and compatible keyboards, moves the cursor to the left, one character at a time, usually erasing each character as it moves. 2. On Macintosh keyboards, a key (called the Delete key on some Macintosh keyboards) that erases currently selected text or, if no text is selected, erases the character to the left of the insertion point (cursor). See the illustration."
+    },
+    {
+      "title": "backtracking",
+      "description": "n. The ability of an expert system to try alternative solutions in an attempt to find an answer. The various alternatives can be viewed as branches on a tree: in backtracking, the program follows one branch and, if it reaches the end without finding what it seeks, backs up and tries another branch."
+    },
+    {
+      "title": "back up",
+      "description": "vb. 1. To make a duplicate copy of a program, a disk, or data. See also backup. 2. To return to a previous stable state, such as one in which a database is known to be complete and consistent."
+    },
+    {
+      "title": "backup",
+      "description": "n. A duplicate copy of a program, a disk, or data, made either for archiving purposes or for safeguarding valuable files from loss should the active copy be damaged or destroyed. A backup is an “insurance” copy. Some application programs automatically make backup copies of data files, maintaining both the current version and the preceding version on disk. Also called: backup copy, backup file."
+    },
+    {
+      "title": "backup and recovery",
+      "description": "n. A strategy available in many database management systems that allows a database to be restored to the latest complete unit of work (transaction) after a software or hardware error has rendered the database unusable. The process starts with the latest backup copy of the database. The transaction log, or change file, for the database is read, and each logged transaction is recovered through the last checkpoint on the log. See also backup, checkpoint, log (definition 1)."
+    },
+    {
+      "title": "backup and restore",
+      "description": "n. The process of maintaining backup files and putting them back onto the source medium if necessary."
+    },
+    {
+      "title": "backup copy",
+      "description": "n. See backup."
+    },
+    {
+      "title": "backup file",
+      "description": "n. See backup."
+    },
+    {
+      "title": "Backus-Naur form",
+      "description": "n. A metalanguage used for defining the syntax of formal languages, both for the developer of the language and for the user. A language is defined by a set of statements, in each of which a language element known as a metavariable, written in angle brackets, is defined in terms of actual symbols (called terminals) and other metavariables (including itself if necessary). See the illustration. Acronym: BNF. See also metalanguage, normal form (definition 2)."
+    },
+    {
+      "title": "backward chaining",
+      "description": "n. In expert systems, a form of problem solving that starts with a statement and a set of rules leading to the statement and then works backward, matching the rules with information from a database of facts until the statement can be either verified or proved wrong. Compare forward chaining."
+    },
+    {
+      "title": "bacterium",
+      "description": "n. A type of computer virus that repeatedly replicates itself, eventually taking over the entire system. See also virus."
+    },
+    {
+      "title": "BAD",
+      "description": "adj. Acronym for broken as designed. Derogatory jargon for a product or device that consistently fails to work."
+    },
+    {
+      "title": "bad block",
+      "description": "n. A faulty memory location. A bad block is identified by the computer’s memory controller in the selftest procedure when the computer is turned on or is rebooted. See bad sector."
+    },
+    {
+      "title": "bad sector",
+      "description": "n. A disk sector that cannot be used for data storage, usually because of media damage or imperfections. Finding, marking, and avoiding bad sectors on a disk is one of the many tasks performed by a computer’s operating system. A disk-formatting utility can also find and mark the bad sectors on a disk."
+    },
+    {
+      "title": "bad track",
+      "description": "n. A track on a hard disk or floppy disk that is identified as containing a faulty sector and consequently is bypassed by the operating system. See also bad sector."
+    },
+    {
+      "title": ".bak",
+      "description": "n. An auxiliary file, created either automatically or upon command, that contains the second-most-recent version of a file and that bears the same file name, with the extension .bak. See also backup. "
+    },
+    {
+      "title": "balanced line",
+      "description": "n. A transmission line, such as twisted-pair cabling, that contains two conductors capable of carrying equal voltages and currents of opposite polarity and direction."
+    },
+    {
+      "title": "Balloon Help",
+      "description": "n. An on-screen help feature in the form of a cartoon dialog balloon on the Mac OS developed by Apple Computer, Inc. After activating this feature by clicking on the balloon icon on the toolbar, the user can position the cursor over an icon or other item, and a dialog balloon will appear that describes the function of the item."
+    },
+    {
+      "title": "balloons",
+      "description": "n. In print layout view or Web layout view, markup balloons show markup elements, such as comments and tracked changes, in the margins of your document. Use these balloons to easily see and respond to reviewers’ changes and comments."
+    },
+    {
+      "title": "ball printer",
+      "description": "n. An impact printer that uses a small ballshaped print head that bears fully formed characters in raised relief on its surface. The printer rotates and tilts the ball to line up characters and then strikes the ball against a ribbon. This method was used in the IBM Selectric typewriter."
+    },
+    {
+      "title": "band",
+      "description": "n. 1. In printing graphics, a rectangular portion of a graphic sent by the computer to a printer. The technique of dividing a graphic into bands prevents a printer from having to reconstruct an entire image in memory before printing it. 2. In communications, a contiguous range of frequencies used for a particular purpose, such as radio or television broadcasts."
+    },
+    {
+      "title": "bandpass filter",
+      "description": "n. An electronic circuit that passes signals that are within a certain frequency range (band) but blocks or attenuates signals above or below the band. See also attenuation. Compare highpass filter, lowpass filter."
+    },
+    {
+      "title": "bandwidth",
+      "description": "n. 1. The difference between the highest and lowest frequencies that an analog communications system can pass as measured in Hertz (Hz) or cycles per second. For example, a telephone accommodates a bandwidth of 3000 Hz: the difference between the lowest (300 Hz) and highest (3300 Hz) frequencies it can carry. 2. The data transfer capacity, or speed of transmission, of a digital communications system as measured in bits per second (bps)."
+    },
+    {
+      "title": "bandwidth allocation",
+      "description": "n. See bandwidth reservation."
+    },
+    {
+      "title": "bandwidth brokerage",
+      "description": "n. See bandwidth trading."
+    },
+    {
+      "title": "bandwidth exchange",
+      "description": "n. See bandwidth trading."
+    },
+    {
+      "title": "bandwidth management",
+      "description": "n. The analysis and control of traffic on WAN (wide area network) and Internet links to prioritize bandwidth and improve quality of service (QoS). See also quality of service (definition 2), traffic shaping."
+    },
+    {
+      "title": "bandwidth on demand",
+      "description": "n. In telecommunications, the capability of increasing throughput, in increments, as required by the channel to be serviced. See also bandwidth, channel (definition 2), throughput."
+    },
+    {
+      "title": "bandwidth reservation",
+      "description": "n. Process of assigning in advance a percentage of bandwidth to each user or application served by a network. Bandwidth reservation optimizes the use of available traffic by prioritizing time-critical packets. Also called: bandwidth allocation, custom queuing. See also bandwidth management, traffic shaping."
+    },
+    {
+      "title": "bandwidth shaping",
+      "description": "n. See traffic shaping."
+    },
+    {
+      "title": "bandwidth test",
+      "description": "n. A benchmark test that determines the speed of a network connection. Bandwidth tests estimate the downstream and upstream speeds by sending a series of packets over the network and measuring how many packets are received in a given amount of time. Also called: throughput test. See also benchmark1, throughput (definition 1)."
+    },
+    {
+      "title": "bandwidth trading",
+      "description": "n. The exchange of excess bandwidth capacity. Although considered a possible commodity market, bandwidth trading currently lacks standardized contracts and instantaneous provisioning needed to simplify the trading process. Also called: bandwidth brokerage, bandwidth exchange."
+    },
+    {
+      "title": "bang",
+      "description": "n. The pronunciation for an exclamation point, particularly when the exclamation point is used in a file name or in a path on UNIX systems. See also bang path."
+    },
+    {
+      "title": "bang path",
+      "description": "n. Slang for an older form of e-mail address used in UUCP (UNIX-to-UNIX copy). A bang address supplies the path that the message needs to take to reach its destination, including the name of each host through which the message is to be passed. Exclamation points called “bangs” separate the elements of the e-mail address, such as the user account and host names. The address name!location, where “name” is the user account and “location” is the host name, would be spoken as “name bang location.”"
+    },
+    {
+      "title": "bank",
+      "description": "n.1. Any group of similar electrical devices connected together for use as a single device. For example, transistors may be connected in a row/column array inside a chip to form memory, or several memory chips may be connected together to form a memory module such as a SIMM. See also SIMM. 2. A section of memory, usually of a size convenient for a CPU to address. For example, an 8-bit processor can address 65,536 bytes of memory; therefore, a 64-kilobyte (64-KB) memory bank is the largest that the processor can address at once. To address another 64-KB bank of memory requires circuitry that fools the CPU into looking at a separate block of memory. See also bank switching, page (definition 2)."
+    },
+    {
+      "title": "bank switching",
+      "description": "n. A method of expanding a computer’s available random access memory (RAM) by switching between banks of RAM chips that share a range of memory addresses, which is set aside before switching begins. Only one bank is directly accessible at a time; when a bank is not active, it retains whatever is stored in it. Before another bank can be used, the operating system, driver, or program must explicitly issue a command to the hardware to make the switch. Because switching between banks takes time, memory-intensive operations take longer with bank-switched memory than with main memory. Bankswitched memory typically takes the form of an expansion card that plugs into a slot on the motherboard."
+    },
+    {
+      "title": "banner",
+      "description": "n. A section of a Web page containing an advertisement that is usually an inch or less tall and spans the width of the Web page. The banner contains a link to the advertiser’s Web site. See also Web page, Web site."
+    },
+    {
+      "title": "banner page",
+      "description": "n.1. The title page that may be added to printouts by most print spoolers. Such a page typically incorporates account ID information, job length, and print spooler information, and is used primarily to separate one print job from another. See also print spooler. 2. In software, an initial screen used to identify a product and credit its producers."
+    },
+    {
+      "title": "bar chart",
+      "description": "n. A type of graphic in which data items are shown as rectangular bars. The bars may be displayed either vertically or horizontally and may be distinguished from one another by color or by some type of shading or pattern. Positive and negative values may be shown in relation to a zero baseline. Two types of bar charts are common: a standard bar chart, in which each value is represented by a separate bar, and a stacked bar chart, in which several data points are “stacked” to produce a single bar. See the illustration. Also called: bar graph."
+    },
+    {
+      "title": "bar code",
+      "description": "n. The special identification code printed as a set of vertical bars of differing widths on books, grocery products, and other merchandise. Used for rapid, error-free input in such facilities as libraries, hospitals, and grocery stores, bar codes represent binary information that can be read by an optical scanner. The coding can include numbers, letters, or a combination of the two; some codes include built-in error checking and can be read in either direction."
+    },
+    {
+      "title": "bar code reader",
+      "description": "n. See bar code scanner."
+    },
+    {
+      "title": "bar code scanner",
+      "description": "n. An optical device that uses a laser beam to read and interpret bar codes, such as the Universal Product Codes found on grocery products and other retail items. See also bar code, Universal Product Code."
+    },
+    {
+      "title": "bare board",
+      "description": "n. A circuit board with no chips on it; most commonly, a memory board not populated with memory chips."
+    },
+    {
+      "title": "bare bones (1)",
+      "description": "adj. Purely functional; stripped or otherwise clean of features. Bare bones applications provide only the most basic functions necessary to perform a given task. By the same token, a bare bones computer provides a minimal amount of hardware or is sold at retail with no peripherals and just the operating system (and no other software). "
+    },
+    {
+      "title": "bare bones (2)",
+      "description": "n. 1. An application that provides only the most basic functions necessary to perform a given task. 2. A computer consisting only of motherboard (equipped with CPU and RAM), cabinet, power supply, floppy disk drive, and keyboard, to which the user must add hard disk, video adapter, monitor, and any other peripherals. See also motherboard, peripheral."
+    },
+    {
+      "title": "bar graph",
+      "description": "n. See bar chart."
+    },
+    {
+      "title": "base",
+      "description": "n. 1. In mathematics, a number that is raised to the power specified by an exponent. For example, in 23 = 2 x 2 x 2 = 8, the base is 2. 2. In mathematics, the number of digits in a particular numbering system. With microcomputers, four numbering systems are commonly used or referred to—binary, octal, decimal, and hexadecimal— and each is based on a different number of digits. The binary, or base-2, numbering system, which is used to discuss the states of a computer’s logic, has two digits, 0 and 1. Octal, or base-8, has eight digits, 0 through 7. The familiar decimal, or base-10, numbering system has ten digits, 0 through 9. Hexadecimal, or base-16, has sixteen digits, 0 through 9 and A through F. When numbers are written in a particular base, the base is often subscripted and enclosed in parentheses after the number, as in 24AE(16) = 9,390. Also called: radix. See also binary1, decimal, hexadecimal, octal. 3. One of three terminals (emitter, base, and collector) in a bipolar transistor. The current through the base controls the current between the emitter and the collector. See also transistor. 4. The insulating foundation of a printed circuit board. See also circuit board."
+    },
+    {
+      "title": "base 10",
+      "description": "adj. See decimal."
+    },
+    {
+      "title": "base 16",
+      "description": "adj. See hexadecimal."
+    },
+    {
+      "title": "base 2",
+      "description": "adj. See binary (1)."
+    },
+    {
+      "title": "base 8",
+      "description": "adj. See octal."
+    },
+    {
+      "title": "base address",
+      "description": "n. The part of a two-part memory address that remains constant and provides a reference point from which the location of a byte of data can be calculated. A base address is accompanied by an offset value that is added to the base to determine the exact location (the absolute address) of the information. The concept is similar to a street address system. For example, “2010 Main Street” consists of a base (the 2000 block of Main Street) plus an offset (10 from the beginning of the block). Base addresses are known as segment addresses in IBM PCs and compatibles; data in these computers is identified by its position as a relative offset from the start of the segment. See also absolute address, offset, relative address, segment."
+    },
+    {
+      "title": "baseband",
+      "description": "adj. Of or relating to communications systems in which the medium of transmission (such as a wire or fiber-optic cable) carries a single message at a time in digital form. Baseband communication is found in local area networks such as Ethernet and Token Ring. See also Ethernet, fiber optics, Token Ring network. Compare broadband."
+    },
+    {
+      "title": "baseband network",
+      "description": "n. A type of local area network in which messages travel in digital form on a single transmission channel between machines connected by coaxial cable or twisted-pair wiring. Machines on a baseband network transmit only when the channel is not busy, although a technique called time-division multiplexing can enable channel sharing. Each message on a baseband network travels as a packet that contains information about the source and destination machines as well as message data. Baseband networks operate over short distances at speeds ranging from about 50 kilobits per second (50 Kbps) to 16 megabits per second (16 Mbps). Receiving, verifying, and converting a message, however, add considerably to the actual time, reducing throughput. The maximum recommended distance for such a network is about 2 miles, or considerably less if the network is heavily used. See also coaxial cable, multiplexing, packet (definition 2), throughput, time-division multiplexing, twisted-pair cable. Compare broadband network."
+    },
+    {
+      "title": "base class",
+      "description": "n. In C++, a class from which other classes have been or can be derived by inheritance. See also class, derived class, inheritance, object-oriented programming."
+    },
+    {
+      "title": "base line or baseline",
+      "description": "n. In the printing and display of characters on the screen, an imaginary horizontal line with which the base of each character, excluding descenders, is aligned. See the illustration. See also ascender, descender, font."
+    },
+    {
+      "title": "base memory",
+      "description": "base memory"
+    },
+    {
+      "title": "base RAM",
+      "description": "n. See conventional memory."
+    },
+    {
+      "title": "base station",
+      "description": "n. Transmission tower for wireless phone signals. Commonly known as cell towers, base stations also encompass the radio antennas and electronics that handle wireless calls. Base stations relay conversations into and out of the wired phone network and between wireless phones. Each base station covers a limited area known as a cell."
+    },
+    {
+      "title": "base style",
+      "description": "n. The underlying or original style on which other styles in a document are dependent. When you change a formatting element of the base style in a document, all other styles that originate from the base style will also reflect the change."
+    },
+    {
+      "title": "Basic or BASIC",
+      "description": "n. Acronym for Beginner’s All-purpose Symbolic Instruction Code, a high-level programming language developed in the mid-1960s by John Kemeny and Thomas Kurtz at Dartmouth College. It is widely considered one of the easiest programming languages to learn. See also True BASIC, Visual BASIC."
+    },
+    {
+      "title": "Basic Rate Interface",
+      "description": "n. See BRI."
+    },
+    {
+      "title": "Basic Service Set",
+      "description": "n. The communicating stations, or nodes, on a wireless LAN. See also wireless LAN."
+    },
+    {
+      "title": "bastion host",
+      "description": "n. A computer which provides security by serving as a gateway between an internal network and external systems. All outside traffic attempting to connect to the internal network is routed through the bastion host, which defends against potential attacks by intercepting and screening incoming packets. The bastion host may be part of a larger security system providing multiple layers of protection."
+    },
+    {
+      "title": ".bat",
+      "description": "n. The file extension that identifies a batch program file. In MS-DOS, .bat files are executable files that contain calls to other program files. See also batch file."
+    },
+    {
+      "title": "batch",
+      "description": "n. A group of documents or data records that are processed as a unit. See also batch job, batch processing."
+    },
+    {
+      "title": "batch file",
+      "description": "n. An ASCII text file containing a sequence of operating-system commands, possibly including parameters and operators supported by the batch command language. When the user types a batch file name at the command prompt, the commands are processed sequentially. Also called: batch program. See also AUTOEXEC.BAT, .bat."
+    },
+    {
+      "title": "batch file transmission",
+      "description": "n. The transmission of multiple files as the result of a single command. Acronym: BFT."
+    },
+    {
+      "title": "batch job",
+      "description": "n. A program or set of commands that runs without user interaction. See also batch processing."
+    },
+    {
+      "title": "batch processing",
+      "description": "n. 1. Execution of a batch file. See also batch file. 2. The practice of acquiring programs and data sets from users, running them one or a few at a time, and then providing the results to the users. 3. The practice of storing transactions for a period of time before they are posted to a master file, typically in a separate operation undertaken at night. Compare transaction processing."
+    },
+    {
+      "title": "batch program",
+      "description": "n. A program that executes without interacting with the user. See also batch file. Compare interactive program."
+    },
+    {
+      "title": "batch system",
+      "description": "n. A system that processes data in discrete groups of previously scheduled operations rather than interactively or in real time."
+    },
+    {
+      "title": "batch total",
+      "description": "n. A total calculated for an element common to a group (batch) of records, used as a control to verify that all information is accounted for and has been entered correctly. For example, the total of a day’s sales can be used as a batch total to verify the records of all individual sales."
+    },
+    {
+      "title": "battery",
+      "description": "n. Two or more cells in a container that produce an electrical current when two electrodes within the container touch an electrolyte. In personal computers, batteries are used as an auxiliary source of power when the main power is shut off, as a power source for laptop and notebook computers (rechargeable batteries, such as nickel cadmium, nickel metal hydride, and lithium ion, are used), and as a method to keep the internal clock and the circuitry responsible for the part of RAM that stores important system information always powered up. See also lead ion battery, lithium ion battery, nickel cadmium battery, nickel metal hydride battery, RAM."
+    },
+    {
+      "title": "battery backup",
+      "description": "n. 1. A battery-operated power supply used as an auxiliary source of electricity in the event of a power failure. 2. Any use of a battery to keep a circuit running when the main power is shut off, such as powering a computer’s clock/calendar and the special RAM that stores important system information between sessions. See also UPS."
+    },
+    {
+      "title": "battery meter",
+      "description": "n. A device used to measure the current (capacity) of an electrical cell."
+    },
+    {
+      "title": "baud",
+      "description": "n. One signal change per second, a measure of data transmission speed. Named after the French engineer and telegrapher Jean-Maurice-Emile Baudot and originally used to measure the transmission speed of telegraph equipment, the term now most commonly refers to the data transmission speed of a modem. See also baud rate."
+    },
+    {
+      "title": "Baudot code",
+      "description": "n. A 5-bit coding scheme used principally for telex transmissions, originally developed for telegraphy by the French engineer and telegrapher Jean-Maurice-Emile Baudot. Sometimes it is equated, although inaccurately, with the International Alphabet Number 2 proposed by the Comité Consultatif Internationale Télégraphique et Téléphonique (CCITT)."
+    },
+    {
+      "title": "baud rate",
+      "description": "n. The speed at which a modem can transmit data. The baud rate is the number of events, or signal changes, that occur in one second—not the number of bits per second (bps) transmitted. In high-speed digital communications, one event can actually encode more than one bit, and modems are more accurately described in terms of bits per second than baud rate. For example, a so-called 9600-baud modem actually operates at 2400 baud but transmits 9600 bits per second by encoding 4 bits per event (2400 x 4 = 9600) and thus is a 9600-bps modem. Compare bit rate, transfer rate."
+    },
+    {
+      "title": "bay",
+      "description": "n. A shelf or opening used for the installation of electronic equipment—for example, the space reserved for additional disk drives, CD-ROM drives, or other equipment in the cabinets of microcomputers. See also drive bay."
+    },
+    {
+      "title": "bayonet-Neill-Concelman",
+      "description": "n. See BNC."
+    },
+    {
+      "title": "BBL",
+      "description": "n. Acronym for be back later. An expression used commonly on live chat services on the Internet and online information services to indicate that a participant is temporarily leaving the discussion forum but intends to return at a later time. See also chat1 (definition 1)."
+    },
+    {
+      "title": "BBS",
+      "description": "n. 1. Acronym for bulletin board system. A computer system equipped with one or more modems or other means of network access that serves as an information and message-passing center for remote users. Often BBSs are focused on special interests, such as science fiction, movies, Windows software, or Macintosh systems, and can have free or fee-based access, or a combination. Users dial into a BBS with their modems and post messages to other BBS users in special areas devoted to a particular topic, in a manner reminiscent of the posting of notes on a cork bulletin board. Many BBSs also allow users to chat online with other users, send e-mail, download and upload files that include freeware and shareware software, and access the Internet. Many software and hardware companies run proprietary BBSs for customers that include sales information,technical support, and software upgrades and patches. 2. Acronym for be back soon. A shorthand expression often seen in Internet discussion groups by a participant leaving the group who wishes to bid a temporary farewell to the rest of the group."
+    },
+    {
+      "title": "bcc",
+      "description": "n. Acronym for blind courtesy copy. A feature of email programs that allows a user to send a copy of an email message to a recipient without notifying other recipients that this was done. Generally, the recipient’s address is entered into a field called “bcc:” in the mail header. Also called: blind carbon copy. See also e-mail1 (definition 1), header (definition 1). Compare cc."
+    },
+    {
+      "title": "BCD",
+      "description": "n. See binary-coded decimal."
+    },
+    {
+      "title": "bCentral",
+      "description": "n. A Web site for small businesses that provides online subscription services for customer management, financial management, and e-commerce. BCentral is part of the Microsoft .NET initiative. See also MSN, .NET."
+    },
+    {
+      "title": "B channel",
+      "description": "n. Short for bearer channel. One of the 64- Kbps communications channels that carry data on an ISDN circuit. A BRI (Basic Rate Interface) ISDN line has two B channels and one D (data) channel. A PRI (Primary Rate Interface) ISDN line has 23 B channels (in North America) or 30 B channels (in Europe) and one D channel. See also BRI, D channel, ISDN."
+    },
+    {
+      "title": "BCNF",
+      "description": "n. Acronym for Boyce-Codd normal form. See normal form (definition 1)."
+    },
+    {
+      "title": "beacon",
+      "description": "n. On an FDDI network, a special frame generated and passed along when a node detects a problem. See also frame (definition 2)."
+    },
+    {
+      "title": "beam",
+      "description": "vb. To transfer information from one device to another through an infrared wireless connection. The term typically refers to data sharing using handheld devices such as Palm organizers, Pocket PCs, mobile phones, and pagers."
+    },
+    {
+      "title": "bearer channel",
+      "description": "n. See B channel."
+    },
+    {
+      "title": "BeBox",
+      "description": "n. A high-performance multiprocessor computer (RISC-based PowerPC) made by Be, Inc., and loaded with Be’s operating system, BeOS. Be discontinued production of the BeBox in January 1997 in order to focus on software (BeOS) development. See also BeOS, PowerPC, RISC."
+    },
+    {
+      "title": "BEDO DRAM",
+      "description": "n. Acronym for Burst Extended Data Out Dynamic RAM. A type of EDO (extended-data-out) dynamic RAM (DRAM) that handles memory transfers in bursts of four items in order to speed the process of returning data to a computer’s CPU. BEDO DRAM takes advantage of the fact that memory requests typically refer to sequential addresses. BEDO DRAM does not function well with bus speeds above 66 MHz. However, once it has accessed the first memory address, it can process the remaining three items in the burst at 10 ns (nanoseconds) each. Also called: BEDO RAM. See also dynamic RAM, EDO DRAM."
+    },
+    {
+      "title": "Beginner’s All-purpose Symbolic Instruction Code",
+      "description": "n. See Basic."
+    },
+    {
+      "title": "beginning-of-file",
+      "description": "n. 1. A code placed by a program before the first byte in a file, used by the computer’s operating system to keep track of locations within a file with respect to the first byte (character) in it. 2. The starting location of a file on a disk relative to the first storage location on the disk. A data directory or catalog contains this location. Acronym: BOF. Compare end-of-file."
+    },
+    {
+      "title": "Bell communications standards",
+      "description": "n. A series of data transmission standards originated by AT&T during the late 1970s and early 1980s that, through wide acceptance in North America, became de facto standards for modems. Bell 103, now mostly obsolete, governed transmission at 300 bits per second (bps) with full-duplex, asynchronous communications over dial-up telephone lines using frequency- shift keying (FSK). Bell 212A governed modem operations at 1200 bps with full-duplex, asynchronous communications over dial-up telephone lines using phaseshift keying (PSK). An international set of transmission standards, known as the CCITT recommendations, has become generally accepted as the primary source of standardization, especially for communications at speeds greater than 1200 bps. See also CCITT V series, FSK, phase-shift keying."
+    },
+    {
+      "title": "Bell-compatible modem",
+      "description": "n. A modem that operates according to the Bell communications standards. See also Bell communications standards."
+    },
+    {
+      "title": "Bellman-Ford distance-vector routing algorithm",
+      "description": "n. An algorithm that helps to determine the shortest route between two nodes on a network. The Routing Information Protocol (RIP) is based on the Bellman-Ford distance-vector routing algorithm. See also RIP (definition 2)."
+    },
+    {
+      "title": "bells and whistles",
+      "description": "n. Attractive features added to hardware or software beyond basic functionality, comparable to accessories such as electric door locks and air conditioning added to an automobile. Products, especially computer systems, without such adornments are sometimes called “plain vanilla.”"
+    },
+    {
+      "title": "benchmark (1)",
+      "description": "n. A test used to measure hardware or software performance. Benchmarks for hardware use programs that test the capabilities of the equipment—for example, the speed at which a CPU can execute instructions or handle floating-point numbers. Benchmarks for software determine the efficiency, accuracy, or speed of a program in performing a particular task, such as recalculating data in a spreadsheet. The same data is used with each program tested, so the resulting scores can be compared to see which programs perform well and in what areas. The design of fair benchmarks is something of an art, because various combinations of hardware and software can exhibit widely variable performance under different conditions. Often, after a benchmark has become a standard, developers try to optimize a product to run that benchmark faster than similar products run it in order to enhance sales. See also sieve of Eratosthenes."
+    },
+    {
+      "title": "benchmark (2)",
+      "description": "vb. To measure the performance of hardware or software."
+    },
+    {
+      "title": "benign virus ",
+      "description": "n. A program that exhibits properties of a virus, such as self-replication, but does not otherwise do harm to the computer systems that it infects."
+    },
+    {
+      "title": "BeOS ",
+      "description": "n. An operating system developed by Be, Inc., that runs on PowerPC systems and, until they were discontinued, the company’s original BeBox computers. Designed as a “media OS,” the BeOS was created to support the large file sizes and high-performance processing demands of digital media and the Internet. It is an object-oriented, multithreaded operating system and can be run on symmetric multiprocessing systems containing two or more processors. Like many other operating systems, the BeOS provides preemptive multitasking, virtual memory, and memory protection. It also provides high-performance input/output capabilities, a 64-bit file system that can support terabyte-sized files, and a number of Internet-related features including built-in mail and Web services. See also BeBox."
+    },
+    {
+      "title": "Beowulf ",
+      "description": "n. Name for a class of virtual supercomputer created by linking numerous PCs through network connections into a single high-performance unit based on inexpensive, x86-based hardware and publicly available software, such as some versions of UNIX. This clustering technique can provide performance comparable to a traditional supercomputer at approximately 10 percent of the cost. The first Beowulf cluster was assembled at NASA’s Goddard Space Flight Center in 1994. The origin of the name comes from Beowulf, the hero who fought and killed the monster Grendel in an eighth-century Old English saga."
+    },
+    {
+      "title": "Beowulf-class computing ",
+      "description": "n. See Beowulf."
+    },
+    {
+      "title": "Berkeley Internet Name Domain ",
+      "description": "n. See BIND."
+    },
+    {
+      "title": "Berkeley Sockets API ",
+      "description": "n. See sockets API."
+    },
+    {
+      "title": "Bernoulli box",
+      "description": "n. A removable floppy disk drive for personal computers that uses a nonvolatile cartridge and has high storage capacity. Named after Daniel Bernoulli, an eighteenth-century physicist who first demonstrated the principle of aerodynamic lift, the Bernoulli box uses high speed to bend the flexible disk close to the read/write head in the disk drive. See also read/write head."
+    },
+    {
+      "title": "Bernoulli distribution",
+      "description": "n. See binomial distribution."
+    },
+    {
+      "title": "Bernoulli process ",
+      "description": "n. A mathematical process involving the Bernoulli trial, a repetition of an experiment in which there are only two possible outcomes, such as success and failure. This process is used mostly in statistical analysis. See also Bernoulli sampling process, binomial distribution."
+    },
+    {
+      "title": "Bernoulli sampling process ",
+      "description": "n. In statistics, a sequence of n independent and identical trials of a random experiment, with each trial having one of two possible outcomes. See also Bernoulli process, binomial distribution."
+    },
+    {
+      "title": "best of breed ",
+      "description": "adj. A term used to describe a product that is the best in a particular category of products."
+    },
+    {
+      "title": "beta (1)",
+      "description": "adj. Of or relating to software or hardware that is a beta. See also beta2. Compare alpha (1)."
+    },
+    {
+      "title": "beta (2)",
+      "description": "n. A new software or hardware product, or one that is being updated, that is ready to be released to users for beta testing in real-world situations. Usually betas have most or all of the features and functionality implemented that the finished product is to have. See also beta test. Compare alpha (2)."
+    },
+    {
+      "title": "beta site ",
+      "description": "n. An individual or an organization that tests software before it is released to the public. The company producing the software usually selects these beta sites from a pool of established customers or volunteers. Most beta sites perform this service free of charge, often to get a first look at the software and to receive free copies of the software once it is released to the public."
+    },
+    {
+      "title": "beta test ",
+      "description": "n. A test of software that is still under development, accomplished by having people actually use the software. In a beta test, a software product is sent to selected potential customers and influential end users (known as beta sites), who test its functionality and report any operational or utilization errors (bugs) found. The beta test is usually one of the last steps a software developer takes before releasing the product to market; however, if the beta sites indicate that the software has operational difficulties or an extraordinary number of bugs, the developer may conduct more beta tests before the software is released to customers."
+    },
+    {
+      "title": "betweening ",
+      "description": "n. See tween."
+    },
+    {
+      "title": "bezel ",
+      "description": "n. In arcade games, the bezel refers to the glass located around the monitor. It is often silk-screened with artwork relating to the game. See also arcade game."
+    },
+    {
+      "title": "Bézier curve ",
+      "description": "n. A curve that is calculated mathematically to connect separate points into smooth, free-form curves and surfaces of the type needed for illustration programs and CAD models. Bézier curves need only a few points to define a large number of shapes—hence their usefulness over other mathematical methods for approximating a given shape. See the illustration. See also CAD."
+    },
+    {
+      "title": "BFT ",
+      "description": "n. See batch file transmission, binary file transfer."
+    },
+    {
+      "title": "BGP ",
+      "description": "n. See Border Gateway Protocol."
+    },
+    {
+      "title": "bias ",
+      "description": "n. 1. A uniform or systematic deviation from a point of reference. 2. In mathematics, an indication of the amount by which the average of a group of values deviates from a reference value. 3. In electronics, a voltage applied to a transistor or other electronic device to establish a reference level for its operation. 4. In communications, a type of distortion in the length of transmitted bits, caused by a lag that occurs as voltage builds up or falls off each time the signal changes from 0 to 1 or vice versa."
+    },
+    {
+      "title": "bidirectional",
+      "description": "adj. Operating in two directions. A bidirectional printer can print from left to right and from right to left; a bidirectional bus can transfer signals in both directions between two devices."
+    },
+    {
+      "title": "bidirectional parallel port",
+      "description": "n. An interface that supports two-way parallel communication between a device, such as a printer, and a computer. See also interface (definition 3), parallel port."
+    },
+    {
+      "title": "bidirectional printing",
+      "description": "n. The ability of an impact or ink-jet printer to print from left to right and from right to left. Bidirectional printing improves speed substantially because no time is wasted returning the print head to the beginning of the next line, but it may lower print quality."
+    },
+    {
+      "title": "bi-endian ",
+      "description": "adj. Of, pertaining to, or characteristic of processors and other chips that can be switched to work in big endian or little endian mode. The PowerPC chip has this ability, which allows it to run the little endian Windows NT or the big endian MacOS/PPC. See also big endian, little endian, PowerPC."
+    },
+    {
+      "title": "BIFF ",
+      "description": "n. Short for Binary Interchange File Format. The native file format used by Microsoft Excel."
+    },
+    {
+      "title": "biff ",
+      "description": "n. 1. A BSD utility that issues a signal when new mail has arrived. Biff was named after a University of California graduate student’s dog who had a habit of barking at the mailman at the time the utility was developed. 2. See B1FF."
+    },
+    {
+      "title": "biff ",
+      "description": "vb. To provide notification of new (incoming) e-mail."
+    },
+    {
+      "title": "bifurcation ",
+      "description": "n. A split that results in two possible outcomes, such as 1 and 0 or on and off."
+    },
+    {
+      "title": "Big 5 ",
+      "description": "n. Traditional Chinese encoding."
+    },
+    {
+      "title": "Big Blue ",
+      "description": "n. The International Business Machines (IBM) Corporation. This nickname comes from the corporate color used on IBM’s early mainframes and still used in the company logo."
+    },
+    {
+      "title": "big endian ",
+      "description": "adj. Storing numbers in such a way that the most significant byte is placed first. For example, given the hexadecimal number A02B, the big endian method would cause the number to be stored as A02B, and the little endian method would cause the number to be stored as 2BA0. The big endian method is used by Motorola microprocessors; Intel microprocessors use the little endian method. The term big endian is derived from Jonathan Swift’s Gulliver’s Travels, in which the Big-Endians were a group of people who opposed the emperor’s decree that eggs should be broken at the small end before they were eaten. Compare little endian."
+    },
+    {
+      "title": "bigint data type ",
+      "description": "n. In an Access project, a data type of 8 bytes (64 bits) that stores whole numbers in the range of –2^63 (–9,223,372,036,854,775,808) through 2^63–1 (9,223,372,036,854,775,807)."
+    },
+    {
+      "title": "big iron ",
+      "description": "n. One or more large, fast, and expensive computers, such as a Cray supercomputer or a room-filling mainframe system."
+    },
+    {
+      "title": "big red switch ",
+      "description": "n. The power on/off switch of a computer, thought of as a kind of interrupt or last resort. On the original IBM PC and many other computers, it was indeed big and red. Using the switch is an interrupt of last resort because it deletes all the data in RAM and can also damage the hard drive. Acronym: BRS."
+    },
+    {
+      "title": "billboard ",
+      "description": "n. A primitive inserted into a 3-D scene that is oriented so that one face is toward the viewer. A texture, usually an animated sprite, is applied to the billboard to give the appearance of a 3-D object in the scene."
+    },
+    {
+      "title": "billion ",
+      "description": "n. 1. In American usage (as is usual with microcomputers), a thousand million, or 109. Computer terminology uses the prefixes giga- for 1 billion and nano- for 1 billionth. 2. In British usage, a million million, or 1012, which is a trillion in American usage."
+    },
+    {
+      "title": "billisecond ",
+      "description": "n. See nanosecond."
+    },
+    {
+      "title": "bimodal virus ",
+      "description": "n. See multipartite virus."
+    },
+    {
+      "title": ".bin ",
+      "description": "n. A file name extension for a file encoded with Mac-Binary. See also MacBinary."
+    },
+    {
+      "title": "binary (1)",
+      "description": "adj. Having two components, alternatives, or outcomes. The binary number system has 2 as its base, so values are expressed as combinations of two digits, 0 and 1. These two digits can represent the logical values true and false as well as numerals, and they can be represented in an electronic device by the two states on and off, recognized as two voltage levels. Therefore, the binary number system is at the heart of digital computing. Although ideal for computers, binary numbers are usually difficult for people to interpret because they are repetitive strings of 1s and 0s. To ease translation, programmers and others who habitually work with the computer’s internal processing abilities use hexadecimal (base-16) or octal (base-8) numbers. See Appendix E. See also base (definition 2), binary-coded decimal, binary number, bit, Boolean algebra, byte, cyclic binary code, digital computer, dyadic, logic circuit. Compare ASCII, decimal, hexadecimal, octal."
+    },
+    {
+      "title": "binary (2)",
+      "description": "n. In an FTP client program, the command that instructs the FTP server to send or receive files as binary data. See also FTP client, FTP server. Compare ascii."
+    },
+    {
+      "title": "binary chop ",
+      "description": "n. See binary search."
+    },
+    {
+      "title": "binary-coded decimal ",
+      "description": "n. A system for encoding decimal numbers in binary form to avoid rounding and conversion errors. In binary-coded decimal coding, each digit of a decimal number is coded separately as a binary numeral. Each of the decimal digits 0 through 9 is coded in 4 bits, and for ease of reading, each group of 4 bits is separated by a space. This format is also called 8-4-2-1, after the weights of the four bit positions, and uses the following codes: 0000 = 0; 0001 = 1; 0010 = 2; 0011 = 3; 0100 = 4; 0101 = 5; 0110 = 6; 0111 = 7; 1000 = 8; 1001 = 9. Thus, the decimal number 12 is 0001 0010 in binary-coded decimal notation. Acronym: BCD. See also base (definition 2), binary1, binary number, decimal, EBCDIC, packed decimal, round."
+    },
+    {
+      "title": "binary compatibility ",
+      "description": "n. Portability of executable programs (binary files) from one platform, or flavor of operating system, to another. See also flavor, portable (definition 1)."
+    },
+    {
+      "title": "binary conversion ",
+      "description": "n. The conversion of a number to or from the binary number system. See Appendix E. See also binary (1)."
+    },
+    {
+      "title": "binary device ",
+      "description": "n. Any device that processes information as a series of on/off or high/low electrical states. See also binary (1)."
+    },
+    {
+      "title": "binary digit ",
+      "description": "n. Either of the two digits in the binary number system, 0 and 1. See also bit."
+    },
+    {
+      "title": "binary file ",
+      "description": "n. A file consisting of a sequence of 8-bit data or executable code, as distinguished from files consisting of human-readable ASCII text. Binary files are usually in a form readable only by a program, often compressed or structured in a way that is easy for a particular program to read. Compare ASCII file."
+    },
+    {
+      "title": "binary file transfer ",
+      "description": "n. Transfer of a file containing arbitrary bytes or words, as opposed to a text file containing only printable characters (for example, ASCII characters with codes 10, 13, and 32–126). On modern operating systems a text file is simply a binary file that happens to contain only printable characters, but some older systems distinguish the two file types, requiring programs to handle them differently. Acronym: BFT."
+    },
+    {
+      "title": "binary format ",
+      "description": "n. Any format that structures data in 8-bit form. Binary format is generally used to represent object code (program instructions translated into a machine-readable form) or data in a transmission stream. See also binary file."
+    },
+    {
+      "title": "binary notation ",
+      "description": "n. Representation of numbers using the binary digits, 0 and 1. Compare floating-point notation."
+    },
+    {
+      "title": "binary number ",
+      "description": "n. A number expressed in binary form, or base 2. Binary numbers are composed of zeros and ones. See Appendix E. See also binary (1)."
+    },
+    {
+      "title": "binary search ",
+      "description": "n. A type of search algorithm that seeks an item, with a known name, in an ordered list by first comparing the sought item to the item at the middle of the list’s order. The search then divides the list in two, determines in which half of the order the item should be, and repeats this process until the sought item is found. Also called: binary chop, dichotomizing search. See also search algorithm. Compare hash search, linear search."
+    },
+    {
+      "title": "binary synchronous protocol ",
+      "description": "n. See BISYNC."
+    },
+    {
+      "title": "binary transfer ",
+      "description": "n. The preferred mode of electronic exchange for executable files, application data files, and encrypted files. Compare ASCII transfer."
+    },
+    {
+      "title": "binary tree ",
+      "description": "n. In programming, a specific type of tree data structure in which each node has at most two subtrees, one left and one right. Binary trees are often used for sorting information; each node of the binary search tree contains a key, with values less than that key added to one subtree and values greater than that key added to the other. See the illustration. See also binary search, tree. binary"
+    },
+    {
+      "title": "binaural sound ",
+      "description": "n. See 3-D audio."
+    },
+    {
+      "title": "bind ",
+      "description": "vb. To associate two pieces of information with one another. The term is most often used with reference to associating a symbol (such as the name of a variable) with some descriptive information (such as a memory address, a data type, or an actual value). See also binding time, dynamic binding, static binding."
+    },
+    {
+      "title": "BIND ",
+      "description": "n. Acronym for Berkeley Internet Name Domain. A domain name server originally written for the BSD version of UNIX developed at the Berkeley campus of the University of California but now available for most versions of UNIX. As a domain name server, BIND translates between human-readable domain names and Internetfriendly, numeric IP addresses. It is widely used on Internet servers. See also DNS, DNS server, IP address."
+    },
+    {
+      "title": "Binder ",
+      "description": "n. A Microsoft Office program that you can use to organize related documents. You can check spelling, number pages consecutively across all documents in the binder, and print the documents."
+    },
+    {
+      "title": "binding ",
+      "description": "n. The process by which protocols are associated with one another and the network adapter to provide a complete set of protocols needed for handling data from the application layer to the physical layer. See also ISO/ OSI reference model."
+    },
+    {
+      "title": "binding time ",
+      "description": "n. The point in a program’s use at which binding of information occurs, usually in reference to program elements being bound to their storage locations and values. The most common binding times are during compilation (compile-time binding), during linking (link-time binding), and during program execution (run-time binding). See also bind, compile-time binding, link-time binding, run-time binding."
+    },
+    {
+      "title": "BinHex (1) ",
+      "description": "n. 1. Short for binary to hexadecimal. A format for converting binary data files into ASCII text so they can be transmitted via e-mail to another computer or in a newsgroup post. This method can be used when standard ASCII characters are needed for transmission, as they are on the Internet. BinHex is used most frequently by Mac users. See also MIME. 2. An Apple Macintosh program for converting binary data files into ASCII text and vice versa using the BinHex format. Compare uudecode1, uuencode (1)."
+    },
+    {
+      "title": "BinHex (2) ",
+      "description": "vb. To convert a binary file into printable 7-bit ASCII text or to convert the resulting ASCII text file back to binary format using the BinHex program. Compare uudecode (2), uuencode (2)."
+    },
+    {
+      "title": "binomial distribution ",
+      "description": "n. In statistics, a list or a function that describes the probabilities of the possible values of a random variable chosen by means of a Bernoulli sampling process. A Bernoulli process has three characteristics: each trial has only two possible outcomes—success or failure; each trial is independent of all other trials; and the probability of success for each trial is constant. A binomial distribution can be used to calculate the probability of getting a specified number of successes in a Bernoulli process. For example, the binomial distribution can be used to calculate the probability of getting a 7 three times in 20 rolls of a pair of dice. Also called: Bernoulli distribution."
+    },
+    {
+      "title": "BioAPI ",
+      "description": "n. An open system specification for use in biometric security and authentication technologies. BioAPI supports a wide range of biometric technology, from handheld devices to large-scale networks, and applications include fingerprint identification, facial recognition, speaker verification, dynamic signatures, and hand geometry. BioAPI was developed for the BioAPI Consortium, a group of organizations with ties to biometrics. BioAPI incorporates compatibility with existing biometric standards such as HA-API, which allows applications to operate BioAPI-compliant technologies without modification."
+    },
+    {
+      "title": "biometrics ",
+      "description": "n. Traditionally, the science of measuring and analyzing human biological characteristics. In computer technology, biometrics relates to authentication and secu-rity techniques that rely on measurable, individual biological stamps to recognize or verify an individual’s identity. For example, fingerprints, handprints, or voice-recognition might be used to enable access to a computer, to a room, or to an electronic commerce account. Security schemes are generally categorized into three levels: level 1 relies on something the person carries, such as an ID badge with a photo or a computer cardkey; level 2 relies on something the person knows, such as a password or a code number; and level 3, the highest level, relies on something that is a part of the person’s biological makeup or behavior, such as a fingerprint, the pattern of blood vessels in a retina, or a signature. See also fingerprint reader, handwriting recognition (definition 1), voice recognition."
+    },
+    {
+      "title": "bionics ",
+      "description": "n. The study of living organisms, their characteristics, and the ways they function, with a view toward creating hardware that can simulate or duplicate the activities of a biological system. See also cybernetics."
+    },
+    {
+      "title": "BIOS ",
+      "description": "n. Acronym for basic input/output system. On PC-compatible computers, the set of essential software routines that tests hardware at startup, starts the operating system, and supports the transfer of data among hardware devices, including the date and time. The operating system date is initialized from the BIOS or Real Time Clock date when the machine is booted. Many older PCs, particularly those dating before 1997, have BIOSs that store only 2- digit years and thus may have suffered from Year 2000 problems. The BIOS is stored in read-only memory (ROM) so that it can be executed when the computer is turned on. Although critical to performance, the BIOS is usually invisible to computer users. See also AMI BIOS, CMOS setup, Phoenix BIOS, ROM BIOS. Compare Toolbox."
+    },
+    {
+      "title": "BIOS test ",
+      "description": "n. A test to see if a PC will make the transition to the year 2000 and keep the correct date. The test can range from resetting the system time in the BIOS and rebooting to running a program or software routine specially designed to uncover Year 2000 problems."
+    },
+    {
+      "title": "bipartite virus ",
+      "description": "n. See multipartite virus."
+    },
+    {
+      "title": "bipolar ",
+      "description": "adj. 1. Having two opposite states, such as positive and negative. 2. In information transfer and processing, pertaining to or characteristic of a signal in which opposite voltage polarities represent on and off, true and false, or some other pair of values. See also nonreturn to zero. Compare unipolar. 3. In electronics, pertaining to or characteristic of a transistor having two types of charge carriers. See also transistor."
+    },
+    {
+      "title": "BIS ",
+      "description": "n. See business information system."
+    },
+    {
+      "title": "BISDN ",
+      "description": "n. See broadband ISDN."
+    },
+    {
+      "title": "bistable ",
+      "description": "adj. Of, pertaining to, or characteristic of a system or device that has two possible states, such as on and off. See also flip-flop."
+    },
+    {
+      "title": "bistable circuit ",
+      "description": "n. Any circuit that has only two stable states. The transition between them must be initiated from outside the circuit. A bistable circuit is capable of storing 1 bit of information."
+    },
+    {
+      "title": "bistable multivibrator ",
+      "description": "n. See flip-flop."
+    },
+    {
+      "title": "BISYNC ",
+      "description": "n. Short for binary synchronous communications protocol. A communications standard developed by IBM. BISYNC transmissions are encoded in either ASCII or EBCDIC. Messages can be of any length and are sent in units called frames, optionally preceded by a message header. BISYNC uses synchronous transmission, in which message elements are separated by a specific time interval, so each frame is preceded and followed by special characters that enable the sending and receiving machines to synchronize their clocks. STX and ETX are control characters that mark the beginning and end of the message text; BCC is a set of characters used to verify the accuracy of transmission. See the illustration. Also called: BSC."
+    },
+    {
+      "title": "bit ",
+      "description": "n. Short for binary digit. The smallest unit of information handled by a computer. One bit expresses a 1 or a 0 in a binary numeral, or a true or false logical condition, and is represented physically by an element such as a high or low voltage at one point in a circuit or a small spot on a disk magnetized one way or the other. A single bit conveys little information a human would consider meaningful. A group of 8 bits, however, makes up a byte, which can be used to represent many types of information, such as a letter of the alphabet, a decimal digit, or other character. See also ASCII, binary (1), byte."
+    },
+    {
+      "title": "bit block ",
+      "description": "n. In computer graphics and display, a rectangular group of pixels treated as a unit. Bit blocks are so named because they are, literally, blocks of bits describing the pixels’ display characteristics, such as color and intensity. Programmers use bit blocks and a technique called bit block transfer (bitblt) to display images rapidly on the screen and to animate them. See also bit block transfer."
+    },
+    {
+      "title": "bit block transfer ",
+      "description": "n. In graphics display and animation, a programming technique that manipulates blocks of bits in memory that represent the color and other attributes of a rectangular block of pixels forming a screen image. The image described can range in size from a cursor to a cartoon. Such a bit block is moved through a computer’s video RAM as a unit so that its pixels can be rapidly displayed in a desired location on the screen. The bits can also be altered; for example, light and dark portions of an image can be reversed. Successive displays can thus be used to change the appearance of an image or to move it around on the screen. Some computers contain special graphics hardware for manipulating bit blocks on the screen independently of the contents of the rest of the screen. This speeds the animation of small shapes, because a program need not constantly compare and redraw the background around the moving shape. Also called: bitblt. See also sprite."
+    },
+    {
+      "title": "bitblt ",
+      "description": "n. See bit block transfer."
+    },
+    {
+      "title": "bit bucket ",
+      "description": "n. An imaginary location into which data can be discarded. A bit bucket is a null input/output device from which no data is read and to which data can be written without effect. The NUL device recognized by MSDOS is a bit bucket. A directory listing, for example, simply disappears when sent to NUL."
+    },
+    {
+      "title": "bit data type ",
+      "description": "n. In an Access project, a data type that stores either a 1 or 0 value. Integer values other than 1 or 0 are accepted, but are always interpreted as 1."
+    },
+    {
+      "title": "bit density ",
+      "description": "n. A measure of the amount of information per unit of linear distance or surface area in a storage medium or per unit of time in a communications pipeline."
+    },
+    {
+      "title": "bit depth ",
+      "description": "n. The number of bits per pixel allocated for storing indexed color information in a graphics file."
+    },
+    {
+      "title": "bit flipping ",
+      "description": "n. A process of inverting bits—changing 1s to 0s and vice versa. For example, in a graphics program, to invert a black-and-white bitmapped image (to change black to white and vice versa), the program could simply flip the bits that compose the bit map."
+    },
+    {
+      "title": "bit image ",
+      "description": "n. A sequential collection of bits that represents in memory an image to be displayed on the screen, particularly in systems having a graphical user interface. Each bit in a bit image corresponds to one pixel (dot) on the screen. The screen itself, for example, represents a single bit image; similarly, the dot patterns for all the characters in a font represent a bit image of the font. In a black-andwhite display each pixel is either white or black, so it can be represented by a single bit. The “pattern” of 0s and 1s in the bit image then determines the pattern of white and black dots forming an image on the screen. In a color display the corresponding description of on-screen bits is called a pixel image because more than one bit is needed to represent each pixel. See also bitmap, pixel image."
+    },
+    {
+      "title": "bit manipulation ",
+      "description": "n. An action intended to change only one or more individual bits within a byte or word. Manipulation of the entire byte or word is much more common and generally simpler. See also mask."
+    },
+    {
+      "title": "bitmap ",
+      "description": "n. A data structure in memory that represents information in the form of a collection of individual bits. A bit map is used to represent a bit image. Another use of a bit map in some systems is the representation of the blocks of storage on a disk, indicating whether each block is free (0) or in use (1). See also bit image, pixel image."
+    },
+    {
+      "title": "bitmapped font ",
+      "description": "n. A set of characters in a particular size and style in which each character is described as a unique bit map (pattern of dots). Macintosh screen fonts are examples of bitmapped fonts. See the illustration. See also downloadable font, outline font, TrueType. Compare Post- Script font, vector font."
+    },
+    {
+      "title": "bitmapped graphics ",
+      "description": "n. Computer graphics represented as arrays of bits in memory that represent the attributes of the individual pixels in an image (one bit per pixel in a black-and-white display, multiple bits per pixel in a color or gray-scale display). Bitmapped graphics are typical of paint programs, which treat images as collections of dots rather than as shapes. See also bit image, bit map, pixel image. Compare object-oriented graphics."
+    },
+    {
+      "title": "bit mask ",
+      "description": "n. A value used with bit-wise operators (And, Eqv, Imp, Not, Or, and Xor) to test, set, or reset the state of individual bits in a bit-wise field value."
+    },
+    {
+      "title": "BITNET ",
+      "description": "n. Acronym for Because It’s Time Network. A WAN (wide area network) founded in 1981 and operated by the Corporation for Research and Educational Networking (CREN) in Washington, D.C. Now defunct, BITNET provided e-mail and file transfer services between mainframe computers at educational and research institutions in North America, Europe, and Japan. BITNET used the IBM Network Job Entry (NJE) protocol rather than TCP/IP, but it could exchange e-mail with the Internet. The listserv software for maintaining mailing lists was originated on BITNET."
+    },
+    {
+      "title": "bit. newsgroups ",
+      "description": "n. A hierarchy of Internet newsgroups that mirror the content of some BITNET mailing lists. See also BITNET."
+    },
+    {
+      "title": "bit-oriented protocol ",
+      "description": "n. A communications protocol in which data is transmitted as a steady stream of bits rather than as a string of characters. Because the bits transmitted have no inherent meaning in terms of a particular character set (such as ASCII), a bit-oriented protocol uses special sequences of bits rather than reserved characters for control purposes. The HDLC (high-level data link control) defined by ISO is a bit-oriented protocol. Compare byte-oriented protocol."
+    },
+    {
+      "title": "bit parallel ",
+      "description": "adj. Transmitting simultaneously all bits in a set (such as a byte) over separate wires in a cable. See also parallel transmission."
+    },
+    {
+      "title": "bit pattern ",
+      "description": "n. 1. A combination of bits, often used to indicate the possible unique combinations of a specific number of bits. For example, a 3-bit pattern allows 8 possible combinations and an 8-bit pattern allows 256 combinations. 2. A pattern of black and white pixels in a computer system capable of supporting bitmapped graphics. See also pixel."
+    },
+    {
+      "title": "bitplane ",
+      "description": "n. 1. One of a set of bit maps that collectively make up a color image. Each bit plane contains the values for one bit of the set of bits that describe a pixel. One bit plane allows two colors (usually black and white) to be represented; two bit planes, four colors; three bit planes, eight colors; and so on. These sections of memory are called bit planes because they are treated as if they were separate layers that stack one upon another to form the complete image. By contrast, in a chunky pixel image, the bits describing a given pixel are stored contiguously within the same byte. The use of bit planes to represent colors is often associated with the use of a color look-up table, or color map, which is used to assign colors to particular bit patterns. Bit planes are used in the EGA and VGA in 16-color graphics modes; the four planes correspond to the 4 bits of the IRGB code. See also color lookup table, color map, EGA, IRGB, layering, VGA. Compare color bits. 2. Rarely, one level of a set of superimposed images (such as circuit diagrams) to be displayed on the screen."
+    },
+    {
+      "title": "bit rate ",
+      "description": "n. 1. The speed at which binary digits are transmitted. See also transfer rate. 2. The streaming speed of digital content on a network. Bit rate is usually measured in kilobits per second (Kbps)."
+    },
+    {
+      "title": "bit serial ",
+      "description": "n. The transmission of bits in a byte one after another over a single wire. See also serial transmission."
+    },
+    {
+      "title": "bit slice microprocessor ",
+      "description": "n. A building block for microprocessors that are custom-developed for specialized uses. These chips can be programmed to handle the same tasks as other CPUs but they operate on short units of information, such as 2 or 4 bits. They are combined into processors that handle the longer words."
+    },
+    {
+      "title": "bits per inch ",
+      "description": "n. A measure of data storage capacity; the number of bits that fit into an inch of space on a disk or a tape. On a disk, bits per inch are measured based on inches of circumference of a given track. Acronym: BPI. See also packing density."
+    },
+    {
+      "title": "bits per pixel ",
+      "description": "n. Also known as color depth or bit depth. The term refers to the number of bits (8, 16, 24, or 32) used to store and display the color data for a single pixel. The number of bits per pixel determines the range of color available to an image. Acronym: bpp."
+    },
+    {
+      "title": "bits per second ",
+      "description": "n. See bps."
+    },
+    {
+      "title": "bit stream ",
+      "description": "n. 1. A series of binary digits representing a flow of information transferred through a given medium. 2. In synchronous communications, a continuous flow of data in which characters in the stream are separated from one another by the receiving station rather than by markers, such as start and stop bits, inserted into the data."
+    },
+    {
+      "title": "bit stuffing ",
+      "description": "n. The practice of inserting extra bits into a stream of transmitted data. Bit stuffing is used to ensure that a special sequence of bits appears only at desired locations. For example, in the HDLC, SDLC, and X.25 communications protocols, six 1 bits in a row can appear only at the beginning and end of a frame (block) of data, so bit stuffing is used to insert a 0 bit into the rest of the stream whenever five 1 bits appear in a row. The inserted 0 bits are removed by the receiving station to return the data to its original form. See also HDLC, SDLC, X.25."
+    },
+    {
+      "title": "bit transfer rate ",
+      "description": "n. See transfer rate."
+    },
+    {
+      "title": "bit twiddler ",
+      "description": "n. Slang for someone devoted to computers, particularly one who likes to program in assembly language. See also hacker."
+    },
+    {
+      "title": "BIX ",
+      "description": "n. Acronym for BYTE Information Exchange. An online service originated by BYTE magazine, now owned and operated by Delphi Internet Services Corporation. BIX offers e-mail, software downloads, and conferences relating to hardware and software."
+    },
+    {
+      "title": ".biz ",
+      "description": "n. One of seven new top-level domain names approved in 2000 by the Internet Corporation for Assigned Names and Numbers (ICANN), .biz is meant for use in business-related Web sites."
+    },
+    {
+      "title": "biz. news groups ",
+      "description": "n. Usenet newsgroups that are part of the biz. hierarchy and have the prefix of biz. These newsgroups are devoted to discussions related to business. Unlike most other newsgroup hierarchies, biz. newsgroups permit users to post advertisement and other marketing material. See also newsgroup, traditional newsgroup hierarchy."
+    },
+    {
+      "title": "BizTalk Server ",
+      "description": "n. An application developed by Microsoft Corporation to streamline business processes within a large company’s internal network and between business partners over the Internet. BizTalk Server enables the integration of business applications written in different computer languages and running on various operating systems."
+    },
+    {
+      "title": "BlackBerry ",
+      "description": "n. A wireless handheld device that allows mobile users to send and receive e-mail, as well as view appointment calendars and contact lists. The BlackBerry features a display screen and a built-in keyboard operated by pressing the keys with the thumbs. BlackBerry’s ease of use and its ability to send and receive messages silently have made it a popular device for wireless text messaging in a business environment."
+    },
+    {
+      "title": "black box ",
+      "description": "n. A unit of hardware or software whose internal structure is unknown but whose function is documented. The internal mechanics of the function do not matter to a designer who uses a black box to obtain that function. For example, a memory chip can be viewed as a black box. Many people use memory chips and design them into computers, but generally only memory chip designers need to understand their internal operation."
+    },
+    {
+      "title": "black box testing ",
+      "description": "n. An approach to testing software in which the tester treats the software as a black box—that is, the testing focuses on the program’s functionality rather than on its internal structure. Black box testing is thus user oriented, in that the primary concern is whether the program works, not how it is constructed. Black box testing is generally performed on software that is under development. Compare white box testing."
+    },
+    {
+      "title": "black hat ",
+      "description": "n. A hacker who operates with malicious or criminal intent. A black hat will break into a system to alter or damage data or to commit theft. Compare white hat."
+    },
+    {
+      "title": "black hole ",
+      "description": "n. A mysterious “place” on a computer network where messages, such as e-mail and news items, disappear without a trace. The usage is derived from stellar black holes, which have such strong gravitational fields that even light cannot escape them. The term is sometimes also used to refer to projects that consume vast amounts of time with no apparent product."
+    },
+    {
+      "title": "blackout ",
+      "description": "n. A condition in which the electricity level drops to zero; a complete loss of power. A number of factors cause a blackout, including natural disasters, such as a storm or an earthquake, or a failure in the power company’s equipment, such as a transformer or a power line. A blackout might or might not damage a computer, depending on the state of the computer when the blackout occurs. As with switching a computer off before saving any data, a blackout will cause all unsaved data to be irretrievably lost. The most potentially damaging situation is one in which a blackout occurs while a disk drive is reading information from or writing information to a disk. The information being read or written will probably become corrupted, causing the loss of a small part of a file, an entire file, or the entire disk; the disk drive itself might suffer damage as a result of the sudden power loss. The only reliable means of preventing damage caused by a blackout is to use a batterybacked uninterruptible power supply (UPS). See also UPS. Compare brownout."
+    },
+    {
+      "title": "blank (1) ",
+      "description": "n. The character entered by pressing the spacebar. See also space character."
+    },
+    {
+      "title": "blank (2) ",
+      "description": "vb. To not show or not display an image on part or all of the screen."
+    },
+    {
+      "title": "blanking ",
+      "description": "n. The brief suppression of a display signal as the electron beam in a raster-scan video monitor is moved into position to display a new line. After tracing each scan line, the beam is at the right edge of the screen and must return to the left (horizontal retrace) to begin a new line. The display signal must be turned off during the time of the retrace (horizontal blanking interval) to avoid overwriting the line just displayed. Similarly, after tracing the bottom scan line, the electron beam moves to the top left corner (vertical retrace), and the beam must be turned off during the time of this retrace (vertical blanking interval) to avoid marking the screen with the retrace path."
+    },
+    {
+      "title": "blast ",
+      "description": "vb. See burn (definition 1)."
+    },
+    {
+      "title": "bleed ",
+      "description": "n. In a printed document, any element that runs off the edge of the page or into the gutter. Bleeds are often used in books to mark important pages so they are easier to find. See also gutter."
+    },
+    {
+      "title": "blend (1)",
+      "description": "n. A photo or graphic created with a software blending process."
+    },
+    {
+      "title": "blend (2)",
+      "description": "vb. In illustration and other graphics software, to create a new combined graphic from two or more separate graphic elements. Photos, art, colors, shapes, and text may be blended together digitally. Graphic elements may be blended for artistic effect, or may be realistic enough to appear as a single photo or graphic. "
+    },
+    {
+      "title": "blind carbon copy ",
+      "description": "n. See bcc."
+    },
+    {
+      "title": "blind courtesy copy ",
+      "description": "n. See bcc."
+    },
+    {
+      "title": "blind search ",
+      "description": "n. A search for data in memory or on a storage device with no foreknowledge as to the data’s order or location. See also linear search. Compare binary search, indexed search."
+    },
+    {
+      "title": "blink ",
+      "description": "vb. To flash on and off. Cursors, insertion points, menu choices, warning messages, and other displays on a computer screen that are intended to catch the eye are often made to blink. The rate of blinking in a graphical user interface can sometimes be controlled by the user."
+    },
+    {
+      "title": "blink speed ",
+      "description": "n. The rate at which the cursor indicating the active insertion point in a text window, or other display element, flashes on and off."
+    },
+    {
+      "title": "blip ",
+      "description": "n. A small, optically sensed mark on a recording medium, such as microfilm, that is used for counting or other tracking purposes."
+    },
+    {
+      "title": "blit ",
+      "description": "vb. To render a glyph/bitmap to the display. Also called: blitting. See also bit block transfer."
+    },
+    {
+      "title": "blitter ",
+      "description": "n. A function that copies a bitmap from memory onto the screen."
+    },
+    {
+      "title": "bloatware ",
+      "description": "n. Software whose files occupy an extremely large amount of storage space on a user’s hard disk, especially in comparison with previous versions of the same product."
+    },
+    {
+      "title": "block (1) ",
+      "description": "n. 1. Generally, a contiguous collection of similar things that are handled together as a whole. 2. A section of random access memory temporarily assigned (allocated) to a program by the operating system. 3. A group of statements in a program that are treated as a unit. For example, if a stated condition is true, all of the statements in the block are executed, but none are executed if the condition is false. 4. A unit of transmitted information consisting of identification codes, data, and error-checking codes. 5. A collection of consecutive bytes of data that are read from or written to a device (such as a disk) as a group. 6. A rectangular grid of pixels that are handled as a unit. 7. A segment of text that can be selected and acted upon as a whole in an application. 8. In the Java programming language, any code between matching braces constitutes a block. For example, { x = 1; }. See also code, Java."
+    },
+    {
+      "title": "block (2) ",
+      "description": "vb. 1. To distribute a file over fixed-size blocks in storage. 2. To prevent a signal from being transmitted. 3. To select a segment of text, by using a mouse, menu selection, or cursor key, to be acted upon in some way, such as to format or to delete the segment."
+    },
+    {
+      "title": "block cipher ",
+      "description": "n. A private key encryption method that encrypts data in blocks of a fixed size (usually 64 bits). The encrypted data block contains the same number of bits as the original. See also encryption, private key."
+    },
+    {
+      "title": "block cursor ",
+      "description": "n. An on-screen cursor that has the same width and height in pixels as a text-mode character cell. A block cursor is used in text-based applications, especially as the mouse pointer when a mouse is installed in the system. See also character cell, cursor (definition 1), mouse pointer."
+    },
+    {
+      "title": "block device ",
+      "description": "n. A device, such as a disk drive, that moves information in blocks—groups of bytes—rather than one character (byte) at a time. Compare character device."
+    },
+    {
+      "title": "block diagram ",
+      "description": "n. A chart of a computer or other system in which labeled blocks represent principal components and lines and arrows between the blocks show the pathways and relationships among the components. A block diagram is an overall view of what a system consists of and how it works. To show the various components of such a system in more detail, different types of diagrams, such as flowcharts or schematics, are used. See the illustration. Compare bubble chart, flowchart."
+    },
+    {
+      "title": "block gap",
+      "description": "n. The unused physical space that separates blocks of data or physical records on a tape or formatted sectors on a disk. Also called: IBG, inter-block gap."
+    },
+    {
+      "title": "block header ",
+      "description": "n. Information that appears at the beginning of a block of data and serves such purposes as signaling the beginning of the block, identifying the block, providing error-checking information, and describing such characteristics as the block length and the type of data contained in the block. See also header (definition 2)."
+    },
+    {
+      "title": "blocking factor ",
+      "description": "n. 1. The size of the chunks in which data is transferred to or from a block device such as a disk. If fewer bytes are requested, the disk drive will still read the whole block. Common blocking factors on personal computers are 128, 256, and 512 bytes. 2. The number of file records in one disk block. If the record length for a file is 170 bytes, a block on the disk contains 512 bytes, and records do not span blocks, then the blocking factor is 3, and each block contains 510 (170 x 3) bytes of data and 2 unused bytes."
+    },
+    {
+      "title": "block length",
+      "description": "n. The length, usually in bytes, of a block of data. Block length typically ranges from 512 bytes through 4096 kilobytes (KB), depending on the purpose for which the block is used."
+    },
+    {
+      "title": "block move ",
+      "description": "n. Movement of a number of items of data together to a different location, as in reorganizing documents with a word processor or moving the contents of cell ranges in a spreadsheet. Most CPUs have instructions that easily support block moves."
+    },
+    {
+      "title": "block size ",
+      "description": "n. The declared size of a block of data transferred internally within a computer, via FTP, or by modem. The size is usually chosen to make the most efficient use of all the hardware devices involved. See also FTP1 (definition 1)."
+    },
+    {
+      "title": "block structure ",
+      "description": "n. The organization of a program into groups of statements called blocks, which are treated as units. Programming languages such as Ada, C, and Pascal were designed around block structure. A block is a section of code surrounded by certain delimiters (such as BEGIN and END or { and }), which signify that the intervening code can be treated as a related group of statements. For example, in C, each function is a separate block. Block structure also limits the scope of constants, data types, and variables declared in a block to that block. See also function (definition 2), procedure, scope (definition 1)."
+    },
+    {
+      "title": "block transfer ",
+      "description": "n. The movement of data in discrete blocks (groups of bytes)."
+    },
+    {
+      "title": "blog (1) ",
+      "description": "n. See weblog."
+    },
+    {
+      "title": "blog (2) ",
+      "description": "vb. To create or maintain a weblog."
+    },
+    {
+      "title": "blogger ",
+      "description": "n. One who creates or maintains a weblog."
+    },
+    {
+      "title": "blow ",
+      "description": "vb. See burn (definition 1)."
+    },
+    {
+      "title": "blow up ",
+      "description": "vb. To terminate abnormally, as when a program crosses some computational or storage boundary and cannot handle the situation on the other side, as in, “I tried to draw outside the window, and the graphics routines blew up.” See also abend, abort."
+    },
+    {
+      "title": "blue screen ",
+      "description": "n. A technique used in film matte special effects, in which one image is superimposed on another image. Action or objects are filmed against a blue screen. The desired background is filmed separately, and the shot containing the action or objects is superimposed onto the background. The result is one image where the blue screen disappears."
+    },
+    {
+      "title": "Blue Screen of Death ",
+      "description": "n. In a Microsoft Windows computer environment, a semi-humorous reference to the result of a fatal error in which the screen turns blue and the computer crashes. Recovery from a Blue Screen of Death error typically requires the user to reboot the computer. Acronym: BSOD. Also called: blue-screen error. See also fatal error."
+    },
+    {
+      "title": "Bluetooth ",
+      "description": "n. Technology protocol developed to wirelessly connect electronic devices such as wireless phones, personal digital assistants (PDAs), and computers. Devices equipped with Bluetooth chips can exchange information within about a 30-foot range via radio waves in the 2.45 gigahertz (GHz) spectrum. Bluetooth was developed by the Bluetooth Special Interest Group, a consortium of telecommunications, computing, consumer electronics, and related industry groups."
+    },
+    {
+      "title": "Bluetooth Special Interest Group ",
+      "description": "n. A group of companies from the telecommunications, computing, and networking industries that promotes the development and deployment of Bluetooth technology. See also Bluetooth."
+    },
+    {
+      "title": "Bluetooth wireless technology ",
+      "description": "n. A specification for radio links between mobile PCs, mobile phones, and other portable devices. These radio links are small-form factor, low cost, and short range."
+    },
+    {
+      "title": ".bmp ",
+      "description": "n. The file extension that identifies raster graphics stored in bit map file format. See also bit map."
+    },
+    {
+      "title": "BNC ",
+      "description": "n. Acronym for bayonet-Neill-Concelman. Named for Paul Neill of Bell Labs and Carl Concelman (affiliation unknown), who developed two earlier types of coaxial connectors known as the N connector and C connector, BNC is a type of connector used to join segments of coaxial cable. When one connector is inserted into another and rotated 90 degrees, they lock. BNC connectors are often used with closed-circuit television. The letters BNC are sometimes also considered an acronym for British Naval Connector. See the illustration. Also called: BNC connector. See also coaxial cable."
+    },
+    {
+      "title": "BNC connector ",
+      "description": "n. See BNC."
+    },
+    {
+      "title": "board ",
+      "description": "n. An electronic module consisting of chips and other electronic components mounted on a flat, rigid substrate on which conductive paths are laid between the components. A personal computer contains a main board, called the motherboard, which usually has the microprocessor on it and slots into which other, smaller boards, called cards or adapters, can be plugged to expand the functionality of the main system, allowing connections to monitors, disk drives, or a network. See also adapter, card (definition 1), motherboard."
+    },
+    {
+      "title": "board computer ",
+      "description": "n. See single-board."
+    },
+    {
+      "title": "board level",
+      "description": "n. A level of focus in troubleshooting and repair that involves tracking down a problem in a computer to a circuit board and replacing the board. This is in contrast to the component level, which involves repairing the board itself. In many cases board-level repairs are made in order to quickly restore the device to working condition; the boards replaced are then repaired and tested for use in later board-level repairs. See also circuit board."
+    },
+    {
+      "title": "body ",
+      "description": "n. 1. In e-mail and Internet newsgroups, the content of a message. The body of a message follows the header, which contains information about the sender, origin, and destination of the message. See also header (definition 1). 2. In HTML, SGML, and XML, a section of a document that contains the content of the document, along with tags describing characteristics of the content—for example, format. 3. A segment of a data packet containing the actual data."
+    },
+    {
+      "title": "body face",
+      "description": "n. A typeface suitable for the main text in a document rather than for headings and titles. Because of their readability, fonts having serifs, such as Times and Palatino, are good body faces, although sans serif faces can also be used as body text. See also sans serif, serif. Compare display face."
+    },
+    {
+      "title": "BOF ",
+      "description": "n. Acronym for birds of a feather. Meetings of special interest groups at trade shows, conferences, and conventions. BOF sessions provide an opportunity for people working on the same technology at different companies or research institutions to meet and exchange their experiences. See beginning-of-file."
+    },
+    {
+      "title": "boilerplate ",
+      "description": "n. Recyclable text; a piece of writing or code, such as an organization’s mission statement or the graphics code that prints a software company’s logo, which can be used over and over in many different documents. The size of boilerplate text can range from a paragraph or two to many pages. It is, essentially, generic composition that can be written once, saved on disk, and merged, either verbatim or with slight modification, into whatever documents or programs later require it."
+    },
+    {
+      "title": "boldface ",
+      "description": "n. A type style that makes the text to which it is applied appear darker and heavier than the surrounding text. Some applications allow the user to apply a “Bold” command to selected text; other programs require that special codes be embedded in the text before and after words that are to be printed in boldface. This sentence appears in boldface."
+    },
+    {
+      "title": "bomb (1)",
+      "description": "n. A program planted surreptitiously, with intent to damage or destroy a system in some way—for example, to erase a hard disk or cause it to be unreadable to the operating system. See also Trojan horse, virus, worm."
+    },
+    {
+      "title": "bomb (2) ",
+      "description": "vb. To fail abruptly and completely, without giving the user a chance to recover from the problem short of restarting the program or system. See also abend, bug (definition 1), crash2 (definition 1), hang."
+    },
+    {
+      "title": "bonding ",
+      "description": "n. 1. Acronym for Bandwidth On Demand Interoperability Group. 2. The process of combining two or more ISDN B (bearer) channels to form a single channel with a bandwidth greater than the standard B channel bandwidth of 64 Kbps. Bonding two B channels, for example, provides a bandwidth of 128 Kbps, which is four times faster than a 28.8 Kbps modem. Such high-speed channels are ideal for video conferencing, imaging, and transferring large-scale data. See also B channel, BRI, ISDN."
+    },
+    {
+      "title": "bonding ",
+      "description": "vb. See link aggregation."
+    },
+    {
+      "title": "bookmark ",
+      "description": "n. 1. A marker inserted at a specific point in a document to which the user may wish to return for later reference. 2. In Netscape Navigator, a link to a Web page or other URL that a user has stored in a local file in order to return to it later. See also Favorites folder, hotlist, URL."
+    },
+    {
+      "title": "bookmark file ",
+      "description": "n. 1. A Netscape Navigator file containing the addresses of preferred Web sites. It is synonymous with the Favorites folder in Internet Explorer and the hotlist in Mosaic. See also Favorites folder, hotlist, Internet Explorer, Mosaic. 2. A rendering of such a file in HTML format, generally posted on a Web page for the benefit of other people. See also HTML."
+    },
+    {
+      "title": "Boolean ",
+      "description": "adj. Of, pertaining to, or characteristic of logical (true, false) values. Many languages directly support a Boolean data type, with predefined values for true and false; others use integer data types to implement Boolean values, usually (although not always) with 0 equaling false and “not 0” equaling true. See also Boolean algebra, Boolean operator."
+    },
+    {
+      "title": "Boolean algebra ",
+      "description": "n. An algebra, fundamental to computer operations but developed in the mid-nineteenth century by English mathematician George Boole, for determining whether logical propositions are true or false rather than for determining the values of numerical expressions. In Boolean algebra, variables must have one of only two possible values, true or false, and relationships between these variables are expressed with logical operators, such as AND, OR, and NOT. Given these two-state variables and the relationships they can have to one another, Boolean algebra produces such propositions as C = A AND B, which means that C is true if and only if both A is true and B is true; thus, it can be used to process information and to solve problems. Furthermore, Boolean logic can be readily applied to the electronic circuitry used in digital computing. Like the binary numbers 1 and 0, true and false are easily represented by two contrasting physical states of a circuit, such as voltages, and computer circuits known as logic gates control the flow of electricity (bits of data) so as to represent AND, OR, NOT, and other Boolean operators. Within a computer, these logic gates are combined, with the output from one becoming the input to another so that the final result (still nothing more than sets of 1s and 0s) is meaningful data, such as the sum of two numbers. See the illustration. See also adder (definition 1), binary1, Boolean operator, gate (definition 1), logic circuit, truth table."
+    },
+    {
+      "title": "Boolean expression ",
+      "description": "n. An expression that yields a Boolean value (true or false). Such expressions can involve comparisons (testing values for equality or, for non- Boolean values, the < [less than] or > [greater than] relation) and logical combination (using Boolean operators such as AND, OR, and XOR) of Boolean expressions. Also called: conditional expression, logical expression. See also Boolean, Boolean algebra, Boolean operator, relational operator."
+    },
+    {
+      "title": "Boolean logic ",
+      "description": "n. See Boolean algebra."
+    },
+    {
+      "title": "Boolean operator",
+      "description": "n. An operator designed to work with Boolean values. The four most common Boolean operators in programming use are AND (logical conjunction), OR (logical inclusion), XOR (exclusive OR), and NOT (logical negation). Boolean operators are often used as qualifiers in database searches—for example, find all records where DEPARTMENT = “marketing” OR DEPARTMENT = “sales” AND SKILL = “word processing”. Also called: logical operator. See also AND, exclusive OR, NOT, OR."
+    },
+    {
+      "title": "Boolean search ",
+      "description": "n. A database search that uses Boolean operators. See also Boolean operator."
+    },
+    {
+      "title": "boostv ",
+      "description": "vb. To strengthen a network signal before it is transmitted further."
+    },
+    {
+      "title": "boot (1)",
+      "description": "n. The process of starting or resetting a computer. When first turned on (cold boot) or reset (warm boot), the computer executes the software that loads and starts the computer’s more complicated operating system and prepares it for use. Thus, the computer can be said to pull itself up by its own bootstraps. Also called: bootstrap. See also BIOS, bootstrap loader, cold boot, warm boot."
+    },
+    {
+      "title": "boot (2)",
+      "description": "vb. 1. To start or reset a computer by turning the power on, by pressing a reset button on the computer case, or by issuing a software command to restart. Also called: bootstrap, boot up. See also reboot. 2. To execute the bootstrap loader program. Also called: bootstrap. See also bootstrap loader."
+    },
+    {
+      "title": "bootable ",
+      "description": "adj. Containing the system files necessary for booting a PC and running it. See also boot (2)."
+    },
+    {
+      "title": "bootable disk ",
+      "description": "n. See boot disk."
+    },
+    {
+      "title": "boot block ",
+      "description": "n. A portion of a disk that contains the operating- system loader and other basic information that enables a computer to start up. See also block1 (definition 5)."
+    },
+    {
+      "title": "boot disk ",
+      "description": "n. A floppy disk that contains key system files from a PC-compatible operating system and that can boot, or start, the PC. A boot disk must be inserted in the primary floppy disk drive (usually drive A:) and is used when there is some problem with starting the PC from the hard disk, from which the computer generally boots. Also called: bootable disk. See also A:, boot2, boot drive, hard disk."
+    },
+    {
+      "title": "boot drive ",
+      "description": "n. In a PC-compatible computer, the disk drive that the BIOS uses to automatically load the operating system when the computer is turned on. Generally, the default boot drive is the primary floppy disk drive A: in PC-compatible computers with MS-DOS, Windows 3x, or Windows 9x operating systems. If a floppy disk is not found in that drive, the BIOS will check the primary hard disk next, which is drive C:. The BIOS for these operating systems can be reconfigured to search drive C: first by using the BIOS setup program. See also A:, BIOS, disk drive, hard disk."
+    },
+    {
+      "title": "boot failure ",
+      "description": "n. The inability of a computer to locate or activate the operating system and thus boot, or start, the computer. See also boot (2)."
+    },
+    {
+      "title": "boot files ",
+      "description": "n. The system files needed to start Microsoft Windows. The boot files include Ntldr and Ntdetect.com. See also partition boot sector."
+    },
+    {
+      "title": "boot loader ",
+      "description": "n. See bootstrap loader."
+    },
+    {
+      "title": "BOOTP ",
+      "description": "n. See Bootstrap Protocol."
+    },
+    {
+      "title": "boot partition ",
+      "description": "n. The partition on a hard disk that contains the operating system and support files that the system loads into memory when the computer is turned on or restarted."
+    },
+    {
+      "title": "boot record ",
+      "description": "n. The section of a disk that contains the operating system."
+    },
+    {
+      "title": "boot sector ",
+      "description": "n. The portion of a disk reserved for the bootstrap loader (the self-starting portion) of an operating system. The boot sector typically contains a short machine language program that loads the operating system."
+    },
+    {
+      "title": "bootstrap (1)",
+      "description": "n. See boot (1)."
+    },
+    {
+      "title": "bootstrap (2)",
+      "description": "vb. See boot (2)."
+    },
+    {
+      "title": "bootstrap loader ",
+      "description": "n. A program that is automatically run when a computer is switched on (booted). After first performing a few basic hardware tests, the bootstrap loader loads and passes control to a larger loader program, which typically then loads the operating system. The bootstrap loader typically resides in the computer’s read-only memory (ROM)."
+    },
+    {
+      "title": "Bootstrap Protocol ",
+      "description": "n. A protocol used primarily on TCP/IP networks to configure diskless workstations. RFCs 951 and 1542 define this protocol. DHCP is a later boot configuration protocol that uses this protocol. The Microsoft DGCP service provided limited support for BOOTP service. Acronym: BOOTP. Also called: Boot Protocol. See also boot2, DHCP, RFC, TCP/IP."
+    },
+    {
+      "title": "boot up ",
+      "description": "vb. See boot (2)."
+    },
+    {
+      "title": "border ",
+      "description": "n. 1. In programs and working environments that feature on-screen windows, the edge surrounding the user’s workspace. Window borders provide a visible frame around a document or graphic. Depending on the program and its requirements, they can also represent an area in which the cursor or a mouse pointer takes on special characteristics. For example, clicking the mouse on a window border can enable the user to resize the window or split the window in two. 2. In printing, a decorative line or pattern along one or more edges of a page or illustration."
+    },
+    {
+      "title": "Border Gateway Protocol ",
+      "description": "n. A protocol used by NSFnet that is based on the External Gateway Protocol. Acronym: BGP. See also External Gateway Protocol, NSFnet."
+    },
+    {
+      "title": "boss screen ",
+      "description": "n. A false display screen usually featuring business-related material that can be substituted for a game display when the boss walks by. Boss screens were popular with MS-DOS games, where it was difficult to switch to another application quickly. However, games designed for the Mac or Windows 9x generally don’t need them because it is easy to switch to a different screen or application to hide the fact that one is playing a game."
+    },
+    {
+      "title": "bot ",
+      "description": "n. 1. Short for robot. A displayed representation of a person or other entity whose actions are based on programming. 2. A program that performs some task on a network, especially a task that is repetitive or time consuming. 3. On the Internet, a program that performs a repetitive or time-consuming task, such as searching Web sites and newsgroups for information and indexing them in a database or other record-keeping system (called spiders); automatically posting one or more articles to multiple newsgroups (often used in spamming and called spambots); or keeping IRC channels open. Also called: Internet robot. See also IRC, newsgroup, spam, spambot, spider."
+    },
+    {
+      "title": "bottom-up design ",
+      "description": "n. A program development design methodology in which the lower-level tasks of a program are defined first; the design of the higher-level functions proceeds from the design of the lower-level ones. See also bottom-up programming, top-down programming. Compare top-down design."
+    },
+    {
+      "title": "bottom-up programming ",
+      "description": "n. A programming technique in which lower-level functions are developed and tested first; higher-level functions are then built using the lowerlevel functions. Many program developers believe that the ideal combination is top-down design and bottom-up programming. See also top-down design. Compare object-oriented programming, top-down programming."
+    },
+    {
+      "title": "bounce ",
+      "description": "vb. To return to the sender, used in reference to undeliverable e-mail."
+    },
+    {
+      "title": "BounceKeys ",
+      "description": "n. A feature in Windows 9x that instructs the processor to ignore double strokes of the same key and other unintentional keystrokes."
+    },
+    {
+      "title": "bound (1)",
+      "description": "adj. Limited in performance or speed; for example, an input/output-bound system is limited by the speed of its input and output devices (keyboard, disk drives, and so on), even though the processor or program is capable of performing at a higher rate."
+    },
+    {
+      "title": "bound (2)",
+      "description": "n. The upper or lower limit in a permitted range of values."
+    },
+    {
+      "title": "bounding box ",
+      "description": "n. See graphic limits."
+    },
+    {
+      "title": "Bourne shell ",
+      "description": "n. The first major shell, or command interpreter, for UNIX and part of the AT&T System V release. The Bourne shell scripting language, developed at AT&T Bell Laboratories by Steve Bourne in 1979, was one of the original command languages for the UNIX operating system. While the Bourne shell lacks some features common in other UNIX shells, such as command-line editing and recall of previously issued commands, it is the one that the majority of shell scripts adhere to. Also called: sh. See also shell1, shell script, System V, UNIX. Compare C shell, Korn shell."
+    },
+    {
+      "title": "boutique reseller ",
+      "description": "n. A type of VAR (value-added reseller) that specializes in providing customized software, hardware, and services to vertical, or niche, markets. In the VAR environment, boutique resellers are distinguished from master resellers, or systems integrators, which offer a much wider variety of products and services. See also value-added reseller."
+    },
+    {
+      "title": "box ",
+      "description": "n. 1. Container for a piece of electronic equipment. 2. Slang term for a computer; more specifically the unit holding the central processing unit, or CPU, and other “guts” of the system, as in “bet that new high-performance box really screams.” See also central processing unit. 3. An IBM front-end processor. 4. A rectangular—actually, diamond-shaped—symbol, usually called a decision box, used in flowcharting to represent a point at which a process branches into more than one possible outcome, as in a yes/no situation. See also decision box. 5. The boundary around a graphic image on screen. See also graphic limits."
+    },
+    {
+      "title": "box-top license ",
+      "description": "n. See shrinkwrap agreement."
+    },
+    {
+      "title": "Boyce-Codd normal form ",
+      "description": "n. See normal form (definition 1)."
+    },
+    {
+      "title": "bozo ",
+      "description": "n. A slang term used frequently on the Internet, particularly in newsgroups, for a foolish or eccentric person."
+    },
+    {
+      "title": "bozo filter ",
+      "description": "n. On the Internet, slang for a feature in some e-mail clients and newsgroup readers or a separate utility that allows the user to block, or filter out, incoming e-mail messages or newsgroup articles from specified individuals. Generally these individuals are ones that the user does not want to hear from, such as bozos. Also called: kill file. See also bozo."
+    },
+    {
+      "title": "BPI ",
+      "description": "n. See bits per inch, bytes per inch."
+    },
+    {
+      "title": "bpp ",
+      "description": "n. See bits per pixel."
+    },
+    {
+      "title": "bps ",
+      "description": "n. Short for bits per second. The measure of transmission speed used in relation to networks and communication lines. Although bps represents the basic unit of measure, networks and communications devices, such as modems, are so fast that speeds are usually given in multiples of bps—Kbps (kilobits, or thousands of bits, per second), Mbps (megabits, or millions of bits, per second), and Gbps (gigabits, or billions of bits, per second). Speed in bps is not the same as the baud rate for a modem. See also baud rate."
+    },
+    {
+      "title": "braindamaged ",
+      "description": "adj. Performing in an erratic or destructive manner. A braindamaged application or utility program is characterized by some or all of the following traits: a mysterious and unintuitive user interface, failure to respond predictably to commands, failure to release unused memory, failure to close open files, and use of “reserved” elements of the operating system that can result in a fatal error in a program or the operating system. Braindamaged programs are also often responsible for causing problems across local area networks. Compare kludge."
+    },
+    {
+      "title": "brain dump ",
+      "description": "n. A large, unorganized mass of information, presented in response to a query via e-mail or a newsgroup article, that is difficult to digest or interpret. "
+    },
+    {
+      "title": "branch ",
+      "description": "n. 1. A node intermediate between the root and the leaves in some types of logical tree structure, such as the directory tree in Windows or a tape distribution organization. 2. Any connection between two items such as blocks in a flowchart or nodes in a network. See branch instruction."
+    },
+    {
+      "title": "branch instruction ",
+      "description": "n. An assembly- or machine-level instruction that transfers control to another instruction, usually based on some condition (that is, it transfers if a specific condition is true or false). Branch instructions are most often relative transfers, jumping forward or backward by a certain number of bytes of code. See also GOTO statement, jump instruction."
+    },
+    {
+      "title": "branchpoint ",
+      "description": "n. The location at which a given branch instruction occurs if the attendant condition (if any) is true. See also branch instruction."
+    },
+    {
+      "title": "branch prediction ",
+      "description": "n. A technique used in some processors with an instruction called prefetch to guess whether or not a branch will be taken in a program, and to fetch executable code from the appropriate location. When a branch instruction is executed, it and the next instruction executed are stored in a buffer. This information is used to predict which way the instruction will branch the next time it is executed. When the prediction is correct (as it is over 90 percent of the time), executing a branch does not cause a pipeline break, so the system is not slowed down by the need to retrieve the next instruction. See also branch instruction, buffer1, central processing unit, pipeline processing."
+    },
+    {
+      "title": "BRB ",
+      "description": "n. Acronym for (I’ll) be right back. An expression used commonly on live chat services on the Internet and online information services by participants signaling their temporary departure from the group. See also chat1 (definition 1)."
+    },
+    {
+      "title": "breadboard ",
+      "description": "n. A blank, perforated board used to support prototype electronic circuits. Experimenters would put components on one side of the board and run the leads through the perforations to be connected by wires running along the underside. Today a circuit designer’s breadboard is made of plastic. Its holes are small and closely spaced to accommodate the pins of chips, and connections are made by metal strips plugged into the holes. See the illustration. Compare wire-wrapped circuits."
+    },
+    {
+      "title": "break (1)",
+      "description": "n. 1. Interruption of a program caused by the user pressing the Break key or its equivalent. 2. Interruption of a communications transmission that occurs when the receiving station interrupts and takes over control of the line or when the transmitting station prematurely halts transmission. 3. In the Java programming language, a keyword used to resume program execution at the next statement following the current statement. If the keyword is followed by a label, the program resumes at the indicated labeled statement. See also execute, statement."
+    },
+    {
+      "title": "break (2)",
+      "description": "vb. 1. To interrupt execution at a given spot, usually for the purpose of debugging. See also breakpoint. 2. To cause a routine, module, or program that had previously worked to cease working correctly."
+    },
+    {
+      "title": "Break key ",
+      "description": "n. A key or combination of keys used to tell a computer to halt, or break out of, whatever it is doing. On IBM PCs and compatibles under DOS, pressing the Pause/ Break or Scroll Lock/Break key while holding down the Ctrl key issues the break command (as does Ctrl-C). On Macintosh computers, the key combination that sends a break code is Command-period. See the illustration."
+    },
+    {
+      "title": "break mode ",
+      "description": "n. A temporary suspension of program execution while in the development environment. In break mode, you can examine, debug, reset, step through, or continue program execution."
+    },
+    {
+      "title": "breakout box ",
+      "description": "n. A small hardware device that can be attached between two devices normally connected by a cable (such as a computer and a modem) to display and, if necessary, change the activity through individual wires of t'he cable."
+    },
+    {
+      "title": "breakpoint ",
+      "description": "n. A location in a program at which execution is halted so that a programmer can examine the program’s status, the contents of variables, and so on. A breakpoint is set and used within a debugger and is usually implemented by inserting at that point some kind of jump, call, or trap instruction that transfers control to the debugger. See also debug, debugger."
+    },
+    {
+      "title": "BRI ",
+      "description": "n. Acronym for Basic Rate Interface. An ISDN subscriber service that uses two B (64 Kbps) channels and one D (64 Kbps) channel to transmit voice, video, and data signals. See also ISDN."
+    },
+    {
+      "title": "bridge ",
+      "description": "n. In terms of the Year 2000 problem, a program, routine, or other conversion mechanism that converts date formats from 2-digit years to 4-digit years and vice versa. A bridge is used as a remedy for literally bridging the 2- digit/4-digit format gap between programs or systems."
+    },
+    {
+      "title": "bridge ",
+      "description": "n. 1. A device that connects networks using the same communications protocols so that information can be passed from one to the other. Compare gateway. 2. A device that connects two LANs (local area networks), whether or not they use the same protocols, and allows information to flow between them. The bridge operates at the ISO/OSI data-link layer. Also called: layer switch. See also data-link layer. Compare router."
+    },
+    {
+      "title": "bridge page ",
+      "description": "n. See doorway page."
+    },
+    {
+      "title": "bridge router ",
+      "description": "n. A device that supports the functions of both a bridge and router. A bridge router links two segments of a local or wide area network, passing packets of data between the segments as necessary, and uses Level 2 addresses for routing. Also called: Brouter. See also bridge (definition 2), router."
+    },
+    {
+      "title": "bridgeware ",
+      "description": "n. Hardware or software designed to convert application programs or data files to a form that can be used by a different computer."
+    },
+    {
+      "title": "Briefcase ",
+      "description": "n. A system folder in Windows 9x used for synchronizing files between two computers, usually between desktop and laptop computers. The Briefcase can be transferred to another computer via disk, cable, or network. When files are transferred back to the original computer, the Briefcase updates all files to the most recent version."
+    },
+    {
+      "title": "brightness ",
+      "description": "n. The perceived quality of radiance or luminosity of a visible object. Brightness is literally in the eye (and mind) of the beholder; a candle in the night appears brighter than the same candle under incandescent lights. Although its subjective value cannot be measured with physical instruments, brightness can be measured as luminance (radiant energy). The brightness component of a color is different from its color (the hue) and from the intensity of its color (the saturation). See also color model, HSB."
+    },
+    {
+      "title": "British Naval Connector ",
+      "description": "n. See BNC."
+    },
+    {
+      "title": "broadband ",
+      "description": "adj. Of or relating to communications systems in which the medium of transmission (such as a wire or fiber-optic cable) carries multiple messages at a time, each message modulated on its own carrier frequency by means of modems. Broadband communication is found in wide area networks. Compare baseband."
+    },
+    {
+      "title": "broadband ISDN ",
+      "description": "n. Next-generation ISDN based on ATM (Asynchronous Transfer Mode) technology. Broadband ISDN divides information into two categories: interactive services, which are controlled by the user, and distributed (or distribution) services that can be broadcast to the user. Acronym: BISDN. See also ATM (definition 1), ISDN."
+    },
+    {
+      "title": "broadband modem ",
+      "description": "n. A modem for use on a broadband network. Broadband technology allows several networks to coexist on a single cable. Traffic from one network does not interfere with traffic from another, since the conversations happen on different frequencies, rather like the commercial radio system. See also broadband network."
+    },
+    {
+      "title": "broadband network ",
+      "description": "n. A local area network on which transmissions travel as radio-frequency signals over separate inbound and outbound channels. Stations on a broadband network are connected by coaxial or fiber-optic cable, which can carry data, voice, and video simultaneously over multiple transmission channels that are distinguished by frequency. A broadband network is capable of high-speed operation (20 megabits or more), but it is more expensive than a baseband network and can be difficult to install. Such a network is based on the same technology used by cable television (CATV). Also called: wideband transmission. Compare baseband network."
+    },
+    {
+      "title": "broadcast (1)",
+      "description": "adj. Sent to more than one recipient. In communications and on networks, a broadcast message is one distributed to all stations. See also e-mail1 (definition 1)."
+    },
+    {
+      "title": "broadcast (2)",
+      "description": "n. As in radio or television, a transmission sent to more than one recipient."
+    },
+    {
+      "title": "broadcast publishing point ",
+      "description": "n. A type of publishing point that streams content in such a way that the client cannot control (start, stop, pause, fast forward, or rewind) the content. Content streamed from a broadcast publishing point can be delivered as a multicast or unicast stream. Formerly called a station."
+    },
+    {
+      "title": "broadcast storm ",
+      "description": "n. A network broadcast that causes multiple hosts to respond simultaneously, overloading the network. A broadcast storm may occur when old TCP/IP routers are mixed with routers that support a new protocol. See also communications protocol, router, TCP/IP."
+    },
+    {
+      "title": "broken as designed ",
+      "description": "adj. See BAD."
+    },
+    {
+      "title": "Brouter ",
+      "description": "n. See bridge router."
+    },
+    {
+      "title": "brownout ",
+      "description": "n. A condition in which the electricity level is appreciably reduced for a sustained period of time. In contrast to a blackout, or total loss of power, a brownout continues the flow of electricity to all devices connected to electrical outlets, although at lower levels than the normally supplied levels (120 volts in the United States). A brownout can be extremely damaging to sensitive electronic devices, such as computers, because the reduced and often fluctuating voltage levels can cause components to operate for extended periods of time outside the range they were designed to work in. On a computer, a brownout is characterized by a smaller, dimmer, and somewhat fluctuating display area on the monitor and potentially erratic behavior by the system unit. The only reliable means of preventing damage caused by a brownout condition is to use a battery-backed uninterruptible power supply (UPS). See also UPS. Compare blackout."
+    },
+    {
+      "title": "browse ",
+      "description": "vb. To scan a database, a list of files, or the Internet, either for a particular item or for anything that seems to be of interest. Generally, browsing implies observing, rather than changing, information. In unauthorized computer hacking, browsing is a (presumably) nondestructive means of finding out about an unknown computer after illegally gaining entry."
+    },
+    {
+      "title": "browser ",
+      "description": "n. See Web browser."
+    },
+    {
+      "title": "browser box ",
+      "description": "n. See WebTV."
+    },
+    {
+      "title": "browser CLUT ",
+      "description": "n. A color look-up table consisting of the 216 colors deemed safe when viewed with most Web browsers on most computer operating systems. See also CLUT, Web safe palette."
+    },
+    {
+      "title": "BRS ",
+      "description": "n. See big red switch."
+    },
+    {
+      "title": "brush ",
+      "description": "n. A tool used in paint programs to sketch or fill in areas of a drawing with the color and pattern currently in use. Paint programs that offer a variety of brush shapes can produce brushstrokes of varying width and, in some cases, shadowing or calligraphic effects."
+    },
+    {
+      "title": "brute force ",
+      "description": "adj. In general, any process that essentially involves “doing it the hard way.” In computer technology, however, brute force typically refers to a programming style that relies on the computer’s processing power rather than on skill and planning to create or find a more elegant solution to a problem. Brute-force programming also ignores available information on how similar situations were handled in the past and might depend on outmoded design methodologies. For example, a program using brute force to crack passwords might try all the words in a dictionary (which would require huge amounts of computing power). Instead, more elegant programming would involve using special rules, history, statistics, and other available techniques or information to limit the number and types of words to try first."
+    },
+    {
+      "title": "BSC ",
+      "description": "n. See BISYNC."
+    },
+    {
+      "title": "BSD/OS ",
+      "description": "n. A version of the UNIX operating system based on BSD UNIX and sold by Berkeley Software Design, Inc. See also BSD UNIX."
+    },
+    {
+      "title": "BSD UNIX ",
+      "description": "n. Acronym for Berkeley Software Distribution UNIX. A UNIX version developed at the University of California at Berkeley, providing additional capabilities such as networking, extra peripheral support, and use of extended filenames. BSD UNIX was instrumental in gaining widespread acceptance of UNIX and in getting academic institutions connected to the Internet. BSD UNIX is now being developed by Berkeley Software Design, Inc. Also called: Berkeley UNIX. See also BSD/OS, UNIX."
+    },
+    {
+      "title": "BSOD ",
+      "description": "n. See Blue Screen of Death."
+    },
+    {
+      "title": "BSS ",
+      "description": "n. See Basic Service Set."
+    },
+    {
+      "title": "B-tree or btree ",
+      "description": "n. A tree structure for storing database indexes. Each node in the tree contains a sorted list of key values and links that correspond to ranges of key values between the listed values. To find a specific data record given its key value, the program reads the first node, or root, from the disk and compares the desired key with the keys in the node to select a subrange of key values to search. It repeats the process with the node indicated by the corresponding link. At the lowest level, the links indicate the data records. The database system can thus rapidly skip down through the levels of the tree structure to find the simple index entries that contain the location of the desired records or rows. See the illustration."
+    },
+    {
+      "title": "BTW or btw ",
+      "description": "n. Acronym for by the way. An expression often used to preface remarks in e-mail and Internet newsgroup articles."
+    },
+    {
+      "title": "bubble chart ",
+      "description": "n. A chart in which annotated ovals (bubbles) representing categories, operations, or procedures are connected by lines or arrows that represent data flows or other relationships among the items represented by bubbles. In systems analysis, bubble charts, rather than block diagrams or flowcharts, are used to describe the connections between concepts or parts of a whole, without emphasizing a structural, sequential, or procedural relationship between the parts. See the illustration. Compare block diagram, flowchart."
+    },
+    {
+      "title": "bubble-jet printer",
+      "description": "n. A form of nonimpact printer that uses a mechanism similar to that used by an ink-jet printer to shoot ink from nozzles to form characters on paper. A bubble-jet printer uses special heating elements to prepare the ink, whereas an ink-jet printer uses piezoelectric crystals. See also ink-jet printer, nonimpact printer. Compare laser printer."
+    },
+    {
+      "title": "bubble memory ",
+      "description": "n. Memory formed by a series of persistent magnetic “bubbles” in a thin film substrate. In contrast to ROM, information can be written to bubble memory. In contrast to RAM, data written to bubble memory remains there until it is changed, even when the computer is turned off. For this reason, bubble memory has had some application in environments in which a computer system must be able to recover with minimal data loss in the event of a power failure. The use of and demand for bubble memory has all but disappeared because of the introduction of flash memory, which is less expensive and easier to produce. See also flash memory, nonvolatile memory."
+    },
+    {
+      "title": "bubble sort",
+      "description": "n. A sorting algorithm that starts at the end of a list with n elements and moves all the way through, testing the value of each adjacent pair of items and swapping them if they aren’t in the right order. The entire process is then repeated for the remaining n – 1 items in the list, and so on, until the list is completely sorted, with the largest value at the end of the list. A bubble sort is so named because the “lightest” item in a list (the smallest) will figuratively “bubble up” to the top of the list first; then the next-lightest item bubbles up to its position, and so on. See the illustration. Also called: exchange sort. See also algorithm, sort. Compare insertion sort, merge sort, quicksort."
+    },
+    {
+      "title": "bubble storage ",
+      "description": "n. See bubble memory."
+    },
+    {
+      "title": "bucket ",
+      "description": "n. A region of memory that is addressable as an entity and can be used as a receptacle to hold data. See also bit bucket."
+    },
+    {
+      "title": "bucket brigade attack ",
+      "description": "n. See man-in-the-middle attack."
+    },
+    {
+      "title": "buffer (1)",
+      "description": "n. A region of memory reserved for use as an intermediate repository in which data is temporarily held while waiting to be transferred between two locations or devices. For instance, a buffer is used while transferring data from an application, such as a word processor, to an input/output device, such as a printer."
+    },
+    {
+      "title": "buffer (2) ",
+      "description": "vb. To use a region of memory to hold data that is waiting to be transferred, especially to or from input/output (I/O) devices such as disk drives and serial ports."
     }
   ]
 }

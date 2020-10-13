@@ -22,14 +22,6 @@ apply plugin: 'com.google.firebase.crashlytics'
 apply plugin: "org.sonarqube"
 
 android {
-    signingConfigs {
-        release {
-            storeFile file('C:\\Users\\AMADOU\\Documents\\Google Exported Key\\Dictionnaire Informatique Keys\\dictionnaire-informatique-key.jks')
-            storePassword 'Mambolion'
-            keyAlias 'dictionnaire-informatique-alias'
-            keyPassword 'mambolion'
-        }
-    }
     compileSdkVersion 29
     buildToolsVersion '29.0.2'
 
@@ -37,9 +29,8 @@ android {
         minSdkVersion 24
         applicationId "com.flys.dico"
         targetSdkVersion 29
-        versionCode 11
-        versionName "1.0.6"
-        signingConfig signingConfigs.release
+        versionCode 12
+        versionName "1.0.7"
         resConfigs "en", "fr"
         javaCompileOptions {
             annotationProcessorOptions {
