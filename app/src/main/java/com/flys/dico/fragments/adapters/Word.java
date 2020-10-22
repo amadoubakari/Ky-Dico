@@ -1,6 +1,5 @@
 package com.flys.dico.fragments.adapters;
 
-import java.io.Serializable;
 
 /**
  * @author AMADOU BAKARI

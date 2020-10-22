@@ -1,17 +1,0 @@
-
-—
-java:S1186@"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ëä–
-œ
-java:S1186O"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(²‘Şàüÿÿÿÿ
-R
-java:S22092"5Change this instance-reference to a static reference.(ñôé°8êÓ¦´·.
-—
-java:S1186E"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¸ø®é
-|
-java:S1450"aRemove the "notificationDialog" field and declare it as a local variable in the relevant methods.(ôşíšùÿÿÿÿ
-œ
-java:S1186;"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(­¼ÁÚúÿÿÿÿ
-—
-java:S1186J"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ÿ¦ÓÁ
-X
-java:S1126\"BReplace this if-then-else statement by a single method invocation.(‰Ö²¹

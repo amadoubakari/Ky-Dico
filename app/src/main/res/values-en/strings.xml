@@ -45,7 +45,7 @@
     <string name="activity_main_email_address">Email Address</string>
     <string name="activity_main_thanks_msg">"Thanks "</string>
     <string name="app_name_release">Computer Science Dictionary</string>
-    <string name="app_name_debug">Computer Science Dictionary (Debug)</string>
+    <string name="app_name_debug">Computer Science Dictionary</string>
     <string name="dialog_contact_welcome_msg">Welcome</string>
     <string name="firebase_channel_id">dico-en</string>
     <string name="dictionary_data_source">dictionnaire-en.json</string>
@@ -55,4 +55,9 @@
     <string name="fragment_about_dictionary_header">IT Dictionary.</string>
     <string name="fragment_settings_layout_general_setttings_msg">General setttings</string>
     <string name="fragmant_settings_notifications_msg">Notifications</string>
+    <string name="fragment_home_database_root_ref">words</string>
+    <string name="fragment_home_database_reference">english</string>
+    <string name="fragment_home_layout_no_result_msg">No result</string>
+    <string name="fragment_home_you_try_a_more">Soon you will be notified</string>
+    <string name="fragment_notif_layout_no_elements">No notification found</string>
 </resources>
