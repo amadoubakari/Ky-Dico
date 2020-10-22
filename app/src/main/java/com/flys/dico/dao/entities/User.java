@@ -42,6 +42,14 @@ public class User extends BaseEntity {
         this.phone = phone;
     }
 
+    public User(String nom, String email, String imageUrl, String phone, Type type) {
+        this.nom = nom;
+        this.email = email;
+        this.imageUrl = imageUrl;
+        this.phone = phone;
+        this.type = type;
+    }
+
     public String getNom() {
         return nom;
     }

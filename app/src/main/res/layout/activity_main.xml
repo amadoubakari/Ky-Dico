@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".dico.activity.MainActivity">
+    tools:context=".activity.MainActivity_">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -37,7 +37,7 @@
             android:layout_height="match_parent"
             android:paddingTop="?attr/actionBarSize"
             android:background="@android:color/white"
-            android:paddingBottom="56dp"/>
+           />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <FrameLayout

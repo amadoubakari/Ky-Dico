@@ -31,7 +31,7 @@ public abstract class AbstractFragment extends Fragment {
     private List<Subscription> abonnements = new ArrayList<>();
     // menu du fragment
     private Menu menu;
-    private MenuItemState[] menuOptionsStates=new MenuItemState[0];
+    private MenuItemState[] menuOptionsStates = new MenuItemState[0];
     // cycle de vie du fragment
     private boolean isVisibleToUser = false;
     private boolean saveFragmentDone = false;
@@ -159,7 +159,7 @@ public abstract class AbstractFragment extends Fragment {
                     Log.d(className, "updateOnRestore");
                 }
                 // restauration menu (previousState ne peut être null)
-                if(previousState!=null){
+                if (previousState != null) {
                     setMenuOptionsStates(previousState.getMenuOptionsState());
                     // fragment fille
                     updateOnRestore(previousState);
@@ -234,7 +234,7 @@ public abstract class AbstractFragment extends Fragment {
             // id du menu
             int id = state.getMenuItemId();
             // initialisation état
-            if(menu.findItem(id)!=null){
+            if (menu.findItem(id) != null) {
                 menuOptionsStates[i] = new MenuItemState(id, menu.findItem(id).isVisible());
             }
         }
@@ -253,7 +253,7 @@ public abstract class AbstractFragment extends Fragment {
     protected void setMenuOptionsStates(MenuItemState[] menuItemStates) {
         // on met à jour certaines options du menu
         for (MenuItemState menuItemState : menuItemStates) {
-            if(menuItemState!=null){
+            if (menuItemState != null) {
                 menu.findItem(menuItemState.getMenuItemId()).setVisible(menuItemState.isVisible());
             }
 
@@ -390,20 +390,6 @@ public abstract class AbstractFragment extends Fragment {
         }
     }
 
-   /* @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        // parent
-        super.setUserVisibleHint(isVisibleToUser);
-        // sauvegarde ?
-        if (this.isVisibleToUser && !isVisibleToUser) {
-            // le fragment va être caché - on le sauvegarde
-            if (!saveFragmentDone) {
-                saveState();
-            }
-        }
-        // mémoire
-        this.isVisibleToUser = isVisibleToUser;
-    }*/
 
     @Override
     public void onResume() {
@@ -417,6 +403,10 @@ public abstract class AbstractFragment extends Fragment {
         }
         // mémoire
         this.isVisibleToUser = true;
+        onFragmentResume();
+    }
+
+    public void onFragmentResume() {
     }
 
     private void saveState() {
@@ -494,9 +484,7 @@ public abstract class AbstractFragment extends Fragment {
 
     protected abstract void notifyEndOfTasks(boolean runningTasksHaveBeenCanceled);
 
-    protected abstract boolean hideNavigationBottomView() ;
-
-
+    protected abstract boolean hideNavigationBottomView();
 
 
 }

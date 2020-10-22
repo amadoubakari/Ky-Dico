@@ -27,4 +27,6 @@ public class Constants {
     //local external storage directory
     public static final String DIR_NAME = "glearning";
     public static final String NOTIFICATION = "notification";
+    // Global variable used to store network state
+    public static boolean isNetworkConnected = false;
 }

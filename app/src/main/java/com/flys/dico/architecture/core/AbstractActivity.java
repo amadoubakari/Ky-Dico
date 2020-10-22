@@ -1,5 +1,12 @@
 package com.flys.dico.architecture.core;
 
+import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -20,7 +27,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.flys.dico.R;
+import com.flys.dico.activity.MainActivity;
+import com.flys.dico.activity.MainActivity_;
 import com.flys.dico.architecture.custom.CustomTabLayout;
+import com.flys.dico.architecture.custom.DApplicationContext;
 import com.flys.dico.architecture.custom.IMainActivity;
 import com.flys.dico.architecture.custom.Session;
 import com.flys.dico.dao.service.IDao;
@@ -36,6 +46,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 
 import java.io.IOException;
+import java.util.Locale;
 
 public abstract class AbstractActivity extends AppCompatActivity implements IMainActivity, AbstractDialogFragmentInterface {
     // couche [DAO]
@@ -122,6 +133,8 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     protected void onCreate(Bundle savedInstanceState) {
         // parent
         super.onCreate(savedInstanceState);
+        //
+        //loadLocale();
         // log
         if (IS_DEBUG_ENABLED) {
             Log.d(className, "onCreate");
@@ -161,6 +174,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         // composants de la vue ---------------------
         // barre d'outils
         toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle(getResources().getString(R.string.app_name));
         setSupportActionBar(toolbar);
 
         drawerLayout = findViewById(R.id.main_content);
@@ -392,12 +406,12 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     //Récupération du texte issu de la boite de dialogue
     @Override
     public void receivedDate(String data) {
-        Utils.shareText(this, getString(R.string.app_name), data + "  https://play.google.com/store/apps/details?id=com.flys.glearning", "Recommandation de l'application.");
+        Utils.shareText(this, getString(R.string.app_name), data + "  " + getString(R.string.app_google_play_store_url), getString(R.string.activity_abstract_recommend_app));
     }
 
     private void showEditDialog() {
         FragmentManager fm = getSupportFragmentManager();
-        AbstractDialogActivity dialogActivity = new AbstractDialogActivity("Recommandation", R.mipmap.ic_launcher, R.style.AlertDialogTheme, R.style.BodyTextStyle);
+        AbstractDialogActivity dialogActivity = new AbstractDialogActivity(getString(R.string.activity_abstract_recommendation_msg), R.mipmap.ic_launcher, R.style.AlertDialogTheme, R.style.BodyTextStyle);
         dialogActivity.show(fm, "fragment_edit_name");
     }
 
@@ -457,4 +471,50 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     protected abstract int getFirstView();
 
     protected abstract void disconnect();
+
+    // Les traitements
+
+    /**
+     * @param language
+     */
+    @Override
+    public void setLocale(String language) {
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.setLocale(locale);
+        getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
+
+        //Share
+        SharedPreferences.Editor editor = getSharedPreferences("Settings", MODE_PRIVATE).edit();
+        editor.putString("my_land", language);
+        editor.apply();
+    }
+
+    @Override
+    public void loadLocale() {
+        SharedPreferences sharedPreferences = getSharedPreferences("Settings", MODE_PRIVATE);
+        String language = sharedPreferences.getString("my_land", "");
+        setLocale(language);
+    }
+
+    @Override
+    public void recreateActivity() {
+        Intent intent = new Intent(this, MainActivity_.class);
+        intent.putExtra("crash", true);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                | Intent.FLAG_ACTIVITY_CLEAR_TASK
+                | Intent.FLAG_ACTIVITY_NEW_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(DApplicationContext.getContext(), 0, intent, PendingIntent.FLAG_ONE_SHOT);
+        AlarmManager mgr = (AlarmManager) DApplicationContext.getContext().getSystemService(Context.ALARM_SERVICE);
+        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, pendingIntent);
+        finish();
+        System.exit(2);
+    }
+
+    @Override
+    public void hideBottomNavigation(int visibility) {
+        bottomNavigationView.setVisibility(visibility);
+    }
+
 }

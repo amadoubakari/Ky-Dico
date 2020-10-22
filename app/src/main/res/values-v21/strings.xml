@@ -2,4 +2,5 @@
 <resources>
     <string name="navigation_menu_logout">Logout</string>
     <string name="dictionnaire_informatique">Dictionnaire Informatique</string>
+    <string name="delete_msg">Supprimée !</string>
 </resources>

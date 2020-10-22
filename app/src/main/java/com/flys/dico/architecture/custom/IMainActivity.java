@@ -66,5 +66,13 @@ public interface IMainActivity extends IDao {
     //add new notification on number of notifications
     void clearNotification();
 
+    //
+    void setLocale(String language);
+
+    void loadLocale();
+
+    void recreateActivity();
+
+    void hideBottomNavigation(int visibility);
 
 }

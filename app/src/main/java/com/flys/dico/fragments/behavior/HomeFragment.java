@@ -1,7 +1,28 @@
+/*
+ * @copyright reserved Kyossi Ltd.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ * */
 package com.flys.dico.fragments.behavior;
 
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -15,6 +36,8 @@ import com.flys.dico.architecture.custom.CoreState;
 import com.flys.dico.fragments.adapters.Word;
 import com.flys.dico.fragments.adapters.WordAdapter;
 import com.flys.dico.utils.RxSearchObservable;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.OptionsItem;
@@ -25,26 +48,40 @@ import org.androidannotations.annotations.ViewById;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
+import java.util.concurrent.atomic.AtomicReference;
 
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
-
+/**
+ * @author AMADOU BAKARI
+ * @version 1.0.0
+ * @email amadoubakari1992@gmail.com
+ * @since 08/08/20
+ */
 @EFragment(R.layout.fragment_home_layout)
 @OptionsMenu(R.menu.menu_home)
 public class HomeFragment extends AbstractFragment {
+
+    private final String TAG = "HomeFragment";
+
+    private static WordAdapter wordAdapter;
+    private static List<Word> words;
+    private static SearchView searchView;
+    private static final int size = 10;
+    private static int index = 0;
+    private static boolean wasInPause = false;
+    private static FirebaseDatabase database;
+    private int itemsPerDisplay = 6;
 
     @ViewById(R.id.recyclerview)
     protected RecyclerView recyclerView;
     @OptionsMenuItem(R.id.search)
     protected MenuItem menuItem;
-    private WordAdapter wordAdapter;
-    private static List<Word> words;
-    private static SearchView searchView;
-    private final String TAG = "HomeFragment";
+    @ViewById(R.id.ll_search_block_id)
+    protected LinearLayout llSearchBlock;
 
     @Override
     public CoreState saveFragment() {
@@ -58,6 +95,7 @@ public class HomeFragment extends AbstractFragment {
 
     @Override
     protected void initFragment(CoreState previousState) {
+        Log.e(TAG, "initFragment");
         ((AppCompatActivity) mainActivity).getSupportActionBar().show();
         if (previousState == null) {
             reloadData();
@@ -66,21 +104,23 @@ public class HomeFragment extends AbstractFragment {
 
     @Override
     protected void initView(CoreState previousState) {
+        Log.e(TAG, "initView");
     }
 
     @Override
     protected void updateOnSubmit(CoreState previousState) {
-        if (recyclerView.getAdapter() == null) {
-            reloadData();
-        }
+        Log.e(TAG, "updateOnSubmit");
+        reloadData();
     }
 
     @Override
     protected void updateOnRestore(CoreState previousState) {
+        Log.e(TAG, "updateOnRestore");
     }
 
     @Override
     protected void notifyEndOfUpdates() {
+        Log.e(TAG, "notifyEndOfUpdates");
 
     }
 
@@ -95,61 +135,128 @@ public class HomeFragment extends AbstractFragment {
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
+    public void onFragmentResume() {
+        super.onFragmentResume();
+        if (wasInPause) {
+            reloadData();
+        }
     }
 
     @OptionsItem(R.id.search)
     protected void doSearch() {
         searchView = (SearchView) menuItem.getActionView();
         Utils.changeSearchTextColor(activity, searchView);
-        initSearchFeatureNew(words);
+        initSearchFeatureNew();
+    }
+
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        wasInPause = true;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        wasInPause = false;
+
     }
 
     /**
-     * @param wordss
+     * Base search function
      */
-    private void initSearchFeatureNew(final List<Word> wordss) {
+    private void initSearchFeatureNew() {
+        AtomicReference<String> queryWords = new AtomicReference<>();
+        //Launch the loader
+        beginRunningTasks(1);
         RxSearchObservable.fromSearchView(searchView)
                 .debounce(1500, TimeUnit.MILLISECONDS)
                 .distinctUntilChanged()
-                .switchMap((Func1<String, Observable<List<Word>>>) s -> filterWithObservable(wordss, s))
+                //Search all words containing query word
+                .switchMap((Func1<String, Observable<List<Word>>>) query -> {
+                    queryWords.set(query);
+                    return mainActivity.loadWords(activity, query);
+                })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(wordssss -> {
-                    wordAdapter = new WordAdapter(activity, wordssss, (v, position) -> {
+                .subscribe(wordList -> {
+                    //No item found
+                    if (wordList.isEmpty()) {
+                        llSearchBlock.setVisibility(View.VISIBLE);
+                        recyclerView.setVisibility(View.GONE);
+                        sendQueryWordToTheServer(queryWords);
+                    }else{
+                        llSearchBlock.setVisibility(View.GONE);
+                        recyclerView.setVisibility(View.VISIBLE);
+                    }
+                    wordAdapter = new WordAdapter(activity, wordList, queryWords.get(), (v, position) -> {
                     });
                     recyclerView.setLayoutManager(new LinearLayoutManager(activity));
                     recyclerView.setAdapter(wordAdapter);
+                    //cancel the loading
+                    cancelWaitingTasks();
                 });
     }
 
-    /**
-     * @param wordList base list of search
-     * @param query    typed text to search to the dictionary
-     * @return already searched word list
-     */
-    private Observable<List<Word>> filterWithObservable(List<Word> wordList, String query) {
-        return Observable.create(subscriber -> {
-            subscriber.onNext(wordList.stream().filter(notification -> notification.getTitle().toLowerCase().contains(query.toLowerCase()) ||
-                    notification.getDescription().toLowerCase().contains(query.toLowerCase())).collect(Collectors.toList()));
-            subscriber.onCompleted();
-        });
-    }
 
     /**
      * Reload data from the dictionary json file
      */
     private void reloadData() {
-        recyclerView.setVisibility(View.VISIBLE);
+        llSearchBlock.setVisibility(View.GONE);
+        index = 0;
         words = new ArrayList<>();
-        wordAdapter = new WordAdapter(words, activity);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(wordAdapter);
+        wordAdapter = new WordAdapter(activity, words, itemsPerDisplay);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
+        recyclerView.setHasFixedSize(true);
         beginRunningTasks(1);
-        executeInBackground(mainActivity.loadDictionnaryDataFromAssets().delay(1000, TimeUnit.MILLISECONDS), wordList -> {
+        executeInBackground(mainActivity.loadSequenceWords(activity, index, size).delay(1000, TimeUnit.MILLISECONDS), wordList -> {
+            recyclerView.setVisibility(View.VISIBLE);
+            recyclerView.setAdapter(wordAdapter);
             wordAdapter.addWords(wordList);
+            applyLoadMoreOnScrollListener(wordAdapter);
         });
+
+    }
+
+    /**
+     * Applying on scroll listener to our adapter
+     *
+     * @param wordAdapter
+     */
+    public void applyLoadMoreOnScrollListener(WordAdapter wordAdapter) {
+        wordAdapter.setOnLoadMoreListener(currentPage -> {
+            loadNextData(wordAdapter);
+        });
+    }
+
+    /**
+     * load data after scroll and update our adapter
+     *
+     * @param wordAdapter
+     */
+    private void loadNextData(WordAdapter wordAdapter) {
+        wordAdapter.setLoading();
+        index = index + size;
+        executeInBackground(mainActivity.loadSequenceWords(activity, index, size).delay(500, TimeUnit.MILLISECONDS), wordList -> {
+            wordAdapter.insertData(wordList);
+        });
+    }
+
+    /**
+     * Send searched word to the server if not found
+     *
+     * @param queryWords
+     */
+    private void sendQueryWordToTheServer(AtomicReference<String> queryWords) {
+        //Inform me
+        if (database == null) {
+            database = FirebaseDatabase.getInstance();
+            database.setPersistenceEnabled(true);
+        }
+        //Send query word to the server
+        DatabaseReference myRef = database.getReference(activity.getString(R.string.fragment_home_database_root_ref)).child(activity.getString(R.string.fragment_home_database_reference));
+        myRef.push().setValue(queryWords.get());
     }
 }

@@ -19,7 +19,7 @@
             android:layout_height="50dp"
             android:gravity="center_vertical"
             android:paddingLeft="20dp"
-            android:text="General setttings"
+            android:text="@string/fragment_settings_layout_general_setttings_msg"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -47,12 +47,12 @@
                         android:alpha="0.5" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/dialog_change_language"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textSize="14sp"
-                        android:text="Notifications" />
+                        android:text="@string/fragmant_settings_notifications_msg" />
 
                     <Switch
                         android:id="@+id/notification_switch"
