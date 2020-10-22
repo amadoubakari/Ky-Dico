@@ -61,4 +61,9 @@
     <string name="fragment_about_dictionary_header">Dictionnaire I.</string>
     <string name="fragment_settings_layout_general_setttings_msg">Configurations générales</string>
     <string name="fragmant_settings_notifications_msg">Notifications</string>
+    <string name="fragment_home_database_root_ref">words</string>
+    <string name="fragment_home_database_reference">french</string>
+    <string name="fragment_home_layout_no_result_msg">Indisponible !</string>
+    <string name="fragment_home_you_try_a_more">Bientôt vous serez notifiés</string>
+    <string name="fragment_notif_layout_no_elements">Aucune notification\ndisponible</string>
 </resources>

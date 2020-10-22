@@ -1,8 +1,9 @@
 package com.flys.dico.fragments.adapters;
 
 import android.content.Context;
-import android.os.Handler;
-import android.util.Log;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,16 +11,17 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-import androidx.transition.Visibility;
 
 import com.flys.dico.R;
 import com.flys.dico.architecture.custom.IMainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author AMADOU BAKARI
@@ -39,6 +41,7 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private OnLoadMoreListener onLoadMoreListener = null;
     private boolean loading;
     private final String TAG = "WordAdapter";
+    private String searchText;
 
     public WordAdapter(Context context) {
         this.context = context;
@@ -58,6 +61,13 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public WordAdapter(Context context, List<Word> words, WordOnclickListener onclickListener) {
         this.words = words;
         this.context = context;
+        this.onclickListener = onclickListener;
+    }
+
+    public WordAdapter(Context context, List<Word> words, String searchText, WordOnclickListener onclickListener) {
+        this.words = words;
+        this.context = context;
+        this.searchText = searchText;
         this.onclickListener = onclickListener;
     }
 
@@ -88,12 +98,13 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         if (holder instanceof Holder) {
             Holder view = (Holder) holder;
             view.title.setText(word.getTitle());
-            view.description.setText(word.getDescription());
+            higherLightSearchedWord(word, view);
         } else {
             HolderProgress holderProgress = (HolderProgress) holder;
             holderProgress.progressBar.setIndeterminate(true);
         }
     }
+
 
     @Override
     public int getItemCount() {
@@ -161,6 +172,16 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         notifyDataSetChanged();
     }
 
+    /**
+     * @param listModelsTasks
+     */
+    public void setFilter(List<Word> listModelsTasks, String searchText) {
+        words = new ArrayList<>();
+        words.addAll(listModelsTasks);
+        this.searchText = searchText;
+        notifyDataSetChanged();
+    }
+
     public void reload() {
         notifyDataSetChanged();
     }
@@ -201,7 +222,7 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                         onLoadMoreListener.onLoadMore(current_page);
                         loading = true;
                     }
-                    IMainActivity mainActivity= (IMainActivity) context;
+                    IMainActivity mainActivity = (IMainActivity) context;
                     if (dy > 0) {
                         mainActivity.hideBottomNavigation(View.GONE);
                     } else {
@@ -224,7 +245,7 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     public void insertData(List<Word> wordList) {
         setLoaded();
-        if(!wordList.isEmpty()){
+        if (!wordList.isEmpty()) {
             int positionStart = getItemCount();
             int itemCount = wordList.size();
             this.words.addAll(wordList);
@@ -241,4 +262,28 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             }
         }
     }
+
+    /**
+     * Highlight searched word
+     *
+     * @param word
+     * @param view
+     */
+    private void higherLightSearchedWord(Word word, Holder view) {
+        if (searchText != null) {
+            SpannableStringBuilder sb = new SpannableStringBuilder(word.getDescription());
+            Pattern wordPattern = Pattern.compile(Pattern.quote(searchText.toLowerCase()));
+            Matcher match = wordPattern.matcher(word.getDescription().toLowerCase());
+
+            while (match.find()) {
+                ForegroundColorSpan fcs = new ForegroundColorSpan(
+                        ContextCompat.getColor(context, R.color.blue_500)); //specify color here
+                sb.setSpan(fcs, match.start(), match.end(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+            }
+            view.description.setText(sb);
+        } else {
+            view.description.setText(word.getDescription());
+        }
+    }
+
 }
