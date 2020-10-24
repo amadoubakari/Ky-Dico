@@ -60,4 +60,10 @@
     <string name="fragment_home_layout_no_result_msg">No result</string>
     <string name="fragment_home_you_try_a_more">Soon you will be notified</string>
     <string name="fragment_notif_layout_no_elements">No notification found</string>
+    <string name="settingsFragment_select_language">Select a Language...</string>
+    <string name="settings_fragment_language_english">English</string>
+    <string name="settings_fragment_language_french">French</string>
+    <string name="fragment_settings_language_msg">Language</string>
+    <string name="fragment_settings_language_en">English, en</string>
+    <string name="fragment_settings_language_fr">French, fr</string>
 </resources>

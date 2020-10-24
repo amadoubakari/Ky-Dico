@@ -66,4 +66,10 @@
     <string name="fragment_home_layout_no_result_msg">Indisponible !</string>
     <string name="fragment_home_you_try_a_more">Bientôt vous serez notifiés</string>
     <string name="fragment_notif_layout_no_elements">Aucune notification\ndisponible</string>
+    <string name="settingsFragment_select_language">Sélectionnez la langue ...</string>
+    <string name="settings_fragment_language_english">Anglais</string>
+    <string name="settings_fragment_language_french">Français</string>
+    <string name="fragment_settings_language_msg">Langue</string>
+    <string name="fragment_settings_language_en">Anglais, en</string>
+    <string name="fragment_settings_language_fr">Français, fr</string>
 </resources>

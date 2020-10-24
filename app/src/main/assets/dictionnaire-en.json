@@ -15975,6 +15975,2390 @@
     {
       "title": "IC (1)",
       "description": "adj. Acronym for In Character. Used to refer to events going on within a role-playing game, such as MUD, as opposed to events in real life. It is also used in the context of online chat, e-mail, and newsgroup postings. See also MUD, role-playing game."
+    },
+    {
+      "title": "ICANN ",
+      "description": "n. Acronym for Internet Corporation for Assigned Names and Numbers. The private, nonprofit corporation to which the U.S. government in 1998 delegated authority for administering IP (Internet Protocol) addresses, domain names, root servers, and Internet-related technical matters, such as management of protocol parameters (port numbers, protocol numbers, and so on). The successor to IANA (IP address administration) and NSI (domain name registration), ICANN was created to internationalize and privatize Internet management and administration. See also IANA, NSI."
+    },
+    {
+      "title": "I-CASE ",
+      "description": "n. Acronym for Integrated Computer-Aided Software Engineering. Software that performs a wide variety of software engineering functions, such as program design, coding, and testing parts or all of the completed program."
+    },
+    {
+      "title": "ICE ",
+      "description": "n. 1. Acronym for Information and Content Exchange. A protocol based on XML (Extensible Markup Language) designed to automate the distribution of syndicated content over the World Wide Web. Based on the concept of content syndicators (distributors) and subscribers (receivers), ICE defines the responsibilities of the parties involved, as well as the format and means of exchanging content so that data can easily be transferred and reused. The protocol has been submitted to the World Wide Web Consortium by Adobe Systems, Inc., CNET, Microsoft, Sun Microsystems, and Vignette Corporation. It is intended to help in both publishing and inter-business exchanges of content. 2. Acronym for in circuit emulator. A chip used as a stand-in for a microprocessor or a microcontroller. An in-circuit emulator is used to test and debug logic circuits. 3. Acronym for Intrusion Countermeasure Electronics. A fictional type of security software, popularized by science fiction novelist William Gibson, that responds to intruders by attempting to kill them. The origin of the term is attributed to a USENET subscriber, Tom Maddox. 4. See Intelligent Concept Extraction."
+    },
+    {
+      "title": "ICM ",
+      "description": "n. See image color matching."
+    },
+    {
+      "title": "ICMP ",
+      "description": "n. Acronym for Internet Control Message Protocol. A network-layer (ISO/OSI level 3) Internet protocol that provides error correction and other information relevant to IP packet processing. For example, it can let the IP software on one machine inform another machine about an unreachable destination. See also communications protocol, IP, ISO/OSI reference model, packet (definition 1)."
+    },
+    {
+      "title": "icon ",
+      "description": "n. 1. A small image displayed on the screen to represent an object that can be manipulated by the user. By serving as visual mnemonics and allowing the user to control certain computer actions without having to remember commands or type them at the keyboard, icons contribute significantly to the user-friendliness of graphical user interfaces and to PCs in general. See also graphical user interface. 2. A high-level programming language designed to process non-numerical data structures and character strings using a Pascal-like syntax."
+    },
+    {
+      "title": "iconic interface ",
+      "description": "n. A user interface that is based on icons rather than on typed commands. See also graphical user interface, icon."
+    },
+    {
+      "title": "icon parade ",
+      "description": "n. The sequence of icons that appears during the boot-up of a Macintosh computer."
+    },
+    {
+      "title": "ICP ",
+      "description": "n. Acronym for Internet Cache Protocol. A networking protocol used by cache servers to locate specific Web objects in neighboring caches. Typically implemented over UDP, ICP also can be used for cache selection. ICP was developed for the Harvest research project at the University of Southern California. It has been implemented in SQUID and other Web proxy caches."
+    },
+    {
+      "title": "ICQ ",
+      "description": "n. A downloadable software program developed by Mirabilis, and now owned by AOL Time-Warner Inc., that notifies Internet users when friends, family, or other selected users are also on line and allows them to communicate with one another in real time. Through ICQ, users can chat, send e-mail, exchange messages on message boards, and transfer URLs and files, as well as launch third-party programs, such as games, in which multiple people can participate. Users compile a list of other users with whom they want to communicate. All users must register with the ICQ server and have ICQ software on their computer. The name is a reference to the phrase “I seek you.” See also instant messaging."
+    },
+    {
+      "title": "ICSA ",
+      "description": "n. Acronym for International Computer Security Association. An education and information organization concerned with Internet security issues. Known as the NCSA (National Computer Security Association) until 1997, the ICSA provides security assurance systems and product certification; disseminates computer security information in white papers, books, pamphlets, videos, and other publications; organizes consortiums devoted to various security issues; and maintains a Web site that provides updated information on viruses and other computer security topics. Founded in 1987, the ICSA is currently located in Reston, VA."
+    },
+    {
+      "title": "ID ",
+      "description": "n. Acronym for intrusion detection. See IDS."
+    },
+    {
+      "title": "IDE ",
+      "description": "n. 1. Acronym for Integrated Device Electronics. A type of disk-drive interface in which the controller electronics reside on the drive itself, eliminating the need for a separate adapter card. The IDE interface is compatible with the controller used by IBM in the PC/AT computer but offers advantages such as look-ahead caching. 2. See integrated development environment."
+    },
+    {
+      "title": "identifier ",
+      "description": "n. Any text string used as a label, such as the name of a procedure or a variable in a program or the name attached to a hard disk or floppy disk. Compare descriptor."
+    },
+    {
+      "title": "IDL ",
+      "description": "n. Acronym for Interface Definition Language. In object-oriented programming, a language that lets a program or object written in one language communicate with another program written in an unknown language. An IDL is used to define interfaces between client and server programs. For example, an IDL can provide interfaces to remote CORBA objects. See also CORBA, MIDL, objectoriented programming."
+    },
+    {
+      "title": "idle ",
+      "description": "adj. 1. Operational but not in use. 2. Waiting for a command."
+    },
+    {
+      "title": "idle character ",
+      "description": "n. In communications, a control character transmitted when no other information is available or ready to be sent. See also SYN."
+    },
+    {
+      "title": "idle interrupt ",
+      "description": "n. An interrupt that occurs when a device or process becomes idle."
+    },
+    {
+      "title": "idle state ",
+      "description": "n. The condition in which a device is operating but is not being used."
+    },
+    {
+      "title": "IDS ",
+      "description": "n. Acronym for intrusion-detection system. A type of security management system for computers and networks that gathers and analyzes information from various areas within a computer or a network to identify possible security breaches, both inside and outside the organization. An IDS can detect a wide range of hostile attack signatures, generate alarms, and, in some cases, cause routers to terminate communications from hostile sources. Also called: intrusion detection. Compare firewall."
+    },
+    {
+      "title": "IDSL ",
+      "description": "n. Acronym for Internet digital subscriber line. A high-speed digital communications service that provides Internet access as fast as 1.1 Mbps (megabits per second) over standard telephone lines. IDSL uses a hybrid of ISDN and digital subscriber line technology. See also digital subscriber line, ISDN."
+    },
+    {
+      "title": "IE ",
+      "description": "n. Acronym for information engineering. A methodology for developing and maintaining information-processing systems, including computer systems and networks, within an organization."
+    },
+    {
+      "title": "IEEE ",
+      "description": "n. Acronym for Institute of Electrical and Electronics Engineers. A society of engineering and electronics professionals based in the United States but boasting membership from numerous other countries. The IEEE (pronounced “eye triple ee”) focuses on electrical, electronics, computer engineering, and science-related matters."
+    },
+    {
+      "title": "IEEE 1284 ",
+      "description": "n. The IEEE standard for high-speed signaling through a bidirectional parallel computer interface. A computer that is compliant with the IEEE 1284 standard can communicate through its parallel port in five modes: outbound data transfer to a printer or similar device (“Centronics” mode), inbound transfer 4 (nibble mode) or 8 (byte mode) bits at a time, bidirectional Enhanced Parallel Ports (EPP) used by storage devices and other nonprinter peripherals, and Enhanced Capabilities Ports (ECP) used for bidirectional communication with a printer. See also Centronics parallel interface, ECP, enhanced parallel port."
+    },
+    {
+      "title": "IEEE 1394 ",
+      "description": "n. A nonproprietary, high-speed, serial bus input/output standard. IEEE 1394 provides a means of connecting digital devices, including personal computers and consumer electronics hardware. It is platform-independent, scalable (expandable), and flexible in supporting peer-to-peer (roughly, device-to-device) connections. IEEE 1394 preserves data integrity by eliminating the need to convert digital signals into analog signals. Created for desktop networks by Apple Computer and later developed by the IEEE 1394 working group, it is considered a low-cost interface for devices such as digital cameras, camcorders, and multimedia devices and is seen as a means of integrating personal computers and home electronics equipment. FireWire is the proprietary implementation of the standard by Apple Computer. See also analog data, IEEE."
+    },
+    {
+      "title": "IEEE 1394 connector ",
+      "description": "n. A type of connector that enables you to connect and disconnect high-speed serial devices. An IEEE 1394 connector is usually on the back of your computer near the serial port or the parallel port. The IEEE 1394 bus is used primarily to connect high-end digital video and audio devices to your computer; however, some hard disks, printers, scanners, and DVD drives can also be connected to your computer using the IEEE 1394 connector."
+    },
+    {
+      "title": "IEEE 1394 port ",
+      "description": "n. A 4- or 6-pin port that supports the IEEE 1394 standard and can provide direct connections between digital consumer electronics and computers. See also IEEE 1394."
+    },
+    {
+      "title": "IEEE 488 ",
+      "description": "n. The electrical definition of the General-Purpose Interface Bus (GPIB), specifying the data and control lines and the voltage and current levels for the bus. See also General-Purpose Interface Bus."
+    },
+    {
+      "title": "IEEE 696/S-100 ",
+      "description": "n. The electrical definition of the S-100 bus, used in early personal computer systems that used microprocessors such as the 8080, Z-80, and 6800. The S-100 bus, based on the architecture of the Altair 8800, was extremely popular with early computer enthusiasts because it permitted installation of a wide range of expansion boards. See also Altair 8800, S-100 bus."
+    },
+    {
+      "title": "IEEE 802.x ",
+      "description": "n. A series of networking specifications developed by the IEEE. The x following 802 is a placeholder for individual specifications. The IEEE 802.x specifications correspond to the physical and data-link layers of the ISO/OSI reference model, but they divide the datalink layer into two sublayers. The logical link control (LLC) sublayer applies to all IEEE 802.x specifications and covers station-to-station connections, generation of message frames, and error control. The media access control (MAC) sublayer, dealing with network access and collision detection, differs from one IEEE 802 standard to another. IEEE 802.3 is used for bus networks that use CSMA/CD, both broadband and baseband, and the baseband version is based on the Ethernet standard. IEEE 802.4 is used for bus networks that use token passing, and IEEE 802.5 is used for ring networks that use token passing (token ring networks). IEEE 802.6 is an emerging standard for metropolitan area networks, which transmit data, voice, and video over distances of more than 5 kilometers. IEEE 802.14 is designed for bidirectional transmission to and from cable television networks over optical fiber and coaxial cable through transmission of fixedlength ATM cells to support television, data, voice, and Internet access. See the illustration. See also bus network, ISO/OSI reference model, ring network, token passing, token ring network."
+    },
+    {
+      "title": "IEEE 802.11 ",
+      "description": "n. The Institute of Electrical and Electronics Engineers’ (IEEE) specifications for wireless networking. These specifications, which include 802.11, 802.11a, 802.11b, and 802.11g, allow computers, printers, and other devices to communicate over a wireless local area network (LAN)."
+    },
+    {
+      "title": "IEEE printer cable ",
+      "description": "n. A cable used to connect a printer to a PC’s parallel port that adheres to the IEEE 1284. See also IEEE 1284."
+    },
+    {
+      "title": "IEPG ",
+      "description": "n. Acronym for Internet Engineering and Planning Group. A collaborative group of Internet service providers whose goal is to promote the Internet and coordinate technical efforts on it."
+    },
+    {
+      "title": "IESG ",
+      "description": "n. See Internet Engineering Steering Group."
+    },
+    {
+      "title": "IETF ",
+      "description": "n. Acronym for Internet Engineering Task Force. A worldwide organization of individuals interested in networking and the Internet. Managed by the IESG (Internet Engineering Steering Group), the IETF is charged with studying technical problems facing the Internet and proposing solutions to the Internet Architecture Board (IAB). The work of the IETF is carried out by various Working Groups that concentrate on specific topics, such as routing and security. The IETF is the publisher of the specifications that led to the TCP/IP protocol standard. See also Internet Engineering Steering Group."
+    },
+    {
+      "title": "IFC ",
+      "description": "n. See Internet Foundation Classes."
+    },
+    {
+      "title": ".iff ",
+      "description": "n. The file extension that identifies files in the IFF (Interchange File Format) format. IFF was most commonly used on the Amiga platform, where it constituted almost any kind of data. On other platforms, IFF is mostly used to store image and sound files."
+    },
+    {
+      "title": "IFF ",
+      "description": "n. Acronym for Interchange File Format. See .iff."
+    },
+    {
+      "title": "IFIP ",
+      "description": "n. Acronym for International Federation of Information Processing. An organization of societies, representing over 40 member nations, that serves information-processing professionals. The United States is represented by the Federation on Computing in the United States (FOCUS). See also AFIPS, FOCUS."
+    },
+    {
+      "title": "IFS ",
+      "description": "n. See Installable File System Manager."
+    },
+    {
+      "title": "IF statement ",
+      "description": "n. A control statement that executes a block of code if a Boolean expression evaluates to true. Most programming languages also support an ELSE clause, which specifies code that is to be executed only if the Boolean expression evaluates to false. See also conditional."
+    },
+    {
+      "title": "IGES ",
+      "description": "n. See Initial Graphics Exchange Specification."
+    },
+    {
+      "title": "IGMP ",
+      "description": "n. See Internet Group Membership Protocol."
+    },
+    {
+      "title": "IGP ",
+      "description": "n. See Interior Gateway Protocol."
+    },
+    {
+      "title": "IGRP ",
+      "description": "n. Acronym for Interior Gateway Routing Protocol. A protocol developed by Cisco Systems that allows coordination between the routing of a number of gateways. Goals of IGRP include stable routing in large networks, fast response to changes in network topology, and low overhead. See also communications protocol, gateway, topology."
+    },
+    {
+      "title": "IIA ",
+      "description": "n. See SIIA."
+    },
+    {
+      "title": "IIL ",
+      "description": "n. See integrated injection logic."
+    },
+    {
+      "title": "IIOP ",
+      "description": "n. Acronym for Internet Inter-ORB Protocol. A networking protocol that enables distributed programs written in different programming languages to communicate over the Internet. IIOP, a specialized mapping in the General Inter-ORB Protocol (GIOP) based on a client/server model, is a critical part of CORBA. See also CORBA. Compare DCOM."
+    },
+    {
+      "title": "IIS ",
+      "description": "n. See Internet Information Services."
+    },
+    {
+      "title": "ILEC ",
+      "description": "n. Acronym for Incumbent Local Exchange Carrier. A telephone company that provides local service to its customers. Compare CLEC."
+    },
+    {
+      "title": "illegal ",
+      "description": "adj. Not allowed, or leading to invalid results. For example, an illegal character in a word processing program would be one that the program cannot recognize; an illegal operation might be impossible for a program or system because of built-in constraints. Compare invalid."
+    },
+    {
+      "title": "illuminance ",
+      "description": "n. 1. The amount of light falling on, or illuminating, a surface area. 2. A measure of illumination (such as watts per square meter) used in reference to devices such as televisions and computer displays. Compare luminance."
+    },
+    {
+      "title": "IM ",
+      "description": "n. See instant messaging."
+    },
+    {
+      "title": "iMac ",
+      "description": "n. A family of Apple Macintosh computers introduced in 1998. Designed for nontechnical users, the iMac has a case that contains both the CPU and the monitor and is available in several bright colors. The “i” in iMac stands for Internet; the iMac was designed to make setting up an Internet connection extremely simple. The first version of the iMac included a 266-MHz PowerPC processor, a 66- MHz system bus, a hard drive, a CD-ROM drive, and a 15- inch monitor, with a translucent blue case. Later iMacs came with faster processors and a choice of case colors. See the illustration. See also Macintosh."
+    },
+    {
+      "title": ".image ",
+      "description": "n. A file extension for a Macintosh Disk Image, a storage type often used on Apple’s FTP software download sites."
+    },
+    {
+      "title": "image ",
+      "description": "n. 1. A stored description of a graphic picture, either as a set of brightness and color values of pixels or as a set of instructions for reproducing the picture. See also bit map, pixel map. 2. A duplicate, copy, or representation of all or part of a hard or floppy disk, a section of memory or hard drive, a file, a program, or data. For example, a RAM disk can hold an image of all or part of a disk in main memory; a virtual RAM program can create an image of some portion of the computer’s main memory on disk. See also RAM disk."
+    },
+    {
+      "title": "image-based rendering ",
+      "description": "n. See immersive imaging."
+    },
+    {
+      "title": "image color matching ",
+      "description": "n. The process of image output correction to match the same colors that were scanned or input."
+    },
+    {
+      "title": "image compression ",
+      "description": "n. The use of a data compression technique on a graphical image. Uncompressed graphics files tend to use up large amounts of storage, so image compression is useful to conserve space. See also compressed file, data compression, video compression."
+    },
+    {
+      "title": "image compression dialog component ",
+      "description": "n. An application programming interface that sets parameters for compressing images and image sequences in QuickTime, a technology from Apple for creating, editing, publishing, and viewing multimedia content. The component displays a dialog box as a user interface, validates and stores the settings selected in the dialog box, and oversees the compression of the image or images based on the selected criteria."
+    },
+    {
+      "title": "Image Compression Manager ",
+      "description": "n. A major software component used in QuickTime, a technology from Apple for creating, editing, publishing, and viewing multimedia content. The Image Compression Manager is an interface that provides image-compression and image-decompression services to applications and other managers. Because the Image Compression Manager is independent of specific compression algorithms and drivers, it can present a common application interface for software-based compressors and hardware-based compressors and offer compression options so that it or its application can use the appropriate tool for a particular situation. See also QuickTime."
+    },
+    {
+      "title": "image compressor component ",
+      "description": "n. A software component used by the Image Compression Manager to compress image data in QuickTime, a technology from Apple for creating, editing, publishing, and viewing multimedia content. See also Image Compression Manager, QuickTime."
+    },
+    {
+      "title": "image decompressor component ",
+      "description": "n. A software component used by the Image Compression Manager to decompress image data in QuickTime, a technology from Apple for creating, editing, publishing, and viewing multimedia content. See also Image Compression Manager, QuickTime."
+    },
+    {
+      "title": "image editing ",
+      "description": "n. The process of changing or modifying a bitmapped image, usually with an image editor."
+    },
+    {
+      "title": "image editor ",
+      "description": "n. An application program that allows users to modify the appearance of a bitmapped image, such as a scanned photo, by using filters and other functions. Creation of new images is generally accomplished in a paint or drawing program. See also bitmapped graphics, filter (definition 4), paint program."
+    },
+    {
+      "title": "image enhancement ",
+      "description": "n. The process of improving the quality of a graphic image, either automatically by software or manually by a user through a paint or drawing program. See also anti-aliasing, image processing."
+    },
+    {
+      "title": "image map ",
+      "description": "n. An image that contains more than one hyperlink on a Web page. Clicking different parts of the image links the user to other resources on another part of the Web page or a different Web page or in a file. Often an image map, which can be a photograph, drawing, or a composite of several different drawings or photographs, is used as a map to the resources found on a particular Web site. Older Web browsers support only server-side image maps, which are executed on a Web server through CGI script. However, most newer Web browsers (Netscape Navigator 2.0 and higher and Internet Explorer 3.0 and higher) support client-side image maps, which are executed in a user’s Web browser. Also called: clickable maps. See also CGI script, hyperlink, Web page."
+    },
+    {
+      "title": "image processing ",
+      "description": "n. The analysis, manipulation, storage, and display of graphical images from sources such as photographs, drawings, and video. Image processing spans a sequence of three steps. The input step (image capture and digitizing) converts the differences in coloring and shading in the picture into binary values that a computer can process. The processing step can include image enhancement and data compression. The output step consists of the display or printing of the processed image. Image processing is used in such applications as television and film, medicine, satellite weather mapping, machine vision, and computer-based pattern recognition. See also image enhancement, video digitizer."
+    },
+    {
+      "title": "image sensor ",
+      "description": "n. A light-sensitive integrated circuit or group of integrated circuits used in scanners, digital cameras, and video cameras."
+    },
+    {
+      "title": "imagesetter ",
+      "description": "n. A typesetting device that can transfer camera-ready text and artwork from computer files directly onto paper or film. Imagesetters print at high resolution (commonly above 1000 dpi) and are usually Post- Script-compatible."
+    },
+    {
+      "title": "image transcoder component ",
+      "description": "n. A component that transfers compressed images from one file format to another in QuickTime, a technology developed by Apple for creating, editing, publishing, and viewing multimedia content."
+    },
+    {
+      "title": "imaginary number ",
+      "description": "n. A number that must be expressed as the product of a real number and i, where i2 = –1. The sum of an imaginary number and a real number is a complex number. Although imaginary numbers are not directly encountered in the universe (as in “1.544 i megabits per second”), some pairs of quantities, especially in electrical engineering, behave mathematically like the real and imaginary parts of complex numbers. Compare complex number, real number."
+    },
+    {
+      "title": "imaging ",
+      "description": "n. The processes involved in the capture, storage, display, and printing of graphical images."
+    },
+    {
+      "title": "IMAP4 ",
+      "description": "n. Acronym for Internet Message Access Protocol 4. The latest version of IMAP, a method for an e-mail program to gain access to e-mail and bulletin board messages stored on a mail server. Unlike POP3, a similar protocol, IMAP allows a user to retrieve messages efficiently from more than one computer. Compare POP3."
+    },
+    {
+      "title": "IMC ",
+      "description": "n. See Internet Mail Consortium."
+    },
+    {
+      "title": "IMHO ",
+      "description": "n. Acronym for in my humble opinion. IMHO, used in e-mail and in online forums, flags a statement that the writer wants to present as a personal opinion rather than as a statement of fact. See also IMO."
+    },
+    {
+      "title": "Imitation Game ",
+      "description": "n. See Turing test."
+    },
+    {
+      "title": "immediate access ",
+      "description": "n. See direct access, random access."
+    },
+    {
+      "title": "immediate operand ",
+      "description": "n. A data value, used in the execution of an assembly language instruction, that is contained in the instruction itself rather than pointed to by an address in the instruction."
+    },
+    {
+      "title": "immediate printing ",
+      "description": "n. A process in which text and printing commands are sent directly to the printer without being stored as a printing file and without the use of an intermediate page-composition procedure or a file containing printer setup commands."
+    },
+    {
+      "title": "immersive imaging ",
+      "description": "n. A method of presenting photographic images on a computer by using virtual reality techniques. A common immersive image technique puts the user in the center of the view. The user can pan 360 degrees within the image and can zoom in and out. Another technique puts an object in the center of the view and allows the user to rotate around the object to examine it from any perspective. Immersive imaging techniques can be used to provide virtual reality experiences without equipment such as a headpiece and goggles. Also called: image-based rendering. See also imaging, virtual reality."
+    },
+    {
+      "title": "IMO ",
+      "description": "n. Acronym for in my opinion. A shorthand phrase used often in e-mail and Internet news and discussion groups to indicate an author’s admission that a statement he or she has just made is a matter of judgment rather than fact. See also IMHO."
+    },
+    {
+      "title": "impact printer ",
+      "description": "n. A printer, such as a wire-pin dot-matrix printer or a daisy-wheel printer, that drives an inked ribbon mechanically against the paper to form marks. See also daisy-wheel printer, dot-matrix printer. Compare nonimpact printer."
+    },
+    {
+      "title": "impedance ",
+      "description": "n. Opposition to the flow of alternating current. Impedance has two aspects: resistance, which impedes both direct and alternating current and is always greater than zero; and reactance, which impedes alternating current only, varies with frequency, and can be positive or negative. See also resistance."
+    },
+    {
+      "title": "implementor ",
+      "description": "n. In role-playing games, the administrator, coder, or developer of the game. Also called: Imp. See also role-playing game."
+    },
+    {
+      "title": "import ",
+      "description": "vb. To bring information from one system or program into another. The system or program receiving the data must somehow support the internal format or structure of the data. Conventions such as the TIFF (Tagged Image File Format) and PICT formats (for graphics files) make importing easier. See also PICT, TIFF. Compare export."
+    },
+    {
+      "title": "IMT-2000 ",
+      "description": "n. See International Mobile Telecommunications for the Year 2000."
+    },
+    {
+      "title": "inactive window ",
+      "description": "n. In an environment capable of displaying multiple on-screen windows, any window other than the one currently being used for work. An inactive window can be partially or entirely hidden behind another window, and it remains inactive until the user selects it. Compare active window."
+    },
+    {
+      "title": "in-band signaling ",
+      "description": "n. Transmission within the voice or data-handling frequencies of a communication channel."
+    },
+    {
+      "title": "in-betweening ",
+      "description": "n. See tween."
+    },
+    {
+      "title": "Inbox ",
+      "description": "n. In many e-mail applications, the default mailbox where the program stores incoming messages. See also e-mail, mailbox. Compare Outbox."
+    },
+    {
+      "title": "incident light ",
+      "description": "n. The light that strikes a surface in computer graphics. See also illuminance."
+    },
+    {
+      "title": "in-circuit emulator ",
+      "description": "n. See ICE (definition 2)."
+    },
+    {
+      "title": "INCLUDE directive ",
+      "description": "n. A statement within a source-code file that causes another source-code file to be read in at that spot, either during compilation or during execution. It enables a programmer to break up a program into smaller files and enables multiple programs to use the same files."
+    },
+    {
+      "title": "inclusive OR ",
+      "description": "n. See OR."
+    },
+    {
+      "title": "increment (1)",
+      "description": "n. A scalar or unit amount by which the value of an object such as a number, a pointer within an array, or a screen position designation is increased. Compare decrement (1)"
+    },
+    {
+      "title": "increment (2)",
+      "description": "vb. To increase a number by a given amount. For example, if a variable has the value 10 and is incremented successively by 2, it takes the values 12, 14, 16, 18, and so on. Compare decrement (2)."
+    },
+    {
+      "title": "incumbent local exchange carrier ",
+      "description": "n. See ILEC."
+    },
+    {
+      "title": "indent (1)",
+      "description": "n. 1. Displacement of the left or right edge of a block of text in relation to the margin or to other blocks of text. 2. Displacement of the beginning of the first line of a paragraph relative to the other lines in the paragraph. Compare hanging indent."
+    },
+    {
+      "title": "indent (2)",
+      "description": "vb. To displace the left or right edge of a text item, such as a block or a line, relative to the margin or to another text item."
+    },
+    {
+      "title": "Indeo ",
+      "description": "n. A codec technology developed by Intel for compressing digital video files. See also codec. Compare MPEG."
+    },
+    {
+      "title": "independent content provider ",
+      "description": "n. A business or organization that supplies information to an online information service, such as America Online, for resale to the information service’s customers. See also online information service."
+    },
+    {
+      "title": "independent software vendor ",
+      "description": "n. A third-party software developer; an individual or an organization that independently creates computer software. Acronym: ISV."
+    },
+    {
+      "title": "index (1)",
+      "description": "n. 1. A listing of keywords and associated data that point to the location of more comprehensive information, such as files and records on a disk or record keys in a database. 2. In programming, a scalar value that allows direct access into a multi-element data structure such as an array without the need for a sequential search through the collection of elements. See also array, element (definition 1), hash, list."
+    },
+    {
+      "title": "index (2)",
+      "description": "vb. 1. In data storage and retrieval, to create and use a list or table that contains reference information pointing to stored data. 2. In a database, to find data by using keys such as words or field names to locate records. 3. In indexed file storage, to find files stored on disk by using an index of file locations (addresses). 4. In programming and information processing, to locate information stored in a table by adding an offset amount, called the index, to the base address of the table."
+    },
+    {
+      "title": "indexed address ",
+      "description": "n. The location in memory of a particular item of data within a collection of items, such as an entry in a table. An indexed address is calculated by starting with a base address and adding to it a value stored in a register called an index register."
+    },
+    {
+      "title": "indexed search ",
+      "description": "n. A search for an item of data that uses an index to reduce the amount of time required."
+    },
+    {
+      "title": "indexed sequential access method ",
+      "description": "n. A scheme for decreasing the time necessary to locate a data record within a large database, given a key value that identifies the record. A smaller index file is used to store the keys along with pointers that locate the corresponding records in the large main database file. Given a key, first the index file is searched for the key and then the associated pointer is used to access the remaining data of the record in the main file. Acronym: ISAM."
+    },
+    {
+      "title": "index hole ",
+      "description": "n. The small, round hole near the large, round spindle opening at the center of a 5.25-inch floppy disk. The index hole marks the location of the first data sector, enabling a computer to synchronize its read/write operations with the disk’s rotation."
+    },
+    {
+      "title": "Indexing Service Query Language ",
+      "description": "n. A query language available in addition to SQL for the Indexing Service in Windows 2000. Formerly known as Index Server, its original function was to index the content of Internet Information Services (IIS) Web servers. Indexing Service now creates indexed catalogs for the contents and properties of both file systems and virtual Webs."
+    },
+    {
+      "title": "index mark ",
+      "description": "n. 1. A magnetic indicator signal placed on a soft-sectored disk during formatting to mark the logical start of each track. 2. A visual information locator, such as a line, on a microfiche."
+    },
+    {
+      "title": "indicator ",
+      "description": "n. A dial or light that displays information about the status of a device, such as a light connected to a disk drive that glows when the disk is being accessed."
+    },
+    {
+      "title": "indirect address ",
+      "description": "n. See relative address."
+    },
+    {
+      "title": "inductance ",
+      "description": "n. The ability to store energy in the form of a magnetic field. Any length of wire has some inductance, and coiling the wire, especially around a ferromagnetic core, increases the inductance. The unit of inductance is the henry. Compare capacitance, induction."
+    },
+    {
+      "title": "induction ",
+      "description": "n. The creation of a voltage or current in a material by means of electric or magnetic fields, as in the secondary winding of a transformer when exposed to the changing magnetic field caused by an alternating current in the primary winding. See also impedance. Compare inductance."
+    },
+    {
+      "title": "inductor ",
+      "description": "n. A component designed to have a specific amount of inductance. An inductor passes direct current but impedes alternating current to a degree dependent on its frequency. An inductor usually consists of a length of wire coiled in a cylindrical or toroidal (doughnut-shaped) form, sometimes with a ferromagnetic core. See the illustration. Also called: choke."
+    },
+    {
+      "title": "Industry Standard Architecture ",
+      "description": "n. See ISA."
+    },
+    {
+      "title": "INET ",
+      "description": "n. 1. Short for Internet. 2. An annual conference held by the Internet Society."
+    },
+    {
+      "title": ".inf ",
+      "description": "n. The file extension for device information files, those files containing scripts used to control hardware operations."
+    },
+    {
+      "title": "infection ",
+      "description": "n. The presence of a virus or Trojan horse in a computer system. See also Trojan horse, virus, worm."
+    },
+    {
+      "title": "infer ",
+      "description": "vb. To formulate a conclusion based on specific information, either by applying the rules of formal logic or by generalizing from a set of observations. For example, from the facts that canaries are birds and birds have feathers, one can infer (draw the inference) that canaries have feathers."
+    },
+    {
+      "title": "inference engine ",
+      "description": "n. The processing portion of an expert system. It matches input propositions with facts and rules contained in a knowledge base and then derives a conclusion, on which the expert system then acts."
+    },
+    {
+      "title": "inference programming ",
+      "description": "n. A method of programming (as in Prolog) in which programs yield results based on logical inference from a set of facts and rules. See also Prolog."
+    },
+    {
+      "title": "infinite loop ",
+      "description": "n. 1. A loop that, because of semantic or logic errors, can never terminate through normal means. 2. A loop that is intentionally written with no explicit termination condition but will terminate as a result of side effects or direct intervention. See also loop1 (definition 1), side effect. "
+    },
+    {
+      "title": "infix notation ",
+      "description": "n. A notation, used for writing expressions, in which binary operators appear between their arguments, as in 2 + 4. Unary operators usually appear before their arguments, as in –1. See also operator precedence, postfix notation, prefix notation, unary operator."
+    },
+    {
+      "title": ".info ",
+      "description": "n. One of seven new top-level domain names approved in 2001 by the Internet Corporation for Assigned Names and Numbers (ICANN). Unlike the other new domain names, which focus on specific types of Web sites, .info is meant for unrestricted use."
+    },
+    {
+      "title": "infobahn ",
+      "description": "n. The Internet. Infobahn is a mixture of the terms information and Autobahn, a German highway known for the high speeds at which drivers can legally travel. Also called: Information Highway, Information Superhighway, the Net."
+    },
+    {
+      "title": "infomediary ",
+      "description": "n. A term created from the phrase information intermediary. A service provider that positions itself between buyers and sellers, collecting, organizing, and distributing focused information that improves the interaction of consumer and online business."
+    },
+    {
+      "title": "information ",
+      "description": "n. The meaning of data as it is intended to be interpreted by people. Data consists of facts, which become information when they are seen in context and convey meaning to people. Computers process data without any understanding of what the data represents."
+    },
+    {
+      "title": "Information Analysis Center ",
+      "description": "n. See IAC."
+    },
+    {
+      "title": "Information and Content Exchange ",
+      "description": "n. See ICE (definition 1)."
+    },
+    {
+      "title": "information appliance ",
+      "description": "n. A specialized computer designed to perform a limited number of functions and, especially, to provide access to the Internet. Although devices such as electronic address books or appointment calendars might be considered information appliances, the term is more typically used for devices that are less expensive and less capable than a fully functional personal computer. Set-top boxes are a current example; other devices, envisioned for the future, would include network-aware microwaves, refrigerators, watches, and the like. Also called: appliance."
+    },
+    {
+      "title": "information center ",
+      "description": "n. 1. A large computer center and its associated offices; the hub of an information management and dispersal facility in an organization. 2. A specialized type of computer system dedicated to information retrieval and decision-support functions. The information in such a system is usually read-only and consists of data extracted or downloaded from other production systems."
+    },
+    {
+      "title": "information engineering ",
+      "description": "n. See IE (definition 1)."
+    },
+    {
+      "title": "information explosion ",
+      "description": "n. 1. The current period in human history, in which the possession and dissemination of information has supplanted mechanization or industrialization as a driving force in society. 2. The rapid growth in the amount of information available today. Also called: information revolution."
+    },
+    {
+      "title": "information hiding ",
+      "description": "n. A design practice in which implementation details for both data structures and algorithms within a module or subroutine are hidden from routines using that module or subroutine, so as to ensure that those routines do not depend on some particular detail of the implementation. In theory, information hiding allows the module or subroutine to be changed without breaking the routines that use it. See also break, module, routine, subroutine."
+    },
+    {
+      "title": "Information Highway or information highway ",
+      "description": "n. See Information Superhighway."
+    },
+    {
+      "title": "Information Industry Association",
+      "description": "n. See SIIA."
+    },
+    {
+      "title": "information kiosk ",
+      "description": "n. See kiosk."
+    },
+    {
+      "title": "information management ",
+      "description": "n. The process of defining, evaluating, safeguarding, and distributing data within an organization or a system."
+    },
+    {
+      "title": "information packet ",
+      "description": "n. See packet (definition 1)."
+    },
+    {
+      "title": "information processing ",
+      "description": "n. The acquisition, storage, manipulation, and presentation of data, particularly by electronic means."
+    },
+    {
+      "title": "information resource management ",
+      "description": "n. The process of managing the resources for the collection, storage, and manipulation of data within an organization or system."
+    },
+    {
+      "title": "information retrieval ",
+      "description": "n. The process of finding, organizing, and displaying information, particularly by electronic means."
+    },
+    {
+      "title": "information revolution ",
+      "description": "n. See information explosion."
+    },
+    {
+      "title": "information science ",
+      "description": "n. The study of how information is collected, organized, handled, and communicated. See also information theory."
+    },
+    {
+      "title": "Information Services ",
+      "description": "n. The formal name for a company’s data processing department. Acronym: IS.Also called: Data Processing, Information Processing, Information Systems, Information Technology, Management Information Services, Management Information Systems."
+    },
+    {
+      "title": "Information Superhighway ",
+      "description": "n. The existing Internet and its general infrastructure, including private networks, online services, and so on. See also National Information Infrastructure."
+    },
+    {
+      "title": "Information Systems ",
+      "description": "n. See Information Services."
+    },
+    {
+      "title": "Information Technology ",
+      "description": "n. See Information Services."
+    },
+    {
+      "title": "Information Technology Industry Council ",
+      "description": "n. Trade organization of the information technology industry. The council promotes the interests of the information technology industry and compiles information on computers, software, telecommunications, business equipment, and other topics related to information technology. Acronym: ITIC."
+    },
+    {
+      "title": "information theory ",
+      "description": "n. A mathematical discipline founded in 1948 that deals with the characteristics and the transmission of information. Information theory was originally applied to communications engineering but has proved relevant to other fields, including computing. It focuses on such aspects of communication as amount of data, transmission rate, channel capacity, and accuracy of transmission, whether over cables or within society."
+    },
+    {
+      "title": "information warehouse ",
+      "description": "n. The total of an organization’s data resources on all computers."
+    },
+    {
+      "title": "information warfare ",
+      "description": "n. Attacks on the computer operations on which an enemy country’s economic life or safety depends. Possible examples of information warfare include crashing air traffic control systems or massively corrupting stock exchange records."
+    },
+    {
+      "title": "Infoseek ",
+      "description": "n. A Web search site that provides full-text results for user searches plus categorized lists of related sites. InfoSeek is powered by the Ultraseek search engine and searches Web pages, Usenet newsgroups, and FTP and Gopher sites."
+    },
+    {
+      "title": "infrared ",
+      "description": "adj. Having a frequency in the electromagnetic spectrum in the range just below that of red light. Objects radiate infrared in proportion to their temperature. Infrared radiation is traditionally divided into four somewhat arbitrary categories based on its wavelength. See the table. Acronym: IR."
+    },
+    {
+      "title": "Infrared Data Association ",
+      "description": "n. See IrDA."
+    },
+    {
+      "title": "infrared device",
+      "description": "n. A computer, or a computer peripheral such as a printer, that can communicate by using infrared light. See also infrared."
+    },
+    {
+      "title": "infrared file transfer ",
+      "description": "n. Wireless file transfer between a computer and another computer or device using infrared light. See also infrared."
+    },
+    {
+      "title": "infrared network connection ",
+      "description": "n. A direct or incoming network connection to a remote access server using an infrared port. See also infrared port."
+    },
+    {
+      "title": "infrared port ",
+      "description": "n. An optical port on a computer for interfacing with an infrared-capable device. Communication is achieved without physical connection through cables. Infrared ports can be found on some laptops, notebooks, and printers. See also cable, infrared, port."
+    },
+    {
+      "title": "inherent error ",
+      "description": "n. An error in assumptions, design, logic, algorithms, or any combination thereof that causes a program to work improperly, regardless of how well written it is. For example, a serial communications program that is written to use a parallel port contains an inherent error. See also logic, semantics (definition 1), syntax."
+    },
+    {
+      "title": "inherit ",
+      "description": "vb. To acquire the characteristics of another class, in object-oriented programming. The inherited characteristics may be enhanced, restricted, or modified. See also class."
+    },
+    {
+      "title": "inheritance ",
+      "description": "n. 1. The transfer of the characteristics of a class in object-oriented programming to other classes derived from it. For example, if “vegetable” is a class, the classes “legume” and “root” can be derived from it, and each will inherit the properties of the “vegetable” class: name, growing season, and so on. See also class, objectoriented programming. 2. The transfer of certain properties, such as open files, from a parent program or process to another program or process that the parent causes to run. See also child (definition 1)."
+    },
+    {
+      "title": "inheritance code ",
+      "description": "n. A set of structural and procedural attributes belonging to an object that has been passed on to it by the class or object from which it was derived. See also object-oriented programming."
+    },
+    {
+      "title": "inhibit ",
+      "description": "vb. To prevent an occurrence. For example, to inhibit interrupts from an external device means to prevent the external device from sending any interrupts."
+    },
+    {
+      "title": ".ini ",
+      "description": "n. In MS-DOS and Windows 3.x, the file extension that identifies an initialization file, which contains user preferences and startup information about an application program."
+    },
+    {
+      "title": "ini file ",
+      "description": "n. Short for initialization file, a text file containing information about the initial configuration of Windows and Windows-based applications, such as default settings for fonts, margins, and line spacing. Two ini files, win.ini and system.ini, are required to run the Windows operating system through version 3.1. In later versions of Windows, ini files are replaced by a database known as the registry. In addition to Windows itself, many older applications create their own ini files. Because they are composed only of text, ini files can be edited in any text editor or word processor to change information about the application or user preferences. All initialization files bear the extension .ini. See also configuration, configuration file, registry, system.ini, win.ini."
+    },
+    {
+      "title": "INIT ",
+      "description": "n. On older Macintosh computers, a system extension that is loaded into memory at startup time. See also extension (definition 4). Compare cdev."
+    },
+    {
+      "title": "Initial Graphics Exchange Specification ",
+      "description": "n. A standard file format for computer graphics, supported by the American National Standards Institute (ANSI), that is particularly suitable for describing models created with computer-aided design (CAD) programs. It includes a wide variety of basic geometric forms (primitives) and, in keeping with CAD objectives, offers methods for describing and annotating drawings and engineering diagrams. Acronym: IGES.See also ANSI."
+    },
+    {
+      "title": " initialization",
+      "description": "n. The process of assigning initial values to variables and data structures in a program."
+    },
+    {
+      "title": "initialization file ",
+      "description": "n. See ini file."
+    },
+    {
+      "title": "initialization string ",
+      "description": "n. A sequence of commands sent to a device, especially a modem, to configure it and prepare it for use. In the case of a modem, the initialization string consists of a string of characters."
+    },
+    {
+      "title": "initialize ",
+      "description": "vb. 1. To prepare a storage medium, such as a disk or a tape, for use. This may involve testing the medium’s surface, writing startup information, and setting up the file system’s index to storage locations. 2. To assign a beginning value to a variable. 3. To start up a computer. See also cold boot, startup."
+    },
+    {
+      "title": "initializer ",
+      "description": "n. An expression whose value is the first (initial) value of a variable. See also expression."
+    },
+    {
+      "title": "initial program load ",
+      "description": "n. The process of copying an operating system into memory when a system is booted. Acronym: IPL. See also boot, startup."
+    },
+    {
+      "title": "initiator ",
+      "description": "n. The device in a SCSI connection that issues commands. The device that receives the commands is the target. See also SCSI, target."
+    },
+    {
+      "title": "ink cartridge ",
+      "description": "n. A disposable module that contains ink and is typically used in an ink-jet printer. See also ink-jet printer."
+    },
+    {
+      "title": "ink-jet printer or inkjet printer ",
+      "description": "n. A nonimpact printer in which liquid ink is vibrated or heated into a mist and sprayed through tiny holes in the print head to form characters or graphics on the paper. Ink-jet printers are competitive with some laser printers in price and print quality if not in speed. However, the ink, which must be highly soluble to avoid clogging the nozzles in the print head, produces fuzzy-looking output on some papers and smears if touched or dampened shortly after printing. See also nonimpact printer, print head."
+    },
+    {
+      "title": "inline ",
+      "description": "adj. 1. In programming, referring to a function call replaced with an instance of the function’s body. Actual arguments are substituted for formal parameters. An inline function is usually done as a compile-time transformation to increase the efficiency of the program. Also called: unfold, unroll. 2. In HTML code, referring to graphics displayed along with HTML-formatted text. Inline images placed in the line of HTML text use the tag <IMG>. Text within an inline image can be aligned to the top, bottom, or middle of a specific image."
+    },
+    {
+      "title": "inline code ",
+      "description": "n. Assembly language or machine language instructions embedded within high-level source code. The form it takes varies considerably from compiler to compiler, if it is supported at all."
+    },
+    {
+      "title": "inline discussion ",
+      "description": "n. Discussion comments that are associated with a document as a whole or with a particular paragraph, image, or table of a document. In Web browsers, inline discussions are displayed in the body of the document; in word-processing programs, they are usually displayed in a separate discussion or comments pane."
+    },
+    {
+      "title": "inline graphics ",
+      "description": "n. Graphics files that are embedded in an HTML document or Web page and viewable by a Web browser or other program that recognizes HTML. By avoiding the need for separate file opening operations, inline graphics can speed the access and loading of an HTML document. Also called: inline image."
+    },
+    {
+      "title": "inline image ",
+      "description": "n. An image that is embedded within the text of a document. Inline images are common on Web pages. See also inline graphics."
+    },
+    {
+      "title": "inline processing ",
+      "description": "n. Operation on a segment of low-level program code, called inline code, to optimize execution speed or storage requirements. See also inline code."
+    },
+    {
+      "title": "inline stylesheet ",
+      "description": "n. A stylesheet included within an HTML document. Because an inline stylesheet is directly associated with an individual document, any changes made to that document’s appearance will not affect the appearance of other Web site documents. Compare linked stylesheet."
+    },
+    {
+      "title": "inline subroutine ",
+      "description": "n. A subroutine whose code is copied at each place in a program at which it is called, rather than kept in one place to which execution is transferred. Inline subroutines improve execution speed, but they also increase code size. Inline subroutines obey the same syntactical and semantic rules as ordinary subroutines."
+    },
+    {
+      "title": "Inmarsat ",
+      "description": "n. Acronym for International Maritime Satellite. Organization based in London, England, that operates satellites for international mobile telecommunications services in more than 80 nations. Inmarsat provides services for maritime, aviation, and land use."
+    },
+    {
+      "title": "inner join ",
+      "description": "n. An operator in relational algebra, often implemented in database management. The inner join produces a relation (table) that contains all possible ordered concatenations (joinings) of records from two existing tables that meet certain specified criteria on the data values. It is thus equivalent to a product followed by a select applied to the resulting table. Compare outer join."
+    },
+    {
+      "title": "inoculate ",
+      "description": "vb. To protect a program against virus infection by recording characteristic information about it. For example, checksums on the code can be recomputed and compared with the stored original checksums each time the program is run; if any have changed, the program file is corrupt and may be infected. See also checksum, virus."
+    },
+    {
+      "title": "input (1)",
+      "description": "n. Information entered into a computer or program for processing, as from a keyboard or from a file stored on a disk drive."
+    },
+    {
+      "title": "input (2)",
+      "description": "vb. To enter information into a computer for processing."
+    },
+    {
+      "title": "input area ",
+      "description": "n. See input buffer."
+    },
+    {
+      "title": "input-bound ",
+      "description": "adj. See input/output-bound."
+    },
+    {
+      "title": "input buffer ",
+      "description": "n. A portion of computer memory set aside for temporary storage of information arriving for processing. See also buffer (1)."
+    },
+    {
+      "title": "input channel ",
+      "description": "n. See input/output channel."
+    },
+    {
+      "title": "input device ",
+      "description": "n. A peripheral device whose purpose is to allow the user to provide input to a computer system. Examples of input devices are keyboards, mice, joysticks, and styluses. See also peripheral."
+    },
+    {
+      "title": "input driver ",
+      "description": "n. See device driver."
+    },
+    {
+      "title": "input language ",
+      "description": "n. 1. A language to be inputted into the system through the keyboard, a speech-to-text converter, or an Input Method Editor (IME). 2. In Microsoft Windows XP, a Regional and Language Options setting that specifies the combination of the language being entered and the keyboard layout, IME, speech-to-text converter, or other device being used to enter it. This setting was formerly known as input locale."
+    },
+    {
+      "title": "Input Method Editor ",
+      "description": "n. Programs used to enter the thousands of different characters in written Asian languages with a standard 101-key keyboard. An IME consists of both an engine that converts keystrokes into phonetic and ideograph characters and a dictionary of commonly used ideographic words. As the user enters keystrokes, the IME engine attempts to identify which character or characters the keystrokes should be converted into. Acronym: IME."
+    },
+    {
+      "title": "input/output ",
+      "description": "n. The complementary tasks of gathering data for a computer or a program to work with, and of making the results of the computer’s activities available to the user or to other computer processes. Gathering data is usually done with input devices such as the keyboard and the mouse, while the output is usually made available to the user via the display and the printer. Other data resources, such as disk files and communications ports for the computer, can serve as either input or output devices. Acronym: I/O."
+    },
+    {
+      "title": "input/output area ",
+      "description": "n. See input/output buffer."
+    },
+    {
+      "title": "input/output-bound ",
+      "description": "adj. Characterized by the need to spend lengthy amounts of time waiting for input and output of data that is processed much more rapidly. For example, if the processor is capable of making rapid changes to a large database stored on a disk faster than the drive mechanism can perform the read and write operations, the computer is input/output-bound. A computer may be just input-bound or just output-bound if only input or only output limits the speed at which the processor accepts and processes data. Also called: I/O-bound."
+    },
+    {
+      "title": "input/output buffer ",
+      "description": "n. A portion of computer memory reserved for temporary storage of incoming and outgoing data. Because input/output devices can often write to a buffer without intervention from the CPU, a program can continue execution while the buffer fills, thus speeding program execution. See also buffer (1)."
+    },
+    {
+      "title": "input/output bus ",
+      "description": "n. A hardware path used inside a computer for transferring information to and from the processor and various input and output devices. See also bus."
+    },
+    {
+      "title": "input/output channel ",
+      "description": "n. A hardware path from the CPU to the input/output bus. See also bus."
+    },
+    {
+      "title": "input/output controller ",
+      "description": "n. Circuitry that monitors operations and performs tasks related to receiving input and transferring output at an input or output device or port, thus providing the processor with a consistent means of communication (input/output interface) with the device and also freeing the processor’s time for other work. For example, when a read or write operation is performed on a disk, the drive’s controller carries out the high-speed, electronically sophisticated tasks involved in positioning the read-write heads, locating specific storage areas on the spinning disk, reading from and writing to the disk surface, and even checking for errors. Most controllers require software that enables the computer to receive and process the data the controller makes available. Also called: device controller, I/O controller."
+    },
+    {
+      "title": "input/output device ",
+      "description": "n. A piece of hardware that can be used both for providing data to a computer and for receiving data from it, depending on the current situation. A disk drive is an example of an input/output device. Some devices, such as a keyboard or a mouse, can be used only for input and are thus called input (input-only) devices. Other devices, such as printers, can be used only for output and are thus called output (output-only) devices. Most devices require installation of software routines called device drivers to enable the computer to transmit and receive data to and from them."
+    },
+    {
+      "title": "input/output interface",
+      "description": "n. See input/output controller."
+    },
+    {
+      "title": "input/output port ",
+      "description": "n. See port."
+    },
+    {
+      "title": "input/output processor ",
+      "description": "n. Hardware designed to handle input and output operations to relieve the burden on the main processing unit. For example, a digital signal processor can perform time-intensive, complicated analysis and synthesis of sound patterns without CPU overhead. See also digital signal processor, front-end processor (definition 1)."
+    },
+    {
+      "title": "input/output statement ",
+      "description": "n. A program instruction that causes data to be transferred between memory and an input or output device."
+    },
+    {
+      "title": "input port ",
+      "description": "n. See port."
+    },
+    {
+      "title": "input stream ",
+      "description": "n. A flow of information used in a program as a sequence of bytes that are associated with a particular task or destination. Input streams include series of characters read from the keyboard to memory and blocks of data read from disk files. Compare output stream."
+    },
+    {
+      "title": "inquiry ",
+      "description": "n. A request for information. See also query."
+    },
+    {
+      "title": "INS ",
+      "description": "n. See WINS."
+    },
+    {
+      "title": "insertion point ",
+      "description": "n. A blinking vertical bar on the screen, such as in graphical user interfaces, that marks the location at which inserted text will appear. See also cursor (definition 1)."
+    },
+    {
+      "title": "insertion sort ",
+      "description": "n. A list-sorting algorithm that starts with a list that contains one item and builds an ever-larger sorted list by inserting the items to be sorted one at a time into their correct positions on that list. Insertion sorts are inefficient when used with arrays, because of constant shuffling of items, but are ideally suited for sorting linked lists. See also linked list, sort algorithm. Compare bubble sort, quicksort."
+    },
+    {
+      "title": "Insert key ",
+      "description": "n. A key on the keyboard, labeled “Insert” or “Ins,” whose usual function is to toggle a program’s editing setting between an insert mode and an overwrite mode, although it may perform different functions in different applications. Also called: Ins key."
+    },
+    {
+      "title": "insert mode ",
+      "description": "n. A mode of operation in which a character typed into a document or at a command line pushes subsequent existing characters farther to the right on the screen rather than overwriting them. Insert mode is the opposite of overwrite mode, in which new characters replace subsequent existing characters. The key or key combination used to change from one mode to the other varies among programs, but the Insert key is most often used. Compare overwrite mode."
+    },
+    {
+      "title": "insider attack ",
+      "description": "n. An attack on a network or system carried out by an individual associated with the hacked system. Insider attacks are typically the work of current or former employees of a company or organization who have knowledge of passwords and network vulnerabilities. Compare intruder attack."
+    },
+    {
+      "title": "Ins key ",
+      "description": "n. See Insert key."
+    },
+    {
+      "title": "install ",
+      "description": "vb. To set in place and prepare for operation. Operating systems and application programs commonly include a disk-based installation, or setup, program that does most of the work of preparing the program to work with the computer, printer, and other devices. Often such a program can check for devices attached to the system, request the user to choose from sets of options, create a place for the program on the hard disk, and modify system startup files as necessary."
+    },
+    {
+      "title": "installable device driver ",
+      "description": "n. A device driver that can be embedded within an operating system, usually in order to override an existing, less-functional service."
+    },
+    {
+      "title": "Installable File System Manager ",
+      "description": "n. In Windows 9x and Windows 2000, the part of the file system architecture responsible for arbitrating access to the different file system components. Acronym: IFS."
+    },
+    {
+      "title": "installation program ",
+      "description": "n. A program whose function is to install another program, either on a storage medium or in memory. An installation program, also called a setup program, might be used to guide a user through the often complex process of setting up an application for a particular combination of machine, printer, and monitor."
+    },
+    {
+      "title": "Installer ",
+      "description": "n. A program, provided with the Apple Macintosh operating system, that allows the user to install system upgrades and make bootable (system) disks."
+    },
+    {
+      "title": "instance ",
+      "description": "n. An object, in object-oriented programming, in relation to the class to which it belongs. For example, an object myList that belongs to a class List is an instance of the class List. See also class, instance variable, instantiate, object (definition 2)."
+    },
+    {
+      "title": "instance variable ",
+      "description": "n. A variable associated with an instance of a class (an object). If a class defines a certain variable, each instance of the class has its own copy of that variable. See also class, instance, object (definition 2), object-oriented programming. "
+    },
+    {
+      "title": "instantiate ",
+      "description": "vb. To create an instance of a class. See also class, instance, object (definition 2). "
+    },
+    {
+      "title": "instant messaging ",
+      "description": "n. A service that alerts users when friends or colleagues are on line and allows them to communicate with each other in real time through private online chat areas. With instant messaging, a user creates a list of other users with whom he or she wishes to communicate; when a user from his or her list is on line, the service alerts the user and enables immediate contact with the other user. While instant messaging has primarily been a proprietary service offered by Internet service providers such as AOL and MSN, businesses are starting to employ instant messaging to increase employee efficiency and make expertise more readily available to employees."
+    },
+    {
+      "title": "Institute of Electrical and Electronics Engineers ",
+      "description": "n. See IEEE."
+    },
+    {
+      "title": "instruction ",
+      "description": "n. An action statement in any computer language, most often in machine or assembly language. Most programs consist of two types of statements: declarations and instructions. See also declaration, statement."
+    },
+    {
+      "title": "instruction code ",
+      "description": "n. See operation code."
+    },
+    {
+      "title": "instruction counter ",
+      "description": "n. See instruction register."
+    },
+    {
+      "title": "instruction cycle ",
+      "description": "n. The cycle in which a processor retrieves an instruction from memory, decodes it, and carries it out. The time required for an instruction cycle is the sum of the instruction (fetch) time and the execution (translate and execute) time and is measured by the number of clock ticks (pulses of a processor’s internal timer) consumed."
+    },
+    {
+      "title": "instruction mix ",
+      "description": "n. The assortment of types of instructions contained in a program, such as assignment instructions, mathematical instructions (floating-point or integer), control instructions, and indexing instructions. Knowledge of instruction mixes is important to designers of CPUs because it tells them which instructions should be shortened to yield the greatest speed, and to designers of benchmarks because it enables them to make the benchmarks relevant to real tasks."
+    },
+    {
+      "title": "instruction pointer ",
+      "description": "n. See program counter."
+    },
+    {
+      "title": "n. See program counter. ",
+      "description": "n. A register in a central processing unit that holds the address of the next instruction to be executed."
+    },
+    {
+      "title": "instruction set ",
+      "description": "n. The set of machine instructions that a processor recognizes and can execute. See also assembler, microcode."
+    },
+    {
+      "title": "instruction time ",
+      "description": "n. The number of clock ticks (pulses of a computer’s internal timer) required to retrieve an instruction from memory. Instruction time is the first part of an instruction cycle; the second part is the execution (translate and execute) time. Also called: I-time."
+    },
+    {
+      "title": "instruction word ",
+      "description": "n. 1. The length of a machine language instruction. 2. A machine language instruction containing an operation code identifying the type of instruction, possibly one or more operands specifying data to be affected or its address, and possibly bits used for indexing or other purposes. See also assembler, machine code."
+    },
+    {
+      "title": "insulator ",
+      "description": "n. 1. Any material that is a very poor conductor of electricity, such as rubber, glass, or ceramic. Also called: nonconductor. Compare conductor, semiconductor. 2. A device used to separate elements of electrical circuits and prevent current from taking unwanted paths, such as the stacks of ceramic disks that suspend highvoltage power lines from transmission towers."
+    },
+    {
+      "title": "integer ",
+      "description": "n. 1. A positive or negative “whole” number, such as 37, –50, or 764. 2. A data type representing whole numbers. Calculations involving only integers are much faster than calculations involving floating-point numbers, so integers are widely used in programming for counting and numbering purposes. Integers can be signed (positive or negative) or unsigned (positive). They can also be described as long or short, depending on the number of bytes needed to store them. Short integers, stored in 2 bytes, cover a smaller range of numbers (for example, –32,768 through 32,767) than do long integers (for example, –2,147,483,648 through 2,147,483,647), which are stored in 4 bytes. Also called: integral number. See also floating-point notation."
+    },
+    {
+      "title": "integral modem ",
+      "description": "n. A modem that is built into a computer, as opposed to an internal modem, which is a modem on an expansion card that can be removed. See also external modem, internal modem, modem."
+    },
+    {
+      "title": "integral number ",
+      "description": "n. See integer (definition 2)."
+    },
+    {
+      "title": "integrated circuit ",
+      "description": "n. A device consisting of a number of connected circuit elements, such as transistors and resistors, fabricated on a single chip of silicon crystal or other semiconductor material. Integrated circuits are categorized by the number of elements they contain. See the table. Acronym: IC. Also called: chip. See also central processing unit."
+    },
+    {
+      "title": "integrated development environment ",
+      "description": "n. A set of integrated tools for developing software. The tools are generally run from one user interface and consist of a compiler, an editor, and a debugger, among others. Acronym: IDE."
+    },
+    {
+      "title": "Integrated Device Electronics ",
+      "description": "n. See IDE (definition 1)."
+    },
+    {
+      "title": "integrated injection logic ",
+      "description": "n. A type of circuit design that uses both NPN and PNP transistors and does not require other components, such as resistors. Such circuits are moderately fast, consume little power, and can be manufactured in very small sizes. Acronym: I2L, IIL. Also called: merged transistor logic. See also NPN transistor, PNP transistor."
+    },
+    {
+      "title": "Integrated Services Digital Network ",
+      "description": "n. See ISDN."
+    },
+    {
+      "title": "Integrated Services LAN ",
+      "description": "n. See isochronous network."
+    },
+    {
+      "title": "integrated software ",
+      "description": "n. A program that combines several applications, such as word processing, database management, and spreadsheets, in a single package. Such software is “integrated” in two ways: it can transfer data from one of its applications to another, helping users coordinate tasks and merge information created with the different software tools; and it provides the user with a consistent interface for choosing commands, managing files, and otherwise interacting with the programs so that the user will not have to master several, often very different, programs. The applications in an integrated software package are often not, however, designed to offer as much capability as single applications, nor does integrated software necessarily include all the applications needed in a particular environment."
+    },
+    {
+      "title": "integration ",
+      "description": "n. 1. In computing, the combining of different activities, programs, or hardware components into a functional unit. See also integral modem, integrated software, ISDN. 2. In electronics, the process of packing multiple electronic circuit elements on a single chip. See also integrated circuit. 3. In mathematics, specifically calculus, a procedure performed on an equation and related to finding the area under a given curve or the volume within a given shape."
+    },
+    {
+      "title": "integrator ",
+      "description": "n. A circuit whose output represents the integral, with respect to time, of the input signal—that is, its total accumulated value over time. See the illustration. Compare differentiator."
+    },
+    {
+      "title": "integrity ",
+      "description": "n. The completeness and accuracy of data stored in a computer, especially after it has been manipulated in some way. See also data integrity."
+    },
+    {
+      "title": "Intel Architecture 64 ",
+      "description": "n. See IA-64."
+    },
+    {
+      "title": "intellectual property ",
+      "description": "n. Content of the human intellect deemed to be unique and original and to have marketplace value—and thus to warrant protection under the law. Intellectual property includes but is not limited to ideas; inventions; literary works; chemical, business, or computer processes; and company or product names and logos. Intellectual property protections fall into four categories: copyright (for literary works, art, and music), trademarks (for company and product names and logos), patents (for inventions and processes), and trade secrets (for recipes, code, and processes). Concern over defining and protecting intellectual property in cyberspace has brought this area of the law under intense scrutiny."
+    },
+    {
+      "title": "intelligence ",
+      "description": "n. 1. The ability of hardware to process information. A device without intelligence is said to be dumb; for example, a dumb terminal connected to a computer can receive input and display output but cannot process information independently. 2. The ability of a program to monitor its environment and initiate appropriate actions to achieve a desired state. For example, a program waiting for data to be read from disk might switch to another task in the meantime. 3. The ability of a program to simulate human thought. See also artificial intelligence. 4. The ability of a machine such as a robot to respond appropriately to changing stimuli (input). "
+    },
+    {
+      "title": "intelligent ",
+      "description": "adj. Of, pertaining to, or characteristic of a device partially or totally controlled by one or more processors integral to the device."
+    },
+    {
+      "title": "intelligent agent ",
+      "description": "n. See agent (definition 2)."
+    },
+    {
+      "title": "intelligent cable ",
+      "description": "n. A cable that incorporates circuitry to do more than simply pass signals from one end of the cable to the other, such as to determine the characteristics of the connector into which it is plugged. Also called: smart cable. "
+    },
+    {
+      "title": "Intelligent Concept Extraction ",
+      "description": "n. A technology owned by Excite, Inc., for searching indexed databases to retrieve documents from the World Wide Web. Intelligent Concept Extraction is like other search technologies in being able to locate indexed Web documents related to one or more key words entered by the user. Based on proprietary search technology, however, it also matches documents conceptually by finding relevant information even if the document found does not contain the key word or words specified by the user. Thus, the list of documents found by Intelligent Concept Extraction can include both documents containing the specified search term and those containing alternative words related to the search term. Acronym: ICE."
+    },
+    {
+      "title": "intelligent database ",
+      "description": "n. A database that manipulates stored information in a way that people find logical, natural, and easy to use. An intelligent database conducts searches relying not only on traditional data-finding routines but also on predetermined rules governing associations, relationships, and even inferences regarding the data. See also database."
+    },
+    {
+      "title": "Intelligent hub ",
+      "description": "n. A type of hub that, in addition to transmitting signals, has built-in capability for other network chores, such as monitoring or reporting on network status. Intelligent hubs are used in different types of networks, including ARCnet and 10Base-T Ethernet. See also hub."
+    },
+    {
+      "title": "Intelligent Input/Output ",
+      "description": "n. See I2O."
+    },
+    {
+      "title": "intelligent terminal ",
+      "description": "n. A terminal with its own memory, processor, and firmware that can perform certain functions independently of its host computer, most often the rerouting of incoming data to a printer or video screen."
+    },
+    {
+      "title": "Intelligent Transportation Infrastructure ",
+      "description": "n. A system of automated urban and suburban highway and mass transit control and management services proposed in 1996 by U.S. Secretary of Transportation Federico Peña. Acronym: ITI."
+    },
+    {
+      "title": "IntelliSense ",
+      "description": "n. A Microsoft technology used in various Microsoft products, including Internet Explorer, Visual Basic, Visual Basic C++, and Office that is designed to help users perform routine tasks. In Visual Basic, for example, information such as the properties and methods of an object is displayed as the developer types the name of the object in the Visual Basic code window."
+    },
+    {
+      "title": "Intensity Red Green Blue ",
+      "description": "n. See IRGB."
+    },
+    {
+      "title": "interactive ",
+      "description": "adj. Characterized by conversational exchange of input and output, as when a user enters a question or command and the system immediately responds. The interactivity of microcomputers is one of the features that makes them approachable and easy to use."
+    },
+    {
+      "title": "interactive fiction ",
+      "description": "n. A type of computer game in which the user participates in a story by giving commands to the system. The commands given by the user determine, to some extent, the events that occur during the story. Typically the story involves a goal that must be achieved, and the puzzle is to determine the correct sequence of actions that will lead to the accomplishment of that goal. See also adventure game."
+    },
+    {
+      "title": "interactive graphics ",
+      "description": "n. A form of user interface in which the user can change and control graphic displays, often with the help of a pointing device such as a mouse or a joystick. Interactive graphics interfaces occur in a range of computer products, from games to computer-aided design (CAD) systems."
+    },
+    {
+      "title": "interactive processing ",
+      "description": "n. Processing that involves the more or less continuous participation of the user. Such a command/response mode is characteristic of microcomputers. Compare batch processing (definition 2)."
+    },
+    {
+      "title": "interactive program ",
+      "description": "n. A program that exchanges output and input with the user, who typically views a display of some sort and uses an input device, such as a keyboard, mouse, or joystick, to provide responses to the program. A computer game is an interactive program. Compare batch program."
+    },
+    {
+      "title": "interactive services ",
+      "description": "n. See BISDN."
+    },
+    {
+      "title": "interactive session",
+      "description": "n. A processing session in which the user can more or less continuously intervene and control the activities of the computer. Compare batch processing (definition 2)."
+    },
+    {
+      "title": "interactive television ",
+      "description": "n. A video technology in which a viewer interacts with the television programming. Typical uses of interactive television include Internet access, video on demand, and video conferencing. See also video conferencing."
+    },
+    {
+      "title": "interactive TV ",
+      "description": "n. See iTV."
+    },
+    {
+      "title": "interactive video ",
+      "description": "n. The use of computer-controlled video, in the form of a CD-ROM or videodisc, for interactive education or entertainment. See also CD-ROM, interactive, interactive television, videodisc."
+    },
+    {
+      "title": "interactive voice response ",
+      "description": "n. A computer that operates through the telephone system, in which input commands and data are transmitted to the computer as spoken words and numbers or tones and dial pulses generated by a telephone instrument; and output instructions and data are received from the computer as prerecorded or synthesized speech. For example, a dial-in service that provides airline flight schedules when you press certain key codes on your telephone is an interactive voice response system. Also called: IVR."
+    },
+    {
+      "title": "Interactive voice system ",
+      "description": "n. See interactive voice response. "
+    },
+    {
+      "title": "interapplication communication ",
+      "description": "n. The process of one program sending messages to another program. For example, some e-mail programs allow users to click on a URL within the message. After the user clicks on the URL, browser software will automatically launch and access the URL."
+    },
+    {
+      "title": "interblock gap ",
+      "description": "n. See inter-record gap."
+    },
+    {
+      "title": "Interchange File Format ",
+      "description": "n. See .iff."
+    },
+    {
+      "title": "Interchange Format ",
+      "description": "n. See Rich Text Format."
+    },
+    {
+      "title": "interconnect ",
+      "description": "n. 1. See System Area Network. 2. An electrical or mechanical connection. Interconnect is the physical connection and communication between two components in a computer system."
+    },
+    {
+      "title": "interface ",
+      "description": "n. 1. The point at which a connection is made between two elements so that they can work with each other or exchange information. 2. Software that enables a program to work with the user (the user interface, which can be a command-line interface, menu-driven interface, or a graphical user interface), with another program such as the operating system, or with the computer’s hardware. See also application programming interface, graphical user interface. 3. A card, plug, or other device that connects pieces of hardware with the computer so that information can be moved from place to place. For example, standardized interfaces such as RS-232-C standard and SCSI enable communications between computers and printers or disks. See also RS-232-C standard, SCSI."
+    },
+    {
+      "title": "interface adapter ",
+      "description": "n. See network adapter."
+    },
+    {
+      "title": " interface card",
+      "description": "n. See adapter."
+    },
+    {
+      "title": "Interface Definition Language ",
+      "description": "n. See IDL."
+    },
+    {
+      "title": "interference ",
+      "description": "n. 1. Noise or other external signals that affect the performance of a communications channel. 2. Electromagnetic signals that can disturb radio or television reception. The signals can be generated naturally, as in lightning, or by electronic devices, such as computers."
+    },
+    {
+      "title": "Interior Gateway Protocol ",
+      "description": "n. A protocol used for distributing routing information among routers (gateways) in an autonomous network—that is, a network under the control of one administrative body. The two most often used interior gateway protocols are RIP (Routing Information Protocol) and OSPF (Open Shortest Path First). Acronym: IGP. See also autonomous system, OSPF, RIP. Compare exterior gateway protocol."
+    },
+    {
+      "title": "Interior Gateway Routing Protocol",
+      "description": "n. See IGRP."
+    },
+    {
+      "title": "Interix",
+      "description": "n. A software application from Microsoft that allows businesses to run existing UNIX-based legacy applications while adding applications based on the Microsoft Windows operating system. Interix serves as a single enterprise platform from which to run UNIX-based, Internet-based, and Windows-based applications."
+    },
+    {
+      "title": "interlaced ",
+      "description": "adj. Pertaining to a display method on rasterscan monitors in which the electron beam refreshes or updates all odd-numbered scan lines in one vertical sweep of the screen and all even-numbered scan lines in the next sweep. Compare noninterlaced."
+    },
+    {
+      "title": "interlaced GIF ",
+      "description": "n. A picture in GIF format that is gradually displayed in a Web browser, showing increasingly detailed versions of the picture until the entire file has finished downloading. Users of slower modems have a perceived shorter wait time for the image to appear, and they can sometimes get enough information about the image to decide whether to proceed with the download or move on. Users with faster connections will notice little difference in effect between an interlaced GIF and a noninterlaced GIF."
+    },
+    {
+      "title": "interlace scanning ",
+      "description": "n. A display technique designed to reduce flicker and distortions in television transmissions; also used with some raster-scan monitors. In interlace scanning the electron beam in the television or monitor refreshes alternate sets of scan lines in successive top-tobottom sweeps, refreshing all even lines on one pass, and all odd lines on the other. Because of the screen phosphor’s ability to maintain an image for a short time before fading and the tendency of the human eye to average or blend subtle differences in light intensity, the human viewer sees a complete display, but the amount of information carried by the display signal and the number of lines that must be displayed per sweep are halved. Interlaced images are not as clear as those produced by the progressive scanning typical of newer computer monitors. Interlace scanning is, however, the standard method of displaying analog broadcast television images. Also called: interlacing. Compare progressive scanning."
+    },
+    {
+      "title": "interlacing ",
+      "description": "n. See interlace scanning."
+    },
+    {
+      "title": "interleave",
+      "description": "vb. To arrange the sectors on a hard disk in such a way that after one sector is read, the next sector in numeric sequence will arrive at the head when the computer is ready to accept it rather than before, which would make the computer wait a whole revolution of the platter for the sector to come back. Interleaving is set by the format utility that initializes a disk for use with a given computer."
+    },
+    {
+      "title": "interleaved memory ",
+      "description": "n. A method of organizing the addresses in RAM memory in order to reduce wait states. In interleaved memory, adjacent locations are stored in different rows of chips so that after accessing a byte, the processor does not have to wait an entire memory cycle before accessing the next byte. See also access time (definition 1), wait state."
+    },
+    {
+      "title": "interlock ",
+      "description": "vb. To prevent a device from acting while the current operation is in progress."
+    },
+    {
+      "title": "intermediate language ",
+      "description": "n. 1. A computer language used as an intermediate step between the original source language, usually a high-level language, and the target language, usually machine code. Some high-level compilers use assembly language as an intermediate language. See also compiler (definition 2), object code. 2. See Microsoft intermediate language."
+    },
+    {
+      "title": "intermittent ",
+      "description": "adj. Pertaining to something, such as a signal or connection, that is not unbroken but occurs at periodic or occasional intervals."
+    },
+    {
+      "title": "intermittent error ",
+      "description": "n. An error that recurs at unpredictable times."
+    },
+    {
+      "title": "internal clock ",
+      "description": "n. See clock/calendar."
+    },
+    {
+      "title": "internal command ",
+      "description": "n. A routine that is loaded into memory along with the operating system and resides there for as long as the computer is on. Compare external command."
+    },
+    {
+      "title": "internal font ",
+      "description": "n. A font that is already loaded in a printer’s memory (ROM) when the printer is shipped. Compare downloadable font, font cartridge."
+    },
+    {
+      "title": "internal interrupt ",
+      "description": "n. An interrupt generated by the processor itself in response to certain predefined situations, such as an attempt to divide by zero or an arithmetic value exceeding the number of bits allowed for it. See also interrupt. Compare external interrupt."
+    },
+    {
+      "title": "internal memory ",
+      "description": "n. See primary storage."
+    },
+    {
+      "title": "internal modem ",
+      "description": "n. A modem constructed on an expansion card to be installed in one of the expansion slots inside a computer. Compare external modem, integral modem."
+    },
+    {
+      "title": "internal schema ",
+      "description": "n. A view of information about the physical files composing a database, including file names, file locations, accessing methodology, and actual or potential data derivations, in a database model such as that described by ANSI/X3/SPARC, that supports a threeschema architecture. The internal schema corresponds to the schema in systems based on CODASYL/DBTG. In a distributed database, there may be a different internal schema at each location. See also conceptual schema, schema."
+    },
+    {
+      "title": "internal sort ",
+      "description": "n. 1. A sorting operation that takes place on files completely or largely held in memory rather than on disk during the process. 2. A sorting procedure that produces sorted subgroups of records that will be subsequently merged into one list."
+    },
+    {
+      "title": "International Computer Security Association ",
+      "description": "n. See ICSA."
+    },
+    {
+      "title": "International Federation of Information Processing ",
+      "description": "n. See IFIP."
+    },
+    {
+      "title": "International Maritime Satellite ",
+      "description": "n. See Inmarsat."
+    },
+    {
+      "title": "International Mobile Telecommunications for the Year 2000 ",
+      "description": "n. Specifications set forth by the International Telecommunications Union (ITU) to establish third-generation wireless telecommunication network architecture. The specifications include faster data transmission speeds and improved voice quality. Acronym: IMT-2000."
+    },
+    {
+      "title": "International Organization for Standardization ",
+      "description": "n. See ISO."
+    },
+    {
+      "title": "International Telecommunication Union ",
+      "description": "n. See ITU."
+    },
+    {
+      "title": "International Telecommunication Union-Telecommunication Standardization Sector ",
+      "description": "n. See ITU-T."
+    },
+    {
+      "title": "International Telegraph and Telephone Consultative Committee ",
+      "description": "n. English-language form of the name for the Comité Consultatif International Télégraphique et Téléphonique, a standards organization that became part of the International Telecommunication Union in 1992. See also CCITT, ITU-T."
+    },
+    {
+      "title": "Internaut ",
+      "description": "n. See cybernaut."
+    },
+    {
+      "title": "internet ",
+      "description": "n. Short for internetwork. A set of computer networks that may be dissimilar and are joined together by means of gateways that handle data transfer and conversion of messages from the sending networks’ protocols to those of the receiving network."
+    },
+    {
+      "title": "Internet ",
+      "description": "n. The worldwide collection of networks and gateways that use the TCP/IP suite of protocols to communicate with one another. At the heart of the Internet is a backbone of high-speed data communication lines between major nodes or host computers, consisting of thousands of commercial, government, educational, and other computer systems, that route data and messages. One or more Internet nodes can go off line without endangering the Internet as a whole or causing communications on the Internet to stop, because no single computer or network controls it. The genesis of the Internet was a decentralized network called ARPANET created by the U.S. Department of Defense in 1969 to facilitate communications in the event of a nuclear attack. Eventually other networks, including BITNET, Usenet, UUCP, and NSFnet, were connected to ARPANET. Currently the Internet offers a range of services to users, such as FTP, e-mail, the World Wide Web, Usenet news, Gopher, IRC, telnet, and others. Also called: the Net. See also BITNET, FTP1 (definition 1), Gopher, IRC, NSFnet, telnet1, Usenet, UUCP, World Wide Web."
+    },
+    {
+      "title": "Internet (2)",
+      "description": "n. A computer-network development project launched in 1996 by a collaborative group of 120 universities under the auspices of the University Corporation for Advanced Internet Development (UCAID). The consortium is now being led by over 190 universities working with industry and government. The goal of Internet2, whose high-speed, fiberoptic backbone was brought on line in early 1999, is the development of advanced Internet technologies and applications for use in research and education at the university level. Though not open for public use, Internet2 and the technologies and applications developed by its members are intended to eventually benefit users of the commercial Internet as well. Some of the new technologies Internet2 and its members are developing and testing include IPv6, multicasting, and quality of service (QoS). Internet2 and the Next Generation Internet "
+    },
+    {
+      "title": "Internet access ",
+      "description": "n. 1. The capability of a user to connect to the Internet. This is generally accomplished through one of two ways. The first is through a dialing up of an Internet service provider or an online information services provider via a modem connected to the user’s computer. This method is the one used by the majority of home computer users. The second way is through a dedicated line, such as a T1 carrier, that is connected to a local area network, to which, in turn, the user’s computer is connected. The dedicated line solution is used by larger organizations, such as corporations, which either have their own node on the Internet or connect to an Internet service provider that is a node. A third way that is emerging is for users to use set-top boxes with their TVs. Generally, however, this will give a user access only to documents on the World Wide Web. See also dedicated line (definition 1), ISP, LAN, modem, node (definition 2), set-top box. 2. The capability of an online information service to exchange data with the Internet, such as e-mail, or to offer Internet services to users, such as newsgroups, FTP, and the World Wide Web. Most online information services offer Internet access to their users. See also FTP (1) (definition 1), online information service."
+    },
+    {
+      "title": "Internet access device ",
+      "description": "n. A communications and signal- routing mechanism, possibly incorporating usage tracking and billing features, for use in connecting multiple remote users to the Internet."
+    },
+    {
+      "title": "Internet access provider ",
+      "description": "n. See ISP."
+    },
+    {
+      "title": "Internet account ",
+      "description": "n. A generic term for a registered username at an Internet Service Provider (ISP). An Internet account is accessed via username and password. Services such as dial-in PPP Internet access and e-mail are provided by ISPs to Internet account owners."
+    },
+    {
+      "title": "Internet address ",
+      "description": "n. See domain name address, e-mail address, IP address."
+    },
+    {
+      "title": "Internet appliance ",
+      "description": "n. 1. See set-top box. 2. See server appliance."
+    },
+    {
+      "title": "Internet Architecture Board ",
+      "description": "n. The body of the Internet Society (ISOC) responsible for overall architectural considerations regarding the Internet. The IAB also serves to adjudicate disputes in the standards process. Acronym: IAB.See also Internet Society."
+    },
+    {
+      "title": "Internet Assigned Numbers Authority ",
+      "description": "n. See IANA, ICANN."
+    },
+    {
+      "title": "Internet backbone ",
+      "description": "n. One of several high-speed networks connecting many local and regional networks, with at least one connection point where it exchanges packets with other Internet backbones. Historically, the NSFnet (predecessor to the modern Internet) was the backbone to the entire Internet in the United States. This backbone linked the supercomputing centers that the National Science Foundation (NSF) runs. Today, different providers have their own backbones so that the backbone for the supercomputing centers is independent of backbones for commercial Internet providers such as MCI and Sprint. See also backbone."
+    },
+    {
+      "title": "Internet broadcasting ",
+      "description": "n. Broadcasting of audio, or audio plus video, signals across the Internet. Internet broadcasting includes conventional over-the-air broadcast stations that transmit their signals into the Internet as well as Internet-only stations. Listeners use audio Internet software, such as RealAudio. One method of Internet broadcasting is MBONE. See also MBONE, RealAudio."
+    },
+    {
+      "title": "Internet Cache Protocol ",
+      "description": "n. See ICP. "
+    },
+    {
+      "title": "Internet Control Message Protocol ",
+      "description": "n. See ICMP."
+    },
+    {
+      "title": "Internet Corporation for Assigned Names and Numbers ",
+      "description": "n. See ICANN."
+    },
+    {
+      "title": "Internet cramming ",
+      "description": "n. See Web cramming."
+    },
+    {
+      "title": "Internet Directory ",
+      "description": "n. 1. Online database of sites organized by category where you can search for files and information by subject, keyword, or other criteria. 2. Storage place for information such as names, Web addresses, organizations, departments, countries, and locations. Typically, Internet Directories are used to look up e-mail addresses that are not in a local address book or a corporate-wide directory."
+    },
+    {
+      "title": "Internet Draft ",
+      "description": "n. A document produced by the Internet Engineering Task Force (IETF) for purposes of discussing a possible change in standards that govern the Internet. An Internet Draft is subject to revision or replacement at any time; if not replaced or revised, the Internet Draft is valid for no more than six months. An Internet Draft, if accepted, may be developed into an RFC. See also IETF, RFC."
+    },
+    {
+      "title": "Internet Engineering and Planning Group ",
+      "description": "n. See IEPG."
+    },
+    {
+      "title": "Internet Engineering Steering Group",
+      "description": "n. The group within the Internet Society (ISOC) that, along with the Internet Architecture Board (IAB), reviews the standards proposed by the Internet Engineering Task Force (IETF). Acronym: IESG"
+    },
+    {
+      "title": "Internet Engineering Task Force ",
+      "description": "n. See IETF."
+    },
+    {
+      "title": "Internet Explorer ",
+      "description": "n. Microsoft’s Web browsing software. Introduced in October 1995, the latest versions of Internet Explorer include many features that allow you to customize your experience on the Web. Internet Explorer is also available for the Macintosh and UNIX platforms. See also ActiveX control, Java applet, Web browser."
+    },
+    {
+      "title": "Internet Foundation Classes ",
+      "description": "n. A Java class library developed by Netscape to facilitate the creation of fullfeature, mission-critical Java applications. Internet Foundation Classes (IFC) comprises user-interface objects and frameworks intended to extend Java’s Abstract Window Toolkit (AWT) and includes a multifont text editor; essential application controls; and drag-and-drop, drawing/ event, windowing, animation, object persistence, singlethread, and localization frameworks. See also Abstract Window Toolkit, Application Foundation Classes, Java Foundation Classes, Microsoft Foundation Classes."
+    },
+    {
+      "title": "Internet gateway ",
+      "description": "n. A device that provides the connection between the Internet backbone and another network, such as a LAN (local area network). Usually the device is a computer dedicated to the task or a router. The gateway generally performs protocol conversion between the Internet backbone and the network, data translation or conversion, and message handling. A gateway is considered a node on the Internet. See also gateway, Internet backbone, node (definition 2), router."
+    },
+    {
+      "title": "Internet Group Membership Protocol ",
+      "description": "n. A protocol used by IP hosts to report their host group memberships to any immediately neighboring multicast routers. Acronym: IGMP."
+    },
+    {
+      "title": "Internet home ",
+      "description": "n. See smart home."
+    },
+    {
+      "title": "Internet Information Services ",
+      "description": "n. Software services that support Web site creation, configuration, and management, along with other Internet functions. Internet Information Services include Network News Transfer Protocol (NNTP), File Transfer Protocol (FTP), and Simple Mail Transfer Protocol (SMTP)."
+    },
+    {
+      "title": "Internet Inter-ORB Protocol ",
+      "description": "n. See IIOP."
+    },
+    {
+      "title": "Internet Mail Consortium ",
+      "description": "n. An international membership organization of businesses and vendors involved in activities related to e-mail transmission over the Internet. The goals of the Internet Mail Consortium are related to the promotion and expansion of Internet mail. The group’s interests range from making Internet mail easier for new users to advancing new mail technologies and expanding the role played by Internet mail into areas such as electronic commerce and entertainment. For example, the Internet Mail Consortium supports two companion specifications, vCalendar and vCard, designed to facilitate electronic exchange of scheduling and personal information. Acronym: IMC."
+    },
+    {
+      "title": "Internet Naming Service ",
+      "description": "n. See WINS."
+    },
+    {
+      "title": "Internet Printing Protocol ",
+      "description": "n. A specification for transmission of documents to printers through the Internet. Development of the Internet Printing Protocol (IPP) was proposed in 1997 by members of the Internet Engineering Task Force (IETF). Intended to provide a standard protocol for Internet-based printing, IPP covers both printing and printer management (printer status, job cancellation, and so on). It is applicable to print servers and to networkcapable printers."
+    },
+    {
+      "title": "Internet Protocol ",
+      "description": "n. See IP."
+    },
+    {
+      "title": "Internet Protocol address ",
+      "description": "n. See IP address."
+    },
+    {
+      "title": "Internet Protocol next generation ",
+      "description": "n. See IPng."
+    },
+    {
+      "title": "Internet Protocol number ",
+      "description": "n. See IP address."
+    },
+    {
+      "title": "Internet Protocol Security ",
+      "description": "n. See IPSec."
+    },
+    {
+      "title": "Internet Protocol version 4 ",
+      "description": "n. See IPv4."
+    },
+    {
+      "title": "Internet Protocol version 6 ",
+      "description": "n. See IPv6."
+    },
+    {
+      "title": "Internet reference model",
+      "description": "n. See TCP/IP reference model."
+    },
+    {
+      "title": "Internet Relay Chat ",
+      "description": "n. See IRC."
+    },
+    {
+      "title": "Internet Research Steering Group ",
+      "description": "n. The governing body of the Internet Research Task Force (IRTF). Acronym: IRSG."
+    },
+    {
+      "title": "Internet Research Task Force ",
+      "description": "n. A volunteer organization that is an arm of the Internet Society (ISOC) focused on making long-term recommendations concerning the Internet to the Internet Architecture Board (IAB). Acronym: IRTF. See also Internet Society."
+    },
+    {
+      "title": "Internet robot",
+      "description": "n. See spider."
+    },
+    {
+      "title": "Internet security ",
+      "description": "n. A broad topic dealing with all aspects of data authentication, privacy, integrity, and verification for transactions over the Internet. For example, credit card purchases made via a World Wide Web browser require attention to Internet security issues to ensure that the credit card number is not intercepted by an intruder or copied from the server where the number is stored, and to verify that the credit card number is actually sent by the person who claims to be sending it."
+    },
+    {
+      "title": "Internet Security and Acceleration Server ",
+      "description": "n. A software application from Microsoft Corporation to increase the security and performance of Internet access for businesses. Internet Security and Acceleration Server provides an enterprise firewall and high-performance Web cache server to securely manage the flow of information from the Internet through the enterprise’s internal network. Acronym: ISA Server."
+    },
+    {
+      "title": "Internet Server Application Programming Interface ",
+      "description": "n. See ISAPI."
+    },
+    {
+      "title": "Internet service provider ",
+      "description": "n. See ISP."
+    },
+    {
+      "title": "Internet Society ",
+      "description": "n. An international, nonprofit organization based in Reston, Virginia, comprising individuals, companies, foundations, and government agencies, that promotes the use, maintenance, and development of the Internet. The Internet Architecture Board (IAB) is a body within the Internet Society. In addition, the Internet Society publishes the Internet Society News and produces the annual INET conference. Acronym: ISOC.See also INET, Internet Architecture Board."
+    },
+    {
+      "title": "Internet Software Consortium ",
+      "description": "n. A nonprofit organization that develops software that is available for free, via the World Wide Web or FTP, and engages in development of Internet standards such as the Dynamic Host Configuration Protocol (DHCP). Acronym: ISC. See also DHCP."
+    },
+    {
+      "title": "Internet SSE ",
+      "description": "n. See SSE."
+    },
+    {
+      "title": "Internet Streaming Media Alliance ",
+      "description": "n. See ISMA."
+    },
+    {
+      "title": "Internet synchronization ",
+      "description": "n. 1. The process of synchronizing data between computing and communication devices that are connected to the Internet. 2. A feature in Microsoft Jet and Microsoft Access that allows replicated information to be synchronized in an environment in which an Internet server is configured with Microsoft Replication Manager, a tool included with Microsoft Office 2000 Developer."
+    },
+    {
+      "title": "Internet Talk Radio ",
+      "description": "n. Audio programs similar to radio broadcasts but distributed over the Internet in the form of files that can be downloaded via FTP. Internet Talk Radio programs, prepared at the National Press Building in Washington, D.C., are 30 minutes to 1 hour in length; a 30-minute program requires about 15 MB of disk space. Acronym: ITR."
+    },
+    {
+      "title": "Internet telephone ",
+      "description": "n. Point-to-point voice communication that uses the Internet instead of the public-switched telecommunications network to connect the calling and called parties. Both the sending and the receiving party need a computer, a modem, an Internet connection, and an Internet telephone software package to make and receive calls."
+    },
+    {
+      "title": "Internet Telephony Service Provider ",
+      "description": "n. See ITSP."
+    },
+    {
+      "title": "Internet telephony ",
+      "description": "n. See VoIP."
+    },
+    {
+      "title": "Internet television ",
+      "description": "n. The transmission of television audio and video signals over the Internet."
+    },
+    {
+      "title": "Internet traffic distribution ",
+      "description": "n. See ITM."
+    },
+    {
+      "title": "Internet traffic management ",
+      "description": "n. See ITM."
+    },
+    {
+      "title": "internetwork (1)",
+      "description": "adj. Of or pertaining to communications between connected networks. It is often used to refer to communication between one LAN (local area network) and another over the Internet or another WAN (wide-area network). See also LAN, WAN."
+    },
+    {
+      "title": "internetwork (2)",
+      "description": "n. A network made up of smaller, interconnected networks."
+    },
+    {
+      "title": "Internetwork Packet Exchange ",
+      "description": "n. See IPX."
+    },
+    {
+      "title": "Internetwork Packet Exchange/Sequenced Packet Exchange ",
+      "description": "n. See IPX/SPX."
+    },
+    {
+      "title": "Internet World ",
+      "description": "n. Series of international conferences and exhibitions on e-commerce and Internet technology sponsored by Internet World magazine. Major conferences include the world’s largest Internet conferences, Internet World Spring and Internet World Fall."
+    },
+    {
+      "title": "Internet Worm ",
+      "description": "n. A string of self-replicating computer code that was distributed through the Internet in November 1988. In a single night, it overloaded and shut down a large portion of the computers connected to the Internet at that time by replicating itself over and over on each computer it accessed, exploiting a bug in UNIX systems. Intended as a prank, the Internet Worm was written by a student at Cornell University. See also back door, worm. "
+    },
+    {
+      "title": "InterNIC ",
+      "description": "n. Short for NSFnet (Internet) Network Information Center. The organization that has traditionally registered domain names and IP addresses as well as distributed information about the Internet. InterNIC was formed in 1993 as a consortium involving the U.S. National Science Foundation, AT&T, General Atomics, and Network Solutions, Inc. (Herndon, Va.). The latter partner administers InterNIC Registration Services, which assigns Internet names and addresses."
+    },
+    {
+      "title": "interoperability ",
+      "description": "n. Referring to components of computer systems that are able to function in different environments. For example, Microsoft’s NT operating system is interoperable on Intel, DEC Alpha, and other CPUs. Another example is the SCSI standard for disk drives and other peripheral devices that allows them to interoperate with different operating systems. With software, interoperability occurs when programs are able to share data and resources. Microsoft Word, for example, is able to read files created by Microsoft Excel."
+    },
+    {
+      "title": "interpolate ",
+      "description": "vb. To estimate intermediate values between two known values in a sequence."
+    },
+    {
+      "title": "interpret ",
+      "description": "vb. 1. To translate a statement or instruction into executable form and then execute it. 2. To execute a program by translating one statement at a time into executable form and executing it before translating the next statement, rather than by translating the program completely into executable code (compiling it) before executing it separately. See also interpreter. Compare compile."
+    },
+    {
+      "title": "interpreted language ",
+      "description": "n. A language in which programs are translated into executable form and executed one statement at a time rather than being translated completely (compiled) before execution. Basic, LISP, and APL are generally interpreted languages, although Basic can also be compiled. See also compiler. Compare compiled language."
+    },
+    {
+      "title": "interpreter ",
+      "description": "n. A program that translates and then executes each statement in a program written in an interpreted language. See also compiler, interpreted language, language processor. "
+    },
+    {
+      "title": "interprocess communication ",
+      "description": "n. The ability of one task or process to communicate with another in a multitasking operating system. Common methods include pipes, semaphores, shared memory, queues, signals, and mailboxes. Acronym: IPC."
+    },
+    {
+      "title": "inter-record gap ",
+      "description": "n. An unused space between data blocks stored on a disk or tape. Because the speed of disks and tapes fluctuates slightly during operation of the drives, a new data block may not occupy the exact space occupied by the old block it overwrites. The inter-record gap prevents the new block from overwriting part of adjacent blocks in such a case. Acronym: IRG.Also called: gap, interblock gap."
+    },
+    {
+      "title": "interrogate ",
+      "description": "vb. To query with the expectation of an immediate response. For example, a computer may interrogate an attached terminal to determine the terminal’s status (readiness to transmit or receive)."
+    },
+    {
+      "title": "interrupt ",
+      "description": "n. A signal from a device to a computer’s processor requesting attention from the processor. When the processor receives an interrupt, it suspends its current operations, saves the status of its work, and transfers control to a special routine known as an interrupt handler, which contains the instructions for dealing with the particular situation that caused the interrupt. Interrupts can be generated by various hardware devices to request service or report problems, or by the processor itself in response to program errors or requests for operating-system services. Interrupts are the processor’s way of communicating with the other elements that make up a computer system. A hierarchy of interrupt priorities determines which interrupt request will be handled first if more than one request is made. A program can temporarily disable some interrupts if it needs the full attention of the processor to complete a particular task. See also exception, external interrupt, hardware interrupt, internal interrupt, software interrupt."
+    },
+    {
+      "title": "interrupt-driven processing ",
+      "description": "n. Processing that takes place only when requested by means of an interrupt. After the required task has been completed, the CPU is free to perform other tasks until the next interrupt occurs. Interrupt- driven processing is usually employed for responding to events such as a key pressed by the user or a floppy disk drive that has become ready to transfer data. See also interrupt. Compare autopolling."
+    },
+    {
+      "title": "interrupt handler ",
+      "description": "n. A special routine that is executed when a specific interrupt occurs. Interrupts from different causes have different handlers to carry out the corresponding tasks, such as updating the system clock or reading the keyboard. A table stored in low memory contains pointers, sometimes called vectors, that direct the processor to the various interrupt handlers. Programmers can create interrupt handlers to replace or supplement existing handlers, such as by making a clicking sound each time the keyboard is pressed."
+    },
+    {
+      "title": "interrupt priority ",
+      "description": "n. See interrupt."
+    },
+    {
+      "title": "interrupt request line ",
+      "description": "n. A hardware line over which a device such as an input/output port, the keyboard, or a disk drive can send interrupts (requests for service) to the CPU. Interrupt request lines are built into the computer’s internal hardware and are assigned different levels of priority so that the CPU can determine the sources and relative importance of incoming service requests. They are of concern mainly to programmers dealing with low-level operations close to the hardware. Acronym: IRQ."
+    },
+    {
+      "title": "interrupt vector ",
+      "description": "n. A memory location that contains the address of the interrupt handler routine that is to be called when a specific interrupt occurs. See also interrupt."
+    },
+    {
+      "title": "interrupt vector table ",
+      "description": "n. See dispatch table."
+    },
+    {
+      "title": "intersect ",
+      "description": "n. An operator in relational algebra, used in database management. Given two relations (tables), A and B, that have corresponding fields (columns) containing the same types of values (that is, they are union-compatible), then INTERSECT A, B builds a third relation containing only those tuples (rows) that appear in both A and B. See also tuple."
+    },
+    {
+      "title": "interstitial ",
+      "description": "n. An Internet ad format that appears in a popup window between Web pages. Interstitial ads download completely before appearing, usually while a Web page the user has chosen is loading. Because interstitial pop-up windows don’t appear until the entire ad has downloaded, they often use animated graphics, audio, and other attention- getting multimedia technology that require longer download time."
+    },
+    {
+      "title": "in the wild ",
+      "description": "adj. Currently affecting the computing public, particularly in regard to computer viruses. A virus that is not yet contained or controlled by antivirus software or that keeps reappearing despite virus detection measures is considered to be in the wild. See also virus."
+    },
+    {
+      "title": "intranet ",
+      "description": "n. A private network based on Internet protocols such as TCP/IP but designed for information management within a company or organization. Its uses include such services as document distribution, software distribution, access to databases, and training. An intranet is so called because it looks like a World Wide Web site and is based on the same technologies, yet is strictly internal to the organization and is not connected to the Internet proper. Some intranets also offer access to the Internet, but such connections are directed through a firewall that protects the internal network from the external Web. Compare extranet."
+    },
+    {
+      "title": "intrinsic font ",
+      "description": "n. A font (type size and design) for which a bit image (an exact pattern) exists that can be used as is, without such modification as scaling. Compare derived font."
+    },
+    {
+      "title": "intruder ",
+      "description": "n. An unauthorized user or unauthorized program, generally considered to have malicious intent, on a computer or computer network. See also bacterium, cracker, Trojan horse, virus."
+    },
+    {
+      "title": "intruder attack ",
+      "description": "n. A form of hacker attack in which the hacker enters the system without prior knowledge or access to the system. The intruder will typically use a combination of probing tools and techniques to learn about the network to be hacked. Compare insider attack."
+    },
+    {
+      "title": "Intrusion Countermeasure Electronics ",
+      "description": "n. See ICE (definition 3)."
+    },
+    {
+      "title": "intrusion detection ",
+      "description": "n. See IDS."
+    },
+    {
+      "title": "intrusion-detection system ",
+      "description": "n. See IDS."
+    },
+    {
+      "title": "invalid ",
+      "description": "adj. Erroneous or unrecognizable because of a flaw in reasoning or an error in input. Invalid results, for example, might occur if the logic in a program is faulty. Compare illegal."
+    },
+    {
+      "title": "inverse video ",
+      "description": "n. See reverse video."
+    },
+    {
+      "title": "invert ",
+      "description": "vb. 1. To reverse something or change it to its opposite. For example, to invert the colors on a monochrome display means to change light to dark and dark to light. See the illustration. 2. In a digital electrical signal, to replace a high level by a low level and vice versa. This type of operation is the electronic equivalent of a Boolean NOT operation."
+    },
+    {
+      "title": "inverted file ",
+      "description": "n. See inverted list."
+    },
+    {
+      "title": "inverted list ",
+      "description": "n. A method for creating alternative locators for sets of information. For example, in a file containing data about cars, records 3, 7, 19, 24, and 32 might contain the value “Red” in the field COLOR. An inverted list (or index) on the field COLOR would contain a record for “Red” followed by the locator numbers 3, 7, 19, 24, and 32. See also field, record. Compare linked list."
+    },
+    {
+      "title": "inverted-list database ",
+      "description": "n. A database similar to a relational database but with several differences that make it much more difficult for the database management system to ensure data consistency, integrity, and security than with a relational system. The rows (records or tuples) of an inverted-list table are ordered in a specific physical sequence, independent of any orderings that may be imposed by means of indexes. The total database can also be ordered, with specified logical merge criteria being imposed between tables. Any number of search keys, either simple or composite, can be defined. Unlike the keys of a relational system, these search keys are arbitrary fields or combinations of fields. No integrity or uniqueness constraints are enforced; neither the indexes nor the tables are transparent to the user. Compare relational database."
+    },
+    {
+      "title": "inverted structure ",
+      "description": "n. A file structure in which record keys are stored and manipulated separately from the records themselves."
+    },
+    {
+      "title": "inverter ",
+      "description": "n. 1. A logic circuit that inverts (reverses) the signal input to it—for example, inverting a high input to a low output. 2. A device that converts direct current (DC) to alternating current (AC)."
+    },
+    {
+      "title": "invoke ",
+      "description": "vb. To call or activate; used in reference to commands and subroutines."
+    },
+    {
+      "title": "I/O ",
+      "description": "n. See input/output."
+    },
+    {
+      "title": "I/O-bound ",
+      "description": "adj. See input/output-bound."
+    },
+    {
+      "title": "I/O controller ",
+      "description": "n. See input/output controller."
+    },
+    {
+      "title": "I/O device ",
+      "description": "n. See input/output device."
+    },
+    {
+      "title": "ion-deposition printer ",
+      "description": "n. A page printer in which the image is formed in electrostatic charges on a drum that picks up toner and transfers it to the paper, as in a laser, LED, or LCD printer, but the drum is charged using a beam of ions rather than light. These printers, used mainly in high-volume data-processing environments, typically operate at speeds from 30 to 90 pages per minute. In iondeposition printers, toner is typically fused to paper by a method that is fast and does not require heat but leaves the paper a little glossy, making it unsuitable for business correspondence In addition, ion-deposition printers tend to produce thick, slightly fuzzy characters; the technology is also more expensive than that of a laser printer. See also electrophotographic printers, nonimpact printer, page printer. Compare laser printer, LCD printer, LED printer."
+    },
+    {
+      "title": "I/O port ",
+      "description": "n. See port (1) (definition 1)."
+    },
+    {
+      "title": "I/O processor ",
+      "description": "n. See input/output processor."
+    },
+    {
+      "title": "IO.SYS ",
+      "description": "n. One of two hidden system files installed on an MS-DOS startup disk. IO.SYS in IBM releases of MSDOS (called IBMBIO.COM) contains device drivers for peripherals such as the display, keyboard, floppy disk drive, hard disk drive, serial port, and real-time clock. See also MSDOS.SYS. "
+    },
+    {
+      "title": "IP",
+      "description": "n. Acronym for Internet Protocol. The protocol within TCP/IP that governs the breakup of data messages into packets, the routing of the packets from sender to destination network and station, and the reassembly of the packets into the original data messages at the destination. IP runs at the internetwork layer in the TCP/IP model— equivalent to the network layer in the ISO/OSI reference model. See also ISO/OSI reference model, TCP/IP. Compare TCP."
+    },
+    {
+      "title": "IP address ",
+      "description": "n. Short for Internet Protocol address. A 32- bit (4-byte) binary number that uniquely identifies a host (computer) connected to the Internet to other Internet hosts, for the purposes of communication through the transfer of packets. An IP address is expressed in “dotted quad” format, consisting of the decimal values of its 4 bytes, separated with periods; for example, 127.0.0.1. The first 1, 2, or 3 bytes of the IP address identify the network the host is connected to; the remaining bits identify the host itself. The 32 bits of all 4 bytes together can signify almost 232, or roughly 4 billion, hosts. (A few small ranges within that set of numbers are not used.) Also called: Internet Protocol number, IP number. See also host, IANA, ICANN, InterNIC, IP, IP address classes, packet (definition 2). Compare domain name."
+    },
+    {
+      "title": "IP address classes ",
+      "description": "n. Short for Internet Protocol address classes. The classes into which IP addresses were divided to accommodate different network sizes. Each class is associated with a range of possible IP addresses and is limited to a specific number of networks per class and hosts per network. See the table. See also Class A IP address, Class B IP address, Class C IP address, IP address."
+    },
+    {
+      "title": "IP aliasing ",
+      "description": "n. See NAT."
+    },
+    {
+      "title": "IPC ",
+      "description": "n. See interprocess communication."
+    },
+    {
+      "title": "ipchains ",
+      "description": "n. See iptables."
+    },
+    {
+      "title": "IP Filter ",
+      "description": "n. Short for Internet Protocol Filter. A TCP/IP packet filter for UNIX, particularly BSD. Similar in functionality to netfilter and iptables in Linux, IP Filter can be used to provide network address translation (NAT) or firewall services. See also firewall. Compare netfilter, iptables."
+    },
+    {
+      "title": "IPL ",
+      "description": "n. See initial program load."
+    },
+    {
+      "title": "IP masquerading ",
+      "description": "n. See NAT."
+    },
+    {
+      "title": "IP multicasting ",
+      "description": "n. Short for Internet Protocol multicasting. The extension of local area network multicasting technology to a TCP/IP network. Hosts send and receive multicast datagrams, the destination fields of which specify IP host group addresses rather than individual IP addresses. A host indicates that it is a member of a group by means of the Internet Group Management Protocol. See also datagram, Internet Group Membership Protocol, IP, MBONE, multicasting."
+    },
+    {
+      "title": "IPng ",
+      "description": "n. Acronym for Internet Protocol next generation. A revised version of the Internet Protocol (IP) designed primarily to address growth on the Internet. IPng is compatible with, but an evolutionary successor to, the current version of IP, IPv4 (IP version 4), and was approved as a draft standard in 1998 by the IETF (Internet Engineering Task Force). It offers several improvements over IPv4 including a quadrupled IP address size (from 32 bits to 128 bits), expanded routing capabilities, simplified header formats, improved support for options, and support for quality of service, authentication, and privacy. Also called: IPv6. See also IETF, IP, IP address."
+    },
+    {
+      "title": "IP number ",
+      "description": "n. See IP address."
+    },
+    {
+      "title": "IPP ",
+      "description": "n. See Internet Printing Protocol."
+    },
+    {
+      "title": "IPSec ",
+      "description": "n. Short for Internet Protocol Security. A security mechanism under development by the IETF (Internet Engineering Task Force) designed to ensure secure packet exchanges at the IP (Internet Protocol) layer. IPSec is based on two levels of security: AH (Authentication Header), which authenticates the sender and assures the recipient that the information has not been altered during transmission, and ESP (Encapsulating Security Protocol), which provides data encryption in addition to authentication and integrity assurance. IPSec protects all protocols in the TCP/IP protocol suite and Internet communications by using Layer Two Tunneling Protocol (L2TP) and is expected to ensure secure transmissions over virtual private networks (VPNs). See also anti-replay, communications protocol, Diffie-Hellman, ESP, IETF, IP, IPv6, Layer L2TP, TCP/IP, packet, virtual private network."
+    },
+    {
+      "title": "IP Security ",
+      "description": "n. See IPSec."
+    },
+    {
+      "title": "IP/SoC Conference and Exhibition ",
+      "description": "n. Acronym for Intellectual Property/System on a Chip Conference and Exhibition. Leading conference and exhibition for executives, architects, and engineers using intellectual property in the design and production of system-on-a-chip semiconductors. The event features product exhibits and forums for the exchange of information."
+    },
+    {
+      "title": "IP splicing ",
+      "description": "n. See IP spoofing."
+    },
+    {
+      "title": "IP spoofing ",
+      "description": "n. The act of inserting a false sender IP address into an Internet transmission in order to gain unauthorized access to a computer system. Also called: IP splicing. See also IP address, spoofing."
+    },
+    {
+      "title": "IP switching ",
+      "description": "n. A technology developed by Ipsilon Networks (Sunnyvale, Calif.) that enables a sequence of IP packets with a common destination to be transmitted over a high-speed, high-bandwidth Asynchronous Transfer Mode (ATM) connection."
+    },
+    {
+      "title": "iptables ",
+      "description": "n. A utility used to configure firewall settings and rules in Linux. Part of the netfilter framework in the Linux kernel, iptables replaces ipchains, a previous implementation. See also netfilter. Compare IP Filter."
+    },
+    {
+      "title": "IP telephony ",
+      "description": "n. Telephone service including voice and fax, provided through an Internet or network connection. IP telephony requires two steps: conversion of analog voice to digital format by a coding/uncoding device (codec) and conversion of the digitized information to packets for IP transmission. Also called: Internet telephony, Voice over IP (VoIP). See also H.323, VoIP."
+    },
+    {
+      "title": "IP tunneling ",
+      "description": "n. A technique used to encapsulate data inside a TCP/IP packet for transmission between IP addresses. IP tunneling provides a secure means for data from different networks to be shared over the Internet."
+    },
+    {
+      "title": "IPv4 ",
+      "description": "n. Short for Internet Protocol version 4. The current version of the Internet Protocol (IP), as compared with the next-generation IP, which is known familiarly as IPng and more formally as IPv6 (IP version 6). See also IP. Compare IPng."
+    },
+    {
+      "title": "IPv6 ",
+      "description": "n. Short for Internet Protocol version 6. The nextgeneration Internet Protocol from the Internet Engineering Task Force (IETF), IPv6 is now included as part of IP support in many products and in the major operating systems. IPv6 offers several improvements from IPv4, most significantly an increase of available address space from 32 to 128 bits, which makes the number of available addresses effectively unlimited. Usually called IPng (next generation), IPv6 also includes support for multicast and anycast addressing. See also anycasting, IP, IPng."
+    },
+    {
+      "title": "ipvs ",
+      "description": "n. Acronym for IP Virtual Server. See LVS."
+    },
+    {
+      "title": "IPX ",
+      "description": "n. Acronym for Internetwork Packet Exchange. The protocol in Novell NetWare that governs addressing and routing of packets within and between LANs. IPX packets can be encapsulated in Ethernet packets or Token Ring frames. IPX operates at ISO/OSI levels 3 and 4 but does not perform all the functions at those levels. In particular, IPX does not guarantee that a message will be complete (no lost packets); SPX has that job. See also Ethernet (definition 1), packet, Token Ring network. Compare SPX (definition 1)."
+    },
+    {
+      "title": "IPX/SPX ",
+      "description": "n. Acronym for Internetwork Packet Exchange/ Sequenced Packet Exchange. The network and transport level protocols used by Novell NetWare, which together correspond to the combination of TCP and IP in the TCP/ IP protocol suite. IPX is a connectionless protocol that handles addressing and routing of packets. SPX, which runs above IPX, ensures correct delivery. See also IPX, SPX (definition 1)."
+    },
+    {
+      "title": "IR ",
+      "description": "n. See infrared."
+    },
+    {
+      "title": "IRC ",
+      "description": "n. Acronym for Internet Relay Chat. A service that enables an Internet user to participate in a conversation on line in real time with other users. An IRC channel, maintained by an IRC server, transmits the text typed by each user who has joined the channel to all other users who have joined the channel. Generally, a channel is dedicated to a particular topic, which may be reflected in the channel’s name. An IRC client shows the names of currently active channels, enables the user to join a channel, and then displays the other participants’ words on individual lines so that the user can respond. IRC was invented in 1988 by Jarkko Oikarinen of Finland. See also channel (definition 2), server (definition 2)."
+    },
+    {
+      "title": "IrDA ",
+      "description": "n. Acronym for Infrared Data Association. The industry organization of computer, component, and telecommunications vendors who have established the standards for infrared communication between computers and peripheral devices such as printers."
+    },
+    {
+      "title": "IRE scale ",
+      "description": "n. Short for Institute of Radio Engineers scale. Scale to determine video signal amplitudes as devised by the Institute of Radio Engineers, which is now part of the Institute of Electrical and Electronic Engineers (IEEE). The IRE scale includes a total of 140 units, with 100 up and 40 down from zero."
+    },
+    {
+      "title": "IRG ",
+      "description": "n. See inter-record gap."
+    },
+    {
+      "title": "IRGB ",
+      "description": "n. Acronym for Intensity Red Green Blue. A type of color encoding originally used in IBM’s Color/Graphics Adapter (CGA) and continued in the EGA (Enhanced Graphics Adapter) and VGA (Video Graphics Array). The standard 3-bit RGB color encoding (specifying eight colors) is supplemented by a fourth bit (called Intensity) that uniformly increases the intensity of the red, green, and blue signals, resulting in a total of 16 colors. See also RGB."
+    },
+    {
+      "title": "IRL ",
+      "description": "n. Acronym for in real life. An expression used by many online users to denote life outside the computer realm, especially in conjunction with virtual worlds such as online talkers, IRC, MUDs, and virtual reality. See also IRC, MUD, talker, virtual reality."
+    },
+    {
+      "title": "IRQ ",
+      "description": "n. Acronym for interrupt request. One of a set of possible hardware interrupts, identified by a number, on a Wintel computer. The number of the IRQ determines which interrupt handler will be used. In the AT bus, ISA, and EISA, 15 IRQs are available; in Micro Channel Architecture, 255 IRQs are available. Each device’s IRQ is hardwired or set by a jumper or DIP switch. The VL bus and the PCI local bus have their own interrupt systems, which they translate to IRQ numbers. See also AT bus, DIP switch, EISA, interrupt, IRQ conflict, ISA, jumper, Micro Channel Architecture, PCI local bus, VL bus."
+    },
+    {
+      "title": "IRQ conflict ",
+      "description": "n. The condition on a Wintel computer in which two different peripheral devices use the same IRQ to request service from the central processing unit (CPU). An IRQ conflict will prevent the system from working correctly; for example, the CPU may respond to an interrupt from a serial mouse by executing an interrupt handler for interrupts generated by a modem. IRQ conflicts can be prevented by the use of Plug and Play hardware and software. See also interrupt handler, IRQ, Plug and Play."
+    },
+    {
+      "title": "irrational number ",
+      "description": "n. A real number that cannot be expressed as the ratio of two integers. Examples of irrational numbers are the square root of 3, pi, and e. See also integer, real number."
+    },
+    {
+      "title": "IRSG ",
+      "description": "n. See Internet Research Steering Group."
+    },
+    {
+      "title": "IRTF ",
+      "description": "n. See Internet Research Task Force."
+    },
+    {
+      "title": "IS ",
+      "description": "n. See Information Services."
+    },
+    {
+      "title": "ISA ",
+      "description": "n. Acronym for Industry Standard Architecture. A bus design specification that allows components to be added as cards plugged into standard expansion slots in IBM Personal Computers and compatibles. Originally introduced in the IBM PC/XT with an 8-bit data path, ISA was expanded in 1984, when IBM introduced the PC/AT, to permit a 16-bit data path. A 16-bit ISA slot actually consists of two separate 8-bit slots mounted end-to-end so that a single 16-bit card plugs into both slots. An 8-bit expansion card can be inserted and used in a 16-bit slot (it occupies only one of the two slots), but a 16-bit expansion card cannot be used in an 8-bit slot. See also EISA, Micro Channel Architecture."
+    },
+    {
+      "title": "ISAM ",
+      "description": "n. See indexed sequential access method."
+    },
+    {
+      "title": "ISAPI ",
+      "description": "n. Acronym for Internet Server Application Programming Interface. An easy-to-use, high-performance interface for back-end applications for Microsoft’s Internet Information Server (IIS). ISAPI has its own dynamic-link library, which offers significant performance advantages over the CGI (Common Gateway Interface) specification. See also API, dynamic-link library, Internet Information Server. Compare CGI."
+    },
+    {
+      "title": "ISAPI filter ",
+      "description": "n. A DLL file used by Microsoft Internet Information Server (IIS) to verify and authenticate ISAPI requests received by the IIS."
+    },
+    {
+      "title": "ISA Server ",
+      "description": "n. See Internet Security and Acceleration Server."
+    },
+    {
+      "title": "ISA slot ",
+      "description": "n. A connection socket for a peripheral designed according to the ISA (Industry Standard Architecture) standard, which applies to the bus developed for use in the 80286 (IBM PC/AT) motherboard. See also ISA."
+    },
+    {
+      "title": "ISC ",
+      "description": "n. See Internet Software Consortium."
+    },
+    {
+      "title": "ISDN ",
+      "description": "n. Acronym for Integrated Services Digital Network. A high-speed digital communications network evolving from existing telephone services. The goal in developing ISDN was to replace the current telephone network, which requires digital-to-analog conversions, with facilities totally devoted to digital switching and transmission, yet advanced enough to replace traditionally analog forms of data, ranging from voice to computer transmissions, music, and video. ISDN is available in two forms, known as BRI (Basic Rate Interface) and PRI (Primary Rate Interface). BRI consists of two B (bearer) channels that carry data at 64 Kbps and one D (data) channel that carries control and signal information at 16 Kbps. In North America and Japan, PRI consists of 23 B channels and 1 D channel, all operating at 64 Kbps; elsewhere in the world, PRI consists of 30 B channels and 1 D channel. Computers and other devices connect to ISDN lines through simple, standardized interfaces. See also BRI, channel (definition 2), PRI."
+    },
+    {
+      "title": "ISDN terminal adapter ",
+      "description": "n. The hardware interface between a computer and an ISDN line. See also ISDN."
+    },
+    {
+      "title": "I seek you ",
+      "description": "n. See ICQ."
+    },
+    {
+      "title": "ISIS or IS-IS ",
+      "description": "n. Acronym for Intelligent Scheduling and Information System. A toolkit designed to help prevent and eliminate faults in manufacturing systems. Developed in 1980 at Cornell University, ISIS is now available commercially."
+    },
+    {
+      "title": "ISLAN ",
+      "description": "n. See isochronous network."
+    },
+    {
+      "title": "ISMA ",
+      "description": "n. Acronym for Internet Streaming Media Alliance. A nonprofit organization promoting the adoption of open standards for the streaming of rich media over Internet Protocol (IP) networks. ISMA membership consists of a number of technology companies and groups including Apple Computer, Cisco Systems, IBM, Kasenna, Philips, and Sun Microsystems. See also Windows Metafile Format."
+    },
+    {
+      "title": "ISO ",
+      "description": "n. Short for International Organization for Standardization (often incorrectly identified as an acronym for International Standards Organization), an international association of 130 countries, each of which is represented by its leading standard-setting organization—for example, ANSI (American National Standards Institute) for the United States. The ISO works to establish global standards for communications and information exchange. Primary among its accomplishments is the widely accepted ISO/OSI reference model, which defines standards for the interaction of computers connected by communications networks. ISO is not an acronym; rather, it is derived from the Greek word isos, which means “equal” and is the root of the prefix “iso-.”"
+    },
+    {
+      "title": "ISO 8601:1988 ",
+      "description": "n. A standard entitled “Data elements and interchange formats” from the International Organization for Standardization (ISO) that covers a number of date formats."
+    },
+    {
+      "title": "ISO 9660 ",
+      "description": "n. An international format standard for CDROM adopted by the International Organization for Standardization (ISO) that follows the recommendations embodied in the High Sierra specification, with some modifications. See also High Sierra specification."
+    },
+    {
+      "title": "ISOC ",
+      "description": "n. See Internet Society."
+    },
+    {
+      "title": "isochronous network ",
+      "description": "n. A type of network defined in the IEEE 802.9 specification that combines ISDN and LAN technologies to enable networks to carry multimedia. Also called: Integrated Services LAN, ISLAN."
+    },
+    {
+      "title": "isometric view ",
+      "description": "n. A display method for three-dimensional objects in which every edge has the correct length for the scale of the drawing and in which all parallel lines appear parallel. An isometric view of a cube, for example, shows the faces in symmetrical relation to one another and the height and width of each face evenly proportioned; the faces do not appear to taper with distance as they do when the cube is drawn in perspective. See the illustration. Compare perspective view."
+    },
+    {
+      "title": "ISO/OSI reference model ",
+      "description": "n. Short for International Organization for Standardization Open Systems Interconnection reference model. A layered architecture (plan) that standardizes levels of service and types of interaction for computers exchanging information through a communications network. The ISO/OSI reference model separates computer-to-computer communications into seven protocol layers, or levels, each building—and relying— upon the standards contained in the levels below it. The lowest of the seven layers deals solely with hardware links; the highest deals with software interactions at the application-program level. It is a fundamental blueprint designed to help guide the creation of networking hardware and software. See the illustration. Also called: OSI reference model."
+    },
+    {
+      "title": "ISP ",
+      "description": "n. Acronym for Internet service provider. A business that supplies Internet connectivity services to individuals, businesses, and other organizations. Some ISPs are large national or multinational corporations that offer access in many locations, while others are limited to a single city or region. Also called: access provider, service provider."
+    },
+    {
+      "title": "ISSE ",
+      "description": "n. See SSE."
+    },
+    {
+      "title": "ISV ",
+      "description": "n. See independent software vendor."
+    },
+    {
+      "title": "IT ",
+      "description": "n. Acronym for Information Technology. See Information Services."
+    },
+    {
+      "title": "italic ",
+      "description": "n. A type style in which the characters are evenly slanted toward the right. This sentence is in italics. Italics are commonly used for emphasis, foreign-language words and phrases, titles of literary and other works, technical terms, and citations. See also font family. Compare roman."
+    },
+    {
+      "title": "Itanium ",
+      "description": "n. An Intel microprocessor that uses explicitly parallel instruction set computing and 64-bit memory addressing."
+    },
+    {
+      "title": "iterate ",
+      "description": "vb. To execute one or more statements or instructions repeatedly. Statements or instructions so executed are said to be in a loop. See also iterative statement, loop."
+    },
+    {
+      "title": "iterative statement ",
+      "description": "n. A statement in a program that causes the program to repeat one or more statements. Examples of iterative statements in Basic are FOR, DO, REPEAT..UNTIL, and DO..WHILE. See also control statement."
+    },
+    {
+      "title": "ITI ",
+      "description": "n. See Intelligent Transportation Infrastructure."
+    },
+    {
+      "title": "I-time ",
+      "description": "n. See instruction time."
+    },
+    {
+      "title": "ITM ",
+      "description": "n. Short for Internet traffic management. The analysis and control of Internet traffic to improve efficiency and optimize for high availability. With ITM, Web traffic is distributed among multiple servers using load balancers and other devices. See also load balancing."
+    },
+    {
+      "title": "ITR ",
+      "description": "n. See Internet Talk Radio."
+    },
+    {
+      "title": "ITSP ",
+      "description": "n. Acronym for Internet Telephony Service Provider. A business that supplies PC-to-telephone calling capabilities to individuals, businesses, and organizations. Through an ITSP, calls initiated on a PC travel over the Internet to a gateway that, in turn, sends the call to the standard public switched phone network and, eventually, to the receiving telephone. See also ISP, telephony."
+    },
+    {
+      "title": "ITU ",
+      "description": "n. Acronym for International Telecommunication Union. An international organization based in Geneva, Switzerland, that is responsible for making recommendations and establishing standards governing telephone and data communications systems for public and private telecommunications organizations. Founded in 1865 under the name International Telegraph Union, it was renamed the International Telecommunication Union in 1934 to signify the full scope of its responsibilities. ITU became an agency of the United Nations in 1947. A reorganization in 1992 aligned the ITU into three governing bodies: the Radiocommunication Sector, the Telecommunication Standardization Sector (ITU-TSS, ITU-T, for short; formerly the CCITT), and the Telecommunication Development Sector. See also ITU-T."
+    },
+    {
+      "title": "ITU-T ",
+      "description": "n. The standardization division of the International Telecommunication Union, formerly called Comité Consultatif International Télégraphique et Téléphonique (CCITT). The ITU-T develops communications recommendations for all analog and digital communications. Also called: ITU-TSS. See also CCITT Groups 1-4, ITU."
+    },
+    {
+      "title": "ITU-TSS ",
+      "description": "n. See ITU-T."
+    },
+    {
+      "title": "ITU-T V series ",
+      "description": "n. See V series."
+    },
+    {
+      "title": "ITU-T X series ",
+      "description": "n. See X series."
+    },
+    {
+      "title": "iTV ",
+      "description": "n. Acronym for Interactive television. A communications medium combining television with interactive services. iTV offers two-way communications between users and communications providers. From their televisions, users can order special programming, respond to programming options, and access the Internet and additional services such as instant messaging and telephone functions."
+    },
+    {
+      "title": "IVR ",
+      "description": "n. See interactive voice response."
+    },
+    {
+      "title": "IVUE ",
+      "description": "n. A proprietary image format (from Live Pictures) that allows files to be adjusted to screen resolution at any zoom level."
+    },
+    {
+      "title": "i-way ",
+      "description": "n. See Information Superhighway."
+    },
+    {
+      "title": "J2EE ",
+      "description": "n. Acronym for Java 2 Platform Enterprise Edition. An application server framework from Sun Microsystems, Inc., for the development of distributed applications. It includes all the previous Java APIs targeted for multitiered distributed enterprise information systems. The J2EE platform consists of a set of services, application programming interfaces (APIs), and protocols that provide the functionality for developing multitiered, Web-based applications. See also application programming interface, Enterprise Java Beans, IDL, Java, JDBC, Jini, JMS, JNDI, JSP, JTA, JTS, RMI-IIOP. J n. A high-level programming language created by Kenneth Iverson, developer of APL, and Roger Hui. J is a successor language to APL that may be run on many platforms, including Windows 95, Windows NT, Macintosh, Linux, RS/6000, and Sun Sparc. Like APL, J is used primarily by mathematicians. See also APL."
+    },
+    {
+      "title": "jabber",
+      "description": "n. A continuous stream of random data transmitted over a network as the result of some malfunction."
+    },
+    {
+      "title": "Jabber ",
+      "description": "n. An XML-based instant messaging system. Jabber software is available for most operating systems and allows user access to other instant messaging services. Jabber is an open source application overseen by Jabber.org."
+    },
+    {
+      "title": "jack ",
+      "description": "n. A connector designed to receive a plug. A jack is commonly used in making audio and video connections."
+    },
+    {
+      "title": "jacket ",
+      "description": "n. See disk jacket."
+    },
+    {
+      "title": "jack in ",
+      "description": "vb. 1. To log on to a computer. 2. To connect to a network or BBS, especially for purposes of entering an IRC or a virtual reality simulation, such as a MUD. (To leave is to jack out.) See also IRC, MUD."
+    },
+    {
+      "title": "jack out ",
+      "description": "vb. 1. To log off a computer. 2. To disconnect from a network or online bulletin board system. See also jack in, log on."
+    },
+    {
+      "title": "Jacquard loom ",
+      "description": "n. The first machine that used punched cards to control its operation. In this loom, developed in 1801 by French inventor Joseph-Marie Jacquard, up to 24,000 cards were placed on a rolling drum. Where a hole was punched on a card, one of a set of rods could pass through and select a particular thread to be woven into the pattern. Jacquard was awarded a medal by the Emperor Napoleon for his invention. Later in the nineteenth century, punched cards were used in Charles Babbage’s computerlike Analytical Engine and in Herman Hollerith’s statistical tabulating machine. See also Analytical Engine, Hollerith tabulating/recording machine."
+    },
+    {
+      "title": "jaggies ",
+      "description": "n. The “stairsteps” that appear in diagonal lines and curves drawn at low resolutions in computer graphics. Also called: aliasing."
+    },
+    {
+      "title": "Janet ",
+      "description": "n. Short for the Joint Academic Network. A wide area network in the United Kingdom that serves as the principal backbone for the Internet in that country. See also backbone (definition 1)."
+    },
+    {
+      "title": ".jar ",
+      "description": "n. A file name extension that identifies a compressed JAR (Java Archive) file. Note: By changing the .jar extension to .zip, you can use popular extraction tools such as PKZIP or WINZIP to look at a .jar file’s contents. See also compressed file, JAR, PKZIP, .zip."
+    },
+    {
+      "title": "JAR ",
+      "description": "n. Acronym for Java Archive file. JAR files allow Java developers to efficiently deploy Java classes and their associated resources. The elements in a JAR file are compressed just as in a standard zip file. JAR files include a security mechanism and a special META-INF directory that contains administrative information about the contents of the files. Using a combination of a digital signature and the META-INF data, JAR files can be signed to ensure authenticity and security. See also .jar."
+    },
+    {
+      "title": "Java ",
+      "description": "n. An object-oriented programming language developed by Sun Microsystems, Inc. Similar to C++, Java is smaller, more portable, and easier to use than C++ because it is more robust and it manages memory on its own. Java was also designed to be secure and platform-neutral (meaning that it can be run on any platform) through the fact that Java programs are compiled into bytecode, which is not refined to the point of relying on platform-specific instructions and runs on a computer in a special software environment known as a virtual machine. This characteristic of Java makes it a useful language for programming Web applications, since users access the Web from many types of computers. Java is used in programming small applications, or applets, for the World Wide Web, as well as in creating distributed network applications. See also bytecode, Java applet, Jini, object-oriented programming."
+    },
+    {
+      "title": "Java applet ",
+      "description": "n. A Java class that is loaded and run by an already-running Java application such as a Web browser or an applet viewer. Java applets can be downloaded and run by any Web browser capable of interpreting Java, such as Internet Explorer, Netscape Navigator, and HotJava. Java applets are frequently used to add multimedia effects and interactivity to Web pages, such as background music, real-time video displays, animations, calculators, and interactive games. Applets can be activated automatically when a user views a page, or they may require some action on the part of the user, such as clicking on an icon in the Web page. See also applet, Java."
+    },
+    {
+      "title": "JavaBean ",
+      "description": "n. A Java component architecture defined in the JavaBeans specification developed by Sun Microsystems. A JavaBean, or Bean, is a reusable application component— an independent code segment—that can be combined with other JavaBean components to create a Java applet or application. The JavaBean concept emphasizes the platform-independence of the Java language, in which ideally a program, once written, can run on any computing platform. JavaBeans are similar to Microsoft’s ActiveX controls. ActiveX controls, however, can be developed in different programming languages but executed only on a Windows platform. JavaBeans can be developed only in the Java programming language but ideally can run on any platform. See also ActiveX, Java."
+    },
+    {
+      "title": "Java Card ",
+      "description": "n. An application programming interface (API) from Sun Microsystems, Inc., that allows Java applets and programs to run on smart cards and other devices with limited memory. Java Card uses a Java Card Virtual Machine designed for severely memory-constrained devices. See also applets, Java Card Virtual Machine, smart card (definition 2)."
+    },
+    {
+      "title": "Java Card Virtual Machine ",
+      "description": "n. An ultra-small-footprint, highly optimized foundation of a runtime environment within the Java 2 Platform Micro Edition. Derived from the Java Virtual Machine (JVM), it is targeted at smart cards and other severely memory-constrained devices. The Java Card Virtual Machine can run in devices with memory as small as 24 KB of ROM, 16 KB of EEPROM, and 512 bytes of RAM. See also EEPROM, Java Card, RAM, ROM."
+    },
+    {
+      "title": "Java chip ",
+      "description": "n. An implementation on a single integrated circuit of the virtual machine specified for execution of the Java programming language. Such chips, which are being developed by Sun Microsystems, Inc., could be used in very small devices and as controllers for appliances. See also integrated circuit, Java, virtual machine."
+    },
+    {
+      "title": "Java-compliant browser ",
+      "description": "n. A Web browser with support for the Java programming language built into it. Most current Web browsers are Java-compliant. See also Java, Web browser."
+    },
+    {
+      "title": "Java Developer’s Kit",
+      "description": "n. A set of software tools developed by Sun Microsystems, Inc., for writing Java applets or applications. The kit, which is distributed free, includes a Java compiler, interpreter, debugger, viewer for applets, and documentation. Acronym: JDK. See also applet, Java, Java applet."
+    },
+    {
+      "title": "Java Foundation Classes",
+      "description": "n. A Java-based set of class libraries developed by Sun Microsystems, Inc. Encompassing fundamentals of the Internet Foundation Classes created by Netscape Communications Corp., the Java Foundation Classes extend the Java Abstract Window Toolkit (AWT) by providing graphical user interface components for use in developing commercial and Internet-related Java applications. See also Abstract Window Toolkit, Application Foundation Classes, Internet Foundation Classes, Java, JavaBean, Microsoft Foundation Classes."
+    },
+    {
+      "title": "Java HotSpot ",
+      "description": "n. A Java performance engine introduced by Sun Microsystems, Inc., in 1999 that is designed to run Java applications faster than just-in-time (JIT) compilers. The core of Java HotSpot, and the feature for which it is named, is its ability to perform adaptive optimization—the identification and optimization of “hot spots,” or sections of performance-critical code. Improved garbage collection (freeing of memory occupied by objects no longer in use) and better multithreading are additional features designed to contribute to increased performance. See also Java. "
+    },
+    {
+      "title": "Java IDL ",
+      "description": "n. Short for Java Interface Definition Language. A Java technology that provides CORBA interoperability and connectivity capabilities for the Java platform. These capabilities enable Java applications to invoke operations on remote network services using the Object Management Group Interface Definition Language and Internet Inter- ORB Protocol. See also CORBA, IDL, J2EE, RMI-IIOP."
+    },
+    {
+      "title": "JavaMail ",
+      "description": "n. An API in the Sun Microsystems, Inc., Java platform for sending and receiving mail. A set of abstract APIs that model a mail system, JavaMail provides a platform-independent and protocol-independent framework to build Java-based e-mail client applications. See also application programming interface, e-mail, J2EE."
+    },
+    {
+      "title": "Java Management Application Programming Interface ",
+      "description": "n. A set of application programming interface specifications, proposed by Sun Microsystems, Inc., to enable the Java language to be used for network management. Acronym: JMAPI. See also application programming interface, Java."
+    },
+    {
+      "title": "JavaOS ",
+      "description": "n. An operating system designed to run applications written in the Java programming language. JavaOS was created by JavaSoft, an operating company of Sun Microsystems, Inc., to run the Java Virtual Machine (JVM) directly on microprocessors, and thus eliminate the need for a resident operating system. JavaOS is small and designed for network computers, as well as devices ranging from game machines to pagers and cellular telephones. See also Java."
+    },
+    {
+      "title": "JavaScript ",
+      "description": "n. A scripting language developed by Netscape Communications and Sun Microsystems that is loosely related to Java. JavaScript, however, is not a true object-oriented language, and it is limited in performance compared with Java because it is not compiled. Basic online applications and functions can be added to Web pages with JavaScript, but the number and complexity of available application programming interface functions are fewer than those available with Java. JavaScript code, which is included in a Web page along with the HTML code, is generally considered easier to write than Java, especially for novice programmers. A JavaScript-compliant Web browser, such as Netscape Navigator or Internet Explorer, is necessary to run JavaScript code. See also application programming interface, HTML, scripting language. Compare Java."
+    },
+    {
+      "title": "JavaServer Pages ",
+      "description": "n. See JSP."
+    },
+    {
+      "title": "Java Speech Grammar Format ",
+      "description": "n. A platform-independent grammar description format developed for use with speech recognition systems. Java Speech Grammar Format is used extensively with Voice XML and can be used with most speech recognition systems and related applications. Acronym: JSGF."
+    },
+    {
+      "title": "Java Virtual Machine ",
+      "description": "n. The environment in which Java programs run. The Java Virtual Machine gives Java programs a software-based “computer” they can interact with. (Programs, even the most seemingly unchallenging ones designed for children or entertainment, must run within an environment from which they can use memory, display information, gather input, and so on.) Because the Java Virtual Machine is not a real computer but exists in software, a Java program can run on any physical computing platform, such as a Windows 9x computer or a Macintosh, equipped with an interpreter—usually an Internet browser—that can carry out the program’s instructions and a Java Virtual Machine that provides the “hardware” on which the program can run. Acronym: JVM."
+    },
+    {
+      "title": "JCL ",
+      "description": "n. Acronym for Job Control Language. A command language used in IBM OS/360 mainframe systems. JCL is used to launch applications and specifies information on running time, program size, and the program files used for each application. See also command language."
+    },
+    {
+      "title": "JDBC ",
+      "description": "n. A Java API designed to provide access to relational databases and other tabular material, such as spreadsheets and flat files. Using JDBC, a developer can create a cross-platform Java application that can connect with, and send SQL statements to, a number of different relational databases. Although it is commonly thought to stand for Java Database Connectivity, JDBC is the name of the technology; it is not an acronym. "
+    },
+    {
+      "title": "JDK ",
+      "description": "n. See Java Developer’s Kit."
+    },
+    {
+      "title": "jDoc ",
+      "description": "n. A cross-platform, interactive format for display, distribution, and interaction with live Web pages. jDoc documents are small in size and can be embedded in HTML documents to offer client-side interactivity. jDoc was created by EarthStones and is an extension to Sun’s Java platform."
+    },
+    {
+      "title": "JetSend Protocol ",
+      "description": "n. A platform-independent communications protocol developed by Hewlett-Packard to enable direct device-to-device communication. The JetSend protocol is designed to provide JetSend-enabled devices with the ability to exchange information and data without the need for device drivers or reliance on servers or user intervention. The protocol is intended for use with printers, scanners, fax machines, and other such information “appliances” and was developed to simplify and improve interoperability between and among a wide range of devices."
+    },
+    {
+      "title": "Jet SQL ",
+      "description": "n. A query language. Jet SQL is a dialect used by the Microsoft Access application, specifically by the Microsoft Jet database engine, to extract, manipulate, and structure data that resides in a relational database management system (RDBMS). Jet SQL is based largely on the ANSI SQL-92 standard, with additional extensions."
+    },
+    {
+      "title": "jewel box ",
+      "description": "n. A clear plastic container used to package and store a compact disc. Also called: jewel case."
+    },
+    {
+      "title": "JFC ",
+      "description": "n. See Java Foundation Classes. "
+    },
+    {
+      "title": "JFIF ",
+      "description": "n. Acronym for JPEG File Interchange Format. A means of saving photographic images stored according to the Joint Photographic Experts Group image compression technique. JFIF represents a “common language” file format in that it is designed specifically to allow users to transfer JPEG images easily between different computers and applications. See also JPEG, TIFF JPEG."
+    },
+    {
+      "title": "Jini ",
+      "description": "n. A technical specification developed by Sun Microsystems that uses a small piece (48 KB) of Java code to allow any network device with a Java Virtual Machine (JVM) to announce its availability and provide its services to any other device connected to the same network. Jini is based on the concept of creating a “federation” of selfconfiguring devices capable of transparently exchanging code when necessary to simplify interactions between network devices. See also Java."
+    },
+    {
+      "title": "JIT ",
+      "description": "adj. See just-in-time."
+    },
+    {
+      "title": "jitter ",
+      "description": "n. 1. Small vibrations or fluctuations in a displayed video image caused by irregularities in the display signal. Jitter is often visible in the form of horizontal lines that are of the same thickness as scan lines. 2. A rough appearance in a fax caused by dots that are incorrectly recorded during the scanning process and thus wrongly positioned in the output. 3. In digital communication, distortion caused by lack of synchronization of signals."
+    },
+    {
+      "title": "JMAPI ",
+      "description": "n. See Java Management Application Programming Interface."
+    },
+    {
+      "title": "JMS",
+      "description": "n. Acronym for Java Messaging Service. In the J2EE network platform, JMS is an API for using enterprise messaging systems such as IBM MQ Series, TIBCO Rendezvous, and others. See also application programming interface, J2EE."
+    },
+    {
+      "title": "JNDI ",
+      "description": "n. Acronym for Java Naming and Directory Interface. A set of APIs in the J2EE platform from Sun Microsystems, Inc., that assists with the interfacing to multiple naming and directory services. See also application programming interface, J2EE."
+    },
+    {
+      "title": "job ",
+      "description": "n. A specified amount of processing performed as a unit by a computer. On early mainframe computers, data was submitted in batches, often on punched cards, for processing by different programs; work was therefore scheduled and carried out in separate jobs, or operations."
+    },
+    {
+      "title": "Job Control Language ",
+      "description": "n. See JCL."
+    },
+    {
+      "title": "job processing ",
+      "description": "n. A computing method in which a series of jobs, each consisting of one or more tasks grouped together as a computationally coherent whole, is processed sequentially. See also batch processing (definition 2)."
+    },
+    {
+      "title": "job queue ",
+      "description": "n. A list of programs or tasks waiting for execution by a computer. Jobs in the queue are often ordered according to some basis of priority. See also queue."
+    },
+    {
+      "title": "join ",
+      "description": "n. 1. A database table operation that creates a resultant entry in another table for each entry in the one table whose key field matches that of an entry in the other. See also inner join. 2. A multiprocessing command that causes a child process to return control to its parent. See also child (definition 1), multiprocessing."
+    },
+    {
+      "title": "join line ",
+      "description": "n. In a database query, a line that connects fields between two tables and shows how the data is related. Generally, a join line starts with an arrow just beyond the boundary of the table window pointing at the field in one table and ends just beyond the boundary of another table with an arrow pointing at the related field. The type of join indicates which records are selected for the query’s result set. "
+    },
+    {
+      "title": "Joint Photographic Experts Group ",
+      "description": "n. See JPEG (definition 1)."
+    },
+    {
+      "title": "Joliet ",
+      "description": "n. An extension to the ISO 9660 (1988) standard developed to include long filenames or filenames outside the 8.3 convention. This format is used in some new CDROMs for operating systems, such as Windows 9x, that can handle such filenames. See also 8.3, ISO 9660, long filenames."
+    },
+    {
+      "title": "Josephson junction ",
+      "description": "n. A cryoelectronic device that can attain extremely high circuit-switching speeds. In the Josephson effect, when two superconducting materials are in close proximity but are separated by an insulator, electric current can jump or tunnel through the gap."
+    },
+    {
+      "title": "journal",
+      "description": "n. A computer-based log or record of transactions that takes place in a computer or across a network. A journal could be used, for example, to record message transfers on a communications network, to keep track of system activities that alter the contents of a database, or to maintain a record of files that have been archived for storage or deleted from the system. A journal is often kept as a means of reconstructing events or sets of data should they become lost or damaged. See also audit trail."
+    },
+    {
+      "title": "journaled file system ",
+      "description": "n. A fault-resilient file system that includes backup and recovery capabilities. When file server indexes are updated, all changes and related information are recorded and stored in a separate log. If a system failure or other abnormal interruption occurs, the system will use stored backup files to repair files corrupted in the crash. Journaled file systems are widely used for business and intranet file servers. In 2001, IBM contributed journaled file system technology to the open source community to allow development of similar file systems for Linux servers."
+    },
+    {
+      "title": "joystick ",
+      "description": "n. A pointing device used mainly but not exclusively for computer games. A joystick has a base, on which control buttons can be mounted, and a vertical stem, which the user can move in any direction to control the movement of an object on the screen; the stem may also have control buttons. The buttons activate various software features, generally producing on-screen events. A joystick is usually used as a relative pointing device, moving an object on the screen when the stem is moved and stopping the movement when the stem is released. In industrial control applications, the joystick can also be used as an absolute pointing device, with each position of the stem mapped to a specific location on the screen. See the illustration. See also absolute pointing device, relative pointing device. Compare game pad."
+    },
+    {
+      "title": ".jpeg ",
+      "description": "n. The file extension that identifies graphic image files in the JPEG format. See also JPEG."
+    },
+    {
+      "title": "JPEG ",
+      "description": "n. 1. Acronym for Joint Photographic Experts Group. An ISO/ITU standard for storing images in compressed form using a discrete cosine transform. JPEG trades off compression against loss; it can achieve a compression ratio of 100:1 with significant loss and possibly 20:1 with little noticeable loss. 2. A graphic stored as a file in the JPEG format."
+    },
+    {
+      "title": "JPEG File Interchange Format ",
+      "description": "n. See JFIF. "
+    },
+    {
+      "title": ".jpg ",
+      "description": "n. The file extension that identifies graphic images encoded in the JPEG File Interchange Format, as originally specified by the Joint Photographic Experts Group (JPEG). Inline graphics on World Wide Web pages are often .jpg files, such as coolgraphic.jpg. See also JPEG (definition 2)."
+    },
+    {
+      "title": "JScript ",
+      "description": "n. An interpreted, object-based scripting language that borrows from C, C++, and Java. It is Microsoft’s implementation of the ECMA 262 language specification (ECMAScript Edition 3). The latest versions of JavaScript and JScript are compliant with the European Computer Manufacturing Association’s ECMAScript Language Specification (ECMA 262 standard, for short)."
+    },
+    {
+      "title": "JSGF ",
+      "description": "n. See Java Speech Grammar Format."
+    },
+    {
+      "title": "JSP ",
+      "description": "n. Short for JavaServer Pages. A technology created by Sun Microsystems to enable development of platformindependent Web-based applications. Using HTML and XML tags and Java scriptlets, JSP helps Web site developers create cross-platform programs. JSP scriptlets run on the server, not in a Web browser, and generate dynamic content on Web pages, with the ability to integrate content from a variety of data sources, such as databases, files, and JavaBean components. Web site developers can concentrate on design and display of a Web site without the need for application development expertise. See also Java, Java- Bean. Compare Active Server Pages."
+    },
+    {
+      "title": "JSP container ",
+      "description": "n. Short for JavaServer Pages container. In the J2EE platform, a JSP container provides the same services as a servlet container, such as providing network services over which requests and responses are sent, decoding requests, and formatting responses. All servlet containers must support HTTP as a protocol for requests and responses, but they may also support additional request-response protocols such as HTTPS. The JSP container is also an engine that interprets and processes JSP pages into a servlet. See also container, HTTP, HTTPS, J2EE, servlet, servlet container."
+    },
+    {
+      "title": "JTA ",
+      "description": "n. Acronym for Java Transaction API. In the J2EE platform, JTA specifies transactions, comments, and rollbacks used by EJBs (Enterprise JavaBeans). It is a highlevel, implementation-independent protocol API that allows applications and application servers to access transactions. See also application programming interface, J2EE, JTS, rollback. "
+    },
+    {
+      "title": "JTS ",
+      "description": "n. Acronym for Java Transaction Services. In the J2EE platform, JTS specifies the implementation of a transaction manager that supports JTA and implements the Java mapping of the OMG Object Transaction Service specification at a level below the API. JTS propagates transactions using the Internet Inter-ORB Protocol (IIOP). See also application programming interface, J2EE, JTA, rollback."
+    },
+    {
+      "title": "JUG ",
+      "description": "n. Acronym for Java User Group. A user group that meets to discuss the Java programming language and the Java platform. See also user group. "
+    },
+    {
+      "title": "Jughead ",
+      "description": "n. Acronym for Jonzy’s Universal Gopher Hierarchy Excavation and Display. An Internet service that enables a user to locate directories in Gopherspace through a keyword search. A Jughead server indexes keywords appearing in directory titles in top-level Gopher menus but does not index the files within the directories. To access Jughead, users must point their Gopher clients to a Jughead server. See also Gopher, Gopherspace. Compare Archie, Veronica."
+    },
+    {
+      "title": "jukebox ",
+      "description": "n. Software that is designed to play a list of sound files in a user-specified order reminiscent of jukeboxes used to play vinyl records. See also CD-ROM jukebox."
+    },
+    {
+      "title": "Julian calendar ",
+      "description": "n. The calendar introduced by Julius Caesar in 46 B.C. to replace the lunar calendar. The Julian calendar provided for a year of 365 days with a leap year every 4 years, or an average year length of 365.25 days. Because the solar year is slightly shorter, the Julian calendar gradually moved out of phase with the seasons and was superseded by the Gregorian calendar, introduced by Pope Gregory XIII. Compare Gregorian calendar, Hijiri calendar."
+    },
+    {
+      "title": "Julian date ",
+      "description": "n. 1. A date expressed as the number of days elapsed since January 1, 4713 B.C. (on the Julian calendar)— for example, 2,450,000 for October 9, 1995 (Gregorian). Julian dates are useful for finding elapsed times between events that may be many years apart, as in astronomy. The starting point is the beginning of the Julian Period, defined in 1583 by Joseph Scaliger as the coincidence of several cycles based on the Julian calendar. See also Gregorian calendar, Julian calendar. 2. Often (but incorrectly), a date expressed as the year and the number of days elapsed since the beginning of the year—for example, 91.13 for January 13, 1991. Acronym: JD."
+    },
+    {
+      "title": "jumper ",
+      "description": "n. A small plug or wire that can be connected between different points in an electronic circuit in order to alter an aspect of a hardware configuration. Compare DIP switch."
+    },
+    {
+      "title": "jump instruction ",
+      "description": "n. An instruction that transfers the flow of execution from one statement or instruction to another. See also GOTO statement, transfer statement."
+    },
+    {
+      "title": "jump page ",
+      "description": "n. See doorway page."
+    },
+    {
+      "title": "jump table",
+      "description": "n. See dispatch table."
+    },
+    {
+      "title": "Jump to .NET ",
+      "description": "n. Acronym for Java User Migration Path to Microsoft .NET. A set of Microsoft technologies and services that enable Java programmers to preserve, enhance, and migrate Java language projects onto the Microsoft .NET platform. It includes tools for interoperability of existing code, Java language syntax support, and automated conversion of Java source code to C#. JUMP to .NET enables programmers using the Java language to move existing code to the Microsoft .NET platform. See also C#, .NET."
+    },
+    {
+      "title": "junction ",
+      "description": "n. 1. Any point at which two or more electrical components are connected. 2. The contact between two types of semiconductors, such as N-type and P-type semiconductors. See also N-type semiconductor, P-type semiconductor, semiconductor."
+    },
+    {
+      "title": "justify ",
+      "description": "vb. 1. To align vertically. 2. To align lines of text evenly along both the left and right margins of a column by inserting extra space between the words in each line. If the spacing is excessive, it can be reduced by rewriting or by hyphenating words at the ends of lines. See also align (definition 1). Compare rag."
+    },
+    {
+      "title": "just-in-time ",
+      "description": "adj. 1. Describing a system of inventory control and industrial production management based on the Japanese kanban system. Under a just-in-time system, workers receive materials from suppliers “just in time” for scheduled manufacturing to take place. Line workers generally signal that they require materials by means of a card or a computerized request system. 2. Describing an action that is taken only when it becomes necessary, such as justin- time compilation or just-in-time object activation. 3. Describing a compiler that compiles Java on the fly. Acronym: JIT. See also Java, on the fly."
+    },
+    {
+      "title": "JVM ",
+      "description": "n. See Java Virtual Machine."
+    },
+    {
+      "title": "K (1)",
+      "description": "n. Short for kilobyte."
+    },
+    {
+      "title": "K (2)",
+      "description": "prefix See kilo-."
     }
   ]
 }
