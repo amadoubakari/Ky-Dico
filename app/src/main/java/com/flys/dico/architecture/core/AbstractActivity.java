@@ -134,7 +134,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         // parent
         super.onCreate(savedInstanceState);
         //
-        //loadLocale();
+        loadLocale();
         // log
         if (IS_DEBUG_ENABLED) {
             Log.d(className, "onCreate");
@@ -486,15 +486,15 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
 
         //Share
-        SharedPreferences.Editor editor = getSharedPreferences("Settings", MODE_PRIVATE).edit();
-        editor.putString("my_land", language);
+        SharedPreferences.Editor editor = getSharedPreferences(Constants.SETTINGS, MODE_PRIVATE).edit();
+        editor.putString(Constants.MY_LAND, language);
         editor.apply();
     }
 
     @Override
     public void loadLocale() {
-        SharedPreferences sharedPreferences = getSharedPreferences("Settings", MODE_PRIVATE);
-        String language = sharedPreferences.getString("my_land", "");
+        SharedPreferences sharedPreferences = getSharedPreferences(Constants.SETTINGS, MODE_PRIVATE);
+        String language = sharedPreferences.getString(Constants.MY_LAND, "");
         setLocale(language);
     }
 
@@ -502,14 +502,13 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     public void recreateActivity() {
         Intent intent = new Intent(this, MainActivity_.class);
         intent.putExtra("crash", true);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP
                 | Intent.FLAG_ACTIVITY_CLEAR_TASK
-                | Intent.FLAG_ACTIVITY_NEW_TASK);
+        );
         PendingIntent pendingIntent = PendingIntent.getActivity(DApplicationContext.getContext(), 0, intent, PendingIntent.FLAG_ONE_SHOT);
         AlarmManager mgr = (AlarmManager) DApplicationContext.getContext().getSystemService(Context.ALARM_SERVICE);
         mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, pendingIntent);
         finish();
-        System.exit(2);
     }
 
     @Override

@@ -1,17 +1,14 @@
 package com.flys.dico.fragments.behavior;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.provider.Settings;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationManagerCompat;
@@ -19,6 +16,7 @@ import androidx.core.app.NotificationManagerCompat;
 import com.flys.dico.R;
 import com.flys.dico.architecture.core.AbstractFragment;
 import com.flys.dico.architecture.custom.CoreState;
+import com.flys.dico.utils.Constants;
 import com.flys.tools.dialog.MaterialNotificationDialog;
 import com.flys.tools.domain.NotificationData;
 
@@ -26,8 +24,6 @@ import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.OptionsMenu;
 import org.androidannotations.annotations.ViewById;
-
-import java.util.Locale;
 
 @EFragment(R.layout.fragment_settings_layout)
 @OptionsMenu(R.menu.menu_home)
@@ -38,15 +34,12 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
     protected Switch enableNotification;
 
     @ViewById(R.id.dialog_change_language)
-    protected TextView languageTv;
+    protected LinearLayout languageTv;
+
+    @ViewById(R.id.current_language)
+    protected TextView tvLanguage;
 
     private MaterialNotificationDialog notificationDialog;
-
-    boolean lang_selected;
-
-    Context context;
-
-    Resources resources;
 
     @Click(R.id.notification_switch)
     public void settings() {
@@ -60,36 +53,6 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
         notificationDialog.show(getActivity().getSupportFragmentManager(), "settings_notification_dialog_tag");
     }
 
-    public void changeLanguage() {
-        final String[] Language = {"ENGLISH", "FRENCH"};
-        final int checkedItem;
-        if (lang_selected) {
-            checkedItem = 0;
-        } else {
-            checkedItem = 1;
-        }
-        final AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-        builder.setTitle("Select a Language...")
-                .setSingleChoiceItems(Language, checkedItem, (dialog, which) -> {
-                    Toast.makeText(activity, "" + which, Toast.LENGTH_SHORT).show();
-                    languageTv.setText(Language[which]);
-                    lang_selected = Language[which].equals("ENGLISH");
-                    //if user select prefered language as English then
-                    if (Language[which].equals("ENGLISH")) {
-                        mainActivity.setLocale("en");
-                        mainActivity.recreateActivity();
-                    }
-                    //if user select prefered language as Hindi then
-                    if (Language[which].equals("FRENCH")) {
-                        //context = LocaleHelper.setLocale(activity, "fr");
-                        //resources = context.getResources();
-                        mainActivity.setLocale("fr");
-                        mainActivity.recreateActivity();
-                    }
-                })
-                .setPositiveButton("OK", (dialog, which) -> dialog.dismiss());
-        builder.create().show();
-    }
 
     @Override
     public CoreState saveFragment() {
@@ -108,7 +71,11 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
 
     @Override
     protected void initView(CoreState previousState) {
-
+        if (isEnglish() == Language.ENGLISH.getOrder()) {
+            tvLanguage.setText(getString(R.string.fragment_settings_language_en));
+        } else {
+            tvLanguage.setText(getString(R.string.fragment_settings_language_fr));
+        }
     }
 
     @Override
@@ -161,18 +128,67 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
         dialogInterface.dismiss();
     }
 
-    private void setLocale(String language) {
-        Locale locale = new Locale(language);
-        Locale.setDefault(locale);
-        Configuration configuration = new Configuration();
-        configuration.setLocale(locale);
-        activity.getBaseContext().getResources().updateConfiguration(configuration, activity.getBaseContext().getResources().getDisplayMetrics());
-
-        //Share
-        SharedPreferences.Editor editor = activity.getSharedPreferences("Settings", Activity.MODE_PRIVATE).edit();
-        editor.putString("my_land", language);
-        editor.apply();
-        //activity.recreate();
+    @Click(R.id.dialog_change_language)
+    public void changeLanguageAction() {
+        changeLanguage();
     }
 
+    /**
+     * Change application language
+     */
+    public void changeLanguage() {
+        final String[] language = {getString(R.string.settings_fragment_language_french), getString(R.string.settings_fragment_language_english)};
+        final int checkedItem = isEnglish();
+        final AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setTitle(getString(R.string.settingsFragment_select_language))
+                .setSingleChoiceItems(language, checkedItem, (dialog, which) -> {
+                    tvLanguage.setText(language[which]);
+                    //if user select preferred language as English then
+                    if (language[which].equals(getString(R.string.settings_fragment_language_english))) {
+                        mainActivity.setLocale(Constants.EN);
+                        mainActivity.recreateActivity();
+                    }
+                    //if user select preferred language as Hindi then
+                    if (language[which].equals(getString(R.string.settings_fragment_language_french))) {
+                        mainActivity.setLocale(Constants.FR);
+                        mainActivity.recreateActivity();
+                    }
+                })
+                .setPositiveButton(getString(R.string.activity_main_button_cancel), (dialog, which) -> dialog.dismiss());
+        builder.create().show();
+    }
+
+    /**
+     * System language
+     *
+     * @return 0 for english and 1 for french
+     */
+    private int isEnglish() {
+        SharedPreferences sharedPreferences = activity.getSharedPreferences(Constants.SETTINGS, Context.MODE_PRIVATE);
+        String localeCode = sharedPreferences.getString(Constants.MY_LAND, "");
+        final int checkedItem;
+        if (localeCode.equals(Constants.EN)) {
+            checkedItem = Language.ENGLISH.getOrder();
+        } else {
+            checkedItem = Language.FRENCH.getOrder();
+            ;
+        }
+        return checkedItem;
+    }
+
+    public enum Language {
+
+        FRENCH(0),
+        ENGLISH(1);
+
+        private int order;
+
+        Language(int order) {
+            this.order = order;
+        }
+
+        public int getOrder() {
+            return order;
+        }
+    }
 }

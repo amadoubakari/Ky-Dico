@@ -14,13 +14,13 @@
     <string name="menu_home_msg">Accueil</string>
     <string name="menu_me_msg">Moi</string>
     <string name="about_last_update_msg">Dernière version</string>
-    <string name="about_releasing_date">Août 2020</string>
+    <string name="about_releasing_date">Octobre 2020</string>
     <string name="mini_dictionnaire_informatique_de_poche_msg">Mini Dictionnaire Informatique de poche</string>
     <string name="enable_notifications_to_received_news">Activer les notifications pour recevoir des nouveautés !</string>
     <string name="disable_notifications_to_dont_received_news">Si vous désactivez les notifications, vous risquerez ne plus recevoir des nouveautés !</string>
     <string name="button_yes_msg">OUI</string>
     <string name="button_no_msg">NON</string>
-    <string name="app_version_msg">Version 1.0.0</string>
+    <string name="app_version_msg">Version 1.0.8</string>
     <string name="menu_about_msg">A Propos</string>
     <string name="menu_connexion_msg">Connexion</string>
     <string name="menu_profil_msg">Profil</string>
@@ -66,4 +66,10 @@
     <string name="fragment_home_layout_no_result_msg">Indisponible !</string>
     <string name="fragment_home_you_try_a_more">Bientôt vous serez notifiés</string>
     <string name="fragment_notif_layout_no_elements">Aucune notification\ndisponible</string>
+    <string name="settingsFragment_select_language">Sélectionnez la langue ...</string>
+    <string name="settings_fragment_language_english">Anglais</string>
+    <string name="settings_fragment_language_french">Français</string>
+    <string name="fragment_settings_language_msg">Langue</string>
+    <string name="fragment_settings_language_en">Anglais, en</string>
+    <string name="fragment_settings_language_fr">Français, fr</string>
 </resources>

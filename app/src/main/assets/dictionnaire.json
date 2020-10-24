@@ -441,6 +441,11 @@
       "description": "Élément de programmation d‘un logiciel qui permet à l‘utilisateur de corriger une erreur en ramenant son document à l‘état précédant la ou les dernières commandes."
     },
     {
+      "title": "commutateur réseau",
+      "description": " (en anglais switch), est un équipement qui relie plusieurs segments (câbles ou fibres) dans un réseau informatique et de télécommunication et qui permet de créer des circuits virtuels."
+    }
+    ,
+    {
       "title": "Compatibilité (Compatibility)",
       "description": "Qualité d‘un système qui peut exécuter les programmes conçus pour un autre système."
     },
@@ -2083,6 +2088,10 @@
     {
       "title": "Toile mondiale",
       "description": "Voir Web."
+    },
+    {
+      "title": "topologie de réseau ",
+      "description": "en informatique correspond à l'architecture (physique ou logique) de celui-ci, définissant les liaisons entre les équipements du réseau et une hiérarchie éventuelle entre eux."
     },
     {
       "title": "Touche [ENTRÉE] (Enter Key)",
