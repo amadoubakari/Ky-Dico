@@ -26,7 +26,7 @@
         android:background="@color/grey_200"
         android:gravity="center"
         android:orientation="vertical"
-        tools:visibility="gone">
+        tools:visibility="visible">
 
         <ImageView
             android:layout_width="100dp"
@@ -53,6 +53,22 @@
             android:text="@string/fragment_home_you_try_a_more"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
             android:textColor="@color/grey_90" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="1dp"
+            android:layout_height="40dp" />
+
+        <TextView
+            android:id="@+id/tv_change_language_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:fontFamily="@font/open_sans_light"
+            android:gravity="center"
+            android:text="@string/fragment_home_layout_change_langue"
+            android:textSize="12sp"
+            android:textColor="@color/blue_500" />
 
     </LinearLayout>
 </LinearLayout>

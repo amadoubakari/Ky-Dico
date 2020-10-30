@@ -23,6 +23,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -35,10 +36,13 @@ import com.flys.dico.architecture.core.Utils;
 import com.flys.dico.architecture.custom.CoreState;
 import com.flys.dico.fragments.adapters.Word;
 import com.flys.dico.fragments.adapters.WordAdapter;
+import com.flys.dico.utils.Constants;
 import com.flys.dico.utils.RxSearchObservable;
+import com.google.android.play.core.appupdate.AppUpdateManager;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.OptionsItem;
 import org.androidannotations.annotations.OptionsMenu;
@@ -75,11 +79,15 @@ public class HomeFragment extends AbstractFragment {
     private static boolean wasInPause = false;
     private static FirebaseDatabase database;
     private int itemsPerDisplay = 6;
+    // Creates instance of the update app manager.
+    private AppUpdateManager appUpdateManager;
 
     @ViewById(R.id.recyclerview)
     protected RecyclerView recyclerView;
+
     @OptionsMenuItem(R.id.search)
     protected MenuItem menuItem;
+
     @ViewById(R.id.ll_search_block_id)
     protected LinearLayout llSearchBlock;
 
@@ -104,7 +112,19 @@ public class HomeFragment extends AbstractFragment {
 
     @Override
     protected void initView(CoreState previousState) {
-        Log.e(TAG, "initView");
+        if (Constants.isNetworkConnected) {
+            Observable<Boolean> observable = Observable.create(subscriber -> {
+                subscriber.onNext(Boolean.TRUE);
+                subscriber.onCompleted();
+            });
+            observable
+                    .delay(15000, TimeUnit.MILLISECONDS, AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(o -> {
+                        mainActivity.checkUpdatesAvailable();
+                    });
+        }
     }
 
     @Override
@@ -163,6 +183,11 @@ public class HomeFragment extends AbstractFragment {
 
     }
 
+    @Click(R.id.tv_change_language_id)
+    public void tvChangeLanguage() {
+        changeLanguage();
+    }
+
     /**
      * Base search function
      */
@@ -186,7 +211,7 @@ public class HomeFragment extends AbstractFragment {
                         llSearchBlock.setVisibility(View.VISIBLE);
                         recyclerView.setVisibility(View.GONE);
                         sendQueryWordToTheServer(queryWords);
-                    }else{
+                    } else {
                         llSearchBlock.setVisibility(View.GONE);
                         recyclerView.setVisibility(View.VISIBLE);
                     }

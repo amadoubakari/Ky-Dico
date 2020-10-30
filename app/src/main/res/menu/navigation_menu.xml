@@ -52,5 +52,11 @@
             android:title="@string/menu_about_msg"
             android:visible="true"
             app:itemTextAppearance="@style/menu_font_style" />
+        <item
+            android:id="@+id/menu_review"
+            android:icon="@drawable/ic_baseline_star_rate_24"
+            android:title="@string/menu_rating_msg"
+            android:visible="true"
+            app:itemTextAppearance="@style/menu_font_style" />
     </group>
 </menu>

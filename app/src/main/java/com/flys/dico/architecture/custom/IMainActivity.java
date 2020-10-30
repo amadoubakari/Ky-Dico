@@ -75,4 +75,6 @@ public interface IMainActivity extends IDao {
 
     void hideBottomNavigation(int visibility);
 
+    void checkUpdatesAvailable();
+
 }

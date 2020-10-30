@@ -66,4 +66,8 @@
     <string name="fragment_settings_language_msg">Language</string>
     <string name="fragment_settings_language_en">English, en</string>
     <string name="fragment_settings_language_fr">French, fr</string>
+    <string name="main_activity_completed_download">An update has just been downloaded.</string>
+    <string name="main_activity_download_completed_restart">RESTART</string>
+    <string name="fragment_home_layout_change_langue"><![CDATA[Try in french here >>]]></string>
+    <string name="menu_rating_msg">Rate application</string>
 </resources>

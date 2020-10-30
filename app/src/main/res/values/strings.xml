@@ -72,4 +72,8 @@
     <string name="fragment_settings_language_msg">Langue</string>
     <string name="fragment_settings_language_en">Anglais, en</string>
     <string name="fragment_settings_language_fr">Français, fr</string>
+    <string name="main_activity_completed_download">Vos mis à jour sont prêts à installer.</string>
+    <string name="main_activity_download_completed_restart">Redémarrer</string>
+    <string name="fragment_home_layout_change_langue"><![CDATA[Essayer en anglais ici >>]]></string>
+    <string name="menu_rating_msg">Noter l\'application</string>
 </resources>

@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -52,12 +53,26 @@ import com.flys.dico.fragments.behavior.SettingsFragment_;
 import com.flys.dico.fragments.behavior.SplashScreenFragment_;
 import com.flys.dico.utils.CheckNetwork;
 import com.flys.dico.utils.Constants;
+import com.flys.dico.utils.FacebookProfile;
+import com.flys.dico.utils.FacebookUrl;
 import com.flys.generictools.dao.daoException.DaoException;
 import com.flys.notification.domain.Notification;
 import com.flys.tools.dialog.MaterialNotificationDialog;
 import com.flys.tools.domain.NotificationData;
 import com.flys.tools.utils.FileUtils;
 import com.google.android.material.badge.BadgeDrawable;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.play.core.appupdate.AppUpdateInfo;
+import com.google.android.play.core.appupdate.AppUpdateManager;
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
+import com.google.android.play.core.install.InstallState;
+import com.google.android.play.core.install.InstallStateUpdatedListener;
+import com.google.android.play.core.install.model.ActivityResult;
+import com.google.android.play.core.install.model.AppUpdateType;
+import com.google.android.play.core.install.model.InstallStatus;
+import com.google.android.play.core.install.model.UpdateAvailability;
+import com.google.android.play.core.listener.StateUpdatedListener;
+import com.google.android.play.core.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserInfo;
@@ -72,22 +87,27 @@ import org.androidannotations.annotations.OptionsMenuItem;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import rx.Observable;
+import rx.Subscriber;
+import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 @EActivity
 @OptionsMenu(R.menu.menu_main)
-public class MainActivity extends AbstractActivity implements MaterialNotificationDialog.NotificationButtonOnclickListeneer {
+public class MainActivity extends AbstractActivity implements MaterialNotificationDialog.NotificationButtonOnclickListeneer, StateUpdatedListener<InstallState> {
 
     /*===============================================================================
      * Static variables
      ===============================================================================*/
-    public static final String TAG = GraphRequest.class.getSimpleName();
+    public static final String TAG = MainActivity.class.getSimpleName();
 
     private static final int RC_SIGN_IN = 123;
+
+    private static final int PLAY_STORE_UPDATE_REQUEST_CODE = 124;
 
     @OptionsMenuItem(R.id.connexion)
     MenuItem connexion;
@@ -109,6 +129,8 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     private ObjectMapper objectMapper;
     // Register Callback - Call this in your app start!
     private CheckNetwork network;
+    // Creates instance of the update app manager.
+    protected AppUpdateManager appUpdateManager;
 
     // méthodes classe parent -----------------------
     @Override
@@ -133,6 +155,8 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         //Check network
         network = new CheckNetwork(getApplicationContext());
         network.registerNetworkCallback();
+        appUpdateManager = AppUpdateManagerFactory.create(this);
+
     }
 
 
@@ -142,8 +166,10 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         if (updateProfile() != null && updateProfile().getType() != null) {
             updateUserConnectedProfile(updateProfile());
         }
-
+        //Check if there is updates already downloaded
+        checkIfUpdatesDownloaded();
     }
+
 
     @Override
     protected void onNewIntent(Intent intent) {
@@ -183,62 +209,13 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
 
     @Override
     protected void disconnect() {
-        MaterialNotificationDialog dialog = new MaterialNotificationDialog(this, new NotificationData(getString(R.string.app_name), getString(R.string.activity_main_do_you_want_to_disconnect), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_no_msg), getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_DayNight_Dialog_Alert), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
-            @Override
-            public void okButtonAction(DialogInterface dialogInterface, int i) {
-                // Disconnection
-                AuthUI.getInstance()
-                        .signOut(MainActivity.this)
-                        .addOnCompleteListener(task -> {
-                            if (task.isSuccessful()) {
-                                MaterialNotificationDialog notificationDialog = new MaterialNotificationDialog(MainActivity.this, new NotificationData(getString(R.string.app_name), getString(R.string.activity_main_thanks_msg) + (session.getUser().getNom() != null ? session.getUser().getNom() : "") + getString(R.string.activity_main_see_you_soon), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_cancel), getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_DayNight_Dialog_Alert), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
-                                    @Override
-                                    public void okButtonAction(DialogInterface dialogInterface, int i) {
-                                        try {
-                                            //if disconnect, clear the session and delete the user from de database
-                                            userDao.delete(session.getUser());
-                                            session.setUser(null);
-                                            dialogInterface.dismiss();
-                                            onPrepareOptionsMenu(null);
-                                            updateUserConnectedProfile(null);
-                                        } catch (DaoException e) {
-                                            Log.e(getClass().getSimpleName(), "Dao Exception!", e);
-                                        }
-                                    }
-
-                                    @Override
-                                    public void noButtonAction(DialogInterface dialogInterface, int i) {
-                                        dialogInterface.dismiss();
-                                    }
-                                });
-                                notificationDialog.show(getSupportFragmentManager(), "material_notification_alert_dialog");
-                            }
-                            if (task.isCanceled()) {
-                                Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.activity_main_disconnect_canceled));
-                            }
-                        });
-            }
-
-            @Override
-            public void noButtonAction(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
-            }
-        });
-        dialog.show(getSupportFragmentManager(), "material_notification_alert_dialog");
+        disconnectHandle();
     }
 
     @Override
     public void onBackPressed() {
-        drawerLayout.closeDrawers();
-        if (mViewPager.getCurrentItem() == HOME_FRAGMENT) {
-            this.dialog = new MaterialNotificationDialog(this, new NotificationData(getString(R.string.app_name), getString(R.string.activity_main_do_you_want_to_leave_app), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_no_msg), getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_DayNight_Dialog_Alert), this);
-            this.dialog.show(getSupportFragmentManager(), "material_notification_alert_dialog");
-        } else {
-            // Otherwise, select the previous step.
-            mViewPager.setCurrentItem(mViewPager.getCurrentItem() - 1);
-        }
+        onBackPressedHandle();
     }
-
 
     /**
      *
@@ -258,72 +235,11 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         navigateToView(SETTINGS_FRAGMENT, ISession.Action.SUBMIT);
     }
 
-    /**
-     * Authentication using firebase: login
-     */
-    public void createSignInIntent() {
-        // Choose authentication providers
-        AuthMethodPickerLayout customLayout = new AuthMethodPickerLayout
-                .Builder(R.layout.fragment_login)
-                .setGoogleButtonId(R.id.connexion_google_id)
-                .setEmailButtonId(R.id.connexion_mail_id)
-                .setFacebookButtonId(R.id.connexion_facebook_id)
-                .setPhoneButtonId(R.id.connexion_phone_id)
-                .build();
-
-        List<AuthUI.IdpConfig> providers = Arrays.asList(
-                new AuthUI.IdpConfig.EmailBuilder().build(),
-                new AuthUI.IdpConfig.PhoneBuilder().build(),
-                new AuthUI.IdpConfig.GoogleBuilder().build(),
-                new AuthUI.IdpConfig.FacebookBuilder().build()
-        );
-
-        // Create and launch sign-in intent
-        startActivityForResult(
-                AuthUI.getInstance()
-                        .createSignInIntentBuilder()
-                        .setAvailableProviders(providers)
-                        .setAuthMethodPickerLayout(customLayout)
-                        .setLogo(R.drawable.logo)      // Set logo drawable
-                        .setTheme(R.style.AuthenticationTheme)      // Set theme
-                        /*.setTosAndPrivacyPolicyUrls(
-                                "https://example.com/terms.html",
-                                "https://example.com/privacy.html")*/
-                        .build(),
-                RC_SIGN_IN);
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        //Call for authentication
-        if (requestCode == RC_SIGN_IN) {
-            IdpResponse response = IdpResponse.fromResultIntent(data);
-            if (resultCode == RESULT_OK) {
-                // Successfully signed in
-                //Mise à jour des informations de l'utilisateur dans la session
-                getProviderData(FirebaseAuth.getInstance().getCurrentUser());
-            } else {
-                // Sign in failed
-                if (response == null) {
-                    // User pressed back button
-                    Log.e(getClass().getSimpleName(), "onActivityResult: sign_in_cancelled");
-                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.activity_main_connection_canceld));
-                    return;
-                }
+        onResultActivityHandle(requestCode, resultCode, data);
 
-                if (response.getError().getErrorCode() == ErrorCodes.NO_NETWORK) {
-                    Log.e(getClass().getSimpleName(), "onActivityResult: no_internet_connection");
-                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.activity_main_network_issue));
-                    return;
-                }
-                if (response.getError().getErrorCode() == ErrorCodes.UNKNOWN_ERROR) {
-                    Log.e(getClass().getSimpleName(), "onActivityResult: unknown_error");
-                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.activity_main_try_again_mdg));
-                    return;
-                }
-            }
-        }
     }
 
 
@@ -370,32 +286,17 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
 
     @Override
     public Observable<List<Word>> loadSequenceWords(Context context, int index, int size) {
-        return dao.loadSequenceWords(context, index,size);
+        return dao.loadSequenceWords(context, index, size);
     }
 
     @Override
     public Observable<List<Word>> loadWords(Context context, String query) {
-        return dao.loadWords(context,query);
+        return dao.loadWords(context, query);
     }
 
     @Override
     public User updateProfile() {
-        //Check if the session content user
-        if (session.getUser() != null) {
-            return session.getUser();
-        } else {
-            //Check in the database if the user was connected
-            List<User> users = null;
-            try {
-                users = userDao.getAll();
-                if (users != null && !users.isEmpty()) {
-                    session.setUser(users.get(0));
-                }
-            } catch (DaoException e) {
-                Log.e(getClass().getSimpleName(), "Dao Exception!", e);
-            }
-        }
-        return session.getUser();
+        return getConnectedUserProfile();
     }
 
     @Override
@@ -437,160 +338,25 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         this.dialog.dismiss();
     }
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    static class FacebookProfile {
-        private String id;
-        private String name;
-        private String email;
-        private Picture picture;
-
-        public FacebookProfile() {
-        }
-
-        public FacebookProfile(String id, String name, String email, Picture picture) {
-            this.id = id;
-            this.name = name;
-            this.email = email;
-            this.picture = picture;
-        }
-
-        public String getId() {
-            return id;
-        }
-
-        public void setId(String id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getEmail() {
-            return email;
-        }
-
-        public void setEmail(String email) {
-            this.email = email;
-        }
-
-        public Picture getPicture() {
-            return picture;
-        }
-
-        public void setPicture(Picture picture) {
-            this.picture = picture;
-        }
-
-        @JsonIgnoreProperties(ignoreUnknown = true)
-        class Picture {
-
-            private Data data;
-
-            public Picture() {
-            }
-
-            public Picture(Data data) {
-                this.data = data;
-            }
-
-            public Data getData() {
-                return data;
-            }
-
-            public void setData(Data data) {
-                this.data = data;
-            }
-
-            @JsonIgnoreProperties(ignoreUnknown = true)
-            class Data {
-                private int height;
-                private String url;
-                private int width;
-
-                public Data() {
-                }
-
-                public Data(int height, String url, int width) {
-                    this.height = height;
-                    this.url = url;
-                    this.width = width;
-                }
-
-                public int getHeight() {
-                    return height;
-                }
-
-                public void setHeight(int height) {
-                    this.height = height;
-                }
-
-                public String getUrl() {
-                    return url;
-                }
-
-                public void setUrl(String url) {
-                    this.url = url;
-                }
-
-                public int getWidth() {
-                    return width;
-                }
-
-                public void setWidth(int width) {
-                    this.width = width;
-                }
-            }
-        }
-
-        @Override
-        public String toString() {
-            return "FacebookProfile{" +
-                    "id='" + id + '\'' +
-                    ", name='" + name + '\'' +
-                    ", email='" + email + '\'' +
-                    ", picture=" + picture +
-                    '}';
+    /**
+     * Callback triggered whenever the state has changed.
+     *
+     * @param state
+     */
+    @Override
+    public void onStateUpdate(InstallState state) {
+        if (state.installStatus() == InstallStatus.DOWNLOADED) {
+            // After the update is downloaded, show a notification
+            // and request user confirmation to restart the app.
+            popupSnackbarForCompleteUpdate(appUpdateManager);
         }
     }
 
-    FacebookUrl facebookProfileImageUrlSplit(String url, String character) {
-        String[] urlSplited = url.split("\\?");
-        return new FacebookUrl(urlSplited[0], urlSplited[1]);
-    }
 
-    class FacebookUrl {
-        private String baseUrl;
-        private String params;
 
-        public FacebookUrl() {
-        }
-
-        public FacebookUrl(String baseUrl, String params) {
-            this.baseUrl = baseUrl;
-            this.params = params;
-        }
-
-        public String getBaseUrl() {
-            return baseUrl;
-        }
-
-        public void setBaseUrl(String baseUrl) {
-            this.baseUrl = baseUrl;
-        }
-
-        public String getParams() {
-            return params;
-        }
-
-        public void setParams(String params) {
-            this.params = params;
-        }
-    }
+    /*------------------------------------------------------------------------------------------------
+    -------------------------         BEGIN ALL HANDLES ----------------------------------------------
+    ------------------------------------------------------------------------------------------------ */
 
     /**
      * @param intent
@@ -665,7 +431,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
 
 
     /**
-     *
      * @param user
      */
     void downloadFacebookUserProfileImage(User user) {
@@ -677,6 +442,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                     if (response != null) {
                         try {
                             FacebookProfile facebookProfile = objectMapper.readValue(response.getJSONObject().toString(), new TypeReference<FacebookProfile>() {
+
                             });
                             Log.e(TAG, "facebook url " + facebookProfile.getPicture().getData().getUrl());
                             user.setType(User.Type.FACEBOOK);
@@ -757,22 +523,22 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
             //switch provider
             switch (profile.getProviderId()) {
                 //Connected with google account
-                case "google.com":
+                case Constants.SOCIAL_MEDIA_GOOGLE_COM:
                     //Connection using google
                     googleConnect(firebaseUser, user, profile);
                     break;
                 //Connected with facebook account
-                case "facebook.com":
+                case Constants.SOCIAL_MEDIA_FACEBOOK_COM:
                     //Connection using facebook
                     facebookConnect(user);
                     break;
                 //connected with phone number
-                case "phone":
+                case Constants.SOCIAL_MEDIA_PHONE:
                     //Connection using phone number
                     phoneNumberConnect(user, profile);
                     break;
                 //connected with an email address
-                case "password":
+                case Constants.SOCIAL_MEDIA_PASSWORD:
                     //Connection using email address
                     mailConnect(user, profile);
                     break;
@@ -868,4 +634,261 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                     }
                 });
     }
+
+    /**
+     * Displays the snackbar notification and call to action.
+     */
+    private void popupSnackbarForCompleteUpdate(AppUpdateManager appUpdateManager) {
+        Snackbar snackbar =
+                Snackbar.make(
+                        findViewById(R.id.main_content),
+                        getString(R.string.main_activity_completed_download),
+                        Snackbar.LENGTH_INDEFINITE);
+        snackbar.setAction(R.string.main_activity_download_completed_restart, view -> appUpdateManager.completeUpdate());
+        snackbar.setActionTextColor(getColor(R.color.blue_500));
+        snackbar.show();
+    }
+
+    /**
+     *
+     */
+    @Override
+    public void checkUpdatesAvailable() {
+        // Create a listener to track request state updates.
+        InstallStateUpdatedListener listener = state -> {
+            // (Optional) Provide a download progress bar.
+            if (state.installStatus() == InstallStatus.DOWNLOADING) {
+                long bytesDownloaded = state.bytesDownloaded();
+                long totalBytesToDownload = state.totalBytesToDownload();
+                // Implement progress bar.
+            }
+            if (state.installStatus() == InstallStatus.DOWNLOADED) {
+                // When status updates are no longer needed, unregister the listener.
+                appUpdateManager.unregisterListener(this::onStateUpdate);
+            }
+        };
+
+        // Returns an intent object that you use to check for an update.
+        Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
+        // Checks that the platform will allow the specified type of update.
+        appUpdateInfoTask.addOnSuccessListener(appUpdateInfo -> {
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE) {
+                // Request the update.
+                try {
+                    // Before starting an update, register a listener for updates.
+                    appUpdateManager.registerListener(listener);
+                    //Start download updates
+                    appUpdateManager.startUpdateFlowForResult(
+                            // Pass the intent that is returned by 'getAppUpdateInfo()'.
+                            appUpdateInfo,
+                            // Or 'AppUpdateType.FLEXIBLE' for flexible updates.
+                            AppUpdateType.FLEXIBLE,
+                            // The current activity making the update request.
+                            this,
+                            // Include a request code to later monitor this update request.
+                            PLAY_STORE_UPDATE_REQUEST_CODE);
+                } catch (IntentSender.SendIntentException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                Log.d(TAG, "No Update available");
+            }
+        });
+    }
+
+
+    FacebookUrl facebookProfileImageUrlSplit(String url, String character) {
+        String[] urlSplited = url.split("\\?");
+        return new FacebookUrl(urlSplited[0], urlSplited[1]);
+    }
+
+
+    private void checkIfUpdatesDownloaded() {
+        appUpdateManager
+                .getAppUpdateInfo()
+                .addOnSuccessListener(appUpdateInfo -> {
+                    // If the update is downloaded but not installed,
+                    // notify the user to complete the update.
+                    if (appUpdateInfo.installStatus() == InstallStatus.DOWNLOADED) {
+                        popupSnackbarForCompleteUpdate(appUpdateManager);
+                    }
+                });
+    }
+
+    /**
+     *
+     */
+    private void Disconnection() {
+        AuthUI.getInstance()
+                .signOut(MainActivity.this)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        MaterialNotificationDialog notificationDialog = new MaterialNotificationDialog(MainActivity.this, new NotificationData(getString(R.string.app_name), getString(R.string.activity_main_thanks_msg) + (session.getUser().getNom() != null ? session.getUser().getNom() : "") + getString(R.string.activity_main_see_you_soon), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_cancel), getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_DayNight_Dialog_Alert), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
+                            @Override
+                            public void okButtonAction(DialogInterface dialogInterface, int i) {
+                                try {
+                                    //if disconnect, clear the session and delete the user from de database
+                                    userDao.delete(session.getUser());
+                                    session.setUser(null);
+                                    dialogInterface.dismiss();
+                                    onPrepareOptionsMenu(null);
+                                    updateUserConnectedProfile(null);
+                                } catch (DaoException e) {
+                                    Log.e(getClass().getSimpleName(), "Dao Exception!", e);
+                                }
+                            }
+
+                            @Override
+                            public void noButtonAction(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                            }
+                        });
+                        notificationDialog.show(getSupportFragmentManager(), "material_notification_alert_dialog");
+                    }
+                    if (task.isCanceled()) {
+                        Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.activity_main_disconnect_canceled));
+                    }
+                });
+    }
+
+    /**
+     * Authentication using firebase: login
+     */
+    private void createSignInIntent() {
+        // Choose authentication providers
+        AuthMethodPickerLayout customLayout = new AuthMethodPickerLayout
+                .Builder(R.layout.fragment_login)
+                .setGoogleButtonId(R.id.connexion_google_id)
+                .setEmailButtonId(R.id.connexion_mail_id)
+                .setFacebookButtonId(R.id.connexion_facebook_id)
+                .setPhoneButtonId(R.id.connexion_phone_id)
+                .build();
+
+        List<AuthUI.IdpConfig> providers = Arrays.asList(
+                new AuthUI.IdpConfig.EmailBuilder().build(),
+                new AuthUI.IdpConfig.PhoneBuilder().build(),
+                new AuthUI.IdpConfig.GoogleBuilder().build(),
+                new AuthUI.IdpConfig.FacebookBuilder().build()
+        );
+
+        // Create and launch sign-in intent
+        startActivityForResult(
+                AuthUI.getInstance()
+                        .createSignInIntentBuilder()
+                        .setAvailableProviders(providers)
+                        .setAuthMethodPickerLayout(customLayout)
+                        .setLogo(R.drawable.logo)      // Set logo drawable
+                        .setTheme(R.style.AuthenticationTheme)      // Set theme
+                        /*.setTosAndPrivacyPolicyUrls(
+                                "https://example.com/terms.html",
+                                "https://example.com/privacy.html")*/
+                        .build(),
+                RC_SIGN_IN);
+    }
+
+    /**
+     * @return
+     */
+    private User getConnectedUserProfile() {
+        //Check if the session content user
+        if (session.getUser() != null) {
+            return session.getUser();
+        } else {
+            //Check in the database if the user was connected
+            List<User> users = null;
+            try {
+                users = userDao.getAll();
+                if (users != null && !users.isEmpty()) {
+                    session.setUser(users.get(0));
+                }
+            } catch (DaoException e) {
+                Log.e(getClass().getSimpleName(), "Dao Exception!", e);
+            }
+        }
+        return session.getUser();
+    }
+
+    /**
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
+    private void onResultActivityHandle(int requestCode, int resultCode, Intent data) {
+        //Call for authentication
+        if (requestCode == RC_SIGN_IN) {
+            IdpResponse response = IdpResponse.fromResultIntent(data);
+            if (resultCode == RESULT_OK) {
+                // Successfully signed in
+                //Mise à jour des informations de l'utilisateur dans la session
+                getProviderData(FirebaseAuth.getInstance().getCurrentUser());
+            } else {
+                // Sign in failed
+                if (response == null) {
+                    // User pressed back button
+                    Log.e(getClass().getSimpleName(), "onActivityResult: sign_in_cancelled");
+                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.activity_main_connection_canceld));
+                    return;
+                }
+
+                if (response.getError().getErrorCode() == ErrorCodes.NO_NETWORK) {
+                    Log.e(getClass().getSimpleName(), "onActivityResult: no_internet_connection");
+                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.activity_main_network_issue));
+                    return;
+                }
+                if (response.getError().getErrorCode() == ErrorCodes.UNKNOWN_ERROR) {
+                    Log.e(getClass().getSimpleName(), "onActivityResult: unknown_error");
+                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.activity_main_try_again_mdg));
+                    return;
+                }
+            }
+        }
+
+        //Call for updating application state
+        if (requestCode == PLAY_STORE_UPDATE_REQUEST_CODE) {
+            if (resultCode != RESULT_OK) {
+                Log.e(TAG, "Update flow failed! Result code: " + resultCode);
+                // If the update is cancelled or fails,
+                // you can request to start the update again.
+            } else if (resultCode == RESULT_CANCELED) {
+
+            } else if (resultCode == ActivityResult.RESULT_IN_APP_UPDATE_FAILED) {
+                Log.e(TAG, "Some other error prevented either the user from providing consent or the update to proceed. " + resultCode);
+            }
+        }
+    }
+
+    /**
+     * Handle on back pressed
+     */
+    private void onBackPressedHandle() {
+        drawerLayout.closeDrawers();
+        if (mViewPager.getCurrentItem() == HOME_FRAGMENT) {
+            this.dialog = new MaterialNotificationDialog(this, new NotificationData(getString(R.string.app_name), getString(R.string.activity_main_do_you_want_to_leave_app), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_no_msg), getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_DayNight_Dialog_Alert), this);
+            this.dialog.show(getSupportFragmentManager(), "material_notification_alert_dialog");
+        } else {
+            // Otherwise, select the previous step.
+            mViewPager.setCurrentItem(mViewPager.getCurrentItem() - 1);
+        }
+    }
+
+    /**
+     * handle disconnection
+     */
+    private void disconnectHandle() {
+        MaterialNotificationDialog dialog = new MaterialNotificationDialog(this, new NotificationData(getString(R.string.app_name), getString(R.string.activity_main_do_you_want_to_disconnect), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_no_msg), getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_DayNight_Dialog_Alert), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
+            @Override
+            public void okButtonAction(DialogInterface dialogInterface, int i) {
+                // Disconnection
+                Disconnection();
+            }
+
+            @Override
+            public void noButtonAction(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        dialog.show(getSupportFragmentManager(), "material_notification_alert_dialog");
+    }
+
+
 }

@@ -1,19 +1,25 @@
 package com.flys.dico.architecture.core;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.flys.dico.R;
 import com.flys.dico.architecture.custom.CoreState;
 import com.flys.dico.architecture.custom.IMainActivity;
 import com.flys.dico.architecture.custom.Session;
+import com.flys.dico.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -464,6 +470,63 @@ public abstract class AbstractFragment extends Fragment {
             }
             // restauration à faire dans tous les cas
             session.setAction(ISession.Action.RESTORE);
+        }
+    }
+
+    /**
+     * Change application language
+     */
+    protected void changeLanguage() {
+        final String[] language = {getString(R.string.settings_fragment_language_french), getString(R.string.settings_fragment_language_english)};
+        final int checkedItem = isEnglish();
+        final AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setTitle(getString(R.string.settingsFragment_select_language))
+                .setSingleChoiceItems(language, checkedItem, (dialog, which) -> {
+                    //if user select preferred language as English then
+                    if (language[which].equals(getString(R.string.settings_fragment_language_english))) {
+                        mainActivity.setLocale(Constants.EN);
+                        mainActivity.recreateActivity();
+                    }
+                    //if user select preferred language as Hindi then
+                    if (language[which].equals(getString(R.string.settings_fragment_language_french))) {
+                        mainActivity.setLocale(Constants.FR);
+                        mainActivity.recreateActivity();
+                    }
+                })
+                .setPositiveButton(getString(R.string.activity_main_button_cancel), (dialog, which) -> dialog.dismiss());
+        builder.create().show();
+    }
+
+    /**
+     * System language
+     *
+     * @return 0 for english and 1 for french
+     */
+    protected int isEnglish() {
+        SharedPreferences sharedPreferences = activity.getSharedPreferences(Constants.SETTINGS, Context.MODE_PRIVATE);
+        String localeCode = sharedPreferences.getString(Constants.MY_LAND, "");
+        final int checkedItem;
+        if (localeCode.equals(Constants.EN)) {
+            checkedItem = Language.ENGLISH.getOrder();
+        } else {
+            checkedItem = Language.FRENCH.getOrder();
+            ;
+        }
+        return checkedItem;
+    }
+
+    protected enum Language {
+        FRENCH(0),
+        ENGLISH(1);
+
+        private int order;
+
+        Language(int order) {
+            this.order = order;
+        }
+
+        public int getOrder() {
+            return order;
         }
     }
 
