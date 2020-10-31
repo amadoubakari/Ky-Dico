@@ -427,10 +427,13 @@ public abstract class AbstractFragment extends Fragment {
         currentState.setHasBeenVisited(true);
         // sauvegarde état du menu
         currentState.setMenuOptionsState(getMenuOptionsStates());
-        // mise en session
-        session.setCoreState(getNumView(), currentState);
-        // sauvegarde faite
-        saveFragmentDone = true;
+        if (session != null) {
+            // mise en session
+            session.setCoreState(getNumView(), currentState);
+            // sauvegarde faite
+            saveFragmentDone = true;
+        }
+
         // log
         if (isDebugEnabled) {
             try {

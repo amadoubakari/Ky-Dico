@@ -19,14 +19,18 @@
  * */
 package com.flys.dico.fragments.behavior;
 
+import android.content.Intent;
+import android.content.IntentSender;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -37,8 +41,20 @@ import com.flys.dico.architecture.custom.CoreState;
 import com.flys.dico.fragments.adapters.Word;
 import com.flys.dico.fragments.adapters.WordAdapter;
 import com.flys.dico.utils.Constants;
+import com.flys.dico.utils.FacebookUrl;
 import com.flys.dico.utils.RxSearchObservable;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.play.core.appupdate.AppUpdateInfo;
 import com.google.android.play.core.appupdate.AppUpdateManager;
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
+import com.google.android.play.core.install.InstallState;
+import com.google.android.play.core.install.InstallStateUpdatedListener;
+import com.google.android.play.core.install.model.ActivityResult;
+import com.google.android.play.core.install.model.AppUpdateType;
+import com.google.android.play.core.install.model.InstallStatus;
+import com.google.android.play.core.install.model.UpdateAvailability;
+import com.google.android.play.core.listener.StateUpdatedListener;
+import com.google.android.play.core.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -67,9 +83,10 @@ import rx.schedulers.Schedulers;
  */
 @EFragment(R.layout.fragment_home_layout)
 @OptionsMenu(R.menu.menu_home)
-public class HomeFragment extends AbstractFragment {
+public class HomeFragment extends AbstractFragment implements StateUpdatedListener<InstallState> {
 
     private final String TAG = "HomeFragment";
+    private static final int PLAY_STORE_UPDATE_REQUEST_CODE = 124;
 
     private static WordAdapter wordAdapter;
     private static List<Word> words;
@@ -77,6 +94,7 @@ public class HomeFragment extends AbstractFragment {
     private static final int size = 10;
     private static int index = 0;
     private static boolean wasInPause = false;
+    private static boolean askedForUpdate = false;
     private static FirebaseDatabase database;
     private int itemsPerDisplay = 6;
     // Creates instance of the update app manager.
@@ -90,6 +108,10 @@ public class HomeFragment extends AbstractFragment {
 
     @ViewById(R.id.ll_search_block_id)
     protected LinearLayout llSearchBlock;
+
+    @ViewById(R.id.home_layout_container_id)
+    protected LinearLayout llHomeContainer;
+
 
     @Override
     public CoreState saveFragment() {
@@ -105,6 +127,7 @@ public class HomeFragment extends AbstractFragment {
     protected void initFragment(CoreState previousState) {
         Log.e(TAG, "initFragment");
         ((AppCompatActivity) mainActivity).getSupportActionBar().show();
+        appUpdateManager = AppUpdateManagerFactory.create(activity);
         if (previousState == null) {
             reloadData();
         }
@@ -112,24 +135,16 @@ public class HomeFragment extends AbstractFragment {
 
     @Override
     protected void initView(CoreState previousState) {
-        if (Constants.isNetworkConnected) {
-            Observable<Boolean> observable = Observable.create(subscriber -> {
-                subscriber.onNext(Boolean.TRUE);
-                subscriber.onCompleted();
-            });
-            observable
-                    .delay(15000, TimeUnit.MILLISECONDS, AndroidSchedulers.mainThread())
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(o -> {
-                        mainActivity.checkUpdatesAvailable();
-                    });
+        if (appUpdateManager == null) {
+            appUpdateManager = AppUpdateManagerFactory.create(activity);
         }
     }
 
     @Override
     protected void updateOnSubmit(CoreState previousState) {
-        Log.e(TAG, "updateOnSubmit");
+        if (appUpdateManager == null) {
+            appUpdateManager = AppUpdateManagerFactory.create(activity);
+        }
         reloadData();
     }
 
@@ -160,6 +175,25 @@ public class HomeFragment extends AbstractFragment {
         if (wasInPause) {
             reloadData();
         }
+        //Check if there is updates already downloaded
+        if (appUpdateManager != null) {
+            checkIfUpdatesDownloaded();
+        }
+
+        //network available and never ask update before?
+        if (Constants.isNetworkConnected && !askedForUpdate) {
+            Observable<Boolean> observable = Observable.create(subscriber -> {
+                subscriber.onNext(Boolean.TRUE);
+                subscriber.onCompleted();
+            });
+            observable
+                    .delay(10000, TimeUnit.MILLISECONDS, AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(o -> {
+                        checkUpdatesAvailable();
+                    });
+        }
     }
 
     @OptionsItem(R.id.search)
@@ -180,7 +214,26 @@ public class HomeFragment extends AbstractFragment {
     public void onDestroy() {
         super.onDestroy();
         wasInPause = false;
+        askedForUpdate = false;
 
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        //Call for updating application state
+        if (requestCode == PLAY_STORE_UPDATE_REQUEST_CODE) {
+            if (resultCode != activity.RESULT_OK) {
+                Log.e(TAG, "Update flow failed! Result code: " + resultCode);
+                // If the update is cancelled or fails,
+                // you can request to start the update again.
+                cancelRunningTasks();
+            } else if (resultCode == activity.RESULT_CANCELED) {
+                cancelRunningTasks();
+            } else if (resultCode == ActivityResult.RESULT_IN_APP_UPDATE_FAILED) {
+                cancelRunningTasks();
+                Log.e(TAG, "Some other error prevented either the user from providing consent or the update to proceed. " + resultCode);
+            }
+        }
     }
 
     @Click(R.id.tv_change_language_id)
@@ -283,5 +336,100 @@ public class HomeFragment extends AbstractFragment {
         //Send query word to the server
         DatabaseReference myRef = database.getReference(activity.getString(R.string.fragment_home_database_root_ref)).child(activity.getString(R.string.fragment_home_database_reference));
         myRef.push().setValue(queryWords.get());
+    }
+
+    /**
+     * Callback triggered whenever the state has changed.
+     *
+     * @param state
+     */
+    @Override
+    public void onStateUpdate(InstallState state) {
+        if (state.installStatus() == InstallStatus.DOWNLOADED) {
+            // After the update is downloaded, show a notification
+            // and request user confirmation to restart the app.
+            popupSnackbarForCompleteUpdate(appUpdateManager);
+        }
+    }
+
+    /**
+     * Displays the snackbar notification and call to action.
+     */
+    private void popupSnackbarForCompleteUpdate(AppUpdateManager appUpdateManager) {
+        Snackbar snackbar =
+                Snackbar.make(
+                        llHomeContainer,
+                        getString(R.string.main_activity_completed_download),
+                        Snackbar.LENGTH_INDEFINITE);
+        snackbar.setAction(R.string.main_activity_download_completed_restart, view -> appUpdateManager.completeUpdate());
+        snackbar.setActionTextColor(activity.getColor(R.color.blue_500));
+        snackbar.show();
+    }
+
+    /**
+     *
+     */
+    public void checkUpdatesAvailable() {
+        // Create a listener to track request state updates.
+        InstallStateUpdatedListener listener = state -> {
+            // (Optional) Provide a download progress bar.
+            if (state.installStatus() == InstallStatus.DOWNLOADING) {
+                long bytesDownloaded = state.bytesDownloaded();
+                long totalBytesToDownload = state.totalBytesToDownload();
+                // Implement progress bar.
+                //launch the waiting loader
+                beginRunningTasks(1);
+            }
+            if (state.installStatus() == InstallStatus.DOWNLOADED) {
+                //cancel loading waiting
+                cancelRunningTasks();
+                // When status updates are no longer needed, unregister the listener.
+                appUpdateManager.unregisterListener(this::onStateUpdate);
+                //Launch the installation
+                popupSnackbarForCompleteUpdate(appUpdateManager);
+            }
+        };
+
+        // Returns an intent object that you use to check for an update.
+        Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
+        // Checks that the platform will allow the specified type of update.
+        appUpdateInfoTask.addOnSuccessListener(appUpdateInfo -> {
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE) {
+                // Request the update.
+                try {
+                    // Before starting an update, register a listener for updates.
+                    appUpdateManager.registerListener(listener);
+                    //Start download updates
+                    appUpdateManager.startUpdateFlowForResult(
+                            // Pass the intent that is returned by 'getAppUpdateInfo()'.
+                            appUpdateInfo,
+                            // Or 'AppUpdateType.FLEXIBLE' for flexible updates.
+                            AppUpdateType.FLEXIBLE,
+                            // The current activity making the update request.
+                            activity,
+                            // Include a request code to later monitor this update request.
+                            PLAY_STORE_UPDATE_REQUEST_CODE);
+                    //request for updating is done
+                    askedForUpdate = true;
+                } catch (IntentSender.SendIntentException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                Log.d(TAG, "No Update available");
+            }
+        });
+    }
+
+
+    private void checkIfUpdatesDownloaded() {
+        appUpdateManager
+                .getAppUpdateInfo()
+                .addOnSuccessListener(appUpdateInfo -> {
+                    // If the update is downloaded but not installed,
+                    // notify the user to complete the update.
+                    if (appUpdateInfo.installStatus() == InstallStatus.DOWNLOADED) {
+                        popupSnackbarForCompleteUpdate(appUpdateManager);
+                    }
+                });
     }
 }

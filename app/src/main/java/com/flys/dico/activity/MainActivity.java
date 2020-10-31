@@ -98,7 +98,7 @@ import rx.schedulers.Schedulers;
 
 @EActivity
 @OptionsMenu(R.menu.menu_main)
-public class MainActivity extends AbstractActivity implements MaterialNotificationDialog.NotificationButtonOnclickListeneer, StateUpdatedListener<InstallState> {
+public class MainActivity extends AbstractActivity implements MaterialNotificationDialog.NotificationButtonOnclickListeneer{
 
     /*===============================================================================
      * Static variables
@@ -106,8 +106,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     public static final String TAG = MainActivity.class.getSimpleName();
 
     private static final int RC_SIGN_IN = 123;
-
-    private static final int PLAY_STORE_UPDATE_REQUEST_CODE = 124;
 
     @OptionsMenuItem(R.id.connexion)
     MenuItem connexion;
@@ -129,8 +127,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     private ObjectMapper objectMapper;
     // Register Callback - Call this in your app start!
     private CheckNetwork network;
-    // Creates instance of the update app manager.
-    protected AppUpdateManager appUpdateManager;
 
     // méthodes classe parent -----------------------
     @Override
@@ -149,13 +145,11 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         if (!session.isSubscribed()) {
             firebaseSubscription();
         }
-
         //Initializations
         objectMapper = new ObjectMapper();
         //Check network
         network = new CheckNetwork(getApplicationContext());
         network.registerNetworkCallback();
-        appUpdateManager = AppUpdateManagerFactory.create(this);
 
     }
 
@@ -166,8 +160,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         if (updateProfile() != null && updateProfile().getType() != null) {
             updateUserConnectedProfile(updateProfile());
         }
-        //Check if there is updates already downloaded
-        checkIfUpdatesDownloaded();
     }
 
 
@@ -338,19 +330,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         this.dialog.dismiss();
     }
 
-    /**
-     * Callback triggered whenever the state has changed.
-     *
-     * @param state
-     */
-    @Override
-    public void onStateUpdate(InstallState state) {
-        if (state.installStatus() == InstallStatus.DOWNLOADED) {
-            // After the update is downloaded, show a notification
-            // and request user confirmation to restart the app.
-            popupSnackbarForCompleteUpdate(appUpdateManager);
-        }
-    }
 
 
 
@@ -635,85 +614,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                 });
     }
 
-    /**
-     * Displays the snackbar notification and call to action.
-     */
-    private void popupSnackbarForCompleteUpdate(AppUpdateManager appUpdateManager) {
-        Snackbar snackbar =
-                Snackbar.make(
-                        findViewById(R.id.main_content),
-                        getString(R.string.main_activity_completed_download),
-                        Snackbar.LENGTH_INDEFINITE);
-        snackbar.setAction(R.string.main_activity_download_completed_restart, view -> appUpdateManager.completeUpdate());
-        snackbar.setActionTextColor(getColor(R.color.blue_500));
-        snackbar.show();
-    }
 
-    /**
-     *
-     */
-    @Override
-    public void checkUpdatesAvailable() {
-        // Create a listener to track request state updates.
-        InstallStateUpdatedListener listener = state -> {
-            // (Optional) Provide a download progress bar.
-            if (state.installStatus() == InstallStatus.DOWNLOADING) {
-                long bytesDownloaded = state.bytesDownloaded();
-                long totalBytesToDownload = state.totalBytesToDownload();
-                // Implement progress bar.
-            }
-            if (state.installStatus() == InstallStatus.DOWNLOADED) {
-                // When status updates are no longer needed, unregister the listener.
-                appUpdateManager.unregisterListener(this::onStateUpdate);
-            }
-        };
-
-        // Returns an intent object that you use to check for an update.
-        Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
-        // Checks that the platform will allow the specified type of update.
-        appUpdateInfoTask.addOnSuccessListener(appUpdateInfo -> {
-            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE) {
-                // Request the update.
-                try {
-                    // Before starting an update, register a listener for updates.
-                    appUpdateManager.registerListener(listener);
-                    //Start download updates
-                    appUpdateManager.startUpdateFlowForResult(
-                            // Pass the intent that is returned by 'getAppUpdateInfo()'.
-                            appUpdateInfo,
-                            // Or 'AppUpdateType.FLEXIBLE' for flexible updates.
-                            AppUpdateType.FLEXIBLE,
-                            // The current activity making the update request.
-                            this,
-                            // Include a request code to later monitor this update request.
-                            PLAY_STORE_UPDATE_REQUEST_CODE);
-                } catch (IntentSender.SendIntentException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                Log.d(TAG, "No Update available");
-            }
-        });
-    }
-
-
-    FacebookUrl facebookProfileImageUrlSplit(String url, String character) {
-        String[] urlSplited = url.split("\\?");
-        return new FacebookUrl(urlSplited[0], urlSplited[1]);
-    }
-
-
-    private void checkIfUpdatesDownloaded() {
-        appUpdateManager
-                .getAppUpdateInfo()
-                .addOnSuccessListener(appUpdateInfo -> {
-                    // If the update is downloaded but not installed,
-                    // notify the user to complete the update.
-                    if (appUpdateInfo.installStatus() == InstallStatus.DOWNLOADED) {
-                        popupSnackbarForCompleteUpdate(appUpdateManager);
-                    }
-                });
-    }
 
     /**
      *
@@ -842,19 +743,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                 }
             }
         }
-
-        //Call for updating application state
-        if (requestCode == PLAY_STORE_UPDATE_REQUEST_CODE) {
-            if (resultCode != RESULT_OK) {
-                Log.e(TAG, "Update flow failed! Result code: " + resultCode);
-                // If the update is cancelled or fails,
-                // you can request to start the update again.
-            } else if (resultCode == RESULT_CANCELED) {
-
-            } else if (resultCode == ActivityResult.RESULT_IN_APP_UPDATE_FAILED) {
-                Log.e(TAG, "Some other error prevented either the user from providing consent or the update to proceed. " + resultCode);
-            }
-        }
     }
 
     /**
@@ -888,6 +776,11 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
             }
         });
         dialog.show(getSupportFragmentManager(), "material_notification_alert_dialog");
+    }
+
+    FacebookUrl facebookProfileImageUrlSplit(String url, String character) {
+        String[] urlSplited = url.split("\\?");
+        return new FacebookUrl(urlSplited[0], urlSplited[1]);
     }
 
 
