@@ -15,7 +15,7 @@
     <string name="disable_notifications_to_dont_received_news">Si vous désactivez les notifications, vous risquerez ne plus recevoir des nouveautés !</string>
     <string name="button_yes_msg">OUI</string>
     <string name="button_no_msg">NON</string>
-    <string name="app_version_msg">Version 1.0.8</string>
+    <string name="app_version_msg">Version 1.0.9</string>
     <string name="menu_about_msg">A Propos</string>
     <string name="menu_connexion_msg">Connexion</string>
     <string name="menu_profil_msg">Profil</string>
@@ -71,4 +71,6 @@
     <string name="main_activity_download_completed_restart">Redémarrer</string>
     <string name="fragment_home_layout_change_langue"><![CDATA[Essayer en anglais ici >>]]></string>
     <string name="menu_rating_msg">Noter l\'application</string>
+    <string name="about_fragment_github_source"><![CDATA[Code source <font color=#03A9F4>%s</font>]]></string>
+    <string name="fragment_about_github_source_here">ici</string>
 </resources>
