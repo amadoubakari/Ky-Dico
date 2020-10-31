@@ -56,4 +56,6 @@ public interface IDao {
     Observable<List<Word>> loadSequenceWords(Context context, int index, int size);
 
     Observable<List<Word>> loadWords(Context context, final String query);
+
+    Observable<byte[]> downloadFacebookProfileImage(final String baseUrl,final String ext, final String params);
 }

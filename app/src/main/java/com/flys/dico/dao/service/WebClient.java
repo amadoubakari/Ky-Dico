@@ -25,12 +25,15 @@ public interface WebClient extends RestClientRootUrl, RestClientSupport {
     byte[] downloadFacebookImage(@Path("url") String url);
 
 
-    @Get(value = "{baseUrl}?{params}")
+    @Get(value = "{baseUrl}?asid=2708622319237892&height=640&width=640&ext=1603904657&hash={params}")
     @Accept(MediaType.APPLICATION_OCTET_STREAM)
     byte[] downloadFacebookProfileImage(@Path("baseUrl") final String baseUrl, @Path("params") final String params);
 
-    @Get(value = "{baseUrl}?asid=2708622319237892&height=640&width=640&ext=1603904657&hash=AeTAIL8fH_APPWYk")
+    @Get(value = "{baseUrl}?asid=2708622319237892&height=640&width=640&ext=1603904657&hash=yhgf")
     @Accept(MediaType.APPLICATION_OCTET_STREAM)
     byte[] downloadFacebookProfileImage(@Path("baseUrl") final String baseUrl);
 
+    @Get(value = "{baseUrl}?asid=2708622319237892&height=640&width=640&ext={ext}&hash={params}")
+    @Accept(MediaType.APPLICATION_OCTET_STREAM)
+    byte[] downloadFacebookProfileImage(@Path("baseUrl") final String baseUrl,@Path("ext") final String ext, @Path("params") final String params);
 }
