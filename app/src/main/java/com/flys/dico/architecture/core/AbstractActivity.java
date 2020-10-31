@@ -44,6 +44,10 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.play.core.review.ReviewInfo;
+import com.google.android.play.core.review.ReviewManager;
+import com.google.android.play.core.review.ReviewManagerFactory;
+import com.google.android.play.core.tasks.Task;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -77,6 +81,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     protected BottomNavigationView bottomNavigationView;
     //Menu de navigation latérale
     protected NavigationView navigationView;
+    protected ReviewManager manager;
 
     // constructeur
     public AbstractActivity() {
@@ -88,6 +93,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         }
         // jsonMapper
         jsonMapper = new ObjectMapper();
+
 
     }
 
@@ -310,6 +316,9 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
                         case R.id.menu_deconnexion:
                             disconnect();
                             break;
+                        case R.id.menu_review:
+                            rateApplication();
+                            break;
                         default:
                             break;
                     }
@@ -330,8 +339,26 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
             }
             return true;
         });
-        //Check if the user device has google play services installed and if not install them
+        manager = ReviewManagerFactory.create(this);
         onCreateActivity();
+    }
+
+    private void rateApplication() {
+        Task<ReviewInfo> request = manager.requestReviewFlow();
+        request.addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                // We can get the ReviewInfo object
+                ReviewInfo reviewInfo = task.getResult();
+                Task<Void> flow = manager.launchReviewFlow(this, reviewInfo);
+                flow.addOnCompleteListener(task1 -> {
+                    // The flow has finished. The API does not indicate whether the user
+                    // reviewed or not, or even whether the review dialog was shown. Thus, no
+                    // matter the result, we continue our app flow.
+                });
+            } else {
+                // There was some problem, continue regardless of the result.
+            }
+        });
     }
 
 
