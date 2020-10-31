@@ -443,8 +443,7 @@
     {
       "title": "commutateur réseau",
       "description": " (en anglais switch), est un équipement qui relie plusieurs segments (câbles ou fibres) dans un réseau informatique et de télécommunication et qui permet de créer des circuits virtuels."
-    }
-    ,
+    },
     {
       "title": "Compatibilité (Compatibility)",
       "description": "Qualité d‘un système qui peut exécuter les programmes conçus pour un autre système."
@@ -1674,8 +1673,16 @@
       "description": "Dans une base de données relationnelle, lien qui relie deux tables."
     },
     {
-      "title": "Répertoire",
+      "title": "Répertoire ",
       "description": "Voir Dossier."
+    },
+    {
+      "title": "Répartiteur ",
+      "description": "Dispositif permettant de répartir les fils de cuivre composant les lignes d’abonnés entre les câbles reliés au commutateur d’abonnés et dont la fonction est de regrouper plusieurs lignes sur un même câble. Dans un câblage, désigne un centre de distribution intermédiaire (armoire, coffret, local...) concentrant des câbles desservant les usagers. Élément de panneau de brassage qui permet l’interconnexion et la répartition des sources et des lignes utilisateurs."
+    },
+    {
+      "title": "Répéteur ",
+      "description": "Equipement servant à régénérer ou à remettre en forme un signal affaibli. Il ne modifie pas le contenu du signal et n'intervient qu'au niveau 1 (Physique) du modèle OSI. Un répéteur est un amplificateur de signaux qui a au minimum deux connexions réseau. Il travaille au niveau 1 du modèle OSI. Dès qu’il reçoit sur l’une de ses entrées les premiers bits d’une trame, il la retransmet instantanément sur toutes ses sorties, un répéteur n’opère donc aucune modification de données. Les répéteurs interconnectent des réseaux ayant la même couche physique, les supports (média) peuvent être différents. On utilise des répéteurs quand la longueur totale du câble dans un réseau est supérieure au maximum permis par ce type de câble. Ils permettent donc d’étendre localement les segments ou les anneaux."
     },
     {
       "title": "Réseau domestique",
@@ -2182,6 +2189,10 @@
       "description": "Périphérique de sortie semblable à un écran de télévision."
     },
     {
+      "title": "Trame ",
+      "description": "Ensemble de bits qui est diffusé sur un support. Suite définie d'informations constituant une entité logique de base pour la transmission dans un réseau. Une trame comporte les informations à transmettre proprement dites et des informations de contrôle qui précèdent et suivent celles-ci (enveloppe). La notion de trame est généralement associée au mode de transmission synchrone où les processus de synchronisation ne sont pas effectués à chaque mot, mais une fois pour toutes au niveau de chaque trame. C’est également l’unité d’information au niveau 2 du modèle OSI."
+    },
+    {
       "title": "Type d‘accès (Access Type)",
       "description": "Critère de classement des supports physiques de l‘information. L‘accès peut être de type direct ou séquentiel. Voir Accès direct et Accès séquentiel."
     },
@@ -2240,6 +2251,10 @@
     {
       "title": "Visual BASIC (VB) et Visual C++",
       "description": "Versions avancées des langages BASIC et C++ destinées à faci-liter la programmation de logiciels pour l‘environne-ment Windows."
+    },
+    {
+      "title": "Voix sur IP ou VoIP",
+      "description": "Aussi connue sous le nom de téléphonie Internet, est une technologie qui vous permet de téléphoner via un réseau d’ordinateurs basé sur un protocole Internet.Protocole permettant de tenir une conversation téléphonique via Internet."
     },
     {
       "title": "WAIS (WAIS)",
