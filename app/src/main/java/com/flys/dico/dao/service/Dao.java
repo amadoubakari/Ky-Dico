@@ -211,6 +211,11 @@ public class Dao extends AbstractDao implements IDao {
         });
     }
 
+    @Override
+    public Observable<byte[]> downloadFacebookProfileImage(String baseUrl, String ext, String params) {
+        return getResponse(() -> webClient.downloadFacebookProfileImage(baseUrl,ext, params));
+    }
+
     /**
      * It emit data from define limit element on words
      *

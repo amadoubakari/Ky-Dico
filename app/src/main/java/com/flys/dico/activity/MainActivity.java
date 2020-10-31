@@ -98,7 +98,7 @@ import rx.schedulers.Schedulers;
 
 @EActivity
 @OptionsMenu(R.menu.menu_main)
-public class MainActivity extends AbstractActivity implements MaterialNotificationDialog.NotificationButtonOnclickListeneer{
+public class MainActivity extends AbstractActivity implements MaterialNotificationDialog.NotificationButtonOnclickListeneer {
 
     /*===============================================================================
      * Static variables
@@ -287,6 +287,11 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     }
 
     @Override
+    public Observable<byte[]> downloadFacebookProfileImage(String baseUrl, String ext, String params) {
+        return dao.downloadFacebookProfileImage(baseUrl, ext, params);
+    }
+
+    @Override
     public User updateProfile() {
         return getConnectedUserProfile();
     }
@@ -423,13 +428,16 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                             FacebookProfile facebookProfile = objectMapper.readValue(response.getJSONObject().toString(), new TypeReference<FacebookProfile>() {
 
                             });
+                            Log.e(TAG, "facebookProfile " + facebookProfile);
                             Log.e(TAG, "facebook url " + facebookProfile.getPicture().getData().getUrl());
                             user.setType(User.Type.FACEBOOK);
                             user.setNom(facebookProfile.getName());
                             user.setImageUrl(facebookProfile.getPicture().getData().getUrl());
                             user.setEmail(facebookProfile.getEmail());
+                            Log.e(TAG, "user " + userDao.update(user));
                             FacebookUrl facebookUrl = facebookProfileImageUrlSplit(facebookProfile.getPicture().getData().getUrl(), "?");
-                            downloadFacebookProfileImage(facebookUrl.getBaseUrl())
+                            Log.e(TAG, "facebookUrl " + facebookUrl);
+                            downloadFacebookProfileImage(facebookUrl.getBaseUrl(), facebookUrl.getExtraParams(), facebookUrl.getParams())
                                     .subscribeOn(Schedulers.io())
                                     .observeOn(AndroidSchedulers.mainThread())
                                     .subscribe(bytes -> {
@@ -615,18 +623,17 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     }
 
 
-
     /**
      *
      */
     private void Disconnection() {
-        AuthUI.getInstance()
-                .signOut(MainActivity.this)
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        MaterialNotificationDialog notificationDialog = new MaterialNotificationDialog(MainActivity.this, new NotificationData(getString(R.string.app_name), getString(R.string.activity_main_thanks_msg) + (session.getUser().getNom() != null ? session.getUser().getNom() : "") + getString(R.string.activity_main_see_you_soon), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_cancel), getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_DayNight_Dialog_Alert), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
-                            @Override
-                            public void okButtonAction(DialogInterface dialogInterface, int i) {
+        MaterialNotificationDialog notificationDialog = new MaterialNotificationDialog(MainActivity.this, new NotificationData(getString(R.string.app_name), getString(R.string.activity_main_thanks_msg) + (session.getUser().getNom() != null ? session.getUser().getNom() : "") + getString(R.string.activity_main_see_you_soon), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_cancel), getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_DayNight_Dialog_Alert), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
+            @Override
+            public void okButtonAction(DialogInterface dialogInterface, int i) {
+                AuthUI.getInstance()
+                        .signOut(MainActivity.this)
+                        .addOnCompleteListener(task -> {
+                            if (task.isSuccessful()) {
                                 try {
                                     //if disconnect, clear the session and delete the user from de database
                                     userDao.delete(session.getUser());
@@ -638,18 +645,18 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                                     Log.e(getClass().getSimpleName(), "Dao Exception!", e);
                                 }
                             }
-
-                            @Override
-                            public void noButtonAction(DialogInterface dialogInterface, int i) {
-                                dialogInterface.dismiss();
+                            if (task.isCanceled()) {
+                                Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.activity_main_disconnect_canceled));
                             }
                         });
-                        notificationDialog.show(getSupportFragmentManager(), "material_notification_alert_dialog");
-                    }
-                    if (task.isCanceled()) {
-                        Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.activity_main_disconnect_canceled));
-                    }
-                });
+            }
+
+            @Override
+            public void noButtonAction(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        notificationDialog.show(getSupportFragmentManager(), "material_notification_alert_dialog");
     }
 
     /**
@@ -780,7 +787,8 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
 
     FacebookUrl facebookProfileImageUrlSplit(String url, String character) {
         String[] urlSplited = url.split("\\?");
-        return new FacebookUrl(urlSplited[0], urlSplited[1]);
+        String[] params = urlSplited[1].split("=");
+        return new FacebookUrl(urlSplited[0], params[5], params[4].split("&")[0]);
     }
 
 
