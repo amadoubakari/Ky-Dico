@@ -5,9 +5,9 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.IntentSender;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -23,7 +23,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.facebook.AccessToken;
 import com.facebook.GraphRequest;
 import com.facebook.HttpMethod;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.firebase.ui.auth.AuthMethodPickerLayout;
@@ -34,6 +33,7 @@ import com.flys.dico.R;
 import com.flys.dico.architecture.core.AbstractActivity;
 import com.flys.dico.architecture.core.AbstractFragment;
 import com.flys.dico.architecture.core.ISession;
+import com.flys.dico.architecture.core.MyPager;
 import com.flys.dico.architecture.core.Utils;
 import com.flys.dico.architecture.custom.DApplicationContext;
 import com.flys.dico.architecture.custom.Session;
@@ -62,17 +62,7 @@ import com.flys.tools.domain.NotificationData;
 import com.flys.tools.utils.FileUtils;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.android.play.core.appupdate.AppUpdateInfo;
 import com.google.android.play.core.appupdate.AppUpdateManager;
-import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
-import com.google.android.play.core.install.InstallState;
-import com.google.android.play.core.install.InstallStateUpdatedListener;
-import com.google.android.play.core.install.model.ActivityResult;
-import com.google.android.play.core.install.model.AppUpdateType;
-import com.google.android.play.core.install.model.InstallStatus;
-import com.google.android.play.core.install.model.UpdateAvailability;
-import com.google.android.play.core.listener.StateUpdatedListener;
-import com.google.android.play.core.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserInfo;
@@ -83,16 +73,19 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.OptionsItem;
 import org.androidannotations.annotations.OptionsMenu;
 import org.androidannotations.annotations.OptionsMenuItem;
+import org.androidannotations.annotations.ViewById;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
+import java.util.Optional;
+import java.util.concurrent.atomic.AtomicReference;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import rx.Observable;
-import rx.Subscriber;
-import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
@@ -108,7 +101,10 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     private static final int RC_SIGN_IN = 123;
 
     @OptionsMenuItem(R.id.connexion)
-    MenuItem connexion;
+    protected MenuItem connexion;
+
+    @ViewById(R.id.container)
+    protected MyPager myPager;
 
     // couche [DAO]
     @Bean(Dao.class)
@@ -335,7 +331,21 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         this.dialog.dismiss();
     }
 
-
+    @Override
+    public void popupSnackbarForCompleteUpdate(AppUpdateManager appUpdateManager) {
+        Snackbar snackbar =
+                Snackbar.make(
+                        myPager,
+                        getString(R.string.main_activity_completed_download),
+                        Snackbar.LENGTH_INDEFINITE);
+        snackbar.setAction(R.string.main_activity_download_completed_restart, view -> {
+            appUpdateManager.completeUpdate();
+        });
+        bottomNavigationView.setVisibility(View.GONE);
+        snackbar.setAnchorView(bottomNavigationView);
+        snackbar.setActionTextColor(getColor(R.color.blue_500));
+        snackbar.show();
+    }
 
 
     /*------------------------------------------------------------------------------------------------
@@ -417,37 +427,40 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     /**
      * @param user
      */
-    void downloadFacebookUserProfileImage(User user) {
-        beginWaiting();
+    private void downloadFacebookUserProfileImage(User user) {
+        //
+        user.setType(User.Type.FACEBOOK);
         Bundle params = new Bundle();
         params.putString("fields", "id, name, birthday,hometown,email,gender,cover,picture.width(640).height(640)");
         new GraphRequest(AccessToken.getCurrentAccessToken(), "me", params, HttpMethod.GET,
                 response -> {
                     if (response != null) {
+                        Log.d(TAG, "response "+response.getRawResponse());
+                        Log.d(TAG, "response json object "+response.getJSONObject().toString());
                         try {
-                            FacebookProfile facebookProfile = objectMapper.readValue(response.getJSONObject().toString(), new TypeReference<FacebookProfile>() {
+                            FacebookProfile facebookProfile = objectMapper.readValue(response.getRawResponse(), new TypeReference<FacebookProfile>() {
 
                             });
-                            Log.e(TAG, "facebookProfile " + facebookProfile);
-                            Log.e(TAG, "facebook url " + facebookProfile.getPicture().getData().getUrl());
-                            user.setType(User.Type.FACEBOOK);
+
+                            //Collect user information
                             user.setNom(facebookProfile.getName());
                             user.setImageUrl(facebookProfile.getPicture().getData().getUrl());
                             user.setEmail(facebookProfile.getEmail());
-                            Log.e(TAG, "user " + userDao.update(user));
-                            FacebookUrl facebookUrl = facebookProfileImageUrlSplit(facebookProfile.getPicture().getData().getUrl(), "?");
-                            Log.e(TAG, "facebookUrl " + facebookUrl);
-                            downloadFacebookProfileImage(facebookUrl.getBaseUrl(), facebookUrl.getExtraParams(), facebookUrl.getParams())
+                            //Updating connected user
+                            session.setUser(userDao.update(user));
+                            FacebookUrl facebookUrl = facebookProfileImageUrlSplit(facebookProfile.getPicture().getData().getUrl());
+                            beginWaiting();
+                            downloadFacebookProfileImage(facebookUrl.getBaseUrl(), facebookUrl.getExt(), facebookUrl.getHash())
                                     .subscribeOn(Schedulers.io())
                                     .observeOn(AndroidSchedulers.mainThread())
                                     .subscribe(bytes -> {
+                                        //
                                         FileUtils.saveToInternalStorage(bytes, "glearning", user.getNom() + ".png", this);
-                                        //Updating connected user
-                                        userDao.update(user);
                                         //Update profile
                                         updateUserConnectedProfile(user);
                                         //Cancel waiting
                                         cancelWaiting();
+                                        //launch dialog fragment to show connection details
                                         showDialogImage(bytes, user);
                                     }, error -> {
                                         // on affiche les messages de la pile d'exceptions du Throwable th
@@ -638,9 +651,9 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                                     //if disconnect, clear the session and delete the user from de database
                                     userDao.delete(session.getUser());
                                     session.setUser(null);
-                                    dialogInterface.dismiss();
                                     onPrepareOptionsMenu(null);
                                     updateUserConnectedProfile(null);
+                                    dialogInterface.dismiss();
                                 } catch (DaoException e) {
                                     Log.e(getClass().getSimpleName(), "Dao Exception!", e);
                                 }
@@ -703,9 +716,8 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
             return session.getUser();
         } else {
             //Check in the database if the user was connected
-            List<User> users = null;
             try {
-                users = userDao.getAll();
+                List<User> users = userDao.getAll();
                 if (users != null && !users.isEmpty()) {
                     session.setUser(users.get(0));
                 }
@@ -785,11 +797,24 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         dialog.show(getSupportFragmentManager(), "material_notification_alert_dialog");
     }
 
-    FacebookUrl facebookProfileImageUrlSplit(String url, String character) {
-        String[] urlSplited = url.split("\\?");
-        String[] params = urlSplited[1].split("=");
-        return new FacebookUrl(urlSplited[0], params[5], params[4].split("&")[0]);
+    private FacebookUrl facebookProfileImageUrlSplit(String url) {
+        FacebookUrl facebookUrl = buildFacebookProfileImageUrlFromParameters(url);
+        facebookUrl.setBaseUrl(url.split("\\?")[0]);
+        return facebookUrl;
     }
 
+    /**
+     * @param url
+     * @return
+     */
+    private FacebookUrl buildFacebookProfileImageUrlFromParameters(String url) {
+        Optional<Uri> uriOptional = Optional.ofNullable(Uri.parse(url));
+        AtomicReference<FacebookUrl> facebookUrl = new AtomicReference<>();
+        uriOptional.ifPresent(uri -> {
+            FacebookUrl facebookUrlLocal = new FacebookUrl(null, uri.getQueryParameter("hash"), uri.getQueryParameter("ext"));
+            facebookUrl.set(facebookUrlLocal);
+        });
+        return facebookUrl.get();
+    }
 
 }

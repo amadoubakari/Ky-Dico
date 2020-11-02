@@ -2,22 +2,23 @@ package com.flys.dico.utils;
 
 public class FacebookUrl {
     private String baseUrl;
-    private String params;
-    private String extraParams;
+    private String hash;
+    private String ext;
 
     public FacebookUrl() {
     }
 
-    public FacebookUrl(String baseUrl, String params) {
+    public FacebookUrl(String baseUrl, String hash) {
         this.baseUrl = baseUrl;
-        this.params = params;
+        this.hash = hash;
     }
 
-    public FacebookUrl(String baseUrl, String params, String extraParams) {
+    public FacebookUrl(String baseUrl, String hash, String ext) {
         this.baseUrl = baseUrl;
-        this.params = params;
-        this.extraParams = extraParams;
+        this.hash = hash;
+        this.ext = ext;
     }
+
 
     public String getBaseUrl() {
         return baseUrl;
@@ -27,28 +28,28 @@ public class FacebookUrl {
         this.baseUrl = baseUrl;
     }
 
-    public String getParams() {
-        return params;
+    public String getHash() {
+        return hash;
     }
 
-    public void setParams(String params) {
-        this.params = params;
+    public void setHash(String hash) {
+        this.hash = hash;
     }
 
-    public String getExtraParams() {
-        return extraParams;
+    public String getExt() {
+        return ext;
     }
 
-    public void setExtraParams(String extraParams) {
-        this.extraParams = extraParams;
+    public void setExt(String ext) {
+        this.ext = ext;
     }
 
     @Override
     public String toString() {
         return "FacebookUrl{" +
                 "baseUrl='" + baseUrl + '\'' +
-                ", params='" + params + '\'' +
-                ", extraParams='" + extraParams + '\'' +
+                ", params='" + hash + '\'' +
+                ", extraParams='" + ext + '\'' +
                 '}';
     }
 }
