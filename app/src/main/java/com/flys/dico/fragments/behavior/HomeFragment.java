@@ -85,17 +85,18 @@ import rx.schedulers.Schedulers;
 @OptionsMenu(R.menu.menu_home)
 public class HomeFragment extends AbstractFragment implements StateUpdatedListener<InstallState> {
 
-    private final String TAG = "HomeFragment";
+    private static final String TAG = "HomeFragment";
     private static final int PLAY_STORE_UPDATE_REQUEST_CODE = 124;
+    private static final int size = 10;
 
     private static WordAdapter wordAdapter;
     private static List<Word> words;
     private static SearchView searchView;
-    private static final int size = 10;
     private static int index = 0;
     private static boolean wasInPause = false;
     private static boolean askedForUpdate = false;
     private static FirebaseDatabase database;
+
     private int itemsPerDisplay = 6;
     // Creates instance of the update app manager.
     private AppUpdateManager appUpdateManager;
@@ -182,17 +183,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
 
         //network available and never ask update before?
         if (Constants.isNetworkConnected && !askedForUpdate) {
-            Observable<Boolean> observable = Observable.create(subscriber -> {
-                subscriber.onNext(Boolean.TRUE);
-                subscriber.onCompleted();
-            });
-            observable
-                    .delay(10000, TimeUnit.MILLISECONDS, AndroidSchedulers.mainThread())
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(o -> {
-                        checkUpdatesAvailable();
-                    });
+            checkForUpdates();
         }
     }
 
@@ -298,6 +289,11 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
 
     }
 
+
+    /*=================================================================================
+    ================     Treatment ====================================================
+    ================================================================================= */
+
     /**
      * Applying on scroll listener to our adapter
      *
@@ -348,22 +344,8 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
         if (state.installStatus() == InstallStatus.DOWNLOADED) {
             // After the update is downloaded, show a notification
             // and request user confirmation to restart the app.
-            popupSnackbarForCompleteUpdate(appUpdateManager);
+            mainActivity.popupSnackbarForCompleteUpdate(appUpdateManager);
         }
-    }
-
-    /**
-     * Displays the snackbar notification and call to action.
-     */
-    private void popupSnackbarForCompleteUpdate(AppUpdateManager appUpdateManager) {
-        Snackbar snackbar =
-                Snackbar.make(
-                        llHomeContainer,
-                        getString(R.string.main_activity_completed_download),
-                        Snackbar.LENGTH_INDEFINITE);
-        snackbar.setAction(R.string.main_activity_download_completed_restart, view -> appUpdateManager.completeUpdate());
-        snackbar.setActionTextColor(activity.getColor(R.color.blue_500));
-        snackbar.show();
     }
 
     /**
@@ -386,7 +368,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
                 // When status updates are no longer needed, unregister the listener.
                 appUpdateManager.unregisterListener(this::onStateUpdate);
                 //Launch the installation
-                popupSnackbarForCompleteUpdate(appUpdateManager);
+                mainActivity.popupSnackbarForCompleteUpdate(appUpdateManager);
             }
         };
 
@@ -420,7 +402,9 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
         });
     }
 
-
+    /**
+     *
+     */
     private void checkIfUpdatesDownloaded() {
         appUpdateManager
                 .getAppUpdateInfo()
@@ -428,8 +412,25 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
                     // If the update is downloaded but not installed,
                     // notify the user to complete the update.
                     if (appUpdateInfo.installStatus() == InstallStatus.DOWNLOADED) {
-                        popupSnackbarForCompleteUpdate(appUpdateManager);
+                        mainActivity.popupSnackbarForCompleteUpdate(appUpdateManager);
                     }
+                });
+    }
+
+    /**
+     *
+     */
+    private void checkForUpdates() {
+        Observable<Boolean> observable = Observable.create(subscriber -> {
+            subscriber.onNext(Boolean.TRUE);
+            subscriber.onCompleted();
+        });
+        observable
+                .delay(10, TimeUnit.SECONDS, AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(o -> {
+                    checkUpdatesAvailable();
                 });
     }
 }

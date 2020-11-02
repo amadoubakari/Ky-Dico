@@ -3,6 +3,7 @@ package com.flys.dico.architecture.custom;
 import com.flys.dico.architecture.core.ISession;
 import com.flys.dico.dao.entities.User;
 import com.flys.dico.dao.service.IDao;
+import com.google.android.play.core.appupdate.AppUpdateManager;
 
 public interface IMainActivity extends IDao {
 
@@ -75,4 +76,5 @@ public interface IMainActivity extends IDao {
 
     void hideBottomNavigation(int visibility);
 
+    void popupSnackbarForCompleteUpdate(AppUpdateManager appUpdateManager);
 }
