@@ -8,13 +8,13 @@
     <string name="menu_home_msg">Home</string>
     <string name="menu_me_msg">Me</string>
     <string name="about_last_update_msg">Last Update</string>
-    <string name="about_releasing_date">October 2020</string>
+    <string name="about_releasing_date">November 2020</string>
     <string name="mini_dictionnaire_informatique_de_poche_msg">Mini Computer Science Dictionary</string>
     <string name="enable_notifications_to_received_news">Enable notifications to receive news !</string>
     <string name="disable_notifications_to_dont_received_news">If you disable notifications, you will not receive news !</string>
     <string name="button_yes_msg">YES</string>
     <string name="button_no_msg">NO</string>
-    <string name="app_version_msg">Version 1.0.9</string>
+    <string name="app_version_msg">Version 1.1.0</string>
     <string name="menu_about_msg">About</string>
     <string name="menu_connexion_msg">Login</string>
     <string name="menu_profil_msg">Profile</string>
