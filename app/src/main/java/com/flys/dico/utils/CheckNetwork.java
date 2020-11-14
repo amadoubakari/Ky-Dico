@@ -1,4 +1,4 @@
-package com.flys.dico.utils;
+    package com.flys.dico.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

@@ -9,13 +9,13 @@
     <string name="menu_home_msg">Accueil</string>
     <string name="menu_me_msg">Moi</string>
     <string name="about_last_update_msg">Dernière version</string>
-    <string name="about_releasing_date">Octobre 2020</string>
+    <string name="about_releasing_date">Novembre 2020</string>
     <string name="mini_dictionnaire_informatique_de_poche_msg">Mini Dictionnaire Informatique</string>
     <string name="enable_notifications_to_received_news">Activer les notifications pour recevoir des nouveautés !</string>
     <string name="disable_notifications_to_dont_received_news">Si vous désactivez les notifications, vous risquerez ne plus recevoir des nouveautés !</string>
     <string name="button_yes_msg">OUI</string>
     <string name="button_no_msg">NON</string>
-    <string name="app_version_msg">Version 1.0.9</string>
+    <string name="app_version_msg">Version 1.1.0</string>
     <string name="menu_about_msg">A Propos</string>
     <string name="menu_connexion_msg">Connexion</string>
     <string name="menu_profil_msg">Profil</string>
@@ -47,7 +47,7 @@
     <string name="activity_main_thanks_msg">"Merci "</string>
     <string name="dictionary_data_source">dictionnaire.json</string>
     <string name="app_name_release">Dictionnaire Informatique</string>
-    <string name="app_name_debug">Dictionnaire Informatique (Debug)</string>
+    <string name="app_name_debug">Dev-fr</string>
     <string name="dialog_contact_welcome_msg">Bienvenue</string>
     <string name="firebase_channel_id">dico-fr</string>
     <string name="app_google_play_store_url">https://play.google.com/store/apps/details?id=com.flys.dico&amp;hl=fr</string>
@@ -56,7 +56,6 @@
     <string name="fragment_about_dictionary_header">Dictionnaire I.</string>
     <string name="fragment_settings_layout_general_setttings_msg">Configurations générales</string>
     <string name="fragmant_settings_notifications_msg">Notifications</string>
-    <string name="fragment_home_database_root_ref">words</string>
     <string name="fragment_home_database_reference">french</string>
     <string name="fragment_home_layout_no_result_msg">Indisponible !</string>
     <string name="fragment_home_you_try_a_more">Bientôt vous serez notifiés</string>
