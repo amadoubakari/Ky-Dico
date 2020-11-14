@@ -254,10 +254,13 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
                     if (wordList.isEmpty()) {
                         llSearchBlock.setVisibility(View.VISIBLE);
                         recyclerView.setVisibility(View.GONE);
-                        sendQueryWordToTheServer(queryWords);
+                        sendQueryWordToTheServer(queryWords,activity.getString(R.string.fragment_home_database_root_ref),activity.getString(R.string.fragment_home_database_reference));
                     } else {
                         llSearchBlock.setVisibility(View.GONE);
                         recyclerView.setVisibility(View.VISIBLE);
+                        if(!queryWords.get().isEmpty()){
+                            sendQueryWordToTheServer(queryWords,activity.getString(R.string.fragment_home_database_tops),activity.getString(R.string.fragment_home_database_reference));
+                        }
                     }
                     wordAdapter = new WordAdapter(activity, wordList, queryWords.get(), (v, position) -> {
                     });
@@ -330,9 +333,21 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
             database.setPersistenceEnabled(true);
         }
         //Send query word to the server
-        DatabaseReference myRef = database.getReference(activity.getString(R.string.fragment_home_database_root_ref)).child(activity.getString(R.string.fragment_home_database_reference));
-        myRef.push().setValue(queryWords.get());
+        DatabaseReference databaseReference = database.getReference(activity.getString(R.string.fragment_home_database_root_ref)).child(activity.getString(R.string.fragment_home_database_reference));
+        databaseReference.push().setValue(queryWords.get());
     }
+
+    private void sendQueryWordToTheServer(AtomicReference<String> queryWords, String reference, String child) {
+        //Inform me
+        if (database == null) {
+            database = FirebaseDatabase.getInstance();
+            database.setPersistenceEnabled(true);
+        }
+        //Send query word to the server
+        DatabaseReference databaseReference = database.getReference(reference).child(child);
+        databaseReference.push().setValue(queryWords.get());
+    }
+
 
     /**
      * Callback triggered whenever the state has changed.
