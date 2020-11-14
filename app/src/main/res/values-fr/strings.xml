@@ -47,7 +47,7 @@
     <string name="activity_main_thanks_msg">"Merci "</string>
     <string name="dictionary_data_source">dictionnaire.json</string>
     <string name="app_name_release">Dictionnaire Informatique</string>
-    <string name="app_name_debug">Dictionnaire Informatique (Debug)</string>
+    <string name="app_name_debug">Dev-fr</string>
     <string name="dialog_contact_welcome_msg">Bienvenue</string>
     <string name="firebase_channel_id">dico-fr</string>
     <string name="app_google_play_store_url">https://play.google.com/store/apps/details?id=com.flys.dico&amp;hl=fr</string>
@@ -56,7 +56,6 @@
     <string name="fragment_about_dictionary_header">Dictionnaire I.</string>
     <string name="fragment_settings_layout_general_setttings_msg">Configurations générales</string>
     <string name="fragmant_settings_notifications_msg">Notifications</string>
-    <string name="fragment_home_database_root_ref">words</string>
     <string name="fragment_home_database_reference">french</string>
     <string name="fragment_home_layout_no_result_msg">Indisponible !</string>
     <string name="fragment_home_you_try_a_more">Bientôt vous serez notifiés</string>

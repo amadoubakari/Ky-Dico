@@ -75,9 +75,6 @@ import org.androidannotations.annotations.OptionsMenu;
 import org.androidannotations.annotations.OptionsMenuItem;
 import org.androidannotations.annotations.ViewById;
 
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -153,8 +150,9 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     @Override
     protected void onResumeActivity() {
         //Update view if user has been connected
-        if (updateProfile() != null && updateProfile().getType() != null) {
-            updateUserConnectedProfile(updateProfile());
+        User user=updateProfile();
+        if (user != null && user.getType() != null) {
+            updateUserConnectedProfile(user);
         }
     }
 
@@ -394,7 +392,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         TextView mail = headerNavView.findViewById(R.id.profile_user_email_address);
         MenuItem disconnect = navigationView.getMenu().findItem(R.id.menu_deconnexion);
         //Si l'utilisateur est connecte?
-        if (user != null) {
+        if (user != null && (user.getEmail() != null || user.getPhone() != null)) {
             disconnect.setVisible(true);
             switch (user.getType()) {
                 case GOOGLE:
@@ -435,8 +433,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         new GraphRequest(AccessToken.getCurrentAccessToken(), "me", params, HttpMethod.GET,
                 response -> {
                     if (response != null) {
-                        Log.d(TAG, "response "+response.getRawResponse());
-                        Log.d(TAG, "response json object "+response.getJSONObject().toString());
                         try {
                             FacebookProfile facebookProfile = objectMapper.readValue(response.getRawResponse(), new TypeReference<FacebookProfile>() {
 
@@ -448,13 +444,15 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                             user.setEmail(facebookProfile.getEmail());
                             //Updating connected user
                             session.setUser(userDao.update(user));
+                            //Update profile
+                            updateUserConnectedProfile(user);
                             FacebookUrl facebookUrl = facebookProfileImageUrlSplit(facebookProfile.getPicture().getData().getUrl());
                             beginWaiting();
                             downloadFacebookProfileImage(facebookUrl.getBaseUrl(), facebookUrl.getExt(), facebookUrl.getHash())
                                     .subscribeOn(Schedulers.io())
                                     .observeOn(AndroidSchedulers.mainThread())
                                     .subscribe(bytes -> {
-                                        //
+                                        //save downloaded image to the internal storage
                                         FileUtils.saveToInternalStorage(bytes, "glearning", user.getNom() + ".png", this);
                                         //Update profile
                                         updateUserConnectedProfile(user);
@@ -626,7 +624,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
      * Subscribe to firebase channel
      */
     private void firebaseSubscription() {
-        FirebaseMessaging.getInstance().subscribeToTopic(getString(R.string.firebase_channel_id))
+        FirebaseMessaging.getInstance().subscribeToTopic(getString(R.string.firebase_subscription))
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         session.setSubscribed(true);
