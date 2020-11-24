@@ -2281,6 +2281,54 @@
       "description": "Norme d‘affichage de 1024 sur 768 pixels pour une palette de 256 à 16 millions de couleurs, optimale pour les écrans de 17 po et de 19 po."
     },
     {
+      "title": "php ",
+      "description": "Hypertext Preprocessor, plus connu sous son sigle PHP (sigle auto-référentiel), est un langage de programmation libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP, mais pouvant également fonctionner comme n'importe quel langage interprété de façon locale. PHP est un langage impératif orienté objet."
+    },
+    {
+      "title": "adresse physique ou adresse MAC ",
+      "description": "Adresse MAC - Adresse Medium Access Control - Adresse unique sur 6 octets (48 bits) qui identifie une carte réseau. Cette adresse unique est représentée en notation hexadicimale. Chaque coupleur de réseau installé dans un ordinateur possède une adresse unique au monde. Elle est gravée en dur dans la carte. Elle peut être considérée comme l'équivalent du numéro de téléphone d'une personne. Certaines technologies de réseau incluaient la numérotation sur un octet de la carte (système Arcnet de Novell), ces technologies ne sont plus d’actualité"
+    },
+    {
+      "title": "encapsulation ",
+      "description": "c'est un principe de développement de classe qui consiste à protéger l'état des attributs et à imposer de passer par des méthodes pour modifier les valeurs des attributs. C'est ce principe que je tiens à vous faire comprendre dans ce document. Ce principe est très fortement mis en oeuvre dans l'ensemble des librairies proposées par le Java SE et le Java EE"
+    },
+    {
+      "title": "HDMI ",
+      "description": "High Definition Multimedia Interface - Prise Multimédia à haute définition permettant de transporter de la vidéo numérique en haute définition ainsi que du son numérique en 5.1."
+    },
+    {
+      "title": "VPN ",
+      "description": "Virtual Private Network - Réseau Privé Virtuel. Terme très souvent utilisé pour désigner un système de communication utilisant une infrastructure public étendue (RTC, INTERNET, Frame Relay, ATM, …) mais dédiée via des circuits permanents. Un VPN peut être encrypté via IPSEC ou tout autre protocole d’encryption de données."
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
       "title": "",
       "description": ""
     }
