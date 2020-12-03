@@ -16,9 +16,7 @@
             android:id="@+id/appbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.AppBarOverlay"
-           >
-
+            >
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
@@ -26,16 +24,16 @@
                 android:background="@color/white"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
                 app:theme="@style/ActionBarTheme"
-                app:titleTextAppearance="@style/AppTheme.Toolbar.Title"></androidx.appcompat.widget.Toolbar>
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:titleTextAppearance="@style/AppTheme.Toolbar.Title"
+                />
         </com.google.android.material.appbar.AppBarLayout>
 
         <!-- conteneur de fragments -->
-        <com.flys.dico.architecture.core.MyPager xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
+        <com.flys.dico.architecture.core.MyPager
             android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingTop="?attr/actionBarSize"
             android:background="@android:color/white"
            />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -25,6 +25,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -111,7 +112,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
     protected LinearLayout llSearchBlock;
 
     @ViewById(R.id.home_layout_container_id)
-    protected LinearLayout llHomeContainer;
+    protected RelativeLayout llHomeContainer;
 
 
     @Override
@@ -252,10 +253,12 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
                 .subscribe(wordList -> {
                     //No item found
                     if (wordList.isEmpty()) {
+                        llHomeContainer.setBackgroundColor(activity.getColor(R.color.green_200));
                         llSearchBlock.setVisibility(View.VISIBLE);
                         recyclerView.setVisibility(View.GONE);
                         sendQueryWordToTheServer(queryWords,activity.getString(R.string.fragment_home_database_root_ref),activity.getString(R.string.fragment_home_database_reference));
                     } else {
+                        llHomeContainer.setBackgroundColor(activity.getColor(R.color.white));
                         llSearchBlock.setVisibility(View.GONE);
                         recyclerView.setVisibility(View.VISIBLE);
                         if(!queryWords.get().isEmpty()){

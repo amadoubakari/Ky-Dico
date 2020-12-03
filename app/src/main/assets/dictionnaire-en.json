@@ -25183,6 +25183,1226 @@
     {
       "title": "personalization technology ",
       "description": "n. An e-commerce marketing technique in which Web sites and services analyze the interests of individual customers. The e-business then uses this information to deliver services, product offerings, and advertising that match each customer’s personal interests."
+    },
+    {
+      "title": "Personal Web Server ",
+      "description": "n. Microsoft applications that allow a computer running the Windows family of operating systems to function as a Web server for publishing personal Web pages and intranet sites. Personal Web Server is available as part of Microsoft Windows NT 4.0 Option Pack (NTOP), Windows 98, and Windows 95 OEM Service Release 2. FrontPage Personal Web Server is available as part of FrontPage 1.1, FrontPage 97, FrontPage 98, and FrontPage 2000."
+    },
+    {
+      "title": "perspective view ",
+      "description": "n. In computer graphics, a display method that shows objects in three dimensions (height, width, and depth), with the depth aspect rendered according to the desired perspective. An advantage of perspective view is that it presents a more accurate representation of what the human eye perceives. Compare isometric view."
+    },
+    {
+      "title": "peta- ",
+      "description": "prefix Denotes 1 quadrillion (10^15). In computing, which is based on the binary (base 2) numbering system, peta- has a literal value of 1,125,899,906,842,624, which is the power of 2 (2^50) closest to 1 quadrillion. Abbreviation: P."
+    },
+    {
+      "title": "petabyte ",
+      "description": "n. Either 1 quadrillion bytes or 1,125,899,906,842,624 bytes. Abbreviation: PB."
+    },
+    {
+      "title": "PGA ",
+      "description": "n. See pin grid array, Professional Graphics Adapter."
+    },
+    {
+      "title": "PgDn key ",
+      "description": "n. See Page Down key."
+    },
+    {
+      "title": "PGP ",
+      "description": "n. Acronym for Pretty Good Privacy. A program for public key encryption, using the RSA algorithm, developed by Philip Zimmermann. PGP software is available in unsupported free versions and supported commercial versions. See also privacy, public key encryption, RSA encryption."
+    },
+    {
+      "title": "PgUp key ",
+      "description": "n. See Page Up key."
+    },
+    {
+      "title": "phage virus ",
+      "description": "n. A destructive virus that affects the Palm operating system (OS). Phage copies itself, overwriting application files and destroying them. Once the first host file is infected, Phage will spread to all available files. Phage may be spread from one Palm device to another by beaming or connection with a docking station. Phage was one of the first viruses created specifically to affect handheld wireless devices and the first to impact the Palm OS."
+    },
+    {
+      "title": "phase ",
+      "description": "n. A relative measurement that describes the temporal relationship between two signals that have the same frequency. Phase is measured in degrees, with one full oscillation cycle having 360 degrees. The phase of one signal can lead or follow the other by 0 through 180 degrees. See the illustration."
+    },
+    {
+      "title": "phase-change recording ",
+      "description": "n. In optical media, a recording technique that uses a laser beam focused on a microscopic portion of metallic crystal to alter the reflectiveness of its structure in such a way that the change can be read as a 0 bit or 1 bit, depending on whether the resulting structure reflects or absorbs the laser light. See also PDCD drive."
+    },
+    {
+      "title": "phase encoding ",
+      "description": "n. 1. The process of placing digital information on an analog carrier wave while periodically changing the phase of the carrier to increase the bit density of the transmission. See also Manchester coding, phase. 2. A recording technique used with magnetic storage devices in which each data-holding unit is divided into two parts, each of which is magnetized so that it is opposite in polarity to the other."
+    },
+    {
+      "title": "phase-locked ",
+      "description": "adj. Of, pertaining to, or characteristic of the relationship between two signals whose phases relative to each other are kept constant by a controlling mechanism, such as an electronic device."
+    },
+    {
+      "title": "phase modulation ",
+      "description": "n. A method of imposing information onto a waveform signal by shifting the phase of the wave to represent information, such as the binary digits 0 and 1. See the illustration. See also phase-shift keying."
+    },
+    {
+      "title": "phase-shift keying ",
+      "description": "n. A communications method used by modems to encode data that relies on phase shifts in a carrier wave to represent digital information. In its simplest form, phase-shift keying allows the phase of the carrier wave to be in either of two states: shifted 0 degrees or shifted 180 degrees, effectively reversing the phase of the wave. This straightforward phase-shift keying, however, is useful only when each phase can be measured against an unchanging reference value, so a more sophisticated technique called differential phase-shift keying, or DPSK, is used in many modems. In differential phase-shift keying, the phase of the carrier wave is shifted to represent more than two possible states, and each state is interpreted as a relative change from the state preceding it. No reference values or timing considerations are required and because more than two states are possible, more than one binary digit can represent each state. Acronym: PSK. See also phase modulation."
+    },
+    {
+      "title": "Phoenix BIOS ",
+      "description": "n. An IBM-compatible ROM BIOS manufactured by Phoenix Technologies, Ltd. A popular ROM BIOS in many so-called PC clone computers, the Phoenix BIOS was an early leader among the IBM-compatible computers shortly after they began to appear in the marketplace. See also BIOS, ROM BIOS. Compare AMI BIOS."
+    },
+    {
+      "title": "phone connector ",
+      "description": "n. An attachment, usually an RJ-11 connector, used to join a telephone line to a device such as a modem. See the illustration."
+    },
+    {
+      "title": "phoneline networking ",
+      "description": "n. The use of telephone wiring for connecting computers and other devices in a small network, such as a home network. See also HomePNA."
+    },
+    {
+      "title": "phoneme ",
+      "description": "n. In linguistics, the smallest unit of speech that distinguishes one word sound from another. Phonemes are the elements on which computer speech is based."
+    },
+    {
+      "title": "phono connector ",
+      "description": "n. An attachment used to connect a device, such as a microphone or a pair of headphones, to a piece of audio equipment or to a computer peripheral or adapter with audio capability. See the illustration."
+    },
+    {
+      "title": "phosphor ",
+      "description": "n. Any substance capable of emitting light when struck by radiation. The inside surface of a CRT screen is coated with a phosphor that, when excited by an electron beam, displays an image on the screen. See also persistence."
+    },
+    {
+      "title": "PhotoCD ",
+      "description": "n. A digitizing system from Kodak that allows 35mm film pictures, negatives, slides, and scanned images to be stored on a compact disc. Images are stored in a file format called Kodak PhotoCD IMAGE PAC File Format, or PCD. Many photography or film development businesses offer this service. Images stored on a PhotoCD can usually be viewed by any computer with CD-ROM capabilities and the software required to read PCD. Such images can also be viewed using one of a variety of players designed to display images stored on CDs."
+    },
+    {
+      "title": "photo cell ",
+      "description": "n. See photoelectric device."
+    },
+    {
+      "title": "photocomposition ",
+      "description": "n. In traditional typesetting, the use of photographic and electronic equipment in laying out and producing a printed page. In desktop publishing, phototypesetters are used to accomplish the same ends. See also phototypesetter. Compare imagesetter."
+    },
+    {
+      "title": "photoconductor ",
+      "description": "n. A material that exhibits increased conductivity when it is exposed to a source of light. Photoconductors are used in photodetectors, which are used in fiber optics to register light and convert it into electrical pulses. See also fiber optics."
+    },
+    {
+      "title": "photo editor ",
+      "description": "n. A graphics application used to manipulate an image, such as a scanned photograph, digitally."
+    },
+    {
+      "title": "photoelectric device ",
+      "description": "n. A device that uses light to create or modulate an electric signal. A photoelectric device uses semiconductor material and falls in one of two categories. In one type (photocell), light falling on the semiconductor generates an electrical current. In another type of device (photosensor), light changes the resistance of the semiconductor material, modulating an applied voltage."
+    },
+    {
+      "title": "photolithography ",
+      "description": "n. A technique used in the fabrication of integrated circuits. The circuit pattern is drawn, photographed, and reduced to a negative having the desired final size. This negative is called the photomask. Light is passed through the photomask onto a wafer made of semiconductor material that has been coated with a photoresistive material. Where light strikes the photoresistive material, its composition is changed. In the next step, the photoresistive material not affected by light is washed off. Finally, the semiconductor material is exposed to an etching solution that eats away the surface not protected by the photoresistive material, creating the desired circuit pattern on the surface of the wafer. See also photomask, photoresist."
+    },
+    {
+      "title": "photomask ",
+      "description": "n. A photographic negative image of a circuit pattern used in fabrication of integrated circuits. See also photolithography."
+    },
+    {
+      "title": "photonics ",
+      "description": "n. Optoelectronic systems that transmit visible light or infrared energy. Photonic systems are used with fiber optic networks and optical circuits. Photonic networks offer dramatic increases in speed and bandwidth, allowing significantly greater amounts of information to be encoded and transmitted than with traditional cabling solutions."
+    },
+    {
+      "title": "photorealism ",
+      "description": "n. The process of creating images that are as close to photographic or “real-life” quality as possible. In computer graphics, photorealism requires powerful computers and highly sophisticated software and is heavily mathematical. See also ray tracing."
+    },
+    {
+      "title": "photoresist ",
+      "description": "n. A compound that is used in photolithographic fabrication of integrated circuits and printed circuit boards. When exposed to ultraviolet light through a photomask, the photoresistive material exposed to the light polymerizes (hardens); the areas not exposed can be washed away, leaving the pattern of traces on the substrate. Subsequent etching removes areas not protected by the polymerized photoresist."
+    },
+    {
+      "title": "photosensor ",
+      "description": "n. See photoelectric device."
+    },
+    {
+      "title": "Photoshop ",
+      "description": "n. Adobe software product for digital image editing and enhancement, photo retouching, and color management of graphic images. Photoshop includes such features as multiple undo, text editing with formatting control, and enhanced color management and controls. The program supports numerous Web and graphics file formats and runs on both the Windows and Power Macintosh platforms."
+    },
+    {
+      "title": "phototypesetter ",
+      "description": "n. A printer similar to a laser printer but capable of resolutions over 2,000 dots per inch. Phototypesetters apply light directly to a photographic film or photosensitive paper. See also photocomposition. Compare imagesetter."
+    },
+    {
+      "title": "photovoltaic cell ",
+      "description": "n. See solar cell."
+    },
+    {
+      "title": "PHP ",
+      "description": "n. Acronym for PHP: Hypertext Preprocessor. An open source scripting language used with HTML documents to execute server-side interactive functions. PHP runs on all major operating systems and is primarily used with Linux and UNIX Web servers or on Windows servers with add-on software. PHP may be embedded in a Web page and used to access and present database information. An HTML document that contains a PHP script usually has a .php filename extension. Originally PHP stood for “Personal Home Page,” with later versions standing for “PHP Hypertext Preprocessor” or simply PHP. The syntax of PHP is fairly simple and very similar to that of Perl, with some aspects of Bourne shell, JavaScript, and C. It can also be regarded as a technology (server-side environment for ported script engines, like ASP)."
+    },
+    {
+      "title": "phreak (1)",
+      "description": "n. A person who breaks into, or cracks, telephone networks or other secured systems. In the 1970s, the telephone system used audible tones as switching signals, and phone phreaks used homebrew hardware to match the tones and steal long-distance service. See also homebrew. Compare cracker, hacker (definition 2)."
+    },
+    {
+      "title": "phreak (2)",
+      "description": "vb. To break into, or crack, phone networks or computer systems. See also homebrew. Compare hack."
+    },
+    {
+      "title": "PHS ",
+      "description": "n. See Personal Handyphone System."
+    },
+    {
+      "title": "physical ",
+      "description": "adj. In computing, of, pertaining to, or characteristic of a real, as opposed to a conceptual, piece of equipment or frame of reference. Compare logical (definition 2)."
+    },
+    {
+      "title": "physical address ",
+      "description": "n. An address that corresponds to a hardware memory location. In simple processors such as the 8088 and the 68000, every address is a physical address. In processors supporting virtual memory, programs reference virtual addresses, which are then mapped by memory management hardware onto physical addresses. Also called: hardware address. See also memory management unit, paging, virtual memory."
+    },
+    {
+      "title": "physical-image file ",
+      "description": "n. A hard disk copy of the material to be recorded onto a CD-ROM. Creating a complete copy precludes problems in writing the CD-ROM because of delays in assembling the material from a scattered group of files. See also CD-ROM. Compare virtual-image file."
+    },
+    {
+      "title": "physical layer ",
+      "description": "n. The first, or lowest, of the seven layers in the ISO/OSI reference model for standardizing computer- to-computer communications. The physical layer is totally hardware-oriented and deals with all aspects of establishing and maintaining a physical link between communicating computers. Among specifications covered on the physical layer are cabling, electrical signals, and mechanical connections. See the illustration. See also ISO/OSI reference model."
+    },
+    {
+      "title": "physical memory ",
+      "description": "n. Memory actually present in the system, as opposed to virtual memory. A computer might have 64 megabytes of physical RAM but support a virtual memory capacity of 1 gigabyte or more. Compare virtual memory."
+    },
+    {
+      "title": "physical network ",
+      "description": "n. One of two ways of describing the topology, or layout, of a computer network; the other is logical network. A physical network refers to the actual configuration of the hardware forming a network—that is, to the computers, connecting hardware, and especially the cabling patterns that give the network its shape. Basic physical layouts include the bus, ring, and star topologies. See also bus network, logical network, ring network, star network."
+    },
+    {
+      "title": "physical storage ",
+      "description": "n. See real storage."
+    },
+    {
+      "title": "pi ",
+      "description": "n. A mathematical constant equal to approximately 3.1415926535897932, describing the ratio of the circumference of a circle to its diameter."
+    },
+    {
+      "title": "PIC ",
+      "description": "n. See programmable interrupt controller."
+    },
+    {
+      "title": "pica ",
+      "description": "n. 1. With reference to typewriters, a fixed-width type font that fits 10 characters to the linear inch. See also pitch. 2. As used by typographers, a unit of measure equal to 12 points or approximately 1/6 inch. See also point1 (definition 1)."
+    },
+    {
+      "title": "PICMG ",
+      "description": "n. Acronym for the PCI Industrial Computer Manufacturers Group. A consortium of more than 350 computer product vendors, this non-profit organization develops specifications for PCI-based devices, such as the CompactPCI specification. See also CompactPCI."
+    },
+    {
+      "title": "pico- ",
+      "description": "prefix Denotes one trillionth (10–12), or, in the British numbering system, one million millionth. Abbreviation: p."
+    },
+    {
+      "title": "picoJava ",
+      "description": "n. A microprocessor developed by Sun Microsystems, Inc., that executes Java code. See also Java."
+    },
+    {
+      "title": "picosecond ",
+      "description": "n. One trillionth of a second. Abbreviation: psec."
+    },
+    {
+      "title": "PICS ",
+      "description": "n. See Platform for Internet Content Selection."
+    },
+    {
+      "title": ".pict ",
+      "description": "n. The file extension that identifies graphic images in the Macintosh PICT format. See also PICT."
+    },
+    {
+      "title": "PICT ",
+      "description": "n. A file-format standard for encoding graphical images, both object-oriented and bitmapped. The PICT file format was first used in Macintosh applications, but many PC applications can read the format too. See also bitmapped graphics, object-oriented graphics."
+    },
+    {
+      "title": "picture element ",
+      "description": "n. See pixel."
+    },
+    {
+      "title": "pie chart ",
+      "description": "n. A type of graph that presents values as percentages (slices) of a whole (a pie)."
+    },
+    {
+      "title": "piezoelectric ",
+      "description": "adj. Of, pertaining to, or characteristic of crystals that can convert between mechanical and electrical energy. An electric potential applied to a piezoelectric crystal causes a small change in the shape of the crystal. Likewise, physical pressure applied to the crystal creates an electrical potential difference between the surfaces of the crystal."
+    },
+    {
+      "title": "piggyback board ",
+      "description": "n. A printed circuit board that plugs into another circuit board to enhance its capabilities. A piggyback board is sometimes used to replace a single chip, in which case the chip is removed and the piggyback board is inserted into the empty socket. See also daughterboard."
+    },
+    {
+      "title": "Pilot ",
+      "description": "n. A series of popular handheld personal digital assistants (PDAs) designed by Palm and based on the Palm OS operating system. Palm introduced its first Pilot model in 1996, followed in 1997 by the PalmPilot, and thereafter by a series of other Palm handheld models."
+    },
+    {
+      "title": "PILOT ",
+      "description": "n. Acronym for Programmed Inquiry, Learning or Teaching. A programming language developed in 1976 by John A. Starkweather and designed primarily for creating applications for computer-aided instruction."
+    },
+    {
+      "title": "PIM ",
+      "description": "n. Acronym for personal information manager. An application that usually includes an address book and organizes unrelated information, such as notes, appointments, and names, in a useful way."
+    },
+    {
+      "title": "pin ",
+      "description": "n. A slender prong. Pins are commonly encountered as the contacts protruding from a male connector. Connectors are often identified by the number of pins they have. Other types of pins are the spidery, leglike metal appendages that connect computer chips to sockets on a circuit board or directly to the circuit board. See the illustration."
+    },
+    {
+      "title": "PIN ",
+      "description": "n. Acronym for personal identification number. A unique code number used to gain access to personal information or assets via an electronic device. PINs are used by a variety of electronic services such as automated bank tellers, Internet sites, and wireless phone services."
+    },
+    {
+      "title": "pinch roller ",
+      "description": "n. A small cylindrical pulley that presses magnetic tape against the drive’s capstan to move the tape over the tape machine’s heads. See also capstan."
+    },
+    {
+      "title": "pinch-roller plotter ",
+      "description": "n. A type of plotter, intermediate between drum and flatbed types, that uses hard rubber or metal wheels to hold the paper against the main roller. See also plotter. Compare drum plotter, flatbed plotter."
+    },
+    {
+      "title": "pin-compatible ",
+      "description": "adj. Having pins that are equivalent to the pins on another chip or device. A chip, for example, might have different internal circuitry from that used in another chip, but if the two chips use the same pins for input and output of identical signals, they are pin-compatible. Compare plug-compatible."
+    },
+    {
+      "title": "pine ",
+      "description": "n. Acronym for pine is not elm, or for Program for Internet News and E-mail. One of the most commonly encountered programs for reading and composing e-mail on character-based UNIX systems. The pine program was developed as an improved version of elm at the University of Washington. Compare elm."
+    },
+    {
+      "title": "pin feed ",
+      "description": "n. A method of feeding paper through a printer in which small pins, mounted on rollers on the ends of the platen, engage holes near the edges of continuous-form paper. See also continuous-form paper, paper feed. Compare tractor feed."
+    },
+    {
+      "title": "ping (1) ",
+      "description": "n. 1. Acronym for Packet Internet Groper. A protocol for testing whether a particular computer is connected to the Internet by sending a packet to its IP address and waiting for a response. The name actually comes from submarine active sonar, where a sound signal—called a “ping”—is broadcast, and surrounding objects are revealed by their reflections of the sound. 2. A UNIX utility that implements the ping protocol."
+    },
+    {
+      "title": "ping (2) ",
+      "description": "vb. 1. To test whether a computer is connected to the Internet using the ping utility. 2. To test which users on a mailing list are current by sending e-mail to the list asking for a response."
+    },
+    {
+      "title": "Ping of Death ",
+      "description": "n. A form of Internet vandalism that entails sending a packet that is substantially larger than the usual 64 bytes over the Internet via the ping protocol to a remote computer. The size of the packet causes the computer to crash or reboot. See also packet (definition 2), ping1 (definition 1)."
+    },
+    {
+      "title": "ping packet ",
+      "description": "n. An “are you there” message transmitted by a Packet Internet Groper program. A ping packet is sent from one node to the IP (Internet Protocol) address of a network computer to determine whether that node is able to send and receive transmissions. Many shareware and freeware ping utilities for PCs are available for download from the Internet. See also ping1 (definition 1), packet1 (definition 1)."
+    },
+    {
+      "title": "ping pong ",
+      "description": "n. 1. In communications, a technique that changes the direction of transmission so that the sender becomes the receiver and vice versa. 2. In information processing and transfer, the technique of using two temporary storage areas (buffers) rather than one to hold both input and output."
+    },
+    {
+      "title": "ping-pong buffer ",
+      "description": "n. A double buffer in which each part is alternately filled and flushed, resulting in a more or less continuous stream of input and output data. See also ping pong (definition 2)."
+    },
+    {
+      "title": "pin grid array ",
+      "description": "n. A method of mounting chips on boards, preferred for chips with a very large number of pins. Pin grid array packages have pins protruding from the bottom surface of the chip, as opposed to dual in-line packages and leaderless chip carrier packages, which have pins protruding from the edges. Acronym: PGA. Compare DIP, leadless chip carrier."
+    },
+    {
+      "title": "pink contract ",
+      "description": "n. A non-standard addendum to a contract with an Internet service provider (ISP), specifically offering the client the opportunity to send unsolicited commercial email and put up spam-related Web sites. See also spam."
+    },
+    {
+      "title": "pinout ",
+      "description": "n. A description or diagram of the pins of a chip or connector. See also pin."
+    },
+    {
+      "title": "PIO ",
+      "description": "n. Acronym for Programmed Input/Output (or, less frequently, Processor Input/Output). One of two transfer methods used in moving data between a disk drive and memory. With PIO, the disk controller moves a block of data into the CPU’s registers, and the CPU then moves the data to its intended destination. PIO is characteristic of IDE drives. The alternative data-transfer method, direct memory access (DMA), bypasses the CPU and moves data directly between disk and memory. See also Bus, bus mastering, controller. Compare direct memory access."
+    },
+    {
+      "title": "pipe ",
+      "description": "n. 1. A portion of memory that can be used by one process to pass information along to another. Essentially, a pipe works like its namesake: it connects two processes so that the output of one can be used as the input to the other. See also input stream, output stream. 2. The vertical line character (|) that appears on a PC keyboard as the shift character on the backslash (\\) key. 3. In MS-DOS and UNIX, a command function that transfers the output of one command to the input of a second command."
+    },
+    {
+      "title": "pipeline burst static RAM ",
+      "description": "n. A type of static RAM that uses burst and pipelining technologies to increase the speed at which information can be provided to a computer’s CPU. By pipelining requests so that one is being acted upon at the same time the next is getting underway, pipeline burst static RAM, or PB SRAM, can provide information to the CPU at high speed. PB SRAM is used in L2 caches (rapid-response memory dedicated to storing frequently requested data) on computers running at bus speeds of 75 MHz or higher. Acronym: PB SRAM. See also burst (definition 2), L2 cache, pipelining, static RAM. Compare asynchronous static RAM, dynamic RAM, synchronous burst static RAM."
+    },
+    {
+      "title": "pipeline processing ",
+      "description": "n. A method of processing on a computer that allows fast parallel processing of data. This is accomplished by overlapping operations using a pipe, or a portion of memory that passes information from one process to another. See also parallel processing, pipe (definition 1), pipelining (definition 3)."
+    },
+    {
+      "title": "pipelining ",
+      "description": "n. 1. A method of fetching and decoding instructions (preprocessing) in which, at any given time, several program instructions are in various stages of being fetched or decoded. Ideally, pipelining speeds execution time by ensuring that the microprocessor does not have to wait for instructions; when it completes execution of one instruction, the next is ready and waiting. See also superpipelining. 2. In parallel processing, a method in which instructions are passed from one processing unit to another, as on an assembly line, and each unit is specialized for performing a particular type of operation. 3. The use of pipes in passing the output of one task as input to another until a desired sequence of tasks has been carried out. See also pipe (definition 1), pour."
+    },
+    {
+      "title": "piracy ",
+      "description": "n. 1. The theft of a computer design or program. 2. Unauthorized distribution and use of a computer program."
+    },
+    {
+      "title": ".pit ",
+      "description": "n. A file extension for an archive file compressed with PackIT. See also PackIT."
+    },
+    {
+      "title": "pitch ",
+      "description": "n. A measure, generally used with monospace fonts, that describes the number of characters that fit in a horizontal inch. See also characters per inch, screen pitch. Compare point1 (definition 1)."
+    },
+    {
+      "title": "PivotChart ",
+      "description": "adj. A graphical tool in Microsoft Excel or Access that can be used to display data from a list or database in chart form. Based on user-selected information incorporated in an Excel PivotTable report or list, a Pivot- Chart report provides the ability to chart the data interactively— for example, to “pivot” the chart’s point of view from product sales by category to product sales by region or by salesperson. See also PivotTable."
+    },
+    {
+      "title": "PivotTable ",
+      "description": "adj. An interactive table in Microsoft Excel or Access that can show the same data from a list or a database in more than one arrangement. A user can manipulate the rows and columns in a PivotTable to view or summarize the information in different ways for purposes of analysis. In Excel, a PivotTable report is the basis for creating a PivotChart report that displays the same data in chart form. See also PivotChart."
+    },
+    {
+      "title": "pivot year ",
+      "description": "n. In Year 2000 windowing, a date in a 100- year period that serves as the point from which correct dates can be calculated in systems or software that can store only 2-digit years. For example, a pivot year of 1970 means that the numbers 70 through 99 are interpreted as the years 1970 to 1999, and the numbers 00 through 69 as the years 2000 through 2069. See also windowing."
+    },
+    {
+      "title": "pixel ",
+      "description": "n. Short for picture (pix) element. One spot in a rectilinear grid of thousands of such spots that are individually “painted” to form an image produced on the screen by a computer or on paper by a printer. A pixel is the smallest element that display or print hardware and software can manipulate in creating letters, numbers, or graphics. See the illustration. Also called: pel."
+    },
+    {
+      "title": "pixel image ",
+      "description": "n. The representation of a color graphic in a computer’s memory. A pixel image is similar to a bit image, which also describes a screen graphic, but a pixel image has an added dimension, sometimes called depth, that describes the number of bits in memory assigned to each on-screen pixel."
+    },
+    {
+      "title": "pixel map ",
+      "description": "n. A data structure that describes the pixel image of a graphic, including such features as color, image, resolution, dimensions, storage format, and number of bits used to describe each pixel. See also pixel, pixel image."
+    },
+    {
+      "title": "PJL ",
+      "description": "n. See Printer Job Language."
+    },
+    {
+      "title": "PJ/NF ",
+      "description": "n. Acronym for projection-join normal form. See normal form (definition 1)."
+    },
+    {
+      "title": "PKUNZIP ",
+      "description": "n. A shareware utility program that uncompresses files compressed by the PKZIP shareware utility program. PKUNZIP is generally made available with PKZIP; distribution of PKUNZIP for commercial purposes is not permitted without obtaining permission from its publisher, PKware, Inc. See also PKZIP."
+    },
+    {
+      "title": "PKZIP ",
+      "description": "n. A widely used shareware utility program for compressing files. Developed by PKware, Inc., in 1989 and available from a wide variety of sources, PKZIP can combine one or more files into a compressed output file having the extension .zip. A companion utility program, PKUNZIP, is required to uncompress the compressed files. See also PKUNZIP, shareware, utility program."
+    },
+    {
+      "title": "PLA ",
+      "description": "n. Acronym for programmable logic array. See fieldprogrammable logic array."
+    },
+    {
+      "title": "placeholder ",
+      "description": "n. 1. A character that masks or hides another character for security reasons. For example, when a user types a password, an asterisk is displayed on the screen to take the place of each character typed. 2. Text or some other element used in an application as an indicator that the user should enter in his or her own text."
+    },
+    {
+      "title": "Plain Old Telephone Service ",
+      "description": "n. See POTS."
+    },
+    {
+      "title": "plaintext ",
+      "description": "n. 1. Nonencrypted or decrypted text. See also decryption, encryption. 2. A file that is stored as plain ASCII data. Compare ciphertext."
+    },
+    {
+      "title": "plain vanilla ",
+      "description": "adj. Ordinary; the standard version of hardware or software without any enhancements. For example, a plain vanilla modem might have data transfer capability but no fax or voice features."
+    },
+    {
+      "title": ".plan ",
+      "description": "n. A file in a UNIX user’s home directory that is displayed when other users finger that account. Users can enter information into .plan files at their discretion to provide information in addition to that normally displayed by the finger command. See also finger."
+    },
+    {
+      "title": "planar ",
+      "description": "adj. 1. In computer graphics, lying within a plane. 2. In the fabrication of semiconductor materials, maintaining the original flat surface of the silicon wafer throughout processing, while the chemicals that make up the elements that control the flow of current are diffused into (and beneath) the surface."
+    },
+    {
+      "title": "planar transistor ",
+      "description": "n. A special form of transistor that is fabricated with all three elements (collector, emitter, and base) on a single layer of semiconductor material. The structure of a planar transistor permits it to dissipate relatively large amounts of heat, making this design suitable for power transistors. See the illustration."
+    },
+    {
+      "title": "plasma display ",
+      "description": "n. See gas-discharge display."
+    },
+    {
+      "title": "plastic leadless chip carrier ",
+      "description": "n. See PLCC."
+    },
+    {
+      "title": "plastic transistor ",
+      "description": "n. A transistor produced entirely from plastic rather than the traditional silicon. A plastic transistor is flexible enough to be embedded in curved surfaces or folded. Production of plastic transistors begins with a thin piece of clear plastic, onto which layers of plastic are printed or sprayed through a mesh. The result is a lightweight, flexible and transparent transistor that can be manufactured in high volumes for a fraction of the cost of silicon transistors. The flexibility and low-cost of plastic transistors make them useful in applications from transparent foldable displays to one-use product containers. See also electronic paper."
+    },
+    {
+      "title": "platen ",
+      "description": "n. The cylinder in most impact printers and typewriters, around which the paper wraps and against which the print mechanism strikes the paper. The paper bail, a spring-loaded bar with small rollers, holds the paper smoothly against the platen just above the print mechanism."
+    },
+    {
+      "title": "platform ",
+      "description": "n. 1. The foundation technology of a computer system. Because computers are layered devices composed of a chip-level hardware layer, a firmware and operatingsystem layer, and an applications program layer, the bottommost layer of a machine is often called a platform. 2. In everyday usage, the type of computer or operating system being used."
+    },
+    {
+      "title": "Platform for Internet Content Selection ",
+      "description": "n. A specification for rating and labeling Internet content. Originally developed by the World Wide Web Consortium to enable parents, teachers, administrators, and other caretakers to control the material to which children have online access, its use has expanded to include the protection of privacy and intellectual property. PICS is not itself a system for rating Internet content. Rather, it specifies the format conventions to be used by rating systems in devising labels that can be read by PICS-compatible software. Acronym: PICS."
+    },
+    {
+      "title": "Platform for Privacy Preference Project ",
+      "description": "n. See P3P."
+    },
+    {
+      "title": "Platform for Privacy Preferences ",
+      "description": "n. See P3P."
+    },
+    {
+      "title": "platform invoke ",
+      "description": "n. The functionality provided by the run time to enable managed code to call unmanaged native DLL entry points."
+    },
+    {
+      "title": "platter ",
+      "description": "n. One of the individual metal data storage disks within a hard disk drive. Most hard disks have from two to eight platters. See the illustration. See also hard disk."
+    },
+    {
+      "title": "player ",
+      "description": "n. In relation to digital audio, a program that plays music and other audio files that have been ripped (transferred from a compact disc to a hard disk) and then encoded in a playable format, such as MP3. See also encoder, MP3, ripper."
+    },
+    {
+      "title": "PlayStation ",
+      "description": "n. Sony Corporation’s console computer entertainment gaming system. PlayStation 2, the latest version, is a 128-bit system that features a 300-Mhz processor, 32 MB of Direct RDRAM main memory, and a floating-point performance of 6.2 GFLOPS. PlayStation 2 also offers the capability to play CDs and DVDs. See also computer game, console game. Compare Dreamcast, GameCube, Xbox."
+    },
+    {
+      "title": "PL/C ",
+      "description": "n. A version of the PL/I programming language developed at Cornell University and used on mainframe computers. See also PL/I."
+    },
+    {
+      "title": "PLCC ",
+      "description": "n. Acronym for plastic leadless chip carrier. An inexpensive variation of the leadless chip carrier (LCC) method of mounting chips on boards. Although the two carriers are similar in appearance, PLCCs are physically incompatible with leadless chip carriers, which are made from a ceramic material. See also leadless chip carrier."
+    },
+    {
+      "title": "PLD ",
+      "description": "n. See programmable logic device."
+    },
+    {
+      "title": "PL/I ",
+      "description": "n. Acronym for Programming Language I (One). A programming language developed by IBM (1964–1969), designed to bring together the key features of FORTRAN, COBOL, and ALGOL while introducing such new concepts as condition-based error handling and multitasking. The result of this effort was a compiled, structured language that was so complex that it never gained widespread acceptance. Nevertheless, PL/I is still used in some academic and research environments. See also ALGOL, COBOL, compiled language, FORTRAN."
+    },
+    {
+      "title": "PL/M ",
+      "description": "n. Acronym for Programming Language for Microcomputers. A programming language derived from PL/I and developed in the early 1970s by Intel Corporation for microprocessors. PL/M was used primarily for the creation of operating systems. See also PL/I."
+    },
+    {
+      "title": "plot ",
+      "description": "vb. To create a graphic or a diagram by connecting points representing variables (values) that are defined by their positions in relation to a horizontal (x) axis and a vertical (y) axis (and sometimes a depth, or z, axis)."
+    },
+    {
+      "title": "plotter ",
+      "description": "n. Any device used to draw charts, diagrams, and other line-based graphics. Plotters use either pens or electrostatic charges and toner. Pen plotters draw on paper or transparencies with one or more colored pens. Electrostatic plotters “draw” a pattern of electrostatically charged dots on the paper and then apply toner and fuse it in place. Plotters use three basic types of paper handling: flatbed, drum, and pinch roller. Flatbed plotters hold the paper still and move the pen along both x and y axes. Drum plotters roll the paper over a cylinder. The pen moves along one axis while the drum, with the paper attached, moves along the other. Pinch-roller plotters are a hybrid of the two, in which the pen moves only along one axis while the paper is moved back and forth by small rollers."
+    },
+    {
+      "title": "PL/SQL ",
+      "description": "n. Short for Procedural Language Extension to SQL. Oracle’s data manipulation language that allows sequenced or grouped execution of SQL statements and is commonly used to manipulate data in an Oracle database. The syntax is similar to the Ada programming language."
+    },
+    {
+      "title": "plug ",
+      "description": "n. A connector, especially a male connector, one that fits into a socket. See also male connector."
+    },
+    {
+      "title": "plug and play ",
+      "description": "n. 1. Generally, a reference to the ability of a computer system to automatically configure a device added to it. Plug and play capability exists in Macintoshes based on the NuBus and, since Windows 95, on PC-compatible computers. 2.When capitalized and, especially, when abbreviated PnP, a set of specifications developed by Intel and Microsoft that allows a PC to configure itself automatically to work with peripherals such as monitors, modems, and printers. A user can plug in a peripheral and “play” it without manually configuring the system. A Plug and Play PC requires both a BIOS that supports Plug and Play and a Plug and Play expansion card. Abbreviation: PnP. See also BIOS, expansion board, peripheral."
+    },
+    {
+      "title": "plugboard ",
+      "description": "n. A board that permits users to control the operation of a device by plugging cables into sockets."
+    },
+    {
+      "title": "plug-compatible ",
+      "description": "adj. Equipped with connectors that are equivalent both in structure and in usage. For example, most modems having DB-25 connectors on their rear panels are plug-compatible—that is, one can be replaced by another without the cable having to be rewired. Compare pin-compatible."
+    },
+    {
+      "title": "plug-in ",
+      "description": "n. 1. A small software program that plugs into a larger application to provide added functionality. 2. A software component that plugs into the Netscape Navigator. Plug-ins permit the Web browser to access and execute files embedded in HTML documents that are in formats the browser normally would not recognize, such as many animation, video, and audio files. Most plug-ins are developed by software companies who have proprietary software in which the embedded files are created. Compare helper application."
+    },
+    {
+      "title": "p-machine ",
+      "description": "n. See pseudomachine. "
+    },
+    {
+      "title": "PMML ",
+      "description": "n. Acronym for Predictive Model Markup Language. An XML-based language that enables sharing of defined predictive models between compliant vendor applications."
+    },
+    {
+      "title": "PMMU ",
+      "description": "n. See paged memory management unit."
+    },
+    {
+      "title": "PMOS ",
+      "description": "n. Acronym for P-channel metal-oxide semiconductor. A MOSFET semiconductor technology in which the conduction channel is formed by the movement of holes (electron “vacancies” created as electrons move from atom to atom) rather than electrons. Because holes move more slowly than electrons do, PMOS is slower than NMOS, but it is also easier and less expensive to fabricate. See also MOS, MOSFET, P-type semiconductor. Compare CMOS, NMOS."
+    },
+    {
+      "title": "PMS ",
+      "description": "n. See PANTONE MATCHING SYSTEM."
+    },
+    {
+      "title": "PNG ",
+      "description": "n. Acronym for Portable Network Graphics. A file format for bitmapped graphic images, designed to be a replacement for the GIF format, without the legal restrictions associated with GIF. See also GIF."
+    },
+    {
+      "title": "PNNI ",
+      "description": "n. Short for Private Network-to-Network Interface. A routing protocol used in ATM networks that provides switches with the ability to communicate changes in the network. Through PNNI, switches can be informed of changes to the network as they occur and can then use the information to make appropriate routing decisions. See also ATM."
+    },
+    {
+      "title": "PnP ",
+      "description": "n. See plug and play (definition 2)."
+    },
+    {
+      "title": "PNP ",
+      "description": "n. See PNP transistor."
+    },
+    {
+      "title": "PNP transistor ",
+      "description": "n. A type of bipolar transistor in which a base of N-type material is sandwiched between an emitter and a collector of P-type material. The base, emitter, and collector are the three terminals of the transistor through which current flows. In a PNP transistor, holes (electron “vacancies”) are the majority of the charge carriers, and they flow from the emitter to the collector. See the illustration. See also N-type semiconductor, P-type semiconductor. Compare NPN transistor."
+    },
+    {
+      "title": "pocket Active Server Pages ",
+      "description": "n. A scaled-down version of the Active Server Pages optimized for server-side Mobile Channels scripting. Acronym: pASP."
+    },
+    {
+      "title": "pocket Excel ",
+      "description": "n. A scaled-down version of Microsoft Excel for the Pocket PC. See also Microsoft Excel."
+    },
+    {
+      "title": "Pocket PC ",
+      "description": "n. A personal handheld computing device based on specifications designed by Microsoft and running the Microsoft Windows for Pocket PC operating system. Pocket PCs maintain the look of a Windows operating system display screen and offer compact versions of many of the applications that run on Windowspowered personal computers. A number of manufacturers produce Pocket PCs, including Hewlett-Packard, Compaq, and Casio."
+    },
+    {
+      "title": "pocket Word ",
+      "description": "n. A scaled-down version of Microsoft Word for the Pocket PC. See also Microsoft Word."
+    },
+    {
+      "title": "point (1) ",
+      "description": "n. 1. A unit of measure used in printing, equal to approximately 1/72 of an inch. Character height and the amount of space (leading) between lines of text are usually specified in points. 2. A single pixel on the screen, identified by its row and column numbers. 3. A location in a geometric form, represented by two or more numbers that constitute its coordinates."
+    },
+    {
+      "title": "point (2) ",
+      "description": "vb. To move an arrow or other such indicator to a particular item or position on the screen by using direction keys or by maneuvering a pointing device such as a mouse."
+    },
+    {
+      "title": "point-and-click ",
+      "description": "adj. Enabling a user to select data and activate programs by using a mouse or other pointing device to move a cursor to a desired location (“point”) and pressing a button on the mouse or other pointing device (“click”)."
+    },
+    {
+      "title": "PointCast ",
+      "description": "n. An Internet service that delivers and displays a personalized set of news articles to individual users. Unlike the World Wide Web and other Internet applications, PointCast is a push technology, where the server automatically uploads data without a specific command from the client. See also server (definition 2)."
+    },
+    {
+      "title": "point chart ",
+      "description": "n. See scatter diagram."
+    },
+    {
+      "title": "point diagram ",
+      "description": "n. See scatter diagram."
+    },
+    {
+      "title": "pointer ",
+      "description": "n. In programming and information processing, a variable that contains the memory location (address) of some data rather than the data itself. See also address1 (definition 1), handle (definition 1), mouse pointer, reference (1)."
+    },
+    {
+      "title": "pointing device ",
+      "description": "n. An input device used to control an onscreen cursor for such actions as “pressing” on-screen buttons in dialog boxes, choosing menu items, and selecting ranges of cells in spreadsheets or groups of words in a document. A pointing device is often used to create drawings or graphical shapes. The most common pointing device is the mouse, which was popularized by its use with the Apple Macintosh. Other pointing devices include graphics tablets, styluses, light pens, joysticks, pucks, and trackballs. See also graphics tablet, joystick, light pen, mouse, puck, stylus, trackball."
+    },
+    {
+      "title": "point listing ",
+      "description": "n. A database of popular Web sites categorized by topics of interest and often rated by design and content."
+    },
+    {
+      "title": "point of presence ",
+      "description": "n. 1. A point in a wide area network to which a user can connect with a local telephone call. 2. A point at which a long distance telephone carrier connects to a local telephone exchange or to an individual user. Acronym: POP."
+    },
+    {
+      "title": "point of sale ",
+      "description": "n. See POS."
+    },
+    {
+      "title": "point-to-point configuration ",
+      "description": "n. A communications link in which dedicated links exist between individual origins and destinations, as opposed to a point-to-multipoint configuration, in which the same signal goes to many destinations (such as a cable TV system), or a switched configuration, in which the signal moves from the origin to a switch that routes the signal to one of several possible destinations. Also called: point-to-point connection."
+    },
+    {
+      "title": "point-to-point connection ",
+      "description": "n. See point-to-point configuration."
+    },
+    {
+      "title": "point-to-point message system ",
+      "description": "n. In Sun Microsystems’s J2EE network platform, a messaging system that uses message queues to store asynchronous, formatted data for coordinating enterprise applications. Each message is addressed to a specific queue, and client applications retrieve messages from the queues. See also asynchronous, J2EE."
+    },
+    {
+      "title": "Point-to-Point Protocol ",
+      "description": "n. See PPP."
+    },
+    {
+      "title": "point-to-point tunneling ",
+      "description": "n. A means of setting up secure communications over an open, public network such as the Internet. See also PPTP."
+    },
+    {
+      "title": "Point-to-Point Tunneling Protocol ",
+      "description": "n. See PPTP."
+    },
+    {
+      "title": "Poisson distribution ",
+      "description": "n. A mathematical curve often used in statistics and simulation to represent the likelihood of some event occurring, such as the arrival of a customer in a queue, when the average likelihood is known. This distribution, named after the French mathematician S. D. Poisson, is simpler to calculate than the normal and binomial distributions. See also binomial distribution, normal distribution."
+    },
+    {
+      "title": "poke ",
+      "description": "vb. To store a byte into an absolute memory location. PEEK (read a byte from memory) and POKE commands are often found in programming languages, such as Basic, that do not normally allow access to specific memory locations."
+    },
+    {
+      "title": "polar coordinates ",
+      "description": "n. Coordinates of the form (r, q) used to locate a point in two dimensions (on a plane). The polar coordinate r is the length of the line that starts at the origin and ends at the point, and q (Greek theta) is the angle between that line and the positive x-axis. Compare Cartesian coordinates."
+    },
+    {
+      "title": "polarity ",
+      "description": "n. The sign of the potential (voltage) difference between two points in a circuit. When a potential difference exists between two points, one point has a positive polarity and the other a negative polarity. Electrons flow from negative to positive; by convention, however, current is considered to flow from positive to negative."
+    },
+    {
+      "title": "polarized component ",
+      "description": "n. A circuit component that must be installed with its leads in a particular orientation with respect to the polarity of the circuit. Diodes, rectifiers, and some capacitors are examples of polarized components."
+    },
+    {
+      "title": "polarizing filter ",
+      "description": "n. A transparent piece of glass or plastic that polarizes the light passing through it; that is, it allows only waves vibrating in a certain direction to pass through. Polarizing filters are often used to reduce glare on monitor screens. See also glare filter."
+    },
+    {
+      "title": "Polish notation ",
+      "description": "n. See prefix notation."
+    },
+    {
+      "title": "polling ",
+      "description": "n. See autopolling."
+    },
+    {
+      "title": "polling cycle ",
+      "description": "n. The time and sequence required for a program to poll each of its devices or network nodes. See also autopolling."
+    },
+    {
+      "title": "polygon ",
+      "description": "n. Any two-dimensional closed shape composed of three or more line segments, such as a hexagon, an octagon, or a triangle. Computer users encounter polygons in graphics programs."
+    },
+    {
+      "title": "polyline ",
+      "description": "n. An open shape consisting of multiple connected segments. Polylines are used in CAD and other graphics programs. See also CAD."
+    },
+    {
+      "title": "polymorphism ",
+      "description": "n. In an object-oriented programming language, the ability to redefine a routine in a derived class (a class that inherited its data structures and routines from another class). Polymorphism allows the programmer to define a base class that includes routines that perform standard operations on groups of related objects, without regard to the exact type of each object. The programmer then redefines the routines in the derived class for each type, taking into account the characteristics of the object. See also class, derived class, object (definition 2), objectoriented programming."
+    },
+    {
+      "title": "Pong ",
+      "description": "n. The first commercial video game, a table tennis simulation, created by Nolan Bushnell of Atari in 1972."
+    },
+    {
+      "title": "pop ",
+      "description": "vb. To fetch the top (most recently added) element of a stack, removing that element from the stack in the process. Compare push (2) (definition 1)."
+    },
+    {
+      "title": "POP ",
+      "description": "n. See point of presence, Post Office Protocol."
+    },
+    {
+      "title": "POP3 ",
+      "description": "n. Acronym for Post Office Protocol 3. This is the current version of the Post Office Protocol standard in common use on TCP/IP networks. See also Post Office Protocol, TCP/IP."
+    },
+    {
+      "title": "populate ",
+      "description": "vb. 1. To put chips in the sockets of a circuit board. 2. To import prepared data into a database from a file using a software procedure rather than by having a human operator enter individual records."
+    },
+    {
+      "title": "pop-under ad ",
+      "description": "n. An advertisement on the Internet that appears in a new window in the background, behind the Web site content. Users may be unaware of the presence of pop-under ads until they close foreground windows at the end of a Web session. Pop-under ads may appear in response to a mouse click, a rollover, or after a user has spent a predetermined amount of time at a Web site. See also pop-up ad."
+    },
+    {
+      "title": "pop-up ad ",
+      "description": "n. An advertisement on the Internet that appears in a new window in the foreground, often whenever a new page is opened within a site. Pop-up ads may appear in response to a mouse click, a rollover, or after a user has spent a predetermined amount of time at a Web site. See also pop-under ad."
+    },
+    {
+      "title": "pop-up Help ",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
     }
   ]
 }

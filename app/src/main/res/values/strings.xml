@@ -77,10 +77,11 @@
     <string name="menu_rating_msg">Noter l\'application</string>
     <string name="about_fragment_github_source"><![CDATA[Code source <font color=#03A9F4>%s</font>]]></string>
     <string name="fragment_about_github_source_here">ici</string>
-    <string name="firebase_subscription_release" translatable="false">firebase-dictionary-release</string>
-    <string name="firebase_subscription_debug" translatable="false">firebase-dictionary-debug</string>
+    <string name="firebase_subscription_release">firebase-dictionary-release</string>
+    <string name="firebase_subscription_debug" >firebase-dictionary-debug</string>
     <string name="fragment_home_database_root_ref_release" translatable="false">words</string>
     <string name="fragment_home_database_root_ref_debug" translatable="false">words-debug</string>
     <string name="fragment_home_database_tops_debug" translatable="false">tops-debug</string>
     <string name="fragment_home_database_tops_release" translatable="false">tops</string>
+    <string name="abstract_fragment_restart_app">Veuillez rédemarrer l\'application pour prendre en compte les changements.</string>
 </resources>

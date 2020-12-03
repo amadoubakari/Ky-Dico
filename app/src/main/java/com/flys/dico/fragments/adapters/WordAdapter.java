@@ -224,10 +224,10 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     }
                     IMainActivity mainActivity = (IMainActivity) context;
                     if (dy > 0) {
-                        mainActivity.hideBottomNavigation(View.GONE);
+                        mainActivity.scrollUp();
                     } else {
                         // Scrolling down
-                        mainActivity.hideBottomNavigation(View.VISIBLE);
+                        mainActivity.scrollDown();
                     }
                 }
             });
@@ -238,7 +238,7 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public void setLoading() {
         if (getItemCount() != 0) {
             this.words.add(new Word("", ""));
-            this.notifyItemInserted(getItemCount() - 1);
+            notifyItemInserted(getItemCount() - 1);
             loading = true;
         }
     }

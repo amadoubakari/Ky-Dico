@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import com.facebook.AccessToken;
 import com.facebook.GraphRequest;
@@ -132,9 +133,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         this.session = (Session) super.session;
         getSupportActionBar().hide();
         bottomNavigationView.setVisibility(View.GONE);
-        //If we have fcm pushed notification in course
-        handleNotifications(getIntent());
-        //Subscription on firebase to receive notifications
         if (!session.isSubscribed()) {
             firebaseSubscription();
         }
@@ -144,13 +142,16 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         network = new CheckNetwork(getApplicationContext());
         network.registerNetworkCallback();
 
+        //If we have fcm pushed notification in course
+        //Subscription on firebase to receive notifications
+        handleNotifications(getIntent());
     }
 
 
     @Override
     protected void onResumeActivity() {
         //Update view if user has been connected
-        User user=updateProfile();
+        User user = updateProfile();
         if (user != null && user.getType() != null) {
             updateUserConnectedProfile(user);
         }
@@ -343,6 +344,16 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         snackbar.setAnchorView(bottomNavigationView);
         snackbar.setActionTextColor(getColor(R.color.blue_500));
         snackbar.show();
+    }
+
+    @Override
+    public void scrollUp() {
+        bottomNavigationView.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void scrollDown() {
+        bottomNavigationView.setVisibility(View.VISIBLE);
     }
 
 

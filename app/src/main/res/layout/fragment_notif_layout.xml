@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/notification_main_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,40 +10,41 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@+id/guideline92"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline93"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingTop="56dp"
+        android:clipToPadding="false"/>
 
-    <TextView
-        android:id="@+id/notifications_empty_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/open_sans_light"
+    <LinearLayout
+        android:id="@+id/notification_not_found_msg_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:background="@color/grey_200"
         android:gravity="center"
-        android:text="@string/fragment_notif_layout_no_elements"
-        android:textColor="@color/grey_600"
-        android:textSize="16sp"
-        android:textStyle="bold"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        >
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_search_24px"
+            app:tint="@color/grey_400" />
+        <TextView
+            android:id="@+id/notifications_empty_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_light"
+            android:gravity="center"
+            android:text="@string/fragment_notif_layout_no_elements"
+            android:textColor="@color/grey_600"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline92"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="1" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline93"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

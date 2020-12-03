@@ -521,21 +521,22 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     @Override
     public void loadLocale() {
         SharedPreferences sharedPreferences = getSharedPreferences(Constants.SETTINGS, MODE_PRIVATE);
-        String language = sharedPreferences.getString(Constants.MY_LAND, "");
+        Log.d(className, String.format("loadLocale default language=%s",Locale.getDefault().getLanguage()));
+        String language = sharedPreferences.getString(Constants.MY_LAND, Locale.getDefault().getLanguage());
+        Log.d(className, String.format(" language=%s",language));
         setLocale(language);
     }
 
     @Override
     public void recreateActivity() {
         Intent intent = new Intent(this, MainActivity_.class);
-        intent.putExtra("crash", true);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP
                 | Intent.FLAG_ACTIVITY_CLEAR_TASK
         );
         PendingIntent pendingIntent = PendingIntent.getActivity(DApplicationContext.getContext(), 0, intent, PendingIntent.FLAG_ONE_SHOT);
         AlarmManager mgr = (AlarmManager) DApplicationContext.getContext().getSystemService(Context.ALARM_SERVICE);
         mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, pendingIntent);
-        finish();
+        finishAndRemoveTask();
     }
 
     @Override
