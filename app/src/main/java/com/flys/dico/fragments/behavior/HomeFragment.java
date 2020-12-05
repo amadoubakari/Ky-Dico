@@ -21,6 +21,7 @@ package com.flys.dico.fragments.behavior;
 
 import android.content.Intent;
 import android.content.IntentSender;
+import android.os.Handler;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -307,7 +308,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
      */
     public void applyLoadMoreOnScrollListener(WordAdapter wordAdapter) {
         wordAdapter.setOnLoadMoreListener(currentPage -> {
-            loadNextData(wordAdapter);
+            new Handler().post(() -> loadNextData(wordAdapter));
         });
     }
 
@@ -318,7 +319,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
      */
     private void loadNextData(WordAdapter wordAdapter) {
         wordAdapter.setLoading();
-        index = index + size;
+        index += size;
         executeInBackground(mainActivity.loadSequenceWords(activity, index, size).delay(500, TimeUnit.MILLISECONDS), wordList -> {
             wordAdapter.insertData(wordList);
         });
