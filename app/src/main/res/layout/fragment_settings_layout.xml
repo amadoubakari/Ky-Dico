@@ -12,6 +12,12 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline97"
         app:layout_constraintStart_toStartOf="@+id/guideline96">
 
+        <View
+            android:layout_width="1dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:layout_marginBottom="@dimen/spacing_medium"
+            />
 
         <TextView
             android:id="@+id/textView3"
@@ -19,6 +25,7 @@
             android:layout_height="50dp"
             android:gravity="center_vertical"
             android:paddingLeft="20dp"
+            android:textColor="@color/black"
             android:text="@string/fragment_settings_layout_general_setttings_msg"
             android:fontFamily="@font/open_sans_regular"
             android:textSize="14sp"
@@ -53,7 +60,8 @@
                         android:layout_weight="1"
                         android:textSize="14sp"
                         android:fontFamily="@font/open_sans_regular"
-                        android:text="@string/fragmant_settings_notifications_msg" />
+                        android:text="@string/fragmant_settings_notifications_msg"
+                        android:textColor="@color/black"/>
 
                     <Switch
                         android:id="@+id/notification_switch"
@@ -101,7 +109,8 @@
                         android:layout_weight="1"
                         android:textSize="14sp"
                         android:fontFamily="@font/open_sans_regular"
-                        android:text="@string/fragment_settings_language_msg" />
+                        android:text="@string/fragment_settings_language_msg"
+                        android:textColor="@color/black"/>
 
                     <TextView
                         android:id="@+id/current_language"

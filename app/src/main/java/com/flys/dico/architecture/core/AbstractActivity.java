@@ -521,9 +521,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     @Override
     public void loadLocale() {
         SharedPreferences sharedPreferences = getSharedPreferences(Constants.SETTINGS, MODE_PRIVATE);
-        Log.d(className, String.format("loadLocale default language=%s",Locale.getDefault().getLanguage()));
         String language = sharedPreferences.getString(Constants.MY_LAND, Locale.getDefault().getLanguage());
-        Log.d(className, String.format(" language=%s",language));
         setLocale(language);
     }
 
