@@ -3,6 +3,7 @@ package com.flys.dico.architecture.core;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,11 +16,16 @@ import androidx.fragment.app.Fragment;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.firebase.ui.auth.AuthUI;
 import com.flys.dico.R;
+import com.flys.dico.activity.MainActivity;
 import com.flys.dico.architecture.custom.CoreState;
 import com.flys.dico.architecture.custom.IMainActivity;
 import com.flys.dico.architecture.custom.Session;
 import com.flys.dico.utils.Constants;
+import com.flys.generictools.dao.daoException.DaoException;
+import com.flys.tools.dialog.MaterialNotificationDialog;
+import com.flys.tools.domain.NotificationData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -487,17 +493,34 @@ public abstract class AbstractFragment extends Fragment {
                 .setSingleChoiceItems(language, checkedItem, (dialog, which) -> {
                     //if user select preferred language as English then
                     if (language[which].equals(getString(R.string.settings_fragment_language_english))) {
+                        dialog.dismiss();
+                        restartApp();
                         mainActivity.setLocale(Constants.EN);
-                        mainActivity.recreateActivity();
                     }
                     //if user select preferred language as Hindi then
                     if (language[which].equals(getString(R.string.settings_fragment_language_french))) {
+                        dialog.dismiss();
+                        restartApp();
                         mainActivity.setLocale(Constants.FR);
-                        mainActivity.recreateActivity();
                     }
                 })
                 .setPositiveButton(getString(R.string.activity_main_button_cancel), (dialog, which) -> dialog.dismiss());
         builder.create().show();
+    }
+
+    private void restartApp() {
+        MaterialNotificationDialog notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), getString(R.string.abstract_fragment_restart_app), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_no_msg), activity.getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_DayNight_Dialog_Alert), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
+            @Override
+            public void okButtonAction(DialogInterface dialogInterface, int i) {
+                activity.finishAndRemoveTask();
+            }
+
+            @Override
+            public void noButtonAction(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        notificationDialog.show(getParentFragmentManager(), "material_notification_alert_dialog");
     }
 
     /**

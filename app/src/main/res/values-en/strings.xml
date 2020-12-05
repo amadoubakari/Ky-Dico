@@ -8,13 +8,12 @@
     <string name="menu_home_msg">Home</string>
     <string name="menu_me_msg">Me</string>
     <string name="about_last_update_msg">Last Update</string>
-    <string name="about_releasing_date">November 2020</string>
+    <string name="about_releasing_date">Décembre 2020</string>
     <string name="mini_dictionnaire_informatique_de_poche_msg">Mini Computer Science Dictionary</string>
     <string name="enable_notifications_to_received_news">Enable notifications to receive news !</string>
     <string name="disable_notifications_to_dont_received_news">If you disable notifications, you will not receive news !</string>
     <string name="button_yes_msg">YES</string>
     <string name="button_no_msg">NO</string>
-    <string name="app_version_msg">Version 1.1.0</string>
     <string name="menu_about_msg">About</string>
     <string name="menu_connexion_msg">Login</string>
     <string name="menu_profil_msg">Profile</string>
@@ -71,4 +70,7 @@
     <string name="menu_rating_msg">Rate application</string>
     <string name="about_fragment_github_source"><![CDATA[Code source <font color=#03A9F4>%s</font>]]></string>
     <string name="fragment_about_github_source_here">here</string>
+    <string name="firebase_subscription_release">firebase-dictionary-release-en</string>
+    <string name="firebase_subscription_debug">firebase-dictionary-debug-en</string>
+    <string name="abstract_fragment_restart_app">Please restart application to take account changes.</string>
 </resources>

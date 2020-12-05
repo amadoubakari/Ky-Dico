@@ -8,6 +8,8 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +29,7 @@ import com.flys.dico.architecture.core.AbstractFragment;
 import com.flys.dico.architecture.core.Utils;
 import com.flys.dico.architecture.custom.CoreState;
 import com.flys.dico.architecture.custom.DApplicationContext;
+import com.flys.dico.architecture.custom.IMainActivity;
 import com.flys.dico.dao.db.NotificationDao;
 import com.flys.dico.dao.db.NotificationDaoImpl;
 import com.flys.dico.utils.Constants;
@@ -56,14 +59,11 @@ import java.util.stream.Collectors;
 @OptionsMenu(R.menu.menu_home)
 public class NotificationFragment extends AbstractFragment implements MaterialNotificationDialog.NotificationButtonOnclickListeneer, NotificationAdapter.NotificationOnclickListener {
 
-    @ViewById(R.id.notification_main_layout)
-    protected ConstraintLayout mainLayout;
-
     @ViewById(R.id.recycler)
     protected RecyclerView recyclerView;
 
-    @ViewById(R.id.notifications_empty_id)
-    protected TextView notificationsEmptyMsg;
+    @ViewById(R.id.notification_not_found_msg_id)
+    protected LinearLayout llNotificationsEmptyMsg;
 
     @OptionsMenuItem(R.id.search)
     protected MenuItem menuItem;
@@ -267,12 +267,23 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
         beginRunningTasks(1);
         executeInBackground(mainActivity.loadNotificationsFromDatabase().delay(100, TimeUnit.MILLISECONDS), notifications1 -> {
             if (notifications1.isEmpty()) {
-                mainLayout.setBackgroundColor(activity.getColor(R.color.grey_200));
-                notificationsEmptyMsg.setVisibility(View.VISIBLE);
+                llNotificationsEmptyMsg.setVisibility(View.VISIBLE);
             } else {
-                notificationsEmptyMsg.setVisibility(View.GONE);
+                llNotificationsEmptyMsg.setVisibility(View.GONE);
                 notificationAdapter.addAll(notifications1);
                 updateNotificationsImages(notifications1);
+            }
+        });
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (dy > 0) {
+                    mainActivity.scrollUp();
+                } else {
+                    // Scrolling down
+                    mainActivity.scrollDown();
+                }
             }
         });
     }

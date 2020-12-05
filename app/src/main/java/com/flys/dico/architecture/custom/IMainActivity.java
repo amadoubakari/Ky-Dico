@@ -77,4 +77,9 @@ public interface IMainActivity extends IDao {
     void hideBottomNavigation(int visibility);
 
     void popupSnackbarForCompleteUpdate(AppUpdateManager appUpdateManager);
+
+    //When user scroll up the view
+    void scrollUp();
+    //When user scroll down the view
+    void scrollDown();
 }

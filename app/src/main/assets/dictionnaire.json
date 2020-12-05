@@ -1,32 +1,36 @@
 {
   "words": [
     {
-      "title": "Accès direct (Direct Access)",
+      "title": "accès direct (Direct Access)",
       "description": "Méthode de stockage de l‘information basée sur un système d‘adresses qui permet de repérer l‘emplacement des enregistrements sur le support physique de telle façon qu‘ils puissent être rapidement récupérés. Il en va ainsi des disques et de la mémoire centrale - vive et morte."
     },
     {
-      "title": "Accès séquentiel (Sequential Access Storage)",
+      "title": "accès séquentiel (Sequential Access Storage)",
       "description": "Méthode de stockage de l‘information dans laquelle les enregistrements sont stockés séquentiellement les uns derrière les autres. Pour accéder à un enregistrement particulier, on doit lire tous les enregistrements qui le précèdent. Seul type d‘accès possible sur une bande magnétique."
     },
     {
-      "title": "Adaptation au matériel Voir Plug and Play (PnP)",
+      "title": "adaptation au matériel Voir Plug and Play (PnP)",
       "description": "Administrateur de bases de données (Database Administrator) Personne qui détermine la structure d‘une base de données et qui gère son utilisation."
     },
     {
-      "title": "Adresse (Address)",
+      "title": "adresse (Address)",
       "description": "Coordonnées d‘un élément constitutif d‘un support d‘information (piste, secteur sur disque, case mémoire, etc.)."
     },
     {
-      "title": "Adresse de cellule (Cell Address)",
+      "title": "adresse de cellule (Cell Address)",
       "description": "Position d‘une cellule dans un chiffrier exprimée par le rang et la colonne sur lesquels elle se trouve."
     },
     {
-      "title": "Adresse électronique ou adresse de courriel (E-Mail Address)",
+      "title": "adresse électronique ou adresse de courriel (E-Mail Address)",
       "description": "Information attachée à un message permettant de retrouver son destinataire; elle se compose du nom du destinataire et du nom Internet de son serveur de courrier électronique. Par exemple moi.meme@monentre-prise.com."
     },
     {
-      "title": "Adresse Internet ou adresse IP (Internet Address)",
+      "title": "adresse Internet ou adresse IP (Internet Address)",
       "description": "Information associée à un noeud du réseau Internet pour l‘identifier de façon univoque."
+    },
+    {
+      "title": "adresse physique ou adresse MAC ",
+      "description": "Adresse MAC - Adresse Medium Access Control - Adresse unique sur 6 octets (48 bits) qui identifie une carte réseau. Cette adresse unique est représentée en notation hexadicimale. Chaque coupleur de réseau installé dans un ordinateur possède une adresse unique au monde. Elle est gravée en dur dans la carte. Elle peut être considérée comme l'équivalent du numéro de téléphone d'une personne. Certaines technologies de réseau incluaient la numérotation sur un octet de la carte (système Arcnet de Novell), ces technologies ne sont plus d’actualité"
     },
     {
       "title": "ADSL (Asymmetric Digital Subs-criber Line)",
@@ -49,39 +53,39 @@
       "description": "Voir Procédures d‘amorce."
     },
     {
-      "title": "Analyse des besoins",
+      "title": "analyse des besoins",
       "description": "Première étape du cycle de vie d‘un système qui comprend la définition du problème, la suggestion de solutions et la rédaction d‘un bref rapport."
     },
     {
-      "title": "Analyse fonctionnelle (Systems Analysis)",
+      "title": "analyse fonctionnelle (Systems Analysis)",
       "description": "Deuxième étape du cycle de vie d‘un système durant laquelle le système actuel est étudié et les nouvelles exigences sont établies avec précision."
     },
     {
-      "title": "Analyse fonctionnelle et organique (AFO) (Systems Analysis and Design)",
+      "title": "analyse fonctionnelle et organique (AFO) (Systems Analysis and Design)",
       "description": "Méthode de résolution de problème en six étapes utilisée pour examiner à fond un système d‘information en vue de l‘améliorer."
     },
     {
-      "title": "Analyse organique (Systems Design)",
+      "title": "analyse organique (Systems Design)",
       "description": "Troisième étape du cycle de vie d‘un système qui consiste en la conception de systèmes de rechange, la sélection du meilleur système et la rédaction d‘un rapport d‘analyse organique."
     },
     {
-      "title": "Analyse progressive (Top-Down Program Design ou Top-Down Analysis)",
+      "title": "analyse progressive (Top-Down Program Design ou Top-Down Analysis)",
       "description": "Procédé de programmation dans lequel on fractionne le problème à résoudre en plusieurs sous-problèmes, et ainsi de suite."
     },
     {
-      "title": "Analyste fonctionnel (System Analyst)",
+      "title": "analyste fonctionnel (System Analyst)",
       "description": "Professionnel de l‘informatique qui étudie et améliore des systèmes informatiques en appliquant la méthode de résolution de problème connue sous le nom d‘analyse fonctionnelle et organique."
     },
     {
-      "title": "Annulation",
+      "title": "annulation",
       "description": "Voir Commande d‘annulation."
     },
     {
-      "title": "Antémémoire (Cache Memory)",
+      "title": "antémémoire (Cache Memory)",
       "description": "Voir Mémoire cache."
     },
     {
-      "title": "Appareil photo numérique (Digital Camera)",
+      "title": "appareil photo numérique (Digital Camera)",
       "description": "Appareil photographique au fonctionnement standard, mais qui enregistre l‘image en mode binaire (matrice de points) dans des puces de mémoire vive ou sur un microdisque."
     },
     {
@@ -545,6 +549,10 @@
       "description": "Périphérique utilisé pour enregistrer et récupérer de l‘information sur une bande magnétique. "
     },
     {
+      "title": "dhcp ",
+      "description": "Dynamic Host Configuration Protocol - L'affectation et la mise à jour d'adresses IP peuvent être facilitées par le protocole DHCP qui offre une configuration dynamique des adresses IP et des informations associées. L'administrateur de réseau contrôle le mode d'attribution des adresses IP en spécifiant une durée de bail qui indique combien de temps l'ordinateur peut utiliser une adresse IP attribuée, avant de devoir renouveler le bail auprès du serveur DHCP"
+    },
+    {
       "title": "Diagramme de Gantt (Gantt Chart)",
       "description": "Représentation graphique qui utilise des barres et des lignes pour indiquer l‘échéancier d‘une série de tâches."
     },
@@ -623,6 +631,10 @@
     {
       "title": "Édition électronique",
       "description": "Voir Publication assistée par ordinateur"
+    },
+    {
+      "title": "encapsulation ",
+      "description": "c'est un principe de développement de classe qui consiste à protéger l'état des attributs et à imposer de passer par des méthodes pour modifier les valeurs des attributs. C'est ce principe que je tiens à vous faire comprendre dans ce document. Ce principe est très fortement mis en oeuvre dans l'ensemble des librairies proposées par le Java SE et le Java EE"
     },
     {
       "title": "Encryptage (Encryption)",
@@ -787,6 +799,10 @@
     {
       "title": "Hachage (Hashing)",
       "description": "Technique consistant à utiliser des opérations mathématiques pour convertir la valeur numérique d‘un champ clé en une adresse de stockage déterminée."
+    },
+    {
+      "title": "HDMI ",
+      "description": "High Definition Multimedia Interface - Prise Multimédia à haute définition permettant de transporter de la vidéo numérique en haute définition ainsi que du son numérique en 5.1."
     },
     {
       "title": "Horloge interne (System Clock)",
@@ -1419,6 +1435,10 @@
     {
       "title": "Photostyle (Light Pen)",
       "description": "Dispositif sensible à la lumière, ayant la forme d‘un crayon, utilisé avec un moniteur spécial pour l‘entrée de commandes."
+    },
+    {
+      "title": "php ",
+      "description": "Hypertext Preprocessor, plus connu sous son sigle PHP (sigle auto-référentiel), est un langage de programmation libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP, mais pouvant également fonctionner comme n'importe quel langage interprété de façon locale. PHP est un langage impératif orienté objet."
     },
     {
       "title": "Picoseconde (Picosecond)",
@@ -2253,6 +2273,10 @@
       "description": "Versions avancées des langages BASIC et C++ destinées à faci-liter la programmation de logiciels pour l‘environne-ment Windows."
     },
     {
+      "title": "VPN ",
+      "description": "Virtual Private Network - Réseau Privé Virtuel. Terme très souvent utilisé pour désigner un système de communication utilisant une infrastructure public étendue (RTC, INTERNET, Frame Relay, ATM, …) mais dédiée via des circuits permanents. Un VPN peut être encrypté via IPSEC ou tout autre protocole d’encryption de données."
+    },
+    {
       "title": "Voix sur IP ou VoIP",
       "description": "Aussi connue sous le nom de téléphonie Internet, est une technologie qui vous permet de téléphoner via un réseau d’ordinateurs basé sur un protocole Internet.Protocole permettant de tenir une conversation téléphonique via Internet."
     },
@@ -2279,10 +2303,6 @@
     {
       "title": "XGA (Extended Graphics Array)",
       "description": "Norme d‘affichage de 1024 sur 768 pixels pour une palette de 256 à 16 millions de couleurs, optimale pour les écrans de 17 po et de 19 po."
-    },
-    {
-      "title": "",
-      "description": ""
     }
   ]
 }

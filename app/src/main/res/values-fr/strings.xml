@@ -9,13 +9,12 @@
     <string name="menu_home_msg">Accueil</string>
     <string name="menu_me_msg">Moi</string>
     <string name="about_last_update_msg">Dernière version</string>
-    <string name="about_releasing_date">Novembre 2020</string>
+    <string name="about_releasing_date">Décembre 2020</string>
     <string name="mini_dictionnaire_informatique_de_poche_msg">Mini Dictionnaire Informatique</string>
     <string name="enable_notifications_to_received_news">Activer les notifications pour recevoir des nouveautés !</string>
     <string name="disable_notifications_to_dont_received_news">Si vous désactivez les notifications, vous risquerez ne plus recevoir des nouveautés !</string>
     <string name="button_yes_msg">OUI</string>
     <string name="button_no_msg">NON</string>
-    <string name="app_version_msg">Version 1.1.0</string>
     <string name="menu_about_msg">A Propos</string>
     <string name="menu_connexion_msg">Connexion</string>
     <string name="menu_profil_msg">Profil</string>
@@ -35,7 +34,7 @@
     <string name="activity_main_disconnect_canceled">Déconnexion annulée</string>
     <string name="activity_main_do_you_want_to_leave_app">Voudriez-vous quitter l\'application?</string>
     <string name="activity_main_button_yes_msg">OUI</string>
-    <string name="activity_main_do_you_want_to_disconnect">Voudriez-vous vous déconnecter de l\'application?</string>
+    <string name="activity_main_do_you_want_to_disconnect">Voudriez-vous vous déconnecter de l\'application.</string>
     <string name="activity_main_button_no_msg">NON</string>
     <string name="activity_main_button_cancel">Annuler</string>
     <string name="activity_main_see_you_soon">, vous revoir bientôt !</string>
@@ -72,4 +71,7 @@
     <string name="menu_rating_msg">Noter l\'application</string>
     <string name="about_fragment_github_source"><![CDATA[Code source <font color=#03A9F4>%s</font>]]></string>
     <string name="fragment_about_github_source_here">ici</string>
+    <string name="firebase_subscription_release">firebase-dictionary-release</string>
+    <string name="firebase_subscription_debug">firebase-dictionary-debug</string>
+    <string name="abstract_fragment_restart_app">Veuillez rédemarrer l\'application pour prendre en compte les changements.</string>
 </resources>

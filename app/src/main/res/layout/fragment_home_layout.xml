@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_layout_container_id"
-    android:layout_marginTop="@dimen/layout_padding_10dp"
-    android:layout_marginBottom="@dimen/layout_padding_10dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -13,10 +11,11 @@
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="@dimen/layout_padding_10dp"
         android:background="@color/white"
-        android:visibility="gone" />
+        android:visibility="visible"
+        android:paddingTop="56dp"
+        android:clipToPadding="false"
+        />
 
     <LinearLayout
         android:id="@+id/ll_search_block_id"
@@ -71,4 +70,4 @@
             android:textColor="@color/blue_500" />
 
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>
