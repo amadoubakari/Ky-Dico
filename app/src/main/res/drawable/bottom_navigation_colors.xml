@@ -1,7 +1,7 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:state_checked="true"
-        android:color="@color/black" />
+        android:color="@color/search_icon_tint_color" />
     <item
         android:state_checked="false"
         android:color="@color/grey_400" />

@@ -18,7 +18,7 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/open_sans"
+            android:fontFamily="@font/google_sans"
             android:text="Réseau informatique"
             android:textColor="@color/blue_500"
             android:textSize="14sp"
@@ -30,11 +30,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="6dp"
-            android:fontFamily="@font/open_sans_light"
+            android:fontFamily="@font/google_sans"
             android:text="(en anglais, data communication network ou DCN) est un ensemble d'équipements reliés entre eux pour échanger des informations. Par analogie avec un filet (un réseau est un « petit rets », c'est-à-dire un petit filet1), on appelle nœud l'extrémité d'une connexion, qui peut être une intersection de plusieurs connexions ou équipements (un ordinateur, un routeur, un concentrateur, un commutateur)."
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textColor="@color/app_text_color"
+            android:textSize="14sp" />
     </LinearLayout>
 
 </LinearLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/grey_200">
+    android:background="@color/app_background_second_color">
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -21,23 +21,23 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_centerInParent="true"
-        android:background="@color/grey_200"
+        android:background="@color/app_background_color"
         android:gravity="center"
         android:visibility="gone"
         >
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/ic_search_24px"
-            app:tint="@color/grey_400" />
+            android:src="@drawable/ic_baseline_search_24"
+            app:tint="@color/app_inverse_color" />
         <TextView
             android:id="@+id/notifications_empty_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/open_sans_light"
+            android:fontFamily="@font/google_sans"
             android:gravity="center"
             android:text="@string/fragment_notif_layout_no_elements"
-            android:textColor="@color/grey_600"
+            android:textColor="@color/app_text_color"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout95"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@color/app_background_color"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     android:layout_marginBottom="10dp">
@@ -25,20 +26,20 @@
         <View
             android:layout_width="1dp"
             android:layout_height="56dp"
-            android:layout_marginTop="@dimen/spacing_medium"
-            android:layout_marginBottom="@dimen/spacing_medium"
           />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/fragment_about_dictionary_header"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="@color/black"
-            app:fontFamily="@font/open_sans" />
+            android:textColor="@color/app_text_color"
+            android:fontFamily="@font/google_sans"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
 
         <View
             android:layout_width="120dp"
-            android:layout_height="3dp"
+            android:layout_height="2dp"
             android:layout_marginTop="@dimen/spacing_medium"
             android:layout_marginBottom="@dimen/spacing_medium"
             android:background="@color/blue_500" />
@@ -56,16 +57,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Version"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/grey_500" />
+                android:fontFamily="@font/google_sans"
+                android:textSize="14dp"
+                android:textColor="@color/app_text_second_color" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/open_sans"
                 android:text="@string/app_version_msg"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/black" />
+                android:fontFamily="@font/google_sans"
+                android:textSize="14dp"
+                android:textColor="@color/app_text_color" />
 
         </LinearLayout>
 
@@ -82,16 +84,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/about_last_update_msg"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/grey_500" />
+                android:fontFamily="@font/google_sans"
+                android:textSize="14dp"
+                android:textColor="@color/app_text_second_color" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/open_sans_light"
+                android:fontFamily="@font/google_sans"
                 android:text="@string/about_releasing_date"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/black" />
+                android:textSize="14dp"
+                android:textColor="@color/app_text_color" />
 
         </LinearLayout>
 
@@ -102,10 +105,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/open_sans_light"
             android:text="@string/mini_dictionnaire_informatique_de_poche_msg"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/black" />
+            android:fontFamily="@font/google_sans"
+            android:textSize="14dp"
+            android:textColor="@color/app_text_color" />
 
         <View
             android:layout_width="0dp"
@@ -116,10 +119,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Open source ici"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/black"
-            android:fontFamily="@font/open_sans_light"
-            android:textSize="14sp" />
+            android:textColor="@color/app_text_color"
+            android:fontFamily="@font/google_sans"
+            android:textSize="14dp" />
 
 
     </LinearLayout>
@@ -135,12 +137,20 @@
 
     </LinearLayout>
 
+    <View
+        android:id="@+id/view2"
+        android:layout_width="1dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout98"
+        app:layout_constraintEnd_toStartOf="@+id/guideline95"
+        app:layout_constraintStart_toStartOf="@+id/guideline94" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline94"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.07" />
+        app:layout_constraintGuide_percent="0.05" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline95"
@@ -153,14 +163,14 @@
         android:id="@+id/site"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="www.kyossi.com"
         android:gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:fontFamily="@font/open_sans_light"
+        android:text="www.kyossi.com"
+        android:fontFamily="@font/google_sans"
+        android:textSize="14dp"
         android:textColor="@color/blue_600"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
         app:layout_constraintEnd_toStartOf="@+id/guideline95"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline94" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

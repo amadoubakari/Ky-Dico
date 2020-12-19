@@ -46,7 +46,7 @@
     <string name="activity_main_thanks_msg">"Merci "</string>
     <string name="dictionary_data_source">dictionnaire.json</string>
     <string name="app_name_release">Dictionnaire Informatique</string>
-    <string name="app_name_debug">Dev-fr</string>
+    <string name="app_name_debug">Dictionnaire Informatique</string>
     <string name="dialog_contact_welcome_msg">Bienvenue</string>
     <string name="firebase_channel_id">dico-fr</string>
     <string name="app_google_play_store_url">https://play.google.com/store/apps/details?id=com.flys.dico&amp;hl=fr</string>

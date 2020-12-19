@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/app_background_color">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -24,22 +25,30 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:textColor="@color/black"
+            android:paddingLeft="30dp"
+            android:textColor="@color/app_text_second_color"
             android:text="@string/fragment_settings_layout_general_setttings_msg"
-            android:fontFamily="@font/open_sans_regular"
+            android:fontFamily="@font/google_sans"
             android:textSize="14sp"
             android:textStyle="bold" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@color/app_background_color">
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/app_inverse_color" />
                 <LinearLayout
                     android:id="@+id/settings_account_layout"
                     android:layout_width="match_parent"
@@ -59,11 +68,11 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textSize="14sp"
-                        android:fontFamily="@font/open_sans_regular"
+                        android:fontFamily="@font/google_sans"
                         android:text="@string/fragmant_settings_notifications_msg"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/app_text_color"/>
 
-                    <Switch
+                    <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/notification_switch"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -73,22 +82,24 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:background="@color/grey_200"
                     android:layout_height="0.5dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp" />
+                    android:layout_marginRight="20dp"
+                    android:background="@color/app_inverse_color" />
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@color/app_background_color">
 
                 <LinearLayout
                     android:id="@+id/dialog_change_language"
@@ -108,9 +119,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textSize="14sp"
-                        android:fontFamily="@font/open_sans_regular"
+                        android:fontFamily="@font/google_sans"
                         android:text="@string/fragment_settings_language_msg"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/app_text_color"/>
 
                     <TextView
                         android:id="@+id/current_language"
@@ -118,16 +129,17 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.05"
                         android:text="@string/fragment_settings_language_en"
-                        android:fontFamily="@font/open_sans_regular"
+                        android:fontFamily="@font/google_sans"
                         android:textColor="@color/blue_500"
                         android:textSize="14sp" />
                 </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="0.3dp"
+                    android:layout_height="0.5dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp" />
+                    android:layout_marginRight="20dp"
+                    android:background="@color/app_inverse_color" />
 
             </LinearLayout>
 

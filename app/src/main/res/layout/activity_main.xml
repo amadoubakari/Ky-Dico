@@ -15,18 +15,17 @@
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
+
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/white"
+                android:background="@color/toolbar_background_color"
+                app:layout_scrollFlags="scroll|enterAlways"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
                 app:theme="@style/ActionBarTheme"
-                app:layout_scrollFlags="scroll|enterAlways"
-                app:titleTextAppearance="@style/AppTheme.Toolbar.Title"
-                />
+                app:titleTextAppearance="@style/AppTheme.Toolbar.Title" />
         </com.google.android.material.appbar.AppBarLayout>
 
         <!-- conteneur de fragments -->
@@ -34,8 +33,7 @@
             android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/white"
-           />
+            android:background="@color/app_background_color" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <FrameLayout
@@ -50,12 +48,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:background="@color/colorPrimary"
+            android:background="@color/toolbar_background_color"
+            android:theme="@style/Widget.Design.BottomNavigationView"
+            app:itemTextAppearanceActive="@style/BottomNavigationViewTextStyle"
+            app:itemTextAppearanceInactive="@style/BottomNavigationViewTextStyle"
             app:itemIconTint="@drawable/bottom_navigation_colors"
             app:itemTextColor="@drawable/bottom_navigation_colors"
-            app:menu="@menu/bottom_navigation_menu"
-            android:theme="@style/Widget.BottomNavigationView"
-            />
+            app:menu="@menu/bottom_navigation_menu" />
 
     </FrameLayout>
 
@@ -67,7 +66,7 @@
         app:headerLayout="@layout/navigation_header"
         app:itemIconTint="@color/navigation_item_color_state"
         app:itemTextColor="@color/navigation_item_color_state"
-        app:itemBackground="@color/white"
-        app:menu="@menu/navigation_menu" />
+        app:menu="@menu/navigation_menu"
+        android:background="@color/app_background_color"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

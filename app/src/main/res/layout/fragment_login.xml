@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@color/white"
+    android:background="@color/app_background_color"
     android:clipToPadding="false">
 
 
@@ -15,10 +15,10 @@
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
-        android:fontFamily="@font/open_sans"
+        android:fontFamily="@font/google_sans"
         android:gravity="center"
         android:text="@string/app_name"
-        android:textColor="@color/black"
+        android:textColor="@color/app_text_color"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline90"
         app:layout_constraintHorizontal_bias="1.0"
@@ -29,10 +29,10 @@
         android:id="@+id/textView79"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/open_sans_light"
+        android:fontFamily="@font/google_sans"
         android:gravity="center"
         android:text="@string/fragment_login_connect_to_continue_msg"
-        android:textColor="@color/grey_900"
+        android:textColor="@color/app_text_color"
         android:textSize="10sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline90"
         app:layout_constraintHorizontal_bias="1.0"
@@ -59,11 +59,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:fontFamily="@font/open_sans_light"
+        android:fontFamily="@font/google_sans"
         android:gravity="center"
         android:text="@string/fragment_login_welcome_msg"
-        android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/app_text_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline90"
         app:layout_constraintHorizontal_bias="1.0"
@@ -105,18 +104,18 @@
                 android:layout_height="35dp"
                 android:layout_weight="0.01"
                 android:padding="5dp"
-                android:tint="@color/green_700"
+                app:tint="@color/green_700"
                 app:srcCompat="@drawable/ic_perm_phone_msg_black_24dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0.99"
-                android:fontFamily="@font/open_sans_light"
+                android:fontFamily="@font/google_sans"
                 android:gravity="center_vertical"
                 android:text="@string/fragment_login_connect_with_phone"
                 android:textColor="@color/green_700"
-                android:textStyle="bold" />
+                />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -145,16 +144,18 @@
                 android:layout_height="35dp"
                 android:layout_weight="0.01"
                 android:padding="5dp"
+                app:tint="@color/app_text_color"
                 app:srcCompat="@drawable/ic_mail_outline_black_24dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0.99"
-                android:fontFamily="@font/open_sans_light"
+                android:fontFamily="@font/google_sans"
+                android:textColor="@color/app_text_color"
                 android:gravity="center_vertical"
                 android:text="@string/fragment_login_connect_with_mail"
-                android:textStyle="bold" />
+                 />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -182,18 +183,18 @@
                 android:layout_height="35dp"
                 android:layout_weight="0.01"
                 android:padding="5dp"
-                android:tint="@color/red_A700"
+                app:tint="@color/red_A700"
                 app:srcCompat="@drawable/ic_social_round_google_plus" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0.99"
-                android:fontFamily="@font/open_sans_light"
+                android:fontFamily="@font/google_sans"
                 android:gravity="center_vertical"
                 android:textColor="@color/red_A700"
                 android:text="@string/fragment_login_connect_with_google"
-                android:textStyle="bold" />
+                 />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -221,18 +222,18 @@
                 android:layout_height="35dp"
                 android:layout_weight="0.01"
                 android:padding="5dp"
-                android:tint="@color/blue_600"
+                app:tint="@color/blue_600"
                 app:srcCompat="@drawable/ic_social_round_facebook" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0.99"
-                android:fontFamily="@font/open_sans_light"
+                android:fontFamily="@font/google_sans"
                 android:gravity="center_vertical"
                 android:text="@string/fragment_login_connect_with_facebook"
                 android:textColor="@color/blue_600"
-                android:textStyle="bold" />
+               />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

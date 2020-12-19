@@ -31,8 +31,6 @@ import android.widget.RelativeLayout;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -43,9 +41,7 @@ import com.flys.dico.architecture.custom.CoreState;
 import com.flys.dico.fragments.adapters.Word;
 import com.flys.dico.fragments.adapters.WordAdapter;
 import com.flys.dico.utils.Constants;
-import com.flys.dico.utils.FacebookUrl;
 import com.flys.dico.utils.RxSearchObservable;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.play.core.appupdate.AppUpdateInfo;
 import com.google.android.play.core.appupdate.AppUpdateManager;
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
@@ -192,7 +188,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
     @OptionsItem(R.id.search)
     protected void doSearch() {
         searchView = (SearchView) menuItem.getActionView();
-        Utils.changeSearchTextColor(activity, searchView);
+        Utils.changeSearchTextColor(activity, searchView,R.font.google_sans);
         initSearchFeatureNew();
     }
 
@@ -254,12 +250,10 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
                 .subscribe(wordList -> {
                     //No item found
                     if (wordList.isEmpty()) {
-                        llHomeContainer.setBackgroundColor(activity.getColor(R.color.green_200));
                         llSearchBlock.setVisibility(View.VISIBLE);
                         recyclerView.setVisibility(View.GONE);
                         sendQueryWordToTheServer(queryWords,activity.getString(R.string.fragment_home_database_root_ref),activity.getString(R.string.fragment_home_database_reference));
                     } else {
-                        llHomeContainer.setBackgroundColor(activity.getColor(R.color.white));
                         llSearchBlock.setVisibility(View.GONE);
                         recyclerView.setVisibility(View.VISIBLE);
                         if(!queryWords.get().isEmpty()){
@@ -323,22 +317,6 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
         executeInBackground(mainActivity.loadSequenceWords(activity, index, size).delay(500, TimeUnit.MILLISECONDS), wordList -> {
             wordAdapter.insertData(wordList);
         });
-    }
-
-    /**
-     * Send searched word to the server if not found
-     *
-     * @param queryWords
-     */
-    private void sendQueryWordToTheServer(AtomicReference<String> queryWords) {
-        //Inform me
-        if (database == null) {
-            database = FirebaseDatabase.getInstance();
-            database.setPersistenceEnabled(true);
-        }
-        //Send query word to the server
-        DatabaseReference databaseReference = database.getReference(activity.getString(R.string.fragment_home_database_root_ref)).child(activity.getString(R.string.fragment_home_database_reference));
-        databaseReference.push().setValue(queryWords.get());
     }
 
     private void sendQueryWordToTheServer(AtomicReference<String> queryWords, String reference, String child) {

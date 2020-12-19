@@ -9,15 +9,12 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.view.menu.MenuPopupHelper;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.SearchView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.DialogFragment;
@@ -29,7 +26,6 @@ import com.flys.dico.architecture.core.AbstractFragment;
 import com.flys.dico.architecture.core.Utils;
 import com.flys.dico.architecture.custom.CoreState;
 import com.flys.dico.architecture.custom.DApplicationContext;
-import com.flys.dico.architecture.custom.IMainActivity;
 import com.flys.dico.dao.db.NotificationDao;
 import com.flys.dico.dao.db.NotificationDaoImpl;
 import com.flys.dico.utils.Constants;
@@ -112,7 +108,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
         init();
 
         if (!NotificationManagerCompat.from(DApplicationContext.getContext()).areNotificationsEnabled()) {
-            MaterialNotificationDialog dialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), "Veuillez activer les notifications\npour recevoir des nouveaux apprentissages", "OK", "NON", getActivity().getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_Light_Dialog_Alert), this);
+            MaterialNotificationDialog dialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), "Veuillez activer les notifications\npour recevoir des nouveaux apprentissages", "OK", "NON", getActivity().getDrawable(R.drawable.logo), R.style.customMaterialAlertDialog), this);
             dialog.show(getActivity().getSupportFragmentManager(), "material_notification_alert_dialog");
         }
 
@@ -140,7 +136,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
     @OptionsItem(R.id.search)
     protected void doSearch() {
         searchView = (SearchView) menuItem.getActionView();
-        Utils.changeSearchTextColor(activity, searchView);
+        Utils.changeSearchTextColor(activity, searchView,R.font.google_sans);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -178,7 +174,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
 
     @Override
     public void onButtonClickListener(int position) {
-        configDialogFragment = NotificationDetailsDialogFragment.newInstance(activity, notifications.get(position), new DialogStyle(activity.getColor(R.color.black), Constants.FONTS_OPEN_SANS_REGULAR_TTF));
+        configDialogFragment = NotificationDetailsDialogFragment.newInstance(activity, notifications.get(position), new DialogStyle(activity.getColor(R.color.app_text_color),activity.getColor(R.color.app_text_second_color),R.font.google_sans));
         configDialogFragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.AppTheme);
         configDialogFragment.show(getActivity().getSupportFragmentManager(), "fragment_edit_name" + position);
     }
@@ -260,7 +256,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
      */
     private void init() {
         notifications = new ArrayList<>();
-        notificationAdapter = new NotificationAdapter(activity, notifications, new DialogStyle(activity.getColor(R.color.blue_500), Constants.FONTS_OPEN_SANS_REGULAR_TTF), this);
+        notificationAdapter = new NotificationAdapter(activity, notifications, new DialogStyle(activity.getColor(R.color.app_text_color), activity.getColor(R.color.app_text_second_color),R.font.google_sans), this);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(notificationAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
