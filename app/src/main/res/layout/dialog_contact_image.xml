@@ -38,8 +38,9 @@
                     android:layout_height="match_parent"
                     android:text="@string/dialog_contact_welcome_msg"
                     android:gravity="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:fontFamily="@font/google_sans"
                     android:textColor="@android:color/white"
+                    android:textSize="18sp"
                     android:layout_weight="1" />
 
                 <ImageButton
@@ -79,16 +80,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_large"
                     android:text="Adams Green"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/google_sans"
                     android:textColor="@android:color/white"
-                    android:textStyle="bold" />
+                   />
 
                 <TextView
                     android:id="@+id/email_or_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Freelance Designer"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:fontFamily="@font/google_sans"
+                    android:textSize="14sp"
                     android:textColor="@color/grey_50" />
 
                 <View
@@ -106,7 +109,7 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:tint="@android:color/white"
+                        app:tint="@android:color/white"
                         app:srcCompat="@drawable/ic_social_round_google_plus" />
 
                     <View
@@ -116,7 +119,7 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:tint="@android:color/white"
+                        app:tint="@android:color/white"
                         app:srcCompat="@drawable/ic_social_round_facebook" />
 
                     <View
@@ -126,7 +129,7 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:tint="@android:color/white"
+                        app:tint="@android:color/white"
                         app:srcCompat="@drawable/fui_ic_twitter_bird_white_24dp" />
 
                 </LinearLayout>

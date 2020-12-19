@@ -1,6 +1,5 @@
 package com.flys.dico.architecture.core;
 
-import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -27,7 +26,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.flys.dico.R;
-import com.flys.dico.activity.MainActivity;
 import com.flys.dico.activity.MainActivity_;
 import com.flys.dico.architecture.custom.CustomTabLayout;
 import com.flys.dico.architecture.custom.DApplicationContext;
@@ -36,8 +34,8 @@ import com.flys.dico.architecture.custom.Session;
 import com.flys.dico.dao.service.IDao;
 import com.flys.dico.service.SwipeDirection;
 import com.flys.dico.utils.Constants;
-import com.flys.tools.dialog.AbstractDialogActivity;
 import com.flys.tools.dialog.AbstractDialogFragmentInterface;
+import com.flys.tools.dialog.EditDialogFragment;
 import com.flys.tools.utils.DepthPageTransformer;
 import com.flys.tools.utils.Utils;
 import com.google.android.material.appbar.AppBarLayout;
@@ -296,7 +294,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         navigationView = findViewById(R.id.navigation);
 
         //Nous appliquons le même style aux éléments de menu
-        Utils.applyFontStyleToMenu(this, navigationView.getMenu(), Constants.FONTS_OPEN_SANS_REGULAR_TTF);
+        Utils.applyFontStyleToMenu(this, navigationView.getMenu(), R.font.google_sans);
 
         navigationView.setNavigationItemSelectedListener(
                 menuItem -> {
@@ -438,8 +436,8 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
 
     private void showEditDialog() {
         FragmentManager fm = getSupportFragmentManager();
-        AbstractDialogActivity dialogActivity = new AbstractDialogActivity(getString(R.string.activity_abstract_recommendation_msg), R.mipmap.ic_launcher, R.style.AlertDialogTheme, R.style.BodyTextStyle);
-        dialogActivity.show(fm, "fragment_edit_name");
+        EditDialogFragment editDialogFragment = new EditDialogFragment(this,getString(R.string.activity_abstract_recommendation_msg), R.drawable.logo, R.style.customMaterialAlertDialog,R.font.google_sans);
+        editDialogFragment.show(fm, "fragment_edit_dialog_name");
     }
 
 

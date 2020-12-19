@@ -44,7 +44,7 @@
     <string name="activity_main_email_address">Email Address</string>
     <string name="activity_main_thanks_msg">"Thanks "</string>
     <string name="app_name_release">Computer Science Dictionary</string>
-    <string name="app_name_debug">Dev-en</string>
+    <string name="app_name_debug">Computer Science Dictionary</string>
     <string name="dialog_contact_welcome_msg">Welcome</string>
     <string name="firebase_channel_id">dico-en</string>
     <string name="dictionary_data_source">dictionnaire-en.json</string>

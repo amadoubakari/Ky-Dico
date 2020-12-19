@@ -20,7 +20,7 @@
     <string name="disable_notifications_to_dont_received_news">Si vous désactivez les notifications, vous risquerez ne plus recevoir des nouveautés !</string>
     <string name="button_yes_msg">OUI</string>
     <string name="button_no_msg">NON</string>
-    <string name="app_version_msg" translatable="false">Version 1.1.1</string>
+    <string name="app_version_msg" translatable="false">Version 1.1.2</string>
     <string name="menu_about_msg">A Propos</string>
     <string name="menu_connexion_msg">Connexion</string>
     <string name="menu_profil_msg">Profil</string>
@@ -52,7 +52,7 @@
     <string name="activity_main_thanks_msg">" Merci "</string>
     <string name="dictionary_data_source">dictionnaire.json</string>
     <string name="app_name_release">Dictionnaire Informatique</string>
-    <string name="app_name_debug">Dev </string>
+    <string name="app_name_debug">Dictionnaire Informatique </string>
     <string name="dialog_contact_welcome_msg">Bienvenue</string>
     <string name="firebase_channel_id">dico</string>
     <string name="app_google_play_store_url">https://play.google.com/store/apps/details?id=com.flys.dico&amp;hl=fr</string>

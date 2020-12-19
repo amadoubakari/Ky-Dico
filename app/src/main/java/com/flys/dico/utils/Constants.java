@@ -22,8 +22,6 @@ package com.flys.dico.utils;
  * @since 12/09/2020
  */
 public class Constants {
-
-    public static final String FONTS_OPEN_SANS_REGULAR_TTF = "fonts/open_sans_regular.ttf";
     //local external storage directory
     public static final String DIR_NAME = "glearning";
     public static final String NOTIFICATION = "notification";

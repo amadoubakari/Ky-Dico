@@ -11,7 +11,6 @@
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         android:visibility="visible"
         android:paddingTop="56dp"
         android:clipToPadding="false"
@@ -21,8 +20,7 @@
         android:id="@+id/ll_search_block_id"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:background="@color/grey_200"
+        android:background="@color/app_background_color"
         android:gravity="center"
         android:orientation="vertical"
         tools:visibility="visible">
@@ -30,28 +28,28 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/ic_search_24px"
-            app:tint="@color/grey_400" />
+            android:src="@drawable/ic_baseline_search_24"
+            app:tint="@color/app_inverse_color" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_large"
-            android:fontFamily="@font/open_sans_bold"
+            android:fontFamily="@font/google_sans"
             android:text="@string/fragment_home_layout_no_result_msg"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:textColor="@color/grey_90"
+            android:textColor="@color/app_text_color"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_medium"
-            android:fontFamily="@font/open_sans_light"
+            android:fontFamily="@font/google_sans"
             android:gravity="center"
             android:text="@string/fragment_home_you_try_a_more"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-            android:textColor="@color/grey_90" />
+            android:textColor="@color/app_text_color"
+            android:textSize="14dp" />
 
         <View
             android:id="@+id/view"
@@ -63,11 +61,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_medium"
-            android:fontFamily="@font/open_sans_light"
+            android:fontFamily="@font/google_sans"
             android:gravity="center"
             android:text="@string/fragment_home_layout_change_langue"
+            android:textColor="@color/app_text_second_color"
             android:textSize="12sp"
-            android:textColor="@color/blue_500" />
+            android:textStyle="bold" />
 
     </LinearLayout>
 </RelativeLayout>

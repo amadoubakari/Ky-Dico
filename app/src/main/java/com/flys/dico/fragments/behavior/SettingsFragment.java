@@ -1,13 +1,9 @@
 package com.flys.dico.fragments.behavior;
 
-import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.provider.Settings;
 import android.widget.LinearLayout;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -16,9 +12,9 @@ import androidx.core.app.NotificationManagerCompat;
 import com.flys.dico.R;
 import com.flys.dico.architecture.core.AbstractFragment;
 import com.flys.dico.architecture.custom.CoreState;
-import com.flys.dico.utils.Constants;
 import com.flys.tools.dialog.MaterialNotificationDialog;
 import com.flys.tools.domain.NotificationData;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
@@ -31,7 +27,7 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
 
     private static final int KYOSSI_SETTINGS_NOTIFICATION_REQUEST_CODE = 32;
     @ViewById(R.id.notification_switch)
-    protected Switch enableNotification;
+    protected SwitchMaterial enableNotification;
 
     @ViewById(R.id.dialog_change_language)
     protected LinearLayout languageTv;
@@ -49,7 +45,7 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
         } else {
             msg = getString(R.string.disable_notifications_to_dont_received_news);
         }
-        notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), msg, getString(R.string.button_yes_msg), getString(R.string.button_no_msg), activity.getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_Light_Dialog_Alert), this);
+        notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), msg, getString(R.string.button_yes_msg), getString(R.string.button_no_msg), activity.getDrawable(R.drawable.logo), R.style.customMaterialAlertDialog), this);
         notificationDialog.show(getActivity().getSupportFragmentManager(), "settings_notification_dialog_tag");
     }
 

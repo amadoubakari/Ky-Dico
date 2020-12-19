@@ -4,9 +4,11 @@
     tools:context=".dico.activity.MainActivity">
     <item
         android:id="@+id/search"
-        android:icon="@drawable/ic_search_24px"
+        android:icon="@drawable/ic_baseline_search_24"
         android:orderInCategory="300"
         android:title="Rechercher"
+        android:iconTint="@color/search_icon_tint_color"
+        app:itemTextColor="@drawable/bottom_navigation_colors"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="ifRoom|collapseActionView"
         />

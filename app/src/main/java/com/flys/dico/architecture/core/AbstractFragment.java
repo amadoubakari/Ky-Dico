@@ -1,7 +1,6 @@
 package com.flys.dico.architecture.core;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -10,22 +9,19 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.firebase.ui.auth.AuthUI;
 import com.flys.dico.R;
-import com.flys.dico.activity.MainActivity;
 import com.flys.dico.architecture.custom.CoreState;
 import com.flys.dico.architecture.custom.IMainActivity;
 import com.flys.dico.architecture.custom.Session;
 import com.flys.dico.utils.Constants;
-import com.flys.generictools.dao.daoException.DaoException;
 import com.flys.tools.dialog.MaterialNotificationDialog;
 import com.flys.tools.domain.NotificationData;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -419,6 +415,11 @@ public abstract class AbstractFragment extends Fragment {
     }
 
     public void onFragmentResume() {
+        if(mainActivity==null){
+            this.activity = getActivity();
+            this.mainActivity = (IMainActivity) activity;
+            this.session = (Session) this.mainActivity.getSession();
+        }
     }
 
     private void saveState() {
@@ -488,7 +489,7 @@ public abstract class AbstractFragment extends Fragment {
     protected void changeLanguage() {
         final String[] language = {getString(R.string.settings_fragment_language_french), getString(R.string.settings_fragment_language_english)};
         final int checkedItem = isEnglish();
-        final AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        final MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity,R.style.customMaterialAlertDialog);
         builder.setTitle(getString(R.string.settingsFragment_select_language))
                 .setSingleChoiceItems(language, checkedItem, (dialog, which) -> {
                     //if user select preferred language as English then
@@ -509,7 +510,7 @@ public abstract class AbstractFragment extends Fragment {
     }
 
     private void restartApp() {
-        MaterialNotificationDialog notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), getString(R.string.abstract_fragment_restart_app), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_no_msg), activity.getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_DayNight_Dialog_Alert), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
+        MaterialNotificationDialog notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), getString(R.string.abstract_fragment_restart_app), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_no_msg), activity.getDrawable(R.drawable.logo), R.style.customMaterialAlertDialog), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
             @Override
             public void okButtonAction(DialogInterface dialogInterface, int i) {
                 activity.finishAndRemoveTask();

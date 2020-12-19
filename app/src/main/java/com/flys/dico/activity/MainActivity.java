@@ -19,7 +19,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
 
 import com.facebook.AccessToken;
 import com.facebook.GraphRequest;
@@ -635,6 +634,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
      * Subscribe to firebase channel
      */
     private void firebaseSubscription() {
+        Log.e(TAG, "subscription to the channel for notification"+getString(R.string.firebase_subscription));
         FirebaseMessaging.getInstance().subscribeToTopic(getString(R.string.firebase_subscription))
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
@@ -649,7 +649,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
      *
      */
     private void Disconnection() {
-        MaterialNotificationDialog notificationDialog = new MaterialNotificationDialog(MainActivity.this, new NotificationData(getString(R.string.app_name), getString(R.string.activity_main_thanks_msg) + (session.getUser().getNom() != null ? session.getUser().getNom() : "") + getString(R.string.activity_main_see_you_soon), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_cancel), getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_DayNight_Dialog_Alert), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
+        MaterialNotificationDialog notificationDialog = new MaterialNotificationDialog(MainActivity.this, new NotificationData(getString(R.string.app_name), getString(R.string.activity_main_thanks_msg) + (session.getUser().getNom() != null ? session.getUser().getNom() : "") + getString(R.string.activity_main_see_you_soon), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_cancel), getDrawable(R.drawable.logo), R.style.customMaterialAlertDialog), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
             @Override
             public void okButtonAction(DialogInterface dialogInterface, int i) {
                 AuthUI.getInstance()
@@ -779,7 +779,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     private void onBackPressedHandle() {
         drawerLayout.closeDrawers();
         if (mViewPager.getCurrentItem() == HOME_FRAGMENT) {
-            this.dialog = new MaterialNotificationDialog(this, new NotificationData(getString(R.string.app_name), getString(R.string.activity_main_do_you_want_to_leave_app), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_no_msg), getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_DayNight_Dialog_Alert), this);
+            this.dialog = new MaterialNotificationDialog(this, new NotificationData(getString(R.string.app_name), getString(R.string.activity_main_do_you_want_to_leave_app), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_no_msg), getDrawable(R.drawable.logo), R.style.customMaterialAlertDialog), this);
             this.dialog.show(getSupportFragmentManager(), "material_notification_alert_dialog");
         } else {
             // Otherwise, select the previous step.
@@ -791,7 +791,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
      * handle disconnection
      */
     private void disconnectHandle() {
-        MaterialNotificationDialog dialog = new MaterialNotificationDialog(this, new NotificationData(getString(R.string.app_name), getString(R.string.activity_main_do_you_want_to_disconnect), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_no_msg), getDrawable(R.drawable.logo), R.style.Theme_MaterialComponents_DayNight_Dialog_Alert), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
+        MaterialNotificationDialog dialog = new MaterialNotificationDialog(this, new NotificationData(getString(R.string.app_name), getString(R.string.activity_main_do_you_want_to_disconnect), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_no_msg), getDrawable(R.drawable.logo), R.style.customMaterialAlertDialog), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
             @Override
             public void okButtonAction(DialogInterface dialogInterface, int i) {
                 // Disconnection

@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="colorPrimary">#FFFF</color>
+  <color name="colorPrimary">@color/black</color>
   <color name="colorPrimaryDark">@color/black</color>
   <color name="colorAccent">@color/black</color>
-  <color name="floral_white">#FFFAF0</color>
+  <color name="colorOnPrimary">@color/black</color>
+  <color name="textColorPrimary">@color/black</color>
+  <color name="colorControlNormal">@color/black</color>
+
+  <color name="textColorSecondary">@color/black</color>
+  <color name="toolbar_background_color">@color/white</color>
+  <color name="search_icon_tint_color">@color/black</color>
+  <color name="app_background_color">@color/white</color>
+  <color name="app_text_color">@color/black</color>
+  <color name="app_bottom_navigation_color">@color/grey_50</color>
+  <color name="app_bottom_navigation_icon_color">@color/black</color>
+  <color name="app_inverse_color">@color/black</color>
+  <color name="app_blue_color">@color/blue_500</color>
+  <color name="app_text_second_color">@color/blue_500</color>
+  <color name="app_background_second_color">@color/grey_200</color>
+  <color name="app_text_color_tint">@color/grey_400</color>
+
+
 
   <color name="red_50">#FFEBEE</color>
   <color name="red_100">#FFCDD2</color>

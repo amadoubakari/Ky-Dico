@@ -23,12 +23,12 @@
         android:id="@+id/profile_user_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/open_sans_light"
+        android:fontFamily="@font/google_sans"
         android:paddingTop="5dp"
         android:text="@string/activity_main_username"
         android:textColor="@android:color/white"
         android:textSize="14dp"
-        android:textStyle="bold" />
+        />
 
 
     <LinearLayout
@@ -40,12 +40,12 @@
             android:id="@+id/profile_user_email_address"
             android:layout_width="199dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/open_sans_light"
+            android:fontFamily="@font/google_sans"
             android:paddingTop="5dp"
             android:text="@string/activity_main_email_address"
             android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textSize="12sp"
+            />
 
         <ImageView
             android:id="@+id/imageView"
