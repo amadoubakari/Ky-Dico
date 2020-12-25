@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/google_sans"
             android:text="@string/app_version_msg"
-            android:textColor="@color/blue_700"
+            android:textColor="@color/blue_500"
             android:gravity="center"
             android:textSize="12dp" />
     </LinearLayout>

@@ -74,4 +74,5 @@
     <string name="firebase_subscription_release">firebase-dictionary-release</string>
     <string name="firebase_subscription_debug">firebase-dictionary-debug</string>
     <string name="abstract_fragment_restart_app">Veuillez rédemarrer l\'application pour prendre en compte les changements.</string>
+    <string name="mode_nuit">Mode Nuit</string>
 </resources>

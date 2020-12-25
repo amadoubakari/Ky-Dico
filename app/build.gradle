@@ -29,8 +29,8 @@ android {
         minSdkVersion 24
         applicationId "com.flys.dico"
         targetSdkVersion 29
-        versionCode 63
-        versionName "1.1.2"
+        versionCode 65
+        versionName "1.1.2.2"
         resConfigs "en", "fr"
         javaCompileOptions {
             annotationProcessorOptions {
@@ -84,8 +84,8 @@ def AAVersion = '4.8.0'
 
 dependencies {
     implementation 'com.google.firebase:firebase-auth:20.0.1'
-    implementation 'androidx.navigation:navigation-fragment:2.3.1'
-    implementation 'androidx.navigation:navigation-ui:2.3.1'
+    implementation 'androidx.navigation:navigation-fragment:2.3.2'
+    implementation 'androidx.navigation:navigation-ui:2.3.2'
     implementation 'com.google.android.play:core:1.9.0'
     annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
     implementation "org.androidannotations:androidannotations-api:$AAVersion"
@@ -99,7 +99,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     androidTestImplementation 'junit:junit:4.13.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'com.google.android.material:material:1.3.0-alpha04'
+    implementation 'com.google.android.material:material:1.3.0-beta01'
     implementation group: 'de.hdodenhof', name: 'circleimageview', version: '3.1.0'
     implementation project(':common-tools')
     implementation project(':fcm-notification-module')
@@ -109,7 +109,7 @@ dependencies {
     // Add the Firebase SDK for Crashlytics.
     implementation 'com.google.firebase:firebase-crashlytics:17.3.0'
     //Firebase Cloud messaging
-    implementation 'com.google.firebase:firebase-messaging:21.0.0'
+    implementation 'com.google.firebase:firebase-messaging:21.0.1'
 
     //Firebase authentication dependencies
     implementation 'com.firebaseui:firebase-ui-auth:6.2.0'
@@ -120,11 +120,11 @@ dependencies {
 
     // Required only if Twitter login support is required
     implementation 'com.android.support:cardview-v7:29.0.0'
-    api group: 'com.j256.ormlite', name: 'ormlite-android', version: '5.2'
+    api group: 'com.j256.ormlite', name: 'ormlite-android', version: '5.3'
 
-    implementation 'com.google.firebase:firebase-messaging-directboot:21.0.0'
+    implementation 'com.google.firebase:firebase-messaging-directboot:21.0.1'
 
-    implementation 'com.google.firebase:firebase-storage:19.2.0'
+    implementation 'com.google.firebase:firebase-storage:19.2.1'
     implementation 'com.firebaseui:firebase-ui-storage:6.2.0'
     implementation 'androidx.preference:preference:1.1.1'
     // Import the BoM for the Firebase platform

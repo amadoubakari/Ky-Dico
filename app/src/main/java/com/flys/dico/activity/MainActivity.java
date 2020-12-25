@@ -121,6 +121,8 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     // Register Callback - Call this in your app start!
     private CheckNetwork network;
 
+    protected static boolean darkMode = false;
+
     // méthodes classe parent -----------------------
     @Override
     protected void onCreateActivity() {
@@ -354,6 +356,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     public void scrollDown() {
         bottomNavigationView.setVisibility(View.VISIBLE);
     }
+
 
 
     /*------------------------------------------------------------------------------------------------
@@ -634,7 +637,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
      * Subscribe to firebase channel
      */
     private void firebaseSubscription() {
-        Log.e(TAG, "subscription to the channel for notification"+getString(R.string.firebase_subscription));
+        Log.e(TAG, "subscription to the channel for notification" + getString(R.string.firebase_subscription));
         FirebaseMessaging.getInstance().subscribeToTopic(getString(R.string.firebase_subscription))
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {

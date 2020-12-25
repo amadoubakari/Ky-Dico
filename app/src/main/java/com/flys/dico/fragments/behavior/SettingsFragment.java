@@ -1,5 +1,6 @@
 package com.flys.dico.fragments.behavior;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.provider.Settings;
@@ -12,6 +13,7 @@ import androidx.core.app.NotificationManagerCompat;
 import com.flys.dico.R;
 import com.flys.dico.architecture.core.AbstractFragment;
 import com.flys.dico.architecture.custom.CoreState;
+import com.flys.dico.utils.Constants;
 import com.flys.tools.dialog.MaterialNotificationDialog;
 import com.flys.tools.domain.NotificationData;
 import com.google.android.material.switchmaterial.SwitchMaterial;
@@ -26,8 +28,12 @@ import org.androidannotations.annotations.ViewById;
 public class SettingsFragment extends AbstractFragment implements MaterialNotificationDialog.NotificationButtonOnclickListeneer {
 
     private static final int KYOSSI_SETTINGS_NOTIFICATION_REQUEST_CODE = 32;
+
     @ViewById(R.id.notification_switch)
     protected SwitchMaterial enableNotification;
+
+    @ViewById(R.id.notification_night_mode_switch)
+    protected SwitchMaterial enabledNightMode;
 
     @ViewById(R.id.dialog_change_language)
     protected LinearLayout languageTv;
@@ -63,6 +69,7 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
     @Override
     protected void initFragment(CoreState previousState) {
         enableNotification.setChecked(NotificationManagerCompat.from(activity).areNotificationsEnabled());
+        enabledNightMode.setChecked(activity.getPreferences(Context.MODE_PRIVATE).getBoolean(Constants.NIGHT_MODE_KEY, false));
     }
 
     @Override
@@ -129,5 +136,21 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
         changeLanguage();
     }
 
+    @Click(R.id.notification_night_mode_switch)
+    public void switchNightModeAction() {
+
+        notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), getString(R.string.abstract_fragment_restart_app), getString(R.string.button_yes_msg), getString(R.string.button_no_msg), activity.getDrawable(R.drawable.logo), R.style.customMaterialAlertDialog), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
+            @Override
+            public void okButtonAction(DialogInterface dialogInterface, int i) {
+                mainActivity.setNightMode(enabledNightMode.isChecked());
+            }
+
+            @Override
+            public void noButtonAction(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        notificationDialog.show(getActivity().getSupportFragmentManager(), "settings_notification_dialog_tag");
+    }
 
 }

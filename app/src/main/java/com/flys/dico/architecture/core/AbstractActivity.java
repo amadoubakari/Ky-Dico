@@ -14,6 +14,7 @@ import android.widget.ProgressBar;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
@@ -79,7 +80,10 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     protected BottomNavigationView bottomNavigationView;
     //Menu de navigation latérale
     protected NavigationView navigationView;
+    //
     protected ReviewManager manager;
+    //
+    protected SharedPreferences sharedPreferences;
 
     // constructeur
     public AbstractActivity() {
@@ -91,8 +95,6 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         }
         // jsonMapper
         jsonMapper = new ObjectMapper();
-
-
     }
 
     // implémentation IMainActivity --------------------------------------------------------------------
@@ -137,6 +139,11 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     protected void onCreate(Bundle savedInstanceState) {
         // parent
         super.onCreate(savedInstanceState);
+
+        //
+        sharedPreferences = getPreferences(MODE_PRIVATE);
+        //
+        getNightMode();
         //
         loadLocale();
         // log
@@ -436,7 +443,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
 
     private void showEditDialog() {
         FragmentManager fm = getSupportFragmentManager();
-        EditDialogFragment editDialogFragment = new EditDialogFragment(this,getString(R.string.activity_abstract_recommendation_msg), R.drawable.logo, R.style.customMaterialAlertDialog,R.font.google_sans);
+        EditDialogFragment editDialogFragment = new EditDialogFragment(this, getString(R.string.activity_abstract_recommendation_msg), R.drawable.logo, R.style.customMaterialAlertDialog, R.font.google_sans);
         editDialogFragment.show(fm, "fragment_edit_dialog_name");
     }
 
@@ -511,14 +518,13 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
 
         //Share
-        SharedPreferences.Editor editor = getSharedPreferences(Constants.SETTINGS, MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(Constants.MY_LAND, language);
         editor.apply();
     }
 
     @Override
     public void loadLocale() {
-        SharedPreferences sharedPreferences = getSharedPreferences(Constants.SETTINGS, MODE_PRIVATE);
         String language = sharedPreferences.getString(Constants.MY_LAND, Locale.getDefault().getLanguage());
         setLocale(language);
     }
@@ -538,6 +544,25 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     @Override
     public void hideBottomNavigation(int visibility) {
         bottomNavigationView.setVisibility(visibility);
+    }
+
+    @Override
+    public void setNightMode(boolean enableNightMode) {
+        SharedPreferences.Editor nightMode = sharedPreferences.edit();
+        nightMode.putBoolean(Constants.NIGHT_MODE_KEY, enableNightMode);
+        nightMode.apply();
+        finish();
+    }
+
+    @Override
+    public void getNightMode() {
+        //night mode?
+        boolean night = sharedPreferences.getBoolean(Constants.NIGHT_MODE_KEY, false);
+        if (night) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
     }
 
 }
