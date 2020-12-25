@@ -82,4 +82,8 @@ public interface IMainActivity extends IDao {
     void scrollUp();
     //When user scroll down the view
     void scrollDown();
+    //Night mode
+    void setNightMode(boolean enableNightMode);
+    //
+    void getNightMode();
 }

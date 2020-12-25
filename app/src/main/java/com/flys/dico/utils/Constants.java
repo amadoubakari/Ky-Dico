@@ -33,6 +33,7 @@ public class Constants {
     public static final String SOCIAL_MEDIA_FACEBOOK_COM = "facebook.com";
     public static final String SOCIAL_MEDIA_PHONE = "phone";
     public static final String SOCIAL_MEDIA_PASSWORD = "password";
+    public static final String NIGHT_MODE_KEY = "NIGHT_MODE_KEY";
     // Global variable used to store network state
     public static boolean isNetworkConnected = false;
 }

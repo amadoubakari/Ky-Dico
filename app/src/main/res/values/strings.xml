@@ -84,4 +84,5 @@
     <string name="fragment_home_database_tops_debug" translatable="false">tops-debug</string>
     <string name="fragment_home_database_tops_release" translatable="false">tops</string>
     <string name="abstract_fragment_restart_app">Veuillez rédemarrer l\'application pour prendre en compte les changements.</string>
+    <string name="mode_nuit">Mode Nuit</string>
 </resources>
