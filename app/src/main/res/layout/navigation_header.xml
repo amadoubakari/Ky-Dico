@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/black"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingTop="@dimen/layout_padding_10dp">
 
 
     <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -26,7 +27,7 @@
         android:paddingLeft="16dp"
         android:text="@string/activity_main_username"
         android:textColor="@android:color/white"
-        android:textSize="12dp"
+        android:textSize="14dp"
         />
 
 
