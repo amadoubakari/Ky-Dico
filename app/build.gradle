@@ -29,8 +29,8 @@ android {
         minSdkVersion 24
         applicationId "com.flys.dico"
         targetSdkVersion 29
-        versionCode 65
-        versionName "1.1.2.2"
+        versionCode 66
+        versionName "1.1.2.3"
         resConfigs "en", "fr"
         javaCompileOptions {
             annotationProcessorOptions {

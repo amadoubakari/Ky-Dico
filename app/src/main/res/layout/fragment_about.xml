@@ -164,7 +164,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="www.kyossi.com"
+        android:text="@string/https_site_kyossi_com"
         android:fontFamily="@font/google_sans"
         android:textSize="14dp"
         android:textColor="@color/blue_600"

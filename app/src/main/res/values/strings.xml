@@ -9,7 +9,7 @@
     <string name="navigation_menu_logout">Se déconnecter</string>
     <string name="dictionnaire_informatique">Dictionnaire Informatique</string>
     <string name="source_repository_git_url" translatable="false">https://github.com/amadoubakari/Ky-Dico.git</string>
-    <string name="kyossi_website_url" translatable="false">http://www.kyossi.com</string>
+    <string name="kyossi_website_url" translatable="false">https://site.kyossi.com/</string>
     <string name="menu_recommander_msg">Recommander</string>
     <string name="menu_home_msg">Accueil</string>
     <string name="menu_me_msg">Moi</string>
@@ -85,4 +85,5 @@
     <string name="fragment_home_database_tops_release" translatable="false">tops</string>
     <string name="abstract_fragment_restart_app">Veuillez rédemarrer l\'application pour prendre en compte les changements.</string>
     <string name="mode_nuit">Mode Nuit</string>
+    <string name="https_site_kyossi_com" translatable="false">www.kyossi.com</string>
 </resources>
