@@ -38,6 +38,8 @@ import com.flys.dico.R;
 import com.flys.dico.architecture.core.AbstractFragment;
 import com.flys.dico.architecture.core.Utils;
 import com.flys.dico.architecture.custom.CoreState;
+import com.flys.dico.dao.db.NotificationDao;
+import com.flys.dico.dao.db.NotificationDaoImpl;
 import com.flys.dico.fragments.adapters.Word;
 import com.flys.dico.fragments.adapters.WordAdapter;
 import com.flys.dico.utils.Constants;
@@ -56,6 +58,7 @@ import com.google.android.play.core.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.OptionsItem;
@@ -111,6 +114,8 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
     @ViewById(R.id.home_layout_container_id)
     protected RelativeLayout llHomeContainer;
 
+    @Bean(NotificationDaoImpl.class)
+    protected NotificationDao notificationDao;
 
     @Override
     public CoreState saveFragment() {
@@ -173,6 +178,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
         super.onFragmentResume();
         if (wasInPause) {
             reloadData();
+            loadUnreadNotifications();
         }
         //Check if there is updates already downloaded
         if (appUpdateManager != null) {
@@ -185,10 +191,11 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
         }
     }
 
+
     @OptionsItem(R.id.search)
     protected void doSearch() {
         searchView = (SearchView) menuItem.getActionView();
-        Utils.changeSearchTextColor(activity, searchView,R.font.google_sans);
+        Utils.changeSearchTextColor(activity, searchView, R.font.google_sans);
         initSearchFeatureNew();
     }
 
@@ -252,12 +259,12 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
                     if (wordList.isEmpty()) {
                         llSearchBlock.setVisibility(View.VISIBLE);
                         recyclerView.setVisibility(View.GONE);
-                        sendQueryWordToTheServer(queryWords,activity.getString(R.string.fragment_home_database_root_ref),activity.getString(R.string.fragment_home_database_reference));
+                        sendQueryWordToTheServer(queryWords, activity.getString(R.string.fragment_home_database_root_ref), activity.getString(R.string.fragment_home_database_reference));
                     } else {
                         llSearchBlock.setVisibility(View.GONE);
                         recyclerView.setVisibility(View.VISIBLE);
-                        if(!queryWords.get().isEmpty()){
-                            sendQueryWordToTheServer(queryWords,activity.getString(R.string.fragment_home_database_tops),activity.getString(R.string.fragment_home_database_reference));
+                        if (!queryWords.get().isEmpty()) {
+                            sendQueryWordToTheServer(queryWords, activity.getString(R.string.fragment_home_database_tops), activity.getString(R.string.fragment_home_database_reference));
                         }
                     }
                     wordAdapter = new WordAdapter(activity, wordList, queryWords.get(), (v, position) -> {
@@ -429,5 +436,16 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
                 .subscribe(o -> {
                     checkUpdatesAvailable();
                 });
+    }
+
+    /**
+     * load unread notifications
+     */
+    private void loadUnreadNotifications() {
+        executeInBackground(mainActivity.loadNotificationsFromDatabase("seen",false).debounce(500,TimeUnit.MILLISECONDS).delay(1000, TimeUnit.MILLISECONDS), notifications -> {
+            if (notifications != null && !notifications.isEmpty()) {
+                mainActivity.updateNotificationNumber(notifications.size());
+            }
+        });
     }
 }

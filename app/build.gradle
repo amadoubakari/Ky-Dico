@@ -117,6 +117,9 @@ dependencies {
     // Required only if Facebook login support is required
     implementation group: 'com.facebook.android', name: 'facebook-android-sdk', version: '7.0.0'
 
+    //add a badge number on app icon launcher
+    implementation "me.leolin:ShortcutBadger:1.1.22@aar"
+
 
     // Required only if Twitter login support is required
     implementation 'com.android.support:cardview-v7:29.0.0'

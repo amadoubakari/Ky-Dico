@@ -58,4 +58,7 @@ public interface IDao {
     Observable<List<Word>> loadWords(Context context, final String query);
 
     Observable<byte[]> downloadFacebookProfileImage(final String baseUrl,final String ext, final String params);
+
+    //Load notifications from the data base
+    Observable<List<Notification>> loadNotificationsFromDatabase(String property, Object value);
 }

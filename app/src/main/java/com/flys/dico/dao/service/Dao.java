@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.flys.dico.R;
-import com.flys.dico.architecture.custom.DApplicationContext;
 import com.flys.dico.dao.db.NotificationDao;
 import com.flys.dico.dao.db.NotificationDaoImpl;
 import com.flys.dico.dao.entities.Dictionnaire;
@@ -214,6 +213,26 @@ public class Dao extends AbstractDao implements IDao {
     @Override
     public Observable<byte[]> downloadFacebookProfileImage(String baseUrl, String ext, String params) {
         return getResponse(() -> webClient.downloadFacebookProfileImage(baseUrl,ext, params));
+    }
+
+    @Override
+    public Observable<List<Notification>> loadNotificationsFromDatabase(String property, Object value) {
+        return Observable.create(subscriber -> {
+            try {
+                List<Notification> notifications = notificationDao.findByPropertyName(property, value);
+                if (notifications != null) {
+                    subscriber.onNext(notifications.stream()
+                            .distinct()
+                            .sorted(Comparator.comparing(Notification::getDate).reversed())
+                            .collect(Collectors.toList()));
+                } else {
+                    subscriber.onNext(new ArrayList<>());
+                }
+                subscriber.onCompleted();
+            } catch (DaoException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     /**

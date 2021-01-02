@@ -2,6 +2,7 @@ package com.flys.dico.activity;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -76,7 +77,6 @@ import org.androidannotations.annotations.OptionsMenuItem;
 import org.androidannotations.annotations.ViewById;
 
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
@@ -288,6 +288,11 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     }
 
     @Override
+    public Observable<List<Notification>> loadNotificationsFromDatabase(String property, Object value) {
+        return dao.loadNotificationsFromDatabase(property, value);
+    }
+
+    @Override
     public User updateProfile() {
         return getConnectedUserProfile();
     }
@@ -303,12 +308,24 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         badgeDrawable.setBackgroundColor(getColor(R.color.blue_500));
         badgeDrawable.setNumber(number);
         badgeDrawable.setMaxCharacterCount(2);
+        badgeDrawable.setVisible(true);
     }
 
     @Override
     public void clearNotification() {
         BadgeDrawable badgeDrawable = bottomNavigationView.getOrCreateBadge(R.id.bottom_menu_me);
         badgeDrawable.setVisible(false);
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.cancelAll();
+        loadNotificationsFromDatabase("seen", false)
+                .subscribe(notifications -> {
+                    if (notifications != null && !notifications.isEmpty()) {
+                        notifications.forEach(notification -> {
+                            notification.setSeen(true);
+                            notificationDao.update(notification);
+                        });
+                    }
+                });
     }
 
     @Override
@@ -371,16 +388,13 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         if (bundle != null && bundle.containsKey(Constants.NOTIFICATION)) {
             Notification notification = (Notification) bundle.getSerializable(Constants.NOTIFICATION);
             if (notification != null) {
-                try {
-                    notification.setDate(new Date());
-                    notificationDao.save(notification);
-                    getSupportActionBar().show();
-                    updateNotificationNumber(1);
-                    activateMainButtonMenu(R.id.bottom_menu_me);
-                    navigateToView(NOTIFICATION_FRAGMENT, ISession.Action.SUBMIT);
-                } catch (DaoException e) {
-                    Log.e(getClass().getSimpleName(), "Dao Exception!", e);
-                }
+
+                //notification.setDate(new Date());
+                //notificationDao.save(notification);
+                getSupportActionBar().show();
+                //updateNotificationNumber(notificationDao.getAll().size());
+                activateMainButtonMenu(R.id.bottom_menu_me);
+                navigateToView(NOTIFICATION_FRAGMENT, ISession.Action.SUBMIT);
 
             } else {
                 Log.e(getClass().getSimpleName(), " onNewIntent(): notification null ");
