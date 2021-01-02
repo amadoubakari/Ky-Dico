@@ -54,7 +54,7 @@
     <string name="app_name_release">Dictionnaire Informatique</string>
     <string name="app_name_debug">Dictionnaire Informatique </string>
     <string name="dialog_contact_welcome_msg">Bienvenue</string>
-    <string name="firebase_channel_id">dico</string>
+    <string name="firebase_channel_id" translatable="false">dico</string>
     <string name="app_google_play_store_url">https://play.google.com/store/apps/details?id=com.flys.dico&amp;hl=fr</string>
     <string name="activity_abstract_recommend_app">Recommandation de l\'application.</string>
     <string name="activity_abstract_recommendation_msg">Recommandation</string>
@@ -86,4 +86,6 @@
     <string name="abstract_fragment_restart_app">Veuillez rédemarrer l\'application pour prendre en compte les changements.</string>
     <string name="mode_nuit">Mode Nuit</string>
     <string name="https_site_kyossi_com" translatable="false">www.kyossi.com</string>
+    <string name="fcm_notification_service_no_messages">\u0020nouveaux messages</string>
+    <string name="fcm_notification_service_one_message">\u0020nouveau message</string>
 </resources>

@@ -46,7 +46,6 @@
     <string name="app_name_release">Computer Science Dictionary</string>
     <string name="app_name_debug">Computer Science Dictionary</string>
     <string name="dialog_contact_welcome_msg">Welcome</string>
-    <string name="firebase_channel_id">dico-en</string>
     <string name="dictionary_data_source">dictionnaire-en.json</string>
     <string name="app_google_play_store_url">https://play.google.com/store/apps/details?id=com.flys.dico&amp;hl=en</string>
     <string name="activity_abstract_recommend_app">Recommend the application</string>
@@ -74,4 +73,6 @@
     <string name="firebase_subscription_debug">firebase-dictionary-debug-en</string>
     <string name="abstract_fragment_restart_app">Please restart application to take account changes.</string>
     <string name="mode_nuit">Night Mode</string>
+    <string name="fcm_notification_service_no_messages">\u0020new messages</string>
+    <string name="fcm_notification_service_one_message">\u0020new message</string>
 </resources>
