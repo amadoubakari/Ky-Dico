@@ -1,40 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/word_card_id"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_marginLeft="15dp"
-    android:layout_marginRight="@dimen/layout_padding_10dp">
+    android:checkable="true"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@color/app_background_color"
+    app:cardCornerRadius="0dp"
+    app:cardUseCompatPadding="true"
+    app:checkedIconTint="@color/blue_500"
+    >
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="80"
-        android:orientation="vertical"
-        android:paddingTop="10dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/google_sans"
-            android:text="Réseau informatique"
-            android:textColor="@color/blue_500"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:layout_weight="80"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:paddingRight="@dimen/layout_padding_10dp">
 
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="6dp"
-            android:fontFamily="@font/google_sans"
-            android:text="(en anglais, data communication network ou DCN) est un ensemble d'équipements reliés entre eux pour échanger des informations. Par analogie avec un filet (un réseau est un « petit rets », c'est-à-dire un petit filet1), on appelle nœud l'extrémité d'une connexion, qui peut être une intersection de plusieurs connexions ou équipements (un ordinateur, un routeur, un concentrateur, un commutateur)."
-            android:textColor="@color/app_text_color"
-            android:textSize="14sp" />
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/google_sans"
+                android:text="Réseau informatique"
+                android:textColor="@color/blue_500"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="6dp"
+                android:fontFamily="@font/google_sans"
+                android:text="(en anglais, data communication network ou DCN) est un ensemble d'équipements reliés entre eux pour échanger des informations. Par analogie avec un filet (un réseau est un « petit rets », c'est-à-dire un petit filet1), on appelle nœud l'extrémité d'une connexion, qui peut être une intersection de plusieurs connexions ou équipements (un ordinateur, un routeur, un concentrateur, un commutateur)."
+                android:textColor="@color/app_text_color"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+        <View
+            android:id="@+id/view_to_attach_popup_menu_id"
+            android:layout_width="0.001dp"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            />
     </LinearLayout>
 
-</LinearLayout>
+</com.google.android.material.card.MaterialCardView>
 

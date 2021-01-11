@@ -2,6 +2,7 @@ package com.flys.dico.architecture.custom;
 
 import com.flys.dico.architecture.core.AbstractSession;
 import com.flys.dico.dao.entities.User;
+import com.flys.dico.dao.entities.WordToShare;
 import com.flys.dico.fragments.adapters.Word;
 import com.flys.notification.domain.Notification;
 
@@ -21,6 +22,9 @@ public class Session extends AbstractSession {
     private boolean subscribed;
     //Dictionnary data save in the session
     private List<Word> words;
+
+    //Words to share
+    private List<WordToShare> wordToShares;
 
     public User getUser() {
         return user;
@@ -60,5 +64,20 @@ public class Session extends AbstractSession {
 
     public void setWords(List<Word> words) {
         this.words = words;
+    }
+
+    public List<WordToShare> getWordToShares() {
+        return wordToShares;
+    }
+
+    public void setWordToShares(List<WordToShare> wordToShares) {
+        this.wordToShares = wordToShares;
+    }
+
+    public void addWordToShares(WordToShare wordToShare) {
+        if (this.wordToShares == null) {
+            this.wordToShares = new ArrayList<>();
+        }
+        this.wordToShares.add(wordToShare);
     }
 }

@@ -11,6 +11,10 @@
         <item name="android:textColorHint">@color/grey_300</item>
         <item name="android:itemBackground">@color/app_background_color</item>
         <item name="android:itemTextAppearance">@style/menu_text_style</item>
+        <item name="actionModeBackground">@color/app_background_color</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionModeCloseDrawable">@drawable/ic_baseline_keyboard_backspace_24</item>
+        <item name="actionModeStyle">@style/customActionModeStyle</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -32,13 +36,13 @@
 
     <style name="AppTheme.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <!-- Set proper title size -->
-        <item name="android:textSize">16dp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">@font/google_sans</item>
     </style>
     <!--  Bottom navigation view style -->
     <style name="Widget.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
         <item name="fontFamily">@font/google_sans</item>
-        <item name="android:textSize">12dp</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
     <style name="AuthenticationTheme" parent="FirebaseUI">
@@ -100,5 +104,22 @@
         <item name="android:textColorPrimary">@color/colorAccent</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorOnPrimary">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="customActionModeStyle" parent="Widget.AppCompat.ActionMode">
+        <item name="backgroundColor">@color/app_background_color</item>
+        <item name="iconTint">@color/app_text_color</item>
+        <item name="titleTextStyle">@style/customTitleTextStyle</item>
+    </style>
+
+    <style name="customTitleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/app_text_color</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/google_sans</item>
+    </style>
+    <style name="popupmenu" parent="Base.Widget.AppCompat.PopupMenu">
+        <item name="android:textColor">@color/app_text_color</item>
+        <item name="android:itemBackground">@color/app_background_color</item>
+        <item name="android:popupElevation">50dp</item>
     </style>
 </resources>

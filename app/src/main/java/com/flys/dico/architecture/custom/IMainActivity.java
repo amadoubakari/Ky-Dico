@@ -2,8 +2,13 @@ package com.flys.dico.architecture.custom;
 
 import com.flys.dico.architecture.core.ISession;
 import com.flys.dico.dao.entities.User;
+import com.flys.dico.dao.entities.WordToShare;
 import com.flys.dico.dao.service.IDao;
+import com.flys.dico.fragments.adapters.Word;
+import com.flys.dico.fragments.adapters.WordAdapter;
 import com.google.android.play.core.appupdate.AppUpdateManager;
+
+import java.util.Set;
 
 public interface IMainActivity extends IDao {
 
@@ -80,10 +85,25 @@ public interface IMainActivity extends IDao {
 
     //When user scroll up the view
     void scrollUp();
+
     //When user scroll down the view
     void scrollDown();
+
     //Night mode
     void setNightMode(boolean enableNightMode);
+
     //
     void getNightMode();
+
+    //share words
+    void shareWords(Word word);
+
+    //Share words from action mode
+    void shareWords(Set<WordToShare> wordsToShare);
+
+    //Close action mode share words
+    void closeActionModeShareWords();
+
+    //Share words from action mode
+    void shareWords(WordAdapter wordAdapter, Set<WordToShare> wordsToShare);
 }

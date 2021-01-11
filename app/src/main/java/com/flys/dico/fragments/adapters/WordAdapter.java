@@ -17,6 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.flys.dico.R;
 import com.flys.dico.architecture.custom.IMainActivity;
+import com.flys.dico.dao.entities.WordToShare;
+import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +42,6 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private WordOnclickListener onclickListener;
     private OnLoadMoreListener onLoadMoreListener = null;
     private boolean loading;
-    private final String TAG = "WordAdapter";
     private String searchText;
 
     public WordAdapter(Context context) {
@@ -86,7 +87,7 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             return new Holder(view, this.onclickListener);
         } else {
             View view = LayoutInflater.from(context).inflate(R.layout.item_progress, parent, false);
-            return new HolderProgress(view, this.onclickListener);
+            return new HolderProgress(view);
         }
 
     }
@@ -99,6 +100,7 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             Holder view = (Holder) holder;
             view.title.setText(word.getTitle());
             higherLightSearchedWord(word, view);
+
         } else {
             HolderProgress holderProgress = (HolderProgress) holder;
             holderProgress.progressBar.setIndeterminate(true);
@@ -123,44 +125,63 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return this.words.get(position).getTitle().isEmpty() && this.words.get(position).getDescription().isEmpty() ? VIEW_PROGRESS : VIEW_ITEM;
     }
 
-    class Holder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class Holder extends RecyclerView.ViewHolder implements View.OnLongClickListener, View.OnClickListener {
         TextView title;
         TextView description;
+        MaterialCardView word;
+        //Simple view to attach popup menu
+        View attachOfPopMenu;
         WordOnclickListener wordOnclickListener;
 
         public Holder(@NonNull View itemView, WordOnclickListener onclickListener) {
             super(itemView);
             title = itemView.findViewById(R.id.title);
             description = itemView.findViewById(R.id.description);
+            word = itemView.findViewById(R.id.word_card_id);
+            attachOfPopMenu = itemView.findViewById(R.id.view_to_attach_popup_menu_id);
             wordOnclickListener = onclickListener;
-            itemView.setOnClickListener(this);
+            word.setOnLongClickListener(this);
+            word.setOnClickListener(this);
         }
 
+        /**
+         * Called when a view has been clicked and held.
+         *
+         * @param v The view that was clicked and held.
+         * @return true if the callback consumed the long click, false otherwise.
+         */
+        @Override
+        public boolean onLongClick(View v) {
+            word.setChecked(!word.isChecked());
+            return wordOnclickListener.onWordLongClickListener(new WordToShare(word.isChecked(), words.get(getAdapterPosition()), getAdapterPosition()));
+        }
+
+        /**
+         * Called when a view has been clicked.
+         *
+         * @param v The view that was clicked.
+         */
         @Override
         public void onClick(View v) {
-            //wordOnclickListener.onWordClickListener(v, getAdapterPosition());
+            wordOnclickListener.onWordClickListener(attachOfPopMenu, getAdapterPosition(),words.get(getAdapterPosition()));
         }
     }
 
 
-    class HolderProgress extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class HolderProgress extends RecyclerView.ViewHolder {
         ProgressBar progressBar;
 
-        public HolderProgress(@NonNull View itemView, WordOnclickListener onclickListener) {
+        public HolderProgress(@NonNull View itemView) {
             super(itemView);
             progressBar = itemView.findViewById(R.id.progress_bar);
-            itemView.setOnClickListener(this);
-        }
-
-        @Override
-        public void onClick(View v) {
-            //wordOnclickListener.onWordClickListener(v, getAdapterPosition());
         }
     }
 
-
     public interface WordOnclickListener {
-        void onWordClickListener(View v, int position);
+
+        void onWordClickListener(View v, int position,Word word);
+
+        boolean onWordLongClickListener(WordToShare wordToShare);
     }
 
     /**

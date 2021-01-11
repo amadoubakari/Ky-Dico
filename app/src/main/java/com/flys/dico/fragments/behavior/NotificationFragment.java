@@ -210,7 +210,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
         popup.setOnMenuItemClickListener(menuItem -> {
             switch (menuItem.getItemId()) {
                 case R.id.popmenu_share:
-                    com.flys.tools.utils.Utils.shareText(context, getString(R.string.app_name), HtmlCompat.fromHtml(notifications.get(position).getContent().concat("</br>").concat("https://play.google.com/store/apps/details?id=com.flys.glearning"), HtmlCompat.FROM_HTML_MODE_LEGACY).toString(), getString(R.string.app_name));
+                    com.flys.tools.utils.Utils.shareText(context, getString(R.string.app_name), HtmlCompat.fromHtml(notifications.get(position).getContent().concat("</br>").concat(getString(R.string.app_google_play_store_url)), HtmlCompat.FROM_HTML_MODE_LEGACY).toString(), getString(R.string.app_name));
                     break;
                 case R.id.popmenu_delete:
                     try {

@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/toolbar_background_color"
-                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:layout_scrollFlags="snap"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
                 app:theme="@style/ActionBarTheme"
                 app:titleTextAppearance="@style/AppTheme.Toolbar.Title" />
@@ -67,6 +67,8 @@
         app:headerLayout="@layout/navigation_header"
         app:itemIconTint="@color/navigation_item_color_state"
         app:itemTextColor="@color/navigation_item_color_state"
+        app:itemTextAppearanceActive="@style/BottomNavigationViewTextStyle"
+        app:itemTextAppearanceInactive="@style/BottomNavigationViewTextStyle"
         app:menu="@menu/navigation_menu"
         android:background="@color/app_background_color"/>
 

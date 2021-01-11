@@ -19,10 +19,13 @@
  * */
 package com.flys.dico.fragments.behavior;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Handler;
 import android.util.Log;
+import android.view.ContextThemeWrapper;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -30,6 +33,9 @@ import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.view.menu.MenuPopupHelper;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -40,6 +46,7 @@ import com.flys.dico.architecture.core.Utils;
 import com.flys.dico.architecture.custom.CoreState;
 import com.flys.dico.dao.db.NotificationDao;
 import com.flys.dico.dao.db.NotificationDaoImpl;
+import com.flys.dico.dao.entities.WordToShare;
 import com.flys.dico.fragments.adapters.Word;
 import com.flys.dico.fragments.adapters.WordAdapter;
 import com.flys.dico.utils.Constants;
@@ -68,8 +75,10 @@ import org.androidannotations.annotations.ViewById;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
 
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
@@ -97,6 +106,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
     private static boolean wasInPause = false;
     private static boolean askedForUpdate = false;
     private static FirebaseDatabase database;
+    private static List<WordToShare> wordToShares;
 
     private int itemsPerDisplay = 6;
     // Creates instance of the update app manager.
@@ -135,6 +145,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
         if (previousState == null) {
             reloadData();
         }
+        wordToShares = new ArrayList<>();
     }
 
     @Override
@@ -189,6 +200,11 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
         if (Constants.isNetworkConnected && !askedForUpdate) {
             checkForUpdates();
         }
+        if (wordToShares != null) {
+            wordToShares.clear();
+            mainActivity.closeActionModeShareWords();
+        }
+
     }
 
 
@@ -267,8 +283,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
                             sendQueryWordToTheServer(queryWords, activity.getString(R.string.fragment_home_database_tops), activity.getString(R.string.fragment_home_database_reference));
                         }
                     }
-                    wordAdapter = new WordAdapter(activity, wordList, queryWords.get(), (v, position) -> {
-                    });
+                    wordAdapter = new WordAdapter(activity, wordList, queryWords.get(), getWordLongClickListener());
                     recyclerView.setLayoutManager(new LinearLayoutManager(activity));
                     recyclerView.setAdapter(wordAdapter);
                     //cancel the loading
@@ -284,7 +299,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
         llSearchBlock.setVisibility(View.GONE);
         index = 0;
         words = new ArrayList<>();
-        wordAdapter = new WordAdapter(activity, words, itemsPerDisplay);
+        wordAdapter = new WordAdapter(activity, words, itemsPerDisplay, getWordLongClickListener());
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         recyclerView.setHasFixedSize(true);
         beginRunningTasks(1);
@@ -297,7 +312,57 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
 
     }
 
+    private WordAdapter.WordOnclickListener getWordLongClickListener() {
+        return new WordAdapter.WordOnclickListener() {
+            @SuppressLint("RestrictedApi")
+            @Override
+            public void onWordClickListener(View v, int position, Word word) {
+                Context wrapper = new ContextThemeWrapper(activity, R.style.popupmenu);
+                PopupMenu popupMenu = new PopupMenu(wrapper, v);
+                popupMenu.setGravity(10);
+                popupMenu.inflate(R.menu.option_menu);
+                com.flys.tools.utils.Utils.applyFontStyleToMenu(activity, popupMenu.getMenu(), R.font.google_sans);
+                popupMenu.setOnMenuItemClickListener(menuItem -> {
+                    switch (menuItem.getItemId()) {
+                        case R.id.option_menu_share:
+                            com.flys.tools.utils.Utils.shareText(activity, getString(R.string.app_name), word.getTitle() + " :  " + word.getDescription().concat("\n").concat(getString(R.string.app_google_play_store_url)), getString(R.string.app_name));
+                            break;
+                        default:
+                            break;
+                    }
+                    return false;
+                });
 
+                MenuPopupHelper menuHelper = new MenuPopupHelper(wrapper, (MenuBuilder) popupMenu.getMenu(), v);
+                menuHelper.setForceShowIcon(true);
+                menuHelper.show();
+            }
+
+            @Override
+            public boolean onWordLongClickListener(WordToShare toShare) {
+                selectedWordsToShare(toShare);
+                mainActivity.shareWords(wordToShares.stream().filter(wordToShare -> wordToShare.isStatus()).collect(Collectors.toSet()));
+                return true;
+            }
+        };
+    }
+
+    /**
+     * @param wordToShare word to share
+     */
+    public void selectedWordsToShare(WordToShare wordToShare) {
+        if (!wordToShares.isEmpty()) {
+            ListIterator<WordToShare> iterator = wordToShares.listIterator();
+            while (iterator.hasNext()) {
+                WordToShare wordToShare1 = iterator.next();
+                if (wordToShare1.equals(wordToShare)) {
+                    //Replace element
+                    iterator.remove();
+                }
+            }
+        }
+        wordToShares.add(wordToShare);
+    }
     /*=================================================================================
     ================     Treatment ====================================================
     ================================================================================= */
@@ -442,7 +507,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
      * load unread notifications
      */
     private void loadUnreadNotifications() {
-        executeInBackground(mainActivity.loadNotificationsFromDatabase("seen",false).debounce(500,TimeUnit.MILLISECONDS).delay(1000, TimeUnit.MILLISECONDS), notifications -> {
+        executeInBackground(mainActivity.loadNotificationsFromDatabase("seen", false).debounce(500, TimeUnit.MILLISECONDS).delay(1000, TimeUnit.MILLISECONDS), notifications -> {
             if (notifications != null && !notifications.isEmpty()) {
                 mainActivity.updateNotificationNumber(notifications.size());
             }
