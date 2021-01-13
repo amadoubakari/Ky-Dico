@@ -1,8 +1,8 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:state_checked="true"
-        android:color="@color/search_icon_tint_color" />
+        android:color="@color/app_blue_color" />
     <item
         android:state_checked="false"
-        android:color="@color/grey_400" />
+        android:color="@color/app_background_grey" />
 </selector>

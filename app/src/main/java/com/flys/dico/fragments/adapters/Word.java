@@ -39,6 +39,14 @@ public class Word  {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Word word = (Word) o;
+        return title.equals(word.title) &&
+                description.equals(word.description);
+    }
+
+    @Override
     public String toString() {
         return "Word{" +
                 "title='" + title + '\'' +

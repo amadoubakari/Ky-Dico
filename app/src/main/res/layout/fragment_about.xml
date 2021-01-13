@@ -33,7 +33,7 @@
             android:text="@string/fragment_about_dictionary_header"
             android:textColor="@color/app_text_color"
             android:fontFamily="@font/google_sans"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold"
             />
 
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:text="Version"
                 android:fontFamily="@font/google_sans"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:textColor="@color/app_text_second_color" />
 
             <TextView
@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_version_msg"
                 android:fontFamily="@font/google_sans"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:textColor="@color/app_text_color" />
 
         </LinearLayout>
@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/about_last_update_msg"
                 android:fontFamily="@font/google_sans"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:textColor="@color/app_text_second_color" />
 
             <TextView
@@ -93,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/google_sans"
                 android:text="@string/about_releasing_date"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:textColor="@color/app_text_color" />
 
         </LinearLayout>
@@ -107,7 +107,7 @@
             android:layout_height="wrap_content"
             android:text="@string/mini_dictionnaire_informatique_de_poche_msg"
             android:fontFamily="@font/google_sans"
-            android:textSize="14dp"
+            android:textSize="14sp"
             android:textColor="@color/app_text_color" />
 
         <View
@@ -121,7 +121,7 @@
             android:text="Open source ici"
             android:textColor="@color/app_text_color"
             android:fontFamily="@font/google_sans"
-            android:textSize="14dp" />
+            android:textSize="14sp" />
 
 
     </LinearLayout>
@@ -166,7 +166,7 @@
         android:gravity="center"
         android:text="@string/https_site_kyossi_com"
         android:fontFamily="@font/google_sans"
-        android:textSize="14dp"
+        android:textSize="14sp"
         android:textColor="@color/blue_600"
         app:layout_constraintBottom_toTopOf="@+id/view2"
         app:layout_constraintEnd_toStartOf="@+id/guideline95"

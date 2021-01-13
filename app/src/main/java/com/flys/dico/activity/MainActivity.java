@@ -19,6 +19,8 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.view.ActionMode;
+import androidx.core.text.HtmlCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.facebook.AccessToken;
@@ -43,6 +45,7 @@ import com.flys.dico.dao.db.NotificationDaoImpl;
 import com.flys.dico.dao.db.UserDao;
 import com.flys.dico.dao.db.UserDaoImpl;
 import com.flys.dico.dao.entities.User;
+import com.flys.dico.dao.entities.WordToShare;
 import com.flys.dico.dao.service.Dao;
 import com.flys.dico.dao.service.IDao;
 import com.flys.dico.fragments.adapters.Word;
@@ -75,10 +78,12 @@ import org.androidannotations.annotations.OptionsItem;
 import org.androidannotations.annotations.OptionsMenu;
 import org.androidannotations.annotations.OptionsMenuItem;
 import org.androidannotations.annotations.ViewById;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -121,7 +126,8 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     // Register Callback - Call this in your app start!
     private CheckNetwork network;
 
-    protected static boolean darkMode = false;
+    //Action mode
+    private static ActionMode actionMode;
 
     // méthodes classe parent -----------------------
     @Override
@@ -146,6 +152,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         //If we have fcm pushed notification in course
         //Subscription on firebase to receive notifications
         handleNotifications(getIntent());
+
     }
 
 
@@ -156,8 +163,94 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         if (user != null && user.getType() != null) {
             updateUserConnectedProfile(user);
         }
+
     }
 
+
+    private void showActionMode(@NotNull Set<WordToShare> wordToShares) {
+        if (wordToShares.isEmpty()) {
+            closeActionModeShareWords();
+            return;
+        }
+        actionMode = startSupportActionMode(new ActionMode.Callback() {
+            @Override
+            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+                mode.getMenuInflater().inflate(R.menu.menu_home_action_mode, menu);
+                //Show selected elements
+                if(wordToShares.size()==1){
+                    mode.setTitle(wordToShares.size() + " item selected");
+                }else{
+                    mode.setTitle(wordToShares.size() + " items selected");
+                }
+
+                return true;
+            }
+
+            @Override
+            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+                return false;
+            }
+
+            @Override
+            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+                if (item.getItemId() == R.id.menu_home_share_word_id) {
+                    StringBuilder message = new StringBuilder();
+                    wordToShares.forEach(wordToShare -> message.append(HtmlCompat.fromHtml(wordToShare.getWord().getTitle().concat(": ").concat(wordToShare.getWord().getDescription()).concat("\n"), HtmlCompat.FROM_HTML_MODE_LEGACY)));
+                    com.flys.tools.utils.Utils.shareText(MainActivity.this, getString(R.string.app_name), message.toString().concat("\n").concat(getString(R.string.app_google_play_store_url)), getString(R.string.activity_abstract_recommend_app));
+                    actionMode.finish();
+                }
+                return false;
+            }
+
+            @Override
+            public void onDestroyActionMode(ActionMode mode) {
+                actionMode = null;
+            }
+        });
+    }
+
+    private void showActionMode(@NotNull WordAdapter wordAdapter,@NotNull Set<WordToShare> wordToShares) {
+        if (wordToShares.isEmpty()) {
+            closeActionModeShareWords();
+            return;
+        }
+        actionMode = startSupportActionMode(new ActionMode.Callback() {
+            @Override
+            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+                mode.getMenuInflater().inflate(R.menu.menu_home_action_mode, menu);
+                //Show selected elements
+                if(wordToShares.size()==1){
+                    mode.setTitle(wordToShares.size() + " item selected");
+                }else{
+                    mode.setTitle(wordToShares.size() + " items selected");
+                }
+
+                return true;
+            }
+
+            @Override
+            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+                return false;
+            }
+
+            @Override
+            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+                if (item.getItemId() == R.id.menu_home_share_word_id) {
+                    StringBuilder message = new StringBuilder();
+                    wordToShares.forEach(wordToShare -> message.append(HtmlCompat.fromHtml(wordToShare.getWord().getTitle().concat(": ").concat(wordToShare.getWord().getDescription()).concat("\n"), HtmlCompat.FROM_HTML_MODE_LEGACY)));
+                    com.flys.tools.utils.Utils.shareText(MainActivity.this, getString(R.string.app_name), message.toString().concat("\n").concat(getString(R.string.app_google_play_store_url)), getString(R.string.activity_abstract_recommend_app));
+                    actionMode.finish();
+                }
+                return false;
+            }
+
+            @Override
+            public void onDestroyActionMode(ActionMode mode) {
+                wordAdapter.notifyDataSetChanged();
+                actionMode = null;
+            }
+        });
+    }
 
     @Override
     protected void onNewIntent(Intent intent) {
@@ -374,6 +467,31 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         bottomNavigationView.setVisibility(View.VISIBLE);
     }
 
+    @Override
+    public void shareWords(Word word) {
+        //showActionMode(word);
+    }
+
+    @Override
+    public void shareWords(Set<WordToShare> wordsToShare) {
+        showActionMode(wordsToShare);
+    }
+
+    @Override
+    public void closeActionModeShareWords() {
+        if (actionMode != null) {
+            //Close action mode share words
+            actionMode.finish();
+            //clear the session
+            session.setWordToShares(null);
+        }
+    }
+
+    @Override
+    public void shareWords(WordAdapter wordAdapter, Set<WordToShare> wordsToShare) {
+        showActionMode(wordAdapter,wordsToShare);
+    }
+
 
 
     /*------------------------------------------------------------------------------------------------
@@ -388,11 +506,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         if (bundle != null && bundle.containsKey(Constants.NOTIFICATION)) {
             Notification notification = (Notification) bundle.getSerializable(Constants.NOTIFICATION);
             if (notification != null) {
-
-                //notification.setDate(new Date());
-                //notificationDao.save(notification);
                 getSupportActionBar().show();
-                //updateNotificationNumber(notificationDao.getAll().size());
                 activateMainButtonMenu(R.id.bottom_menu_me);
                 navigateToView(NOTIFICATION_FRAGMENT, ISession.Action.SUBMIT);
 
