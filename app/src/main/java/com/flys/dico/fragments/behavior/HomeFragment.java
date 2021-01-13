@@ -157,10 +157,11 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
 
     @Override
     protected void updateOnSubmit(CoreState previousState) {
+        Log.e(TAG, "updateOnSubmit");
         if (appUpdateManager == null) {
             appUpdateManager = AppUpdateManagerFactory.create(activity);
         }
-        reloadData();
+
     }
 
     @Override
@@ -187,6 +188,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
     @Override
     public void onFragmentResume() {
         super.onFragmentResume();
+        Log.e(TAG, "onFragmentResume");
         if (wasInPause) {
             reloadData();
             loadUnreadNotifications();
@@ -373,9 +375,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
      * @param wordAdapter
      */
     public void applyLoadMoreOnScrollListener(WordAdapter wordAdapter) {
-        wordAdapter.setOnLoadMoreListener(currentPage -> {
-            new Handler().post(() -> loadNextData(wordAdapter));
-        });
+        wordAdapter.setOnLoadMoreListener(currentPage -> new Handler().post(() -> loadNextData(wordAdapter)));
     }
 
     /**
