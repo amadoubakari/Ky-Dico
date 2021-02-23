@@ -88,4 +88,6 @@
     <string name="https_site_kyossi_com" translatable="false">www.kyossi.com</string>
     <string name="fcm_notification_service_no_messages">\u0020nouveaux messages</string>
     <string name="fcm_notification_service_one_message">\u0020nouveau message</string>
+    <string name="ads_native_notification_item" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="ads_native_notification_item_debug" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
 </resources>

@@ -51,7 +51,7 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
         } else {
             msg = getString(R.string.disable_notifications_to_dont_received_news);
         }
-        notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), msg, getString(R.string.button_yes_msg), getString(R.string.button_no_msg), activity.getDrawable(R.drawable.logo), R.style.customMaterialAlertDialog), this);
+        notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), msg, getString(R.string.button_yes_msg), getString(R.string.button_no_msg), activity.getDrawable(R.drawable.logo), R.style.customMaterialAlertEditDialog), this);
         notificationDialog.show(getActivity().getSupportFragmentManager(), "settings_notification_dialog_tag");
     }
 
@@ -139,7 +139,7 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
     @Click(R.id.notification_night_mode_switch)
     public void switchNightModeAction() {
 
-        notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), getString(R.string.abstract_fragment_restart_app), getString(R.string.button_yes_msg), getString(R.string.button_no_msg), activity.getDrawable(R.drawable.logo), R.style.customMaterialAlertDialog), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
+        notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), getString(R.string.abstract_fragment_restart_app), getString(R.string.button_yes_msg), getString(R.string.button_no_msg), activity.getDrawable(R.drawable.logo), R.style.customMaterialAlertEditDialog), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
             @Override
             public void okButtonAction(DialogInterface dialogInterface, int i) {
                 mainActivity.setNightMode(enabledNightMode.isChecked());

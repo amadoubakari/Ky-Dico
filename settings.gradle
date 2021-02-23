@@ -1,3 +1,2 @@
 include ':generictools'
-include ':fcm-notification-module'
 include ':app', ':common-tools'
