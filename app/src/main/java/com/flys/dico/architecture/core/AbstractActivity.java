@@ -443,7 +443,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
 
     private void showEditDialog() {
         FragmentManager fm = getSupportFragmentManager();
-        EditDialogFragment editDialogFragment = new EditDialogFragment(this, getString(R.string.activity_abstract_recommendation_msg), R.drawable.logo, R.style.customMaterialAlertDialog, R.font.google_sans);
+        EditDialogFragment editDialogFragment = new EditDialogFragment(this, getString(R.string.activity_abstract_recommendation_msg), R.drawable.logo, R.style.customMaterialAlertEditDialog, R.font.google_sans);
         editDialogFragment.show(fm, "fragment_edit_dialog_name");
     }
 

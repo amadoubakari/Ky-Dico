@@ -50,11 +50,13 @@
                 android:textSize="14sp" />
 
         </LinearLayout>
+
         <View
             android:id="@+id/view_to_attach_popup_menu_id"
-            android:layout_width="0.001dp"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
             android:visibility="visible"
+            android:layout_gravity="center"
             />
     </LinearLayout>
 

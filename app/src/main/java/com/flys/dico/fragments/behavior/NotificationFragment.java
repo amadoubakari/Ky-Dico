@@ -30,7 +30,7 @@ import com.flys.dico.dao.db.NotificationDao;
 import com.flys.dico.dao.db.NotificationDaoImpl;
 import com.flys.dico.utils.Constants;
 import com.flys.generictools.dao.daoException.DaoException;
-import com.flys.notification.adapter.NotificationAdapter;
+import com.flys.notification.adapter.AdsNotificationAdapter;
 import com.flys.notification.dialog.DialogStyle;
 import com.flys.notification.dialog.NotificationDetailsDialogFragment;
 import com.flys.notification.domain.Notification;
@@ -53,7 +53,7 @@ import java.util.stream.Collectors;
 
 @EFragment(R.layout.fragment_notif_layout)
 @OptionsMenu(R.menu.menu_home)
-public class NotificationFragment extends AbstractFragment implements MaterialNotificationDialog.NotificationButtonOnclickListeneer, NotificationAdapter.NotificationOnclickListener {
+public class NotificationFragment extends AbstractFragment implements MaterialNotificationDialog.NotificationButtonOnclickListeneer, AdsNotificationAdapter.NotificationOnclickListener {
 
     @ViewById(R.id.recycler)
     protected RecyclerView recyclerView;
@@ -75,7 +75,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
 
     protected SearchView searchView;
     private static List<Notification> notifications;
-    private NotificationAdapter notificationAdapter;
+    private AdsNotificationAdapter notificationAdapter;
 
 
     @Override
@@ -98,6 +98,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
 
     @Override
     protected void initView(CoreState previousState) {
+
     }
 
     @Override
@@ -108,7 +109,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
         init();
 
         if (!NotificationManagerCompat.from(DApplicationContext.getContext()).areNotificationsEnabled()) {
-            MaterialNotificationDialog dialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), "Veuillez activer les notifications\npour recevoir des nouveaux apprentissages", "OK", "NON", getActivity().getDrawable(R.drawable.logo), R.style.customMaterialAlertDialog), this);
+            MaterialNotificationDialog dialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), "Veuillez activer les notifications\npour recevoir des nouveaux apprentissages", "OK", "NON", getActivity().getDrawable(R.drawable.logo), R.style.customMaterialAlertEditDialog), this);
             dialog.show(getActivity().getSupportFragmentManager(), "material_notification_alert_dialog");
         }
 
@@ -136,7 +137,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
     @OptionsItem(R.id.search)
     protected void doSearch() {
         searchView = (SearchView) menuItem.getActionView();
-        Utils.changeSearchTextColor(activity, searchView,R.font.google_sans);
+        Utils.changeSearchTextColor(activity, searchView, R.font.google_sans);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -174,7 +175,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
 
     @Override
     public void onButtonClickListener(int position) {
-        configDialogFragment = NotificationDetailsDialogFragment.newInstance(activity, notifications.get(position), new DialogStyle(activity.getColor(R.color.app_text_color),activity.getColor(R.color.app_text_second_color),R.font.google_sans));
+        configDialogFragment = NotificationDetailsDialogFragment.newInstance(activity, notifications.get(position), new DialogStyle(activity.getColor(R.color.app_text_color), activity.getColor(R.color.app_text_second_color), R.font.google_sans));
         configDialogFragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.AppTheme);
         configDialogFragment.show(getActivity().getSupportFragmentManager(), "fragment_edit_name" + position);
     }
@@ -256,7 +257,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
      */
     private void init() {
         notifications = new ArrayList<>();
-        notificationAdapter = new NotificationAdapter(activity, notifications, new DialogStyle(activity.getColor(R.color.app_text_color), activity.getColor(R.color.app_text_second_color),R.font.google_sans), this);
+        notificationAdapter = new AdsNotificationAdapter(activity, notifications, new DialogStyle(activity.getColor(R.color.app_text_color), activity.getColor(R.color.app_text_second_color), R.font.google_sans), Constants.isNetworkConnected,activity.getString(R.string.ads_native_notification_item),this);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(notificationAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));

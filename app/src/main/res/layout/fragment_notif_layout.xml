@@ -4,32 +4,33 @@
     android:id="@+id/notification_main_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="@color/app_background_second_color">
+    android:background="@color/app_background_second_color"
+    android:orientation="vertical">
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="56dp"
-        android:clipToPadding="false"/>
+        android:clipToPadding="false"
+        android:paddingTop="56dp" />
 
     <LinearLayout
         android:id="@+id/notification_not_found_msg_id"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_centerInParent="true"
         android:background="@color/app_background_color"
         android:gravity="center"
-        android:visibility="gone"
-        >
+        android:orientation="vertical"
+        android:visibility="gone">
+
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/ic_baseline_search_24"
             app:tint="@color/app_inverse_color" />
+
         <TextView
             android:id="@+id/notifications_empty_id"
             android:layout_width="wrap_content"
