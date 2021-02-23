@@ -109,7 +109,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
         init();
 
         if (!NotificationManagerCompat.from(DApplicationContext.getContext()).areNotificationsEnabled()) {
-            MaterialNotificationDialog dialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), "Veuillez activer les notifications\npour recevoir des nouveaux apprentissages", "OK", "NON", getActivity().getDrawable(R.drawable.logo), R.style.customMaterialAlertDialog), this);
+            MaterialNotificationDialog dialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), "Veuillez activer les notifications\npour recevoir des nouveaux apprentissages", "OK", "NON", getActivity().getDrawable(R.drawable.logo), R.style.customMaterialAlertEditDialog), this);
             dialog.show(getActivity().getSupportFragmentManager(), "material_notification_alert_dialog");
         }
 

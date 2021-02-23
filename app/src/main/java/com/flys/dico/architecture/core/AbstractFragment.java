@@ -489,7 +489,7 @@ public abstract class AbstractFragment extends Fragment {
     protected void changeLanguage() {
         final String[] language = {getString(R.string.settings_fragment_language_french), getString(R.string.settings_fragment_language_english)};
         final int checkedItem = isEnglish();
-        final MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity,R.style.customMaterialAlertDialog);
+        final MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity,R.style.customMaterialAlertEditDialog);
         builder.setTitle(getString(R.string.settingsFragment_select_language))
                 .setSingleChoiceItems(language, checkedItem, (dialog, which) -> {
                     //if user select preferred language as English then
@@ -510,7 +510,7 @@ public abstract class AbstractFragment extends Fragment {
     }
 
     private void restartApp() {
-        MaterialNotificationDialog notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), getString(R.string.abstract_fragment_restart_app), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_no_msg), activity.getDrawable(R.drawable.logo), R.style.customMaterialAlertDialog), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
+        MaterialNotificationDialog notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), getString(R.string.abstract_fragment_restart_app), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_no_msg), activity.getDrawable(R.drawable.logo), R.style.customMaterialAlertEditDialog), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
             @Override
             public void okButtonAction(DialogInterface dialogInterface, int i) {
                 activity.finishAndRemoveTask();
