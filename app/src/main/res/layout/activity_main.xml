@@ -47,10 +47,10 @@
             android:layout_gravity="bottom"
             android:background="@color/toolbar_background_color"
             android:theme="@style/Widget.Design.BottomNavigationView"
-            app:itemIconTint="@drawable/bottom_navigation_colors"
+            app:itemIconTint="@color/navigation_item_color_state"
             app:itemTextAppearanceActive="@style/BottomNavigationViewTextStyle"
             app:itemTextAppearanceInactive="@style/BottomNavigationViewTextStyle"
-            app:itemTextColor="@drawable/bottom_navigation_colors"
+            app:itemTextColor="@color/navigation_item_color_state"
             app:menu="@menu/bottom_navigation_menu" />
 
     </FrameLayout>

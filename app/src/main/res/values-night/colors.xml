@@ -17,7 +17,7 @@
   <color name="app_text_second_color">@color/blue_500</color>
   <color name="app_background_second_color">@color/black</color>
   <color name="app_text_color_tint">@color/grey_400</color>
-
+  <color name="app_menu_text_and_icon_color">@color/grey_50</color>
 
   <color name="blue_500">#2196F3</color>
   <color name="red_A700">#D50000</color>
