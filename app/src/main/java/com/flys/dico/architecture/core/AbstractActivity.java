@@ -504,8 +504,6 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
 
     protected abstract void disconnect();
 
-    // Les traitements
-
     /**
      * @param language
      */
@@ -516,11 +514,8 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         Configuration configuration = new Configuration();
         configuration.setLocale(locale);
         getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
-
         //Share
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(Constants.MY_LAND, language);
-        editor.apply();
+        setLanguage(language);
     }
 
     @Override
@@ -551,7 +546,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         SharedPreferences.Editor nightMode = sharedPreferences.edit();
         nightMode.putBoolean(Constants.NIGHT_MODE_KEY, enableNightMode);
         nightMode.apply();
-        finish();
+        com.flys.dico.architecture.core.Utils.restartApplication(DApplicationContext.getContext(), MainActivity_.class);
     }
 
     @Override
@@ -565,4 +560,15 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         }
     }
 
+    @Override
+    public SharedPreferences getSharedPreferences() {
+        return sharedPreferences;
+    }
+
+    @Override
+    public void setLanguage(String languageCode) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(Constants.MY_LAND, languageCode);
+        editor.apply();
+    }
 }
