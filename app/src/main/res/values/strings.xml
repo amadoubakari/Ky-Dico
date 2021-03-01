@@ -53,6 +53,7 @@
     <string name="dictionary_data_source">dictionnaire.json</string>
     <string name="app_name_release">Dictionnaire Informatique</string>
     <string name="app_name_debug">Dictionnaire Informatique </string>
+    <string name="app_name_rct">rct</string>
     <string name="dialog_contact_welcome_msg">Bienvenue</string>
     <string name="firebase_channel_id" translatable="false">dico</string>
     <string name="app_google_play_store_url">https://play.google.com/store/apps/details?id=com.flys.dico&amp;hl=fr</string>
@@ -79,10 +80,13 @@
     <string name="fragment_about_github_source_here">ici</string>
     <string name="firebase_subscription_release">firebase-dictionary-release</string>
     <string name="firebase_subscription_debug" >firebase-dictionary-debug</string>
+    <string name="firebase_subscription_rct">firebase-dictionary-release</string>
     <string name="fragment_home_database_root_ref_release" translatable="false">words</string>
+    <string name="fragment_home_database_root_ref_rct" translatable="false">words</string>
     <string name="fragment_home_database_root_ref_debug" translatable="false">words-debug</string>
     <string name="fragment_home_database_tops_debug" translatable="false">tops-debug</string>
     <string name="fragment_home_database_tops_release" translatable="false">tops</string>
+    <string name="fragment_home_database_tops_rct" translatable="false">tops</string>
     <string name="abstract_fragment_restart_app">Veuillez rédemarrer l\'application pour prendre en compte les changements.</string>
     <string name="mode_nuit">Mode Nuit</string>
     <string name="https_site_kyossi_com" translatable="false">www.kyossi.com</string>
@@ -90,4 +94,5 @@
     <string name="fcm_notification_service_one_message">\u0020nouveau message</string>
     <string name="ads_native_notification_item" translatable="false">ca-app-pub-9112600790446098/4885818374</string>
     <string name="ads_native_notification_item_debug" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="ads_native_notification_item_rct" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
 </resources>

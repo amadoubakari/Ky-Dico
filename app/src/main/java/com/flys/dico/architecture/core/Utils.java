@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 
 import com.flys.dico.R;
+import com.flys.dico.architecture.custom.DApplicationContext;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.io.File;
@@ -140,7 +141,7 @@ public class Utils {
      * @param context
      * @param activityClass
      */
-    public static void restartApplication(Context context, Class activityClass) {
+    public static void restartApplication(DApplicationContext context, Class activityClass) {
         TaskStackBuilder.create(context)
                 .addNextIntent(new Intent(context, activityClass))
                 .startActivities();

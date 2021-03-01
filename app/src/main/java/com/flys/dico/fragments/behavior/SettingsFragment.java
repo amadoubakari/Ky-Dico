@@ -1,6 +1,5 @@
 package com.flys.dico.fragments.behavior;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.provider.Settings;
@@ -8,12 +7,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.flys.dico.R;
 import com.flys.dico.architecture.core.AbstractFragment;
 import com.flys.dico.architecture.custom.CoreState;
-import com.flys.dico.utils.Constants;
 import com.flys.tools.dialog.MaterialNotificationDialog;
 import com.flys.tools.domain.NotificationData;
 import com.google.android.material.switchmaterial.SwitchMaterial;
@@ -69,7 +68,7 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
     @Override
     protected void initFragment(CoreState previousState) {
         enableNotification.setChecked(NotificationManagerCompat.from(activity).areNotificationsEnabled());
-        enabledNightMode.setChecked(activity.getPreferences(Context.MODE_PRIVATE).getBoolean(Constants.NIGHT_MODE_KEY, false));
+        enabledNightMode.setChecked(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES);
     }
 
     @Override
@@ -138,11 +137,14 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
 
     @Click(R.id.notification_night_mode_switch)
     public void switchNightModeAction() {
-
         notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), getString(R.string.abstract_fragment_restart_app), getString(R.string.button_yes_msg), getString(R.string.button_no_msg), activity.getDrawable(R.drawable.logo), R.style.customMaterialAlertEditDialog), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
             @Override
             public void okButtonAction(DialogInterface dialogInterface, int i) {
-                mainActivity.setNightMode(enabledNightMode.isChecked());
+                if (enabledNightMode.isChecked()) {
+                    mainActivity.setNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                } else {
+                    mainActivity.setNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                }
             }
 
             @Override

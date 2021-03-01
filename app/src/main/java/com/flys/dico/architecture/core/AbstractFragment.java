@@ -2,7 +2,6 @@ package com.flys.dico.architecture.core;
 
 import android.app.Activity;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -26,6 +25,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import rx.Observable;
 import rx.Subscription;
@@ -514,7 +514,7 @@ public abstract class AbstractFragment extends Fragment {
         MaterialNotificationDialog notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), getString(R.string.abstract_fragment_restart_app), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_no_msg), activity.getDrawable(R.drawable.logo), R.style.customMaterialAlertEditDialog), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
             @Override
             public void okButtonAction(DialogInterface dialogInterface, int i) {
-               Utils.restartApplication(DApplicationContext.getContext(),MainActivity_.class);
+               Utils.restartApplication(DApplicationContext.getInstance(),MainActivity_.class);
             }
 
             @Override
@@ -531,8 +531,7 @@ public abstract class AbstractFragment extends Fragment {
      * @return 0 for english and 1 for french
      */
     protected int isEnglish() {
-        SharedPreferences sharedPreferences = mainActivity.getSharedPreferences();
-        String localeCode = sharedPreferences.getString(Constants.MY_LAND, "");
+        String localeCode = mainActivity.getSharedPreferences().getString(Constants.MY_LAND, Locale.getDefault().getLanguage());
         int checkedItem;
         if (localeCode.equals(Constants.EN)) {
             checkedItem = Language.ENGLISH.getOrder();

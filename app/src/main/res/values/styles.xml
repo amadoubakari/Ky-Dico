@@ -18,6 +18,8 @@
         <item name="fontFamily">@font/google_sans</item>
         <item name="buttonStyle">@style/CustomButtonStyle</item>
         <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -99,7 +101,7 @@
         <item name="android:textColor">@color/white</item>
     </style>
     <style name="CustomMaterialToolbarStyle" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
-        <item name="android:titleTextColor">@color/app_text_color</item>
+        <item name="android:titleTextColor">?attr/colorAccent</item>
         <item name="android:background">@color/app_background_color</item>
     </style>
 
@@ -110,7 +112,7 @@
     </style>
 
     <style name="customTitleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
-        <item name="android:textColor">@color/app_text_color</item>
+        <item name="android:titleTextColor">?attr/colorAccent</item>
         <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">@font/google_sans</item>
     </style>

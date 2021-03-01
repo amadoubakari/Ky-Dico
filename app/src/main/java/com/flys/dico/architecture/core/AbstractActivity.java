@@ -139,13 +139,14 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     protected void onCreate(Bundle savedInstanceState) {
         // parent
         super.onCreate(savedInstanceState);
-
+        //
+        overridePendingTransition(R.anim.main_fade_in, R.anim.splash_fade_out);
         //
         sharedPreferences = getPreferences(MODE_PRIVATE);
         //
-        getNightMode();
-        //
         loadLocale();
+        //
+        getNightMode();
         // log
         if (IS_DEBUG_ENABLED) {
             Log.d(className, "onCreate");
@@ -542,22 +543,17 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     }
 
     @Override
-    public void setNightMode(boolean enableNightMode) {
+    public void setNightMode(int mode) {
         SharedPreferences.Editor nightMode = sharedPreferences.edit();
-        nightMode.putBoolean(Constants.NIGHT_MODE_KEY, enableNightMode);
+        nightMode.putInt(Constants.NIGHT_MODE_KEY, mode);
         nightMode.apply();
-        com.flys.dico.architecture.core.Utils.restartApplication(DApplicationContext.getContext(), MainActivity_.class);
+        com.flys.dico.architecture.core.Utils.restartApplication(DApplicationContext.getInstance(), MainActivity_.class);
     }
 
     @Override
     public void getNightMode() {
         //night mode?
-        boolean night = sharedPreferences.getBoolean(Constants.NIGHT_MODE_KEY, false);
-        if (night) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }
+        AppCompatDelegate.setDefaultNightMode(sharedPreferences.getInt(Constants.NIGHT_MODE_KEY, AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM));
     }
 
     @Override

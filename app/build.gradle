@@ -30,8 +30,8 @@ android {
         minSdkVersion 24
         applicationId "com.flys.dico"
         targetSdkVersion 29
-        versionCode 71
-        versionName "1.1.3.1"
+        versionCode 72
+        versionName "1.1.3.2"
         resConfigs "en", "fr"
         javaCompileOptions {
             annotationProcessorOptions {
@@ -49,7 +49,8 @@ android {
             resValue "string", "firebase_subscription", "@string/firebase_subscription_release"
             resValue "string", "fragment_home_database_root_ref", "@string/fragment_home_database_root_ref_release"
             resValue "string", "fragment_home_database_tops", "@string/fragment_home_database_tops_release"
-            resValue "string", "fragment_notification_item_ads_native", "@string/ads_native_notification_item"
+            //resValue "string", "fragment_notification_item_ads_native", "@string/ads_native_notification_item"
+            resValue "string", "fragment_notification_item_ads_native", "@string/ads_native_notification_item_debug"
         }
         debug {
             applicationIdSuffix ".debug"
@@ -58,6 +59,17 @@ android {
             resValue "string", "fragment_home_database_root_ref", "@string/fragment_home_database_root_ref_debug"
             resValue "string", "fragment_home_database_tops", "@string/fragment_home_database_tops_debug"
             resValue "string", "fragment_notification_item_ads_native", "@string/ads_native_notification_item_debug"
+        }
+        recette {
+            minifyEnabled false
+            applicationIdSuffix ".rct"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "app_name", "@string/app_name_rct"
+            resValue "string", "firebase_subscription", "@string/firebase_subscription_rct"
+            resValue "string", "fragment_home_database_root_ref", "@string/fragment_home_database_root_ref_rct"
+            resValue "string", "fragment_home_database_tops", "@string/fragment_home_database_tops_rct"
+            resValue "string", "fragment_notification_item_ads_native", "@string/ads_native_notification_item_rct"
+            debuggable true
         }
     }
     // options de packaging nécessaires pour être capable de produire l'APK

@@ -92,7 +92,7 @@ public interface IMainActivity extends IDao {
     void scrollDown();
 
     //Night mode
-    void setNightMode(boolean enableNightMode);
+    void setNightMode(int mode);
 
     //
     void getNightMode();
