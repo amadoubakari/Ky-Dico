@@ -4,10 +4,9 @@
     tools:context=".dico.activity.MainActivity">
     <item
         android:id="@+id/menu_home_share_word_id"
-        android:icon="@drawable/ic_baseline_share_24"
+        android:icon="@drawable/ic_outline_share_24"
         android:orderInCategory="300"
         android:title="@string/share_msg"
-        android:iconTint="@color/app_text_color"
         app:itemTextColor="@drawable/bottom_navigation_colors"
         app:showAsAction="ifRoom|collapseActionView"
         />

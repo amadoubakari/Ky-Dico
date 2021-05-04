@@ -1,74 +1,27 @@
-<resources>
-
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:navigationBarColor">@color/app_bottom_navigation_color</item>
-        <item name="android:navigationIcon">@color/app_bottom_navigation_icon_color</item>
-        <item name="android:textColorHint">@color/grey_300</item>
-        <item name="android:itemBackground">@color/app_background_color</item>
-        <item name="android:itemTextAppearance">@style/menu_text_style</item>
-        <item name="actionModeBackground">@color/app_background_color</item>
-        <item name="windowActionModeOverlay">true</item>
-        <item name="actionModeCloseDrawable">@drawable/ic_baseline_keyboard_backspace_24</item>
-        <item name="actionModeStyle">@style/customActionModeStyle</item>
-        <item name="fontFamily">@font/google_sans</item>
-        <item name="buttonStyle">@style/CustomButtonStyle</item>
-        <item name="android:textColor">@color/colorAccent</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-    </style>
-
-    <style name="AppTheme.NoActionBar">
+<resources >
+     <style name="AppTheme.NoActionBar" parent="AppTheme">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
-
-    <style name="menu_font_style">
-        <item name="fontFamily">@font/google_sans</item>
-    </style>
-
-    <style name="ActionBarTheme" parent="AppTheme.AppBarOverlay">
-        <item name="android:background">@color/app_background_color</item>
-    </style>
-
-    <style name="AppTheme.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <!-- Set proper title size -->
-        <item name="android:textSize">16sp</item>
-        <item name="android:fontFamily">@font/google_sans</item>
-        <item name="android:titleTextColor">@color/app_text_color</item>
-    </style>
-    <!--  Bottom navigation view style -->
-    <style name="Widget.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
-        <item name="fontFamily">@font/google_sans</item>
-        <item name="android:textSize">12sp</item>
     </style>
 
     <style name="AuthenticationTheme" parent="FirebaseUI">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="customMaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
-        <item name="android:background">@color/app_background_color</item>
-        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle2</item>
-        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle2</item>
-    </style>
-    <style name="customMaterialAlertEditDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
-        <item name="android:background">@color/app_background_color</item>
+    <style name="customMaterialAlertEditDialog" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="android:background">@color/color_primary</item>
         <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle2</item>
         <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle2</item>
         <item name="materialAlertDialogBodyTextStyle">@style/materialDialogAlertContentStyle</item>
         <item name="materialAlertDialogTitleTextStyle">@style/MaterialTitleTextStyle</item>
     </style>
-    <style name="NegativeButtonStyle2" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+
+    <style name="NegativeButtonStyle2" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/color_on_primary</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -78,6 +31,7 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
     </style>
+
     <style name="materialDialogAlertContentStyle" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
         <item name="android:textColor">@color/app_text_color</item>
         <item name="android:textSize">14sp</item>
@@ -88,21 +42,20 @@
         <item name="android:textColor">@color/app_text_color</item>
         <item name="android:textSize">14sp</item>
     </style>
+
     <style name="MaterialTitleTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
         <item name="android:textColor">@color/app_text_color</item>
         <item name="android:textSize">15sp</item>
         <item name="fontFamily">@font/google_sans</item>
     </style>
-    <style name="BottomNavigationViewTextStyle">
-        <item name="android:fontFamily">@font/google_sans</item>
-    </style>
+
     <style name="CustomButtonStyle" parent="Widget.MaterialComponents.Button">
         <item name="backgroundTint">@color/blue_500</item>
         <item name="android:textColor">@color/white</item>
     </style>
-    <style name="CustomMaterialToolbarStyle" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
-        <item name="android:titleTextColor">?attr/colorAccent</item>
-        <item name="android:background">@color/app_background_color</item>
+
+    <style name="CustomMaterialToolbarStyle" parent="@style/Widget.MaterialComponents.Toolbar.Primary">
+        <item name="titleTextColor">@color/app_text_color</item>
     </style>
 
     <style name="customActionModeStyle" parent="Widget.AppCompat.ActionMode">
@@ -112,13 +65,44 @@
     </style>
 
     <style name="customTitleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
-        <item name="android:titleTextColor">?attr/colorAccent</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:fontFamily">@font/google_sans</item>
     </style>
+
     <style name="popupmenu" parent="Base.Widget.AppCompat.PopupMenu">
         <item name="android:textColor">@color/app_text_color</item>
-        <item name="android:itemBackground">@color/app_background_color</item>
-        <item name="android:popupElevation">50dp</item>
+        <item name="android:popupElevation">@dimen/layout_padding_10dp</item>
     </style>
+
+    <style name="Widget.App.PopupMenu" parent="Widget.MaterialComponents.PopupMenu">
+        <item name="android:popupBackground">@drawable/custom_popup_background</item>
+    </style>
+
+    <style name="Widget.App.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationView</item>
+    </style>
+
+    <style name="ThemeOverlay.App.BottomNavigationView" parent="">
+        <item name="colorPrimary">@color/app_background_color</item>
+        <item name="enforceMaterialTheme">true</item>
+        <item name="enforceTextAppearance">true</item>
+    </style>
+
+    <style name="Widget.kyossi.NavigationView" parent="@style/Widget.MaterialComponents.NavigationView">
+        <item name="android:selectableItemBackground">@color/blue_500</item>
+        <item name="itemHorizontalPadding">@dimen/nav_item_horizontal_padding</item>
+    </style>
+
+    <style name="BottomNavigationViewTextStyle">
+        <item name="android:fontFamily">@font/google_sans</item>
+    </style>
+
+    <style name="roundedImageViewRounded">
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="kyossi.toolbar.style" parent="Widget.AppCompat.Light.PopupMenu">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorOnSurface">@color/color_on_surface</item>
+        <item name="android:background">@color/app_background_color</item>
+    </style>
+
 </resources>

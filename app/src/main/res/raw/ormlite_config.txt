@@ -1,5 +1,5 @@
 #
-# generated on 2020/12/27 09:55:02
+# generated on 2021/03/16 04:12:26
 #
 # --table-start--
 dataClass=com.flys.dico.dao.entities.User
@@ -59,6 +59,12 @@ fieldName=imageName
 fieldName=seen
 defaultValue=false
 canBeNull=false
+# --field-end--
+# --field-start--
+fieldName=source
+# --field-end--
+# --field-start--
+fieldName=sourceIcon
 # --field-end--
 # --table-fields-end--
 # --table-end--

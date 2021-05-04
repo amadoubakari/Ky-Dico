@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -506,17 +507,19 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     protected abstract void disconnect();
 
     /**
-     * @param language
+     * @param languageCode
      */
     @Override
-    public void setLocale(String language) {
-        Locale locale = new Locale(language);
+    public void setLocale(String languageCode) {
+
+        Locale locale = new Locale(languageCode);
         Locale.setDefault(locale);
-        Configuration configuration = new Configuration();
-        configuration.setLocale(locale);
-        getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
+        Resources resources = getResources();
+        Configuration config = getResources().getConfiguration();
+        config.setLocale(locale);
+        resources.updateConfiguration(config, resources.getDisplayMetrics());
         //Share
-        setLanguage(language);
+        setLanguage(languageCode);
     }
 
     @Override

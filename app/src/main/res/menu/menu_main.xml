@@ -1,18 +1,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto"
-      xmlns:tools="http://schemas.android.com/tools"
-      tools:context=".dico.activity.MainActivity">
+      xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/connexion"
-        android:checkable="false"
         android:visible="true"
-        android:title="@string/menu_connexion_msg"/>
+        android:title="@string/menu_connexion_msg"
+        app:contentDescription="@string/menu_connexion_msg"/>
     <item
         android:id="@+id/menu_profil"
-        android:checkable="false"
-        android:title="@string/menu_profil_msg" />
+        android:title="@string/menu_profil_msg"
+        app:contentDescription="@string/menu_profil_msg"/>
     <item
         android:id="@+id/settings"
-        android:checkable="false"
-        android:title="@string/menu_settings_msg" />
+        android:title="@string/menu_settings_msg"
+        app:contentDescription="@string/menu_settings_msg"/>
 </menu>

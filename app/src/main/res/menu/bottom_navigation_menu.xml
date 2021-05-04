@@ -4,12 +4,12 @@
 
     <item android:title="@string/menu_home_msg"
         android:id="@+id/bottom_menu_home"
-        android:icon="@drawable/ic_home_24px"
-        app:itemTextAppearance="@style/menu_font_style"/>
+        android:icon="@drawable/ic_outline_home_24"
+       />
 
     <item android:title="@string/menu_me_msg"
         android:id="@+id/bottom_menu_me"
-        android:icon="@drawable/ic_account_circle_24px"
-        app:itemTextAppearance="@style/menu_font_style"/>
+        android:icon="@drawable/ic_outline_account_circle_24"
+        />
 
 </menu>
