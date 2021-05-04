@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -139,13 +140,14 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     protected void onCreate(Bundle savedInstanceState) {
         // parent
         super.onCreate(savedInstanceState);
-
+        //
+        overridePendingTransition(R.anim.main_fade_in, R.anim.splash_fade_out);
         //
         sharedPreferences = getPreferences(MODE_PRIVATE);
         //
-        getNightMode();
-        //
         loadLocale();
+        //
+        getNightMode();
         // log
         if (IS_DEBUG_ENABLED) {
             Log.d(className, "onCreate");
@@ -504,23 +506,20 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
 
     protected abstract void disconnect();
 
-    // Les traitements
-
     /**
-     * @param language
+     * @param languageCode
      */
     @Override
-    public void setLocale(String language) {
-        Locale locale = new Locale(language);
-        Locale.setDefault(locale);
-        Configuration configuration = new Configuration();
-        configuration.setLocale(locale);
-        getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
+    public void setLocale(String languageCode) {
 
+        Locale locale = new Locale(languageCode);
+        Locale.setDefault(locale);
+        Resources resources = getResources();
+        Configuration config = getResources().getConfiguration();
+        config.setLocale(locale);
+        resources.updateConfiguration(config, resources.getDisplayMetrics());
         //Share
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(Constants.MY_LAND, language);
-        editor.apply();
+        setLanguage(languageCode);
     }
 
     @Override
@@ -547,22 +546,28 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     }
 
     @Override
-    public void setNightMode(boolean enableNightMode) {
+    public void setNightMode(int mode) {
         SharedPreferences.Editor nightMode = sharedPreferences.edit();
-        nightMode.putBoolean(Constants.NIGHT_MODE_KEY, enableNightMode);
+        nightMode.putInt(Constants.NIGHT_MODE_KEY, mode);
         nightMode.apply();
-        finish();
+        com.flys.dico.architecture.core.Utils.restartApplication(DApplicationContext.getInstance(), MainActivity_.class);
     }
 
     @Override
     public void getNightMode() {
         //night mode?
-        boolean night = sharedPreferences.getBoolean(Constants.NIGHT_MODE_KEY, false);
-        if (night) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }
+        AppCompatDelegate.setDefaultNightMode(sharedPreferences.getInt(Constants.NIGHT_MODE_KEY, AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM));
     }
 
+    @Override
+    public SharedPreferences getSharedPreferences() {
+        return sharedPreferences;
+    }
+
+    @Override
+    public void setLanguage(String languageCode) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(Constants.MY_LAND, languageCode);
+        editor.apply();
+    }
 }

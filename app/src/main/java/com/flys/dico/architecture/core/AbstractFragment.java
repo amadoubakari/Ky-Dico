@@ -1,9 +1,7 @@
 package com.flys.dico.architecture.core;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -15,7 +13,9 @@ import androidx.fragment.app.Fragment;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.flys.dico.R;
+import com.flys.dico.activity.MainActivity_;
 import com.flys.dico.architecture.custom.CoreState;
+import com.flys.dico.architecture.custom.DApplicationContext;
 import com.flys.dico.architecture.custom.IMainActivity;
 import com.flys.dico.architecture.custom.Session;
 import com.flys.dico.utils.Constants;
@@ -25,6 +25,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import rx.Observable;
 import rx.Subscription;
@@ -415,7 +416,7 @@ public abstract class AbstractFragment extends Fragment {
     }
 
     public void onFragmentResume() {
-        if(mainActivity==null){
+        if (mainActivity == null) {
             this.activity = getActivity();
             this.mainActivity = (IMainActivity) activity;
             this.session = (Session) this.mainActivity.getSession();
@@ -487,22 +488,22 @@ public abstract class AbstractFragment extends Fragment {
      * Change application language
      */
     protected void changeLanguage() {
-        final String[] language = {getString(R.string.settings_fragment_language_french), getString(R.string.settings_fragment_language_english)};
-        final int checkedItem = isEnglish();
-        final MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity,R.style.customMaterialAlertEditDialog);
+        String[] language = {getString(R.string.settings_fragment_language_french), getString(R.string.settings_fragment_language_english)};
+        int checkedItem = isEnglish();
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity, R.style.customMaterialAlertEditDialog);
         builder.setTitle(getString(R.string.settingsFragment_select_language))
                 .setSingleChoiceItems(language, checkedItem, (dialog, which) -> {
                     //if user select preferred language as English then
                     if (language[which].equals(getString(R.string.settings_fragment_language_english))) {
                         dialog.dismiss();
                         restartApp();
-                        mainActivity.setLocale(Constants.EN);
+                        mainActivity.setLanguage(Constants.EN);
                     }
                     //if user select preferred language as Hindi then
                     if (language[which].equals(getString(R.string.settings_fragment_language_french))) {
                         dialog.dismiss();
                         restartApp();
-                        mainActivity.setLocale(Constants.FR);
+                        mainActivity.setLanguage(Constants.FR);
                     }
                 })
                 .setPositiveButton(getString(R.string.activity_main_button_cancel), (dialog, which) -> dialog.dismiss());
@@ -513,7 +514,7 @@ public abstract class AbstractFragment extends Fragment {
         MaterialNotificationDialog notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), getString(R.string.abstract_fragment_restart_app), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_no_msg), activity.getDrawable(R.drawable.logo), R.style.customMaterialAlertEditDialog), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
             @Override
             public void okButtonAction(DialogInterface dialogInterface, int i) {
-                activity.finishAndRemoveTask();
+                Utils.restartApplication(DApplicationContext.getInstance(), MainActivity_.class);
             }
 
             @Override
@@ -530,14 +531,12 @@ public abstract class AbstractFragment extends Fragment {
      * @return 0 for english and 1 for french
      */
     protected int isEnglish() {
-        SharedPreferences sharedPreferences = activity.getSharedPreferences(Constants.SETTINGS, Context.MODE_PRIVATE);
-        String localeCode = sharedPreferences.getString(Constants.MY_LAND, "");
-        final int checkedItem;
+        String localeCode = mainActivity.getSharedPreferences().getString(Constants.MY_LAND, Locale.getDefault().getLanguage());
+        int checkedItem;
         if (localeCode.equals(Constants.EN)) {
             checkedItem = Language.ENGLISH.getOrder();
         } else {
             checkedItem = Language.FRENCH.getOrder();
-            ;
         }
         return checkedItem;
     }

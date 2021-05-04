@@ -3,10 +3,11 @@
 
     <item
         android:id="@+id/popmenu_share"
-        android:icon="@drawable/ic_baseline_share_24"
-        android:title="@string/share_msg" />
+        android:icon="@drawable/ic_outline_share_24"
+        android:title="@string/share_msg"
+        android:visible="false"/>
     <item
         android:id="@+id/popmenu_delete"
-        android:icon="@drawable/ic_baseline_delete_24"
+        android:icon="@drawable/ic_outline_delete_outline_24"
         android:title="@string/delete_menu_msg" />
 </menu>

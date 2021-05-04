@@ -1,5 +1,7 @@
 package com.flys.dico.architecture.custom;
 
+import android.content.SharedPreferences;
+
 import com.flys.dico.architecture.core.ISession;
 import com.flys.dico.dao.entities.User;
 import com.flys.dico.dao.entities.WordToShare;
@@ -90,7 +92,7 @@ public interface IMainActivity extends IDao {
     void scrollDown();
 
     //Night mode
-    void setNightMode(boolean enableNightMode);
+    void setNightMode(int mode);
 
     //
     void getNightMode();
@@ -106,4 +108,10 @@ public interface IMainActivity extends IDao {
 
     //Share words from action mode
     void shareWords(WordAdapter wordAdapter, Set<WordToShare> wordsToShare);
+
+    //get shared preference
+    SharedPreferences getSharedPreferences();
+
+    //set a language
+    void setLanguage(String languageCode);
 }

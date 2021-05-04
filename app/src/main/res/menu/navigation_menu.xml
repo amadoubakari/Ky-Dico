@@ -3,40 +3,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <group
         android:id="@+id/group_sp"
-        android:checkableBehavior="all">
+        android:checkableBehavior="single">
 
         <item
             android:id="@+id/menu_recommander"
             android:icon="@drawable/ic_people_outline_24px"
             android:title="@string/menu_recommander_msg"
-            app:itemTextAppearance="@style/menu_font_style" />
+            app:contentDescription="@string/menu_recommander_msg"
+            />
     </group>
     <group
         android:id="@+id/group_others"
-        android:checkableBehavior="all"
+        android:checkableBehavior="single"
         android:visible="true">
         <item
             android:id="@+id/menu_settings"
-            android:icon="@drawable/ic_settings_24px"
+            android:icon="@drawable/ic_outline_settings_24"
             android:title="@string/navigation_menu_settings"
-            app:itemTextAppearance="@style/menu_font_style" />
+            />
         <item
             android:id="@+id/about"
             android:icon="@drawable/ic_help_outline_black_24dp"
             android:title="@string/menu_about_msg"
-            android:visible="true"
-            app:itemTextAppearance="@style/menu_font_style" />
+            android:visible="true"/>
         <item
             android:id="@+id/menu_review"
-            android:icon="@drawable/ic_baseline_star_rate_24"
+            android:icon="@drawable/ic_baseline_star_outline_24"
             android:title="@string/menu_rating_msg"
-            android:visible="true"
-            app:itemTextAppearance="@style/menu_font_style" />
+            android:visible="true" />
         <item
             android:id="@+id/menu_deconnexion"
             android:icon="@drawable/ic_baseline_power_settings_new_24"
             android:title="@string/navigation_menu_logout"
-            android:visible="false"
-            app:itemTextAppearance="@style/menu_font_style" />
+            android:visible="false" />
     </group>
 </menu>

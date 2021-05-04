@@ -30,8 +30,8 @@ android {
         minSdkVersion 24
         applicationId "com.flys.dico"
         targetSdkVersion 29
-        versionCode 71
-        versionName "1.1.3.1"
+        versionCode 74
+        versionName "1.1.3.4"
         resConfigs "en", "fr"
         javaCompileOptions {
             annotationProcessorOptions {
@@ -58,6 +58,17 @@ android {
             resValue "string", "fragment_home_database_root_ref", "@string/fragment_home_database_root_ref_debug"
             resValue "string", "fragment_home_database_tops", "@string/fragment_home_database_tops_debug"
             resValue "string", "fragment_notification_item_ads_native", "@string/ads_native_notification_item_debug"
+        }
+        recette {
+            minifyEnabled false
+            applicationIdSuffix ".rct"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "app_name", "@string/app_name_rct"
+            resValue "string", "firebase_subscription", "@string/firebase_subscription_rct"
+            resValue "string", "fragment_home_database_root_ref", "@string/fragment_home_database_root_ref_rct"
+            resValue "string", "fragment_home_database_tops", "@string/fragment_home_database_tops_rct"
+            resValue "string", "fragment_notification_item_ads_native", "@string/ads_native_notification_item_rct"
+            debuggable true
         }
     }
     // options de packaging nécessaires pour être capable de produire l'APK
@@ -86,10 +97,10 @@ android {
 def AAVersion = '4.8.0'
 
 dependencies {
-    implementation 'com.google.firebase:firebase-auth:20.0.2'
-    implementation 'androidx.navigation:navigation-fragment:2.3.3'
-    implementation 'androidx.navigation:navigation-ui:2.3.3'
-    implementation 'com.google.android.play:core:1.9.1'
+    implementation 'com.google.firebase:firebase-auth:20.0.3'
+    implementation 'androidx.navigation:navigation-fragment:2.3.4'
+    implementation 'androidx.navigation:navigation-ui:2.3.4'
+    implementation 'com.google.android.play:core:1.10.0'
     annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
     implementation "org.androidannotations:androidannotations-api:$AAVersion"
     annotationProcessor "org.androidannotations:rest-spring:$AAVersion"
@@ -97,7 +108,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'org.springframework.android:spring-android-rest-template:2.0.0.M3'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.2'
     implementation 'io.reactivex:rxandroid:1.2.1'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     androidTestImplementation 'junit:junit:4.13.2'
@@ -109,7 +120,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics:18.0.2'
 
     // Add the Firebase SDK for Crashlytics.
-    implementation 'com.google.firebase:firebase-crashlytics:17.3.1'
+    implementation 'com.google.firebase:firebase-crashlytics:17.4.0'
     //Firebase Cloud messaging
     implementation 'com.google.firebase:firebase-messaging:21.0.1'
 
@@ -139,7 +150,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database'
     //adMod dependency
     implementation 'com.google.android.gms:play-services-ads:19.7.0'
-    implementation 'com.flys:notification:1.9'
+    implementation 'com.flys:notification:1.0.2.2'
 
 }
 

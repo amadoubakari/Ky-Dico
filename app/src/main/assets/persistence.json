@@ -1,6 +1,6 @@
 {
   "databaseName": "dico.db",
-  "databaseVersion": 3,
+  "databaseVersion": 5,
   "entities": [
     "com.flys.notification.domain.Notification",
     "com.flys.dico.dao.entities.User"

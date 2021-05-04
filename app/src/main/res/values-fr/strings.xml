@@ -9,7 +9,7 @@
     <string name="menu_home_msg">Accueil</string>
     <string name="menu_me_msg">Moi</string>
     <string name="about_last_update_msg">Dernière version</string>
-    <string name="about_releasing_date">Février 2020</string>
+    <string name="about_releasing_date">Mai 2021</string>
     <string name="mini_dictionnaire_informatique_de_poche_msg">Mini Dictionnaire Informatique</string>
     <string name="enable_notifications_to_received_news">Activer les notifications pour recevoir des nouveautés !</string>
     <string name="disable_notifications_to_dont_received_news">Si vous désactivez les notifications, vous risquerez ne plus recevoir des nouveautés !</string>
@@ -47,6 +47,7 @@
     <string name="dictionary_data_source">dictionnaire.json</string>
     <string name="app_name_release">Dictionnaire Informatique</string>
     <string name="app_name_debug">Dictionnaire Informatique</string>
+    <string name="app_name_rct">rct</string>
     <string name="dialog_contact_welcome_msg">Bienvenue</string>
     <string name="app_google_play_store_url">https://play.google.com/store/apps/details?id=com.flys.dico&amp;hl=fr</string>
     <string name="activity_abstract_recommend_app">Recommandation de l\'application.</string>
@@ -72,8 +73,10 @@
     <string name="fragment_about_github_source_here">ici</string>
     <string name="firebase_subscription_release">firebase-dictionary-release</string>
     <string name="firebase_subscription_debug">firebase-dictionary-debug</string>
+    <string name="firebase_subscription_rct">firebase-dictionary-release</string>
     <string name="abstract_fragment_restart_app">Veuillez rédemarrer l\'application pour prendre en compte les changements.</string>
     <string name="mode_nuit">Mode Nuit</string>
     <string name="fcm_notification_service_no_messages">\u0020nouveaux messages</string>
     <string name="fcm_notification_service_one_message">\u0020nouveau message</string>
+    <string name="rechercher">Rechercher</string>
 </resources>

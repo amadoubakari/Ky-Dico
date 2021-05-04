@@ -2,15 +2,18 @@ package com.flys.dico.architecture.core;
 
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.core.app.TaskStackBuilder;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 
 import com.flys.dico.R;
+import com.flys.dico.architecture.custom.DApplicationContext;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.io.File;
@@ -101,7 +104,7 @@ public class Utils {
             if (view instanceof TextView) {
                 ((TextView) view).setTextColor(ContextCompat.getColor(context, R.color.app_text_color));
                 ((TextView) view).setTextSize(14);
-                ((TextView) view).setTypeface(Typeface.createFromAsset(context.getAssets(),"fonts/open_sans_regular.ttf"));
+                ((TextView) view).setTypeface(Typeface.createFromAsset(context.getAssets(), "fonts/open_sans_regular.ttf"));
                 view.setBackgroundColor(ContextCompat.getColor(context, R.color.app_background_color));
             } else if (view instanceof ViewGroup) {
                 ViewGroup viewGroup = (ViewGroup) view;
@@ -113,24 +116,34 @@ public class Utils {
     }
 
     /**
-     *
      * @param context
      * @param view
      * @param font
      */
-    public static void changeSearchTextColor(Context context, View view,int font) {
+    public static void changeSearchTextColor(Context context, View view, int font) {
         if (view != null) {
             if (view instanceof TextView) {
                 ((TextView) view).setTextColor(ContextCompat.getColor(context, R.color.app_text_color));
-                ((TextView) view).setTextSize(14);
-                ((TextView) view).setTypeface(ResourcesCompat.getFont(context,font));
+                ((TextView) view).setTextSize(16);
+                ((TextView) view).setTypeface(ResourcesCompat.getFont(context, font));
                 view.setBackgroundColor(ContextCompat.getColor(context, R.color.app_background_color));
             } else if (view instanceof ViewGroup) {
                 ViewGroup viewGroup = (ViewGroup) view;
                 for (int i = 0; i < viewGroup.getChildCount(); i++) {
-                    changeSearchTextColor(context, viewGroup.getChildAt(i),font);
+                    changeSearchTextColor(context, viewGroup.getChildAt(i), font);
                 }
             }
         }
+    }
+
+    /**
+     *
+     * @param context
+     * @param activityClass
+     */
+    public static void restartApplication(DApplicationContext context, Class activityClass) {
+        TaskStackBuilder.create(context)
+                .addNextIntent(new Intent(context, activityClass))
+                .startActivities();
     }
 }
