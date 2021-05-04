@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.view.ActionMode;
@@ -66,6 +67,7 @@ import com.flys.tools.domain.NotificationData;
 import com.flys.tools.utils.FileUtils;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.badge.BadgeDrawable;
+import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.play.core.appupdate.AppUpdateManager;
 import com.google.firebase.auth.FirebaseAuth;
@@ -87,7 +89,6 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -314,7 +315,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
      */
     @OptionsItem(R.id.connexion)
     public void connexion() {
-        createSignInIntent();
+        signIn();
     }
 
     @OptionsItem(R.id.menu_profil)
@@ -539,10 +540,11 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
      */
     void updateUserConnectedProfile(User user) {
         View headerNavView = navigationView.getHeaderView(0);
-        CircleImageView profile = headerNavView.findViewById(R.id.profile_image);
+        ShapeableImageView profile = headerNavView.findViewById(R.id.profile_image);
         TextView title = headerNavView.findViewById(R.id.profile_user_name);
         TextView mail = headerNavView.findViewById(R.id.profile_user_email_address);
         MenuItem disconnect = navigationView.getMenu().findItem(R.id.menu_deconnexion);
+        LinearLayout userInfo=headerNavView.findViewById(R.id.profile_user_info);
         //Si l'utilisateur est connecte?
         if (user != null && (user.getEmail() != null || user.getPhone() != null)) {
             disconnect.setVisible(true);
@@ -551,25 +553,32 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                 case FACEBOOK:
                     title.setText(user.getNom());
                     mail.setText(user.getEmail());
-                    profile.setImageDrawable(user.getImageUrl() != null ? FileUtils.loadImageFromStorage("glearning", user.getNom() + ".png", DApplicationContext.getContext()) : getDrawable(R.drawable.baseline_account_circle_white_48dp));
+                    profile.setImageDrawable(user.getImageUrl() != null ? FileUtils.loadImageFromStorage("glearning", user.getNom() + ".png", DApplicationContext.getContext()) : getDrawable(R.drawable.ic_outline_account_circle_24));
                     break;
                 case MAIL:
                     title.setText(user.getNom());
                     mail.setText(user.getEmail());
-                    profile.setImageDrawable(getDrawable(R.drawable.baseline_account_circle_white_48dp));
+                    profile.setImageDrawable(getDrawable(R.drawable.ic_outline_account_circle_24));
                     break;
                 case PHONE:
                     title.setText(user.getNom());
                     mail.setText(user.getPhone());
-                    profile.setImageDrawable(getDrawable(R.drawable.baseline_account_circle_white_48dp));
+                    profile.setImageDrawable(getDrawable(R.drawable.ic_outline_account_circle_24));
                     break;
             }
-
+            profile.setStrokeColor(getColorStateList(R.color.color_secondary));
+            profile.setStrokeWidth((float) 0.5);
+            profile.setOnClickListener(null);
+            userInfo.setVisibility(View.VISIBLE);
         } else {
+            userInfo.setVisibility(View.GONE);
+            profile.setStrokeColor(null);
+            profile.setStrokeWidth(0);
             disconnect.setVisible(false);
-            title.setText(R.string.activity_main_username);
-            mail.setText(R.string.activity_main_email_address);
-            profile.setImageDrawable(getDrawable(R.drawable.baseline_account_circle_white_48dp));
+            profile.setImageDrawable(getDrawable(R.drawable.ic_outline_account_circle_24));
+            profile.setOnClickListener(v -> {
+                signIn();
+            });
         }
     }
 
@@ -826,7 +835,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     /**
      * Authentication using firebase: login
      */
-    private void createSignInIntent() {
+    private void signIn() {
         // Choose authentication providers
         AuthMethodPickerLayout customLayout = new AuthMethodPickerLayout
                 .Builder(R.layout.fragment_login)
@@ -850,7 +859,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                         .setAvailableProviders(providers)
                         .setAuthMethodPickerLayout(customLayout)
                         .setLogo(R.drawable.logo)      // Set logo drawable
-                        .setTheme(R.style.AuthenticationTheme)      // Set theme
+                       .setTheme(R.style.AppTheme_NoActionBar)      // Set theme
                         /*.setTosAndPrivacyPolicyUrls(
                                 "https://example.com/terms.html",
                                 "https://example.com/privacy.html")*/

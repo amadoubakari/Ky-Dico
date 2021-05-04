@@ -87,10 +87,13 @@ public class FCMService extends FirebaseMessagingService {
             notification.setSubTitle(remoteMessage.getData().get("subTitle"));
             notification.setContent(remoteMessage.getData().get("content"));
             notification.setImageName(remoteMessage.getData().get("image"));
+            notification.setSource(remoteMessage.getData().get("source"));
+            notification.setSourceIcon(remoteMessage.getData().get("sourceIcon"));
 
             //Saving notification in the database
             try {
                 notification.setDate(new Date());
+                Log.e(getClass().getSimpleName(),"=============  Notification: "+notification);
                 notificationDao.save(notification);
                 dao.loadNotificationsFromDatabase("seen", false).debounce(500, TimeUnit.MILLISECONDS)
                         .distinctUntilChanged()

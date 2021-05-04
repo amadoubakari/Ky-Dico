@@ -9,12 +9,12 @@
     <string name="navigation_menu_logout">Se déconnecter</string>
     <string name="dictionnaire_informatique">Dictionnaire Informatique</string>
     <string name="source_repository_git_url" translatable="false">https://github.com/amadoubakari/Ky-Dico.git</string>
-    <string name="kyossi_website_url" translatable="false">https://site.kyossi.com/</string>
+    <string name="kyossi_website_url" translatable="false">https://kyossi.com</string>
     <string name="menu_recommander_msg">Recommander</string>
     <string name="menu_home_msg">Accueil</string>
     <string name="menu_me_msg">Moi</string>
     <string name="about_last_update_msg">Dernière version</string>
-    <string name="about_releasing_date">Février 2021</string>
+    <string name="about_releasing_date">Mai 2021</string>
     <string name="mini_dictionnaire_informatique_de_poche_msg">Mini Dictionnaire Informatique de poche</string>
     <string name="enable_notifications_to_received_news">Activer les notifications pour recevoir des nouveautés !</string>
     <string name="disable_notifications_to_dont_received_news">Si vous désactivez les notifications, vous risquerez ne plus recevoir des nouveautés !</string>
@@ -95,4 +95,5 @@
     <string name="ads_native_notification_item" translatable="false">ca-app-pub-9112600790446098/4885818374</string>
     <string name="ads_native_notification_item_debug" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
     <string name="ads_native_notification_item_rct" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="rechercher">Rechercher</string>
 </resources>

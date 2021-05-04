@@ -6,7 +6,7 @@
         android:id="@+id/search"
         android:icon="@drawable/ic_baseline_search_24"
         android:orderInCategory="300"
-        android:title="Rechercher"
+        android:title="@string/rechercher"
         android:iconTint="@color/search_icon_tint_color"
         app:itemTextColor="@drawable/bottom_navigation_colors"
         app:actionViewClass="androidx.appcompat.widget.SearchView"

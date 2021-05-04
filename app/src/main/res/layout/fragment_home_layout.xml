@@ -11,10 +11,12 @@
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="visible"
-        android:paddingTop="56dp"
         android:clipToPadding="false"
-        />
+        android:paddingTop="56dp"
+        android:scrollbars="vertical"
+        android:visibility="visible"
+        app:layoutManager="LinearLayoutManager"
+        tools:listitem="@layout/view_word_item" />
 
     <LinearLayout
         android:id="@+id/ll_search_block_id"
@@ -23,7 +25,7 @@
         android:background="@color/app_background_color"
         android:gravity="center"
         android:orientation="vertical"
-        tools:visibility="visible">
+        tools:visibility="gone">
 
         <ImageView
             android:layout_width="100dp"

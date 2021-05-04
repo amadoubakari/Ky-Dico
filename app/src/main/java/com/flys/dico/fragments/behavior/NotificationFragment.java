@@ -30,7 +30,7 @@ import com.flys.dico.dao.db.NotificationDao;
 import com.flys.dico.dao.db.NotificationDaoImpl;
 import com.flys.dico.utils.Constants;
 import com.flys.generictools.dao.daoException.DaoException;
-import com.flys.notification.adapter.AdsNotificationAdapter;
+import com.flys.notification.adapter.AdsSimpleNotificationAdapter;
 import com.flys.notification.dialog.DialogStyle;
 import com.flys.notification.dialog.NotificationDetailsDialogFragment;
 import com.flys.notification.domain.Notification;
@@ -53,7 +53,7 @@ import java.util.stream.Collectors;
 
 @EFragment(R.layout.fragment_notif_layout)
 @OptionsMenu(R.menu.menu_home)
-public class NotificationFragment extends AbstractFragment implements MaterialNotificationDialog.NotificationButtonOnclickListeneer, AdsNotificationAdapter.NotificationOnclickListener {
+public class NotificationFragment extends AbstractFragment implements MaterialNotificationDialog.NotificationButtonOnclickListeneer, AdsSimpleNotificationAdapter.NotificationOnclickListener {
 
     @ViewById(R.id.recycler)
     protected RecyclerView recyclerView;
@@ -75,7 +75,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
 
     protected SearchView searchView;
     private static List<Notification> notifications;
-    private AdsNotificationAdapter notificationAdapter;
+    private AdsSimpleNotificationAdapter notificationAdapter;
 
 
     @Override
@@ -174,7 +174,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
     }
 
     @Override
-    public void onButtonClickListener(int position) {
+    public void onShowMoreClickListener(int position) {
         configDialogFragment = NotificationDetailsDialogFragment.newInstance(activity, notifications.get(position), new DialogStyle(activity.getColor(R.color.app_text_color), activity.getColor(R.color.app_text_second_color), R.font.google_sans));
         configDialogFragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.AppTheme);
         configDialogFragment.show(getActivity().getSupportFragmentManager(), "fragment_edit_name" + position);
@@ -183,6 +183,11 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
     @Override
     public void onMenuClickListener(View view, int position) {
         showMenu(activity, view, R.menu.notification_popup_menu, position);
+    }
+
+    @Override
+    public void onShareClickListener(int position) {
+        com.flys.tools.utils.Utils.shareText(activity, getString(R.string.app_name), HtmlCompat.fromHtml(notifications.get(position).getContent().concat("</br>").concat(getString(R.string.app_google_play_store_url)), HtmlCompat.FROM_HTML_MODE_LEGACY).toString(), getString(R.string.app_name));
     }
 
     @Override
@@ -237,13 +242,22 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
      */
     private void updateNotificationsImages(List<Notification> notifications) {
         notifications.stream()
-                .filter(notification -> !Utils.fileExist(Constants.DIR_NAME, notification.getImageName(), activity))
+                .filter(notification -> !Utils.fileExist(Constants.DIR_NAME, notification.getImageName(), activity) ||  !Utils.fileExist(Constants.DIR_NAME, notification.getSourceIcon(), activity))
                 .distinct()
-                .forEachOrdered(notification -> {
+                .forEach(notification -> {
+                    Log.e(getClass().getSimpleName(),"=============  Notification Fragment : "+notification);
                     final long ONE_MEGABYTE = 1024L * 1024;
                     storage.getReference().child("notifications").child(notification.getImageName()).getBytes(ONE_MEGABYTE).addOnSuccessListener(bytes -> {
                         //Sauvegarde de l'image dans le local storage
                         FileUtils.saveToInternalStorage(bytes, Constants.DIR_NAME, notification.getImageName(), activity);
+                        //Refresh adapter to take in count the changes
+                        notificationAdapter.refreshAdapter();
+                    }).addOnFailureListener(exception -> {
+                        // Handle any errors
+                    });
+                    storage.getReference().child("notifications").child(notification.getSourceIcon()).getBytes(ONE_MEGABYTE).addOnSuccessListener(bytes -> {
+                        //Sauvegarde de l'image dans le local storage
+                        FileUtils.saveToInternalStorage(bytes, Constants.DIR_NAME, notification.getSourceIcon(), activity);
                         //Refresh adapter to take in count the changes
                         notificationAdapter.refreshAdapter();
                     }).addOnFailureListener(exception -> {
@@ -257,7 +271,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
      */
     private void init() {
         notifications = new ArrayList<>();
-        notificationAdapter = new AdsNotificationAdapter(activity, notifications, new DialogStyle(activity.getColor(R.color.app_text_color), activity.getColor(R.color.app_text_second_color), R.font.google_sans), Constants.isNetworkConnected,activity.getString(R.string.ads_native_notification_item),this);
+        notificationAdapter = new AdsSimpleNotificationAdapter(activity, notifications, new DialogStyle(activity.getColor(R.color.app_text_color), activity.getColor(R.color.app_text_second_color), R.font.google_sans), true /*Constants.isNetworkConnected*/,activity.getString(R.string.fragment_notification_item_ads_native),this);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(notificationAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
