@@ -241,11 +241,11 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
      * Update images to the recyclerview from the external storage
      */
     private void updateNotificationsImages(List<Notification> notifications) {
+
         notifications.stream()
-                .filter(notification -> !Utils.fileExist(Constants.DIR_NAME, notification.getImageName(), activity) ||  !Utils.fileExist(Constants.DIR_NAME, notification.getSourceIcon(), activity))
+                .filter(notification -> notification!=null && (!Utils.fileExist(Constants.DIR_NAME, notification.getImageName(), activity) ||  !Utils.fileExist(Constants.DIR_NAME, notification.getSourceIcon(), activity)))
                 .distinct()
                 .forEach(notification -> {
-                    Log.e(getClass().getSimpleName(),"=============  Notification Fragment : "+notification);
                     final long ONE_MEGABYTE = 1024L * 1024;
                     storage.getReference().child("notifications").child(notification.getImageName()).getBytes(ONE_MEGABYTE).addOnSuccessListener(bytes -> {
                         //Sauvegarde de l'image dans le local storage
@@ -276,7 +276,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
         recyclerView.setAdapter(notificationAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         beginRunningTasks(1);
-        executeInBackground(mainActivity.loadNotificationsFromDatabase().delay(100, TimeUnit.MILLISECONDS), notifications1 -> {
+        executeInBackground(mainActivity.loadNotificationsFromDatabase(true).delay(100, TimeUnit.MILLISECONDS), notifications1 -> {
             if (notifications1.isEmpty()) {
                 llNotificationsEmptyMsg.setVisibility(View.VISIBLE);
             } else {

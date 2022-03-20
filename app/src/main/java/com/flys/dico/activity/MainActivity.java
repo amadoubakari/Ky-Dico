@@ -398,6 +398,11 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     }
 
     @Override
+    public Observable<List<Notification>> loadNotificationsFromDatabase(boolean withAds) {
+        return dao.loadNotificationsFromDatabase(withAds);
+    }
+
+    @Override
     public User updateProfile() {
         return getConnectedUserProfile();
     }

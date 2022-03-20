@@ -150,7 +150,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database'
     //adMod dependency
     implementation 'com.google.android.gms:play-services-ads:19.7.0'
-    implementation 'com.flys:notification:1.0.2.2'
+    implementation 'com.flys:notification:1.0.2.3'
 
 }
 
