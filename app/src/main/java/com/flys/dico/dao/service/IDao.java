@@ -61,4 +61,7 @@ public interface IDao {
 
     //Load notifications from the data base
     Observable<List<Notification>> loadNotificationsFromDatabase(String property, Object value);
+
+    //Load notifications from the data base
+    Observable<List<Notification>> loadNotificationsFromDatabase(boolean withAds);
 }

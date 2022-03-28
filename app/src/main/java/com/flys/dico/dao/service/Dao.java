@@ -30,6 +30,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 import rx.Observable;
@@ -161,6 +162,36 @@ public class Dao extends AbstractDao implements IDao {
     }
 
     @Override
+    public Observable<List<Notification>> loadNotificationsFromDatabase(boolean withAds) {
+        return Observable.create(subscriber -> {
+            List<Notification> results = null;
+            try {
+                List<Notification> notifications = notificationDao.getAll();
+                if (notifications == null) {
+                    notifications = new ArrayList<>();
+                }
+
+                if (!notifications.isEmpty()) {
+                    results = notifications.stream()
+                            .distinct()
+                            .sorted(Comparator.comparing(Notification::getDate).reversed())
+                            .collect(Collectors.toList());
+                    if (withAds) {
+                        handleNotifications(results);
+                    }
+                    subscriber.onNext(results);
+                } else {
+                    subscriber.onNext(notifications);
+                }
+
+                subscriber.onCompleted();
+            } catch (DaoException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    @Override
     public Observable<byte[]> downloadFacebookImage(String url) {
         return getResponse(() -> webClient.downloadFacebookImage(url));
     }
@@ -212,7 +243,7 @@ public class Dao extends AbstractDao implements IDao {
 
     @Override
     public Observable<byte[]> downloadFacebookProfileImage(String baseUrl, String ext, String params) {
-        return getResponse(() -> webClient.downloadFacebookProfileImage(baseUrl,ext, params));
+        return getResponse(() -> webClient.downloadFacebookProfileImage(baseUrl, ext, params));
     }
 
     @Override
@@ -255,4 +286,14 @@ public class Dao extends AbstractDao implements IDao {
         }
     }
 
+    private void handleNotifications(List<Notification> notifications) {
+        notifications.add(getRandomNumberUsingInts(0, notifications.size()), null);
+    }
+
+    public int getRandomNumberUsingInts(int min, int max) {
+        Random random = new Random();
+        return random.ints(min, max)
+                .findFirst()
+                .getAsInt();
+    }
 }

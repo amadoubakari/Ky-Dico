@@ -1,9 +1,15 @@
-    package com.flys.dico.utils;
+package com.flys.dico.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.Network;
 
+/**
+ * @author AMADOU BAKARI
+ * @version 1.0.0
+ * @apiNote check network
+ * @since 19/03/2022
+ */
 public class CheckNetwork {
 
     private Context context;
