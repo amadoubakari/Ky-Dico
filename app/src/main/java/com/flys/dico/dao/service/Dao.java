@@ -287,7 +287,7 @@ public class Dao extends AbstractDao implements IDao {
     }
 
     private void handleNotifications(List<Notification> notifications) {
-        notifications.add(getRandomNumberUsingInts(1, notifications.size()), null);
+        notifications.add(getRandomNumberUsingInts(0, notifications.size()), null);
     }
 
     public int getRandomNumberUsingInts(int min, int max) {
