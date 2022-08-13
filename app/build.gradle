@@ -3,16 +3,15 @@ buildscript {
         mavenLocal()
         mavenCentral()
         google()
-        jcenter()
         maven { url 'https://maven.fabric.io/public' }
         maven { url "https://plugins.gradle.org/m2/" }
 
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.2'
-        classpath 'com.google.gms:google-services:4.3.3'
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.2.0'
+        classpath 'com.android.tools.build:gradle:7.2.2'
+        classpath 'com.google.gms:google-services:4.3.13'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.1'
         classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.0"
     }
 }
@@ -23,16 +22,16 @@ apply plugin: 'com.google.firebase.crashlytics'
 apply plugin: "org.sonarqube"
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion '30.0.3'
+    compileSdkVersion 33
+    buildToolsVersion '33.0.0'
 
     defaultConfig {
         minSdkVersion 24
         applicationId "com.flys.dico"
-        targetSdkVersion 30
+        targetSdkVersion 33
         versionCode 76
         versionName "1.1.3.6"
-        resConfigs "en", "fr"
+        resConfigs 'en', 'fr'
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [
@@ -71,15 +70,12 @@ android {
             debuggable true
         }
     }
-    // options de packaging nécessaires pour être capable de produire l'APK
     packagingOptions {
-        exclude 'META-INF/ASL2.0'
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/notice.txt'
-        exclude 'META-INF/license.txt'
-        exclude 'META-INF/DEPENDENCIES'
+        resources {
+            excludes += ['META-INF/ASL2.0', 'META-INF/NOTICE', 'META-INF/LICENSE', 'META-INF/notice.txt', 'META-INF/license.txt', 'META-INF/DEPENDENCIES']
+        }
     }
+// options de packaging nécessaires pour être capable de produire l'APK
     // options de compilation
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -97,32 +93,32 @@ android {
 def AAVersion = '4.8.0'
 
 dependencies {
-    implementation 'com.google.firebase:firebase-auth:20.0.3'
-    implementation 'androidx.navigation:navigation-fragment:2.3.4'
-    implementation 'androidx.navigation:navigation-ui:2.3.4'
-    implementation 'com.google.android.play:core:1.10.0'
+    implementation 'com.google.firebase:firebase-auth:21.0.7'
+    implementation 'androidx.navigation:navigation-fragment:2.5.1'
+    implementation 'androidx.navigation:navigation-ui:2.5.1'
+    implementation 'com.google.android.play:core:1.10.3'
     annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
     implementation "org.androidannotations:androidannotations-api:$AAVersion"
     annotationProcessor "org.androidannotations:rest-spring:$AAVersion"
     implementation "org.androidannotations:rest-spring-api:$AAVersion"
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'com.google.android.material:material:1.6.1'
     implementation 'org.springframework.android:spring-android-rest-template:2.0.0.M3'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.2'
     implementation 'io.reactivex:rxandroid:1.2.1'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     androidTestImplementation 'junit:junit:4.13.2'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.android.material:material:1.6.1'
     implementation group: 'de.hdodenhof', name: 'circleimageview', version: '3.1.0'
     implementation project(':common-tools')
     api project(':generictools')
-    implementation 'com.google.firebase:firebase-analytics:18.0.2'
+    implementation 'com.google.firebase:firebase-analytics:21.1.0'
 
     // Add the Firebase SDK for Crashlytics.
-    implementation 'com.google.firebase:firebase-crashlytics:17.4.0'
+    implementation 'com.google.firebase:firebase-crashlytics:18.2.12'
     //Firebase Cloud messaging
-    implementation 'com.google.firebase:firebase-messaging:21.0.1'
+    implementation 'com.google.firebase:firebase-messaging:23.0.7'
 
     //Firebase authentication dependencies
     implementation 'com.firebaseui:firebase-ui-auth:6.2.0'
@@ -135,21 +131,21 @@ dependencies {
 
 
     // Required only if Twitter login support is required
-    implementation 'com.android.support:cardview-v7:30.0.0'
+    implementation 'com.android.support:cardview-v7:33.0.0'
     api group: 'com.j256.ormlite', name: 'ormlite-android', version: '5.3'
 
-    implementation 'com.google.firebase:firebase-messaging-directboot:21.0.1'
+    implementation 'com.google.firebase:firebase-messaging-directboot:23.0.7'
 
-    implementation 'com.google.firebase:firebase-storage:19.2.1'
+    implementation 'com.google.firebase:firebase-storage:20.0.1'
     implementation 'com.firebaseui:firebase-ui-storage:6.2.0'
-    implementation 'androidx.preference:preference:1.1.1'
+    implementation 'androidx.preference:preference:1.2.0'
     // Import the BoM for the Firebase platform
-    implementation platform('com.google.firebase:firebase-bom:25.12.0')
+    implementation platform('com.google.firebase:firebase-bom:30.3.2')
     // Declare the dependency for the Realtime Database library
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-database'
     //adMod dependency
-    implementation 'com.google.android.gms:play-services-ads:19.7.0'
+    implementation 'com.google.android.gms:play-services-ads:21.1.0'
     implementation 'com.flys:notification:1.0.2.3'
 
 }
