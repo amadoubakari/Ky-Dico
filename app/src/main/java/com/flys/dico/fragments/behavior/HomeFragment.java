@@ -30,6 +30,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -81,6 +82,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
 import rx.Observable;
+import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
@@ -285,12 +287,54 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
                             sendQueryWordToTheServer(queryWords, activity.getString(R.string.fragment_home_database_tops), activity.getString(R.string.fragment_home_database_reference));
                         }
                     }
-                    wordAdapter = new WordAdapter(activity, wordList, queryWords.get(), getWordLongClickListener());
+                    wordAdapter = new WordAdapter(activity, wordList, queryWords.get(), getWordLongClickListener(), getOnSearchActionListener());
                     recyclerView.setLayoutManager(new LinearLayoutManager(activity));
                     recyclerView.setAdapter(wordAdapter);
                     //cancel the loading
                     cancelWaitingTasks();
                 });
+    }
+
+    private WordAdapter.OnSearchActionListener getOnSearchActionListener() {
+        AtomicReference<String> queryWords = new AtomicReference<>();
+        return wordToSearch -> search(wordToSearch)
+                .debounce(1500, TimeUnit.MILLISECONDS)
+                .distinctUntilChanged()
+                //Search all words containing query word
+                .switchMap((Func1<String, Observable<List<Word>>>) query -> {
+                    queryWords.set(query);
+                    return mainActivity.loadWords(activity, query);
+                })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(wordList -> {
+                    //No item found
+                    if (wordList.isEmpty()) {
+                        llSearchBlock.setVisibility(View.VISIBLE);
+                        recyclerView.setVisibility(View.GONE);
+                        sendQueryWordToTheServer(queryWords, activity.getString(R.string.fragment_home_database_root_ref), activity.getString(R.string.fragment_home_database_reference));
+                    } else {
+                        llSearchBlock.setVisibility(View.GONE);
+                        recyclerView.setVisibility(View.VISIBLE);
+                        if (!queryWords.get().isEmpty()) {
+                            sendQueryWordToTheServer(queryWords, activity.getString(R.string.fragment_home_database_tops), activity.getString(R.string.fragment_home_database_reference));
+                        }
+                    }
+                    wordAdapter = new WordAdapter(activity, wordList, queryWords.get(), getWordLongClickListener(), getOnSearchActionListener());
+                    recyclerView.setLayoutManager(new LinearLayoutManager(activity));
+                    recyclerView.setAdapter(wordAdapter);
+                    searchView = (SearchView) menuItem.getActionView();
+                    searchView.setQuery(queryWords.get(),false);
+                    //cancel the loading
+                    cancelWaitingTasks();
+                });
+    }
+
+    private Observable<String> search(String data) {
+        return Observable.create(subscriber -> {
+            subscriber.onNext(data);
+            subscriber.onCompleted();
+        });
     }
 
 
@@ -301,7 +345,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
         llSearchBlock.setVisibility(View.GONE);
         index = 0;
         words = new ArrayList<>();
-        wordAdapter = new WordAdapter(activity, words, itemsPerDisplay, getWordLongClickListener());
+        wordAdapter = new WordAdapter(activity, words, itemsPerDisplay, getWordLongClickListener(), getOnSearchActionListener());
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         recyclerView.setHasFixedSize(true);
         beginRunningTasks(1);
