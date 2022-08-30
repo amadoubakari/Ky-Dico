@@ -26,6 +26,7 @@ import com.flys.dico.utils.Utils;
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -75,14 +76,15 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         this.words = words;
         this.context = context;
         this.onclickListener = onclickListener;
-        this.onSearchActionListener=searchActionListener;
+        this.onSearchActionListener = searchActionListener;
     }
+
     public WordAdapter(Context context, List<Word> words, String searchText, WordOnclickListener onclickListener, OnSearchActionListener searchActionListener) {
         this.words = words;
         this.context = context;
         this.searchText = searchText;
         this.onclickListener = onclickListener;
-        this.onSearchActionListener=searchActionListener;
+        this.onSearchActionListener = searchActionListener;
     }
 
     public WordAdapter(Context context, List<Word> words, int itemPerDisplay, WordOnclickListener onclickListener, OnSearchActionListener searchActionListener) {
@@ -90,7 +92,7 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         this.words = words;
         this.context = context;
         this.onclickListener = onclickListener;
-        this.onSearchActionListener=searchActionListener;
+        this.onSearchActionListener = searchActionListener;
     }
 
     @NonNull
@@ -203,42 +205,15 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         void search(String wordToSearch);
     }
 
-/*    *//**
-     * @param listModelsTasks
-     *//*
-    public void setFilter(List<Word> listModelsTasks) {
-        words = new ArrayList<>();
-        words.addAll(listModelsTasks);
-        notifyDataSetChanged();
-    }
-
-    *//**
-     * @param listModelsTasks
-     *//*
-    public void setFilter(List<Word> listModelsTasks, String searchText) {
-        words = new ArrayList<>();
-        words.addAll(listModelsTasks);
-        this.searchText = searchText;
-        notifyDataSetChanged();
-    }*/
 
     public void reload() {
         notifyDataSetChanged();
     }
 
-/*    public void refreshAdapter() {
-        notifyDataSetChanged();
-    }*/
-
     public void addWords(List<Word> words1) {
         this.words.addAll(words1);
         notifyDataSetChanged();
     }
-
- /*   public void removeAllWords() {
-        words.clear();
-        notifyDataSetChanged();
-    }*/
 
     public interface OnLoadMoreListener {
         void onLoadMore(int currentPage);
@@ -310,26 +285,20 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
      * @param view
      */
     private void higherLightSearchedWord(Word word, Holder view) {
-       /* if (searchText != null) {
-            SpannableStringBuilder sb = new SpannableStringBuilder(word.getDescription());
+        Spannable spannable = new SpannableStringBuilder(word.getDescription());
+        if (searchText != null) {
             Pattern wordPattern = Pattern.compile(Pattern.quote(searchText.toLowerCase()));
             Matcher match = wordPattern.matcher(word.getDescription().toLowerCase());
 
             while (match.find()) {
                 ForegroundColorSpan fcs = new ForegroundColorSpan(
-                        ContextCompat.getColor(context, R.color.blue_500)); //specify color here
-                sb.setSpan(fcs, match.start(), match.end(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+                        ContextCompat.getColor(context, R.color.color_secondary)); //specify color here
+                spannable.setSpan(fcs, match.start(), match.end(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
             }
-            view.description.setText(sb);
-        } else {
-            view.description.setText(word.getDescription());
-        }*/
+        }
 
-        Spannable spannable = new SpannableString(word.getDescription());
-
-        Linkify.addLinks(spannable, Pattern.compile("number"), "");
-
-        Utils.stripUnderlines(spannable,onSearchActionListener);
+        Arrays.asList("number", "location", "storage").stream().parallel().forEach(s -> Linkify.addLinks(spannable, Pattern.compile(s), ""));
+        Utils.stripUnderlines(spannable, onSearchActionListener);
 
         view.description.setMovementMethod(LinkMovementMethod.getInstance());
 

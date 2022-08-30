@@ -335,7 +335,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
 
 
         //Action listener on bottom navigation view
-        bottomNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
+        bottomNavigationView.setOnItemSelectedListener(menuItem -> {
             switch (menuItem.getItemId()) {
                 case R.id.bottom_menu_home:
                     navigateToView(HOME_FRAGMENT, ISession.Action.SUBMIT);

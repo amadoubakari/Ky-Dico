@@ -6,7 +6,6 @@ import android.text.style.URLSpan;
 import com.flys.dico.fragments.adapters.WordAdapter;
 
 import java.util.Arrays;
-import java.util.regex.Pattern;
 
 /**
  * @version 1.0.0
@@ -16,17 +15,8 @@ import java.util.regex.Pattern;
  */
 public class Utils {
 
-    public static final String URL_REGEX = "[@][a-zA-Z]*[0-9]*[a-zA-Z]*[@]";
-
-    /**
-     * @return
-     */
-    public static Pattern getUrlPattern() {
-        return Pattern.compile(URL_REGEX);
-    }
-
     public static void stripUnderlines(Spannable spannable, WordAdapter.OnSearchActionListener onSearchActionListener) {
-        Arrays.stream(spannable.getSpans(0, spannable.length(), URLSpan.class)).parallel().forEach(span -> {
+        Arrays.stream(spannable.getSpans(0, spannable.length(), URLSpan.class)).forEach(span -> {
             int start = spannable.getSpanStart(span);
             int end = spannable.getSpanEnd(span);
             spannable.removeSpan(span);
