@@ -69,6 +69,7 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
     protected void initFragment(CoreState previousState) {
         enableNotification.setChecked(NotificationManagerCompat.from(activity).areNotificationsEnabled());
         enabledNightMode.setChecked(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES);
+
     }
 
     @Override

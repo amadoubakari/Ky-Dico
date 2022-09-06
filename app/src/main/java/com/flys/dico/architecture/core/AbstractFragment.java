@@ -495,15 +495,15 @@ public abstract class AbstractFragment extends Fragment {
                 .setSingleChoiceItems(language, checkedItem, (dialog, which) -> {
                     //if user select preferred language as English then
                     if (language[which].equals(getString(R.string.settings_fragment_language_english))) {
+                        mainActivity.setLanguage(Constants.EN);
                         dialog.dismiss();
                         restartApp();
-                        mainActivity.setLanguage(Constants.EN);
                     }
                     //if user select preferred language as Hindi then
                     if (language[which].equals(getString(R.string.settings_fragment_language_french))) {
+                        mainActivity.setLanguage(Constants.FR);
                         dialog.dismiss();
                         restartApp();
-                        mainActivity.setLanguage(Constants.FR);
                     }
                 })
                 .setPositiveButton(getString(R.string.activity_main_button_cancel), (dialog, which) -> dialog.dismiss());
@@ -533,10 +533,10 @@ public abstract class AbstractFragment extends Fragment {
     protected int isEnglish() {
         String localeCode = mainActivity.getSharedPreferences().getString(Constants.MY_LAND, Locale.getDefault().getLanguage());
         int checkedItem;
-        if (localeCode.equals(Constants.EN)) {
-            checkedItem = Language.ENGLISH.getOrder();
-        } else {
+        if (localeCode.equals(Constants.FR)) {
             checkedItem = Language.FRENCH.getOrder();
+        } else {
+            checkedItem = Language.ENGLISH.getOrder();
         }
         return checkedItem;
     }

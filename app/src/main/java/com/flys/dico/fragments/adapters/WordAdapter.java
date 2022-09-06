@@ -28,8 +28,13 @@ import com.google.android.material.card.MaterialCardView;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * @author AMADOU BAKARI
@@ -114,8 +119,8 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         Word word = words.get(position);
         if (holder instanceof Holder) {
             Holder view = (Holder) holder;
-            view.title.setText(word.getTitle());
-            higherLightSearchedWord(word, view);
+            higherLightSearchedWord(word, view)
+                    .subscribe();
         } else {
             HolderProgress holderProgress = (HolderProgress) holder;
             holderProgress.progressBar.setIndeterminate(true);
@@ -284,24 +289,28 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
      * @param word
      * @param view
      */
-    private void higherLightSearchedWord(Word word, Holder view) {
-        Spannable spannable = new SpannableStringBuilder(word.getDescription());
-        if (searchText != null) {
-            Pattern wordPattern = Pattern.compile(Pattern.quote(searchText.toLowerCase()));
-            Matcher match = wordPattern.matcher(word.getDescription().toLowerCase());
+    private Observable higherLightSearchedWord(Word word, Holder view) {
+        return Observable.create(subscriber -> {
+            view.title.setText(word.getTitle());
+            Spannable spannable = new SpannableStringBuilder(word.getDescription());
+            if (searchText != null) {
+                Pattern wordPattern = Pattern.compile(Pattern.quote(searchText.toLowerCase()));
+                Matcher match = wordPattern.matcher(word.getDescription().toLowerCase());
 
-            while (match.find()) {
-                ForegroundColorSpan fcs = new ForegroundColorSpan(
-                        ContextCompat.getColor(context, R.color.color_secondary)); //specify color here
-                spannable.setSpan(fcs, match.start(), match.end(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+                while (match.find()) {
+                    ForegroundColorSpan fcs = new ForegroundColorSpan(
+                            ContextCompat.getColor(context, R.color.color_secondary)); //specify color here
+                    spannable.setSpan(fcs, match.start(), match.end(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+                }
             }
-        }
 
-        Arrays.asList("number", "location", "storage").stream().parallel().forEach(s -> Linkify.addLinks(spannable, Pattern.compile(s), ""));
-        Utils.stripUnderlines(spannable, onSearchActionListener);
+            Arrays.asList("number", "location", "storage", "hardware", "software", "mouse", "keyboard", "disk", "wireless").stream().forEach(s -> Linkify.addLinks(spannable, Pattern.compile(s), ""));
 
-        view.description.setMovementMethod(LinkMovementMethod.getInstance());
+            Utils.stripUnderlines(spannable, onSearchActionListener);
 
-        view.description.setText(spannable, TextView.BufferType.SPANNABLE);
+            view.description.setMovementMethod(LinkMovementMethod.getInstance());
+
+            view.description.setText(spannable, TextView.BufferType.SPANNABLE);
+        });
     }
 }
