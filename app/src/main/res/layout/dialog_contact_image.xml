@@ -38,7 +38,6 @@
                     android:layout_height="match_parent"
                     android:text="@string/dialog_contact_welcome_msg"
                     android:gravity="center"
-                    android:fontFamily="@font/google_sans"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
                     android:layout_weight="1" />
@@ -81,7 +80,6 @@
                     android:layout_marginTop="@dimen/spacing_large"
                     android:text="Adams Green"
                     android:textSize="18sp"
-                    android:fontFamily="@font/google_sans"
                     android:textColor="@android:color/white"
                    />
 
@@ -90,7 +88,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Freelance Designer"
-                    android:fontFamily="@font/google_sans"
                     android:textSize="14sp"
                     android:textColor="@color/grey_50" />
 

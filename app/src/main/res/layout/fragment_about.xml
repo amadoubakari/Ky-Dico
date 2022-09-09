@@ -32,7 +32,6 @@
             android:layout_height="wrap_content"
             android:text="@string/fragment_about_dictionary_header"
             android:textColor="@color/app_text_color"
-            android:fontFamily="@font/google_sans"
             android:textSize="20sp"
             android:textStyle="bold"
             />
@@ -57,7 +56,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Version"
-                android:fontFamily="@font/google_sans"
                 android:textSize="14sp"
                 android:textColor="@color/app_text_second_color" />
 
@@ -65,7 +63,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/app_version_msg"
-                android:fontFamily="@font/google_sans"
                 android:textSize="14sp"
                 android:textColor="@color/app_text_color" />
 
@@ -84,14 +81,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/about_last_update_msg"
-                android:fontFamily="@font/google_sans"
                 android:textSize="14sp"
                 android:textColor="@color/app_text_second_color" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/google_sans"
                 android:text="@string/about_releasing_date"
                 android:textSize="14sp"
                 android:textColor="@color/app_text_color" />
@@ -106,7 +101,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/mini_dictionnaire_informatique_de_poche_msg"
-            android:fontFamily="@font/google_sans"
             android:textSize="14sp"
             android:textColor="@color/app_text_color" />
 
@@ -120,7 +114,6 @@
             android:layout_height="wrap_content"
             android:text="Open source ici"
             android:textColor="@color/app_text_color"
-            android:fontFamily="@font/google_sans"
             android:textSize="14sp" />
 
 
@@ -165,7 +158,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/https_site_kyossi_com"
-        android:fontFamily="@font/google_sans"
         android:textSize="14sp"
         android:textColor="@color/blue_600"
         app:layout_constraintBottom_toTopOf="@+id/view2"

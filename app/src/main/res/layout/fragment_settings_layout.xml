@@ -25,7 +25,6 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:fontFamily="@font/google_sans"
             android:gravity="center_vertical"
             android:paddingLeft="30dp"
             android:text="@string/fragment_settings_layout_general_setttings_msg"
@@ -64,7 +63,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="@font/google_sans"
                     android:text="@string/fragmant_settings_notifications_msg"
                     android:textColor="@color/app_text_color"
                     android:textSize="14sp" />
@@ -108,7 +106,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="@font/google_sans"
                     android:text="@string/fragment_settings_language_msg"
                     android:textColor="@color/app_text_color"
                     android:textSize="14sp" />
@@ -118,7 +115,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.05"
-                    android:fontFamily="@font/google_sans"
                     android:text="@string/fragment_settings_language_en"
                     android:textColor="@color/blue_500"
                     android:textSize="14sp" />
@@ -156,7 +152,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="@font/google_sans"
                     android:text="@string/mode_nuit"
                     android:textColor="@color/app_text_color"
                     android:textSize="14sp" />
