@@ -13,17 +13,17 @@ public class CustomTabLayout extends TabLayout {
 
   public CustomTabLayout(Context context) {
     super(context);
-    init();
+    //init();
   }
 
   public CustomTabLayout(Context context, AttributeSet attrs) {
     super(context, attrs);
-    init();
+    //init();
   }
 
   public CustomTabLayout(Context context, AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
-    init();
+    //init();
   }
 
   private void init() {

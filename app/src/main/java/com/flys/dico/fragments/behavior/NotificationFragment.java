@@ -143,7 +143,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
     @OptionsItem(R.id.search)
     protected void doSearch() {
         searchView = (SearchView) menuItem.getActionView();
-        Utils.changeSearchTextColor(activity, searchView, R.font.google_sans);
+        //Utils.changeSearchTextColor(activity, searchView, R.font.google_sans);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {

@@ -496,15 +496,13 @@ public abstract class AbstractFragment extends Fragment {
                     //if user select preferred language as English then
                     if (language[which].equals(getString(R.string.settings_fragment_language_english))) {
                         mainActivity.setLanguage(Constants.EN);
-                        dialog.dismiss();
-                        restartApp();
                     }
                     //if user select preferred language as Hindi then
                     if (language[which].equals(getString(R.string.settings_fragment_language_french))) {
                         mainActivity.setLanguage(Constants.FR);
-                        dialog.dismiss();
-                        restartApp();
                     }
+                    dialog.dismiss();
+                    restartApp();
                 })
                 .setPositiveButton(getString(R.string.activity_main_button_cancel), (dialog, which) -> dialog.dismiss());
         builder.create().show();

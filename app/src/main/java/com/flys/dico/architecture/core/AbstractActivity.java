@@ -58,7 +58,6 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     private IDao dao;
     // la session
     protected ISession session;
-
     // le conteneur des fragments
     protected MyPager mViewPager;
     // la barre d'outils
@@ -67,7 +66,6 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     private ProgressBar loadingPanel;
     // barre d'onglets
     protected TabLayout tabLayout;
-
     // le gestionnaire de fragments ou sections
     private SectionsPagerAdapter mSectionsPagerAdapter;
     // nom de la classe
@@ -302,7 +300,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         navigationView = findViewById(R.id.navigation);
 
         //Nous appliquons le même style aux éléments de menu
-        Utils.applyFontStyleToMenu(this, navigationView.getMenu(), R.font.google_sans);
+        //Utils.applyFontStyleToMenu(this, navigationView.getMenu(), R.font.google_sans);
 
         navigationView.setNavigationItemSelectedListener(
                 menuItem -> {
@@ -573,14 +571,6 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     @Override
     public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        int nightModeFlags = newConfig.uiMode & Configuration.UI_MODE_NIGHT_MASK;
-        switch (nightModeFlags) {
-            case Configuration.UI_MODE_NIGHT_YES:
-                break;
-            case Configuration.UI_MODE_NIGHT_NO:
-                break;
-            case Configuration.UI_MODE_NIGHT_UNDEFINED:
-                break;
-        }
+        com.flys.dico.architecture.core.Utils.restartApplication(DApplicationContext.getInstance(), MainActivity_.class);
     }
 }

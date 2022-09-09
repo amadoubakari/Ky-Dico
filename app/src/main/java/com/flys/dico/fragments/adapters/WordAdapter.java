@@ -56,34 +56,6 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private String searchText;
     private OnSearchActionListener onSearchActionListener;
 
-    public WordAdapter(Context context) {
-        this.context = context;
-    }
-
-    public WordAdapter(List<Word> words, Context context) {
-        this.words = words;
-        this.context = context;
-    }
-
-    public WordAdapter(Context context, List<Word> words, int itemPerDisplay) {
-        this.itemPerDisplay = itemPerDisplay;
-        this.words = words;
-        this.context = context;
-    }
-
-    public WordAdapter(Context context, List<Word> words, WordOnclickListener onclickListener) {
-        this.words = words;
-        this.context = context;
-        this.onclickListener = onclickListener;
-    }
-
-    public WordAdapter(Context context, List<Word> words, WordOnclickListener onclickListener, OnSearchActionListener searchActionListener) {
-        this.words = words;
-        this.context = context;
-        this.onclickListener = onclickListener;
-        this.onSearchActionListener = searchActionListener;
-    }
-
     public WordAdapter(Context context, List<Word> words, String searchText, WordOnclickListener onclickListener, OnSearchActionListener searchActionListener) {
         this.words = words;
         this.context = context;

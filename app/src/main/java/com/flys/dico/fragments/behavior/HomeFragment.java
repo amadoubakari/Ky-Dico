@@ -215,7 +215,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
     @OptionsItem(R.id.search)
     protected void doSearch() {
         searchView = (SearchView) menuItem.getActionView();
-        Utils.changeSearchTextColor(activity, searchView, R.font.google_sans);
+        //Utils.changeSearchTextColor(activity, searchView, R.font.google_sans);
         initSearchFeatureNew();
     }
 

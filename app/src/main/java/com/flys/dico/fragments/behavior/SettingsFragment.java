@@ -3,6 +3,7 @@ package com.flys.dico.fragments.behavior;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.provider.Settings;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -71,8 +72,6 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
     @Override
     protected void initFragment(CoreState previousState) {
         enableNotification.setChecked(NotificationManagerCompat.from(activity).areNotificationsEnabled());
-        enabledNightMode.setChecked(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES);
-
     }
 
     @Override
@@ -81,6 +80,17 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
             tvLanguage.setText(getString(R.string.fragment_settings_language_en));
         } else {
             tvLanguage.setText(getString(R.string.fragment_settings_language_fr));
+        }
+        int nightModeFlags = activity.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+
+        switch (nightModeFlags) {
+            case Configuration.UI_MODE_NIGHT_YES:
+                enabledNightMode.setChecked(true);
+                break;
+            case Configuration.UI_MODE_NIGHT_NO:
+            case Configuration.UI_MODE_NIGHT_UNDEFINED:
+                enabledNightMode.setChecked(false);
+                break;
         }
     }
 
