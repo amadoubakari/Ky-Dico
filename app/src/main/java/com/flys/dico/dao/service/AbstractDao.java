@@ -1,9 +1,10 @@
 package com.flys.dico.dao.service;
 
 import android.util.Log;
-import com.flys.dico.architecture.core.Utils;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.flys.dico.architecture.core.Utils;
 
 import rx.Observable;
 

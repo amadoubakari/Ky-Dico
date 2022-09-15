@@ -29,13 +29,14 @@
             android:textColor="@color/app_text_color"
             android:textSize="14dp"
          />
+
         <TextView
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/app_version_msg"
-            android:textColor="@color/blue_500"
             android:gravity="center"
+            android:text="@string/app_version_msg"
+            android:textColor="@color/color_secondary"
             android:textSize="12dp" />
     </LinearLayout>
 </RelativeLayout>

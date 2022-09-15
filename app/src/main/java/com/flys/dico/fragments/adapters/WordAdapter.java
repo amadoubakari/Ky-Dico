@@ -2,7 +2,6 @@ package com.flys.dico.fragments.adapters;
 
 import android.content.Context;
 import android.text.Spannable;
-import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ForegroundColorSpan;
@@ -12,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -25,16 +23,11 @@ import com.flys.dico.dao.entities.WordToShare;
 import com.flys.dico.utils.Utils;
 import com.google.android.material.card.MaterialCardView;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 /**
  * @author AMADOU BAKARI
@@ -276,8 +269,10 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 }
             }
 
-            Arrays.asList("number", "location", "storage", "hardware", "software", "mouse", "keyboard", "disk", "wireless").stream().forEach(s -> Linkify.addLinks(spannable, Pattern.compile(s), ""));
-
+            // Arrays.asList("number", "location", "storage", "hardware", "software", "mouse", "keyboard", "disk", "wireless").stream().forEach(s -> Linkify.addLinks(spannable, Pattern.compile(s), ""));
+            Utils.loadHighLightedWords(context).distinct().subscribe(highLightedWords -> {
+                highLightedWords.stream().forEach(s -> Linkify.addLinks(spannable, Pattern.compile(s), ""));
+            });
             Utils.stripUnderlines(spannable, onSearchActionListener);
 
             view.description.setMovementMethod(LinkMovementMethod.getInstance());

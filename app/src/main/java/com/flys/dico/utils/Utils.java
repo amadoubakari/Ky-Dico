@@ -1,11 +1,20 @@
 package com.flys.dico.utils;
 
+import android.content.Context;
+import android.content.res.AssetManager;
 import android.text.Spannable;
 import android.text.style.URLSpan;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.flys.dico.R;
 import com.flys.dico.fragments.adapters.WordAdapter;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
+import rx.Observable;
 
 /**
  * @version 1.0.0
@@ -24,5 +33,21 @@ public class Utils {
             spannable.setSpan(span, start, end, 0);
         });
     }
+
+    public static Observable<List<String>> loadHighLightedWords(Context context){
+        return Observable.create(subscriber -> {
+            try {
+                ObjectMapper jsonMapper=new ObjectMapper();
+                List<String> words = jsonMapper.readValue(context.getAssets().open(context.getString(R.string.words_data_source), AssetManager.ACCESS_STREAMING), ArrayList.class);
+                //and observable that are going to emit data
+                subscriber.onNext(words);
+                subscriber.onCompleted();
+            } catch (IOException e) {
+                e.printStackTrace();
+                subscriber.onError(e);
+            }
+        });
+    }
+
 }
 

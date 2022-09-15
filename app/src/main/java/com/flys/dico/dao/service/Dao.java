@@ -266,6 +266,7 @@ public class Dao extends AbstractDao implements IDao {
         });
     }
 
+
     /**
      * It emit data from define limit element on words
      *

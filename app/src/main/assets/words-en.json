@@ -1,0 +1,11 @@
+[
+  "number",
+  "location",
+  "storage",
+  "hardware",
+  "software",
+  "mouse",
+  "keyboard",
+  "disk",
+  "wireless"
+]
