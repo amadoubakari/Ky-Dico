@@ -9,17 +9,17 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.2'
-        classpath 'com.google.gms:google-services:4.3.13'
+        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath 'com.google.gms:google-services:4.3.14'
         classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.1'
         classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.0"
     }
 }
 
 apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
 apply plugin: "org.sonarqube"
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 33
@@ -128,8 +128,6 @@ dependencies {
 
     //add a badge number on app icon launcher
     implementation "me.leolin:ShortcutBadger:1.1.22@aar"
-
-
     // Required only if Twitter login support is required
     implementation 'com.android.support:cardview-v7:33.0.0'
     api group: 'com.j256.ormlite', name: 'ormlite-android', version: '5.3'
@@ -140,14 +138,13 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-storage:6.2.0'
     implementation 'androidx.preference:preference:1.2.0'
     // Import the BoM for the Firebase platform
-    implementation platform('com.google.firebase:firebase-bom:30.4.1')
+    implementation platform('com.google.firebase:firebase-bom:30.5.0')
     // Declare the dependency for the Realtime Database library
     // When using the BoM, you don't specify versions in Firebase library dependencies
-    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-database:20.0.6'
     //adMod dependency
     implementation 'com.google.android.gms:play-services-ads:21.2.0'
     implementation 'com.flys:notification:1.0.2.3'
-
 }
 
 repositories {
