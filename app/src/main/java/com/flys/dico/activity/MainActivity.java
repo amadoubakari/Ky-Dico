@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.view.ActionMode;
 import androidx.core.text.HtmlCompat;
 import androidx.recyclerview.widget.RecyclerView;
@@ -383,8 +384,8 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     }
 
     @Override
-    public Observable<List<Word>> loadWords(Context context, String query) {
-        return dao.loadWords(context, query);
+    public Observable<List<Word>> loadWords(Context context, String query, String locale) {
+        return dao.loadWords(context, query,locale);
     }
 
     @Override
@@ -400,6 +401,11 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     @Override
     public Observable<List<Notification>> loadNotificationsFromDatabase(boolean withAds) {
         return dao.loadNotificationsFromDatabase(withAds);
+    }
+
+    @Override
+    public Observable<List<Word>> loadSequenceWords(Context context, int index, int size, @NonNull String locale) {
+        return dao.loadSequenceWords(context, index, size, locale);
     }
 
     @Override

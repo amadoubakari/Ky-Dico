@@ -47,7 +47,6 @@
     <string name="app_name_debug">Computer Science Dictionary</string>
     <string name="app_name_rct">rct</string>
     <string name="dialog_contact_welcome_msg">Welcome</string>
-    <string name="dictionary_data_source">dictionnaire-en.json</string>
     <string name="app_google_play_store_url">https://play.google.com/store/apps/details?id=com.flys.dico&amp;hl=en</string>
     <string name="activity_abstract_recommend_app">Recommend the application</string>
     <string name="activity_abstract_recommendation_msg">Recommendation</string>
@@ -79,5 +78,4 @@
     <string name="fcm_notification_service_one_message">\u0020new message</string>
     <string name="rechercher">Search</string>
     <string name="notification_fragment_enable_notifications_msg">Please enable notifications\nto receive news and new lessons</string>
-    <string name="words_data_source">words-en.json</string>
 </resources>

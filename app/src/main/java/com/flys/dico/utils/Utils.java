@@ -9,6 +9,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.flys.dico.R;
 import com.flys.dico.fragments.adapters.WordAdapter;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,6 +41,21 @@ public class Utils {
             try {
                 ObjectMapper jsonMapper=new ObjectMapper();
                 List<String> words = jsonMapper.readValue(context.getAssets().open(context.getString(R.string.words_data_source), AssetManager.ACCESS_STREAMING), ArrayList.class);
+                //and observable that are going to emit data
+                subscriber.onNext(words);
+                subscriber.onCompleted();
+            } catch (IOException e) {
+                e.printStackTrace();
+                subscriber.onError(e);
+            }
+        });
+    }
+
+    public static Observable<List<String>> loadHighLightedWords(Context context, @NotNull String locale){
+        return Observable.create(subscriber -> {
+            try {
+                ObjectMapper jsonMapper=new ObjectMapper();
+                List<String> words = jsonMapper.readValue(context.getAssets().open(context.getString(R.string.words_data_source).concat("-").concat(locale).concat(".json"), AssetManager.ACCESS_STREAMING), ArrayList.class);
                 //and observable that are going to emit data
                 subscriber.onNext(words);
                 subscriber.onCompleted();

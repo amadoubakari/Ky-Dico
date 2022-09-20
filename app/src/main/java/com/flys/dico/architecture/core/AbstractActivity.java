@@ -508,21 +508,31 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
      */
     @Override
     public void setLocale(String languageCode) {
-
         Locale locale = new Locale(languageCode);
         Locale.setDefault(locale);
-        Resources resources = getResources();
         Configuration config = getResources().getConfiguration();
         config.setLocale(locale);
-        resources.updateConfiguration(config, resources.getDisplayMetrics());
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
         //Share
         setLanguage(languageCode);
     }
 
     @Override
     public void loadLocale() {
-        String language = sharedPreferences.getString(Constants.MY_LAND, Locale.getDefault().getLanguage());
-        setLocale(language);
+        String language = sharedPreferences.getString(Constants.MY_LAND, null);
+        if (language == null) {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            String sysLanguage = getResources().getConfiguration().getLocales().get(0).getLanguage();
+            if (sysLanguage != null && !sysLanguage.isEmpty() && sysLanguage.equals(Constants.FR)) {
+                editor.putString(Constants.MY_LAND, Constants.FR);
+            } else {
+                editor.putString(Constants.MY_LAND, Constants.EN);
+            }
+            editor.commit();
+            loadLocale();
+        }else{
+            setLocale(language);
+        }
     }
 
     @Override
@@ -571,6 +581,8 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     @Override
     public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
+        //Locale primaryLocale = newConfig.getLocales().get(0);
+        //String locale = primaryLocale.getDisplayName();
         com.flys.dico.architecture.core.Utils.restartApplication(DApplicationContext.getInstance(), MainActivity_.class);
     }
 }

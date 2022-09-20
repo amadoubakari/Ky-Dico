@@ -8,6 +8,8 @@ import com.flys.dico.fragments.adapters.Word;
 import com.flys.dico.fragments.adapters.WordAdapter;
 import com.flys.notification.domain.Notification;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 import rx.Observable;
@@ -55,7 +57,7 @@ public interface IDao {
 
     Observable<List<Word>> loadSequenceWords(Context context, int index, int size);
 
-    Observable<List<Word>> loadWords(Context context, final String query);
+    Observable<List<Word>> loadWords(Context context, final String query, String locale);
 
     Observable<byte[]> downloadFacebookProfileImage(final String baseUrl, final String ext, final String params);
 
@@ -64,5 +66,7 @@ public interface IDao {
 
     //Load notifications from the data base
     Observable<List<Notification>> loadNotificationsFromDatabase(boolean withAds);
+
+    Observable<List<Word>> loadSequenceWords(Context context, int index, int size, @NotNull String locale);
 
 }

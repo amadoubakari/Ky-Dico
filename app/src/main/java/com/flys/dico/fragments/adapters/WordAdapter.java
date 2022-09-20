@@ -48,21 +48,24 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private boolean loading;
     private String searchText;
     private OnSearchActionListener onSearchActionListener;
+    private String locale;
 
-    public WordAdapter(Context context, List<Word> words, String searchText, WordOnclickListener onclickListener, OnSearchActionListener searchActionListener) {
+    public WordAdapter(Context context, List<Word> words, String searchText, String locale, WordOnclickListener onclickListener, OnSearchActionListener searchActionListener) {
         this.words = words;
         this.context = context;
         this.searchText = searchText;
         this.onclickListener = onclickListener;
         this.onSearchActionListener = searchActionListener;
+        this.locale=locale;
     }
 
-    public WordAdapter(Context context, List<Word> words, int itemPerDisplay, WordOnclickListener onclickListener, OnSearchActionListener searchActionListener) {
+    public WordAdapter(Context context, List<Word> words, int itemPerDisplay, String locale, WordOnclickListener onclickListener, OnSearchActionListener searchActionListener) {
         this.itemPerDisplay = itemPerDisplay;
         this.words = words;
         this.context = context;
         this.onclickListener = onclickListener;
         this.onSearchActionListener = searchActionListener;
+        this.locale=locale;
     }
 
     @NonNull
@@ -270,7 +273,7 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             }
 
             // Arrays.asList("number", "location", "storage", "hardware", "software", "mouse", "keyboard", "disk", "wireless").stream().forEach(s -> Linkify.addLinks(spannable, Pattern.compile(s), ""));
-            Utils.loadHighLightedWords(context).distinct().subscribe(highLightedWords -> {
+            Utils.loadHighLightedWords(context, this.locale).distinct().subscribe(highLightedWords -> {
                 highLightedWords.stream().forEach(s -> Linkify.addLinks(spannable, Pattern.compile(s), ""));
             });
             Utils.stripUnderlines(spannable, onSearchActionListener);

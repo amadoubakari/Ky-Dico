@@ -212,7 +212,6 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
     @OptionsItem(R.id.search)
     protected void doSearch() {
         searchView = (SearchView) menuItem.getActionView();
-        //Utils.changeSearchTextColor(activity, searchView, R.font.google_sans);
         initSearchFeatureNew();
     }
 
@@ -267,7 +266,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
                 //Search all words containing query word
                 .switchMap((Func1<String, Observable<List<Word>>>) query -> {
                     queryWords.set(query);
-                    return mainActivity.loadWords(activity, query);
+                    return mainActivity.loadWords(activity, query,mainActivity.getSharedPreferences().getString(Constants.MY_LAND,null));
                 })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -284,7 +283,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
                             sendQueryWordToTheServer(queryWords, activity.getString(R.string.fragment_home_database_tops), activity.getString(R.string.fragment_home_database_reference));
                         }
                     }
-                    wordAdapter = new WordAdapter(activity, wordList, queryWords.get(), getWordLongClickListener(), getOnSearchActionListener());
+                    wordAdapter = new WordAdapter(activity, wordList, queryWords.get(),mainActivity.getSharedPreferences().getString(Constants.MY_LAND,null), getWordLongClickListener(), getOnSearchActionListener());
                     recyclerView.setLayoutManager(new LinearLayoutManager(activity));
                     recyclerView.setAdapter(wordAdapter);
                     //cancel the loading
@@ -300,7 +299,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
                 //Search all words containing query word
                 .switchMap((Func1<String, Observable<List<Word>>>) query -> {
                     queryWords.set(query);
-                    return mainActivity.loadWords(activity, query);
+                    return mainActivity.loadWords(activity, query, mainActivity.getSharedPreferences().getString(Constants.MY_LAND,null));
                 })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -317,7 +316,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
                             sendQueryWordToTheServer(queryWords, activity.getString(R.string.fragment_home_database_tops), activity.getString(R.string.fragment_home_database_reference));
                         }
                     }
-                    wordAdapter = new WordAdapter(activity, wordList, queryWords.get(), getWordLongClickListener(), getOnSearchActionListener());
+                    wordAdapter = new WordAdapter(activity, wordList, queryWords.get(), mainActivity.getSharedPreferences().getString(Constants.MY_LAND,null), getWordLongClickListener(), getOnSearchActionListener());
                     recyclerView.setLayoutManager(new LinearLayoutManager(activity));
                     recyclerView.setAdapter(wordAdapter);
                     searchView = (SearchView) menuItem.getActionView();
@@ -342,11 +341,11 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
         llSearchBlock.setVisibility(View.GONE);
         index = 0;
         words = new ArrayList<>();
-        wordAdapter = new WordAdapter(activity, words, itemsPerDisplay, getWordLongClickListener(), getOnSearchActionListener());
+        wordAdapter = new WordAdapter(activity, words, itemsPerDisplay, mainActivity.getSharedPreferences().getString(Constants.MY_LAND,null), getWordLongClickListener(), getOnSearchActionListener());
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         recyclerView.setHasFixedSize(true);
         beginRunningTasks(1);
-        executeInBackground(mainActivity.loadSequenceWords(activity, index, size).delay(1000, TimeUnit.MILLISECONDS), wordList -> {
+        executeInBackground(mainActivity.loadSequenceWords(activity, index, size, mainActivity.getSharedPreferences().getString(Constants.MY_LAND,null)).delay(1000, TimeUnit.MILLISECONDS), wordList -> {
             recyclerView.setVisibility(View.VISIBLE);
             recyclerView.setAdapter(wordAdapter);
             wordAdapter.addWords(wordList);
@@ -427,7 +426,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
     private void loadNextData(WordAdapter wordAdapter) {
         wordAdapter.setLoading();
         index += size;
-        executeInBackground(mainActivity.loadSequenceWords(activity, index, size).delay(500, TimeUnit.MILLISECONDS), wordList -> {
+        executeInBackground(mainActivity.loadSequenceWords(activity, index, size, mainActivity.getSharedPreferences().getString(Constants.MY_LAND,null)).delay(500, TimeUnit.MILLISECONDS), wordList -> {
             wordAdapter.insertData(wordList);
         });
     }

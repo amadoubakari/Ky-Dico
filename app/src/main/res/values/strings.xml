@@ -50,7 +50,7 @@
     <string name="activity_main_username">Username</string>
     <string name="activity_main_email_address">Email</string>
     <string name="activity_main_thanks_msg">" Merci "</string>
-    <string name="dictionary_data_source">dictionnaire.json</string>
+    <string name="dictionary_data_source" translatable="false">dictionnaire</string>
     <string name="app_name_release">Dictionnaire Informatique</string>
     <string name="app_name_debug">Dictionnaire Informatique </string>
     <string name="app_name_rct">rct</string>
@@ -97,5 +97,6 @@
     <string name="ads_native_notification_item_rct" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
     <string name="rechercher">Rechercher</string>
     <string name="notification_fragment_enable_notifications_msg">Veuillez activer les notifications\npour recevoir des nouveaux apprentissages</string>
-    <string name="words_data_source">words</string>
+    <string name="words_data_source" translatable="false">words</string>
+    <string name="dictionary_data_source_extension" translatable="false">.json</string>
 </resources>

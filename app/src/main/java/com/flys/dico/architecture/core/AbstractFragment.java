@@ -529,7 +529,7 @@ public abstract class AbstractFragment extends Fragment {
      * @return 0 for english and 1 for french
      */
     protected int isEnglish() {
-        String localeCode = mainActivity.getSharedPreferences().getString(Constants.MY_LAND, Locale.getDefault().getLanguage());
+        String localeCode = mainActivity.getSharedPreferences().getString(Constants.MY_LAND, getResources().getConfiguration().getLocales().get(0).getLanguage());
         int checkedItem;
         if (localeCode.equals(Constants.FR)) {
             checkedItem = Language.FRENCH.getOrder();
