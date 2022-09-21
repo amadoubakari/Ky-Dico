@@ -25,7 +25,6 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 import rx.Observable;
 import rx.Subscription;

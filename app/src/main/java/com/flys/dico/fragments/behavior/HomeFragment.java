@@ -107,7 +107,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
     private static FirebaseDatabase database;
     private static List<WordToShare> wordToShares;
 
-    private int itemsPerDisplay = 6;
+    private final int itemsPerDisplay = 8;
     // Creates instance of the update app manager.
     private AppUpdateManager appUpdateManager;
 
