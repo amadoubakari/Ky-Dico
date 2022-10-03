@@ -42,6 +42,7 @@ import com.flys.tools.utils.DepthPageTransformer;
 import com.flys.tools.utils.Utils;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.play.core.review.ReviewInfo;
@@ -79,6 +80,10 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     protected BottomNavigationView bottomNavigationView;
     //Menu de navigation latérale
     protected NavigationView navigationView;
+    //
+    protected View headerNavView;
+    //
+    protected ShapeableImageView profile;
     //
     protected ReviewManager manager;
     //
@@ -297,6 +302,8 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
 
         //Navigation drawer
         navigationView = findViewById(R.id.navigation);
+        headerNavView = navigationView.getHeaderView(0);
+        profile = headerNavView.findViewById(R.id.profile_image);
 
         //Nous appliquons le même style aux éléments de menu
         //Utils.applyFontStyleToMenu(this, navigationView.getMenu(), R.font.google_sans);
@@ -529,7 +536,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
             }
             editor.commit();
             loadLocale();
-        }else{
+        } else {
             setLocale(language);
         }
     }

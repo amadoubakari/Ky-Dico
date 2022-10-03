@@ -15,6 +15,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import rx.Observable;
+
 public class Utils {
 
     // liste de messages d'une exception - version 1
@@ -93,13 +95,17 @@ public class Utils {
 
 
     /**
-     *
      * @param context
      * @param activityClass
+     * @return
      */
-    public static void restartApplication(DApplicationContext context, Class activityClass) {
-        TaskStackBuilder.create(context)
-                .addNextIntent(new Intent(context, activityClass))
-                .startActivities();
+    public static Observable<Object> restartApplication(DApplicationContext context, Class activityClass) {
+        return Observable.create(subscriber -> {
+            TaskStackBuilder.create(context)
+                    .addNextIntent(new Intent(context, activityClass))
+                    .startActivities();
+            subscriber.onCompleted();
+        });
     }
+
 }

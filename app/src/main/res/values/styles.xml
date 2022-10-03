@@ -104,5 +104,8 @@
         <item name="colorOnSurface">@color/color_on_surface</item>
         <item name="android:background">@color/app_background_color</item>
     </style>
+    <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="android:minHeight">0dp</item>
+    </style>
 
 </resources>

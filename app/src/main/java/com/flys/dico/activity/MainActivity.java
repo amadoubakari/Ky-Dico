@@ -158,6 +158,8 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
 
         initializeAds();
 
+        profile.setOnClickListener(new ProfileOnclickListener());
+
     }
 
     /**
@@ -176,7 +178,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         if (user != null && user.getType() != null) {
             updateUserConnectedProfile(user);
         }
-
     }
 
 
@@ -385,7 +386,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
 
     @Override
     public Observable<List<Word>> loadWords(Context context, String query, String locale) {
-        return dao.loadWords(context, query,locale);
+        return dao.loadWords(context, query, locale);
     }
 
     @Override
@@ -550,12 +551,10 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
      * @param user
      */
     void updateUserConnectedProfile(User user) {
-        View headerNavView = navigationView.getHeaderView(0);
-        ShapeableImageView profile = headerNavView.findViewById(R.id.profile_image);
         TextView title = headerNavView.findViewById(R.id.profile_user_name);
         TextView mail = headerNavView.findViewById(R.id.profile_user_email_address);
         MenuItem disconnect = navigationView.getMenu().findItem(R.id.menu_deconnexion);
-        LinearLayout userInfo=headerNavView.findViewById(R.id.profile_user_info);
+        LinearLayout userInfo = headerNavView.findViewById(R.id.profile_user_info);
         //Si l'utilisateur est connecte?
         if (user != null && (user.getEmail() != null || user.getPhone() != null)) {
             disconnect.setVisible(true);
@@ -579,7 +578,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
             }
             profile.setStrokeColor(getColorStateList(R.color.color_secondary));
             profile.setStrokeWidth((float) 0.5);
-            profile.setOnClickListener(null);
             userInfo.setVisibility(View.VISIBLE);
         } else {
             userInfo.setVisibility(View.GONE);
@@ -587,12 +585,18 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
             profile.setStrokeWidth(0);
             disconnect.setVisible(false);
             profile.setImageDrawable(getDrawable(R.drawable.ic_outline_account_circle_24));
-            profile.setOnClickListener(v -> {
-                signIn();
-            });
         }
     }
 
+    class ProfileOnclickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            User user=updateProfile();
+            if (user == null){
+                signIn();
+            }
+        }
+    }
 
     /**
      * @param user
@@ -870,7 +874,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                         .setAvailableProviders(providers)
                         .setAuthMethodPickerLayout(customLayout)
                         .setLogo(R.drawable.logo)      // Set logo drawable
-                       .setTheme(R.style.AppTheme_NoActionBar)      // Set theme
+                        .setTheme(R.style.AppTheme_NoActionBar)      // Set theme
                         /*.setTosAndPrivacyPolicyUrls(
                                 "https://example.com/terms.html",
                                 "https://example.com/privacy.html")*/

@@ -141,10 +141,11 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
         Log.e(TAG, "initFragment");
         ((AppCompatActivity) mainActivity).getSupportActionBar().show();
         appUpdateManager = AppUpdateManagerFactory.create(activity);
+        wordToShares = new ArrayList<>();
+        searchView = (SearchView) menuItem.getActionView();
         if (previousState == null) {
             reloadData();
         }
-        wordToShares = new ArrayList<>();
     }
 
     @Override
@@ -160,7 +161,6 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
         if (appUpdateManager == null) {
             appUpdateManager = AppUpdateManagerFactory.create(activity);
         }
-
     }
 
     @Override
@@ -171,12 +171,10 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
     @Override
     protected void notifyEndOfUpdates() {
         Log.e(TAG, "notifyEndOfUpdates");
-
     }
 
     @Override
     protected void notifyEndOfTasks(boolean runningTasksHaveBeenCanceled) {
-
     }
 
     @Override
@@ -205,13 +203,11 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
             wordToShares.clear();
             mainActivity.closeActionModeShareWords();
         }
-
     }
 
 
     @OptionsItem(R.id.search)
     protected void doSearch() {
-        searchView = (SearchView) menuItem.getActionView();
         initSearchFeatureNew();
     }
 
@@ -227,7 +223,6 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
         super.onDestroy();
         wasInPause = false;
         askedForUpdate = false;
-
     }
 
     @Override
@@ -259,35 +254,32 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
     private void initSearchFeatureNew() {
         AtomicReference<String> queryWords = new AtomicReference<>();
         //Launch the loader
-        beginRunningTasks(1);
         RxSearchObservable.fromSearchView(searchView)
                 .debounce(1500, TimeUnit.MILLISECONDS)
                 .distinctUntilChanged()
                 //Search all words containing query word
-                .switchMap((Func1<String, Observable<List<Word>>>) query -> {
-                    queryWords.set(query);
-                    return mainActivity.loadWords(activity, query,mainActivity.getSharedPreferences().getString(Constants.MY_LAND,null));
-                })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(wordList -> {
-                    //No item found
-                    if (wordList.isEmpty()) {
-                        llSearchBlock.setVisibility(View.VISIBLE);
-                        recyclerView.setVisibility(View.GONE);
-                        sendQueryWordToTheServer(queryWords, activity.getString(R.string.fragment_home_database_root_ref), activity.getString(R.string.fragment_home_database_reference));
-                    } else {
-                        llSearchBlock.setVisibility(View.GONE);
-                        recyclerView.setVisibility(View.VISIBLE);
-                        if (!queryWords.get().isEmpty()) {
-                            sendQueryWordToTheServer(queryWords, activity.getString(R.string.fragment_home_database_tops), activity.getString(R.string.fragment_home_database_reference));
+                .subscribe(query -> {
+                    queryWords.set(query);
+                    beginRunningTasks(1);
+                    executeInBackground(mainActivity.loadWords(activity, query, mainActivity.getSharedPreferences().getString(Constants.MY_LAND, null)), wordList -> {
+                        //No item found
+                        if (wordList.isEmpty()) {
+                            llSearchBlock.setVisibility(View.VISIBLE);
+                            recyclerView.setVisibility(View.GONE);
+                            sendQueryWordToTheServer(queryWords, activity.getString(R.string.fragment_home_database_root_ref), activity.getString(R.string.fragment_home_database_reference));
+                        } else {
+                            llSearchBlock.setVisibility(View.GONE);
+                            recyclerView.setVisibility(View.VISIBLE);
+                            if (!queryWords.get().isEmpty()) {
+                                sendQueryWordToTheServer(queryWords, activity.getString(R.string.fragment_home_database_tops), activity.getString(R.string.fragment_home_database_reference));
+                            }
                         }
-                    }
-                    wordAdapter = new WordAdapter(activity, wordList, queryWords.get(),mainActivity.getSharedPreferences().getString(Constants.MY_LAND,null), getWordLongClickListener(), getOnSearchActionListener());
-                    recyclerView.setLayoutManager(new LinearLayoutManager(activity));
-                    recyclerView.setAdapter(wordAdapter);
-                    //cancel the loading
-                    cancelWaitingTasks();
+                        wordAdapter = new WordAdapter(activity, wordList, queryWords.get(), mainActivity.getSharedPreferences().getString(Constants.MY_LAND, null), getWordLongClickListener(), getOnSearchActionListener());
+                        recyclerView.setLayoutManager(new LinearLayoutManager(activity));
+                        recyclerView.setAdapter(wordAdapter);
+                    });
                 });
     }
 
@@ -297,32 +289,28 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
                 .debounce(1500, TimeUnit.MILLISECONDS)
                 .distinctUntilChanged()
                 //Search all words containing query word
-                .switchMap((Func1<String, Observable<List<Word>>>) query -> {
-                    queryWords.set(query);
-                    return mainActivity.loadWords(activity, query, mainActivity.getSharedPreferences().getString(Constants.MY_LAND,null));
-                })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(wordList -> {
-                    //No item found
-                    if (wordList.isEmpty()) {
-                        llSearchBlock.setVisibility(View.VISIBLE);
-                        recyclerView.setVisibility(View.GONE);
-                        sendQueryWordToTheServer(queryWords, activity.getString(R.string.fragment_home_database_root_ref), activity.getString(R.string.fragment_home_database_reference));
-                    } else {
-                        llSearchBlock.setVisibility(View.GONE);
-                        recyclerView.setVisibility(View.VISIBLE);
-                        if (!queryWords.get().isEmpty()) {
-                            sendQueryWordToTheServer(queryWords, activity.getString(R.string.fragment_home_database_tops), activity.getString(R.string.fragment_home_database_reference));
+                .subscribe(query -> {
+                    queryWords.set(query);
+                    beginRunningTasks(1);
+                    executeInBackground(mainActivity.loadWords(activity, query, mainActivity.getSharedPreferences().getString(Constants.MY_LAND, null)), wordList -> {
+                        //No item found
+                        if (wordList.isEmpty()) {
+                            llSearchBlock.setVisibility(View.VISIBLE);
+                            recyclerView.setVisibility(View.GONE);
+                            sendQueryWordToTheServer(queryWords, activity.getString(R.string.fragment_home_database_root_ref), activity.getString(R.string.fragment_home_database_reference));
+                        } else {
+                            llSearchBlock.setVisibility(View.GONE);
+                            recyclerView.setVisibility(View.VISIBLE);
+                            if (!queryWords.get().isEmpty()) {
+                                sendQueryWordToTheServer(queryWords, activity.getString(R.string.fragment_home_database_tops), activity.getString(R.string.fragment_home_database_reference));
+                            }
                         }
-                    }
-                    wordAdapter = new WordAdapter(activity, wordList, queryWords.get(), mainActivity.getSharedPreferences().getString(Constants.MY_LAND,null), getWordLongClickListener(), getOnSearchActionListener());
-                    recyclerView.setLayoutManager(new LinearLayoutManager(activity));
-                    recyclerView.setAdapter(wordAdapter);
-                    searchView = (SearchView) menuItem.getActionView();
-                    searchView.setQuery(queryWords.get(),false);
-                    //cancel the loading
-                    cancelWaitingTasks();
+                        wordAdapter = new WordAdapter(activity, wordList, queryWords.get(), mainActivity.getSharedPreferences().getString(Constants.MY_LAND, null), getWordLongClickListener(), getOnSearchActionListener());
+                        recyclerView.setLayoutManager(new LinearLayoutManager(activity));
+                        recyclerView.setAdapter(wordAdapter);
+                    });
                 });
     }
 
@@ -341,11 +329,11 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
         llSearchBlock.setVisibility(View.GONE);
         index = 0;
         words = new ArrayList<>();
-        wordAdapter = new WordAdapter(activity, words, itemsPerDisplay, mainActivity.getSharedPreferences().getString(Constants.MY_LAND,null), getWordLongClickListener(), getOnSearchActionListener());
+        wordAdapter = new WordAdapter(activity, words, itemsPerDisplay, mainActivity.getSharedPreferences().getString(Constants.MY_LAND, null), getWordLongClickListener(), getOnSearchActionListener());
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         recyclerView.setHasFixedSize(true);
         beginRunningTasks(1);
-        executeInBackground(mainActivity.loadSequenceWords(activity, index, size, mainActivity.getSharedPreferences().getString(Constants.MY_LAND,null)).delay(1000, TimeUnit.MILLISECONDS), wordList -> {
+        executeInBackground(mainActivity.loadSequenceWords(activity, index, size, mainActivity.getSharedPreferences().getString(Constants.MY_LAND, null)).delay(1500, TimeUnit.MILLISECONDS), wordList -> {
             recyclerView.setVisibility(View.VISIBLE);
             recyclerView.setAdapter(wordAdapter);
             wordAdapter.addWords(wordList);
@@ -426,7 +414,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
     private void loadNextData(WordAdapter wordAdapter) {
         wordAdapter.setLoading();
         index += size;
-        executeInBackground(mainActivity.loadSequenceWords(activity, index, size, mainActivity.getSharedPreferences().getString(Constants.MY_LAND,null)).delay(500, TimeUnit.MILLISECONDS), wordList -> {
+        executeInBackground(mainActivity.loadSequenceWords(activity, index, size, mainActivity.getSharedPreferences().getString(Constants.MY_LAND, null)).delay(500, TimeUnit.MILLISECONDS), wordList -> {
             wordAdapter.insertData(wordList);
         });
     }
