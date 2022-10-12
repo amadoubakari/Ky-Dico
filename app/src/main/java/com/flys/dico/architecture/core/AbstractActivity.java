@@ -563,7 +563,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         SharedPreferences.Editor nightMode = sharedPreferences.edit();
         nightMode.putInt(Constants.NIGHT_MODE_KEY, mode);
         nightMode.apply();
-        com.flys.dico.architecture.core.Utils.restartApplication(DApplicationContext.getInstance(), MainActivity_.class);
+        com.flys.dico.architecture.core.Utils.restartApplication(this);
     }
 
     @Override
@@ -587,8 +587,5 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     @Override
     public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        //Locale primaryLocale = newConfig.getLocales().get(0);
-        //String locale = primaryLocale.getDisplayName();
-        com.flys.dico.architecture.core.Utils.restartApplication(DApplicationContext.getInstance(), MainActivity_.class);
     }
 }

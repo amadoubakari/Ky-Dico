@@ -272,8 +272,7 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 }
             }
 
-            // Arrays.asList("number", "location", "storage", "hardware", "software", "mouse", "keyboard", "disk", "wireless").stream().forEach(s -> Linkify.addLinks(spannable, Pattern.compile(s), ""));
-            Utils.loadHighLightedWords(context, this.locale).distinct().subscribe(highLightedWords -> {
+           Utils.loadHighLightedWords(context, this.locale).distinct().subscribe(highLightedWords -> {
                 highLightedWords.stream().forEach(s -> Linkify.addLinks(spannable, Pattern.compile(s), ""));
             });
             Utils.stripUnderlines(spannable, onSearchActionListener);

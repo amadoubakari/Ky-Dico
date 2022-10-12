@@ -107,7 +107,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
     private static FirebaseDatabase database;
     private static List<WordToShare> wordToShares;
 
-    private final int itemsPerDisplay = 8;
+    private int itemsPerDisplay = 6;
     // Creates instance of the update app manager.
     private AppUpdateManager appUpdateManager;
 
@@ -141,11 +141,10 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
         Log.e(TAG, "initFragment");
         ((AppCompatActivity) mainActivity).getSupportActionBar().show();
         appUpdateManager = AppUpdateManagerFactory.create(activity);
-        wordToShares = new ArrayList<>();
-        searchView = (SearchView) menuItem.getActionView();
         if (previousState == null) {
             reloadData();
         }
+        wordToShares = new ArrayList<>();
     }
 
     @Override
@@ -208,19 +207,22 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
 
     @OptionsItem(R.id.search)
     protected void doSearch() {
-        initSearchFeatureNew();
+ /*       searchView = (SearchView) menuItem.getActionView();
+        initSearchFeatureNew();*/
     }
 
 
     @Override
     public void onPause() {
         super.onPause();
+        Log.e(TAG, "onPause");
         wasInPause = true;
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+        Log.e(TAG, "onDestroy");
         wasInPause = false;
         askedForUpdate = false;
     }
@@ -229,17 +231,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         //Call for updating application state
         if (requestCode == PLAY_STORE_UPDATE_REQUEST_CODE) {
-            if (resultCode != activity.RESULT_OK) {
-                Log.e(TAG, "Update flow failed! Result code: " + resultCode);
-                // If the update is cancelled or fails,
-                // you can request to start the update again.
-                cancelRunningTasks();
-            } else if (resultCode == activity.RESULT_CANCELED) {
-                cancelRunningTasks();
-            } else if (resultCode == ActivityResult.RESULT_IN_APP_UPDATE_FAILED) {
-                cancelRunningTasks();
-                Log.e(TAG, "Some other error prevented either the user from providing consent or the update to proceed. " + resultCode);
-            }
+            cancelRunningTasks();
         }
     }
 
@@ -252,6 +244,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
      * Base search function
      */
     private void initSearchFeatureNew() {
+        searchView = (SearchView) menuItem.getActionView();
         AtomicReference<String> queryWords = new AtomicReference<>();
         //Launch the loader
         RxSearchObservable.fromSearchView(searchView)
@@ -338,6 +331,7 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
             recyclerView.setAdapter(wordAdapter);
             wordAdapter.addWords(wordList);
             applyLoadMoreOnScrollListener(wordAdapter);
+            initSearchFeatureNew();
         });
 
     }

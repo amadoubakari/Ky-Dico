@@ -1,12 +1,15 @@
 package com.flys.dico.architecture.core;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.os.Handler;
 import android.view.View;
 
 import androidx.core.app.TaskStackBuilder;
 
+import com.facebook.appevents.codeless.CodelessLoggingEventListener;
 import com.flys.dico.R;
 import com.flys.dico.architecture.custom.DApplicationContext;
 import com.google.android.material.snackbar.Snackbar;
@@ -14,8 +17,6 @@ import com.google.android.material.snackbar.Snackbar;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
-import rx.Observable;
 
 public class Utils {
 
@@ -97,14 +98,25 @@ public class Utils {
     /**
      * @param context
      * @param activityClass
-     * @return
      */
-    public static Observable<Object> restartApplication(DApplicationContext context, Class activityClass) {
-        return Observable.create(subscriber -> {
-            TaskStackBuilder.create(context)
-                    .addNextIntent(new Intent(context, activityClass))
-                    .startActivities();
-            subscriber.onCompleted();
+    public static void restartApplication(DApplicationContext context, Class activityClass) {
+        TaskStackBuilder.create(context)
+                .addNextIntent(new Intent(context, activityClass))
+                .startActivities();
+    }
+
+    /**
+     * @param activity
+     */
+    public static void restartApplication(Activity activity) {
+        new Handler().post(() -> {
+            Intent intent = activity.getIntent();
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK
+                    | Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            activity.overridePendingTransition(0, 0);
+            activity.finish();
+            activity.overridePendingTransition(0, 0);
+            activity.startActivity(intent);
         });
     }
 

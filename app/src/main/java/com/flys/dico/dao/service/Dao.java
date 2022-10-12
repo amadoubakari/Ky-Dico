@@ -253,7 +253,6 @@ public class Dao extends AbstractDao implements IDao {
                                 .collect(Collectors.toList()));
                 subscriber.onCompleted();
             } catch (IOException e) {
-                e.printStackTrace();
                 subscriber.onError(e);
             }
         });
