@@ -42,7 +42,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.flys.dico.R;
 import com.flys.dico.architecture.core.AbstractFragment;
+import com.flys.dico.architecture.core.ISession;
 import com.flys.dico.architecture.custom.CoreState;
+import com.flys.dico.architecture.custom.IMainActivity;
 import com.flys.dico.dao.db.NotificationDao;
 import com.flys.dico.dao.db.NotificationDaoImpl;
 import com.flys.dico.dao.entities.WordToShare;
@@ -55,7 +57,6 @@ import com.google.android.play.core.appupdate.AppUpdateManager;
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
 import com.google.android.play.core.install.InstallState;
 import com.google.android.play.core.install.InstallStateUpdatedListener;
-import com.google.android.play.core.install.model.ActivityResult;
 import com.google.android.play.core.install.model.AppUpdateType;
 import com.google.android.play.core.install.model.InstallStatus;
 import com.google.android.play.core.install.model.UpdateAvailability;
@@ -204,14 +205,6 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
         }
     }
 
-
-    @OptionsItem(R.id.search)
-    protected void doSearch() {
- /*       searchView = (SearchView) menuItem.getActionView();
-        initSearchFeatureNew();*/
-    }
-
-
     @Override
     public void onPause() {
         super.onPause();
@@ -237,7 +230,8 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
 
     @Click(R.id.tv_change_language_id)
     public void tvChangeLanguage() {
-        changeLanguage();
+        cancelRunningTasks();
+        mainActivity.navigateToView(IMainActivity.SETTINGS_FRAGMENT, ISession.Action.SUBMIT);
     }
 
     /**
@@ -255,7 +249,6 @@ public class HomeFragment extends AbstractFragment implements StateUpdatedListen
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(query -> {
                     queryWords.set(query);
-                    beginRunningTasks(1);
                     executeInBackground(mainActivity.loadWords(activity, query, mainActivity.getSharedPreferences().getString(Constants.MY_LAND, null)), wordList -> {
                         //No item found
                         if (wordList.isEmpty()) {

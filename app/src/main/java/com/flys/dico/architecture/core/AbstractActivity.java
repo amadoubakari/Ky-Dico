@@ -542,18 +542,6 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     }
 
     @Override
-    public void recreateActivity() {
-        Intent intent = new Intent(this, MainActivity_.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP
-                | Intent.FLAG_ACTIVITY_CLEAR_TASK
-        );
-        PendingIntent pendingIntent = PendingIntent.getActivity(DApplicationContext.getContext(), 0, intent, PendingIntent.FLAG_ONE_SHOT);
-        AlarmManager mgr = (AlarmManager) DApplicationContext.getContext().getSystemService(Context.ALARM_SERVICE);
-        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, pendingIntent);
-        finishAndRemoveTask();
-    }
-
-    @Override
     public void hideBottomNavigation(int visibility) {
         bottomNavigationView.setVisibility(visibility);
     }

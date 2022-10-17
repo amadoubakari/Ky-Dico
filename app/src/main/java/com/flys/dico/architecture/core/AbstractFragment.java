@@ -514,6 +514,7 @@ public abstract class AbstractFragment extends Fragment {
         MaterialNotificationDialog notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), getString(R.string.abstract_fragment_restart_app), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_no_msg), activity.getDrawable(R.drawable.logo), R.style.customMaterialAlertEditDialog), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
             @Override
             public void okButtonAction(DialogInterface dialogInterface, int i) {
+                beginRunningTasks(1);
                 Utils.restartApplication(getActivity());
             }
 

@@ -18,6 +18,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import rx.Observable;
+
 public class Utils {
 
     // liste de messages d'une exception - version 1
@@ -109,7 +111,19 @@ public class Utils {
      * @param activity
      */
     public static void restartApplication(Activity activity) {
-        new Handler().post(() -> {
+        new Handler().postDelayed(() -> {
+            Intent intent = activity.getIntent();
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK
+                    | Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            activity.overridePendingTransition(0, 0);
+            activity.finish();
+            activity.overridePendingTransition(0, 0);
+            activity.startActivity(intent);
+        },3000);
+    }
+
+    public static Observable restartApplicationObservable(Activity activity) {
+        return Observable.create(subscriber -> {
             Intent intent = activity.getIntent();
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK
                     | Intent.FLAG_ACTIVITY_NO_ANIMATION);

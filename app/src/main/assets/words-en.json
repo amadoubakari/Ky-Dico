@@ -1,5 +1,4 @@
 [
-  "number",
   "location",
   "storage",
   "hardware",
@@ -23,5 +22,17 @@
   "Advanced RISC Machines",
   "Application Foundation Classes",
   "link aggregation",
-  "artificial intelligence"
+  "artificial intelligence",
+  "Domain Name System",
+  "Internet Protocol",
+  "ARP",
+  "AirPort",
+  "UNIX",
+  "GUIs",
+  "GUI",
+  "ALGOL",
+  "processor",
+  "application",
+  "programming"
+
 ]

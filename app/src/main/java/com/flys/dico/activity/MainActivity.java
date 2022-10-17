@@ -68,7 +68,6 @@ import com.flys.tools.domain.NotificationData;
 import com.flys.tools.utils.FileUtils;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.badge.BadgeDrawable;
-import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.play.core.appupdate.AppUpdateManager;
 import com.google.firebase.auth.FirebaseAuth;

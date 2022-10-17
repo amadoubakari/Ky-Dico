@@ -25907,6 +25907,350 @@
     {
       "title": "pop-up ad ",
       "description": "n. An advertisement on the Internet that appears in a new window in the foreground, often whenever a new page is opened within a site. Pop-up ads may appear in response to a mouse click, a rollover, or after a user has spent a predetermined amount of time at a Web site. See also pop-under ad."
+    },
+    {
+      "title": "pop-up Help",
+      "description": "n. An online help system whose messages appear as pop-up windows when the user clicks on a topic or area of the screen about which help is desired. Typically, a special form of click, such as clicking the right mouse button or Option-clicking, will activate pop-up Help, if it is available. See also Balloon Help."
+    },
+    {
+      "title": "pop-up menu or popup menu",
+      "description": "n. In a graphical user interface, a menu that appears on-screen when a user selects a certain item. Pop-up menus can appear anywhere on the screen and generally disappear when the user selects an item in the menu. Also called: popup. Compare drop-down menu, pull-down menu."
+    },
+    {
+      "title": "pop-up messages",
+      "description": "n. The messages that appear when pop-up Help is used."
+    },
+    {
+      "title": "pop-up window",
+      "description": "n. A window that appears when an option is selected. Typically, the window remains visible until the mouse button is released."
+    },
+    {
+      "title": "port (1)",
+      "description": "n. 1. An interface through which data is transferred between a computer and other devices (such as a printer, mouse, keyboard, or monitor), a network, or a direct connection to another computer. The port appears to the CPU as one or more memory addresses that it can use to send or receive data. Specialized hardware, such as in an add-on circuit board, places data from the device in the memory addresses and sends data from the memory addresses to the device. Ports may also be dedicated solely to input or to output. Ports typically accept a particular type of plug used for a specific purpose. For example, a serial data port, a keyboard, and a high-speed network port all use different connectors, so it’s not possible to plug a cable into the wrong port. Also called: input/output port. 2. port number."
+    },
+    {
+      "title": "port(2)",
+      "description": "2 vb. 1. To change a program in order to be able to run it on a different computer. 2. To move documents, graphics, and other files from one computer to another."
+    },
+    {
+      "title": "port 25 blocking",
+      "description": "n. An anti-spam technique adopted by many ISPs to prevent bulk mailings of unsolicited commercial e-mail. Spammers may try to use SMTP servers to relay a single commercial e-mail to multiple recipients. Port 25 blocking filters prevent this spam distribution method. Although it is a popular remedy for some spam problems, port 25 blocking may cause problems for legitimate users of non-compatible e-mail programs."
+    },
+    {
+      "title": "portable",
+      "description": "adj. 1. Capable of running on more than one computer system or under more than one operating system. Highly portable software can be moved to other systems with little effort, moderately portable software can be moved only with substantial effort, and nonportable software can be moved only with effort similar to or greater than the effort of writing the original program. 2. Light enough, rugged enough, and free enough of encumbering external connections to be carried by a user."
+    },
+    {
+      "title": "portable computer",
+      "description": "n. Any computer designed to be moved easily. Portable computers can be characterized by size and weight. See the table."
+    },
+    {
+      "title": "Portable Digital Document",
+      "description": "n. See PDD"
+    },
+    {
+      "title": "Portable Distributed Objects",
+      "description": "n. Software from NeXT, running under UNIX, that supports an object model in which objects to be stored at various locations on a network can be accessed as though they were at a single location. Acronym: PDO. "
+    },
+    {
+      "title": "Portable Document Format",
+      "description": "n. The Adobe specification for electronic documents that use the Adobe Acrobat family of servers and readers. Acronym: PDF. See also Acrobat, .pdf."
+    },
+    {
+      "title": "portable executable file",
+      "description": "n. The file format used for executable programs as well as for files that are linked together to form executable programs."
+    },
+    {
+      "title": "portable keyboard",
+      "description": "n. A portable keyboard for use with personal digital assistants (PDAs), wireless phones with advanced digital features, and other handheld mobile devices. Light, compact, and easy to carry, most portable keyboards fold for convenient storage and connect to the handheld device via a built-in cradle."
+    },
+    {
+      "title": "portable language",
+      "description": "n. A language that runs in the same way on different systems and therefore can be used for developing software for all of them. C, FORTRAN, and Ada are portable languages because their implementations on different systems are highly uniform; assembly language is extremely nonportable."
+    },
+    {
+      "title": "Portable Network Graphics",
+      "description": "n. See PNG."
+    },
+    {
+      "title": "portal",
+      "description": " n. A Web site that serves as a gateway to the Internet. A portal is a collection of links, content, and services designed to guide users to information they are likely to find interesting—news, weather, entertainment, commerce sites, chat rooms, and so on. Yahoo!, Excite, MSN.com, and Netscape NetCenter are examples of portals. See also home page (definition 1), Web site."
+    },
+    {
+      "title": "port enumerator",
+      "description": " n. In Windows, part of the Plug and Play system that detects I/O ports and reports them to the configuration manager. See also plug and play (definition 2)."
+    },
+    {
+      "title": "port expander",
+      "description": "n. A hardware mechanism used for connecting several devices to a single port. Although several devices might be connected, only one can use the port at any given moment"
+    },
+    {
+      "title": "portmapper",
+      "description": " n. A service used by Remote Procedure Call (RPC) to assign port numbers. RPC doesn’t follow the Well-Known Ports port designations, and only Portmapper is assigned a permanent port number. Because hackers may gain access to portmapper communication, various portmapper security tools are often used to prevent theft of information. See also remote procedure call."
+    },
+    {
+      "title": "port number",
+      "description": "n. A number that enables IP packets to be sent to a particular process on a computer connected to the Internet. Some port numbers, called “well-known” port numbers, are permanently assigned; for example, e-mail data under SMTP goes to port number 25. A process such as a telnet session receives an “ephemeral” port number when it starts; data for that session goes to that port number, and the port number goes out of use when the session ends. A total of 65,535 port numbers are available for use with TCP, and the same number are available for UDP. See also IP, Simple Mail Transfer Protocol, socket (definition 1), TCP, UDP. Compare IP address."
+    },
+    {
+      "title": "portrait mode",
+      "description": "n. A vertical print orientation in which a document is printed across the narrower dimension of a rectangular sheet of paper. This is the print mode typical of most letters, reports, and other such documents. Compare landscape mode."
+    },
+    {
+      "title": "portrait monitor",
+      "description": "n. A monitor with a screen shape higher than it is wide. The proportions (but not necessarily the size) of the screen are usually the same as for a sheet of 81/2-by-11-inch paper. Compare landscape monitor."
+    },
+    {
+      "title": "port replicator",
+      "description": "n. A device that enables easy connection of portable computers to less portable devices, such as printers, monitors, and full-sized keyboards. Instead of having to connect each such device individually to a portable computer, a user can plug it permanently into a port replicator and use it simply by plugging the computer into a single socket, also on the port replicator. Port replicators are comparable to docking stations, but without the same capability for expansion and storage. Also called: convenience adapter. See also docking station, port."
+    },
+    {
+      "title": "POS",
+      "description": "n. Acronym for point of sale. The place in a store at which goods are paid for. Computerized transaction systems, such as those in use at automated supermarkets, use scanners for reading tags and bar codes, electronic cash registers, and other special devices to record purchases at this point."
+    },
+    {
+      "title": "POSIT",
+      "description": "n. Acronym for Profiles for Open Systems Internetworking Technology. A set of nonmandatory standards for U.S. government network equipment. POSIT, which recognizes the prevalence of TCP/IP, is the successor to GOSIP. See also GOSIP, TCP/IP."
+    },
+    {
+      "title": "positional notation",
+      "description": "n. In mathematics, a form of notation whose meaning relies in part on the relative location of the elements involved. For example, common numeric notation is positional notation. In the decimal number 34, the position of the numeral 3 signifies three 10s and the position of the numeral 4 signifies four 1s."
+    },
+    {
+      "title": "POSIX",
+      "description": "n. Acronym for Portable Operating System Interface for UNIX. An Institute of Electrical and Electronics Engineers (IEEE) standard that defines a set of operatingsystem services. Programs that adhere to the POSIX standard can be easily ported from one system to another. POSIX was based on UNIX system services, but it was created in a way that allows it to be implemented by other operating systems. See also service (definition 2)."
+    },
+    {
+      "title": "post(1)",
+      "description": "n. See article."
+    },
+    {
+      "title": "post(2)",
+      "description": "vb. 1. To submit an article in a newsgroup or other online conference or forum. The term is derived from the “posting” of a notice on a physical bulletin board. See also newsgroup. 2. To place a file on a server on a network or on a Web site."
+    },
+    {
+      "title": "POST",
+      "description": "n. See power-on self test."
+    },
+    {
+      "title": "posterization",
+      "description": "n. See contouring."
+    },
+    {
+      "title": "postfix notation",
+      "description": "n. A form of algebraic notation in which the operators appear after the operands. Also called: reverse Polish notation. Compare infix notation, prefix notation."
+    },
+    {
+      "title": "postmaster",
+      "description": "n. The logon name (and therefore the e-mail address) of an account that is responsible for maintaining e-mail services on a mail server. When an account holder is having trouble with e-mail, a message to postmaster or “postmaster@machine.org.domain.name” will usually reach a human who can solve the problem."
+    },
+    {
+      "title": "post office",
+      "description": "n. The server and associated storage and mail handling services that provide the centralized location for collection and distribution of e-mail over a network."
+    },
+    {
+      "title": "Post Office Protoco",
+      "description": "n. A protocol for servers on the Internet that receive, store, and transmit e-mail and for clients on computers that connect to the servers to download and upload e-mail. Acronym: POP. "
+    },
+    {
+      "title": "postprocessor",
+      "description": "n. A device or a software routine, such as a linker, that operates on data manipulated first by another processor. See also back-end processor (definition 2).Compare preprocessor."
+    },
+    {
+      "title": "PostScript",
+      "description": "n. A page-description language from Adobe Systems that offers flexible font capability and high-quality graphics. The most well-known page-description language, PostScript uses English-like commands to control page layout and to load and scale outline fonts. Adobe Systems is also responsible for Display PostScript, a graphics language for computer displays that gives users of both PostScript and Display PostScript absolute WYSIWYG (what-you-see-is-what-you-get), which is difficult when different methods are used for displaying and printing. See also outline font, page-description language."
+    },
+    {
+      "title": "PostScript font",
+      "description": "n. A font defined in terms of the PostScript page-description language rules and intended to be printed on a PostScript-compatible printer. PostScript fonts are distinguished from bitmapped fonts by their smoothness, detail, and faithfulness to standards of quality established in the typographic industry. See also PostScript. Compare screen font."
+    },
+    {
+      "title": "pot",
+      "description": "n. See potentiometer."
+    },
+    {
+      "title": "potential",
+      "description": "n. See electromotive force."
+    },
+    {
+      "title": "potentiometer",
+      "description": "n. A circuit element that can be adjusted to provide varying amounts of resistance. The twist-knob and slider-type volume controls on many radios and television sets are potentiometers. Also called: pot."
+    },
+    {
+      "title": "POTS",
+      "description": "n. Acronym for Plain Old Telephone Service. Basic dialup telephone connections to the public switched network without any added features or functions. A POTS line is nothing but a phone line connected to a simple, single-line telephone instrument."
+    },
+    {
+      "title": "pour",
+      "description": "vb. To send a file or the output from a program to another file or to a device using a pipe. See also pipe (definition 1)."
+    },
+    {
+      "title": "power",
+      "description": "n. 1. In mathematics, the number of times a value is multiplied by itself—for example, 10 to the third power means 10 times 10 times 10. 2. In computing, the electricity used to run a computer. 3. The speed at which a computer performs and the availability of various features. See also computer power."
+    },
+    {
+      "title": "PowerBook",
+      "description": "n. Any of several computers in the family of portable Macintosh computers made by Apple."
+    },
+    {
+      "title": "power conditioning",
+      "description": "n. A feature of uninterruptible power supply (UPS) that removes spikes, surges, sags, and noise from the power supply. Also called: line conditioning. See also UPS."
+    },
+    {
+      "title": "power down",
+      "description": "vb. To shut down (a computer); to turn off the power."
+    },
+    {
+      "title": "power failure",
+      "description": "n. Loss of electricity, which causes a loss of unsaved data in a computer’s random access memory (RAM) if no backup power supply is connected to the machine. Compare surge."
+    },
+    {
+      "title": "Power Mac",
+      "description": "n. See Power Macintosh."
+    },
+    {
+      "title": "Power Macintosh",
+      "description": "n. A Macintosh computer based on the PowerPC processor. The first Power Macintoshes, 6100/60, 7100/66, and 8100/80, were unveiled in 1994. Several upgraded versions followed, and in early 1999 the G3, a PowerPC 750, was released. This was followed later in the year with the unveiling of the Power Macintosh G4. The Power Mac G4 uses the PowerPC 7400 processor and features significant boosts in processing speed. The Power Mac G4 uses Apple’s Velocity Engine to process information in 128-bit chunks, allowing sustained performance in excess of one gigaflop. Also called: Power Mac. See also PowerPC."
+    },
+    {
+      "title": "power management",
+      "description": "n. The regulation of power consumption on a computer, especially a portable batteryoperated device such as a laptop. Power management reduces power to certain components, such as the screen and CPU, to use power efficiently and extend battery life. See also ACPI, Advanced Power Management."
+    },
+    {
+      "title": "Power-on key",
+      "description": "n. A special key on the Apple ADB and Extended keyboards used for turning on a Macintosh II. The Power-on key is marked with a left-pointing triangle and is used in lieu of the on/off switch. There is no Poweroff key; the system is shut down by choosing the Shut Down command from the Special menu."
+    },
+    {
+      "title": "power-on self test",
+      "description": "n. A set of routines stored in a computer’s read-only memory (ROM) that tests various system components such as RAM, the disk drives, and the keyboard to see whether they are properly connected and operating. If problems are found, these routines alert the user by sounding a series of beeps or displaying a message, often accompanied by a diagnostic numeric value, to the standard output or standard error device (usually the screen). If the power-on self test is successful, it passes control to the system’s bootstrap loader. Acronym: POST. See also bootstrap loader."
+    },
+    {
+      "title": "PowerPC",
+      "description": "n. A microprocessor architecture developed in 1992 by Motorola and IBM, with some participation by Apple. A PowerPC microprocessor is RISC-based and superscalar, with a 64-bit data bus and 32-bit address bus. It also has separate data and instruction caches, although the size of each varies by implementation. All PowerPC microprocessors have multiple integer and floating-point units. The voltage and operating speed varies with the implementation. Starting with the PowerPC 740, the microprocessors were manufactured with copper, instead of aluminum, for better performance and reliability. See also L1 cache, L2 cache, microprocessor, RISC, superscalar."
+    },
+    {
+      "title": "PowerPC Platform",
+      "description": "n. A platform developed by IBM, Apple, and Motorola based on the 601 and later chips. This platform supports the use of multiple operating systems such as Mac OS, Windows NT, and AIX as well as software designed for those individual operating systems. Acronym: PPCP. "
+    },
+    {
+      "title": "PowerPC Reference Platform",
+      "description": "n. An open system standard developed by IBM. IBM’s goal in designing the PowerPC Reference Platform was to ensure compatibility among PowerPC systems built by different companies. Apple’s PowerPC Macintoshes are not yet compliant with the PowerPC Reference Platform, but future versions are expected to be. Acronym: PReP. See also Common Hardware Reference Platform, open system, PowerPC"
+    },
+    {
+      "title": "PowerPoint",
+      "description": "n. Microsoft’s presentation software. PowerPoint includes text-editing and graphics tools that can create slides for public presentations. The presentations can be printed, projected, displayed on a monitor, or, in the version included with Office 2000, saved and published as Web pages."
+    },
+    {
+      "title": "power supply",
+      "description": "n. An electrical device that transforms standard wall outlet electricity (115–120 VAC in the United States) into the lower voltages (typically 5 to 12 volts DC) required by computer systems. Personal computer power supplies are rated by wattage; they usually range from about 90 watts at the low end to 250 watts at the high end."
+    },
+    {
+      "title": "power surge",
+      "description": "n. See surge."
+    },
+    {
+      "title": "power up",
+      "description": "vb. To start up a computer; to begin a cold boot procedure; to turn on the power."
+    },
+    {
+      "title": "power user",
+      "description": "n. A person adept with computers, particularly on an applications-oriented level rather than on a programming level. A power user is someone who knows a considerable amount about computers and is comfortable enough with applications to be able to work with their most sophisticated features."
+    },
+    {
+      "title": "PPCP",
+      "description": "n. See PowerPC Platform."
+    },
+    {
+      "title": "PPM or ppm",
+      "description": " n. 1. Acronym for pages per minute. A rating of a printer’s output capacity—that is, the number of printed pages the printer can produce in one minute. A printer’s PPM rating is usually provided by the manufacturer and is based on a “normal” page. Pages with excessive graphics or fonts may reduce a printer’s PPM rate dramatically. 2. See pulse position modulation."
+    },
+    {
+      "title": "PPP",
+      "description": "n. Acronym for Point-to-Point Protocol. A widely used data link protocol for transmitting TCP/IP packets over dial-up telephone connections, such as between a computer and the Internet. PPP, which supports dynamic allocation of IP addresses, provides greater protection for data integrity and security and is easier to use than SLIP, at a cost of greater overhead. PPP itself is based on a Link Control Protocol (LCP) responsible for setting up a computer-to-computer link over telephone lines and a Network Control Protocol (NCP) responsible for negotiating network-layer details related to the transmission. It was developed by the Internet Engineering Task Force in 1991. Compare SLIP."
+    },
+    {
+      "title": "PPPoE",
+      "description": "n. Acronym for Point-to-Point Protocol over Ethernet. A specification for connecting users on an Ethernet network to the Internet through a broadband connection, such as a single DSL line, wireless device, or cable modem. Using PPPoE and a broadband modem, LAN users can gain individual authenticated access to high-speed data networks. By combining Ethernet and Point-to-Point Protocol (PPP), PPPoE provides Internet Service Providers (ISPs) with the ability to manipulate a limited number of IP addresses by assigning an address only when the user is connected to the Internet. PPPoE is an efficient way to create a separate connection for each user to a remote server. When the Internet connection is broken, the IP address becomes available to be assigned to another user."
+    },
+    {
+      "title": "PPS",
+      "description": "n. See peripheral power supply."
+    },
+    {
+      "title": "PPTP",
+      "description": "n. Acronym for Point-to-Point Tunneling Protocol. An extension of the Point-to-Point Protocol used for communications on the Internet. PPTP was developed by Microsoft to support virtual private networks (VPNs), which allow individuals and organizations to use the Internet as a secure means of communication. PPTP supports encapsulation of encrypted packets in secure wrappers that can be transmitted over a TCP/IP connection. See also virtual network."
+    },
+    {
+      "title": "PRAM",
+      "description": "n. Short for parameter RAM. A portion of RAM in Macintosh computers that contains configuration information such as the date and time, desktop pattern, and other control panel settings. See also RAM."
+    },
+    {
+      "title": "P-rating",
+      "description": "n. Short for performance rating. A microprocessor rating system by IBM, Cyrix, and others, based on throughput in realistic applications. Formerly, microprocessor clock speed was widely used as a method of rating, but it does not account for differing chip architectures or different types of work people do with computers. See also central processing unit, clock (definition 1), microprocessor."
+    },
+    {
+      "title": "precedence",
+      "description": "n. In applications, the order in which values in a mathematical expression are calculated. In general, application programs perform multiplication and division first, followed by addition and subtraction. Sets of parentheses can be placed around expressions to control the order in which they are calculated. See also operator associativity, operator precedence"
+    },
+    {
+      "title": "precision",
+      "description": "n. 1. The extent of detail used in expressing a number. For example, 3.14159265 gives more precision—more detail—about the value of pi than does 3.14. Precision is related to, but different from, accuracy. Precision indicates degree of detail; accuracy indicates correctness. The number 2.83845 is also more precise than 3.14, but it is less accurate for pi. Compare accuracy. 2. In programming, numeric values are often referred to as single-precision or double-precision values. The difference between the two is in the amount of storage space allotted to the value. See also double-precision, single-precision."
+    },
+    {
+      "title": "precompiler",
+      "description": "n. A program that reads in a source file and makes certain changes to prepare the source file for compilation. Also called: preprocessor. See also compiler (definition 2)."
+    },
+    {
+      "title": "preemptive multitasking",
+      "description": "n. A form of multitasking in which the operating system periodically interrupts the execution of a program and passes control of the system to another waiting program. Preemptive multitasking prevents any one program from monopolizing the system. Also called: time-slice multitasking. See also multitasking. Compare cooperative multitasking"
+    },
+    {
+      "title": "Preferences",
+      "description": "n. A menu choice in many graphical user interface applications that allows the user to specify how the application will act each time it is used. For example, in a word processing application the user may be allowed to specify whether the ruler will appear, whether the document will appear in the same way as it will print (including margins), and other choices. Also called: Options, Prefs."
+    },
+    {
+      "title": "prefetch",
+      "description": "vb. Preloading buffering data for a streaming video clip before the clip begins playing. When prefetched data is stored on a computer, the video clip can be played without waiting for the initial buffering that usually occurs with streaming media. See also preroll."
+    },
+    {
+      "title": "prefix notation",
+      "description": "n. A form of algebraic notation, developed in 1929 by Jan Lukasiewicz, a Polish logician, in which the operators appear before the operands. For example, the expression (a + b) x (c – d) would be written in prefix notation as x + a b – c d. Also called: Polish notation. See also infix notation, postfix notation."
+    },
+    {
+      "title": "Prefs",
+      "description": "n. See Preferences."
+    },
+    {
+      "title": "Premiere",
+      "description": "n. Digital video editing software developed by Adobe Systems. The Premiere user interface uses command menus, windows, and floating pallets to make modifications to video clips. A timeline feature presents a graphic presentation of the length of the individual scenes and the order in which they appear. The editor can modify the edits and preview the results before exporting the file into one of several video formats."
+    },
+    {
+      "title": "PReP",
+      "description": "n. See PowerPC Reference Platform."
+    },
+    {
+      "title": "preprocessor",
+      "description": "n. A device or routine that performs preliminary operations on input before passing it on for further processing. See also front-end processor (definition 1). Compare postprocessor."
+    },
+    {
+      "title": "preroll",
+      "description": "vb. Data buffering that occurs before a streaming media clip plays. Preroll time varies depending on available bandwidth and the size of the file being buffered"
+    },
+    {
+      "title": "presence technology",
+      "description": "n. An application, such as instant messaging, which finds specific users when they are connected to the network and which may alert interested users to each other’s presence. Third-generation wireless networks will integrate presence technology with digital cell phones, PDAs, pagers, and other communications and entertainment devices."
+    },
+    {
+      "title": "presentation broadcast",
+      "description": "n. A PowerPoint feature that allows you to run a presentation over the Web. The presentation is saved in HTML format and can contain audio and video. It can also be recorded and saved to be viewed later."
+    },
+    {
+      "title": "presentation graphics",
+      "description": "n. The representation of business information, such as sales figures and stock prices, in chart form rather than as lists of numbers. Presentation graphics are used to give viewers an immediate grasp of business statistics and their significance. Common examples are area charts, bar charts, line charts, and pie charts. Also called: business graphics."
+    },
+    {
+      "title": "presentation layer",
+      "description": "n. The sixth of the seven layers in the ISO/OSI reference model for standardizing computer-tocomputer communications. The presentation layer is responsible for formatting information so that it can be displayed or printed. This task generally includes interpreting codes (such as tabs) related to presentation, but it can also include converting encryption and other codes and translating different character sets. See the illustration.See also ISO/OSI reference model."
     }
   ]
 }
