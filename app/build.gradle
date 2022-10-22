@@ -103,21 +103,21 @@ dependencies {
     annotationProcessor "org.androidannotations:rest-spring:$AAVersion"
     implementation "org.androidannotations:rest-spring-api:$AAVersion"
     implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.google.android.material:material:1.7.0'
     implementation 'org.springframework.android:spring-android-rest-template:2.0.0.M3'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.2'
     implementation 'io.reactivex:rxandroid:1.2.1'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     androidTestImplementation 'junit:junit:4.13.2'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.google.android.material:material:1.7.0'
     implementation group: 'de.hdodenhof', name: 'circleimageview', version: '3.1.0'
     implementation project(':common-tools')
     api project(':generictools')
     implementation 'com.google.firebase:firebase-analytics:21.2.0'
 
     // Add the Firebase SDK for Crashlytics.
-    implementation 'com.google.firebase:firebase-crashlytics:18.3.0'
+    implementation 'com.google.firebase:firebase-crashlytics:18.3.1'
     //Firebase Cloud messaging
     implementation 'com.google.firebase:firebase-messaging:23.1.0'
 
@@ -139,7 +139,7 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-storage:6.2.0'
     implementation 'androidx.preference:preference:1.2.0'
     // Import the BoM for the Firebase platform
-    implementation platform('com.google.firebase:firebase-bom:30.5.0')
+    implementation platform('com.google.firebase:firebase-bom:31.0.1')
     // Declare the dependency for the Realtime Database library
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-database:20.1.0'
