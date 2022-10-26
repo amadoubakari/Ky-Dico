@@ -306,7 +306,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         profile = headerNavView.findViewById(R.id.profile_image);
 
         //Nous appliquons le même style aux éléments de menu
-        //Utils.applyFontStyleToMenu(this, navigationView.getMenu(), R.font.google_sans);
+        Utils.applyFontStyleToMenu(this, navigationView.getMenu(), R.font.google_sans);
 
         navigationView.setNavigationItemSelectedListener(
                 menuItem -> {
@@ -551,7 +551,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         SharedPreferences.Editor nightMode = sharedPreferences.edit();
         nightMode.putInt(Constants.NIGHT_MODE_KEY, mode);
         nightMode.apply();
-        com.flys.dico.architecture.core.Utils.restartApplication(this);
+        com.flys.dico.architecture.core.Utils.restartApplication(DApplicationContext.getInstance(),MainActivity_.class);
     }
 
     @Override

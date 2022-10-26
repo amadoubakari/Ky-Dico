@@ -515,7 +515,7 @@ public abstract class AbstractFragment extends Fragment {
             @Override
             public void okButtonAction(DialogInterface dialogInterface, int i) {
                 beginRunningTasks(1);
-                Utils.restartApplication(getActivity());
+                Utils.restartApplication(DApplicationContext.getInstance(),MainActivity_.class);
             }
 
             @Override
