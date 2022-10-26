@@ -23,21 +23,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
-            android:fontFamily="@font/google_sans"
             android:gravity="center"
             android:layout_marginBottom="5dp"
             android:text="@string/dictionnaire_informatique"
             android:textColor="@color/app_text_color"
             android:textSize="14dp"
          />
+
         <TextView
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/google_sans"
-            android:text="@string/app_version_msg"
-            android:textColor="@color/blue_500"
             android:gravity="center"
+            android:text="@string/app_version_msg"
+            android:textColor="@color/color_secondary"
             android:textSize="12dp" />
     </LinearLayout>
 </RelativeLayout>

@@ -1,8 +1,8 @@
 package com.flys.dico.architecture.core;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.flys.dico.architecture.custom.CoreState;
 import com.flys.dico.architecture.custom.IMainActivity;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class AbstractSession implements ISession {
   // n° de la vue précédente

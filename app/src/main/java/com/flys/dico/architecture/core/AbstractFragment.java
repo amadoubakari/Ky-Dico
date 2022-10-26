@@ -25,7 +25,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
 import rx.Subscription;
@@ -495,15 +495,15 @@ public abstract class AbstractFragment extends Fragment {
                 .setSingleChoiceItems(language, checkedItem, (dialog, which) -> {
                     //if user select preferred language as English then
                     if (language[which].equals(getString(R.string.settings_fragment_language_english))) {
+                        mainActivity.setLanguage(Constants.EN);
                         dialog.dismiss();
                         restartApp();
-                        mainActivity.setLanguage(Constants.EN);
                     }
                     //if user select preferred language as Hindi then
                     if (language[which].equals(getString(R.string.settings_fragment_language_french))) {
+                        mainActivity.setLanguage(Constants.FR);
                         dialog.dismiss();
                         restartApp();
-                        mainActivity.setLanguage(Constants.FR);
                     }
                 })
                 .setPositiveButton(getString(R.string.activity_main_button_cancel), (dialog, which) -> dialog.dismiss());
@@ -514,7 +514,8 @@ public abstract class AbstractFragment extends Fragment {
         MaterialNotificationDialog notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), getString(R.string.abstract_fragment_restart_app), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_no_msg), activity.getDrawable(R.drawable.logo), R.style.customMaterialAlertEditDialog), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
             @Override
             public void okButtonAction(DialogInterface dialogInterface, int i) {
-                Utils.restartApplication(DApplicationContext.getInstance(), MainActivity_.class);
+                beginRunningTasks(1);
+                Utils.restartApplication(DApplicationContext.getInstance(),MainActivity_.class);
             }
 
             @Override
@@ -531,12 +532,12 @@ public abstract class AbstractFragment extends Fragment {
      * @return 0 for english and 1 for french
      */
     protected int isEnglish() {
-        String localeCode = mainActivity.getSharedPreferences().getString(Constants.MY_LAND, Locale.getDefault().getLanguage());
+        String localeCode = mainActivity.getSharedPreferences().getString(Constants.MY_LAND, getResources().getConfiguration().getLocales().get(0).getLanguage());
         int checkedItem;
-        if (localeCode.equals(Constants.EN)) {
-            checkedItem = Language.ENGLISH.getOrder();
-        } else {
+        if (localeCode.equals(Constants.FR)) {
             checkedItem = Language.FRENCH.getOrder();
+        } else {
+            checkedItem = Language.ENGLISH.getOrder();
         }
         return checkedItem;
     }

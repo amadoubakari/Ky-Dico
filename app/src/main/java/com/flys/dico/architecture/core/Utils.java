@@ -1,17 +1,15 @@
 package com.flys.dico.architecture.core;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
-import android.graphics.Typeface;
+import android.os.Handler;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.core.app.TaskStackBuilder;
-import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
 
+import com.facebook.appevents.codeless.CodelessLoggingEventListener;
 import com.flys.dico.R;
 import com.flys.dico.architecture.custom.DApplicationContext;
 import com.google.android.material.snackbar.Snackbar;
@@ -19,6 +17,8 @@ import com.google.android.material.snackbar.Snackbar;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import rx.Observable;
 
 public class Utils {
 
@@ -95,49 +95,9 @@ public class Utils {
         return file.exists();
     }
 
-    /**
-     * @param context
-     * @param view
-     */
-    public static void changeSearchTextColor(Context context, View view) {
-        if (view != null) {
-            if (view instanceof TextView) {
-                ((TextView) view).setTextColor(ContextCompat.getColor(context, R.color.app_text_color));
-                ((TextView) view).setTextSize(14);
-                ((TextView) view).setTypeface(Typeface.createFromAsset(context.getAssets(), "fonts/open_sans_regular.ttf"));
-                view.setBackgroundColor(ContextCompat.getColor(context, R.color.app_background_color));
-            } else if (view instanceof ViewGroup) {
-                ViewGroup viewGroup = (ViewGroup) view;
-                for (int i = 0; i < viewGroup.getChildCount(); i++) {
-                    changeSearchTextColor(context, viewGroup.getChildAt(i));
-                }
-            }
-        }
-    }
+
 
     /**
-     * @param context
-     * @param view
-     * @param font
-     */
-    public static void changeSearchTextColor(Context context, View view, int font) {
-        if (view != null) {
-            if (view instanceof TextView) {
-                ((TextView) view).setTextColor(ContextCompat.getColor(context, R.color.app_text_color));
-                ((TextView) view).setTextSize(16);
-                ((TextView) view).setTypeface(ResourcesCompat.getFont(context, font));
-                view.setBackgroundColor(ContextCompat.getColor(context, R.color.app_background_color));
-            } else if (view instanceof ViewGroup) {
-                ViewGroup viewGroup = (ViewGroup) view;
-                for (int i = 0; i < viewGroup.getChildCount(); i++) {
-                    changeSearchTextColor(context, viewGroup.getChildAt(i), font);
-                }
-            }
-        }
-    }
-
-    /**
-     *
      * @param context
      * @param activityClass
      */
@@ -146,4 +106,32 @@ public class Utils {
                 .addNextIntent(new Intent(context, activityClass))
                 .startActivities();
     }
+
+    /**
+     * @param activity
+     */
+    public static void restartApplication(Activity activity) {
+        new Handler().postDelayed(() -> {
+            Intent intent = activity.getIntent();
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK
+                    | Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            activity.overridePendingTransition(0, 0);
+            activity.finish();
+            activity.overridePendingTransition(0, 0);
+            activity.startActivity(intent);
+        },3000);
+    }
+
+    public static Observable restartApplicationObservable(Activity activity) {
+        return Observable.create(subscriber -> {
+            Intent intent = activity.getIntent();
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK
+                    | Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            activity.overridePendingTransition(0, 0);
+            activity.finish();
+            activity.overridePendingTransition(0, 0);
+            activity.startActivity(intent);
+        });
+    }
+
 }

@@ -79,8 +79,6 @@ public interface IMainActivity extends IDao {
 
     void loadLocale();
 
-    void recreateActivity();
-
     void hideBottomNavigation(int visibility);
 
     void popupSnackbarForCompleteUpdate(AppUpdateManager appUpdateManager);

@@ -14,13 +14,13 @@
     <string name="menu_home_msg">Accueil</string>
     <string name="menu_me_msg">Moi</string>
     <string name="about_last_update_msg">Date de mise à jour</string>
-    <string name="about_releasing_date">Mai 2021</string>
+    <string name="about_releasing_date">Octobre 2022</string>
     <string name="mini_dictionnaire_informatique_de_poche_msg">Mini Dictionnaire Informatique de poche</string>
     <string name="enable_notifications_to_received_news">Activer les notifications pour recevoir des nouveautés !</string>
     <string name="disable_notifications_to_dont_received_news">Si vous désactivez les notifications, vous risquerez ne plus recevoir des nouveautés !</string>
     <string name="button_yes_msg">OUI</string>
     <string name="button_no_msg">NON</string>
-    <string name="app_version_msg" translatable="false">Version 1.1.3</string>
+    <string name="app_version_msg" translatable="false">Version 1.1.4</string>
     <string name="menu_about_msg">A Propos</string>
     <string name="menu_connexion_msg">Connexion</string>
     <string name="menu_profil_msg">Profil</string>
@@ -50,7 +50,7 @@
     <string name="activity_main_username">Username</string>
     <string name="activity_main_email_address">Email</string>
     <string name="activity_main_thanks_msg">" Merci "</string>
-    <string name="dictionary_data_source">dictionnaire.json</string>
+    <string name="dictionary_data_source" translatable="false">dictionnaire</string>
     <string name="app_name_release">Dictionnaire Informatique</string>
     <string name="app_name_debug">Dictionnaire Informatique </string>
     <string name="app_name_rct">rct</string>
@@ -96,4 +96,7 @@
     <string name="ads_native_notification_item_debug" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
     <string name="ads_native_notification_item_rct" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
     <string name="rechercher">Rechercher</string>
+    <string name="notification_fragment_enable_notifications_msg">Veuillez activer les notifications\npour recevoir des nouveaux apprentissages</string>
+    <string name="words_data_source" translatable="false">words</string>
+    <string name="dictionary_data_source_extension" translatable="false">.json</string>
 </resources>

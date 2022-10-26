@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.view.menu.MenuPopupHelper;
@@ -77,6 +79,9 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
     private static List<Notification> notifications;
     private AdsSimpleNotificationAdapter notificationAdapter;
 
+    private MaterialNotificationDialog dialog;
+
+    private static boolean enableNotifications;
 
     @Override
     public CoreState saveFragment() {
@@ -93,12 +98,16 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
         ((AppCompatActivity) mainActivity).getSupportActionBar().show();
         mainActivity.activateMainButtonMenu(R.id.bottom_menu_me);
         storage = FirebaseStorage.getInstance();
-        //init();
     }
 
     @Override
     protected void initView(CoreState previousState) {
 
+        if (!NotificationManagerCompat.from(DApplicationContext.getContext()).areNotificationsEnabled()&&!enableNotifications) {
+
+            dialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), getString(R.string.notification_fragment_enable_notifications_msg), getString(R.string.button_yes_msg), getString(R.string.button_no_msg), getActivity().getDrawable(R.drawable.logo), R.style.customMaterialAlertEditDialog), this);
+            dialog.show(getActivity().getSupportFragmentManager(), "material_notification_alert_dialog");
+        }
     }
 
     @Override
@@ -107,11 +116,6 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
         mainActivity.activateMainButtonMenu(R.id.bottom_menu_me);
 
         init();
-
-        if (!NotificationManagerCompat.from(DApplicationContext.getContext()).areNotificationsEnabled()) {
-            MaterialNotificationDialog dialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), "Veuillez activer les notifications\npour recevoir des nouveaux apprentissages", "OK", "NON", getActivity().getDrawable(R.drawable.logo), R.style.customMaterialAlertEditDialog), this);
-            dialog.show(getActivity().getSupportFragmentManager(), "material_notification_alert_dialog");
-        }
 
     }
 
@@ -137,7 +141,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
     @OptionsItem(R.id.search)
     protected void doSearch() {
         searchView = (SearchView) menuItem.getActionView();
-        Utils.changeSearchTextColor(activity, searchView, R.font.google_sans);
+        //Utils.changeSearchTextColor(activity, searchView, R.font.google_sans);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -194,12 +198,13 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
     public void okButtonAction(DialogInterface dialogInterface, int i) {
         Intent settingsIntent = new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
                 .putExtra(Settings.EXTRA_APP_PACKAGE, getActivity().getPackageName());
-        startActivityForResult(settingsIntent, 32);
+        settingsActivityResultLauncher.launch(settingsIntent);
     }
 
     @Override
     public void noButtonAction(DialogInterface dialogInterface, int i) {
-
+        enableNotifications=true;
+        this.dialog.dismiss();
     }
 
     /**
@@ -223,7 +228,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
                         notificationDao.delete(notifications.get(position));
                         notifications.remove(position);
                         notificationAdapter.notifyDataSetChanged();
-                        com.flys.dico.architecture.core.Utils.showErrorMessage(activity, activity.findViewById(R.id.main_content), activity.getColor(R.color.blue_500), getString(R.string.delete_msg));
+                        com.flys.dico.architecture.core.Utils.showErrorMessage(activity, activity.findViewById(R.id.main_content), activity.getColor(R.color.color_secondary), getString(R.string.delete_msg));
                     } catch (DaoException e) {
                         Log.e(getClass().getSimpleName(), "Deleting notification from database Processing Exception", e);
                     }
@@ -243,7 +248,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
     private void updateNotificationsImages(List<Notification> notifications) {
 
         notifications.stream()
-                .filter(notification -> notification!=null && (!Utils.fileExist(Constants.DIR_NAME, notification.getImageName(), activity) ||  !Utils.fileExist(Constants.DIR_NAME, notification.getSourceIcon(), activity)))
+                .filter(notification -> notification != null && (!Utils.fileExist(Constants.DIR_NAME, notification.getImageName(), activity) || !Utils.fileExist(Constants.DIR_NAME, notification.getSourceIcon(), activity)))
                 .distinct()
                 .forEach(notification -> {
                     final long ONE_MEGABYTE = 1024L * 1024;
@@ -271,7 +276,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
      */
     private void init() {
         notifications = new ArrayList<>();
-        notificationAdapter = new AdsSimpleNotificationAdapter(activity, notifications, new DialogStyle(activity.getColor(R.color.app_text_color), activity.getColor(R.color.app_text_second_color), R.font.google_sans), true /*Constants.isNetworkConnected*/,activity.getString(R.string.fragment_notification_item_ads_native),this);
+        notificationAdapter = new AdsSimpleNotificationAdapter(activity, notifications, new DialogStyle(activity.getColor(R.color.app_text_color), activity.getColor(R.color.app_text_second_color), R.font.google_sans), true /*Constants.isNetworkConnected*/, activity.getString(R.string.fragment_notification_item_ads_native), this);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(notificationAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
@@ -298,4 +303,12 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
             }
         });
     }
+
+
+    // You can do the assignment inside onAttach or onCreate, i.e, before the activity is displayed
+    ActivityResultLauncher<Intent> settingsActivityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                dialog.dismiss();
+            });
 }

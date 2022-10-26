@@ -3,7 +3,9 @@ package com.flys.dico.fragments.adapters;
 import android.content.Context;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
+import android.text.method.LinkMovementMethod;
 import android.text.style.ForegroundColorSpan;
+import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +20,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.flys.dico.R;
 import com.flys.dico.architecture.custom.IMainActivity;
 import com.flys.dico.dao.entities.WordToShare;
+import com.flys.dico.utils.Utils;
 import com.google.android.material.card.MaterialCardView;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import rx.Observable;
 
 /**
  * @author AMADOU BAKARI
@@ -43,40 +47,25 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private OnLoadMoreListener onLoadMoreListener = null;
     private boolean loading;
     private String searchText;
+    private OnSearchActionListener onSearchActionListener;
+    private String locale;
 
-    public WordAdapter(Context context) {
-        this.context = context;
-    }
-
-    public WordAdapter(List<Word> words, Context context) {
-        this.words = words;
-        this.context = context;
-    }
-
-    public WordAdapter(Context context, List<Word> words, int itemPerDisplay) {
-        this.itemPerDisplay = itemPerDisplay;
-        this.words = words;
-        this.context = context;
-    }
-
-    public WordAdapter(Context context, List<Word> words, WordOnclickListener onclickListener) {
-        this.words = words;
-        this.context = context;
-        this.onclickListener = onclickListener;
-    }
-
-    public WordAdapter(Context context, List<Word> words, String searchText, WordOnclickListener onclickListener) {
+    public WordAdapter(Context context, List<Word> words, String searchText, String locale, WordOnclickListener onclickListener, OnSearchActionListener searchActionListener) {
         this.words = words;
         this.context = context;
         this.searchText = searchText;
         this.onclickListener = onclickListener;
+        this.onSearchActionListener = searchActionListener;
+        this.locale=locale;
     }
 
-    public WordAdapter(Context context, List<Word> words, int itemPerDisplay, WordOnclickListener onclickListener) {
+    public WordAdapter(Context context, List<Word> words, int itemPerDisplay, String locale, WordOnclickListener onclickListener, OnSearchActionListener searchActionListener) {
         this.itemPerDisplay = itemPerDisplay;
         this.words = words;
         this.context = context;
         this.onclickListener = onclickListener;
+        this.onSearchActionListener = searchActionListener;
+        this.locale=locale;
     }
 
     @NonNull
@@ -98,9 +87,8 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         Word word = words.get(position);
         if (holder instanceof Holder) {
             Holder view = (Holder) holder;
-            view.title.setText(word.getTitle());
-            higherLightSearchedWord(word, view);
-
+            higherLightSearchedWord(word, view)
+                    .subscribe();
         } else {
             HolderProgress holderProgress = (HolderProgress) holder;
             holderProgress.progressBar.setIndeterminate(true);
@@ -142,6 +130,7 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             wordOnclickListener = onclickListener;
             word.setOnLongClickListener(this);
             word.setOnClickListener(this);
+
         }
 
         /**
@@ -163,7 +152,7 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
          */
         @Override
         public void onClick(View v) {
-            wordOnclickListener.onWordClickListener(attachOfPopMenu, getAdapterPosition(),words.get(getAdapterPosition()));
+            wordOnclickListener.onWordClickListener(attachOfPopMenu, getAdapterPosition(), words.get(getAdapterPosition()));
         }
     }
 
@@ -179,45 +168,23 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     public interface WordOnclickListener {
 
-        void onWordClickListener(View v, int position,Word word);
+        void onWordClickListener(View v, int position, Word word);
 
         boolean onWordLongClickListener(WordToShare wordToShare);
     }
 
-    /**
-     * @param listModelsTasks
-     */
-    public void setFilter(List<Word> listModelsTasks) {
-        words = new ArrayList<>();
-        words.addAll(listModelsTasks);
-        notifyDataSetChanged();
+
+    public interface OnSearchActionListener {
+        void search(String wordToSearch);
     }
 
-    /**
-     * @param listModelsTasks
-     */
-    public void setFilter(List<Word> listModelsTasks, String searchText) {
-        words = new ArrayList<>();
-        words.addAll(listModelsTasks);
-        this.searchText = searchText;
-        notifyDataSetChanged();
-    }
 
     public void reload() {
         notifyDataSetChanged();
     }
 
-    public void refreshAdapter() {
-        notifyDataSetChanged();
-    }
-
     public void addWords(List<Word> words1) {
         this.words.addAll(words1);
-        notifyDataSetChanged();
-    }
-
-    public void removeAllWords() {
-        words.clear();
         notifyDataSetChanged();
     }
 
@@ -290,21 +257,29 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
      * @param word
      * @param view
      */
-    private void higherLightSearchedWord(Word word, Holder view) {
-        if (searchText != null) {
-            SpannableStringBuilder sb = new SpannableStringBuilder(word.getDescription());
-            Pattern wordPattern = Pattern.compile(Pattern.quote(searchText.toLowerCase()));
-            Matcher match = wordPattern.matcher(word.getDescription().toLowerCase());
+    private Observable higherLightSearchedWord(Word word, Holder view) {
+        return Observable.create(subscriber -> {
+            view.title.setText(word.getTitle());
+            Spannable spannable = new SpannableStringBuilder(word.getDescription());
+            if (searchText != null) {
+                Pattern wordPattern = Pattern.compile(Pattern.quote(searchText.toLowerCase()));
+                Matcher match = wordPattern.matcher(word.getDescription().toLowerCase());
 
-            while (match.find()) {
-                ForegroundColorSpan fcs = new ForegroundColorSpan(
-                        ContextCompat.getColor(context, R.color.blue_500)); //specify color here
-                sb.setSpan(fcs, match.start(), match.end(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+                while (match.find()) {
+                    ForegroundColorSpan fcs = new ForegroundColorSpan(
+                            ContextCompat.getColor(context, R.color.color_secondary)); //specify color here
+                    spannable.setSpan(fcs, match.start(), match.end(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+                }
             }
-            view.description.setText(sb);
-        } else {
-            view.description.setText(word.getDescription());
-        }
-    }
 
+           Utils.loadHighLightedWords(context, this.locale).distinct().subscribe(highLightedWords -> {
+                highLightedWords.stream().forEach(s -> Linkify.addLinks(spannable, Pattern.compile(s), ""));
+            });
+            Utils.stripUnderlines(spannable, onSearchActionListener);
+
+            view.description.setMovementMethod(LinkMovementMethod.getInstance());
+
+            view.description.setText(spannable, TextView.BufferType.SPANNABLE);
+        });
+    }
 }

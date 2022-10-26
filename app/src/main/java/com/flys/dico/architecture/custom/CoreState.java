@@ -1,9 +1,9 @@
 package com.flys.dico.architecture.custom;
 
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.flys.dico.architecture.core.MenuItemState;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.flys.dico.architecture.core.MenuItemState;
 import com.flys.dico.fragments.state.HomeFragmentState;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
