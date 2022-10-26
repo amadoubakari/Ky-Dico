@@ -2,11 +2,15 @@ package com.flys.dico.fragments.behavior;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.provider.Settings;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.NotificationManagerCompat;
 
@@ -25,8 +29,6 @@ import org.androidannotations.annotations.ViewById;
 @EFragment(R.layout.fragment_settings_layout)
 @OptionsMenu(R.menu.menu_home)
 public class SettingsFragment extends AbstractFragment implements MaterialNotificationDialog.NotificationButtonOnclickListeneer {
-
-    private static final int KYOSSI_SETTINGS_NOTIFICATION_REQUEST_CODE = 32;
 
     @ViewById(R.id.notification_switch)
     protected SwitchMaterial enableNotification;
@@ -68,7 +70,6 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
     @Override
     protected void initFragment(CoreState previousState) {
         enableNotification.setChecked(NotificationManagerCompat.from(activity).areNotificationsEnabled());
-        enabledNightMode.setChecked(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES);
     }
 
     @Override
@@ -77,6 +78,17 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
             tvLanguage.setText(getString(R.string.fragment_settings_language_en));
         } else {
             tvLanguage.setText(getString(R.string.fragment_settings_language_fr));
+        }
+        int nightModeFlags = activity.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+
+        switch (nightModeFlags) {
+            case Configuration.UI_MODE_NIGHT_YES:
+                enabledNightMode.setChecked(true);
+                break;
+            case Configuration.UI_MODE_NIGHT_NO:
+            case Configuration.UI_MODE_NIGHT_UNDEFINED:
+                enabledNightMode.setChecked(false);
+                break;
         }
     }
 
@@ -106,27 +118,26 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == KYOSSI_SETTINGS_NOTIFICATION_REQUEST_CODE) {
-            //Checked
-            if (NotificationManagerCompat.from(activity).areNotificationsEnabled()) {
-                enableNotification.setChecked(true);
-            } else {
-                enableNotification.setChecked(false);
-            }
-        }
-    }
-
-    @Override
     public void okButtonAction(DialogInterface dialogInterface, int i) {
         Intent settingsIntent = new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
                 .putExtra(Settings.EXTRA_APP_PACKAGE, getActivity().getPackageName());
-        startActivityForResult(settingsIntent, KYOSSI_SETTINGS_NOTIFICATION_REQUEST_CODE);
+        settingsActivityResultLauncher.launch(settingsIntent);
     }
+
+
+    // You can do the assignment inside onAttach or onCreate, i.e, before the activity is displayed
+    ActivityResultLauncher<Intent> settingsActivityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    enableNotification.setChecked(NotificationManagerCompat.from(activity).areNotificationsEnabled());
+                }
+            });
 
     @Override
     public void noButtonAction(DialogInterface dialogInterface, int i) {
-        enableNotification.setChecked(false);
+        enableNotification.setChecked(NotificationManagerCompat.from(activity).areNotificationsEnabled());
         dialogInterface.dismiss();
     }
 

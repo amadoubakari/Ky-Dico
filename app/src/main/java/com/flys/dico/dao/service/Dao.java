@@ -21,6 +21,7 @@ import org.androidannotations.annotations.AfterInject;
 import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EBean;
 import org.androidannotations.rest.spring.annotations.RestService;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -224,10 +225,27 @@ public class Dao extends AbstractDao implements IDao {
     }
 
     @Override
-    public Observable<List<Word>> loadWords(Context context, final String query) {
+    public Observable<List<Word>> loadSequenceWords(Context context, int index, int size, @NotNull String locale) {
         return Observable.create(subscriber -> {
             try {
-                List<Word> words = jsonMapper.readValue(context.getAssets().open(context.getString(R.string.dictionary_data_source), AssetManager.ACCESS_STREAMING), Dictionnaire.class).getWords();
+                List<Word> words = jsonMapper.readValue(context.getAssets().open(context.getString(R.string.dictionary_data_source).concat("-").concat(locale).concat((context.getString(R.string.dictionary_data_source_extension))), AssetManager.ACCESS_STREAMING), Dictionnaire.class).getWords();
+                subscriber.onNext(words.stream()
+                        .skip(index)
+                        .limit(size)
+                        .collect(Collectors.toList()));
+                subscriber.onCompleted();
+            } catch (IOException e) {
+                e.printStackTrace();
+                subscriber.onError(e);
+            }
+        });
+    }
+
+    @Override
+    public Observable<List<Word>> loadWords(Context context, final String query, String locale) {
+        return Observable.create(subscriber -> {
+            try {
+                List<Word> words = jsonMapper.readValue(context.getAssets().open(context.getString(R.string.dictionary_data_source).concat("-").concat(locale).concat((context.getString(R.string.dictionary_data_source_extension))), AssetManager.ACCESS_STREAMING), Dictionnaire.class).getWords();
                 subscriber.onNext(
                         words.parallelStream()
                                 .filter(word -> word.getTitle().toLowerCase().contains(query.toLowerCase()) ||
@@ -235,7 +253,6 @@ public class Dao extends AbstractDao implements IDao {
                                 .collect(Collectors.toList()));
                 subscriber.onCompleted();
             } catch (IOException e) {
-                e.printStackTrace();
                 subscriber.onError(e);
             }
         });
@@ -265,6 +282,7 @@ public class Dao extends AbstractDao implements IDao {
             }
         });
     }
+
 
     /**
      * It emit data from define limit element on words

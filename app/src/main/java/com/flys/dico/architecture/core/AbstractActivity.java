@@ -6,13 +6,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -42,6 +42,7 @@ import com.flys.tools.utils.DepthPageTransformer;
 import com.flys.tools.utils.Utils;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.play.core.review.ReviewInfo;
@@ -57,7 +58,6 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     private IDao dao;
     // la session
     protected ISession session;
-
     // le conteneur des fragments
     protected MyPager mViewPager;
     // la barre d'outils
@@ -66,7 +66,6 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     private ProgressBar loadingPanel;
     // barre d'onglets
     protected TabLayout tabLayout;
-
     // le gestionnaire de fragments ou sections
     private SectionsPagerAdapter mSectionsPagerAdapter;
     // nom de la classe
@@ -81,6 +80,10 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
     protected BottomNavigationView bottomNavigationView;
     //Menu de navigation latérale
     protected NavigationView navigationView;
+    //
+    protected View headerNavView;
+    //
+    protected ShapeableImageView profile;
     //
     protected ReviewManager manager;
     //
@@ -244,12 +247,10 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
 
                 @Override
                 public void onTabUnselected(TabLayout.Tab tab) {
-
                 }
 
                 @Override
                 public void onTabReselected(TabLayout.Tab tab) {
-
                 }
             });
         }
@@ -301,6 +302,8 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
 
         //Navigation drawer
         navigationView = findViewById(R.id.navigation);
+        headerNavView = navigationView.getHeaderView(0);
+        profile = headerNavView.findViewById(R.id.profile_image);
 
         //Nous appliquons le même style aux éléments de menu
         Utils.applyFontStyleToMenu(this, navigationView.getMenu(), R.font.google_sans);
@@ -335,7 +338,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
 
 
         //Action listener on bottom navigation view
-        bottomNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
+        bottomNavigationView.setOnItemSelectedListener(menuItem -> {
             switch (menuItem.getItemId()) {
                 case R.id.bottom_menu_home:
                     navigateToView(HOME_FRAGMENT, ISession.Action.SUBMIT);
@@ -511,33 +514,31 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
      */
     @Override
     public void setLocale(String languageCode) {
-
         Locale locale = new Locale(languageCode);
         Locale.setDefault(locale);
-        Resources resources = getResources();
         Configuration config = getResources().getConfiguration();
         config.setLocale(locale);
-        resources.updateConfiguration(config, resources.getDisplayMetrics());
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
         //Share
         setLanguage(languageCode);
     }
 
     @Override
     public void loadLocale() {
-        String language = sharedPreferences.getString(Constants.MY_LAND, Locale.getDefault().getLanguage());
-        setLocale(language);
-    }
-
-    @Override
-    public void recreateActivity() {
-        Intent intent = new Intent(this, MainActivity_.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP
-                | Intent.FLAG_ACTIVITY_CLEAR_TASK
-        );
-        PendingIntent pendingIntent = PendingIntent.getActivity(DApplicationContext.getContext(), 0, intent, PendingIntent.FLAG_ONE_SHOT);
-        AlarmManager mgr = (AlarmManager) DApplicationContext.getContext().getSystemService(Context.ALARM_SERVICE);
-        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, pendingIntent);
-        finishAndRemoveTask();
+        String language = sharedPreferences.getString(Constants.MY_LAND, null);
+        if (language == null) {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            String sysLanguage = getResources().getConfiguration().getLocales().get(0).getLanguage();
+            if (sysLanguage != null && !sysLanguage.isEmpty() && sysLanguage.equals(Constants.FR)) {
+                editor.putString(Constants.MY_LAND, Constants.FR);
+            } else {
+                editor.putString(Constants.MY_LAND, Constants.EN);
+            }
+            editor.commit();
+            loadLocale();
+        } else {
+            setLocale(language);
+        }
     }
 
     @Override
@@ -550,7 +551,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         SharedPreferences.Editor nightMode = sharedPreferences.edit();
         nightMode.putInt(Constants.NIGHT_MODE_KEY, mode);
         nightMode.apply();
-        com.flys.dico.architecture.core.Utils.restartApplication(DApplicationContext.getInstance(), MainActivity_.class);
+        com.flys.dico.architecture.core.Utils.restartApplication(DApplicationContext.getInstance(),MainActivity_.class);
     }
 
     @Override
@@ -569,5 +570,10 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(Constants.MY_LAND, languageCode);
         editor.apply();
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 }

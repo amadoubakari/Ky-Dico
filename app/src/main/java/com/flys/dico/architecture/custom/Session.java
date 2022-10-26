@@ -66,18 +66,7 @@ public class Session extends AbstractSession {
         this.words = words;
     }
 
-    public List<WordToShare> getWordToShares() {
-        return wordToShares;
-    }
-
     public void setWordToShares(List<WordToShare> wordToShares) {
         this.wordToShares = wordToShares;
-    }
-
-    public void addWordToShares(WordToShare wordToShare) {
-        if (this.wordToShares == null) {
-            this.wordToShares = new ArrayList<>();
-        }
-        this.wordToShares.add(wordToShare);
     }
 }

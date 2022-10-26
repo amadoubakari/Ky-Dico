@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.view.ActionMode;
 import androidx.core.text.HtmlCompat;
 import androidx.recyclerview.widget.RecyclerView;
@@ -67,7 +68,6 @@ import com.flys.tools.domain.NotificationData;
 import com.flys.tools.utils.FileUtils;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.badge.BadgeDrawable;
-import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.play.core.appupdate.AppUpdateManager;
 import com.google.firebase.auth.FirebaseAuth;
@@ -157,6 +157,8 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
 
         initializeAds();
 
+        profile.setOnClickListener(new ProfileOnclickListener());
+
     }
 
     /**
@@ -175,7 +177,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         if (user != null && user.getType() != null) {
             updateUserConnectedProfile(user);
         }
-
     }
 
 
@@ -383,8 +384,8 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     }
 
     @Override
-    public Observable<List<Word>> loadWords(Context context, String query) {
-        return dao.loadWords(context, query);
+    public Observable<List<Word>> loadWords(Context context, String query, String locale) {
+        return dao.loadWords(context, query, locale);
     }
 
     @Override
@@ -403,6 +404,11 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     }
 
     @Override
+    public Observable<List<Word>> loadSequenceWords(Context context, int index, int size, @NonNull String locale) {
+        return dao.loadSequenceWords(context, index, size, locale);
+    }
+
+    @Override
     public User updateProfile() {
         return getConnectedUserProfile();
     }
@@ -415,7 +421,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     @Override
     public void updateNotificationNumber(int number) {
         BadgeDrawable badgeDrawable = bottomNavigationView.getOrCreateBadge(R.id.bottom_menu_me);
-        badgeDrawable.setBackgroundColor(getColor(R.color.blue_500));
+        badgeDrawable.setBackgroundColor(getColor(R.color.color_secondary));
         badgeDrawable.setNumber(number);
         badgeDrawable.setMaxCharacterCount(2);
         badgeDrawable.setVisible(true);
@@ -470,7 +476,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         });
         bottomNavigationView.setVisibility(View.GONE);
         snackbar.setAnchorView(bottomNavigationView);
-        snackbar.setActionTextColor(getColor(R.color.blue_500));
+        snackbar.setActionTextColor(getColor(R.color.color_secondary));
         snackbar.show();
     }
 
@@ -544,12 +550,10 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
      * @param user
      */
     void updateUserConnectedProfile(User user) {
-        View headerNavView = navigationView.getHeaderView(0);
-        ShapeableImageView profile = headerNavView.findViewById(R.id.profile_image);
         TextView title = headerNavView.findViewById(R.id.profile_user_name);
         TextView mail = headerNavView.findViewById(R.id.profile_user_email_address);
         MenuItem disconnect = navigationView.getMenu().findItem(R.id.menu_deconnexion);
-        LinearLayout userInfo=headerNavView.findViewById(R.id.profile_user_info);
+        LinearLayout userInfo = headerNavView.findViewById(R.id.profile_user_info);
         //Si l'utilisateur est connecte?
         if (user != null && (user.getEmail() != null || user.getPhone() != null)) {
             disconnect.setVisible(true);
@@ -573,7 +577,6 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
             }
             profile.setStrokeColor(getColorStateList(R.color.color_secondary));
             profile.setStrokeWidth((float) 0.5);
-            profile.setOnClickListener(null);
             userInfo.setVisibility(View.VISIBLE);
         } else {
             userInfo.setVisibility(View.GONE);
@@ -581,12 +584,18 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
             profile.setStrokeWidth(0);
             disconnect.setVisible(false);
             profile.setImageDrawable(getDrawable(R.drawable.ic_outline_account_circle_24));
-            profile.setOnClickListener(v -> {
-                signIn();
-            });
         }
     }
 
+    class ProfileOnclickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            User user=updateProfile();
+            if (user == null){
+                signIn();
+            }
+        }
+    }
 
     /**
      * @param user
@@ -748,7 +757,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         if (Constants.isNetworkConnected) {
             downloadFacebookUserProfileImage(user);
         } else {
-            Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.oops_connection_issue_msg));
+            Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.color_secondary), getString(R.string.oops_connection_issue_msg));
         }
     }
 
@@ -782,7 +791,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                         new AlertDialog.Builder(this).setTitle("Ooops !").setMessage(R.string.activity_main_check_your_connection_and_try_again).setNeutralButton(R.string.activity_main_button_close, null).show();
                     });
         } else {
-            Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.activity_main_network_issue));
+            Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.color_secondary), getString(R.string.activity_main_network_issue));
         }
     }
 
@@ -824,7 +833,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                                 }
                             }
                             if (task.isCanceled()) {
-                                Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.activity_main_disconnect_canceled));
+                                Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.color_secondary), getString(R.string.activity_main_disconnect_canceled));
                             }
                         });
             }
@@ -864,7 +873,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                         .setAvailableProviders(providers)
                         .setAuthMethodPickerLayout(customLayout)
                         .setLogo(R.drawable.logo)      // Set logo drawable
-                       .setTheme(R.style.AppTheme_NoActionBar)      // Set theme
+                        .setTheme(R.style.AppTheme_NoActionBar)      // Set theme
                         /*.setTosAndPrivacyPolicyUrls(
                                 "https://example.com/terms.html",
                                 "https://example.com/privacy.html")*/
@@ -911,18 +920,18 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                 if (response == null) {
                     // User pressed back button
                     Log.e(getClass().getSimpleName(), "onActivityResult: sign_in_cancelled");
-                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.activity_main_connection_canceld));
+                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.color_secondary), getString(R.string.activity_main_connection_canceld));
                     return;
                 }
 
                 if (response.getError().getErrorCode() == ErrorCodes.NO_NETWORK) {
                     Log.e(getClass().getSimpleName(), "onActivityResult: no_internet_connection");
-                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.activity_main_network_issue));
+                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.color_secondary), getString(R.string.activity_main_network_issue));
                     return;
                 }
                 if (response.getError().getErrorCode() == ErrorCodes.UNKNOWN_ERROR) {
                     Log.e(getClass().getSimpleName(), "onActivityResult: unknown_error");
-                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.blue_500), getString(R.string.activity_main_try_again_mdg));
+                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.color_secondary), getString(R.string.activity_main_try_again_mdg));
                     return;
                 }
             }

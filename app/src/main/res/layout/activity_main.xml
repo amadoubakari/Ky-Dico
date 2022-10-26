@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:background="@color/color_primary"
-            android:theme="@style/Widget.Design.BottomNavigationView"
+            android:theme="@style/Widget.BottomNavigationView"
             app:itemIconTint="@color/navigation_item_color_state"
             app:itemTextColor="@color/navigation_item_color_state"
             app:menu="@menu/bottom_navigation_menu" />
