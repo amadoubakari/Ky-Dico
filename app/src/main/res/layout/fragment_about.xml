@@ -4,7 +4,7 @@
     android:id="@+id/linearLayout95"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_background_color"
+    android:background="?attr/app_background_color"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     android:layout_marginBottom="10dp">
@@ -30,8 +30,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/fragment_about_dictionary_header"
-            android:textColor="@color/app_text_color"
-            android:textSize="20sp"
+            android:textColor="?attr/app_text_color"
+            android:textAppearance="?attr/textAppearanceHeadline4"
             android:textStyle="bold"
             />
 
@@ -40,7 +40,7 @@
             android:layout_height="2dp"
             android:layout_marginTop="@dimen/spacing_medium"
             android:layout_marginBottom="@dimen/spacing_medium"
-            android:background="@color/blue_500" />
+            android:background="?attr/color_secondary" />
 
         <View
             android:layout_width="0dp"
@@ -56,14 +56,14 @@
                 android:layout_height="wrap_content"
                 android:text="Version"
                 android:textSize="14sp"
-                android:textColor="@color/app_text_second_color" />
+                android:textColor="?attr/app_text_second_color" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/app_version_msg"
                 android:textSize="14sp"
-                android:textColor="@color/app_text_color" />
+                android:textColor="?attr/app_text_color" />
 
         </LinearLayout>
 
@@ -81,14 +81,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/about_last_update_msg"
                 android:textSize="14sp"
-                android:textColor="@color/app_text_second_color" />
+                android:textColor="?attr/app_text_second_color" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/about_releasing_date"
                 android:textSize="14sp"
-                android:textColor="@color/app_text_color" />
+                android:textColor="?attr/app_text_color" />
 
         </LinearLayout>
 
@@ -101,7 +101,7 @@
             android:layout_height="wrap_content"
             android:text="@string/mini_dictionnaire_informatique_de_poche_msg"
             android:textSize="14sp"
-            android:textColor="@color/app_text_color" />
+            android:textColor="?attr/app_text_color" />
 
         <View
             android:layout_width="0dp"
@@ -112,7 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Open source ici"
-            android:textColor="@color/app_text_color"
+            android:textColor="?attr/app_text_color"
             android:textSize="14sp" />
 
 
@@ -158,7 +158,7 @@
         android:gravity="center"
         android:text="@string/https_site_kyossi_com"
         android:textSize="14sp"
-        android:textColor="@color/blue_600"
+        android:textColor="?attr/color_secondary"
         app:layout_constraintBottom_toTopOf="@+id/view2"
         app:layout_constraintEnd_toStartOf="@+id/guideline95"
         app:layout_constraintHorizontal_bias="1.0"

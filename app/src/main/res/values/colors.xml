@@ -1,49 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <color name="color_primary">@color/white</color>
-    <color name="color_on_primary">@color/black</color>
-
-    <color name="color_primary_dark">@color/black</color>
-
-    <color name="color_secondary">@color/blue_500</color>
-    <color name="color_on_secondary">@color/white</color>
-
-
-    <color name="color_surface">@color/white</color>
-    <color name="color_on_surface">@color/black</color>
-
-    <color name="color_accent">@color/blue_500</color>
-
-    <color name="color_control_name">@color/grey_800</color>
-
-    <color name="navigation_bar_color">@android:color/transparent</color>
-    <color name="status_bar_color">@android:color/transparent</color>
-
-    <color name="system_ui_scrim_light">#B3FFFFFF</color> <!-- 70% white -->
-    <color name="system_ui_scrim_black">#40000000</color> <!-- 25% black -->
-
-    <color name="textColorSecondary">@color/black</color>
-    <color name="toolbar_background_color">@color/white</color>
-    <color name="search_icon_tint_color">@color/black</color>
-    <color name="app_background_color">@color/white</color>
-    <color name="app_text_color">@color/black</color>
-    <color name="app_bottom_navigation_color">@color/grey_100</color>
-    <color name="app_bottom_navigation_icon_color">@color/black</color>
-    <color name="app_inverse_color">@color/black</color>
-    <color name="app_blue_color">@color/blue_500</color>
-    <color name="app_text_second_color">@color/blue_500</color>
-    <color name="app_background_second_color">@color/white</color>
-    <color name="app_text_color_tint">@color/grey_400</color>
-    <color name="app_background_grey">@color/grey_800</color>
-    <color name="app_menu_text_and_icon_color">@color/grey_800</color>
-
-
     <color name="light_blue_600">#039BE5</color>
     <color name="light_blue_700">#0288D1</color>
     <color name="light_blue_800">#0277BD</color>
     <color name="light_blue_900">#01579B</color>
-    <color name="blue_500">#2196F3</color>
+    <color name="blue_500">#AA00FF</color>
     <color name="red_A700">#D50000</color>
     <color name="red_100">#FFCDD2</color>
     <color name="red_400">#EF5350</color>
@@ -64,4 +25,12 @@
 
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+
+
+    <color name="theme_blue">#2196F3</color>
+    <color name="theme_red">#DB4437</color>
+    <color name="theme_Yellow">#F4B400</color>
+    <color name="theme_green">#0F9D58</color>
+    <color name="theme_purple">#AA00FF</color>
+    <color name="theme_pink">#FF00FF</color>
 </resources>

@@ -22,7 +22,7 @@
         android:id="@+id/ll_search_block_id"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/app_background_color"
+        android:background="?attr/app_background_color"
         android:gravity="center"
         android:orientation="vertical"
         tools:visibility="gone">
@@ -31,14 +31,14 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/ic_baseline_search_24"
-            app:tint="@color/app_inverse_color" />
+            app:tint="?attr/app_inverse_color" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_large"
             android:text="@string/fragment_home_layout_no_result_msg"
-            android:textColor="@color/app_text_color"
+            android:textColor="?attr/app_text_color"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -48,7 +48,7 @@
             android:layout_marginTop="@dimen/spacing_medium"
             android:gravity="center"
             android:text="@string/fragment_home_you_try_a_more"
-            android:textColor="@color/app_text_color"
+            android:textColor="?attr/app_text_color"
             android:textSize="14sp" />
 
         <View
@@ -63,7 +63,7 @@
             android:layout_marginTop="@dimen/spacing_medium"
             android:gravity="center"
             android:text="@string/fragment_home_layout_change_langue"
-            android:textColor="@color/app_text_second_color"
+            android:textColor="?attr/app_text_second_color"
             android:textSize="12sp"
             android:textStyle="bold" />
 

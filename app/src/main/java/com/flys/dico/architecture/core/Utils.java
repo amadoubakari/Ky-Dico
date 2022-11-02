@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Handler;
+import android.util.TypedValue;
 import android.view.View;
 
 import androidx.core.app.TaskStackBuilder;
@@ -134,4 +136,10 @@ public class Utils {
         });
     }
 
+    public static int getColorFromAttr(Context context, int attrId){
+        TypedValue typedValue = new TypedValue();
+        Resources.Theme theme = context.getTheme();
+        theme.resolveAttribute(attrId, typedValue, true);
+        return typedValue.data;
+    }
 }

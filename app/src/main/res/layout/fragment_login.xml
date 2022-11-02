@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@color/app_background_color"
+    android:background="?attr/app_background_color"
     android:clipToPadding="false">
 
 
@@ -16,7 +16,7 @@
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/fragment_about_dictionary_header"
-        android:textColor="@color/app_text_color"
+        android:textColor="?attr/app_text_color"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline90"
         app:layout_constraintHorizontal_bias="1.0"
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/fragment_login_connect_to_continue_msg"
-        android:textColor="@color/app_text_color"
+        android:textColor="?attr/app_text_color"
         android:textSize="10sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline90"
         app:layout_constraintHorizontal_bias="1.0"
@@ -58,7 +58,7 @@
         android:layout_marginBottom="24dp"
         android:gravity="center"
         android:text="@string/fragment_login_welcome_msg"
-        android:textColor="@color/app_text_color"
+        android:textColor="?attr/app_text_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline90"
         app:layout_constraintHorizontal_bias="1.0"
@@ -139,14 +139,14 @@
                 android:layout_height="35dp"
                 android:layout_weight="0.01"
                 android:padding="5dp"
-                app:tint="@color/app_text_color"
+                app:tint="?attr/app_text_color"
                 app:srcCompat="@drawable/ic_mail_outline_black_24dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0.99"
-                android:textColor="@color/app_text_color"
+                android:textColor="?attr/app_text_color"
                 android:gravity="center_vertical"
                 android:text="@string/fragment_login_connect_with_mail"
                  />

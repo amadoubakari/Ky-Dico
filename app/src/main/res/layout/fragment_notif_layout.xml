@@ -5,7 +5,7 @@
     android:id="@+id/notification_main_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/app_background_second_color"
+    android:background="?attr/app_background_second_color"
     android:orientation="vertical">
 
 
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:background="@color/app_background_color"
+        android:background="?attr/app_background_color"
         android:gravity="center"
         android:orientation="vertical"
         android:visibility="gone">
@@ -33,7 +33,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/ic_baseline_search_24"
-            app:tint="@color/app_inverse_color" />
+            app:tint="?attr/app_inverse_color" />
 
         <TextView
             android:id="@+id/notifications_empty_id"
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/fragment_notif_layout_no_elements"
-            android:textColor="@color/app_text_color"
+            android:textColor="?attr/app_text_color"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"

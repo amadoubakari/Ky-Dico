@@ -421,7 +421,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     @Override
     public void updateNotificationNumber(int number) {
         BadgeDrawable badgeDrawable = bottomNavigationView.getOrCreateBadge(R.id.bottom_menu_me);
-        badgeDrawable.setBackgroundColor(getColor(R.color.color_secondary));
+        badgeDrawable.setBackgroundColor(Utils.getColorFromAttr(this, R.attr.color_secondary));
         badgeDrawable.setNumber(number);
         badgeDrawable.setMaxCharacterCount(2);
         badgeDrawable.setVisible(true);
@@ -476,7 +476,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         });
         bottomNavigationView.setVisibility(View.GONE);
         snackbar.setAnchorView(bottomNavigationView);
-        snackbar.setActionTextColor(getColor(R.color.color_secondary));
+        snackbar.setActionTextColor(Utils.getColorFromAttr(this, R.attr.color_secondary));
         snackbar.show();
     }
 
@@ -575,7 +575,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                     profile.setImageDrawable(getDrawable(R.drawable.ic_outline_account_circle_24));
                     break;
             }
-            profile.setStrokeColor(getColorStateList(R.color.color_secondary));
+            profile.setStrokeColor(getColorStateList(Utils.getColorFromAttr(this, R.attr.color_secondary)));
             profile.setStrokeWidth((float) 0.5);
             userInfo.setVisibility(View.VISIBLE);
         } else {
@@ -757,7 +757,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         if (Constants.isNetworkConnected) {
             downloadFacebookUserProfileImage(user);
         } else {
-            Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.color_secondary), getString(R.string.oops_connection_issue_msg));
+            Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), Utils.getColorFromAttr(this, R.attr.color_secondary), getString(R.string.oops_connection_issue_msg));
         }
     }
 
@@ -791,7 +791,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                         new AlertDialog.Builder(this).setTitle("Ooops !").setMessage(R.string.activity_main_check_your_connection_and_try_again).setNeutralButton(R.string.activity_main_button_close, null).show();
                     });
         } else {
-            Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.color_secondary), getString(R.string.activity_main_network_issue));
+            Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), Utils.getColorFromAttr(this, R.attr.color_secondary), getString(R.string.activity_main_network_issue));
         }
     }
 
@@ -833,7 +833,7 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                                 }
                             }
                             if (task.isCanceled()) {
-                                Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.color_secondary), getString(R.string.activity_main_disconnect_canceled));
+                                Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), Utils.getColorFromAttr(MainActivity.this, R.attr.color_secondary), getString(R.string.activity_main_disconnect_canceled));
                             }
                         });
             }
@@ -920,18 +920,18 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
                 if (response == null) {
                     // User pressed back button
                     Log.e(getClass().getSimpleName(), "onActivityResult: sign_in_cancelled");
-                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.color_secondary), getString(R.string.activity_main_connection_canceld));
+                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), Utils.getColorFromAttr(this, R.attr.color_secondary), getString(R.string.activity_main_connection_canceld));
                     return;
                 }
 
                 if (response.getError().getErrorCode() == ErrorCodes.NO_NETWORK) {
                     Log.e(getClass().getSimpleName(), "onActivityResult: no_internet_connection");
-                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.color_secondary), getString(R.string.activity_main_network_issue));
+                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), Utils.getColorFromAttr(this, R.attr.color_secondary), getString(R.string.activity_main_network_issue));
                     return;
                 }
                 if (response.getError().getErrorCode() == ErrorCodes.UNKNOWN_ERROR) {
                     Log.e(getClass().getSimpleName(), "onActivityResult: unknown_error");
-                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), getColor(R.color.color_secondary), getString(R.string.activity_main_try_again_mdg));
+                    Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), Utils.getColorFromAttr(this, R.attr.color_secondary), getString(R.string.activity_main_try_again_mdg));
                     return;
                 }
             }

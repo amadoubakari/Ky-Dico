@@ -4,8 +4,7 @@
     android:id="@+id/linearLayout5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_background_color"
-    android:theme="@style/AppTheme.NoActionBar">
+    android:background="?attr/app_background_color">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +25,7 @@
             android:gravity="center"
             android:layout_marginBottom="5dp"
             android:text="@string/dictionnaire_informatique"
-            android:textColor="@color/app_text_color"
+            android:textColor="?attr/app_text_color"
             android:textSize="14dp"
          />
 
@@ -36,7 +35,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/app_version_msg"
-            android:textColor="@color/color_secondary"
+            android:textColor="?attr/color_secondary"
             android:textSize="12dp" />
     </LinearLayout>
 </RelativeLayout>

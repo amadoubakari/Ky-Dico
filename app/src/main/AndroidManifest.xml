@@ -13,12 +13,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
+        android:theme="@style/AppThemeYellow"
         >
         <activity
             android:name=".activity.MainActivity_"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan"
             android:launchMode="singleTop"
             android:configChanges="layoutDirection|locale|uiMode"
@@ -51,7 +50,7 @@
             android:resource="@drawable/logo" />
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
-            android:resource="@color/color_accent" />
+            android:resource="@android:color/black" />
          <meta-data
               android:name="com.google.firebase.messaging.default_notification_channel_id"
               android:value="@string/firebase_channel_id" />

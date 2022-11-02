@@ -67,7 +67,6 @@
     <string name="main_activity_download_completed_restart">RESTART</string>
     <string name="fragment_home_layout_change_langue"><![CDATA[Try in french here >>]]></string>
     <string name="menu_rating_msg">Rate application</string>
-    <string name="about_fragment_github_source"><![CDATA[Code source <font color=#03A9F4>%s</font>]]></string>
     <string name="fragment_about_github_source_here">here</string>
     <string name="firebase_subscription_release">firebase-dictionary-release-en</string>
     <string name="firebase_subscription_debug">firebase-dictionary-debug-en</string>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="customMaterialAlertEditDialog" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
-        <item name="android:background">@color/color_primary</item>
-        <item name="android:outlineAmbientShadowColor">@color/color_secondary</item>
-        <item name="android:outlineSpotShadowColor">@color/color_secondary</item>
+        <item name="android:background">?attr/color_primary</item>
+        <item name="android:outlineAmbientShadowColor">?attr/color_secondary</item>
+        <item name="android:outlineSpotShadowColor">?attr/color_secondary</item>
         <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle2</item>
         <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle2</item>
         <item name="materialAlertDialogBodyTextStyle">@style/materialDialogAlertContentStyle</item>

@@ -76,7 +76,7 @@
     <string name="main_activity_download_completed_restart">Redémarrer</string>
     <string name="fragment_home_layout_change_langue"><![CDATA[Essayer en anglais ici >>]]></string>
     <string name="menu_rating_msg">Noter l\'application</string>
-    <string name="about_fragment_github_source"><![CDATA[Code source <font color=#03A9F4>%s</font>]]></string>
+    <string name="about_fragment_github_source" translatable="false"><![CDATA[Code source <font color=%1$s>%2$s</font>]]></string>
     <string name="fragment_about_github_source_here">ici</string>
     <string name="firebase_subscription_release">firebase-dictionary-release</string>
     <string name="firebase_subscription_debug" >firebase-dictionary-debug</string>

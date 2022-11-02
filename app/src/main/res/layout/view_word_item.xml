@@ -8,10 +8,10 @@
     android:clickable="true"
     android:focusable="true"
     app:cardElevation="0dp"
-    app:cardBackgroundColor="@color/app_background_color"
+    app:cardBackgroundColor="?attr/app_background_color"
     app:cardCornerRadius="0dp"
     app:cardUseCompatPadding="true"
-    app:checkedIconTint="@color/blue_500"
+    app:checkedIconTint="?attr/color_secondary"
     >
 
     <LinearLayout
