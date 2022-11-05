@@ -77,4 +77,6 @@
     <string name="fcm_notification_service_one_message">\u0020new message</string>
     <string name="rechercher">Search</string>
     <string name="notification_fragment_enable_notifications_msg">Please enable notifications\nto receive news and new lessons</string>
+    <string name="display">Display</string>
+    <string name="theme">Theme</string>
 </resources>

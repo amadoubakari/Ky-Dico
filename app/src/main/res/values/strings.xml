@@ -99,4 +99,6 @@
     <string name="notification_fragment_enable_notifications_msg">Veuillez activer les notifications\npour recevoir des nouveaux apprentissages</string>
     <string name="words_data_source" translatable="false">words</string>
     <string name="dictionary_data_source_extension" translatable="false">.json</string>
+    <string name="display">Affichage</string>
+    <string name="theme">Thème</string>
 </resources>

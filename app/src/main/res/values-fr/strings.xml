@@ -78,4 +78,6 @@
     <string name="fcm_notification_service_one_message">\u0020nouveau message</string>
     <string name="rechercher">Rechercher</string>
     <string name="notification_fragment_enable_notifications_msg">Veuillez activer les notifications\npour recevoir des nouveaux apprentissages</string>
+    <string name="display">Affichage</string>
+    <string name="theme">Thème</string>
 </resources>
