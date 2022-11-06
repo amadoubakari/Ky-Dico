@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.provider.Settings;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -19,6 +21,7 @@ import com.flys.dico.architecture.core.AbstractFragment;
 import com.flys.dico.architecture.custom.CoreState;
 import com.flys.tools.dialog.MaterialNotificationDialog;
 import com.flys.tools.domain.NotificationData;
+import com.google.android.material.radiobutton.MaterialRadioButton;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import org.androidannotations.annotations.Click;
@@ -41,6 +44,27 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
 
     @ViewById(R.id.current_language)
     protected TextView tvLanguage;
+
+    @ViewById(R.id.radioGroup)
+    protected RadioGroup radioGroup;
+
+    @ViewById(R.id.radioButtonBlue)
+    protected MaterialRadioButton radioButtonBlue;
+
+    @ViewById(R.id.radioButtonRed)
+    protected MaterialRadioButton radioButtonRed;
+
+    @ViewById(R.id.radioButtonGreen)
+    protected MaterialRadioButton radioButtonGreen;
+
+    @ViewById(R.id.radioButtonPink)
+    protected MaterialRadioButton radioButtonPink;
+
+    @ViewById(R.id.radioButtonYellow)
+    protected MaterialRadioButton radioButtonYellow;
+
+    @ViewById(R.id.radioButtonPurple)
+    protected MaterialRadioButton radioButtonPurple;
 
     private MaterialNotificationDialog notificationDialog;
 
@@ -100,6 +124,33 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
     @Override
     protected void updateOnRestore(CoreState previousState) {
 
+    }
+
+    @Override
+    public void onFragmentResume() {
+        super.onFragmentResume();
+        radioGroup.setOnCheckedChangeListener((radioGroup, i) -> {
+            switch (i){
+                case R.id.radioButtonBlue:
+                    setCustomTheme(R.style.AppTheme);
+                    break;
+                case R.id.radioButtonRed:
+                    setCustomTheme(R.style.AppThemeRed);
+                    break;
+                case R.id.radioButtonGreen:
+                    setCustomTheme(R.style.AppThemeGreen);
+                    break;
+                case R.id.radioButtonPink:
+                    setCustomTheme(R.style.AppThemePink);
+                    break;
+                case R.id.radioButtonYellow:
+                    setCustomTheme(R.style.AppThemeYellow);
+                    break;
+                case R.id.radioButtonPurple:
+                    setCustomTheme(R.style.AppThemePurple);
+                    break;
+            }
+        });
     }
 
     @Override

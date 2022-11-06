@@ -2,12 +2,15 @@ package com.flys.dico.architecture.core;
 
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import androidx.core.content.IntentCompat;
 import androidx.fragment.app.Fragment;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -510,7 +513,7 @@ public abstract class AbstractFragment extends Fragment {
         builder.create().show();
     }
 
-    private void restartApp() {
+    public void restartApp() {
         MaterialNotificationDialog notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), getString(R.string.abstract_fragment_restart_app), getString(R.string.activity_main_button_yes_msg), getString(R.string.activity_main_button_no_msg), activity.getDrawable(R.drawable.logo), R.style.customMaterialAlertEditDialog), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
             @Override
             public void okButtonAction(DialogInterface dialogInterface, int i) {
@@ -540,6 +543,17 @@ public abstract class AbstractFragment extends Fragment {
             checkedItem = Language.ENGLISH.getOrder();
         }
         return checkedItem;
+    }
+
+
+    protected void setCustomTheme(int theme) {
+        SharedPreferences.Editor editor = mainActivity.getSharedPreferences().edit();
+        editor.putInt(Constants.THEME, theme);
+        editor.apply();
+        getActivity().finish();
+        final Intent intent = getActivity().getIntent();
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        getActivity().startActivity(intent);
     }
 
     protected enum Language {

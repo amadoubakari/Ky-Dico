@@ -89,6 +89,7 @@
             app:cardElevation="0dp">
 
             <LinearLayout
+                android:id="@+id/dialog_change_language"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
@@ -203,7 +204,7 @@
             app:cardElevation="0dp">
 
             <LinearLayout
-                android:id="@+id/dialog_change_language"
+                android:id="@+id/dialog_change_theme"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="?attr/app_background_color"
@@ -225,6 +226,7 @@
                     android:textSize="14sp" />
 
                 <RadioGroup
+                    android:id="@+id/radioGroup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left|center_vertical"
@@ -232,7 +234,7 @@
                     android:weightSum="6">
 
                     <com.google.android.material.radiobutton.MaterialRadioButton
-                        android:id="@+id/radioButton2"
+                        android:id="@+id/radioButtonBlue"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginLeft="@dimen/layout_padding_10dp"
@@ -242,7 +244,7 @@
                         android:button="@android:color/transparent" />
 
                     <com.google.android.material.radiobutton.MaterialRadioButton
-                        android:id="@+id/radioButton"
+                        android:id="@+id/radioButtonRed"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginLeft="@dimen/layout_padding_10dp"
@@ -252,7 +254,7 @@
                         android:button="@android:color/transparent" />
 
                     <com.google.android.material.radiobutton.MaterialRadioButton
-                        android:id="@+id/radioButton6"
+                        android:id="@+id/radioButtonGreen"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginLeft="@dimen/layout_padding_10dp"
@@ -262,7 +264,7 @@
                         android:button="@android:color/transparent" />
 
                     <com.google.android.material.radiobutton.MaterialRadioButton
-                        android:id="@+id/radioButton5"
+                        android:id="@+id/radioButtonPink"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginLeft="@dimen/layout_padding_10dp"
@@ -272,7 +274,7 @@
                         android:button="@android:color/transparent" />
 
                     <com.google.android.material.radiobutton.MaterialRadioButton
-                        android:id="@+id/radioButton4"
+                        android:id="@+id/radioButtonYellow"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginLeft="@dimen/layout_padding_10dp"
@@ -282,7 +284,7 @@
                         android:button="@android:color/transparent" />
 
                     <com.google.android.material.radiobutton.MaterialRadioButton
-                        android:id="@+id/radioButton3"
+                        android:id="@+id/radioButtonPurple"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginLeft="@dimen/layout_padding_10dp"
@@ -296,7 +298,12 @@
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="?attr/app_inverse_color" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline

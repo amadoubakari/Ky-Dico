@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -147,6 +148,8 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         overridePendingTransition(R.anim.main_fade_in, R.anim.splash_fade_out);
         //
         sharedPreferences = getPreferences(MODE_PRIVATE);
+        //
+        setTheme(getCustomTheme());
         //
         loadLocale();
         //
@@ -570,6 +573,11 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(Constants.MY_LAND, languageCode);
         editor.apply();
+    }
+
+    @Override
+    public int getCustomTheme() {
+        return sharedPreferences.getInt(Constants.THEME,R.style.AppTheme);
     }
 
     @Override
