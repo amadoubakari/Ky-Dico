@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <!-- Customize your theme here. -->
@@ -77,7 +77,7 @@
         <item name="app_menu_text_and_icon_color">@color/grey_50</item>
     </style>
 
-    <style name="AppThemePurple" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="AppThemePurple" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <!-- Customize your theme here. -->
@@ -154,7 +154,7 @@
         <item name="app_menu_text_and_icon_color">@color/grey_50</item>
     </style>
 
-    <style name="AppThemePink" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="AppThemePink" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <!-- Customize your theme here. -->
@@ -231,7 +231,7 @@
         <item name="app_menu_text_and_icon_color">@color/grey_50</item>
     </style>
 
-    <style name="AppThemeYellow" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="AppThemeYellow" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <!-- Customize your theme here. -->
@@ -308,7 +308,7 @@
         <item name="app_menu_text_and_icon_color">@color/grey_50</item>
     </style>
 
-    <style name="AppThemeGreen" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="AppThemeGreen" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <!-- Customize your theme here. -->
@@ -385,7 +385,7 @@
         <item name="app_menu_text_and_icon_color">@color/grey_50</item>
     </style>
 
-    <style name="AppThemeRed" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="AppThemeRed" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <!-- Customize your theme here. -->

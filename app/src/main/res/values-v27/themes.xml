@@ -2,8 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+
         <!-- Customize your theme here. -->
         <item name="colorPrimaryDark">@color/white</item>
         <item name="colorPrimary">@color/white</item>
@@ -84,8 +83,7 @@
     </style>
 
     <style name="AppThemePurple" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+
         <!-- Customize your theme here. -->
         <item name="colorPrimaryDark">@color/white</item>
         <item name="colorPrimary">@color/white</item>
@@ -166,8 +164,7 @@
     </style>
 
     <style name="AppThemePink" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+
         <!-- Customize your theme here. -->
         <item name="colorPrimaryDark">@color/white</item>
         <item name="colorPrimary">@color/white</item>
@@ -248,8 +245,7 @@
     </style>
 
     <style name="AppThemeYellow" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+
         <!-- Customize your theme here. -->
         <item name="colorPrimaryDark">@color/white</item>
         <item name="colorPrimary">@color/white</item>
@@ -330,8 +326,7 @@
     </style>
 
     <style name="AppThemeGreen" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+
         <!-- Customize your theme here. -->
         <item name="colorPrimaryDark">@color/white</item>
         <item name="colorPrimary">@color/white</item>

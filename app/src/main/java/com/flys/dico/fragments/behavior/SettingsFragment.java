@@ -130,7 +130,7 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
     public void onFragmentResume() {
         super.onFragmentResume();
         radioGroup.setOnCheckedChangeListener((radioGroup, i) -> {
-            switch (i){
+            switch (i) {
                 case R.id.radioButtonBlue:
                     setCustomTheme(R.style.AppTheme);
                     break;
@@ -199,22 +199,11 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
 
     @Click(R.id.notification_night_mode_switch)
     public void switchNightModeAction() {
-        notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), getString(R.string.abstract_fragment_restart_app), getString(R.string.button_yes_msg), getString(R.string.button_no_msg), activity.getDrawable(R.drawable.logo), R.style.customMaterialAlertEditDialog), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
-            @Override
-            public void okButtonAction(DialogInterface dialogInterface, int i) {
-                if (enabledNightMode.isChecked()) {
-                    mainActivity.setNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                } else {
-                    mainActivity.setNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                }
-            }
-
-            @Override
-            public void noButtonAction(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
-            }
-        });
-        notificationDialog.show(getActivity().getSupportFragmentManager(), "settings_notification_dialog_tag");
+        if (enabledNightMode.isChecked()) {
+            mainActivity.setNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            mainActivity.setNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
     }
 
 }

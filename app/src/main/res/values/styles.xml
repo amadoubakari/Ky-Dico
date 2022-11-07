@@ -1,5 +1,5 @@
 <resources >
-     <style name="AppTheme.NoActionBar" parent="AppTheme">
+     <style name="AppTheme.NoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

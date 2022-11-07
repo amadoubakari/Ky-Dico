@@ -554,7 +554,11 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         SharedPreferences.Editor nightMode = sharedPreferences.edit();
         nightMode.putInt(Constants.NIGHT_MODE_KEY, mode);
         nightMode.apply();
-        com.flys.dico.architecture.core.Utils.restartApplication(DApplicationContext.getInstance(),MainActivity_.class);
+
+        finish();
+        final Intent intent = getIntent();
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 
     @Override
