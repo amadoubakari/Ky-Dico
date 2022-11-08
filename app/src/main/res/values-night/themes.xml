@@ -1,68 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+
+    <style name="AppBaseTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <!-- Customize your theme here. -->
         <item name="colorPrimaryDark">@color/black</item>
         <item name="colorPrimary">@color/black</item>
         <item name="colorOnPrimary">@color/white</item>
-
-        <item name="colorAccent">@color/theme_blue</item>
-
-        <item name="colorSecondary">@color/theme_blue</item>
         <item name="colorOnSecondary">@color/white</item>
-
         <item name="colorSurface">@color/grey_900</item>
         <item name="colorOnSurface">@color/white</item>
-
         <item name="backgroundColor">@color/black</item>
         <item name="colorOnBackground">@color/white</item>
-
         <item name="android:windowBackground">@color/black</item>
-
         <item name="android:textColorPrimary">@color/white</item>
-
-        <item name="android:textColorSecondary">@color/theme_blue</item>
-
         <item name="actionModeCloseDrawable">@drawable/ic_baseline_keyboard_backspace_24</item>
         <item name="actionModeBackground">@color/black</item>
         <item name="windowActionModeOverlay">true</item>
-        <item name="colorControlActivated">@color/theme_blue</item>
         <item name="android:listDivider">@color/grey_100</item>
         <item name="colorControlNormal">@color/white</item>
-
-
         <item name="android:navigationBarColor">@color/black</item>
         <item name="android:navigationIcon">@color/black</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="fontFamily">@font/google_sans</item>
-
         <!-- Window decor -->
         <item name="android:windowLightStatusBar">false</item>
         <item name="popupMenuStyle">@style/popupmenu</item>
-
         <item name="color_primary">@color/black</item>
         <item name="color_on_primary">@color/white</item>
-
         <item name="color_primary_dark">@color/black</item>
-
-        <item name="color_secondary">@color/theme_blue</item>
         <item name="color_on_secondary">@color/white</item>
-
-        <item name="color_accent">@color/theme_blue</item>
-
         <item name="color_surface">@color/grey_900</item>
         <item name="color_on_surface">@color/white</item>
-
         <item name="color_control_name">@color/white</item>
-
         <item name="navigation_bar_color">@color/black</item>
         <item name="status_bar_color">@color/grey_900</item>
-
-
-        <item name="system_ui_scrim_light">#2EFFFFFF</item> <!-- 18% white -->
-
+        <item name="system_ui_scrim_light">#2EFFFFFF</item>
         <item name="toolbar_background_color">@color/black</item>
         <item name="search_icon_tint_color">@color/white</item>
         <item name="app_background_color">@color/black</item>
@@ -70,395 +44,74 @@
         <item name="app_bottom_navigation_color">@color/black</item>
         <item name="app_bottom_navigation_icon_color">@color/white</item>
         <item name="app_inverse_color">@color/white</item>
+        <item name="app_background_second_color">@color/black</item>
+        <item name="app_text_color_tint">@color/grey_400</item>
+        <item name="app_menu_text_and_icon_color">@color/grey_50</item>
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="colorAccent">@color/theme_blue</item>
+        <item name="colorSecondary">@color/theme_blue</item>
+        <item name="android:textColorSecondary">@color/theme_blue</item>
+        <item name="colorControlActivated">@color/theme_blue</item>
+        <item name="color_secondary">@color/theme_blue</item>
+        <item name="color_accent">@color/theme_blue</item>
         <item name="app_blue_color">@color/theme_blue</item>
         <item name="app_text_second_color">@color/theme_blue</item>
-        <item name="app_background_second_color">@color/black</item>
-        <item name="app_text_color_tint">@color/grey_400</item>
-        <item name="app_menu_text_and_icon_color">@color/grey_50</item>
     </style>
 
-    <style name="AppThemePurple" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <!-- Customize your theme here. -->
-        <item name="colorPrimaryDark">@color/black</item>
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorOnPrimary">@color/white</item>
-
+    <style name="AppThemePurple" parent="AppBaseTheme">
         <item name="colorAccent">@color/theme_purple</item>
-
         <item name="colorSecondary">@color/theme_purple</item>
-        <item name="colorOnSecondary">@color/white</item>
-
-        <item name="colorSurface">@color/grey_900</item>
-        <item name="colorOnSurface">@color/white</item>
-
-        <item name="backgroundColor">@color/black</item>
-        <item name="colorOnBackground">@color/white</item>
-
-        <item name="android:windowBackground">@color/black</item>
-
-        <item name="android:textColorPrimary">@color/white</item>
-
         <item name="android:textColorSecondary">@color/theme_purple</item>
-
-        <item name="actionModeCloseDrawable">@drawable/ic_baseline_keyboard_backspace_24</item>
-        <item name="actionModeBackground">@color/black</item>
-        <item name="windowActionModeOverlay">true</item>
         <item name="colorControlActivated">@color/theme_purple</item>
-        <item name="android:listDivider">@color/grey_100</item>
-        <item name="colorControlNormal">@color/white</item>
-
-
-        <item name="android:navigationBarColor">@color/black</item>
-        <item name="android:navigationIcon">@color/black</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="fontFamily">@font/google_sans</item>
-
-        <!-- Window decor -->
-        <item name="android:windowLightStatusBar">false</item>
-        <item name="popupMenuStyle">@style/popupmenu</item>
-
-        <item name="color_primary">@color/black</item>
-        <item name="color_on_primary">@color/white</item>
-
-        <item name="color_primary_dark">@color/black</item>
-
         <item name="color_secondary">@color/theme_purple</item>
-        <item name="color_on_secondary">@color/white</item>
-
         <item name="color_accent">@color/theme_purple</item>
-
-        <item name="color_surface">@color/grey_900</item>
-        <item name="color_on_surface">@color/white</item>
-
-        <item name="color_control_name">@color/white</item>
-
-        <item name="navigation_bar_color">@color/black</item>
-        <item name="status_bar_color">@color/grey_900</item>
-
-
-        <item name="system_ui_scrim_light">#2EFFFFFF</item> <!-- 18% white -->
-
-        <item name="toolbar_background_color">@color/black</item>
-        <item name="search_icon_tint_color">@color/white</item>
-        <item name="app_background_color">@color/black</item>
-        <item name="app_text_color">@color/white</item>
-        <item name="app_bottom_navigation_color">@color/black</item>
-        <item name="app_bottom_navigation_icon_color">@color/white</item>
-        <item name="app_inverse_color">@color/white</item>
         <item name="app_blue_color">@color/theme_purple</item>
         <item name="app_text_second_color">@color/theme_purple</item>
-        <item name="app_background_second_color">@color/black</item>
-        <item name="app_text_color_tint">@color/grey_400</item>
-        <item name="app_menu_text_and_icon_color">@color/grey_50</item>
     </style>
 
-    <style name="AppThemePink" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <!-- Customize your theme here. -->
-        <item name="colorPrimaryDark">@color/black</item>
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorOnPrimary">@color/white</item>
-
+    <style name="AppThemePink" parent="AppBaseTheme">
         <item name="colorAccent">@color/theme_pink</item>
-
         <item name="colorSecondary">@color/theme_pink</item>
-        <item name="colorOnSecondary">@color/white</item>
-
-        <item name="colorSurface">@color/grey_900</item>
-        <item name="colorOnSurface">@color/white</item>
-
-        <item name="backgroundColor">@color/black</item>
-        <item name="colorOnBackground">@color/white</item>
-
-        <item name="android:windowBackground">@color/black</item>
-
-        <item name="android:textColorPrimary">@color/white</item>
-
         <item name="android:textColorSecondary">@color/theme_pink</item>
-
-        <item name="actionModeCloseDrawable">@drawable/ic_baseline_keyboard_backspace_24</item>
-        <item name="actionModeBackground">@color/black</item>
-        <item name="windowActionModeOverlay">true</item>
         <item name="colorControlActivated">@color/theme_pink</item>
-        <item name="android:listDivider">@color/grey_100</item>
-        <item name="colorControlNormal">@color/white</item>
-
-
-        <item name="android:navigationBarColor">@color/black</item>
-        <item name="android:navigationIcon">@color/black</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="fontFamily">@font/google_sans</item>
-
-        <!-- Window decor -->
-        <item name="android:windowLightStatusBar">false</item>
-        <item name="popupMenuStyle">@style/popupmenu</item>
-
-        <item name="color_primary">@color/black</item>
-        <item name="color_on_primary">@color/white</item>
-
-        <item name="color_primary_dark">@color/black</item>
-
         <item name="color_secondary">@color/theme_pink</item>
-        <item name="color_on_secondary">@color/white</item>
-
         <item name="color_accent">@color/theme_pink</item>
-
-        <item name="color_surface">@color/grey_900</item>
-        <item name="color_on_surface">@color/white</item>
-
-        <item name="color_control_name">@color/white</item>
-
-        <item name="navigation_bar_color">@color/black</item>
-        <item name="status_bar_color">@color/grey_900</item>
-
-
-        <item name="system_ui_scrim_light">#2EFFFFFF</item> <!-- 18% white -->
-
-        <item name="toolbar_background_color">@color/black</item>
-        <item name="search_icon_tint_color">@color/white</item>
-        <item name="app_background_color">@color/black</item>
-        <item name="app_text_color">@color/white</item>
-        <item name="app_bottom_navigation_color">@color/black</item>
-        <item name="app_bottom_navigation_icon_color">@color/white</item>
-        <item name="app_inverse_color">@color/white</item>
         <item name="app_blue_color">@color/theme_pink</item>
         <item name="app_text_second_color">@color/theme_pink</item>
-        <item name="app_background_second_color">@color/black</item>
-        <item name="app_text_color_tint">@color/grey_400</item>
-        <item name="app_menu_text_and_icon_color">@color/grey_50</item>
     </style>
 
-    <style name="AppThemeYellow" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <!-- Customize your theme here. -->
-        <item name="colorPrimaryDark">@color/black</item>
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorOnPrimary">@color/white</item>
-
+    <style name="AppThemeYellow" parent="AppBaseTheme">
         <item name="colorAccent">@color/theme_Yellow</item>
-
         <item name="colorSecondary">@color/theme_Yellow</item>
-        <item name="colorOnSecondary">@color/white</item>
-
-        <item name="colorSurface">@color/grey_900</item>
-        <item name="colorOnSurface">@color/white</item>
-
-        <item name="backgroundColor">@color/black</item>
-        <item name="colorOnBackground">@color/white</item>
-
-        <item name="android:windowBackground">@color/black</item>
-
-        <item name="android:textColorPrimary">@color/white</item>
-
         <item name="android:textColorSecondary">@color/theme_Yellow</item>
-
-        <item name="actionModeCloseDrawable">@drawable/ic_baseline_keyboard_backspace_24</item>
-        <item name="actionModeBackground">@color/black</item>
-        <item name="windowActionModeOverlay">true</item>
         <item name="colorControlActivated">@color/theme_Yellow</item>
-        <item name="android:listDivider">@color/grey_100</item>
-        <item name="colorControlNormal">@color/white</item>
-
-
-        <item name="android:navigationBarColor">@color/black</item>
-        <item name="android:navigationIcon">@color/black</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="fontFamily">@font/google_sans</item>
-
-        <!-- Window decor -->
-        <item name="android:windowLightStatusBar">false</item>
-        <item name="popupMenuStyle">@style/popupmenu</item>
-
-        <item name="color_primary">@color/black</item>
-        <item name="color_on_primary">@color/white</item>
-
-        <item name="color_primary_dark">@color/black</item>
-
         <item name="color_secondary">@color/theme_Yellow</item>
-        <item name="color_on_secondary">@color/white</item>
-
         <item name="color_accent">@color/theme_Yellow</item>
-
-        <item name="color_surface">@color/grey_900</item>
-        <item name="color_on_surface">@color/white</item>
-
-        <item name="color_control_name">@color/white</item>
-
-        <item name="navigation_bar_color">@color/black</item>
-        <item name="status_bar_color">@color/grey_900</item>
-
-
-        <item name="system_ui_scrim_light">#2EFFFFFF</item> <!-- 18% white -->
-
-        <item name="toolbar_background_color">@color/black</item>
-        <item name="search_icon_tint_color">@color/white</item>
-        <item name="app_background_color">@color/black</item>
-        <item name="app_text_color">@color/white</item>
-        <item name="app_bottom_navigation_color">@color/black</item>
-        <item name="app_bottom_navigation_icon_color">@color/white</item>
-        <item name="app_inverse_color">@color/white</item>
         <item name="app_blue_color">@color/theme_Yellow</item>
         <item name="app_text_second_color">@color/theme_Yellow</item>
-        <item name="app_background_second_color">@color/black</item>
-        <item name="app_text_color_tint">@color/grey_400</item>
-        <item name="app_menu_text_and_icon_color">@color/grey_50</item>
     </style>
 
-    <style name="AppThemeGreen" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <!-- Customize your theme here. -->
-        <item name="colorPrimaryDark">@color/black</item>
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorOnPrimary">@color/white</item>
-
+    <style name="AppThemeGreen" parent="AppBaseTheme">
         <item name="colorAccent">@color/theme_green</item>
-
         <item name="colorSecondary">@color/theme_green</item>
-        <item name="colorOnSecondary">@color/white</item>
-
-        <item name="colorSurface">@color/grey_900</item>
-        <item name="colorOnSurface">@color/white</item>
-
-        <item name="backgroundColor">@color/black</item>
-        <item name="colorOnBackground">@color/white</item>
-
-        <item name="android:windowBackground">@color/black</item>
-
-        <item name="android:textColorPrimary">@color/white</item>
-
         <item name="android:textColorSecondary">@color/theme_green</item>
-
-        <item name="actionModeCloseDrawable">@drawable/ic_baseline_keyboard_backspace_24</item>
-        <item name="actionModeBackground">@color/black</item>
-        <item name="windowActionModeOverlay">true</item>
         <item name="colorControlActivated">@color/theme_green</item>
-        <item name="android:listDivider">@color/grey_100</item>
-        <item name="colorControlNormal">@color/white</item>
-
-
-        <item name="android:navigationBarColor">@color/black</item>
-        <item name="android:navigationIcon">@color/black</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="fontFamily">@font/google_sans</item>
-
-        <!-- Window decor -->
-        <item name="android:windowLightStatusBar">false</item>
-        <item name="popupMenuStyle">@style/popupmenu</item>
-
-        <item name="color_primary">@color/black</item>
-        <item name="color_on_primary">@color/white</item>
-
-        <item name="color_primary_dark">@color/black</item>
-
         <item name="color_secondary">@color/theme_green</item>
-        <item name="color_on_secondary">@color/white</item>
-
         <item name="color_accent">@color/theme_green</item>
-
-        <item name="color_surface">@color/grey_900</item>
-        <item name="color_on_surface">@color/white</item>
-
-        <item name="color_control_name">@color/white</item>
-
-        <item name="navigation_bar_color">@color/black</item>
-        <item name="status_bar_color">@color/grey_900</item>
-
-
-        <item name="system_ui_scrim_light">#2EFFFFFF</item> <!-- 18% white -->
-
-        <item name="toolbar_background_color">@color/black</item>
-        <item name="search_icon_tint_color">@color/white</item>
-        <item name="app_background_color">@color/black</item>
-        <item name="app_text_color">@color/white</item>
-        <item name="app_bottom_navigation_color">@color/black</item>
-        <item name="app_bottom_navigation_icon_color">@color/white</item>
-        <item name="app_inverse_color">@color/white</item>
         <item name="app_blue_color">@color/theme_green</item>
         <item name="app_text_second_color">@color/theme_green</item>
-        <item name="app_background_second_color">@color/black</item>
-        <item name="app_text_color_tint">@color/grey_400</item>
-        <item name="app_menu_text_and_icon_color">@color/grey_50</item>
     </style>
 
-    <style name="AppThemeRed" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <!-- Customize your theme here. -->
-        <item name="colorPrimaryDark">@color/black</item>
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorOnPrimary">@color/white</item>
-
+    <style name="AppThemeRed" parent="AppBaseTheme">
         <item name="colorAccent">@color/theme_red</item>
-
         <item name="colorSecondary">@color/theme_red</item>
-        <item name="colorOnSecondary">@color/white</item>
-
-        <item name="colorSurface">@color/grey_900</item>
-        <item name="colorOnSurface">@color/white</item>
-
-        <item name="backgroundColor">@color/black</item>
-        <item name="colorOnBackground">@color/white</item>
-
-        <item name="android:windowBackground">@color/black</item>
-
-        <item name="android:textColorPrimary">@color/white</item>
-
         <item name="android:textColorSecondary">@color/theme_red</item>
-
-        <item name="actionModeCloseDrawable">@drawable/ic_baseline_keyboard_backspace_24</item>
-        <item name="actionModeBackground">@color/black</item>
-        <item name="windowActionModeOverlay">true</item>
         <item name="colorControlActivated">@color/theme_red</item>
-        <item name="android:listDivider">@color/grey_100</item>
-        <item name="colorControlNormal">@color/white</item>
-
-
-        <item name="android:navigationBarColor">@color/black</item>
-        <item name="android:navigationIcon">@color/black</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="fontFamily">@font/google_sans</item>
-
-        <!-- Window decor -->
-        <item name="android:windowLightStatusBar">false</item>
-        <item name="popupMenuStyle">@style/popupmenu</item>
-
-        <item name="color_primary">@color/black</item>
-        <item name="color_on_primary">@color/white</item>
-
-        <item name="color_primary_dark">@color/black</item>
-
         <item name="color_secondary">@color/theme_red</item>
-        <item name="color_on_secondary">@color/white</item>
-
         <item name="color_accent">@color/theme_red</item>
-
-        <item name="color_surface">@color/grey_900</item>
-        <item name="color_on_surface">@color/white</item>
-
-        <item name="color_control_name">@color/white</item>
-
-        <item name="navigation_bar_color">@color/black</item>
-        <item name="status_bar_color">@color/grey_900</item>
-
-
-        <item name="system_ui_scrim_light">#2EFFFFFF</item> <!-- 18% white -->
-
-        <item name="toolbar_background_color">@color/black</item>
-        <item name="search_icon_tint_color">@color/white</item>
-        <item name="app_background_color">@color/black</item>
-        <item name="app_text_color">@color/white</item>
-        <item name="app_bottom_navigation_color">@color/black</item>
-        <item name="app_bottom_navigation_icon_color">@color/white</item>
-        <item name="app_inverse_color">@color/white</item>
         <item name="app_blue_color">@color/theme_red</item>
         <item name="app_text_second_color">@color/theme_red</item>
-        <item name="app_background_second_color">@color/black</item>
-        <item name="app_text_color_tint">@color/grey_400</item>
-        <item name="app_menu_text_and_icon_color">@color/grey_50</item>
     </style>
 </resources>
