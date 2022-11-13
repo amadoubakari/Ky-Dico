@@ -1,5 +1,6 @@
 package com.flys.dico.activity;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.NotificationManager;
@@ -20,6 +21,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.view.ActionMode;
 import androidx.core.text.HtmlCompat;
@@ -590,8 +595,8 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     class ProfileOnclickListener implements View.OnClickListener {
         @Override
         public void onClick(View view) {
-            User user=updateProfile();
-            if (user == null){
+            User user = updateProfile();
+            if (user == null) {
                 signIn();
             }
         }
@@ -867,19 +872,28 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
         );
 
         // Create and launch sign-in intent
-        startActivityForResult(
+        someActivityResultLauncher.launch(
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
                         .setAvailableProviders(providers)
                         .setAuthMethodPickerLayout(customLayout)
                         .setLogo(R.drawable.logo)      // Set logo drawable
-                        .setTheme(R.style.AppTheme_NoActionBar)      // Set theme
+                        .setTheme(getCustomTheme())      // Set theme
                         /*.setTosAndPrivacyPolicyUrls(
                                 "https://example.com/terms.html",
                                 "https://example.com/privacy.html")*/
-                        .build(),
-                RC_SIGN_IN);
+                        .build());
     }
+
+    ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    // Here, no request code
+                    Intent data = result.getData();
+                    onResultActivityHandle(result.getResultCode(),data);
+                }
+            });
 
     /**
      * @return
@@ -903,10 +917,44 @@ public class MainActivity extends AbstractActivity implements MaterialNotificati
     }
 
     /**
+     * @param resultCode
+     * @param data
+     */
+    private void onResultActivityHandle(int resultCode, Intent data) {
+        //Call for authentication
+        IdpResponse response = IdpResponse.fromResultIntent(data);
+        if (resultCode == RESULT_OK) {
+            // Successfully signed in
+            //Mise à jour des informations de l'utilisateur dans la session
+            getProviderData(FirebaseAuth.getInstance().getCurrentUser());
+        } else {
+            // Sign in failed
+            if (response == null) {
+                // User pressed back button
+                Log.e(getClass().getSimpleName(), "onActivityResult: sign_in_cancelled");
+                Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), Utils.getColorFromAttr(this, R.attr.color_secondary), getString(R.string.activity_main_connection_canceld));
+                return;
+            }
+
+            if (response.getError().getErrorCode() == ErrorCodes.NO_NETWORK) {
+                Log.e(getClass().getSimpleName(), "onActivityResult: no_internet_connection");
+                Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), Utils.getColorFromAttr(this, R.attr.color_secondary), getString(R.string.activity_main_network_issue));
+                return;
+            }
+            if (response.getError().getErrorCode() == ErrorCodes.UNKNOWN_ERROR) {
+                Log.e(getClass().getSimpleName(), "onActivityResult: unknown_error");
+                Utils.showErrorMessage(MainActivity.this, findViewById(R.id.main_content), Utils.getColorFromAttr(this, R.attr.color_secondary), getString(R.string.activity_main_try_again_mdg));
+                return;
+            }
+        }
+    }
+
+    /**
      * @param requestCode
      * @param resultCode
      * @param data
      */
+    @Deprecated
     private void onResultActivityHandle(int requestCode, int resultCode, Intent data) {
         //Call for authentication
         if (requestCode == RC_SIGN_IN) {

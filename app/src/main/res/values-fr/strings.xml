@@ -9,7 +9,7 @@
     <string name="menu_home_msg">Accueil</string>
     <string name="menu_me_msg">Moi</string>
     <string name="about_last_update_msg">Date de mise à jour</string>
-    <string name="about_releasing_date">Octobre 2022</string>
+    <string name="about_releasing_date">Novembre 2022</string>
     <string name="mini_dictionnaire_informatique_de_poche_msg">Mini Dictionnaire Informatique</string>
     <string name="enable_notifications_to_received_news">Activer les notifications pour recevoir des nouveautés !</string>
     <string name="disable_notifications_to_dont_received_news">Si vous désactivez les notifications, vous risquerez ne plus recevoir des nouveautés !</string>
@@ -80,4 +80,5 @@
     <string name="notification_fragment_enable_notifications_msg">Veuillez activer les notifications\npour recevoir des nouveaux apprentissages</string>
     <string name="display">Affichage</string>
     <string name="theme">Thème</string>
+    <string name="settings_fragments_using_same_theme_msg">Vous utilisez déjà ce thème, veuillez sélectionner un autre.</string>
 </resources>

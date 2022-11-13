@@ -71,7 +71,7 @@ public class Utils {
      */
     public static void showErrorMessage(Context context, View parent, int textColor, String msg) {
         Snackbar.make(parent, msg, Snackbar.LENGTH_LONG)
-                .setAction("CLOSE", v -> {
+                .setAction(context.getString(R.string.activity_main_button_close), v -> {
 
                 })
                 .setActionTextColor(textColor)

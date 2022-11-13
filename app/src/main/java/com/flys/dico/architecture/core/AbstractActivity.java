@@ -1,12 +1,8 @@
 package com.flys.dico.architecture.core;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -29,9 +25,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.flys.dico.R;
-import com.flys.dico.activity.MainActivity_;
 import com.flys.dico.architecture.custom.CustomTabLayout;
-import com.flys.dico.architecture.custom.DApplicationContext;
 import com.flys.dico.architecture.custom.IMainActivity;
 import com.flys.dico.architecture.custom.Session;
 import com.flys.dico.dao.service.IDao;
@@ -145,7 +139,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         // parent
         super.onCreate(savedInstanceState);
         //
-        overridePendingTransition(R.anim.main_fade_in, R.anim.splash_fade_out);
+        overridePendingTransition(R.anim.main_fade_in, R.anim.main_fade_out);
         //
         sharedPreferences = getPreferences(MODE_PRIVATE);
         //

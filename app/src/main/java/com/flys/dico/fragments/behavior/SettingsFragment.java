@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.provider.Settings;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ import androidx.core.app.NotificationManagerCompat;
 
 import com.flys.dico.R;
 import com.flys.dico.architecture.core.AbstractFragment;
+import com.flys.dico.architecture.core.Utils;
 import com.flys.dico.architecture.custom.CoreState;
 import com.flys.tools.dialog.MaterialNotificationDialog;
 import com.flys.tools.domain.NotificationData;
@@ -129,11 +131,12 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
     @Override
     public void onFragmentResume() {
         super.onFragmentResume();
+        loadCheckedTheme();
         radioGroup.setOnCheckedChangeListener((radioGroup, i) -> {
             switch (i) {
                 case R.id.radioButtonBlue:
-                    setCustomTheme(R.style.AppTheme);
-                    break;
+                     setCustomTheme(R.style.AppTheme);
+                     break;
                 case R.id.radioButtonRed:
                     setCustomTheme(R.style.AppThemeRed);
                     break;
@@ -153,6 +156,30 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
         });
     }
 
+
+    private void loadCheckedTheme() {
+        switch (mainActivity.getCustomTheme()) {
+            case R.style.AppTheme:
+                radioButtonBlue.setChecked(true);
+                break;
+            case R.style.AppThemeRed:
+                radioButtonRed.setChecked(true);
+                break;
+            case R.style.AppThemeGreen:
+                radioButtonGreen.setChecked(true);
+                break;
+            case R.style.AppThemePink:
+                radioButtonPink.setChecked(true);
+                break;
+            case R.style.AppThemeYellow:
+                radioButtonYellow.setChecked(true);
+                break;
+            case R.style.AppThemePurple:
+                radioButtonPurple.setChecked(true);
+                break;
+        }
+    }
+
     @Override
     protected void notifyEndOfUpdates() {
 
@@ -170,21 +197,18 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
 
     @Override
     public void okButtonAction(DialogInterface dialogInterface, int i) {
-        Intent settingsIntent = new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
-                .putExtra(Settings.EXTRA_APP_PACKAGE, getActivity().getPackageName());
+        Intent settingsIntent = new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS).putExtra(Settings.EXTRA_APP_PACKAGE, getActivity().getPackageName());
         settingsActivityResultLauncher.launch(settingsIntent);
     }
 
 
     // You can do the assignment inside onAttach or onCreate, i.e, before the activity is displayed
-    ActivityResultLauncher<Intent> settingsActivityResultLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-                    enableNotification.setChecked(NotificationManagerCompat.from(activity).areNotificationsEnabled());
-                }
-            });
+    ActivityResultLauncher<Intent> settingsActivityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+        @Override
+        public void onActivityResult(ActivityResult result) {
+            enableNotification.setChecked(NotificationManagerCompat.from(activity).areNotificationsEnabled());
+        }
+    });
 
     @Override
     public void noButtonAction(DialogInterface dialogInterface, int i) {

@@ -29,8 +29,8 @@ android {
         minSdkVersion 24
         applicationId "com.flys.dico"
         targetSdkVersion 33
-        versionCode 77
-        versionName "1.1.3.7"
+        versionCode 78
+        versionName "1.1.4.0"
         resConfigs 'en', 'fr'
         javaCompileOptions {
             annotationProcessorOptions {
@@ -112,8 +112,6 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.android.material:material:1.7.0'
     implementation group: 'de.hdodenhof', name: 'circleimageview', version: '3.1.0'
-    implementation project(':common-tools')
-    api project(':generictools')
     implementation 'com.google.firebase:firebase-analytics:21.2.0'
 
     // Add the Firebase SDK for Crashlytics.
@@ -146,6 +144,8 @@ dependencies {
     //adMod dependency
     implementation 'com.google.android.gms:play-services-ads:21.3.0'
     implementation 'com.flys:notification:1.0.2.3'
+    api 'com.flys:generic-tools:0.0.1'
+    implementation 'com.flys:tools:0.0.1'
 }
 
 repositories {

@@ -71,6 +71,7 @@
     <style name="popupmenu" parent="Base.Widget.AppCompat.PopupMenu">
         <item name="android:textColor">?attr/app_text_color</item>
         <item name="android:popupElevation">@dimen/layout_padding_10dp</item>
+        <item name="android:popupBackground">?attr/app_background_color</item>
     </style>
 
     <style name="Widget.App.PopupMenu" parent="Widget.MaterialComponents.PopupMenu">
