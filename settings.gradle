@@ -1,2 +1,1 @@
-include ':generictools'
-include ':app', ':common-tools'
+include ':app'

@@ -4,8 +4,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.provider.Settings;
+import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -16,9 +19,11 @@ import androidx.core.app.NotificationManagerCompat;
 
 import com.flys.dico.R;
 import com.flys.dico.architecture.core.AbstractFragment;
+import com.flys.dico.architecture.core.Utils;
 import com.flys.dico.architecture.custom.CoreState;
 import com.flys.tools.dialog.MaterialNotificationDialog;
 import com.flys.tools.domain.NotificationData;
+import com.google.android.material.radiobutton.MaterialRadioButton;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import org.androidannotations.annotations.Click;
@@ -41,6 +46,27 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
 
     @ViewById(R.id.current_language)
     protected TextView tvLanguage;
+
+    @ViewById(R.id.radioGroup)
+    protected RadioGroup radioGroup;
+
+    @ViewById(R.id.radioButtonBlue)
+    protected MaterialRadioButton radioButtonBlue;
+
+    @ViewById(R.id.radioButtonRed)
+    protected MaterialRadioButton radioButtonRed;
+
+    @ViewById(R.id.radioButtonGreen)
+    protected MaterialRadioButton radioButtonGreen;
+
+    @ViewById(R.id.radioButtonPink)
+    protected MaterialRadioButton radioButtonPink;
+
+    @ViewById(R.id.radioButtonYellow)
+    protected MaterialRadioButton radioButtonYellow;
+
+    @ViewById(R.id.radioButtonPurple)
+    protected MaterialRadioButton radioButtonPurple;
 
     private MaterialNotificationDialog notificationDialog;
 
@@ -103,6 +129,58 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
     }
 
     @Override
+    public void onFragmentResume() {
+        super.onFragmentResume();
+        loadCheckedTheme();
+        radioGroup.setOnCheckedChangeListener((radioGroup, i) -> {
+            switch (i) {
+                case R.id.radioButtonBlue:
+                     setCustomTheme(R.style.AppTheme);
+                     break;
+                case R.id.radioButtonRed:
+                    setCustomTheme(R.style.AppThemeRed);
+                    break;
+                case R.id.radioButtonGreen:
+                    setCustomTheme(R.style.AppThemeGreen);
+                    break;
+                case R.id.radioButtonPink:
+                    setCustomTheme(R.style.AppThemePink);
+                    break;
+                case R.id.radioButtonYellow:
+                    setCustomTheme(R.style.AppThemeYellow);
+                    break;
+                case R.id.radioButtonPurple:
+                    setCustomTheme(R.style.AppThemePurple);
+                    break;
+            }
+        });
+    }
+
+
+    private void loadCheckedTheme() {
+        switch (mainActivity.getCustomTheme()) {
+            case R.style.AppTheme:
+                radioButtonBlue.setChecked(true);
+                break;
+            case R.style.AppThemeRed:
+                radioButtonRed.setChecked(true);
+                break;
+            case R.style.AppThemeGreen:
+                radioButtonGreen.setChecked(true);
+                break;
+            case R.style.AppThemePink:
+                radioButtonPink.setChecked(true);
+                break;
+            case R.style.AppThemeYellow:
+                radioButtonYellow.setChecked(true);
+                break;
+            case R.style.AppThemePurple:
+                radioButtonPurple.setChecked(true);
+                break;
+        }
+    }
+
+    @Override
     protected void notifyEndOfUpdates() {
 
     }
@@ -119,21 +197,18 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
 
     @Override
     public void okButtonAction(DialogInterface dialogInterface, int i) {
-        Intent settingsIntent = new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
-                .putExtra(Settings.EXTRA_APP_PACKAGE, getActivity().getPackageName());
+        Intent settingsIntent = new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS).putExtra(Settings.EXTRA_APP_PACKAGE, getActivity().getPackageName());
         settingsActivityResultLauncher.launch(settingsIntent);
     }
 
 
     // You can do the assignment inside onAttach or onCreate, i.e, before the activity is displayed
-    ActivityResultLauncher<Intent> settingsActivityResultLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-                    enableNotification.setChecked(NotificationManagerCompat.from(activity).areNotificationsEnabled());
-                }
-            });
+    ActivityResultLauncher<Intent> settingsActivityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+        @Override
+        public void onActivityResult(ActivityResult result) {
+            enableNotification.setChecked(NotificationManagerCompat.from(activity).areNotificationsEnabled());
+        }
+    });
 
     @Override
     public void noButtonAction(DialogInterface dialogInterface, int i) {
@@ -148,22 +223,11 @@ public class SettingsFragment extends AbstractFragment implements MaterialNotifi
 
     @Click(R.id.notification_night_mode_switch)
     public void switchNightModeAction() {
-        notificationDialog = new MaterialNotificationDialog(activity, new NotificationData(getString(R.string.app_name), getString(R.string.abstract_fragment_restart_app), getString(R.string.button_yes_msg), getString(R.string.button_no_msg), activity.getDrawable(R.drawable.logo), R.style.customMaterialAlertEditDialog), new MaterialNotificationDialog.NotificationButtonOnclickListeneer() {
-            @Override
-            public void okButtonAction(DialogInterface dialogInterface, int i) {
-                if (enabledNightMode.isChecked()) {
-                    mainActivity.setNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                } else {
-                    mainActivity.setNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                }
-            }
-
-            @Override
-            public void noButtonAction(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
-            }
-        });
-        notificationDialog.show(getActivity().getSupportFragmentManager(), "settings_notification_dialog_tag");
+        if (enabledNightMode.isChecked()) {
+            mainActivity.setNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            mainActivity.setNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
     }
 
 }

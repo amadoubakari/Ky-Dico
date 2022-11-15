@@ -1,19 +1,19 @@
 <resources >
-     <style name="AppTheme.NoActionBar" parent="AppTheme">
+     <style name="AppTheme.NoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
     <style name="AuthenticationTheme" parent="FirebaseUI">
-        <item name="colorPrimary">@color/color_primary</item>
-        <item name="colorPrimaryDark">@color/color_primary_dark</item>
-        <item name="colorAccent">@color/color_accent</item>
+        <item name="colorPrimary">?attr/color_primary</item>
+        <item name="colorPrimaryDark">?attr/color_primary_dark</item>
+        <item name="colorAccent">?attr/color_accent</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
     <style name="customMaterialAlertEditDialog" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
-        <item name="android:background">@color/color_primary</item>
+        <item name="android:background">?attr/color_primary</item>
         <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle2</item>
         <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle2</item>
         <item name="materialAlertDialogBodyTextStyle">@style/materialDialogAlertContentStyle</item>
@@ -21,46 +21,46 @@
     </style>
 
     <style name="NegativeButtonStyle2" parent="Widget.MaterialComponents.Button.TextButton">
-        <item name="android:textColor">@color/color_on_primary</item>
+        <item name="android:textColor">?attr/color_on_primary</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="PositiveButtonStyle2" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
-        <item name="android:textColor">@color/app_blue_color</item>
+        <item name="android:textColor">?attr/app_blue_color</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="materialDialogAlertContentStyle" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
-        <item name="android:textColor">@color/app_text_color</item>
+        <item name="android:textColor">?attr/app_text_color</item>
         <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/google_sans</item>
     </style>
 
     <style name="menu_text_style" parent="Widget.MaterialComponents.TextView">
-        <item name="android:textColor">@color/app_text_color</item>
+        <item name="android:textColor">?attr/app_text_color</item>
         <item name="android:textSize">14sp</item>
     </style>
 
     <style name="MaterialTitleTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
-        <item name="android:textColor">@color/app_text_color</item>
+        <item name="android:textColor">?attr/app_text_color</item>
         <item name="android:textSize">15sp</item>
         <item name="fontFamily">@font/google_sans</item>
     </style>
 
     <style name="CustomButtonStyle" parent="Widget.MaterialComponents.Button">
-        <item name="backgroundTint">@color/blue_500</item>
+        <item name="backgroundTint">?attr/color_secondary</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="CustomMaterialToolbarStyle" parent="@style/Widget.MaterialComponents.Toolbar.Primary">
-        <item name="titleTextColor">@color/app_text_color</item>
+        <item name="titleTextColor">?attr/app_text_color</item>
     </style>
 
     <style name="customActionModeStyle" parent="Widget.AppCompat.ActionMode">
-        <item name="backgroundColor">@color/app_background_color</item>
-        <item name="iconTint">@color/app_text_color</item>
+        <item name="backgroundColor">?attr/app_background_color</item>
+        <item name="iconTint">?attr/app_text_color</item>
         <item name="titleTextStyle">@style/customTitleTextStyle</item>
     </style>
 
@@ -69,8 +69,9 @@
     </style>
 
     <style name="popupmenu" parent="Base.Widget.AppCompat.PopupMenu">
-        <item name="android:textColor">@color/app_text_color</item>
+        <item name="android:textColor">?attr/app_text_color</item>
         <item name="android:popupElevation">@dimen/layout_padding_10dp</item>
+        <item name="android:popupBackground">?attr/app_background_color</item>
     </style>
 
     <style name="Widget.App.PopupMenu" parent="Widget.MaterialComponents.PopupMenu">
@@ -82,13 +83,13 @@
     </style>
 
     <style name="ThemeOverlay.App.BottomNavigationView" parent="">
-        <item name="colorPrimary">@color/app_background_color</item>
+        <item name="colorPrimary">?attr/app_background_color</item>
         <item name="enforceMaterialTheme">true</item>
         <item name="enforceTextAppearance">true</item>
     </style>
 
     <style name="Widget.kyossi.NavigationView" parent="@style/Widget.MaterialComponents.NavigationView">
-        <item name="android:selectableItemBackground">@color/blue_500</item>
+        <item name="android:selectableItemBackground">?attr/color_secondary</item>
         <item name="itemHorizontalPadding">@dimen/nav_item_horizontal_padding</item>
     </style>
 
@@ -100,12 +101,18 @@
         <item name="cornerSize">50%</item>
     </style>
     <style name="kyossi.toolbar.style" parent="Widget.AppCompat.Light.PopupMenu">
-        <item name="colorPrimary">@color/color_primary</item>
-        <item name="colorOnSurface">@color/color_on_surface</item>
-        <item name="android:background">@color/app_background_color</item>
+        <item name="colorPrimary">?attr/color_primary</item>
+        <item name="colorOnSurface">?attr/color_on_surface</item>
+        <item name="android:background">?attr/app_background_color</item>
     </style>
     <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
         <item name="android:minHeight">0dp</item>
     </style>
 
+    <style name="RadioButton" parent="@android:style/Widget.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/radio_button_blue_selector</item>
+    </style>
+    <style name="Widget.App.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="buttonTint">@color/radio_button_blue_tint</item>
+    </style>
 </resources>

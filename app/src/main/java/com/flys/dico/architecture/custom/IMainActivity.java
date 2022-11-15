@@ -112,4 +112,7 @@ public interface IMainActivity extends IDao {
 
     //set a language
     void setLanguage(String languageCode);
+
+    //
+   int getCustomTheme();
 }

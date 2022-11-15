@@ -1,8 +1,5 @@
 package com.flys.dico.architecture.core;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -28,9 +25,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.flys.dico.R;
-import com.flys.dico.activity.MainActivity_;
 import com.flys.dico.architecture.custom.CustomTabLayout;
-import com.flys.dico.architecture.custom.DApplicationContext;
 import com.flys.dico.architecture.custom.IMainActivity;
 import com.flys.dico.architecture.custom.Session;
 import com.flys.dico.dao.service.IDao;
@@ -144,9 +139,11 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         // parent
         super.onCreate(savedInstanceState);
         //
-        overridePendingTransition(R.anim.main_fade_in, R.anim.splash_fade_out);
+        overridePendingTransition(R.anim.main_fade_in, R.anim.main_fade_out);
         //
         sharedPreferences = getPreferences(MODE_PRIVATE);
+        //
+        setTheme(getCustomTheme());
         //
         loadLocale();
         //
@@ -551,7 +548,11 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         SharedPreferences.Editor nightMode = sharedPreferences.edit();
         nightMode.putInt(Constants.NIGHT_MODE_KEY, mode);
         nightMode.apply();
-        com.flys.dico.architecture.core.Utils.restartApplication(DApplicationContext.getInstance(),MainActivity_.class);
+
+        finish();
+        final Intent intent = getIntent();
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 
     @Override
@@ -570,6 +571,11 @@ public abstract class AbstractActivity extends AppCompatActivity implements IMai
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(Constants.MY_LAND, languageCode);
         editor.apply();
+    }
+
+    @Override
+    public int getCustomTheme() {
+        return sharedPreferences.getInt(Constants.THEME,R.style.AppTheme);
     }
 
     @Override

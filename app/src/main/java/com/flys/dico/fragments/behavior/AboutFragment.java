@@ -2,12 +2,15 @@ package com.flys.dico.fragments.behavior;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
 import androidx.core.text.HtmlCompat;
 
 import com.flys.dico.R;
 import com.flys.dico.architecture.core.AbstractFragment;
+import com.flys.dico.architecture.core.Utils;
 import com.flys.dico.architecture.custom.CoreState;
 
 import org.androidannotations.annotations.Click;
@@ -45,7 +48,7 @@ public class AboutFragment extends AbstractFragment {
 
     @Override
     protected void initView(CoreState previousState) {
-        source.setText(HtmlCompat.fromHtml(activity.getString(R.string.about_fragment_github_source,activity.getString(R.string.fragment_about_github_source_here)), HtmlCompat.FROM_HTML_MODE_LEGACY));
+        source.setText(HtmlCompat.fromHtml(activity.getString(R.string.about_fragment_github_source,String.format("#%06x",  Utils.getColorFromAttr(activity, R.attr.color_secondary)& 0xffffff),activity.getString(R.string.fragment_about_github_source_here)), HtmlCompat.FROM_HTML_MODE_LEGACY));
     }
 
     @Override

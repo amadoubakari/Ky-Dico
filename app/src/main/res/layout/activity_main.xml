@@ -33,7 +33,7 @@
             android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/app_background_color" />
+            android:background="?attr/app_background_color" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <FrameLayout
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:background="@color/color_primary"
+            android:background="?attr/color_primary"
             android:theme="@style/Widget.BottomNavigationView"
             app:itemIconTint="@color/navigation_item_color_state"
             app:itemTextColor="@color/navigation_item_color_state"
@@ -61,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start|left"
-        android:background="@color/color_primary"
+        android:background="?attr/color_primary"
         app:headerLayout="@layout/navigation_header_2"
         app:insetForeground="@android:color/transparent"
         app:itemIconTint="@color/navigation_item_color_state"

@@ -1,46 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-
+    <style name="AppBaseTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimaryDark">@color/color_primary</item>
-        <item name="colorPrimary">@color/color_primary</item>
-        <item name="colorOnPrimary">@color/color_on_primary</item>
-
-        <item name="colorAccent">@color/color_accent</item>
-
-        <item name="colorSecondary">@color/color_secondary</item>
-        <item name="colorOnSecondary">@color/color_on_secondary</item>
-
-        <item name="colorSurface">@color/color_surface</item>
-        <item name="colorOnSurface">@color/color_on_surface</item>
-
-        <item name="backgroundColor">@color/color_primary</item>
-        <item name="colorOnBackground">@color/color_on_primary</item>
-
-        <item name="android:windowBackground">@color/app_background_color</item>
-
-        <item name="android:textColorPrimary">@color/app_text_color</item>
-
-        <item name="android:textColorSecondary">@color/blue_500</item>
-
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/black</item>
+        <item name="backgroundColor">@color/white</item>
+        <item name="colorOnBackground">@color/black</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:textColorPrimary">@color/black</item>
         <item name="actionModeCloseDrawable">@drawable/ic_baseline_keyboard_backspace_24</item>
-        <item name="actionModeBackground">@color/app_background_color</item>
+        <item name="actionModeBackground">@color/white</item>
         <item name="windowActionModeOverlay">true</item>
-        <item name="colorControlActivated">@color/blue_500</item>
         <item name="android:listDivider">@color/grey_100</item>
-        <item name="colorControlNormal">@color/color_control_name</item>
-        <item name="colorControlHighlight">@color/color_control_name</item>
-
-        <item name="android:navigationBarColor">@color/navigation_bar_color</item>
-        <item name="android:navigationIcon">@color/color_primary</item>
+        <item name="colorControlNormal">@color/grey_800</item>
+        <item name="colorControlHighlight">@color/grey_800</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:navigationIcon">@color/white</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="fontFamily">@font/google_sans</item>
-
         <!-- Window decor -->
         <item name="android:windowLightStatusBar">true</item>
-
         <item name="popupMenuStyle">@style/popupmenu</item>
+        <item name="color_primary">@color/white</item>
+        <item name="color_on_primary">@color/black</item>
+        <item name="color_primary_dark">@color/black</item>
+        <item name="color_on_secondary">@color/white</item>
+        <item name="color_surface">@color/white</item>
+        <item name="color_on_surface">@color/black</item>
+        <item name="color_control_name">@color/grey_800</item>
+        <item name="navigation_bar_color">@android:color/transparent</item>
+        <item name="status_bar_color">@android:color/transparent</item>
+        <item name="system_ui_scrim_light">#B3FFFFFF</item> <!-- 70% white -->
+        <item name="system_ui_scrim_black">#40000000</item> <!-- 25% black -->
+        <item name="textColorSecondary">@color/black</item>
+        <item name="toolbar_background_color">@color/white</item>
+        <item name="search_icon_tint_color">@color/black</item>
+        <item name="app_background_color">@color/white</item>
+        <item name="app_text_color">@color/black</item>
+        <item name="app_bottom_navigation_color">@color/grey_100</item>
+        <item name="app_bottom_navigation_icon_color">@color/black</item>
+        <item name="app_inverse_color">@color/black</item>
+        <item name="app_background_second_color">@color/white</item>
+        <item name="app_text_color_tint">@color/grey_400</item>
+        <item name="app_background_grey">@color/grey_800</item>
+        <item name="app_menu_text_and_icon_color">@color/grey_800</item>
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="colorAccent">@color/theme_blue</item>
+        <item name="colorSecondary">@color/theme_blue</item>
+        <item name="android:textColorSecondary">@color/theme_blue</item>
+        <item name="colorControlActivated">@color/theme_blue</item>
+        <item name="color_secondary">@color/theme_blue</item>
+        <item name="color_accent">@color/theme_blue</item>
+        <item name="app_blue_color">@color/theme_blue</item>
+        <item name="app_text_second_color">@color/theme_blue</item>
+    </style>
+
+    <style name="AppThemePurple" parent="AppBaseTheme">
+        <item name="colorAccent">@color/theme_purple</item>
+        <item name="colorSecondary">@color/theme_purple</item>
+        <item name="android:textColorSecondary">@color/theme_purple</item>
+        <item name="colorControlActivated">@color/theme_purple</item>
+        <item name="color_secondary">@color/theme_purple</item>
+        <item name="color_accent">@color/theme_purple</item>
+        <item name="app_blue_color">@color/theme_purple</item>
+        <item name="app_text_second_color">@color/theme_purple</item>
+    </style>
+
+    <style name="AppThemePink" parent="AppBaseTheme">
+        <item name="colorAccent">@color/theme_pink</item>
+        <item name="colorSecondary">@color/theme_pink</item>
+        <item name="android:textColorSecondary">@color/theme_pink</item>
+        <item name="colorControlActivated">@color/theme_pink</item>
+        <item name="color_secondary">@color/theme_pink</item>
+        <item name="color_accent">@color/theme_pink</item>
+        <item name="app_blue_color">@color/theme_pink</item>
+        <item name="app_text_second_color">@color/theme_pink</item>
+    </style>
+
+    <style name="AppThemeYellow" parent="AppBaseTheme">
+        <item name="colorAccent">@color/theme_Yellow</item>
+        <item name="colorSecondary">@color/theme_Yellow</item>
+        <item name="android:textColorSecondary">@color/theme_Yellow</item>
+        <item name="colorControlActivated">@color/theme_Yellow</item>
+        <item name="color_secondary">@color/theme_Yellow</item>
+        <item name="color_accent">@color/theme_Yellow</item>
+        <item name="app_blue_color">@color/theme_Yellow</item>
+        <item name="app_text_second_color">@color/theme_Yellow</item>
+    </style>
+
+    <style name="AppThemeGreen" parent="AppBaseTheme">
+        <item name="colorAccent">@color/theme_green</item>
+        <item name="colorSecondary">@color/theme_green</item>
+        <item name="android:textColorSecondary">@color/theme_green</item>
+        <item name="colorControlActivated">@color/theme_green</item>
+        <item name="color_secondary">@color/theme_green</item>
+        <item name="color_accent">@color/theme_green</item>
+        <item name="app_blue_color">@color/theme_green</item>
+        <item name="app_text_second_color">@color/theme_green</item>
+    </style>
+
+    <style name="AppThemeRed" parent="AppBaseTheme">
+        <item name="colorAccent">@color/theme_red</item>
+        <item name="colorSecondary">@color/theme_red</item>
+        <item name="android:textColorSecondary">@color/theme_red</item>
+        <item name="colorControlActivated">@color/theme_red</item>
+        <item name="color_secondary">@color/theme_red</item>
+        <item name="color_accent">@color/theme_red</item>
+        <item name="app_blue_color">@color/theme_red</item>
+        <item name="app_text_second_color">@color/theme_red</item>
     </style>
 </resources>

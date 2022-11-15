@@ -7,7 +7,7 @@
         android:icon="@drawable/ic_baseline_search_24"
         android:orderInCategory="300"
         android:title="@string/rechercher"
-        android:iconTint="@color/search_icon_tint_color"
+        android:iconTint="?attr/search_icon_tint_color"
         app:itemTextColor="@drawable/bottom_navigation_colors"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="ifRoom|collapseActionView"

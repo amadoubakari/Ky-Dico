@@ -2,8 +2,10 @@ package com.flys.dico.utils;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.content.res.Resources;
 import android.text.Spannable;
 import android.text.style.URLSpan;
+import android.util.TypedValue;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.flys.dico.R;

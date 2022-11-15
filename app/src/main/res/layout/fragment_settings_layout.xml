@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/app_background_color">
+    android:background="?attr/app_background_color">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -28,7 +28,7 @@
             android:gravity="center_vertical"
             android:paddingLeft="30dp"
             android:text="@string/fragment_settings_layout_general_setttings_msg"
-            android:textColor="@color/app_text_second_color"
+            android:textColor="?attr/app_text_second_color"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -37,7 +37,7 @@
             android:layout_height="0.5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="@color/app_inverse_color" />
+            android:background="?attr/app_inverse_color" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -50,7 +50,7 @@
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:background="@color/app_background_color">
+                android:background="?attr/app_background_color">
 
                 <View
                     android:id="@+id/imageView"
@@ -64,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/fragmant_settings_notifications_msg"
-                    android:textColor="@color/app_text_color"
+                    android:textColor="?attr/app_text_color"
                     android:textSize="14sp" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
@@ -81,7 +81,7 @@
             android:layout_height="0.5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="@color/app_inverse_color" />
+            android:background="?attr/app_inverse_color" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -94,7 +94,7 @@
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:background="@color/app_background_color">
+                android:background="?attr/app_background_color">
 
                 <View
                     android:layout_width="@dimen/layout_padding_10dp"
@@ -107,7 +107,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/fragment_settings_language_msg"
-                    android:textColor="@color/app_text_color"
+                    android:textColor="?attr/app_text_color"
                     android:textSize="14sp" />
 
                 <TextView
@@ -116,7 +116,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.05"
                     android:text="@string/fragment_settings_language_en"
-                    android:textColor="@color/blue_500"
+                    android:textColor="?attr/color_secondary"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -127,7 +127,7 @@
             android:layout_height="0.5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="@color/app_inverse_color" />
+            android:background="?attr/app_inverse_color" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -140,7 +140,7 @@
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:background="@color/app_background_color">
+                android:background="?attr/app_background_color">
 
                 <View
                     android:layout_width="@dimen/layout_padding_10dp"
@@ -153,7 +153,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/mode_nuit"
-                    android:textColor="@color/app_text_color"
+                    android:textColor="?attr/app_text_color"
                     android:textSize="14sp" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
@@ -170,7 +170,140 @@
             android:layout_height="0.5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="@color/app_inverse_color" />
+            android:background="?attr/app_inverse_color" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:layout_marginBottom="@dimen/spacing_medium" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="30dp"
+            android:text="@string/display"
+            android:textColor="?attr/app_text_second_color"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="?attr/app_inverse_color" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:id="@+id/dialog_change_theme"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="?attr/app_background_color"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/layout_padding_10dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="0.1"
+                    android:alpha="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:text="@string/theme"
+                    android:textColor="?attr/app_text_color"
+                    android:textSize="14sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/radioButtonBlue"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="@dimen/layout_padding_10dp"
+                        android:layout_marginRight="@dimen/layout_padding_10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_button_blue_selector"
+                        android:button="@android:color/transparent" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/radioButtonRed"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="@dimen/layout_padding_10dp"
+                        android:layout_marginRight="@dimen/layout_padding_10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_button_red_selector"
+                        android:button="@android:color/transparent" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/radioButtonGreen"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="@dimen/layout_padding_10dp"
+                        android:layout_marginRight="@dimen/layout_padding_10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_button_green_selector"
+                        android:button="@android:color/transparent" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/radioButtonPink"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="@dimen/layout_padding_10dp"
+                        android:layout_marginRight="@dimen/layout_padding_10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_button_pink_selector"
+                        android:button="@android:color/transparent" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/radioButtonYellow"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="@dimen/layout_padding_10dp"
+                        android:layout_marginRight="@dimen/layout_padding_10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_button_yellow_selector"
+                        android:button="@android:color/transparent" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/radioButtonPurple"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="@dimen/layout_padding_10dp"
+                        android:layout_marginRight="@dimen/layout_padding_10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_button_purple_selector"
+                        android:button="@android:color/transparent"
+                        android:gravity="center" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="?attr/app_inverse_color" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline

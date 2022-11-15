@@ -29,8 +29,8 @@ android {
         minSdkVersion 24
         applicationId "com.flys.dico"
         targetSdkVersion 33
-        versionCode 77
-        versionName "1.1.3.7"
+        versionCode 78
+        versionName "1.1.4.0"
         resConfigs 'en', 'fr'
         javaCompileOptions {
             annotationProcessorOptions {
@@ -78,8 +78,8 @@ android {
 // options de packaging nécessaires pour être capable de produire l'APK
     // options de compilation
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     dependenciesInfo {
         includeInBundle true
@@ -95,8 +95,8 @@ def AAVersion = '4.8.0'
 
 dependencies {
     implementation 'com.google.firebase:firebase-auth:21.1.0'
-    implementation 'androidx.navigation:navigation-fragment:2.5.2'
-    implementation 'androidx.navigation:navigation-ui:2.5.2'
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
+    implementation 'androidx.navigation:navigation-ui:2.5.3'
     implementation 'com.google.android.play:core:1.10.3'
     annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
     implementation "org.androidannotations:androidannotations-api:$AAVersion"
@@ -112,8 +112,6 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.android.material:material:1.7.0'
     implementation group: 'de.hdodenhof', name: 'circleimageview', version: '3.1.0'
-    implementation project(':common-tools')
-    api project(':generictools')
     implementation 'com.google.firebase:firebase-analytics:21.2.0'
 
     // Add the Firebase SDK for Crashlytics.
@@ -139,13 +137,15 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-storage:6.2.0'
     implementation 'androidx.preference:preference:1.2.0'
     // Import the BoM for the Firebase platform
-    implementation platform('com.google.firebase:firebase-bom:31.0.1')
+    implementation platform('com.google.firebase:firebase-bom:31.0.2')
     // Declare the dependency for the Realtime Database library
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-database:20.1.0'
     //adMod dependency
     implementation 'com.google.android.gms:play-services-ads:21.3.0'
     implementation 'com.flys:notification:1.0.2.3'
+    api 'com.flys:generic-tools:0.0.1'
+    implementation 'com.flys:tools:0.0.1'
 }
 
 repositories {

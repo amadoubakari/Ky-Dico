@@ -179,7 +179,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
 
     @Override
     public void onShowMoreClickListener(int position) {
-        configDialogFragment = NotificationDetailsDialogFragment.newInstance(activity, notifications.get(position), new DialogStyle(activity.getColor(R.color.app_text_color), activity.getColor(R.color.app_text_second_color), R.font.google_sans));
+        configDialogFragment = NotificationDetailsDialogFragment.newInstance(activity, notifications.get(position), new DialogStyle( Utils.getColorFromAttr(activity, R.attr.app_text_color), Utils.getColorFromAttr(activity, R.attr.color_secondary), R.font.google_sans));
         configDialogFragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.AppTheme);
         configDialogFragment.show(getActivity().getSupportFragmentManager(), "fragment_edit_name" + position);
     }
@@ -228,7 +228,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
                         notificationDao.delete(notifications.get(position));
                         notifications.remove(position);
                         notificationAdapter.notifyDataSetChanged();
-                        com.flys.dico.architecture.core.Utils.showErrorMessage(activity, activity.findViewById(R.id.main_content), activity.getColor(R.color.color_secondary), getString(R.string.delete_msg));
+                        com.flys.dico.architecture.core.Utils.showErrorMessage(activity, activity.findViewById(R.id.main_content),Utils.getColorFromAttr(activity, R.attr.color_secondary), getString(R.string.delete_msg));
                     } catch (DaoException e) {
                         Log.e(getClass().getSimpleName(), "Deleting notification from database Processing Exception", e);
                     }
@@ -276,7 +276,7 @@ public class NotificationFragment extends AbstractFragment implements MaterialNo
      */
     private void init() {
         notifications = new ArrayList<>();
-        notificationAdapter = new AdsSimpleNotificationAdapter(activity, notifications, new DialogStyle(activity.getColor(R.color.app_text_color), activity.getColor(R.color.app_text_second_color), R.font.google_sans), true /*Constants.isNetworkConnected*/, activity.getString(R.string.fragment_notification_item_ads_native), this);
+        notificationAdapter = new AdsSimpleNotificationAdapter(activity, notifications, new DialogStyle(Utils.getColorFromAttr(activity, R.attr.app_text_color), Utils.getColorFromAttr(activity, R.attr.app_text_second_color), R.font.google_sans), true /*Constants.isNetworkConnected*/, activity.getString(R.string.fragment_notification_item_ads_native), this);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(notificationAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));

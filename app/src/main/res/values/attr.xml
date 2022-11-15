@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Theme">
+        <attr name="color_primary" format="color"/>
+        <attr name="color_on_primary" format="color"/>
+        <attr name="color_primary_dark" format="color"/>
+        <attr name="color_secondary" format="color"/>
+        <attr name="color_on_secondary" format="color"/>
+
+        <attr name="color_surface" format="color"/>
+        <attr name="color_on_surface" format="color"/>
+        <attr name="color_accent" format="color"/>
+        <attr name="color_control_name" format="color"/>
+
+        <attr name="navigation_bar_color" format="color"/>
+        <attr name="status_bar_color" format="color"/>
+        <attr name="system_ui_scrim_light" format="color"/>
+        <attr name="system_ui_scrim_black" format="color"/>
+
+        <attr name="textColorSecondary" format="color"/>
+        <attr name="toolbar_background_color" format="color"/>
+        <attr name="search_icon_tint_color" format="color"/>
+        <attr name="app_background_color" format="color"/>
+
+        <attr name="app_text_color" format="color"/>
+        <attr name="app_bottom_navigation_color" format="color"/>
+        <attr name="app_bottom_navigation_icon_color" format="color"/>
+        <attr name="app_inverse_color" format="color"/>
+
+        <attr name="app_blue_color" format="color"/>
+        <attr name="app_text_second_color" format="color"/>
+        <attr name="app_background_second_color" format="color"/>
+        <attr name="app_text_color_tint" format="color"/>
+
+        <attr name="app_background_grey" format="color"/>
+        <attr name="app_menu_text_and_icon_color" format="color"/>
+    </declare-styleable>
+</resources>

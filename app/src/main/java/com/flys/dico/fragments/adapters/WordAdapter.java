@@ -267,7 +267,7 @@ public class WordAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 while (match.find()) {
                     ForegroundColorSpan fcs = new ForegroundColorSpan(
-                            ContextCompat.getColor(context, R.color.color_secondary)); //specify color here
+                            com.flys.dico.architecture.core.Utils.getColorFromAttr(context, R.attr.color_secondary)); //specify color here
                     spannable.setSpan(fcs, match.start(), match.end(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
                 }
             }
