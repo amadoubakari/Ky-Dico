@@ -93,7 +93,6 @@ public class FCMService extends FirebaseMessagingService {
             //Saving notification in the database
             try {
                 notification.setDate(new Date());
-                Log.e(getClass().getSimpleName(),"=============  Notification: "+notification);
                 notificationDao.save(notification);
                 dao.loadNotificationsFromDatabase("seen", false).debounce(500, TimeUnit.MILLISECONDS)
                         .distinctUntilChanged()
@@ -109,25 +108,7 @@ public class FCMService extends FirebaseMessagingService {
                 e.printStackTrace();
             }
 
-            //sendNotification(notification);
-            /*if (*//* Check if data needs to be processed by long running job *//* true) {
-                // For long-running tasks (10 seconds or more) use WorkManager.
-                //scheduleJob();
-            } else {
-                // Handle message within 10 seconds
-                //handleNow();
-            }*/
-
         }
-
-        // Check if message contains a notification payload.
-        //if (remoteMessage.getNotification() != null) {
-        //Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
-        //sendNotification(remoteMessage.getNotification().getBody());
-        // }
-
-        // Also if you intend on generating your own notifications as a result of a received FCM
-        // message, here is where that should be initiated. See sendNotification method below.
     }
 
 
@@ -188,9 +169,15 @@ public class FCMService extends FirebaseMessagingService {
         bundle.putSerializable("notification", notification);
         intent.putExtras(bundle);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, SUMMARY_ID, intent,
-                PendingIntent.FLAG_CANCEL_CURRENT);
 
+        PendingIntent pendingIntent;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            pendingIntent = PendingIntent.getActivity(context, SUMMARY_ID, intent,
+                    PendingIntent.FLAG_CANCEL_CURRENT| PendingIntent.FLAG_IMMUTABLE);
+        }else {
+            pendingIntent = PendingIntent.getActivity(context, SUMMARY_ID, intent,
+                    PendingIntent.FLAG_CANCEL_CURRENT);
+        }
         //
         InboxStyle inboxStyle = new NotificationCompat.InboxStyle();
         notifications.forEach(notification1 -> inboxStyle.addLine(notification1.getContent()));
