@@ -22,15 +22,15 @@ apply plugin: "org.sonarqube"
 apply plugin: 'com.google.gms.google-services'
 
 android {
-    compileSdkVersion 33
-    buildToolsVersion '33.0.0'
+    compileSdkVersion 34
+    buildToolsVersion '34.0.0'
 
     defaultConfig {
         minSdkVersion 24
         applicationId "com.flys.dico"
-        targetSdkVersion 33
-        versionCode 79
-        versionName "1.1.4.1"
+        targetSdkVersion 34
+        versionCode 80
+        versionName "1.1.4.2"
         resConfigs 'en', 'fr'
         javaCompileOptions {
             annotationProcessorOptions {
@@ -117,7 +117,7 @@ dependencies {
     // Add the Firebase SDK for Crashlytics.
     implementation 'com.google.firebase:firebase-crashlytics:18.3.1'
     //Firebase Cloud messaging
-    implementation 'com.google.firebase:firebase-messaging:23.1.0'
+    implementation 'com.google.firebase:firebase-messaging:23.3.1'
 
     //Firebase authentication dependencies
     implementation 'com.firebaseui:firebase-ui-auth:6.2.0'
@@ -128,24 +128,24 @@ dependencies {
     //add a badge number on app icon launcher
     implementation "me.leolin:ShortcutBadger:1.1.22@aar"
     // Required only if Twitter login support is required
-    implementation 'com.android.support:cardview-v7:33.0.0'
+    implementation 'com.android.support:cardview-v7:34.0.0'
     api group: 'com.j256.ormlite', name: 'ormlite-android', version: '5.3'
 
-    implementation 'com.google.firebase:firebase-messaging-directboot:23.1.0'
+    implementation 'com.google.firebase:firebase-messaging-directboot:23.3.1'
 
-    implementation 'com.google.firebase:firebase-storage:20.1.0'
+    implementation 'com.google.firebase:firebase-storage:20.3.0'
     implementation 'com.firebaseui:firebase-ui-storage:6.2.0'
-    implementation 'androidx.preference:preference:1.2.0'
+    implementation 'androidx.preference:preference:1.2.1'
     // Import the BoM for the Firebase platform
-    implementation platform('com.google.firebase:firebase-bom:31.0.2')
+    implementation platform('com.google.firebase:firebase-bom:32.6.0')
     // Declare the dependency for the Realtime Database library
     // When using the BoM, you don't specify versions in Firebase library dependencies
-    implementation 'com.google.firebase:firebase-database:20.1.0'
+    implementation 'com.google.firebase:firebase-database:20.3.0'
     //adMod dependency
-    implementation 'com.google.android.gms:play-services-ads:21.3.0'
-    implementation 'com.flys:notification:1.0.2.3'
-    api 'com.flys:generic-tools:0.0.1'
-    implementation 'com.flys:tools:0.0.1'
+    implementation 'com.google.android.gms:play-services-ads:22.5.0'
+    implementation 'com.flys:notification:1.0.3'
+    api 'com.flys:generic-tools:0.0.2'
+    implementation 'com.flys:tools:0.0.2'
 }
 
 repositories {
