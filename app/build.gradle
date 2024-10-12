@@ -143,9 +143,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:20.1.0'
     //adMod dependency
     implementation 'com.google.android.gms:play-services-ads:21.3.0'
-    implementation 'com.flys:notification:1.0.2.3'
-    api 'com.flys:generic-tools:0.0.1'
-    implementation 'com.flys:tools:0.0.1'
+    implementation 'com.flys:notification:1.0.0'
+    api 'com.flys:generic-tools:1.0.0'
+    implementation 'com.flys:tools:1.0.0'
 }
 
 repositories {
